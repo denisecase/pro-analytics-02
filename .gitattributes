@@ -1,0 +1,6 @@
+# project .gitattributes file
+
+# enforces LF line endings for all text/code files in the repo
+# helps avoid issues with inconsistent line endings across different OSes/editors
+# runs on git commit and git clone
+* text=auto eol=lf

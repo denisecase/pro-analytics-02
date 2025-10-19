@@ -1,0 +1,72 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=80", "wheel"]
+
+[project]
+authors = [{name = "Denise Case"}] # TODO: Change
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = [ # fmt: off
+  "loguru",      # Better than print() - practice production logging with levels
+  #"matplotlib",  # Industry standard plotting
+  #"pandas",      # THE data manipulation tool in analytics
+  #"seaborn",     # Statistical charts built on matplotlib
+  #"ipython",     # Enhanced Python shell (needed for notebooks)
+  #"ipykernel",   # Jupyter kernel for notebooks
+]  # fmt: on
+description = "Guide to professional Python using uv and a src layout" # TODO: Change
+name = "analytics-project" # PACKAGE name (matches src folder except with dashes)
+readme = "README.md"
+requires-python = ">=3.12"
+version = "0.0.1"
+
+[project.urls]
+"Bug Tracker" = "https://github.com/denisecase/pro-analytics-02/issues"
+Documentation = "https://denisecase.github.io/pro-analytics-02/"
+Homepage = "https://github.com/denisecase/pro-analytics-02"
+Repository = "https://github.com/denisecase/pro-analytics-02"
+
+[project.optional-dependencies]
+dev = [
+  "pytest", # run some tests automatically
+  "pytest-cov", # coverage report for more visibility
+]
+docs = [
+  "mkdocs",                # Core MkDocs
+  "mkdocs-material",       # Modern, responsive theme
+  "mkdocstrings[python]",  # Auto-generate API docs from docstrings
+  "livereload",            # Enables live reload (auto-refresh on edit)
+  "watchdog",              # Faster and more reliable file watching
+  "ruff",                  # Needed so mkdocstrings can format signatures
+]
+notebooks = [
+  # "ipython",
+  # "ipykernel",
+  # "jupyter",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# Ruff formats, lints, and fixes code
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+# Optional: Pyright checks that our type hints are correct
+[tool.pyright]
+include = ["src", "tests"]
+pythonVersion = "3.12"
+reportPrivateUsage = "none"
+typeCheckingMode = "basic" # or "strict"
+
+# Optional: Pytest runs basic tests to ensure code runs correctly
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]

@@ -1,0 +1,25 @@
+# project .editorconfig file
+
+# Enforces LF endings across all text/code files.
+# Ensures every file ends with a newline (POSIX standard).
+# Ignores trailing whitespace inside Markdown, for intentional hard wraps.
+
+root = true
+
+[*]
+# Unix-style line endings
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+# Use 4-space indentation for Python files
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Allow Markdown files to have trailing whitespace for intentional hard wraps
+[*.md]
+trim_trailing_whitespace = false

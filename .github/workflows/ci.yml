@@ -1,0 +1,75 @@
+# .github/workflows/ci.yml
+name: CI (Continuous Integration)
+#
+# DESIGN PRINCIPLES:
+# - CI VALIDATES, never modifies
+# - Scope naming (Assemble/Baseline/Coverage/Deploy) reinforces CI/CD patterns
+# - Fail fast design - catch issues early
+#
+# CI PHASES A-B-C-D:
+# - Assemble: Install dependencies, verify environment setup
+# - Baseline: Core validation (types exist, lint passes, tests pass)
+# - Coverage: Generate reports and upload artifacts
+# - Deploy: Build package and docs (sanity checks for release readiness)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+
+env:
+  PYTHONUNBUFFERED: "1" # real-time logging
+  PYTHONIOENCODING: "utf-8"
+  MPLBACKEND: Agg # headless matplotlib
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+
+      # ------------------- ASSEMBLE -------------------
+
+      - name: A1) Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Full history for tags
+
+      - name: A2) Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: A3) Pin Python version for consistency
+        run:  uv python pin 3.12
+
+      - name: A4) Sync to install dependencies
+        run: uv sync --extra dev --extra docs --upgrade
+
+      # ------------------- BASELINE CHECKS -------------------
+
+      - name: B1) Validate pyproject
+        run: uvx validate-pyproject
+
+      - name: B2) Ruff lint (check only)
+        run: uvx ruff check .
+
+      # ------------------- COVERAGE (TESTING) -------------------
+
+      - name: C1) Run tests (if present)
+        run: |
+          if [ -d "tests" ] && [ "$(ls -A tests)" ]; then
+            uv run pytest
+          else
+            echo "No tests found. Skipping pytest."
+          fi
+
+      # ------------ DEPLOY (SANITY CHECK, VERIFY DOCS BUILD) -------------------
+
+      - name: D1) Build docs with (mkdocs) but don't deploy yet
+        if: hashFiles('mkdocs.yml') != ''
+        run: uv run mkdocs build --strict

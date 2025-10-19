@@ -1,0 +1,68 @@
+2025-10-19 16:36:INFO    AT utils_logger.py:105: Logging to file: C:\Users\edaci\Documents\pro-analytics-02\project.log
+2025-10-19 16:36:INFO    AT demo_module_basics.py:90: Starting demo_python() function.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:37: Name Python files with lowercase and underscores.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:38: In Python, comments start with a '#' symbol and are not executed.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:39: Comments can also be wrapped in triple single quotes or triple backticks.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:43: Variables are used to store values.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:44: Type hints are optional but recommended for clarity.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:45:   example_number = 42
+2025-10-19 16:36:INFO    AT demo_module_basics.py:46:   count: int = 42
+2025-10-19 16:36:INFO    AT demo_module_basics.py:47:   temp_F: float = 42.2
+2025-10-19 16:36:INFO    AT demo_module_basics.py:48:   user_name: str = "Data Analyst"
+2025-10-19 16:36:INFO    AT demo_module_basics.py:54: Result: example_number=42, count=42, temp_f=42.2, user_name='Data Analyst'.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:58: Functions in Python are blocks of reusable code.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:59: You can call a function by using its name followed by parentheses.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:60: We use f-strings to combine text and values in Python.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:61:   Put the 'f' immediately before the opening quote of the string text.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:65: Python has many built-in functions, like min(), max(), and len().
+2025-10-19 16:36:INFO    AT demo_module_basics.py:70: For the list of numbers: [1, 2, 3]
+2025-10-19 16:36:INFO    AT demo_module_basics.py:71:   The minimum value is min(numbers): 1
+2025-10-19 16:36:INFO    AT demo_module_basics.py:72:   The maximum value is max(numbers): 3
+2025-10-19 16:36:INFO    AT demo_module_basics.py:73:   The length of the list is len(numbers): 3
+2025-10-19 16:36:INFO    AT demo_module_basics.py:78: In Python, indentation matters = True!
+2025-10-19 16:36:INFO    AT demo_module_basics.py:79: In Python, spelling matters = True!
+2025-10-19 16:36:INFO    AT demo_module_basics.py:80: In Python, uppercase/lowercase matters = True!
+2025-10-19 16:36:INFO    AT demo_module_basics.py:96: Experiment with this demo script to learn the basics quickly.
+2025-10-19 16:36:INFO    AT demo_module_basics.py:97: Exiting demo_python() function.
+2025-10-19 16:36:INFO    AT utils_logger.py:116: This is an example info message.
+2025-10-19 16:36:WARNING AT utils_logger.py:117: This is an example warning message.
+2025-10-19 16:36:ERROR   AT utils_logger.py:118: This is an example error message.
+2025-10-19 16:36:INFO    AT utils_logger.py:116: This is an example info message.
+2025-10-19 16:36:WARNING AT utils_logger.py:117: This is an example warning message.
+2025-10-19 16:36:ERROR   AT utils_logger.py:118: This is an example error message.
+2025-10-19 16:36:INFO    AT utils_logger.py:125: View the log output at C:\Users\edaci\Documents\pro-analytics-02\project.log
+2025-10-19 16:36:INFO    AT test_utils_logger.py:65: Smoke test message
+2025-10-19 17:42:INFO    AT utils_logger.py:105: Logging to file: C:\Users\edaci\Documents\pro-analytics-02\project.log
+2025-10-19 17:42:INFO    AT demo_module_basics.py:90: Starting demo_python() function.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:37: Name Python files with lowercase and underscores.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:38: In Python, comments start with a '#' symbol and are not executed.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:39: Comments can also be wrapped in triple single quotes or triple backticks.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:43: Variables are used to store values.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:44: Type hints are optional but recommended for clarity.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:45:   example_number = 42
+2025-10-19 17:42:INFO    AT demo_module_basics.py:46:   count: int = 42
+2025-10-19 17:42:INFO    AT demo_module_basics.py:47:   temp_F: float = 42.2
+2025-10-19 17:42:INFO    AT demo_module_basics.py:48:   user_name: str = "Data Analyst"
+2025-10-19 17:42:INFO    AT demo_module_basics.py:54: Result: example_number=42, count=42, temp_f=42.2, user_name='Data Analyst'.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:58: Functions in Python are blocks of reusable code.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:59: You can call a function by using its name followed by parentheses.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:60: We use f-strings to combine text and values in Python.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:61:   Put the 'f' immediately before the opening quote of the string text.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:65: Python has many built-in functions, like min(), max(), and len().
+2025-10-19 17:42:INFO    AT demo_module_basics.py:70: For the list of numbers: [1, 2, 3]
+2025-10-19 17:42:INFO    AT demo_module_basics.py:71:   The minimum value is min(numbers): 1
+2025-10-19 17:42:INFO    AT demo_module_basics.py:72:   The maximum value is max(numbers): 3
+2025-10-19 17:42:INFO    AT demo_module_basics.py:73:   The length of the list is len(numbers): 3
+2025-10-19 17:42:INFO    AT demo_module_basics.py:78: In Python, indentation matters = True!
+2025-10-19 17:42:INFO    AT demo_module_basics.py:79: In Python, spelling matters = True!
+2025-10-19 17:42:INFO    AT demo_module_basics.py:80: In Python, uppercase/lowercase matters = True!
+2025-10-19 17:42:INFO    AT demo_module_basics.py:96: Experiment with this demo script to learn the basics quickly.
+2025-10-19 17:42:INFO    AT demo_module_basics.py:97: Exiting demo_python() function.
+2025-10-19 17:42:INFO    AT utils_logger.py:116: This is an example info message.
+2025-10-19 17:42:WARNING AT utils_logger.py:117: This is an example warning message.
+2025-10-19 17:42:ERROR   AT utils_logger.py:118: This is an example error message.
+2025-10-19 17:42:INFO    AT utils_logger.py:116: This is an example info message.
+2025-10-19 17:42:WARNING AT utils_logger.py:117: This is an example warning message.
+2025-10-19 17:42:ERROR   AT utils_logger.py:118: This is an example error message.
+2025-10-19 17:42:INFO    AT utils_logger.py:125: View the log output at C:\Users\edaci\Documents\pro-analytics-02\project.log
+2025-10-19 17:42:INFO    AT test_utils_logger.py:65: Smoke test message

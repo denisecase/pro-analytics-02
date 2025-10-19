@@ -1,0 +1,46 @@
+// .vscode/extensions.json
+//
+// VS Code extension recommendations for this repository.
+// On opening this folder, users will be prompted to install these extensions.
+// We recommend saying "Yes" but it is not required.
+
+{
+  "recommendations": [
+    // Unified Python linter, formatter, and import sorter
+    "charliermarsh.ruff",
+
+    // GitHub Actions syntax and workflow validation
+    "github.vscode-github-actions",
+
+    // Color-coded CSV/TSV columns for quick data inspection
+    //"mechatroner.rainbow-csv",
+
+    // Core Python extension (run/debug/testing support)
+    "ms-python.python",
+
+    // Fast IntelliSense and type checking for Python
+    "ms-python.vscode-pylance",
+
+    // Jupyter Notebook editing and execution in VS Code
+    //"ms-toolsai.jupyter",
+
+    // Improved keyboard shortcuts for Jupyter cells
+    //"ms-toolsai.jupyter-keymap",
+
+    // Rich rendering for plots and HTML outputs
+    //"ms-toolsai.jupyter-renderers",
+
+    // YAML schema validation (great for GitHub Actions and configs)
+    "redhat.vscode-yaml",
+
+    // Enhanced Markdown editing (TOC, formatting, shortcuts)
+    "yzhang.markdown-all-in-one"
+  ],
+
+  "unwantedRecommendations": [
+    // Avoid duplicate formatter; Ruff handles formatting instead of Black
+    "ms-python.black-formatter",
+    // Avoid duplicate formatter; Ruff handles formatting instead of AutoPEP8
+    "ms-python.autopep8"
+  ]
+}
