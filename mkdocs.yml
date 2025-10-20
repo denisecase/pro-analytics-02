@@ -1,7 +1,7 @@
 # mkdocs.yml
 # Configuration file for MkDocs
 
-site_name: Pro Analytics 02 - Professional Python for Data Analysis
+site_name: Pro Analytics 02
 site_url: https://denisecase.github.io/pro-analytics-02/
 repo_url: https://github.com/denisecase/pro-analytics-02
 site_description: Guide to Professional Python projects using industry best practices
@@ -12,9 +12,11 @@ site_dir: site
 theme:
   name: material
   features:
-    - navigation.expand
+    - navigation.expand # Expand navigation by default
     - navigation.sections # Group navigation items
     - navigation.top # Back-to-top button
+    - navigation.tracking # Track active section
+    - navigation.paths # Breadcrumbs
     - search.suggest # Search suggestions as you type
     - search.highlight # Highlight search terms
     - content.code.copy # Copy button on code blocks
@@ -60,8 +62,8 @@ markdown_extensions:
 nav:
   - Home: index.md
 
-  - "Part 1: Machine Setup":
-      - Overview: 01-set-up-machine/index.md
+  - "1: Set Up Machine":
+      - Overview (click here): 01-set-up-machine/index.md
       - Create GitHub Account: 01-set-up-machine/01-create-github-account.md
       - View Hidden Files and Extensions: 01-set-up-machine/02-view-hidden-files-and-extensions.md
       - Linux Install Tools: 01-set-up-machine/03a-linux-install-tools.md
@@ -71,8 +73,8 @@ nav:
       - Create Repos Folder: 01-set-up-machine/05-create-repos-folder.md
       - Verify Setup: 01-set-up-machine/06-verify.md
 
-  - "Part 2: Project Initialization":
-      - Overview: 02-set-up-project/index.md
+  - "2: Set Up Project":
+      - Overview (click here): 02-set-up-project/index.md
       - Start in GitHub: 02-set-up-project/01-start-in-github.md
       - Enable GitHub Pages: 02-set-up-project/02-enable-github-pages.md
       - Clone Repo to Local: 02-set-up-project/03-clone-repo-to-local.md
@@ -81,8 +83,8 @@ nav:
       - Git Add Commit Push: 02-set-up-project/06-git-add-commit-push.md
       - Update Project Files: 02-set-up-project/07-update-project-files.md
 
-  - "Part 3: Daily Workflow":
-      - Overview: 03-daily-workflow/index.md
+  - "3: Daily Workflow":
+      - Overview (click here): 03-daily-workflow/index.md
       - Git Pull Before Changes: 03-daily-workflow/01-git-pull-before-changes.md
       - Update and Check: 03-daily-workflow/02-update-and-check.md
       - Build and Serve Docs: 03-daily-workflow/03-build-serve-docs.md

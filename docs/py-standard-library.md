@@ -4,7 +4,7 @@ These modules are built into Python and **do not need to be installed**.
 They are available automatically in every Python environment.
 
 > Note: These modules are part of the Python Standard Library.
-> Do **not** add them to `requirements.txt` or `pyproject.toml`.
+> Do **not** add them to  `pyproject.toml` or `requirements.txt`.
 
 ---
 

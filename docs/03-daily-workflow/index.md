@@ -14,9 +14,7 @@ Follow these steps when working on a professional Python project.
 1. [Git pull](01-git-pull-before-changes.md)
 2. [Update and run checks/tests](02-update-and-check.md)
 3. [Build and serve documentation](03-build-serve-docs.md)
-4. Run Python and/or notebooks:
-   - [Run Python](04a-run-python.md)
-   - [Run Notebooks](04b-run-notebook.md)
+4. Run Python and/or notebooks. See [Run Python](04a-run-python.md) or [Run Notebooks](04b-run-notebook.md)
 5. [Git add-commit-push](05-git-add-commit-push.md)
 6. [Modify and debug](06-modify-and-debug.md)
 
