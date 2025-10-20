@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
 requires = ["setuptools>=80", "wheel"]
 
 [project]
-authors = [{name = "Denise Case"}] # TODO: Change
+authors = [{name = "Denise Case"}]
 classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.12",
@@ -17,9 +17,10 @@ dependencies = [ # fmt: off
   #"ipython",     # Enhanced Python shell (needed for notebooks)
   #"ipykernel",   # Jupyter kernel for notebooks
 ]  # fmt: on
-description = "Guide to professional Python using uv and a src layout" # TODO: Change
+description = "Guide to professional Python using uv and a src layout"
 name = "analytics-project" # PACKAGE name (matches src folder except with dashes)
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.12"
 version = "0.0.1"
 
@@ -56,17 +57,69 @@ where = ["src"]
 
 # Ruff formats, lints, and fixes code
 [tool.ruff]
+exclude = [".venv", ".ruff_cache", "build", "dist", "*.egg-info", ".eggs", "__pycache__", "tests"]
+fix = true
 line-length = 100
+preview = false
 target-version = "py312"
+unsafe-fixes = false
+
+[tool.ruff.format]
+line-ending = "lf"
+quote-style = "preserve"
+
+[tool.ruff.lint]
+extend-select = [
+  "F", # Pyflakes rules
+  "W", # PyCodeStyle warnings
+  "E", # PyCodeStyle errors
+  "I", # Sort imports properly
+  "UP", # Newer Python features
+  "C4", # Catch incorrect use of comprehensions, dict, list, etc
+  "C408", # unnecessary comprehension
+  "D", # Docstring conventions
+  "Q", # flake8-quotes
+  "S", # Security issues
+  "C90", # McCabe complexity
+  "N", # Naming conventions
+  "B", # Bugbear
+  "A", # flake8-annotations
+  "PTH", # Use pathlib instead of os.path
+  "RET", # Good return practices
+  "SIM", # flake8-simplify
+  "TID", # flake8-tidy-imports for project conventions
+  "TCH", # flake8-type-checking for type checking imports
+]
+ignore = [
+  "E501", # line length handled by formatter
+  "D203", # 1 blank line before class docstring (conflicts with D211)
+  "D213", # Multi-line docstring summary should start at the second line
+  "D413", # Missing blank line after last section
+  "S101", # assert statements (handled by bandit)
+]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+
+[tool.ruff.lint.per-file-ignores]
+"src/**/__init__.py" = ["D104"]
+"tests/**/*.py" = ["TID251", "TID252", "S101", "D"]
+"notebooks/**/*.ipynb" = ["F821"]
 
 # Optional: Pyright checks that our type hints are correct
 [tool.pyright]
-include = ["src", "tests"]
+extraPaths = ["src"]
+include = ["src"]
 pythonVersion = "3.12"
+reportMissingImports = "warning"
 reportPrivateUsage = "none"
 typeCheckingMode = "basic" # or "strict"
+useLibraryCodeForTypes = false # don't open libraries for types (some are on 3.14)
+venv = ".venv"
+venvPath = "."
 
 # Optional: Pytest runs basic tests to ensure code runs correctly
 [tool.pytest.ini_options]
 minversion = "7.0"
 testpaths = ["tests"]
+addopts = "--cov=src --cov-report=term-missing"
