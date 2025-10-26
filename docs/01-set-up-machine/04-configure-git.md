@@ -23,7 +23,8 @@ Run one command at a time and hit ENTER or RETURN after each line to execute it.
 
 ```shell
 uvx nbdime
-nbdime config-git --enable
+uvx nbdime --version
+uvx nbdime config-git --enable
 
 git config --global user.name "Your Name"
 git config --global user.email youremail@example.com
