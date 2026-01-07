@@ -20,8 +20,8 @@ Why bother with documentation:
 
 ## Why Learn GitHub Pages?
 
-Many data-science professionals build a personal portfolio site using GitHub Pages to showcase projects. 
-We can use GitHub Pages as a free way to host a data-science portfolio site or client-side web site that links to projects. 
+Many data-science professionals build a personal portfolio site using GitHub Pages to showcase projects.
+We can use GitHub Pages as a free way to host a data-science portfolio site or client-side web site that links to projects.
 
 GitHub Pages is mentioned as one of the "5 places to host your data science portfolio" along with GitHub itself.
 - <https://www.datacamp.com/blog/5-places-to-host-your-data-science-portfolio?utm_source=chatgpt.com>

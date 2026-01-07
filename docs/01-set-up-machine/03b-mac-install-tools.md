@@ -54,4 +54,3 @@ brew install uv
 Verify installs using the commands in Step 3 above.
 
 </details>
-

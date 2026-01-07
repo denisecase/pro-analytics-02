@@ -1,19 +1,19 @@
 # The src/ Folder
 
-In the src folder, create folders for project packages. 
+In the src folder, create folders for project packages.
 
 ## Folder Naming Conventions
 
-Follow Python conventions and name folders with: 
+Follow Python conventions and name folders with:
 
 - lowercase letters.
-- underscores. 
+- underscores.
 
-For example: `analytics_project`
+For example: `pro_analytics_02`
 
-It is part of the Python weirdness that, when published, folders that use UNDERSCORES are typically converted to DASHES on package indexes like PyPI. 
+It is part of the Python weirdness that, when published, folders that use UNDERSCORES are typically converted to DASHES on package indexes like PyPI.
 
-- So a src/ folder named:  `analytics_project`
+- So a src/ folder named:  `pro_analytics_02`
 - Becomes a package named: `analytics-project`
 
 ## Make it a Package

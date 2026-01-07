@@ -1,125 +1,172 @@
-[build-system]
-build-backend = "setuptools.build_meta"
-requires = ["setuptools>=80", "wheel"]
+# ============================================================
+# pyproject.toml (Python and MkDocs project configuration)
+# ============================================================
+
+# REQ.PYTHON: Python projects MUST include pyproject.toml as the single source of truth.
+# WHY: Centralizes project configuration.
 
 [project]
-authors = [{name = "Denise Case"}]
-classifiers = [
-  "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: 3.13",
-]
-dependencies = [ # fmt: off
-  "loguru",      # Better than print() - practice production logging with levels
-  #"matplotlib",  # Industry standard plotting
-  #"pandas",      # THE data manipulation tool in analytics
-  #"seaborn",     # Statistical charts built on matplotlib
-  #"ipython",     # Enhanced Python shell (needed for notebooks)
-  #"ipykernel",   # Jupyter kernel for notebooks
-]  # fmt: on
-description = "Guide to professional Python using uv and a src layout"
-name = "analytics-project" # PACKAGE name (matches src folder except with dashes)
+name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
+version="0.1.0"  # WHY: start with initial version.
 readme = "README.md"
-license = "MIT"
 requires-python = ">=3.12"
-version = "0.0.1"
+description = "Professional Python using uv and src layout" # CUSTOM: Update as needed.
 
-[project.urls]
-"Bug Tracker" = "https://github.com/denisecase/pro-analytics-02/issues"
-Documentation = "https://denisecase.github.io/pro-analytics-02/"
-Homepage = "https://github.com/denisecase/pro-analytics-02"
-Repository = "https://github.com/denisecase/pro-analytics-02"
+dependencies = [
+    # REQ.DEPS: External packages used by the project code.
+    "datafun-toolkit>=0.9.0",
+    # CUSTOM: Add notebook dependencies only if notebooks are used in the project.
+    # REQ: If you enable notebooks, keep them OS-agnostic and reproducible.
+    # "ipykernel",
+    # "ipython",
+]
 
 [project.optional-dependencies]
+# WHY: Optional dependency groups keep the core install clean and focused.
 dev = [
-  "pytest", # run some tests automatically
-  "pytest-cov", # coverage report for more visibility
+    # REQ.DEV.DEPS: External packages used for linting, testing, type checking, etc.
+    "bandit>=1.9.2",
+    "packaging>=25.0",
+    "pre-commit>=4.5.1",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "pyright>=1.1.407",
+    "ruff>=0.14.10",
+    "validate-pyproject>=0.24.1",
 ]
+
 docs = [
-  "mkdocs",                # Core MkDocs
-  "mkdocs-material",       # Modern, responsive theme
-  "mkdocstrings[python]",  # Auto-generate API docs from docstrings
-  "livereload",            # Enables live reload (auto-refresh on edit)
-  "watchdog",              # Faster and more reliable file watching
-  "ruff",                  # Needed so mkdocstrings can format signatures
-]
-notebooks = [
-  # "ipython",
-  # "ipykernel",
-  # "jupyter",
+    # REQ.DOCS.DEPS: External packages used to generate project documentation.
+    "mike>=2.1.3",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.7.1",
+    "mkdocs-static-i18n>=1.3.0",
+    "mkdocstrings[python]>=1.0.0",
 ]
 
-[tool.setuptools]
-package-dir = {"" = "src"}
+# === PYRIGHT (TYPE CHECKING HELPS FIND COMMON ERRORS BEFORE THE CODE RUNS) ===
 
-[tool.setuptools.packages.find]
-where = ["src"]
-
-# Ruff formats, lints, and fixes code
-[tool.ruff]
-exclude = [".venv", ".ruff_cache", "build", "dist", "*.egg-info", ".eggs", "__pycache__", "tests"]
-fix = true
-line-length = 100
-preview = false
-target-version = "py312"
-unsafe-fixes = false
-
-[tool.ruff.format]
-line-ending = "lf"
-quote-style = "preserve"
-
-[tool.ruff.lint]
-extend-select = [
-  "F", # Pyflakes rules
-  "W", # PyCodeStyle warnings
-  "E", # PyCodeStyle errors
-  "I", # Sort imports properly
-  "UP", # Newer Python features
-  "C4", # Catch incorrect use of comprehensions, dict, list, etc
-  "C408", # unnecessary comprehension
-  "D", # Docstring conventions
-  "Q", # flake8-quotes
-  "S", # Security issues
-  "C90", # McCabe complexity
-  "N", # Naming conventions
-  "B", # Bugbear
-  "A", # flake8-annotations
-  "PTH", # Use pathlib instead of os.path
-  "RET", # Good return practices
-  "SIM", # flake8-simplify
-  "TID", # flake8-tidy-imports for project conventions
-  "TCH", # flake8-type-checking for type checking imports
-]
-ignore = [
-  "E501", # line length handled by formatter
-  "D203", # 1 blank line before class docstring (conflicts with D211)
-  "D213", # Multi-line docstring summary should start at the second line
-  "D413", # Missing blank line after last section
-  "S101", # assert statements (handled by bandit)
-]
-
-[tool.ruff.lint.isort]
-force-sort-within-sections = true
-
-[tool.ruff.lint.per-file-ignores]
-"src/**/__init__.py" = ["D104"]
-"tests/**/*.py" = ["TID251", "TID252", "S101", "D"]
-"notebooks/**/*.ipynb" = ["F821"]
-
-# Optional: Pyright checks that our type hints are correct
 [tool.pyright]
-extraPaths = ["src"]
+# CUSTOM: Pyright configuration for static type checking.
+# This configuration is NOT enforced by CI or pre-commit.
+# It is provided for instructors and advanced users who
+# explicitly run pyright. It is optional.
+# WHY: Strict type checking helps catch bugs early.
 include = ["src"]
+extraPaths = ["src"]
+exclude = [ "**/node_modules", "**/.*", ".venv","**/__pycache__","dist","build"]
 pythonVersion = "3.12"
 reportMissingImports = "warning"
 reportPrivateUsage = "none"
-typeCheckingMode = "basic" # or "strict"
-useLibraryCodeForTypes = false # don't open libraries for types (some are on 3.14)
+typeCheckingMode = "strict" # strict | basic | off
+useLibraryCodeForTypes = false
 venv = ".venv"
 venvPath = "."
 
-# Optional: Pytest runs basic tests to ensure code runs correctly
+# === PYTEST (VERIFY LOGIC) ===
+
 [tool.pytest.ini_options]
+# WHY: Ensure tests are discoverable and coverage is visible.
 minversion = "7.0"
 testpaths = ["tests"]
-addopts = "--cov=src --cov-report=term-missing"
+addopts = " --cov=src --cov-report=term-missing"
+
+# === RUFF (PYTHON FORMATTING AND LINTING) ===
+
+[tool.ruff]
+# WHY: Ruff provides fast linting and formatting with deterministic output.
+exclude = [
+    ".eggs",
+    "*.egg-info",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+    "site",
+]
+line-length = 88 # WHY: PEP 8 standard line length, wrap when possible.
+preview = false # WHY: Stable features only; avoid preview features.
+target-version = "py312"
+unsafe-fixes = false # WHY: Avoid potentially unsafe automatic fixes.
+
+[tool.ruff.format]
+# WHY: Formatter choices should be stable to keep diffs small and predictable.
+indent-style = "space" # See also .gitattributes for indent style.
+line-ending = "auto" # Match existing files and let .gitattributes handle it.
+quote-style = "preserve" # Preserve existing quote styles to minimize churn.
+
+[tool.ruff.lint]
+# WHY: Professional baseline rules without requiring advanced refactors.
+select = [
+    "E",   # Basic syntax and structural correctness
+    "F",   # Undefined names and unused imports
+    "W",   # Warnings that catch easy issues early
+    "I",   # Deterministic import ordering
+    "UP",  # Modern Python constructs
+    "B",   # Common bug patterns
+    "PTH", # Prefer pathlib patterns
+]
+ignore = [
+  "E501", # Final line length handled by formatter
+]
+
+[tool.ruff.lint.isort]
+# WHY: Ordering imports helps keep code diffs (differences) readable.
+force-sort-within-sections = true
+
+# === PER-FILE IGNORES (DEPENDS ON DOCSTRING POLICY) ===
+
+[tool.ruff.lint.per-file-ignores]
+# WHY: Some files MUST NOT undergo linting or automated fixes.
+
+# POLICY: Docstring rules are NOT enabled (no "D" in [tool.ruff.lint].select).
+"src/**/__init__.py" = ["F401"]     # Allow re-export patterns
+"src/**/_version.py" = ["ALL"]      # Auto-generated file (do not lint)
+"notebooks/**/*.ipynb" = ["F821"]   # Notebooks may have runtime-defined names
+
+# OPTIONAL: If docstring rules are enabled later (add "D" to select),
+# replace the block above with the following:
+#
+# [tool.ruff.lint.per-file-ignores]
+# "src/**/__init__.py" = ["D104", "F401"]    # Allow omission + re-export patterns
+# "src/**/_version.py" = ["ALL"]             # Auto-generated file (do not lint)
+# "tests/**/*.py" = ["D"]                    # Tests have different docstring norms
+# "notebooks/**/*.ipynb" = ["F821"]          # Notebooks may have runtime-defined names
+
+# === CHOOSE PROJECT DOC STYLE ===
+
+[tool.ruff.lint.pydocstyle]
+# WHY: Choose one docstring convention project-wide to avoid mixed styles and churn.
+# REQ: Google style is the default policy for this repository.
+convention = "google" # ALT: "numpy" (choose one convention project-wide)
+
+# === BUILD SYSTEM ===
+
+# This repository includes scripts that are not standalone: they import shared
+# modules from a package under `src/`. To make imports reliable across IDEs,
+# tests, and CI, the code must be importable as a real package.
+
+# We use a `src/` layout and configure setuptools package discovery so imports work
+# because the package is installed (often in editable mode during development).
+
+# Why:
+# - Scripts can import shared code via normal package imports (no path hacks).
+# - Prevents accidental imports from the repository root, a common pitfall.
+# - Makes type checking, testing, and CI behavior consistent.
+
+# Tradeoff:
+# - Introduces light packaging configuration (build backend and package discovery).
+#   This is intentional and required when the project contains shared modules,
+#   rather than simply a set of completely standalone scripts.
+
+[build-system]
+# WHY: Define the build backend and minimum build requirements.
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=80.9.0"]
+
+[tool.setuptools]
+package-dir = { "" = "src" } # WHY: src-layout keeps code separate from config and docs.
+
+[tool.setuptools.packages.find]
+where = ["src"] # WHY: Explicitly define package discovery location.

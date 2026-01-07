@@ -39,10 +39,10 @@ Replace `demo_module_basics` with your actual script name.
 Run from the **project root directory** (same level as `pyproject.toml`).
 
 ```shell
-uv run python -m analytics_project.demo_module_basics
+uv run python -m pro_analytics_02.demo_module_basics
 ```
 
-This helps local imports get picked up correctly. 
+This helps local imports get picked up correctly.
 
 
 ### Alternatively, Run as a Script
@@ -52,12 +52,12 @@ Run from the **project root directory** (same level as `pyproject.toml`).
 
 
 ```shell
-uv run python src/analytics_project/demo_module_basics.py
+uv run python src/pro_analytics_02/demo_module_basics.py
 ```
 
 **IMPORTANT**
-- Running as a script will fail if your file imports other local modules. 
-- If you are not using the `src` organization, and you don't have any local imports, then this will work to run your script. 
+- Running as a script will fail if your file imports other local modules.
+- If you are not using the `src` organization, and you don't have any local imports, then this will work to run your script.
 
 ## Task 4. Update Project README.md
 
@@ -65,7 +65,7 @@ Record your process and your project commands in your project README.md.
 
 ## Note on Underscores
 
-Python import rules do not allow dashes. Use underscores in folder and file names. 
+Python import rules do not allow dashes. Use underscores in folder and file names.
 
 - Underscores used on the Python side (imports, modules, folders).
 - Dashes used on the packaging side (PyPI, metadata).

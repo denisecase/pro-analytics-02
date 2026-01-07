@@ -19,7 +19,7 @@ Replace the commit message with a clear and descriptive note about what you adde
 Wrap the commit message in double quotes.
 
 ```shell
-git add .
+git add -A
 git commit -m "Initial commit"
 git push -u origin main
 ```
@@ -29,5 +29,3 @@ After subsequent changes, you may be able to use a simpler version of the last c
 ```shell
 git push
 ```
-
-

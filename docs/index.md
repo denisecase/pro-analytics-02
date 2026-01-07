@@ -8,7 +8,7 @@ The instructions are divided into three parts.
 
 - Go to [🟢 Set Up Machine](01-set-up-machine/index.md) to **set up a machine** for Python projects.
 
-- Go to [🟠 Project Initialization](02-set-up-project/index.md) to **set up a new Python project**.
+- Go to [🟠 Set Up Project](02-set-up-project/index.md) to **set up a new Python project**.
 
 - Go to [🔵 Daily Workflow](03-daily-workflow/index.md) for ongoing project development.
 

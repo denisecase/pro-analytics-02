@@ -4,7 +4,7 @@ Each project has its own folder. We need a place to keep all these shared folder
 
 This page talks about creating a folder to hold ALL our project folders.
 
-We don't want to make this container folder in a place that is automatically synced becuase each Python project folder can get very large. Automatic syncing is NOT wanted.
+We don't want to make this container folder in a place that is automatically synced because each Python project folder can get very large. Automatic syncing is NOT wanted.
 
 ## Windows Users
 For Windows machines with OneDrive enabled, the `Documents` folder is NOT ideal for our GitHub projects.
@@ -24,6 +24,15 @@ Important
 - Verify the folder is directly in C:\ (`C:\Repos`), not inside another folder such as Documents or Desktop.
 - Optional: Ensure the new directory is NOT being backed up by OneDrive or other sync services. Check OneDrive settings.
 
+### Verify on Windows
+
+Your terminal should be your machine's PowerShell terminal, not the older Command Window and open in the Repos folder.
+
+From in the Repos folder, should be able to see `C:\Repos>` in the terminal prompt.
+
+---
+
+
 ## Mac/Linux Users
 Keep your projects outside any cloud-sync folders like iCloud's Desktop or Documents.
 This ensures smoother performance and avoids syncing unnecessary temporary files from your GitHub Python projects.
@@ -42,3 +51,8 @@ Important
 - Verify the folder is directly in your Home folder (~/Repos), not inside another folder like Documents or Desktop.
 - Optional: Ensure this folder is NOT being backed up by iCloud if you have iCloud syncing enabled for your Desktop or Documents. To check: Go to System Settings > Apple ID > iCloud > iCloud Drive > Options and ensure "Desktop & Documents Folders" is unchecked.
 
+### Verify on Mac/Linux
+
+Your terminal should be your machine's native shell (usually `zsh` or `bash`) and open in the Repos folder.
+
+From in the Repos directory, you should be able to see `~/Repos $` or `Repos %` in the terminal prompt.

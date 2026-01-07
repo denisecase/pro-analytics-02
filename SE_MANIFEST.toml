@@ -1,0 +1,81 @@
+# ============================================================
+# SE_MANIFEST.toml (Repository Intent, Scope, and Role)
+# ============================================================
+
+schema = "se-manifest-1"
+schema_url = "https://github.com/structural-explainability/spec-se/blob/main/manifests/se-manifest-1.md"
+
+[meta]
+# Non-normative contextual information
+framework = "Structural Explainability"
+framework_url = "https://github.com/structural-explainability"
+framework_note = "Provides definitions and conventions for SE_MANIFEST semantics."
+description = "Declarative claim of repository intent, scope, and role."
+purpose = "To make explicit the boundaries, responsibilities, and expectations of this repository relative to others."
+
+[repo]
+name = "pro-analytics-02"
+org = "denisecase"
+kind = "software"
+status = "academic"
+since = "2026"
+summary = "Professional Python Project for Data Analytics."
+
+[layer]
+space = "Data Analytics"
+role = "post-secondary-education"
+
+[depends]
+required = [
+  "python>=3.12",
+  "git",
+  "uv"
+]
+optional = [
+  "mkdocs",
+  "ruff",
+  "pyright",
+  "pytest"
+]
+
+[provides]
+artifacts = [
+    "ANNOTATIONS.md",
+    "CITATION.cff",
+    "INSTRUCTORS.md",
+    "LICENSE",
+    "README.md",
+    "SE_MANIFEST.toml",
+]
+
+[scope]
+includes = [
+  "machine setup for professional Python development",
+  "project initialization via git clone",
+  "environment and dependency synchronization using uv",
+  "src-layout project structure",
+  "dependency management via pyproject.toml",
+  "use of the standard Python main() execution pattern",
+  "logging and diagnostics using external packages",
+  "quality gates using linters and type checkers",
+  "automated testing workflows",
+  "documentation workflows",
+  "continuous integration via GitHub Actions",
+  "daily professional development workflow (edit, run, check, commit)"
+]
+excludes = [
+  "introductory Python language instruction",
+  "basic Git tutorials",
+  "machine learning or statistical modeling",
+  "domain-specific analytics techniques",
+  "production deployment systems",
+  "cloud infrastructure or orchestration"
+]
+
+[citation]
+cff = "CITATION.cff"
+preferred = "repo"
+bib_hint = "case2026-pro-analytics-02"
+
+[traceability]
+identifier_map = "none"

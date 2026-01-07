@@ -1,69 +1,119 @@
-# mkdocs.yml
-# Configuration file for MkDocs
+# ============================================================
+# mkdocs.yaml (MkDocs configuration file)
+# ============================================================
 
-site_name: Pro Analytics 02
+# REQ.PROJECT: MkDocs configuration file (mkdocs.yaml)
+#      to automatically build an associated website
+#      for professional project documentation and communication.
+#      Requires:
+#         1. this file in the root of your project repository
+#         2. docs/ folder with markdown files (.md) for content
+#         3. GitHub Actions workflow to build and deploy site (in .github/workflows/)
+#
+# WHY-FILE: This data file provides the site structure and settings
+
+site_name: "Project Documentation"
+
+#TODO: Change to your GitHub Pages URL.
 site_url: https://denisecase.github.io/pro-analytics-02/
+
+#TODO: Change to your GitHub repository URL.
 repo_url: https://github.com/denisecase/pro-analytics-02
-site_description: Guide to Professional Python projects using industry best practices
-site_author: Denise Case
+
+# TODO: Update to your GitHub repo name.
+repo_name: denisecase/pro-analytics-02
+
+# TODO: Update site description.
+site_description: Opinionated guide to professional Python projects
+
 docs_dir: docs
 site_dir: site
 
+edit_uri: edit/main/docs/ # WHY: "Edit this page" links (stable on GitHub)
+
+extra:
+  # WHY: Social links are optional polish; safe to remove without breaking docs.
+  social:
+    - icon: fontawesome/brands/github
+      # TODO: Update to your GitHub repo link.
+      link: https://github.com/denisecase/pro-analytics-02
+
+# WHY: Material theme is industry standard, well-documented, and low maintenance.
+# CUSTOM: Explore other themes at https://mkdocs.org/about/themes/
 theme:
   name: material
+  language: en
+  # WHY: Material theme gives excellent UX (search, nav, code blocks) with low maintenance overhead.
   features:
-    - navigation.expand # Expand navigation by default
-    - navigation.sections # Group navigation items
-    - navigation.top # Back-to-top button
-    - navigation.tracking # Track active section
-    - navigation.paths # Breadcrumbs
-    - search.suggest # Search suggestions as you type
-    - search.highlight # Highlight search terms
-    - content.code.copy # Copy button on code blocks
-    - toc.follow # Highlight current section in TOC
+    - navigation.sections # WHY: Groups nav items into sections
+    - navigation.top # WHY: Back-to-top button
+    - navigation.tracking # WHY: Highlights current section while scrolling
+    - navigation.path # WHY: Breadcrumbs (less brittle than deep nav memory)
+    - toc.follow # WHY: Keeps TOC in sync with scroll position
+    - search.suggest # WHY: Suggest results while typing
+    - search.highlight # WHY: Highlight matched terms in results/pages
+    - content.code.copy # WHY: Copy button on code blocks
+    - content.action.edit # WHY: Edit page link in header (uses edit_uri)
+    - content.action.view # WHY: View source link in header (uses repo_url)
+    - header.autohide # WHY: Maximizes reading space while scrolling (cool, not fragile)
 
   palette:
-    - scheme: default # Light/dark mode toggle
-      primary: indigo
-      accent: indigo
+    - scheme: default
+      primary: teal # CUSTOM: Choose primary color
+      accent: blue-grey # CUSTOM: Choose accent color
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: teal # CUSTOM: Choose primary color
+      accent: blue-grey # CUSTOM: Choose accent color
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
 
+  icon:
+    repo: fontawesome/brands/github # WHY: Familiar GitHub icon in header
+
 plugins:
-  - search
+  - search:
+      # WHY: Good defaults; avoids brittle tuning.
+      lang: en
   - mkdocstrings:
+      # WHY: API docs from docstrings; keep options conservative to avoid brittle rendering.
       handlers:
         python:
+          paths:
+            - src/python/src # REQ: Point to source code for API docs
           options:
-            show_source: true
-            show_root_heading: true # Include module names
-            show_root_toc_entry: true # Include module in TOC
-            docstring_style: google # Professional docstring format
+            docstring_style: google # REQ: Matches ruff pydocstyle convention
+            show_source: true # WHY: Helps debugging and learning
+            show_root_heading: true # WHY: Clear module headings
+            show_root_toc_entry: true # WHY: Module appears in TOC
             show_signature_annotations: true
-            separate_signature: true    # Makes function signatures easier to read
+            separate_signature: true # WHY: Improves readability of long signatures
 
 markdown_extensions:
-  - admonition # Note/Warning/Tip boxes
-  - codehilite # Syntax highlighting
-  - tables # Markdown tables
+  - admonition # WHY: Note/Warning/Tip blocks
+  - tables # WHY: Stable, readable reference formatting
   - toc:
-      permalink: true # Clickable headers
+      permalink: true # WHY: Linkable headings
       toc_depth: 3
-  - pymdownx.superfences # Code blocks with syntax highlighting
-  - pymdownx.details # Collapsible sections
+  - pymdownx.superfences # WHY: Better fenced code blocks
+  - pymdownx.details # WHY: Collapsible sections
+  - pymdownx.inlinehilite # WHY: Inline code highlighting
+  - pymdownx.snippets # WHY: Safe content reuse; can be ignored if unused
+  - pymdownx.tabbed:
+      alternate_style: true # WHY: Nice UX for OS-specific instructions (cool, low risk)
+
+# ============================================================
+# DEFINE THE SITE NAVIGATION STRUCTURE (using files in docs/)
+# ============================================================
 
 nav:
   - Home: index.md
 
   - "1: Set Up Machine":
-      - Overview (click here): 01-set-up-machine/index.md
+      - Overview: 01-set-up-machine/index.md
       - Create GitHub Account: 01-set-up-machine/01-create-github-account.md
       - View Hidden Files and Extensions: 01-set-up-machine/02-view-hidden-files-and-extensions.md
       - Linux Install Tools: 01-set-up-machine/03a-linux-install-tools.md
@@ -74,7 +124,7 @@ nav:
       - Verify Setup: 01-set-up-machine/06-verify.md
 
   - "2: Set Up Project":
-      - Overview (click here): 02-set-up-project/index.md
+      - Overview: 02-set-up-project/index.md
       - Start in GitHub: 02-set-up-project/01-start-in-github.md
       - Enable GitHub Pages: 02-set-up-project/02-enable-github-pages.md
       - Clone Repo to Local: 02-set-up-project/03-clone-repo-to-local.md
@@ -84,14 +134,13 @@ nav:
       - Update Project Files: 02-set-up-project/07-update-project-files.md
 
   - "3: Daily Workflow":
-      - Overview (click here): 03-daily-workflow/index.md
+      - Overview: 03-daily-workflow/index.md
       - Git Pull Before Changes: 03-daily-workflow/01-git-pull-before-changes.md
-      - Update and Check: 03-daily-workflow/02-update-and-check.md
+      - Update and Check: 03-daily-workflow/02-run-and-check.md
+      - Run Python Script: 03-daily-workflow/02a-run-python.md
+      - Run Jupyter Notebook: 03-daily-workflow/02b-run-notebook.md
       - Build and Serve Docs: 03-daily-workflow/03-build-serve-docs.md
-      - Run Python Script: 03-daily-workflow/04a-run-python.md
-      - Run Jupyter Notebook: 03-daily-workflow/04b-run-notebook.md
-      - Git Add Commit Push: 03-daily-workflow/05-git-add-commit-push.md
-      - Modify and Debug: 03-daily-workflow/06-modify-and-debug.md
+      - Git Add Commit Push: 03-daily-workflow/04-git-add-commit-push.md
 
   - Concepts:
       - Problem Types: problem-types.md
@@ -101,11 +150,6 @@ nav:
 
   - Help:
       - Taking Screenshots: 04-help/01-taking-screenshots.md
-
-  - Roadmap:
-      - Languages: 05-roadmap/ROADMAP_LANGUAGES.md
-      - Techniques: 05-roadmap/ROADMAP_TECHNIQUES.md
-      - Tools: 05-roadmap/ROADMAP_TOOLS.md
 
   - Reference:
       - API: api.md

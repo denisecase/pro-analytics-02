@@ -1,15 +1,73 @@
-cff-version: 1.2.0
-title: Pro Analytics 02 - Professional Python for Data Analysis
-message: If you use this repository, please cite it as below.
+# ============================================================
+# CITATION.cff (How to cite this project)
+# ============================================================
+
+# REQ.UNIVERSAL: Professional open projects SHOULD include CITATION.cff.
+# WHY: Support correct citation and attribution.
+# ALT: Internal or private repositories may omit citation metadata.
+# CUSTOM: Update author, repository, license, and keyword fields as needed.
+# USAGE: See https://citation-file-format.github.io/ for details.
+
+cff-version: "1.2.0"
 type: software
+
+title: Pro Analytics 02 - Professional Python Project
+version: "0.1.0"
+date-released: "2026-01"
+
 authors:
-  - name: Denise Case
-repository-code: https://github.com/denisecase/pro-analytics-02
+  - family-names: Case
+    given-names: Denise M.
+    orcid: "https://orcid.org/0000-0001-6165-7389"
+    affiliation: "Northwest Missouri State University, USA"
+
+
+repository-code: "https://github.com/denisecase/pro-analytics-02"
+url: "https://github.com/denisecase/pro-analytics-02"
 license: MIT
+
 keywords:
-  - analytics
-  - data-analysis
-  - data-engineering
-  - data-science
-  - professional-python
+  # identity
+  - data analytics
   - python
+  - python-toolkit
+  - developer-tools
+  - logging
+
+  # audience
+  - education
+  - teaching
+  - learning
+  - students
+  - instructors
+  - computer-science-education
+  - data-analytics-education
+
+  # practices
+  - professional-python
+  - src-layout
+  - ci-cd
+  - github-actions
+  - reproducible-research
+  - software-quality
+  - professional-practice
+
+  # tooling signals
+  - open-source
+  - uv
+  - ruff
+  - mkdocs
+  - git
+
+  # workflows
+  - environment-setup
+  - project-initialization
+  - development-workflow
+
+abstract: |
+  Professional Python Project repository.
+  Includes recommended practices for project structure, dependency management, quality gates, and documentation.
+  Emphasizes modern uv-based workflows for environment setup, project initialization, and daily development.
+  Serves as a professional template for data analytics and data science projects.
+
+message: "If using this project, please cite it as described in this file."

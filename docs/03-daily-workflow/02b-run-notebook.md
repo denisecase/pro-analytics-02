@@ -79,4 +79,3 @@ Keep your notebooks organized and execute them fully before running git add-comm
 - Use exactly one top-level title.
 - Use numbered second-level headings to organize your work.
 - Document your process and steps in the notebook and tell a story with data.
-

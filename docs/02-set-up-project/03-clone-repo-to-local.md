@@ -24,4 +24,3 @@ The command works in PowerShell, bash, zsh, Git Bash, and more.
 ```shell
 git clone https://github.com/youraccount/yourrepo
 ```
-

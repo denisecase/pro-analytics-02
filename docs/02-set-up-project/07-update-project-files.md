@@ -1,6 +1,6 @@
 # 🟠 Personalize Common Project Files
 
-Personalize core files common in professional analytics projects. 
+Personalize core files common in professional analytics projects.
 Especially:
 
 - `pyproject.toml` — defines project metadata, dependencies, and build settings
@@ -93,7 +93,7 @@ Your starter repository includes additional files for code quality, automation, 
 ## Task 5. Git add-commit-push to GitHub
 
 ```shell
-git add .
+git add -A
 git commit -m "Update project files"
 git push -u origin main
 ```

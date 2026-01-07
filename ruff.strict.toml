@@ -1,0 +1,66 @@
+# ============================================================
+# ruff.strict.toml (Stricter Ruff linter configuration)
+# ============================================================
+#
+# This file is OPTIONAL and stricter than pyproject.toml.
+# It extends pyproject.toml [tool.ruff] configuration with additional rules.
+#
+# USES:
+#   - maintainers before publishing template updates
+#   - those who want a higher bar
+#
+# NOTES:
+# - CI should enforce pyproject.toml rules only.
+# - This strict config adds docstring checks and security checks,
+#   plus additional refactor-oriented lint categories.
+#
+# ** RECOMMENDED: RUN from the repo root (with or without fixes):
+#   uv run ruff check --config ruff.strict.toml .
+#   uv run ruff check --config ruff.strict.toml --fix .
+#
+# ** ALSO RECOMMENDED for maintainers, run:
+#   uv run pyright
+#   uv run bandit -c pyproject.toml -r src
+#   uv run validate-pyproject pyproject.toml
+#
+# ** ALSO RECOMMENDED: See .pre-commit-config.yaml for pre-commit setup.
+
+[format]
+# WHY: Enforce consistent quote style to minimize diffs.
+quote-style = "double"
+
+[lint]
+# Baseline + stricter categories:
+select = [
+    "E",  # Basic syntax and structural correctness
+    "F",  # Undefined names and unused imports
+    "W",  # Warnings that catch easy issues early
+    "I",  # Deterministic import ordering
+    "UP", # Modern Python constructs
+    "B",  # Common bug patterns
+
+    "PTH", # Prefer pathlib patterns
+    "C4",  # Comprehension correctness and clarity
+    "SIM", # Simplify obvious complexity
+    "RET", # Return practices
+
+    "D", # Docstring standards (see convention below)
+    "S", # Security checks (with deliberate exceptions)
+]
+ignore = [
+    "E501", # line length handled by formatter
+    "D203", # conflicts with D211
+    "D213", # conflicts with D212 (Google standard summary placement)
+    "S101", # allow assert (tests + internal invariants)
+]
+
+[lint.per-file-ignores]
+# WHY: Some files MUST NOT undergo linting or automated fixes.
+"**/__init__.py" = ["D104", "F401"]
+"tests/**/*.py" = ["D", "B018", "B011","S101"]
+"src/**/py.typed" = ["ALL"]
+"**/*.log" = ["ALL"]
+
+[lint.pydocstyle]
+# Choose docstring convention to avoid churn.
+convention = "google"

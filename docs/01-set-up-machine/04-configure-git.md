@@ -28,9 +28,14 @@ Run one command at a time and hit ENTER or RETURN after each line to execute it.
 ```shell
 git config --global user.name "Your Name"
 git config --global user.email youremail@example.com
-git config --list
 ```
+
+## Verify
 
 Verify that the last command correctly shows your user.name and user.email.
 If not, repeat the installation and configuration until successful.
 
+```shell
+git config --global user.name
+git config --global user.email
+```

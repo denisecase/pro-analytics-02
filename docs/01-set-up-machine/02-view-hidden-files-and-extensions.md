@@ -43,4 +43,3 @@ On Windows:
 3. In the **Show/Hide** group, check:
     - File name extensions.
     - Hidden items.
-

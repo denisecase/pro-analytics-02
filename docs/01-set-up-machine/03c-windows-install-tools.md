@@ -10,10 +10,11 @@ Download and install:
 - **VS Code** (Visual Studio Code): https://code.visualstudio.com/
 - **uv** (high-performance Python environment and package manager):
   ```powershell
-  powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+  winget install --id Astral.uv -e
   ```
 
-> Note: We **do not install Python at this step**. Python will be installed per-project in Workflow 2 using `uv`, which also manages versions.
+> Note: We **do not install Python at this step**.
+Python will be installed per-project in Workflow 2 using `uv`, which also manages versions.
 
 ## 2. Restart Computer After Installation
 
@@ -29,7 +30,8 @@ code --version
 uv --version
 ```
 
-Each command should display a version. If any fail, revisit the installers and try again.
+Each command should display a version.
+If any fail, revisit the installers and try again.
 
 ---
 

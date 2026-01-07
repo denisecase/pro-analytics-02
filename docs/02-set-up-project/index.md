@@ -3,7 +3,7 @@
 This section provides step-by-step instructions to initialize a new Python project.
 These tasks include starting a project from scratch or using an existing template, setting up the project files, and creating a project virtual environment for development.
 
-**IMPORTANT**: Complete all of Workflow 1 first. 
+**IMPORTANT**: Complete all of Workflow 1 first.
 
 ---
 

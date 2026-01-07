@@ -3,7 +3,7 @@
 This section provides step-by-step instructions for working on an existing Python project.
 These steps are repeatable and should be followed whenever you make changes, update dependencies, or work on project features.
 
-**IMPORTANT**: Complete all of Workflow 1 and Workflow 2, before continuing.
+**IMPORTANT**: Complete all of Workflow 1 and Workflow 2 before continuing.
 
 ---
 
@@ -12,11 +12,10 @@ These steps are repeatable and should be followed whenever you make changes, upd
 Follow these steps when working on a professional Python project.
 
 1. [Git pull](01-git-pull-before-changes.md)
-2. [Update and run checks/tests](02-update-and-check.md)
+2. [Run and check](02-run-and-check.md)
 3. [Build and serve documentation](03-build-serve-docs.md)
-4. Run Python and/or notebooks. See [Run Python](04a-run-python.md) or [Run Notebooks](04b-run-notebook.md)
-5. [Git add-commit-push](05-git-add-commit-push.md)
-6. [Modify and debug](06-modify-and-debug.md)
+4. [Git add-commit-push](05-git-add-commit-push.md)
+
 
 ## Important
 

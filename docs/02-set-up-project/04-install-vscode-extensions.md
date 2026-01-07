@@ -63,7 +63,7 @@ Search for and install the following extensions in the Extensions panel.
 7. SQLite Tools
     - SQLite Viewer (by Florian Klampfer)
     - SQLite (by alexcvzz)
-  
+
 ### Extensions intentionally not used
 
 These tools are not needed because Ruff handles formatting and linting:

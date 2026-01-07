@@ -15,7 +15,7 @@ Open your project repository in VS Code.
 
 Open a new terminal in VS Code and run a single command.
 
-## Task 1. Pull Changes
+## Git Pull
 
 Even if you are the only one working on a project, running `git pull` ensures your local work stays synchronized with GitHub and allows us to make minor changes to our README.md or other files directly in the web interface.
 It's a good practice that pays off.

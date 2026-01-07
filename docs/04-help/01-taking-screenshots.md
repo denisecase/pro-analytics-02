@@ -12,4 +12,3 @@ On a Mac, use hot keys (several options):
 ## Screenshots on Windows
 
 On Windows, use Snipping Tool or other similar app to select a rectangle, copy to clipboard, and paste into your submission.
-

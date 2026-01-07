@@ -7,7 +7,7 @@ Use a terminal in VS Code (PowerShell, zsh, or bash).
 - Wrap the commit message in double quotes.
 
 ```shell
-git add .
+git add -A
 git commit -m "Your message here"
 git push -u origin main
 ```

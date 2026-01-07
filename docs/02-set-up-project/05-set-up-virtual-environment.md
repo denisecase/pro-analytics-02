@@ -13,40 +13,37 @@ If something breaks, you can safely delete the `.venv` folder and recreate it at
    - Linux / WSL: bash
 3. Confirm your terminal is located in the **project root directory** (for example, `pro-analytics-02`).
 
-## Set Up the Virtual Environment (.venv)
+## Set Up the Virtual Environment
 
 Run these commands in your VS Code terminal:
 
 ```bash
-# 1. Create an isolated virtual environment
-uv venv
-
-# 2. Pin a specific Python version (3.12 recommended)
+uv self update
 uv python pin 3.12
-
-# 3. Install all dependencies, including optional dev/docs tools
 uv sync --extra dev --extra docs --upgrade
-
-# 4. Enable pre-commit checks so they run automatically on each commit
-uv run pre-commit install
-
-# 5. Verify the Python version (should show 3.12.x)
-uv run python --version
 ```
 
-Next, activate the virtual environment. You will typically do this each time you open a new terminal (although with `uv`, VS Code often remembers automatically).
+This will:
 
-**Windows (PowerShell):**
+1. Update `uv`
+2. Pin the Python version for this repo (and install that version if needed)
+3. Install project dependencies listed in `pyproject.toml`.
 
-```bash
-.\.venv\Scripts\activate
-```
+### Step 2.4b: Align VS Code with The Environment (.venv)
 
-**macOS / Linux / WSL:**
+<mark> **IMPORTANT**:  DO NOT SKIP THIS (or any) STEP</mark>
 
-```bash
-source .venv/bin/activate
-```
+1. In VS Code, select the project Python interpreter
+
+- Open the Command Palette (View / Command Palette) or hit Ctrl + Shift + p.
+- Type and choose: `Python: Select Interpreter`
+- Important: Choose the interpreter inside **this project's `.venv` folder**
+
+2. Restart the Python language server
+
+- Open the Command Palette (View / Command Palette) or hit Ctrl + Shift + p.
+- Type or choose: `Developer: Reload Window`
+
 
 ## Why We Let `uv` Handle Python Installation
 
