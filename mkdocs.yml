@@ -148,6 +148,12 @@ nav:
       - Python Packages (Core): py-packages-core.md
       - Python Packages (Extended): py-packages.md
 
+  - Python:
+      - Project Structure: 06-python/project-structure.md
+      - File Structure: 06-python/python-file-structure.md
+      - Standard Library: 06-python/standard-library.md
+      - Writing README: 06-python/writing-readme.md
+
   - Help:
       - Taking Screenshots: 04-help/01-taking-screenshots.md
 

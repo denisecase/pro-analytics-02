@@ -16,10 +16,6 @@ Markdown skills are critical for project README files,
 Jupyter Notebooks (code, charts, and narrative together),
 and writing technical papers with Sphinx.
 
-## Adding Links
-
-
-
 ## Adding Visuals
 
 Know how to display an image in Markdown.

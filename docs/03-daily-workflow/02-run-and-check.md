@@ -23,8 +23,8 @@ and re-run `uv sync ...`.
 We may need to periodically clean the cache (files stored locally).
 
 ```shell
-uv sync --extra dev --extra docs --upgrade
 uv cache clean
+uv sync --extra dev --extra docs --upgrade
 ```
 
 Modify and Debug:
