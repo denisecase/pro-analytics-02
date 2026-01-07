@@ -19,7 +19,7 @@
 #
 #   uv self update
 #   uvx pre-commit install
-#   uvx pre-commit run --all-files
+#   uvx pre-commit run --all-files -v
 #
 # This enables the pre-commit hooks for this project repo.
 # ALL subsequent commits in this repo will AUTOMATICALLY run these
@@ -80,7 +80,7 @@ repos:
       - id: check-json
         name: B1) Validate JSON syntax (except .vscode folder)
         # WHY: VSCode settings may include comments, which are non-standard JSON.
-        exclude: ^\.vscode/
+        exclude: ^\.vscode/.*\.json$
 
       - id: check-toml
         name: B2) Validate TOML syntax
@@ -91,9 +91,7 @@ repos:
         # WHY:
         #    VS Code config files are editor-specific
         #    mkdocs.yml may use YAML anchors not supported by the checker
-        exclude: |
-          ^\.vscode/
-          ^mkdocs\.ya?ml$
+        exclude: ^(\.vscode/|mkdocs\.ya?ml$)
 
       # === PRE-COMMIT:CHECK FOR COMMON PROBLEMS ===
 
