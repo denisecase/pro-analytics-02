@@ -21,7 +21,6 @@ Run these commands in your VS Code terminal:
 uv self update
 uv python pin 3.12
 uv sync --extra dev --extra docs --upgrade
-py -0p
 ```
 
 This will:
