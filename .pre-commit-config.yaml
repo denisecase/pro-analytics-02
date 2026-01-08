@@ -78,7 +78,7 @@ repos:
       #  === PRE-COMMIT: CHECK DATA FILE FORMATS ===
 
       - id: check-json
-        name: B1) Validate JSON syntax (except .vscode folder)
+        name: B1) Validate JSON syntax (except .vscode/)
         # WHY: VSCode settings may include comments, which are non-standard JSON.
         exclude: ^\.vscode/.*\.json$
 
