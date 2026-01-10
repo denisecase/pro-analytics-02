@@ -9,11 +9,13 @@ These tasks are typically performed once when setting up a new machine or upgrad
 
 1. [Create GitHub Account](01-create-github-account.md)
 2. [View File Extensions and Hidden Files and Folders](02-view-hidden-files-and-extensions.md)
-3. Install Tools by operating system. [Linux/WSL](03a-linux-install-tools.md) or
- [macOS](03b-mac-install-tools.md) or [Windows](03c-windows-install-tools.md)
-1. [Configure Git with name and email](04-configure-git.md)
-2. [Create `Repos/` Folder (to store all GitHub projects)](05-create-repos-folder.md)
-3. [Verify](06-verify.md)
+3. Install Tools by operating system.
+   1. [Linux/WSL](03a-linux-install-tools.md) or
+   2. [macOS](03b-mac-install-tools.md) or
+   3. [Windows](03c-windows-install-tools.md)
+4. [Configure Git with name and email](04-configure-git.md)
+5. [Create `Repos/` Folder (to store all GitHub projects)](05-create-repos-folder.md)
+6. [Verify](06-verify.md)
 
 ---
 

@@ -1,5 +1,9 @@
 # 🟠 Enable GitHub Pages (for Documentation)
 
+> How to Enable project documentation
+
+## Enable GitHub Pages
+
 Before leaving GitHub, turn on **GitHub Pages** so this project can publish its documentation site (built from `docs/` using MkDocs). This gives you a professional, shareable site for your project instructions, setup steps, and technical notes.
 
 1. In your new repository, click the **Settings** tab (top right).
@@ -9,16 +13,17 @@ Before leaving GitHub, turn on **GitHub Pages** so this project can publish its 
 
 Once enabled, GitHub will automatically build and publish your MkDocs documentation whenever you push changes to your repository.
 
-## Analytics Project Documentation
 
-Why bother with documentation:
+---
+
+## Analytics Project Documentation
 
 - Analytics work requires **clear communication**, not just code
 - MkDocs and GitHub Pages provide a **clean, professional documentation site**
 - Anyone can read the project docs in a browser
 - It provides a separate **documentation site** from your **code and report**, just like real-world projects
 
-## Why Learn GitHub Pages?
+## Why GitHub Pages?
 
 Many data-science professionals build a personal portfolio site using GitHub Pages to showcase projects.
 We can use GitHub Pages as a free way to host a data-science portfolio site or client-side web site that links to projects.

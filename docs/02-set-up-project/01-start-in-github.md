@@ -5,7 +5,7 @@ There are two common options, either:
 1. Copy a Repository OR
 2. Create a New Repository in GitHub (with README.md)
 
-## EITHER: Copy a Repository
+## EITHER: A. Copy a Repository
 
 1. Log in to GitHub.
 2. In your browser, navigate to the GitHub page of the repository you want to copy.
@@ -18,7 +18,7 @@ There are two common options, either:
 5. Make it public.
 6. Complete the process as needed to create repository from template or confirm the fork.
 
-## OR:  Create a New Repository in GitHub (with README.md)
+## OR:  B. Create a New Repository in GitHub (with README.md)
 
 1. Log in to GitHub. Open your browser and log in to your GitHub account.
 
@@ -50,7 +50,5 @@ There are two common options, either:
 
 - If you forget to add a README file, delete the repository and start over. This time, check the box to add a default README.
 - The subsequent steps will NOT work the same if the new repository does not have a file in the repo already.
-
-## Finding the Option to Create New Repository
 
 ![GitHub: Create New Repo](images/GitHub-Plus-New-Repo.png)

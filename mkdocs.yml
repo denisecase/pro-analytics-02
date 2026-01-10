@@ -130,8 +130,6 @@ nav:
       - Clone Repo to Local: 02-set-up-project/03-clone-repo-to-local.md
       - Install VS Code Extensions: 02-set-up-project/04-install-vscode-extensions.md
       - Set Up Environment: 02-set-up-project/05-set-up-virtual-environment.md
-      - Git Add Commit Push: 02-set-up-project/06-git-add-commit-push.md
-      - Update Project Files: 02-set-up-project/07-update-project-files.md
 
   - "3: Daily Workflow":
       - Overview: 03-daily-workflow/index.md
@@ -141,6 +139,7 @@ nav:
       - Run Jupyter Notebook: 03-daily-workflow/02b-run-notebook.md
       - Build and Serve Docs: 03-daily-workflow/03-build-serve-docs.md
       - Git Add Commit Push: 03-daily-workflow/04-git-add-commit-push.md
+      - Update Project Files: 03-daily-workflow/05-update-project-files.md
 
   - Concepts:
       - Problem Types: problem-types.md
