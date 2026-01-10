@@ -1,9 +1,8 @@
 # 🔵 Part 3: Daily Project Workflow
 
-This section provides step-by-step instructions for working on an existing Python project.
-These steps are repeatable and should be followed whenever you make changes, update dependencies, or work on project features.
+> How to work on a professional Python project.
 
-**IMPORTANT**: Complete all of Workflow 1 and Workflow 2 before continuing.
+Complete all of Workflow 1 and Workflow 2 first.
 
 ---
 
@@ -21,5 +20,5 @@ Follow these steps when working on a professional Python project.
 ## Important
 
 - Always pull the latest changes before starting to avoid merge conflicts.
-- Test your project before each `git add-commit-push`.
+- Run, check, and build docs before each `git add-commit-push`.
 - Make frequent commits when enhancing a project.

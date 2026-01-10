@@ -1,9 +1,8 @@
 # 🟠 Workflow 2: Set Up Project (Once per Project)
 
-This section provides step-by-step instructions to initialize a new Python project.
-These tasks include starting a project from scratch or using an existing template, setting up the project files, and creating a project environment for development.
+> How to set up a professional Python project.
 
-**IMPORTANT**: Complete all of Workflow 1 first.
+Complete all of Workflow 1 first.
 
 ---
 
@@ -19,10 +18,8 @@ These tasks include starting a project from scratch or using an existing templat
 
 ## Important
 
-- These setup tasks are critical.
-- Verify each step works before proceeding.
+- These tasks are critical.
 - Follow the steps carefully and in order.
-- For projects that use templates or examples, review the project first and understand the starting structure.
 
 ## Pronounce Key Files and Folders Correctly
 

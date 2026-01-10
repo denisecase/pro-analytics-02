@@ -28,6 +28,8 @@ This will:
 1. Update `uv`
 2. Pin the Python version for this repo (and install that version if needed)
 3. Install project dependencies listed in `pyproject.toml`.
+4. If notification: "We noticed a new environment has been created. Do you want to select it for the workspace folder?" Click "Yes".
+
 
 ### 2: Align VS Code with The Environment (.venv)
 

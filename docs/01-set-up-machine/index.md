@@ -1,7 +1,6 @@
 # 🟢 Workflow 1: Set Up Machine (Once per machine)
 
-This section provides step-by-step instructions to set up a machine for Python projects.
-These tasks are typically performed once when setting up a new machine or upgrading tools for professional Python development.
+> How to set up a machine for professional Python projects.
 
 ---
 

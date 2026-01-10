@@ -108,7 +108,7 @@ Complete the first two - and then use the third to complete the project.
 Details provided below.
 
 - 01: Set Up Machine (Once Per Machine)
-- 02: Set Up Project (once Per Project)
+- 02: Set Up Project (Once Per Project)
 - 03: Daily Workflow (Working With Python Project Code)
 
 ## 01: Set Up Machine (Once Per Machine)
@@ -116,18 +116,33 @@ Details provided below.
 Follow the detailed instructions at:
 [**01. Set Up Your Machine**](./docs/01-set-up-machine/index.md).
 
-🛑 Do not continue until all steps are complete and verified.
+🛑 Do not continue until all these steps are complete and verified.
 
-## 02: Set Up Project (once Per Project)
+## 02: Set Up Project (Once Per Project)
 
 Follow the detailed instructions at:
 [**02. Set Up Your Project**](./docs/02-set-up-project/index.md).
 
-🛑 Do not continue until all steps are complete and verified.
+Detailed instructions are provided to:
 
-### Step 2.5. Set Up Local Environment
+1. Sign in to GitHub, open this repository in your browser, and click **Copy this template** to get a copy in **YOURACCOUNT**.
+2. Enable GitHub Pages.
+3. Open a machine terminal in your `Repos` folder and clone your new repo.
+4. Change directory into the repo, open the project in VS Code, and install recommended extensions.
+5. Set up a project Python environment (managed by `uv`) and align VS Code with it.
 
-Read about [this step](./docs/02-set-up-project/05-set-up-virtual-environment.md).
+Use the instructions above to get it ALL set up correctly.
+Most people open a terminal on their machine (not VS Code), open in their Repos folder and run:
+
+```shell
+git clone https://github.com/YOURACCOUNT/pro-analytics-02
+
+cd pro-analytics-02
+code .
+```
+
+With VS Code open, accept the Extension Recommendations (click `Install All` when asked).
+Use VS Code menu option `Terminal` / `New Terminal` and run the following commands:
 
 ```shell
 uv self update
@@ -135,25 +150,48 @@ uv python pin 3.14
 uv sync --extra dev --extra docs --upgrade
 ```
 
+You must be in the root project folder. If successful, you'll see a new `.venv` folder appear in the repo root (look up top, typically between `.github/` and `.vscode/`).
+
+🛑 Do not continue until all steps are complete and verified.
+
+
 ## 03: Daily Workflow (Working With Python Project Code)
 
-Read about [this workflow](./docs/03-daily-workflow/index.md).
+We follow the detailed instructions at:
+[**03. Daily Workflow**](./docs/03-daily-workflow/index.md).
 
-### Step 3.1. Git Pull Before Starting Work
+Commands are provided below to:
 
-Read about [this step](./docs/03-daily-workflow/01-git-pull-before-changes.md).
+1. Git pull
+2. Run and check the Python files
+3. Build and serve project documentation
+4. Save progress with Git add-commit-push
+5. Update project files
+
+VS Code should have only this project (datafun-01-foundations) open.
+Use VS Code menu option `Terminal` / `New Terminal` and run the following commands:
 
 ```shell
-git pull origin main
+git pull
 ```
 
-### Step 3.2 Run and Check
+In the same VS Code terminal, run the files:
 
-Read about [this step](./docs/03-daily-workflow/02-run-and-check.md).
+```shell
+uv run python src/datafun_01_foundations/app_case.py
+uv run python src/datafun_01_foundations/app_yourname.py
+```
 
-Run Python and/or notebooks as needed for your project.
-See [Run Python](02a-run-python.md) or [Run Notebooks](02b-run-notebook.md)
+If a command fails, verify:
 
+- Only the datafun-01-foundations project is open in VS Code.
+- The terminal is open in the project root folder.
+- The `uv sync --extra dev --extra docs --upgrade` command completed successfully.
+
+Hint: if you run `ls` in the terminal, you should see files including `pyproject.toml`, `README.md`, and `uv.lock`.
+Once these scripts run, that is a major milestone for Project 1. Celebrate!
+
+Run checks and tests (as available):
 
 ```shell
 uv run ruff format .
@@ -161,49 +199,36 @@ uv run ruff check . --fix
 uv run pytest --cov=src --cov-report=term-missing
 ```
 
-### Step 3.3. Build and Serve Project Documentation:
-
-Read about [this step](./docs/03-daily-workflow/03-build-serve-docs.md).
+Build and serve project documentation:
 
 ```shell
 uv run mkdocs build --strict
 uv run mkdocs serve
 ```
 
-> To stop a running Python program, press `Ctrl + C` in the terminal
+> To stop a running Python program, press `Ctrl+C` in the terminal
 
-### Step 3.4: Save Progress (add-commit-push)
-
-Read about [this step](./docs/03-daily-workflow/04-git-add-commit-push.md).
+Save progress:
 
 ```shell
 git add -A
 git commit -m "update"
+# if any changes were made, rerun git add and git commit again
 git push -u origin main
 ```
 
+## Tools
 
-<!--
-WHY: Describe the workflow conceptually in README.
--->
-
-## Tooling Notes
-
-This project uses:
+This professional Python project uses:
 
 - `uv` for dependency management and command execution
 - `ruff` for formatting and linting
-- `pyright` for static type checking
 - `pytest` for test execution
 - `mkdocs` for documentation
 
 Alternative tools and stricter configurations are documented inline
 and may be enabled intentionally.
 
-<!--
-WHY: List tools without turning README into a tutorial.
-ALT: Tool choices are opinionated but replaceable.
--->
 
 ## Annotations
 
@@ -235,43 +260,4 @@ WHY: Provide terms of reuse and limits of liability.
 
 <!--
 WHY: Make explicit the intent, boundaries, and scope of this repository.
--->
-
-
-<!--
-README STRUCTURE NOTE (HIDDEN)
-
-Level 2 headings (##) define the analytical and operational focus
-of a project repository and are often similar across repositories.
-Omit sections that do not apply.
-Project-specific variations are often expressed at Level 3 or lower.
-
-- Front matter: Title, badges, one-line positioning
-
-| Type    | Level 2 Section            | Questions Answered                  |
-| ------- | -------------------------- | ----------------------------------- |
-| Core    | Overview and Scope         | What is this analysis? What is it not? |
-| Core    | Installation and Setup     | How do I make this analysis runnable? |
-| Core    | Usage and Customization    | How do I run or adapt the analysis? |
-| Core    | Results / Examples         | What does correct analysis look like? |
-| Core    | Documentation              | Where are methods and explanations? |
-| Core    | Workflow                   | How does analysis work progress over time? |
-| Context | Related                    | What does this analysis connect to? |
-| Context | Project Status             | How complete or stable is this work? |
-| Context | Security                   | How is data handled responsibly? |
-| Context | Annotations                | How were analytic decisions made? |
-| Context | Citation                   | How should this work be referenced? |
-| Context | License                    | Under what terms can this be reused? |
-| Context | SE Manifest                | What is the intent, scope, and role of this project?|
-| Context | Acknowledgements           | Who or what contributed? |
-
-NOTE on: Security, Annotations, Citation, License, and SE Manifest:
-This repository includes examples of how professional analytics projects
-communicate intent, scope, and reuse information.
-Students do NOT need to include or create these files in their own projects.
-
-Key principles:
-- Prefer pointers over duplication
-- Keep sections short and scannable
-- Put the most important information first
 -->
