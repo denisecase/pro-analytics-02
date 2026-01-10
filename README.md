@@ -1,9 +1,9 @@
 # Pro Analytics 02
 
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://denisecase.github.io/pro-analytics-02/)
-[![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue?logo=python)](#)
-[![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci.yml/badge.svg)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci.yml)
-[![License](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
+[![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
+[![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-mkdocs.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-mkdocs.yml)
+[![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 
 > Professional Python project starter and guide.
 
@@ -113,15 +113,17 @@ Details provided below.
 
 ## 01: Set Up Machine (Once Per Machine)
 
-Read about [this workflow](./docs/01-set-up-machine/index.md).
+Follow the detailed instructions at:
+[**01. Set Up Your Machine**](./docs/01-set-up-machine/index.md).
 
-Follow the instructions and complete these steps carefully.
+🛑 Do not continue until all steps are complete and verified.
 
 ## 02: Set Up Project (once Per Project)
 
-Read about [this workflow](./docs/02-set-up-project/index.md).
+Follow the detailed instructions at:
+[**02. Set Up Your Project**](./docs/02-set-up-project/index.md).
 
-Follow the instructions and complete these steps carefully.
+🛑 Do not continue until all steps are complete and verified.
 
 ### Step 2.5. Set Up Local Environment
 
@@ -129,7 +131,7 @@ Read about [this step](./docs/02-set-up-project/05-set-up-virtual-environment.md
 
 ```shell
 uv self update
-uv python pin 3.12
+uv python pin 3.14
 uv sync --extra dev --extra docs --upgrade
 ```
 

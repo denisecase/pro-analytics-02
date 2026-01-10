@@ -14,7 +14,7 @@ Use this only when your project uses **Jupyter notebook (`.ipynb`)** files.
 Open your project repository folder in VS Code.
 Ensure the `.venv` is activated. If it is already active, you don't need to reactivate it.
 
-We must have installed all the external dependencies needed for our project to run into the virtual environment first.
+We must have installed all the external dependencies into the environment first.
 
 ### Install the Jupyter Extension for VS Code
 - Open the Extensions view in VS Code by pressing Ctrl+Shift+X (Windows/Linux) or Cmd+Shift+X (Mac).

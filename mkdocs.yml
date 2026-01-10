@@ -129,7 +129,7 @@ nav:
       - Enable GitHub Pages: 02-set-up-project/02-enable-github-pages.md
       - Clone Repo to Local: 02-set-up-project/03-clone-repo-to-local.md
       - Install VS Code Extensions: 02-set-up-project/04-install-vscode-extensions.md
-      - Set Up Virtual Environment: 02-set-up-project/05-set-up-virtual-environment.md
+      - Set Up Environment: 02-set-up-project/05-set-up-virtual-environment.md
       - Git Add Commit Push: 02-set-up-project/06-git-add-commit-push.md
       - Update Project Files: 02-set-up-project/07-update-project-files.md
 

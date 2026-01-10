@@ -1,4 +1,4 @@
-# 🟠 Set Up Virtual Environment (.venv)
+# 🟠 Set Up Environment (.venv)
 
 Each project uses its own local virtual environment stored inside the repository.
 This keeps your dependencies isolated, prevents conflicts with your system Python, and ensures the project can be reproduced on any machine.
@@ -13,13 +13,13 @@ If something breaks, you can safely delete the `.venv` folder and recreate it at
    - Linux / WSL: bash
 3. Confirm your terminal is located in the **project root directory** (for example, `pro-analytics-02`).
 
-## Set Up the Virtual Environment
+## Set Up the Environment
 
 Run these commands in your VS Code terminal:
 
 ```bash
 uv self update
-uv python pin 3.12
+uv python pin 3.14
 uv sync --extra dev --extra docs --upgrade
 ```
 
@@ -66,4 +66,4 @@ Instead of installing Python globally, we install Python **per project** using `
   ```
 - You can always rebuild from scratch by deleting `.venv` and rerunning these commands.
 
-Once created, a project-specific virtual environment provides a reliable, cross-platform base for running and sharing professional analytics code.
+Once created, a project-specific environment provides a reliable, cross-platform base for running and sharing professional analytics code.

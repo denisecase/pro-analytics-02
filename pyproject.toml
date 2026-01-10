@@ -9,7 +9,7 @@
 name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
 version="0.1.0"  # WHY: start with initial version.
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.14"
 description = "Professional Python using uv and src layout" # CUSTOM: Update as needed.
 
 dependencies = [
@@ -55,7 +55,7 @@ docs = [
 include = ["src"]
 extraPaths = ["src"]
 exclude = [ "**/node_modules", "**/.*", ".venv","**/__pycache__","dist","build"]
-pythonVersion = "3.12"
+pythonVersion = "3.14"
 reportMissingImports = "warning"
 reportPrivateUsage = "none"
 typeCheckingMode = "strict" # strict | basic | off

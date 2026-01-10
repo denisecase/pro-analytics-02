@@ -16,7 +16,7 @@ They are **not included in the Python Standard Library** and must be installed a
 | [`httpx`](https://pypi.org/project/httpx/)                 | Modern, async-capable HTTP client for sending web requests and APIs.            | [Docs](https://www.python-httpx.org/)                             |
 | [`python-dotenv`](https://pypi.org/project/python-dotenv/) | Loads environment variables from `.env` files.                                  | [Docs](https://saurabh-kumar.com/python-dotenv/)                  |
 | [`pre-commit`](https://pypi.org/project/pre-commit/)       | Automates linting, formatting, and quality checks before commits.               | [Docs](https://pre-commit.com/)                                   |
-| [`uv`](https://pypi.org/project/uv/)                       | Fast Python package manager and virtual environment tool (replaces pip + venv). | [Docs](https://docs.astral.sh/uv/)                                |
+| [`uv`](https://pypi.org/project/uv/)                       | Fast Python package manager and environment tool (replaces pip + venv). | [Docs](https://docs.astral.sh/uv/)                                |
 
 **Note:** `httpx` replaces `requests` as the modern, async-capable HTTP client. Most `requests` examples need minimal or no changes.
 

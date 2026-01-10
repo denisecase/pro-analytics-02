@@ -48,3 +48,28 @@
 2026-01-07 14:13:35 | INFO | P01 | In Python, uppercase/lowercase matters = True!
 2026-01-07 14:13:35 | INFO | P01 | Experiment with this demo script to learn the basics quickly.
 2026-01-07 14:13:35 | INFO | P01 | Exiting demo_python() function.
+2026-01-10 15:07:01 | INFO | P01 | Starting demo_python() function.
+2026-01-10 15:07:01 | INFO | P01 | Name Python files with lowercase and underscores.
+2026-01-10 15:07:01 | INFO | P01 | In Python, comments start with a '#' symbol and are not executed.
+2026-01-10 15:07:01 | INFO | P01 | Comments can also be wrapped in triple single quotes or triple backticks.
+2026-01-10 15:07:01 | INFO | P01 | Variables are used to store values.
+2026-01-10 15:07:01 | INFO | P01 | Type hints are optional but recommended for clarity.
+2026-01-10 15:07:01 | INFO | P01 |   example_number = 42
+2026-01-10 15:07:01 | INFO | P01 |   count: int = 42
+2026-01-10 15:07:01 | INFO | P01 |   temp_F: float = 42.2
+2026-01-10 15:07:01 | INFO | P01 |   user_name: str = "Data Analyst"
+2026-01-10 15:07:01 | INFO | P01 | Result: example_number=42, count=42, temp_f=42.2, user_name='Data Analyst'.
+2026-01-10 15:07:01 | INFO | P01 | Functions in Python are blocks of reusable code.
+2026-01-10 15:07:01 | INFO | P01 | You can call a function by using its name followed by parentheses.
+2026-01-10 15:07:01 | INFO | P01 | We use f-strings to combine text and values in Python.
+2026-01-10 15:07:01 | INFO | P01 |   Put the 'f' immediately before the opening quote of the string text.
+2026-01-10 15:07:01 | INFO | P01 | Python has many built-in functions, like min(), max(), and len().
+2026-01-10 15:07:01 | INFO | P01 | For the list of numbers: [1, 2, 3]
+2026-01-10 15:07:01 | INFO | P01 |   The minimum value is min(numbers): 1
+2026-01-10 15:07:01 | INFO | P01 |   The maximum value is max(numbers): 3
+2026-01-10 15:07:01 | INFO | P01 |   The length of the list is len(numbers): 3
+2026-01-10 15:07:01 | INFO | P01 | In Python, indentation matters = True!
+2026-01-10 15:07:01 | INFO | P01 | In Python, spelling matters = True!
+2026-01-10 15:07:01 | INFO | P01 | In Python, uppercase/lowercase matters = True!
+2026-01-10 15:07:01 | INFO | P01 | Experiment with this demo script to learn the basics quickly.
+2026-01-10 15:07:01 | INFO | P01 | Exiting demo_python() function.

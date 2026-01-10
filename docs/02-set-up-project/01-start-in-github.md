@@ -1,8 +1,11 @@
-# 🟠 Start a New Project in GitHub
+# 🟠 Start in GitHub to Get a New Repository
 
-This page provides instructions to copy an existing repository in GitHub.
+There are two common options, either:
 
-## Option 1. Copy a Repository in GitHub
+1. Copy a Repository OR
+2. Create a New Repository in GitHub (with README.md)
+
+## EITHER: Copy a Repository
 
 1. Log in to GitHub.
 2. In your browser, navigate to the GitHub page of the repository you want to copy.
@@ -15,7 +18,7 @@ This page provides instructions to copy an existing repository in GitHub.
 5. Make it public.
 6. Complete the process as needed to create repository from template or confirm the fork.
 
-## Option 2. Create a New Repository in GitHub (with README.md)
+## OR:  Create a New Repository in GitHub (with README.md)
 
 1. Log in to GitHub. Open your browser and log in to your GitHub account.
 
