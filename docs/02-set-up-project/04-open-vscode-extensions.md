@@ -34,13 +34,16 @@ In that case:
 
 If there are no recommendations (or if you are working in a brand new project), install extensions manually using the steps below.
 
-## 3: Verify Installation
+## 3. Verify Installation
 
 After installation:
 
 1. Restart VS Code
-2. Open the Extensions panel again
+2. Open the **Extensions** panel again.
+3. Confirm the recommended extensions show as **Installed** and **Enabled**.
 3. Confirm the extensions are installed and enabled
+
+---
 
 ## Recommendations
 

@@ -11,9 +11,9 @@
 cff-version: "1.2.0"
 type: software
 
-title: Pro Analytics 02 - Professional Python Project
+title: Pro Analytics 02 - Guide to Professional Python Projects
 version: "0.1.0"
-date-released: "2026-01"
+date-released: "2026-01-11"
 
 authors:
   - family-names: Case
@@ -21,16 +21,22 @@ authors:
     orcid: "https://orcid.org/0000-0001-6165-7389"
     affiliation: "Northwest Missouri State University, USA"
 
-
 repository-code: "https://github.com/denisecase/pro-analytics-02"
 url: "https://github.com/denisecase/pro-analytics-02"
 license: MIT
+
+abstract: |
+  Guide to Professional Python repository.
+  Includes recommended practices for project structure, dependency management, quality gates, and documentation.
+  Emphasizes modern uv-based workflows for environment setup, project initialization, and daily development.
+  Serves as a professional template for data analytics and data science projects.
 
 keywords:
   # identity
   - data analytics
   - python
-  - python-toolkit
+  - professional-workflows
+  - project-template
   - developer-tools
   - logging
 
@@ -38,8 +44,7 @@ keywords:
   - education
   - teaching
   - learning
-  - students
-  - instructors
+  - practitioners
   - computer-science-education
   - data-analytics-education
 
@@ -48,26 +53,23 @@ keywords:
   - src-layout
   - ci-cd
   - github-actions
-  - reproducible-research
+  - reproducible-workflows
   - software-quality
   - professional-practice
 
-  # tooling signals
+  # tools and ecosystem
+  - python
+  - git
+  - github
+  - pre-commit
   - open-source
   - uv
   - ruff
   - mkdocs
-  - git
 
   # workflows
-  - environment-setup
-  - project-initialization
+  - machine setup
+  - project-setup
   - development-workflow
-
-abstract: |
-  Professional Python Project repository.
-  Includes recommended practices for project structure, dependency management, quality gates, and documentation.
-  Emphasizes modern uv-based workflows for environment setup, project initialization, and daily development.
-  Serves as a professional template for data analytics and data science projects.
 
 message: "If using this project, please cite it as described in this file."

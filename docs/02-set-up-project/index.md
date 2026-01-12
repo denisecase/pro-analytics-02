@@ -11,8 +11,9 @@ Complete all of Workflow 1 first.
 1. [Start in GitHub to Get a New Repository](01-start-in-github.md)
 2. [Enable GitHub Pages](02-enable-github-pages.md)
 3. [Clone the Repository To Your Machine](03-clone-repo-to-local.md)
-4. [Open the Project in VS Code (and Install Recommended VS Code Extensions)](04-install-vscode-extensions.md)
-5. [Set up Project Python Environment (managed by uv)](05-set-up-virtual-environment.md)
+4. [Open the Project in VS Code (and Install Recommended VS Code Extensions)](04-open-vscode-extensions.md)
+5. [Set up Project Python Environment (managed by uv)](05-set-up-environment.md)
+6. [Verify](06-verify.md)
 
 ---
 

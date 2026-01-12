@@ -141,8 +141,10 @@ cd pro-analytics-02
 code .
 ```
 
-With VS Code open, accept the Extension Recommendations (click `Install All` when asked).
-Use VS Code menu option `Terminal` / `New Terminal` and run the following commands:
+When VS Code opens, accept the Extension Recommendations (click **`Install All`** or similar when asked).
+
+Use VS Code menu option `Terminal` / `New Terminal` to open a **VS Code terminal** in the root project folder.
+Run the following commands, one at a time, hitting ENTER after each:
 
 ```shell
 uv self update
@@ -150,10 +152,21 @@ uv python pin 3.14
 uv sync --extra dev --extra docs --upgrade
 ```
 
-You must be in the root project folder. If successful, you'll see a new `.venv` folder appear in the repo root (look up top, typically between `.github/` and `.vscode/`).
+If asked: "We noticed a new environment has been created. Do you want to select it for the workspace folder?" Click **"Yes"**.
 
-🛑 Do not continue until all steps are complete and verified.
+If successful, you'll see a new `.venv` folder appear in the root project folder.
 
+Optional (recommended): install and run pre-commit checks (repeat the git `add` and `commit` twice if needed):
+
+```shell
+uvx pre-commit install
+git add -A
+uvx pre-commit run --all-files
+git add -A
+uvx pre-commit run --all-files
+```
+
+🛑 Do not continue until all REQUIRED steps are complete and verified.
 
 ## 03: Daily Workflow (Working With Python Project Code)
 
@@ -164,7 +177,7 @@ Commands are provided below to:
 
 1. Git pull
 2. Run and check the Python files
-3. Build and serve project documentation
+3. Build and serve docs
 4. Save progress with Git add-commit-push
 5. Update project files
 
@@ -178,13 +191,12 @@ git pull
 In the same VS Code terminal, run the files:
 
 ```shell
-uv run python src/datafun_01_foundations/app_case.py
-uv run python src/datafun_01_foundations/app_yourname.py
+uv run python src/pro_analytics_02/demo_module_basics.py
 ```
 
 If a command fails, verify:
 
-- Only the datafun-01-foundations project is open in VS Code.
+- Only the project folder is open in VS Code.
 - The terminal is open in the project root folder.
 - The `uv sync --extra dev --extra docs --upgrade` command completed successfully.
 
@@ -199,21 +211,22 @@ uv run ruff check . --fix
 uv run pytest --cov=src --cov-report=term-missing
 ```
 
-Build and serve project documentation:
+Build and serve docs (hit **CTRL+c** in the VS Code terminal to quit serving):
 
 ```shell
 uv run mkdocs build --strict
 uv run mkdocs serve
 ```
 
-> To stop a running Python program, press `Ctrl+C` in the terminal
+While editing project code and docs, repeat the commands above to run files, check them, and rebuild docs as needed.
 
-Save progress:
+Save progress frequently (some tools may make changes; **re-running add and commit** ensures everything gets committed):
 
 ```shell
 git add -A
 git commit -m "update"
-# if any changes were made, rerun git add and git commit again
+git add -A
+git commit -m "update"
 git push -u origin main
 ```
 

@@ -1,24 +1,26 @@
 # ============================================================
-# pyproject.toml (Python and MkDocs project configuration)
+# pyproject.toml (Python, MkDocs, and Notebooks project configuration)
 # ============================================================
+# VARIANT: python-mkdocs-nb
+# SOURCE: https://github.com/denisecase/templates
 
 # REQ.PYTHON: Python projects MUST include pyproject.toml as the single source of truth.
 # WHY: Centralizes project configuration.
 
 [project]
 name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
-version="0.1.0"  # WHY: start with initial version.
 readme = "README.md"
 requires-python = ">=3.14"
-description = "Professional Python using uv and src layout" # CUSTOM: Update as needed.
+version = "0.1.0"
 
 dependencies = [
     # REQ.DEPS: External packages used by the project code.
-    "datafun-toolkit>=0.9.0",
-    # CUSTOM: Add notebook dependencies only if notebooks are used in the project.
-    # REQ: If you enable notebooks, keep them OS-agnostic and reproducible.
-    # "ipykernel",
-    # "ipython",
+    "datafun-toolkit>=0.9.4",
+    "ipykernel>=7.1.0",
+    "ipython>=9.9.0",
+    "pandas>=2.3.3",
+    "scikit-learn>=1.3.0",
+    "matplotlib>=3.8.0"
 ]
 
 [project.optional-dependencies]
@@ -87,7 +89,7 @@ exclude = [
 ]
 line-length = 88 # WHY: PEP 8 standard line length, wrap when possible.
 preview = false # WHY: Stable features only; avoid preview features.
-target-version = "py312"
+target-version = "py313" # WHY: Match latest supported Python version.
 unsafe-fixes = false # WHY: Avoid potentially unsafe automatic fixes.
 
 [tool.ruff.format]

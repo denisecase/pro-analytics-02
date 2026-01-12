@@ -125,11 +125,12 @@ nav:
 
   - "2: Set Up Project":
       - Overview: 02-set-up-project/index.md
-      - Start in GitHub: 02-set-up-project/01-start-in-github.md
+      - Start in GitHub and Get a Repo: 02-set-up-project/01-start-in-github.md
       - Enable GitHub Pages: 02-set-up-project/02-enable-github-pages.md
       - Clone Repo to Local: 02-set-up-project/03-clone-repo-to-local.md
-      - Install VS Code Extensions: 02-set-up-project/04-install-vscode-extensions.md
-      - Set Up Environment: 02-set-up-project/05-set-up-virtual-environment.md
+      - Open VS Code and Install Extensions: 02-set-up-project/04-open-vscode-extensions.md
+      - Set Up Environment: 02-set-up-project/05-set-up-environment.md
+      - Verify Setup: 02-set-up-project/06-verify.md
 
   - "3: Daily Workflow":
       - Overview: 03-daily-workflow/index.md
@@ -151,6 +152,7 @@ nav:
       - Project Structure: 06-python/project-structure.md
       - File Structure: 06-python/python-file-structure.md
       - Standard Library: 06-python/standard-library.md
+      - Troubleshooting: 06-python/troubleshooting.md
       - Writing README: 06-python/writing-readme.md
 
   - Help:

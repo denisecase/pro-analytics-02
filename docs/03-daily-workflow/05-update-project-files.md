@@ -92,9 +92,13 @@ Your starter repository includes additional files for code quality, automation, 
 
 ## Task 5. Git add-commit-push to GitHub
 
+Save progress (some tools may make changes; re-running ensures everything is committed):
+
 ```shell
 git add -A
-git commit -m "Update project files"
+git commit -m "update"
+git add -A
+git commit -m "update"
 git push -u origin main
 ```
 ---

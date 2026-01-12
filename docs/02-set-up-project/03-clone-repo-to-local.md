@@ -24,3 +24,8 @@ In the terminal, type `git clone` leave a single space and use `CTRL v` (or `CMD
 ```shell
 git clone https://github.com/youraccount/yourrepo
 ```
+
+## 3. Verify
+
+- A new folder (with the repo name) appears in your current directory.
+- No error messages about authentication or repository not found.

@@ -19,7 +19,7 @@
 #
 #   uv self update
 #   uvx pre-commit install
-#   uvx pre-commit run --all-files -v
+#   uvx pre-commit run --all-files
 #
 # This enables the pre-commit hooks for this project repo.
 # ALL subsequent commits in this repo will AUTOMATICALLY run these
@@ -117,6 +117,7 @@ repos:
       - id: ruff
         name: D2) Ruff linter (autofix errors, style issues )
         args: [--fix, --exit-non-zero-on-fix]
+
 
 # === GLOBAL SETTINGS ===
 # ALT: Set fail_fast to true to stop at first failure.

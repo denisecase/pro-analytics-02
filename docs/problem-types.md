@@ -29,7 +29,7 @@ It forms the foundation of reports, dashboards, and exploratory analysis.
 | Example Question | Plain-English Description |
 |------------------|---------------------------|
 | Why did sales drop last quarter? | Comparing data to find what changed — pricing, weather, ads, etc. |
-| What predicts student success in a course? | Examining which factors relate most strongly to outcomes. |
+| What predicts student success? | Examining which factors relate most strongly to outcomes. |
 
 Diagnostic work connects **inputs (factors)** to **outputs (results)** and helps explain variation.
 
@@ -44,7 +44,7 @@ Diagnostic work connects **inputs (factors)** to **outputs (results)** and helps
 |------------------|---------------------------|
 | Will this loan applicant repay on time? | Predicting outcomes based on historical patterns. |
 | How many people will click on this ad? | Estimating future behavior from past interactions. |
-| What will next month’s sales be? | Forecasting future values from historical data. |
+| What will next month's sales be? | Forecasting future values from historical data. |
 
 Predictive modeling is **the core of machine learning** — using examples to generalize to new cases.
 
@@ -137,7 +137,7 @@ Deep learning powers **modern AI systems** that can perceive and generate conten
 
 ---
 
-## Summary Table
+## Table
 
 | Goal | Type of Question | Typical Tools | Example |
 |------|------------------|----------------|----------|
@@ -166,4 +166,4 @@ This section links common problem types to relevant Python tools introduced else
 
 **Key Idea:**
 All analytics and ML projects start with a clear question.
-Once you know *what kind of question you’re asking*, the right tools, models, and techniques naturally follow.
+Once you know *what kind of question you're asking*, the right tools, models, and techniques naturally follow.

@@ -2,28 +2,35 @@
 # ruff.strict.toml (Stricter Ruff linter configuration)
 # ============================================================
 #
-# This file is OPTIONAL and stricter than pyproject.toml.
-# It extends pyproject.toml [tool.ruff] configuration with additional rules.
+# IMPORTANT:
+# - This file is OPTIONAL.
+# - It EXTENDS (does not replace) the [tool.ruff] configuration in pyproject.toml.
+# - CI should enforce ONLY the pyproject.toml rules unless you explicitly opt in.
 #
-# USES:
-#   - maintainers before publishing template updates
-#   - those who want a higher bar
+# PURPOSE:
+# - Adds docstring checks (D) and security checks (S)
+# - Adds maintainability/refactor lint categories (PTH, C4, SIM, RET)
 #
-# NOTES:
-# - CI should enforce pyproject.toml rules only.
-# - This strict config adds docstring checks and security checks,
-#   plus additional refactor-oriented lint categories.
+# WHO SHOULD USE THIS:
+# - Maintainers before publishing template updates
+# - Anyone who wants a higher quality bar locally
 #
-# ** RECOMMENDED: RUN from the repo root (with or without fixes):
+# RELATIONSHIP TO OTHER CONFIG FILES:
+# - pyproject.toml defines baseline Ruff rules (used by CI and pre-commit).
+# - ruff.strict.toml EXTENDS those rules with additional, opt-in checks.
+# - Pre-commit hooks (if enabled) use ONLY the pyproject.toml config
+#   UNLESS explicitly told to use this strict config.
+# - Running Ruff with --config ruff.strict.toml MERGES this file
+#   with the base configuration; it does NOT replace it.
+#
+# RUN (from the repo root):
 #   uv run ruff check --config ruff.strict.toml .
 #   uv run ruff check --config ruff.strict.toml --fix .
 #
-# ** ALSO RECOMMENDED for maintainers, run:
+# OPTIONAL MAINTAINER CHECKS (if installed in this repo):
 #   uv run pyright
 #   uv run bandit -c pyproject.toml -r src
 #   uv run validate-pyproject pyproject.toml
-#
-# ** ALSO RECOMMENDED: See .pre-commit-config.yaml for pre-commit setup.
 
 [format]
 # WHY: Enforce consistent quote style to minimize diffs.
@@ -57,7 +64,7 @@ ignore = [
 [lint.per-file-ignores]
 # WHY: Some files MUST NOT undergo linting or automated fixes.
 "**/__init__.py" = ["D104", "F401"]
-"tests/**/*.py" = ["D", "B018", "B011","S101"]
+"tests/**/*.py" = ["D", "B018", "B011", "S101"]
 "src/**/py.typed" = ["ALL"]
 "**/*.log" = ["ALL"]
 

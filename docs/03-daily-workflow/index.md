@@ -12,7 +12,7 @@ Follow these steps when working on a professional Python project.
 
 1. [Git pull](01-git-pull-before-changes.md)
 2. [Run and check](02-run-and-check.md)
-3. [Build and serve documentation](03-build-serve-docs.md)
+3. [Build and serve docs](03-build-serve-docs.md)
 4. [Git add-commit-push](04-git-add-commit-push.md)
 5. [Update project files](05-update-project-files.md)
 

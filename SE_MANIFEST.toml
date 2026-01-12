@@ -12,6 +12,7 @@ framework_url = "https://github.com/structural-explainability"
 framework_note = "Provides definitions and conventions for SE_MANIFEST semantics."
 description = "Declarative claim of repository intent, scope, and role."
 purpose = "To make explicit the boundaries, responsibilities, and expectations of this repository relative to others."
+keywords_note = "Keywords live only in CITATION.cff (canonical)."
 
 [repo]
 name = "pro-analytics-02"
@@ -19,23 +20,27 @@ org = "denisecase"
 kind = "software"
 status = "academic"
 since = "2026"
-summary = "Professional Python Project for Data Analytics."
+summary = "Professional Python project starter and guide using uv, Ruff, MkDocs, and GitHub Actions."
 
 [layer]
 space = "Data Analytics"
 role = "post-secondary-education"
 
 [depends]
+# WHY: These tools are required to complete and run the project as designed
+#      (local development, execution, and dependency management).
 required = [
-  "python>=3.12",
+  "python>=3.14",
+  "uv",
   "git",
-  "uv"
 ]
+# WHY: Optional tools are not required to use or run the repository.
 optional = [
   "mkdocs",
   "ruff",
   "pyright",
-  "pytest"
+  "pytest",
+  "lychee",
 ]
 
 [provides]
