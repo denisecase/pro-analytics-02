@@ -3,9 +3,9 @@
 Personalize core files common in professional analytics projects.
 Especially:
 
-- `pyproject.toml` — defines project metadata, dependencies, and build settings
-- `mkdocs.yml` — configures project documentation website (powered by MkDocs)
-- `README.md` — explains the project and how to use it
+- `pyproject.toml` - defines project metadata, dependencies, and build settings
+- `mkdocs.yml` - configures project documentation website (powered by MkDocs)
+- `README.md` - explains the project and how to use it
 
 > Note: A required `.gitignore` file is provided in this and most starter repositories. You need to have it, but you typically won't need to edit it.
 

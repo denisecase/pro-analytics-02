@@ -194,15 +194,6 @@ In the same VS Code terminal, run the files:
 uv run python src/pro_analytics_02/demo_module_basics.py
 ```
 
-If a command fails, verify:
-
-- Only the project folder is open in VS Code.
-- The terminal is open in the project root folder.
-- The `uv sync --extra dev --extra docs --upgrade` command completed successfully.
-
-Hint: if you run `ls` in the terminal, you should see files including `pyproject.toml`, `README.md`, and `uv.lock`.
-Once these scripts run, that is a major milestone for Project 1. Celebrate!
-
 Run checks and tests (as available):
 
 ```shell
@@ -223,8 +214,6 @@ While editing project code and docs, repeat the commands above to run files, che
 Save progress frequently (some tools may make changes; **re-running add and commit** ensures everything gets committed):
 
 ```shell
-git add -A
-git commit -m "update"
 git add -A
 git commit -m "update"
 git push -u origin main

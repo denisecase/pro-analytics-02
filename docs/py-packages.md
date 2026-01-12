@@ -41,14 +41,14 @@ They are **not included in the Python Standard Library** and must be installed a
 ## Jupyter and Interactive Development
 
 These packages provide notebook and interactive shell capabilities.
-In most cases, **VS Code** already integrates Jupyter support, so you can work with `.ipynb` files directly — without installing the full JupyterLab environment.
+In most cases, **VS Code** already integrates Jupyter support, so you can work with `.ipynb` files directly - without installing the full JupyterLab environment.
 
 | Package | Description | Links |
 |----------|--------------|-------|
 | [`ipython`](https://pypi.org/project/ipython/) | Enhanced interactive Python shell with colorized output and `%magic` commands. | [Docs](https://ipython.readthedocs.io/) |
 | [`ipykernel`](https://pypi.org/project/ipykernel/) | Kernel interface used by VS Code’s Jupyter extension to execute notebook cells. | [Docs](https://ipykernel.readthedocs.io/) |
 | [`jupyter`](https://pypi.org/project/jupyter/) | Core metapackage that ties together IPython and notebook execution; recommended for compatibility. | [Docs](https://jupyter.org/) |
-| [`nbdime`](https://pypi.org/project/nbdime/) | Tools for diffing and merging Jupyter notebooks — useful with Git. | [Docs](https://nbdime.readthedocs.io/) |
+| [`nbdime`](https://pypi.org/project/nbdime/) | Tools for diffing and merging Jupyter notebooks - useful with Git. | [Docs](https://nbdime.readthedocs.io/) |
 
 ### Optional Jupyter
 
@@ -86,7 +86,7 @@ NOTE: Notebooks using ipywidgets will not render in GitHub, they can be displaye
 | Package | Description | Links |
 |----------|--------------|-------|
 | [`duckdb`](https://pypi.org/project/duckdb/) | In-process analytical database optimized for OLAP workloads. | [Docs](https://duckdb.org/docs/) |
-| [`pyarrow`](https://pypi.org/project/pyarrow/) | Apache Arrow — shared memory format for efficient data exchange across Pandas, Polars, and DuckDB. | [Docs](https://arrow.apache.org/docs/python/) |
+| [`pyarrow`](https://pypi.org/project/pyarrow/) | Apache Arrow - shared memory format for efficient data exchange across Pandas, Polars, and DuckDB. | [Docs](https://arrow.apache.org/docs/python/) |
 | [`sqlalchemy`](https://pypi.org/project/SQLAlchemy/) | SQL toolkit and ORM for relational databases. | [Docs](https://docs.sqlalchemy.org/) |
 | [`dbt-core`](https://pypi.org/project/dbt-core/) | SQL-based data transformation framework. | [Docs](https://docs.getdbt.com/docs/core) |
 | [`dbt-duckdb`](https://pypi.org/project/dbt-duckdb/) | DBT adapter for DuckDB back-ends. | [Docs](https://github.com/jwills/dbt-duckdb) |
@@ -178,7 +178,7 @@ They form the foundation for applied analytics and machine learning pipelines.
 - Use **Scikit-learn** for supervised and unsupervised ML, pipelines, and evaluation.
 - Use **XGBoost** or **LightGBM** for structured/tabular predictive modeling.
 - Use **Optuna** for hyperparameter tuning and optimization.
-- These frameworks remain core even as deep learning and LLMs expand — they form the quantitative foundation of data science.
+- These frameworks remain core even as deep learning and LLMs expand - they form the quantitative foundation of data science.
 
 
 ---
@@ -190,7 +190,7 @@ For most analytics projects, focus on lightweight tools first, then explore clas
 
 | Package | Description | Links |
 |----------|--------------|-------|
-| [`beautifulsoup4`](https://pypi.org/project/beautifulsoup4/) | Parse and extract text or tags from HTML or XML — standard tool for web data cleanup. | [Docs](https://beautiful-soup-4.readthedocs.io/en/latest/) |
+| [`beautifulsoup4`](https://pypi.org/project/beautifulsoup4/) | Parse and extract text or tags from HTML or XML - standard tool for web data cleanup. | [Docs](https://beautiful-soup-4.readthedocs.io/en/latest/) |
 | [`regex`](https://pypi.org/project/regex/) | Enhanced regular expression engine (a more powerful alternative to Python’s built-in `re`). | [Docs](https://pypi.org/project/regex/) |
 | [`textblob`](https://pypi.org/project/textblob/) | Easy-to-use text analysis library for tokenization, sentiment, and tagging (built on NLTK). | [Docs](https://textblob.readthedocs.io/en/dev/) |
 | [`wordcloud`](https://pypi.org/project/wordcloud/) | Generate visual word clouds from text data for exploratory analysis. | [Docs](https://amueller.github.io/word_cloud/) |

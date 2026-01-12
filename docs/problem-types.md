@@ -5,7 +5,7 @@ All analytics and machine learning tasks fall into a few broad families of quest
 
 ---
 
-## 1. Descriptive Problems — *What happened?*
+## 1. Descriptive Problems - *What happened?*
 
 **Goal:** Summarize or describe data that already exists.
 **Common Tools:** Pandas, Statsmodels, Matplotlib, Seaborn.
@@ -21,21 +21,21 @@ It forms the foundation of reports, dashboards, and exploratory analysis.
 
 ---
 
-## 2. Diagnostic Problems — *Why did it happen?*
+## 2. Diagnostic Problems - *Why did it happen?*
 
 **Goal:** Identify relationships or possible causes behind outcomes.
 **Common Tools:** Correlation analysis, regression models, visualization.
 
 | Example Question | Plain-English Description |
 |------------------|---------------------------|
-| Why did sales drop last quarter? | Comparing data to find what changed — pricing, weather, ads, etc. |
+| Why did sales drop last quarter? | Comparing data to find what changed - pricing, weather, ads, etc. |
 | What predicts student success? | Examining which factors relate most strongly to outcomes. |
 
 Diagnostic work connects **inputs (factors)** to **outputs (results)** and helps explain variation.
 
 ---
 
-## 3. Predictive Problems — *What is likely to happen next?*
+## 3. Predictive Problems - *What is likely to happen next?*
 
 **Goal:** Use past data to estimate future or unknown outcomes.
 **Common Tools:** Scikit-learn, XGBoost, LightGBM, Time Series Forecasting.
@@ -46,11 +46,11 @@ Diagnostic work connects **inputs (factors)** to **outputs (results)** and helps
 | How many people will click on this ad? | Estimating future behavior from past interactions. |
 | What will next month's sales be? | Forecasting future values from historical data. |
 
-Predictive modeling is **the core of machine learning** — using examples to generalize to new cases.
+Predictive modeling is **the core of machine learning** - using examples to generalize to new cases.
 
 ---
 
-## 4. Prescriptive Problems — *What should we do?*
+## 4. Prescriptive Problems - *What should we do?*
 
 **Goal:** Recommend or optimize decisions based on data.
 **Common Tools:** Optimization, simulation, reinforcement learning.
@@ -117,7 +117,7 @@ Modern NLP and LLMs extend these tasks with **semantic understanding and text ge
 | Recommendation | Suggest products, videos, or articles to users. |
 | Anomaly detection | Identify unusual events (fraud, defects, outliers). |
 
-Machine learning is **pattern recognition at scale** — it finds relationships that may not be obvious to humans.
+Machine learning is **pattern recognition at scale** - it finds relationships that may not be obvious to humans.
 
 ---
 
@@ -133,7 +133,7 @@ Machine learning is **pattern recognition at scale** — it finds relationships 
 | Text generation | Produce natural-sounding paragraphs or answers. |
 | Translation | Convert text between languages. |
 
-Deep learning powers **modern AI systems** that can perceive and generate content — from ChatGPT to computer vision models.
+Deep learning powers **modern AI systems** that can perceive and generate content - from ChatGPT to computer vision models.
 
 ---
 

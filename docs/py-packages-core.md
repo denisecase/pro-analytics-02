@@ -1,7 +1,7 @@
 ## Core Essential Tools for Professional Python Projects
 
 These are the **most commonly used external libraries** across analytics, data, and AI projects.
-They are not part of the standard library — install them as needed using `uv add <package>` or `pip install <package>`.
+They are not part of the standard library - install them as needed using `uv add <package>` or `pip install <package>`.
 
 | Category | Package | Purpose |
 |-----------|----------|----------|

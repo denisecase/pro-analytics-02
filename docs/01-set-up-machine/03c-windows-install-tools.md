@@ -40,7 +40,7 @@ If any fail, revisit the installers and try again.
 
 This section is **only for advanced users** who need tools like **Apache Kafka** or **Apache Spark** or want a Linux environment.
 
-### Step 1 — Enable WSL and install Ubuntu
+### Step 1 - Enable WSL and install Ubuntu
 
 Open **PowerShell as Administrator** and run:
 
@@ -50,7 +50,7 @@ wsl --install
 
 Restart if prompted.
 
-### Step 2 — Update Ubuntu
+### Step 2 - Update Ubuntu
 
 In the Ubuntu terminal:
 
