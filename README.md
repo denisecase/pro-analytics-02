@@ -211,7 +211,7 @@ uv run mkdocs serve
 
 While editing project code and docs, repeat the commands above to run files, check them, and rebuild docs as needed.
 
-Save progress frequently (some tools may make changes; **re-running add and commit** ensures everything gets committed):
+Save progress frequently (some tools may make changes; you may need to **re-run git `add` and `commit`** to ensure everything gets committed before pushing):
 
 ```shell
 git add -A

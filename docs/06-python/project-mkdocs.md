@@ -69,11 +69,9 @@ Step 4: Trigger the First Deploy (Automatically)
 
 When we save progress, the two actions above will be triggered.
 
-Save progress (some tools may make changes; re-running ensures everything is committed):
+Save progress frequently (some tools may make changes; you may need to **re-run git `add` and `commit`** to ensure everything gets committed before pushing):
 
 ```shell
-git add -A
-git commit -m "update"
 git add -A
 git commit -m "update"
 git push -u origin main

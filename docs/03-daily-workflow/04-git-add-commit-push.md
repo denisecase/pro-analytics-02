@@ -10,7 +10,7 @@ IMPORTANT:
 Replace the commit message with a clear and descriptive note about what you added or changed.
 Wrap the commit message in double quotes.
 
-Save progress (some tools may make changes; re-running ensures everything is committed):
+Save progress frequently (some tools may make changes; you may need to **re-run git `add` and `commit`** to ensure everything gets committed before pushing):
 
 ```shell
 git add -A
