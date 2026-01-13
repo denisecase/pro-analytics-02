@@ -37,6 +37,9 @@ In data analytics projects, we need to see these.
    - **File name extensions**
    - **Hidden items**
 
+<img src="images/windows_show_extensions_and_hidden.png" alt="Windows: Show extensions and hidden items" width="300">
+
+
 ### On Mac:
 
 1. Open **Finder**.
@@ -45,6 +48,8 @@ In data analytics projects, we need to see these.
 3. Enable file extensions:
    - In Finder, go to **Finder > Settings > Advanced**
    - Check **Show all filename extensions**
+
+![Mac: Show all filename extensions](images/mac_view_all_extensions.png)
 
 ### On Linux:
 
