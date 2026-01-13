@@ -1,28 +1,36 @@
 # 🟢 Windows: Install Tools
 
-This page provides instructions to install or verify **Git**, **Visual Studio Code**, and **uv** on a Windows machine using official installers. These tools are essential for professional data analytics.
+This page links to official installation instructions for required tools
+on Windows. Always follow the vendor-recommended installers.
 
-## 1. Use Official Installers (Recommended for Most Users)
+These tools are essential for professional data analytics.
 
-Download and install:
+## Required Tools
 
-- **Git**: https://git-scm.com/
-- **VS Code** (Visual Studio Code): https://code.visualstudio.com/
-- **uv** (high-performance Python environment and package manager):
-  ```powershell
-  winget install --id Astral.uv -e
-  ```
+### Git
 
-> Note: We **do not install Python at this step**.
-Python will be installed per-project in Workflow 2 using `uv`, which also manages versions.
+Download and install Git from the official site:
+<https://git-scm.com/>
 
-## 2. Restart Computer After Installation
+### Visual Studio Code
 
-Restart your computer after installation (optional but recommended).
+Download and install Visual Studio Code from:
+<https://code.visualstudio.com/>
 
-## 3. Verify
+(Recommended) Enable the `code` command in PowerShell by following:
+<https://code.visualstudio.com/docs/setup/windows>
 
-After restarting, open a new PowerShell terminal and run:
+### uv (Python environment and dependency manager)
+
+Install `uv` using the official Windows method:
+<https://docs.astral.sh/uv/getting-started/installation/>
+
+Note: Python is **not** installed at this step.
+Python will be installed per-project using `uv`, which also manages versions.
+
+## Verify
+
+After installation, open **PowerShell** and run:
 
 ```powershell
 git --version
@@ -30,36 +38,19 @@ code --version
 uv --version
 ```
 
-Each command should display a version.
-If any fail, revisit the installers and try again.
-
----
+Each command should display a version number.
+If any command fails, revisit the corresponding installer.
 
 <details>
-<summary><strong>OPTIONAL/ADVANCED: Set up WSL (for Kafka, Spark, or Linux tooling)</strong></summary>
+<summary><strong>OPTIONAL/ADVANCED: Windows Subsystem for Linux (WSL) - ONLY AS DIRECTED</strong></summary>
 
-This section is **only for advanced users** who need tools like **Apache Kafka** or **Apache Spark** or want a Linux environment.
+This is only for advanced users who need Linux-only tools
+(e.g., Kafka or Spark).
 
-### Step 1 - Enable WSL and install Ubuntu
+To install WSL, follow Microsoft’s official instructions:
+<https://learn.microsoft.com/windows/wsl/install>
 
-Open **PowerShell as Administrator** and run:
-
-```powershell
-wsl --install
-```
-
-Restart if prompted.
-
-### Step 2 - Update Ubuntu
-
-In the Ubuntu terminal:
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-You now have a full Linux environment for advanced use cases. Use WSL when running Kafka/Spark, and Windows normally for Python projects.
+Use WSL only when required; it is NOT normally needed
+for Python projects managed with `uv`.
 
 </details>
-
----

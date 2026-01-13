@@ -1,43 +1,36 @@
 # 🟢 Linux: Install Tools
 
-This page provides instructions to install or verify **Git**, **Visual Studio Code**, and **uv** on a **Linux** machine. These tools are essential for professional data analytics.
+> Installation instructions for required tools on Linux systems.
 
-## 1. Use Built-in Package Manager
+Linux distributions vary, so follow the
+vendor-recommended steps for your system.
 
-Open a terminal and run the following commands:
+## Required Tools
 
-```bash
-sudo apt update
-sudo apt install -y git
-```
+### Git
 
-To install VS Code, follow the official instructions to add the Microsoft repository:
-https://code.visualstudio.com/docs/setup/linux
+Most Linux distributions include Git in their package manager.
 
-Once set up, install VS Code with:
+Official instructions:
+<https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>
 
-```bash
-sudo apt install code
-```
+### Visual Studio Code
 
-Install `uv` (high-performance Python environment and dependency manager):
+Follow Microsoft's official Linux setup instructions
+for your distribution:
+<https://code.visualstudio.com/docs/setup/linux>
 
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
+### uv (Python environment and dependency manager)
 
-## 2. Restart Computer After Installation
+Follow the official installation instructions from Astral:
+<https://docs.astral.sh/uv/getting-started/installation/>
 
-Restart your computer after installation (optional but recommended).
+## Verify
 
-## 3. Verify
-
-After restarting, open a new Terminal and run the following commands to verify.
+After installation, open a terminal and run:
 
 ```bash
 git --version
 code --version
 uv --version
 ```
-
-IMPORTANT: Each command should return a version number. If any fail, revisit the installers and try again.

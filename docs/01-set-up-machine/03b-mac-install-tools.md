@@ -1,33 +1,48 @@
-# 🟢 Mac: Install Tools
+# 🟢 macOS: Install Tools
 
-This page provides instructions to install or verify **Git**, **Visual Studio Code**, and **uv** on a Mac using official installers. These tools are essential for professional data analytics.
+> Installation instructions for required tools on macOS.
 
-## 1. Use Official Installers (Recommended for Most Users)
+Always follow the vendor-recommended installers.
 
-Download and Install Each Tool:
+These tools are essential for professional data analytics.
 
-- **Git** is often already installed. Check with `git --version` in Terminal.
-  If it is missing or outdated, install it from: https://git-scm.com/
+## Required Tools
 
-- **VS Code** (Visual Studio Code): https://code.visualstudio.com/
-  After installing:
-  - Move the app into the Applications folder
-  - (Recommended) Follow instructions at https://code.visualstudio.com/docs/setup/mac to enable `code` from the command line
+### Git
 
-- **uv** (modern Python environment and dependency manager):
-  ```zsh
-  curl -LsSf https://astral.sh/uv/install.sh | sh
-  ```
+Git is often already installed on macOS.
 
-> Note: We **do not install Python at this step**. Python will be installed per-project in Workflow 2 using `uv`, which also manages versions.
+To check, open **Terminal** and run:
 
-## 2. Restart Computer After Installation
+```zsh
+git --version
+```
 
-Restart your computer after installation (optional but recommended).
+If Git is missing or outdated, install it from the official site:
+<https://git-scm.com/>
 
-## 3. Verify
+### Visual Studio Code
 
-After restarting, open a new Terminal and run:
+Download and install Visual Studio Code from:
+<https://code.visualstudio.com/>
+
+After installation:
+
+- Move **Visual Studio Code.app** to the **Applications** folder
+- (Recommended) Enable the `code` command in Terminal by following:
+  https://code.visualstudio.com/docs/setup/mac
+
+### uv (Python environment and dependency manager)
+
+Follow the official installation instructions from Astral:
+<https://docs.astral.sh/uv/getting-started/installation/>
+
+> Note: Python is **not** installed at this step.
+> Python will be installed per-project using `uv`, which also manages versions.
+
+## Verify
+
+After installation, open a new Terminal window and run:
 
 ```zsh
 git --version
@@ -35,22 +50,5 @@ code --version
 uv --version
 ```
 
-Each command should display a version. If any fail, revisit the installers and try again.
-
----
-
-<details>
-<summary><strong>OPTIONAL/ADVANCED: Use Package Manager (Homebrew)</strong></summary>
-
-If you prefer Homebrew, open Terminal and run:
-
-```zsh
-brew update
-brew install git
-brew install --cask visual-studio-code
-brew install uv
-```
-
-Verify installs using the commands in Step 3 above.
-
-</details>
+Each command should display a version number.
+If any command fails, revisit the corresponding installer.

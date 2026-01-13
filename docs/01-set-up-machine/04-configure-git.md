@@ -18,14 +18,9 @@ Do NOT use Command Prompt, it is deprecated.
 ## 3. Configure Git
 
 Change these commands to use YOUR name and the same email you used for GitHub.
-School emails may be temporary - you may wish to use a more permanent email.
 Run one command at a time and hit ENTER or RETURN after each line to execute it.
 
 ```shell
-uvx nbdime
-uvx nbdime --version
-uvx nbdime config-git --enable
-
 git config --global user.name "Your Name"
 git config --global user.email youremail@example.com
 ```
