@@ -9,7 +9,7 @@ If something breaks, the `.venv` folder can be deleted and recreated as needed.
 
 You should have opened a machine terminal and used `code .` to open your project folder in **VS Code**.
 
-Open a default **terminal inside VS Code** (Windows: PowerShell, macOS: zsh, Linux / WSL: bash) and list the contents of the currect folder:
+Open a default **terminal inside VS Code** (Windows: PowerShell, macOS: zsh, Linux / WSL: bash) and list the contents of the correct folder:
 
 ```shell
 ls
@@ -153,16 +153,20 @@ it is generally fine to skip pre-commit and continue without it.
 
 <mark> **IMPORTANT**: DO NOT SKIP THIS (or any) STEP</mark>
 
-1. In VS Code, select the project Python interpreter
+In VS Code, select the project Python interpreter:
 
-- Open the Command Palette (View / Command Palette) or hit Ctrl + Shift + p.
-- Type and choose: `Python: Select Interpreter`
-- Important: Choose the interpreter inside **this project's `.venv` folder**
+1. Open the **Command Palette** (from the menu, select **View** / **Command Palette**, or hit **Ctrl+Shift+p**).
+2. Type and choose: `Python: Select Interpreter`
+3. Important: Choose the interpreter inside **this project's `.venv` folder**
 
-2. Restart the Python language server
+![Choose Python: Select Interpreter](./images/Python-Select-Interpreter.png)
 
-- Open the Command Palette (View / Command Palette) or hit Ctrl + Shift + p.
-- Type or choose: `Developer: Reload Window`
+![Choose recommended local .venv](./images/Python-Recommended-Local-Dot-venv.png)
+
+Restart the Python language server:
+
+1. Open the **Command Palette** (same as before).
+2. Type or choose: `Developer: Reload Window`
 
 ### Verify
 
