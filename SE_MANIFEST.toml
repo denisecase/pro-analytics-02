@@ -47,7 +47,6 @@ optional = [
 artifacts = [
     "ANNOTATIONS.md",
     "CITATION.cff",
-    "INSTRUCTORS.md",
     "LICENSE",
     "README.md",
     "SE_MANIFEST.toml",

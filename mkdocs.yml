@@ -39,7 +39,6 @@ extra:
       link: https://github.com/denisecase/pro-analytics-02
 
 # WHY: Material theme is industry standard, well-documented, and low maintenance.
-# CUSTOM: Explore other themes at https://mkdocs.org/about/themes/
 theme:
   name: material
   language: en
@@ -151,9 +150,16 @@ nav:
   - Python:
       - Project Structure: 06-python/project-structure.md
       - File Structure: 06-python/python-file-structure.md
+      - Project docs (MkDocs): 06-python/project-mkdocs.md
       - Standard Library: 06-python/standard-library.md
       - Troubleshooting: 06-python/troubleshooting.md
       - Writing README: 06-python/writing-readme.md
+      - VS Code Tips: 06-python/python-vscode-tips.md
+
+  - Terminals:
+      - Terminals, Shells, and Environments: 05-terminals/terminals-shells-envs.md
+      - Windows: 05-terminals/terminals-shells-windows.md
+      - Mac: 05-terminals/terminals-shells-mac-linux.md
 
   - Help:
       - Taking Screenshots: 04-help/01-taking-screenshots.md
