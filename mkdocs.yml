@@ -125,7 +125,7 @@ nav:
   - "2: Set Up Project":
       - Overview: 02-set-up-project/index.md
       - Start in GitHub and Get a Repo: 02-set-up-project/01-start-in-github.md
-      - Enable GitHub Pages: 02-set-up-project/02-enable-github-pages.md
+      - Enable GitHub Pages: 02-set-up-project/02-configure-repo-settings.md
       - Clone Repo to Local: 02-set-up-project/03-clone-repo-to-local.md
       - Open VS Code and Install Extensions: 02-set-up-project/04-open-vscode-extensions.md
       - Set Up Environment: 02-set-up-project/05-set-up-environment.md
