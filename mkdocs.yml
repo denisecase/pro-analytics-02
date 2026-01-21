@@ -150,6 +150,7 @@ nav:
   - Python:
       - Project Structure: 06-python/project-structure.md
       - File Structure: 06-python/python-file-structure.md
+      - Running Python: 06-python/running-python.md
       - Project docs (MkDocs): 06-python/project-mkdocs.md
       - Standard Library: 06-python/standard-library.md
       - Troubleshooting: 06-python/troubleshooting.md
