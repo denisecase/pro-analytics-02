@@ -59,7 +59,7 @@ jobs:
         run: uv sync --extra dev --extra docs --upgrade
 
       # ============================================================
-      # BASELINE CHECKS: Fail fast and validate
+      # === BASELINE CHECKS: Fail fast and validate
       # ============================================================
 
       - name: B1) Fail fast if no MkDocs configuration

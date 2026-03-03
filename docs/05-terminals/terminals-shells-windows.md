@@ -99,7 +99,7 @@ Run these in both terminals (working and failing):
 
 | Check | PowerShell | cmd | Git Bash |
 |-------|-----------|-----|----------|
-| Shell | `Get-Process -Id $PID` | — | `echo $0` |
+| Shell | `Get-Process -Id $PID` |  | `echo $0` |
 | PATH | `$env:Path` | `echo %PATH%` | `echo $PATH` |
 | Find uv | `Get-Command uv` | `where uv` | `command -v uv` |
 

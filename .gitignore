@@ -17,6 +17,7 @@
 logs/
 PRIVATE_NOTES.md
 PRIVATE-NOTES.md
+docs/on-gen-ai-2026-02.md
 
 # WHY: Temporary and swap files are machine-local noise and create meaningless diffs.
 *.swo

@@ -157,13 +157,29 @@ nav:
       - Writing README: 06-python/writing-readme.md
       - VS Code Tips: 06-python/python-vscode-tips.md
 
+  - Glossary:
+      - Data Formats: glossary/data-formats.md
+      - Editors: glossary/editors.md
+      - Git & GitHub: glossary/git-github.md
+      - Project Workflow: glossary/project-workflow.md
+      - Python:
+        - environment: glossary/python/environment.md
+        - project-structure: glossary/python/project-structure.md
+        - language: glossary/python/python-language.md
+      - Terminals: glossary/terminals.md
+
   - Terminals:
       - Terminals, Shells, and Environments: 05-terminals/terminals-shells-envs.md
       - Windows: 05-terminals/terminals-shells-windows.md
       - Mac: 05-terminals/terminals-shells-mac-linux.md
 
+  - GitHub Actions:
+    - Pre-Commit: 07-github-actions/00-pre-commit.md
+    - Continuous Integration: 07-github-actions/01-ci.md
+
   - Help:
       - Taking Screenshots: 04-help/01-taking-screenshots.md
+      - Hosting Video: 04-help/02-hosting-video.md
 
   - Reference:
       - API: api.md

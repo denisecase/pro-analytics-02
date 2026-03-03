@@ -52,7 +52,7 @@ Search your shell config files for PATH modifications:
 grep -n "PATH=" ~/.zshrc ~/.zprofile ~/.bashrc ~/.bash_profile 2>/dev/null
 ```
 
-Missing files are normal—the shell ignores them.
+Missing files are normal, the shell ignores them.
 
 Common patterns that add to PATH:
 
