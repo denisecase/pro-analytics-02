@@ -11,7 +11,6 @@ They are **not included in the Python Standard Library** and must be installed a
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | [`pip`](https://pypi.org/project/pip/)                     | Python’s package installer (standard tool for managing packages).               | [Docs](https://pip.pypa.io/en/stable/)                            |
 | [`setuptools`](https://pypi.org/project/setuptools/)       | Build system and packaging library for Python.                                  | [Docs](https://setuptools.pypa.io/en/latest/)                     |
-| [`wheel`](https://pypi.org/project/wheel/)                 | Builds `.whl` distribution files for faster installs.                           | [Docs](https://packaging.python.org/en/latest/discussions/wheel/) |
 | [`loguru`](https://pypi.org/project/loguru/)               | Simple, powerful logging with colorized output and rotation support.            | [Docs](https://loguru.readthedocs.io/)                            |
 | [`httpx`](https://pypi.org/project/httpx/)                 | Modern, async-capable HTTP client for sending web requests and APIs.            | [Docs](https://www.python-httpx.org/)                             |
 | [`python-dotenv`](https://pypi.org/project/python-dotenv/) | Loads environment variables from `.env` files.                                  | [Docs](https://saurabh-kumar.com/python-dotenv/)                  |
@@ -88,7 +87,6 @@ NOTE: Notebooks using ipywidgets will not render in GitHub, they can be displaye
 | [`duckdb`](https://pypi.org/project/duckdb/) | In-process analytical database optimized for OLAP workloads. | [Docs](https://duckdb.org/docs/) |
 | [`pyarrow`](https://pypi.org/project/pyarrow/) | Apache Arrow - shared memory format for efficient data exchange across Pandas, Polars, and DuckDB. | [Docs](https://arrow.apache.org/docs/python/) |
 | [`sqlalchemy`](https://pypi.org/project/SQLAlchemy/) | SQL toolkit and ORM for relational databases. | [Docs](https://docs.sqlalchemy.org/) |
-| [`dbt-core`](https://pypi.org/project/dbt-core/) | SQL-based data transformation framework. | [Docs](https://docs.getdbt.com/docs/core) |
 | [`dbt-duckdb`](https://pypi.org/project/dbt-duckdb/) | DBT adapter for DuckDB back-ends. | [Docs](https://github.com/jwills/dbt-duckdb) |
 | [`sqlmesh`](https://pypi.org/project/sqlmesh/) | Declarative data transformations in SQL and Python. | [Docs](https://sqlmesh.readthedocs.io/) |
 | [`prefect`](https://pypi.org/project/prefect/) | Modern workflow orchestration and dataflow automation. | [Docs](https://docs.prefect.io/) |
@@ -141,10 +139,10 @@ NOTE: Notebooks using ipywidgets will not render in GitHub, they can be displaye
 
 | Package | Description | Links |
 |----------|--------------|-------|
-| [`kafka-python-ng`](https://pypi.org/project/kafka-python-ng/) | Kafka client for Python 3.5+ supporting KRaft mode (~1 MB). | [Docs](https://github.com/dpkp/kafka-python-ng) |
 | [`pyspark`](https://pypi.org/project/pyspark/) | Distributed computation and structured streaming (heavy, 200 + MB). | [Docs](https://spark.apache.org/docs/latest/api/python/) |
 | [`streamz`](https://pypi.org/project/streamz/) | Lightweight streaming and reactive data pipelines. | [Docs](https://streamz.readthedocs.io/) |
 
+Check for current version of `kafka-python-ng` vs `kafka-python` as needed.
 
 
 ---
