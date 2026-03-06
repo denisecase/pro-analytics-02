@@ -97,7 +97,7 @@ repos:
 
       - id: check-added-large-files
         name: C1) Prevent accidental commits of large binaries
-        args: [--maxkb=500]
+        args: [--maxkb=2000] # WHY: 2MB is a common threshold for large files that should not be committed to git.
 
       - id: check-merge-conflict
         name: C2) Prevent committing merge conflicts

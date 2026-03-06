@@ -4,9 +4,8 @@
 # SOURCE: https://github.com/denisecase/templates
 #
 # WHY-FILE: Validate repository hygiene, python, and documentation builds.
-# REQ: Any check that can be run locally MUST be available locally via pre-commit.
 # REQ: CI MUST NOT introduce arbitrary rules that are not reproducible locally.
-# OBS: CI validates only; it never edits files or deploys docs.
+# OBS: CI validates only; it should not edit files or deploy docs.
 
 name: CI (Python + Zensical)
 
@@ -32,6 +31,8 @@ jobs:
     name: Repository / Python checks and Zensical build
     runs-on: ubuntu-latest # WHY: Linux environment matches most production deployments
     timeout-minutes: 30 # WHY: Prevent hanging jobs. If over time, it is likely stuck.
+    env:
+      UV_PYTHON: "3.14" # WHY: Set Python version for all steps.
 
     steps:
       # ============================================================
@@ -42,49 +43,35 @@ jobs:
         # WHY: Needed to access files for checks.
         uses: actions/checkout@v6
 
-      - name: A2) Run pre-commit (all files)
-        # WHY: Single source of truth for locally runnable quality gates.
-        # OBS: Fails if hooks would modify files; does not commit changes.
-        id: precommit # WHY: Identify step for conditional follow-up.
-        uses: pre-commit/action@v3.0.1
-        with:
-          extra_args: --all-files
-
-      - name: A2f) If pre-commit failed, run it locally
-        if: failure()
-        run: |
-          echo "## Pre-commit failed" >> "$GITHUB_STEP_SUMMARY"
-          echo "Please run pre-commit locally and commit the resulting changes." >> "$GITHUB_STEP_SUMMARY"
-
-      - name: A3) Install uv (with caching)
+      - name: A2) Install uv (with caching and uv.lock awareness)
         uses: astral-sh/setup-uv@v7
         with:
           enable-cache: true # WHY: Speed up installs on subsequent runs
           cache-dependency-glob: "uv.lock" # WHY: Only re-cache when dependencies change
 
-      - name: A4) Install Python 3.14
+      - name: A3) Install Python 3.14 (no repo changes needed)
         run: uv python install 3.14
+
+      - name: A4) Sync to install all dependencies
+        run: uv sync --extra dev --extra docs --upgrade
 
       - name: A5) Show tool versions
         run: |
-          python --version
           uv --version
+          uv run python --version
+          if [ -f "zensical.toml" ]; then
+            uv run zensical --version
+          fi
 
-      - name: A6) Sync to install all dependencies
-        run: uv sync --extra dev --extra docs --upgrade
+      - name: A6) Run pre-commit (all files)
+        run: uv tool run pre-commit run --all-files
 
       # ============================================================
       # === BASELINE CHECKS ===
       # ============================================================
 
-      - name: B1) validate-pyproject (must be in pyproject.toml deps)
+      - name: B1) validate-pyproject (must be in pyproject.toml dependencies)
         run: uv run validate-pyproject pyproject.toml
-
-      - name: B2) Ruff format (check only; no fixes)
-        run: uv run ruff format --check --diff .
-
-      - name: B3) Ruff lint (no fixes)
-        run: uv run ruff check .
 
       # ============================================================
       # === COVERAGE AND TESTS: Verify functionality ===
@@ -92,26 +79,23 @@ jobs:
 
       - name: C1) Run pytest with coverage
         run: |
-          if [ -d "tests" ] && [ -n "$(find tests -name 'test_*.py' -o -name '*_test.py')" ]; then
+          if [ -d "tests" ] && [ -n "$(find tests -type f \( -name 'test_*.py' -o -name '*_test.py' \) -print -quit)" ]; then
             uv run pytest --verbose --cov=src --cov-report=term-missing --cov-report=xml
           else
-            echo "No tests found - creating empty coverage report"
-            echo "## No Tests Found" >> $GITHUB_STEP_SUMMARY
-            echo "Please add test files to the tests/ directory." >> $GITHUB_STEP_SUMMARY
-            # Create empty coverage file so artifact upload doesn't fail
-            echo '<?xml version="1.0" ?><coverage></coverage>' > coverage.xml
+            echo "## No Tests Found" >> "$GITHUB_STEP_SUMMARY"
+            echo "Tests directory missing or empty. CI continues." >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: C2) Upload test coverage to GitHub Summary
         if: always()
         run: |
-          echo "## Test Coverage Report" >> $GITHUB_STEP_SUMMARY
+          echo "## Test Coverage Report" >> "$GITHUB_STEP_SUMMARY"
           if [ -f ".coverage" ]; then
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            uv run coverage report >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            uv run coverage report >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "No coverage data available." >> $GITHUB_STEP_SUMMARY
+            echo "No coverage data available." >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: C3) Upload coverage artifact
@@ -126,11 +110,10 @@ jobs:
       # === DEPLOY: Build only, don't deploy yet ===
       # ============================================================
 
-      - name: D1) Build docs (mkdocs --strict)
-        id: build-docs
+      - name: D1) Build docs with Zensical
         run: |
-          if [ -f "mkdocs.yml" ] || [ -f "mkdocs.yaml" ]; then
-            uv run mkdocs build --strict --verbose
+          if [ -f "zensical.toml" ]; then
+            uv run zensical build
           else
-            echo "No mkdocs config found; skipping docs build."
+            echo "No zensical.toml config found; skipping docs build."
           fi
