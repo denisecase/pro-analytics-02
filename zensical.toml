@@ -42,11 +42,7 @@ separate_signature = true
 [project.theme]
 # SEE: https://zensical.org/docs/setup/navigation/#instant-navigation-zensicaltoml
 features = [
-    "navigation.instant", # WHY: Instant navigation provides a faster and smoother user experience when navigating the documentation.
-    "navigation.instant.prefetch", # WHY: Prefetching improves performance by loading linked pages in the background.
-    "navigation.instant.progress", # WHY: Progress indicators enhance user experience by providing feedback during navigation.
     "navigation.tracking", # WHY: Tracking allows for analytics on how users interact with the documentation, which can inform improvements.
-    "navigation.sections", # WHY: Sections provide better organization and readability for documentation, especially for larger projects.
     "navigation.expand", # WHY: Expandable navigation allows users to focus on relevant sections while keeping the overall structure accessible.
     "navigation.path", # WHY: Path navigation helps users understand their location within the documentation hierarchy.
     "navigation.prune", # WHY: Pruning simplifies navigation by hiding irrelevant sections based on the current page.
@@ -54,8 +50,7 @@ features = [
     "toc.follow", # WHY: Following the table of contents enhances user experience by keeping the navigation in sync with the current page.
     "toc.integrate", # WHY: Integrating the table of contents into the navigation provides a more cohesive and user-friendly interface.
     "navigation.top",# WHY: A "Back to top" button improves usability by allowing users to quickly return to the top of the page.
-    # "navigation.tabs", # NOT USED: Tabs can be useful for certain documentation styles, but they may not fit the structure of this project.
-]
+ ]
 
 # ------------------------------------------------------------
 # Navigation
