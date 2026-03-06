@@ -20,7 +20,3 @@
 
 - These setup tasks are critical.
 - Verify each step works before proceeding.
-
-## Recommended Video
-
-- [Watch Python Tutorial for Beginners with VS Code (14 min)](https://www.youtube.com/watch?v=6i3e-j3wSf0)
