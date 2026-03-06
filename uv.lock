@@ -195,11 +195,11 @@ wheels = [
 
 [[package]]
 name = "datafun-toolkit"
-version = "0.9.5"
+version = "1.0.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/a3/83/c0f878fc9bb53e12b6c8a1ab8483f7ec0aeeaa2f3cdec46b367f0f85215b/datafun_toolkit-0.9.5.tar.gz", hash = "sha256:7c1001abda89ed509d9c0d36664ffc1b8a4e5a861d5db168ba14dce7c4c5d65e", size = 71849, upload-time = "2026-01-12T04:35:46.767Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/34/9b/8129c47656e183d1a24687d83d69b25dd5248a2f847fa594350c7ae8b520/datafun_toolkit-1.0.0.tar.gz", hash = "sha256:34eec90e183628e5c39e4b53de859be21f470f77607aff1557690d23e6755ad2", size = 57247, upload-time = "2026-03-06T22:57:33.671Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/92/dc/4faf4e2be9760fb1f24482bc7db40650fd888414224f4cf87ed5763f852e/datafun_toolkit-0.9.5-py3-none-any.whl", hash = "sha256:91c06a0a78aff7c002a66c10d095f9e2306ac992e88da39c5a41d54305cb4d10", size = 9760, upload-time = "2026-01-12T04:35:44.879Z" },
+    { url = "https://files.pythonhosted.org/packages/3e/c0/35b0b55c4bb1a4a8445550715d376b1e9dc9011dfa263a307ecf9ab77dab/datafun_toolkit-1.0.0-py3-none-any.whl", hash = "sha256:a14c0d63f8457e020dfd93192b418a56ae333e0bf9d73e9780b3d45c78cdef2e", size = 9880, upload-time = "2026-03-06T22:57:32.184Z" },
 ]
 
 [[package]]
@@ -901,7 +901,7 @@ docs = [
 [package.metadata]
 requires-dist = [
     { name = "bandit", marker = "extra == 'dev'", specifier = ">=1.9.2" },
-    { name = "datafun-toolkit", specifier = ">=0.9.4" },
+    { name = "datafun-toolkit", specifier = ">=1.0.0" },
     { name = "ipykernel", specifier = ">=7.1.0" },
     { name = "ipython", specifier = ">=9.11.0" },
     { name = "matplotlib", specifier = ">=3.8.0" },

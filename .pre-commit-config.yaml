@@ -15,7 +15,7 @@
 #
 # OPTIONAL LOCAL USAGE (no repo venv required):
 #   You must have uv installed locally.
-#   Run these commands ONCE in from the repo root to enable pre-commit:
+#   Run these commands once in from the repo root to enable pre-commit:
 #
 #   uv self update
 #   uvx pre-commit install
@@ -88,10 +88,8 @@ repos:
       - id: check-yaml
         name: B3) Validate YAML syntax
         files: \.(yml|yaml)$
-        # WHY:
-        #    VS Code config files are editor-specific
-        #    mkdocs.yml may use YAML anchors not supported by the checker
-        exclude: ^(\.vscode/|mkdocs\.ya?ml$)
+        # WHY: VS Code config files are editor-specific
+        exclude: ^(\.vscode/)
 
       # === PRE-COMMIT:CHECK FOR COMMON PROBLEMS ===
 
@@ -108,7 +106,7 @@ repos:
   # === REPO: RUFF PRE-COMMIT (for Python code) ===
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.4
+    rev: v0.15.5
     hooks:
       # === RUFF PRE-COMMIT CHECKS ===
       - id: ruff-format

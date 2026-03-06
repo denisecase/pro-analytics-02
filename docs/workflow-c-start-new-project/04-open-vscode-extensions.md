@@ -1,4 +1,4 @@
-# 🟢 Open the Project in VS Code (and Install Extensions as Needed)
+# 🟠 Open the Project in VS Code (and Install Extensions as Needed)
 
 > How to open the cloned project in VS Code and install the recommended extensions.
 

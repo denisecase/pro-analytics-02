@@ -72,10 +72,6 @@ Install and run pre-commit checks (twice if necessary as shown below):
 
 ```shell
 uvx pre-commit install
-
-git add -A
-uvx pre-commit run --all-files
-
 git add -A
 uvx pre-commit run --all-files
 ```
@@ -89,6 +85,7 @@ Open a VS Code terminal (menu: `Terminal` / `New Terminal`) and run:
 git pull
 
 uv run python src/pro_analytics_02/demo_module_basics.py
+uv run python -m pro_analytics_02.demo_module_basics
 
 uv run ruff format .
 uv run ruff check . --fix
@@ -110,10 +107,6 @@ you may need to **re-run git `add` and `commit`** to ensure everything gets comm
 ```shell
 git add -A
 git commit -m "update"
-
-git add -A
-git commit -m "update"
-
 git push -u origin main
 ```
 

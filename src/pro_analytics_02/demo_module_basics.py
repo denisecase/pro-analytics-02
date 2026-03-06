@@ -24,25 +24,22 @@ Professional Applications:
 # === DECLARE IMPORTS (BRING IN FREE CODE) ===
 
 # Python standard library
-import logging  # only needed so we can type hint the logger variable
+import logging
+from pathlib import Path
 
 # External (must be listed in pyproject.toml)
-# logging helps track program execution and is preferred over print statements
-# We'll use a pre-configured logger that respects privacy.
-from datafun_toolkit.logger import (
-    get_logger,
-    log_header,
-)
+from datafun_toolkit.logger import get_logger, log_header, log_path
 
-# === CONFIGURE LOGGER ONCE PER MODULE (PYTHON FILE) ===
+# === CONFIGURE LOGGER ===
 
-# Call the get_logger() function, pass in a phrase and the logging level we want.
-# The phrase helps identify the source of log messages.
-# The level could be "DEBUG", "INFO", "WARNING", "ERROR", or "CRITICAL".
-# Use DEBUG for development, INFO for production.
-logger: logging.Logger = get_logger("P01", level="INFO")
+LOG: logging.Logger = get_logger("CI", level="DEBUG")
 
-# === Define Functions ===
+# === DEFINE GLOBAL PATHS ===
+
+ROOT_PATH: Path = Path.cwd()
+NOTEBOOKS_PATH: Path = ROOT_PATH / "notebooks"
+
+# === DEFINE FUNCTIONS ===
 
 
 def show_naming_and_comments() -> None:
@@ -51,9 +48,9 @@ def show_naming_and_comments() -> None:
     Arguments: None - nothing is passed in via the parentheses.
     Returns: None
     """
-    logger.info("Name Python files with lowercase and underscores.")
-    logger.info("In Python, comments start with a '#' symbol and are not executed.")
-    logger.info(
+    LOG.info("Name Python files with lowercase and underscores.")
+    LOG.info("In Python, comments start with a '#' symbol and are not executed.")
+    LOG.info(
         "Comments can also be wrapped in triple single quotes or triple backticks."
     )
 
@@ -64,18 +61,18 @@ def show_variables_and_types() -> None:
     Arguments: None - nothing is passed in via the parentheses.
     Returns: None
     """
-    logger.info("Variables are used to store values.")
-    logger.info("Type hints are optional but recommended for clarity.")
-    logger.info("  example_number = 42")
-    logger.info("  count: int = 42")
-    logger.info("  temp_F: float = 42.2")
-    logger.info('  user_name: str = "Data Analyst"')
+    LOG.info("Variables are used to store values.")
+    LOG.info("Type hints are optional but recommended for clarity.")
+    LOG.info("  example_number = 42")
+    LOG.info("  count: int = 42")
+    LOG.info("  temp_F: float = 42.2")
+    LOG.info('  user_name: str = "Data Analyst"')
 
     example_number = 42
     count: int = 42
     temp_f: float = 42.2
     user_name: str = "Data Analyst"
-    logger.info(f"Result: {example_number=}, {count=}, {temp_f=}, {user_name=}.")
+    LOG.info(f"Result: {example_number=}, {count=}, {temp_f=}, {user_name=}.")
 
 
 def show_functions_and_fstrings() -> None:
@@ -84,12 +81,10 @@ def show_functions_and_fstrings() -> None:
     Arguments: None - nothing is passed in via the parentheses.
     Returns: None
     """
-    logger.info("Functions in Python are blocks of reusable code.")
-    logger.info("You can call a function by using its name followed by parentheses.")
-    logger.info("We use f-strings to combine text and values in Python.")
-    logger.info(
-        "  Put the 'f' immediately before the opening quote of the string text."
-    )
+    LOG.info("Functions in Python are blocks of reusable code.")
+    LOG.info("You can call a function by using its name followed by parentheses.")
+    LOG.info("We use f-strings to combine text and values in Python.")
+    LOG.info("  Put the 'f' immediately before the opening quote of the string text.")
 
 
 def show_builtins_example() -> None:
@@ -98,15 +93,15 @@ def show_builtins_example() -> None:
     Arguments: None - nothing is passed in via the parentheses.
     Returns: None
     """
-    logger.info("Python has many built-in functions, like min(), max(), and len().")
+    LOG.info("Python has many built-in functions, like min(), max(), and len().")
     numbers = [1, 2, 3]
     minimum = min(numbers)
     maximum = max(numbers)
     count = len(numbers)
-    logger.info(f"For the list of numbers: {numbers}")
-    logger.info(f"  The minimum value is min(numbers): {minimum}")
-    logger.info(f"  The maximum value is max(numbers): {maximum}")
-    logger.info(f"  The length of the list is len(numbers): {count}")
+    LOG.info(f"For the list of numbers: {numbers}")
+    LOG.info(f"  The minimum value is min(numbers): {minimum}")
+    LOG.info(f"  The maximum value is max(numbers): {maximum}")
+    LOG.info(f"  The length of the list is len(numbers): {count}")
 
 
 def show_truths() -> None:
@@ -116,9 +111,9 @@ def show_truths() -> None:
     Returns: None
     """
     is_important: bool = True
-    logger.info(f"In Python, indentation matters = {is_important}!")
-    logger.info(f"In Python, spelling matters = {is_important}!")
-    logger.info(f"In Python, uppercase/lowercase matters = {is_important}!")
+    LOG.info(f"In Python, indentation matters = {is_important}!")
+    LOG.info(f"In Python, spelling matters = {is_important}!")
+    LOG.info(f"In Python, uppercase/lowercase matters = {is_important}!")
 
 
 # === DECLARE A FUNCTION TO DEMONSTRATE PYTHON ===
@@ -126,14 +121,14 @@ def show_truths() -> None:
 
 def demo_basics() -> None:
     """Demonstrate Python basics."""
-    logger.info("Starting demo_python() function.")
+    LOG.info("Starting demo_python() function.")
     show_naming_and_comments()
     show_variables_and_types()
     show_functions_and_fstrings()
     show_builtins_example()
     show_truths()
-    logger.info("Experiment with this demo script to learn the basics quickly.")
-    logger.info("Exiting demo_python() function.")
+    LOG.info("Experiment with this demo script to learn the basics quickly.")
+    LOG.info("Exiting demo_python() function.")
 
 
 # === DEFINE THE MAIN FUNCTION THAT CALLS OTHER FUNCTIONS ===
@@ -154,15 +149,14 @@ def main() -> None:
     Call the get_summary() function to get the formatted summary string,
     Log the summary string we get back from get_summary().
     """
-    logger.info("=================")
-    log_header(logger, "Professional Python")
-    logger.info("=================")
-
-    logger.info("START main()")
+    log_header(LOG, "Pro Python")
+    LOG.info("START main()")
+    log_path(LOG, "ROOT_PATH", ROOT_PATH)
+    log_path(LOG, "NOTEBOOKS_PATH", NOTEBOOKS_PATH)
 
     demo_basics()
 
-    logger.info("END main()")
+    LOG.info("END main()")
 
 
 # === CONDITIONAL EXECUTION GUARD ===

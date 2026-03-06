@@ -7,7 +7,7 @@
 # It is used in this project to streamline documentation and provide better support for docstring generation.
 
 [project]
-site_name = "Project Docs"
+site_name = "Professional Python Guide" # WHY: Match the title of docs/index.md.
 site_url = "https://denisecase.github.io/pro-analytics-02/"
 repo_url = "https://github.com/denisecase/pro-analytics-02"
 repo_name = "denisecase/pro-analytics-02"

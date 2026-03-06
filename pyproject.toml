@@ -15,7 +15,7 @@ version = "0.1.0"
 
 dependencies = [
     # REQ.DEPS: External packages used by the project code.
-    "datafun-toolkit>=0.9.6",
+    "datafun-toolkit>=1.0.0",
     "ipykernel>=7.1.0",
     "ipython>=9.11.0",
     "pandas>=2.3.3",

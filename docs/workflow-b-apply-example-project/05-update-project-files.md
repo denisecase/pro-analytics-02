@@ -1,4 +1,4 @@
-# 🟠 Personalize Common Project Files
+# 🔵 Personalize Common Project Files
 
 Personalize core files common in professional analytics projects.
 Especially:
