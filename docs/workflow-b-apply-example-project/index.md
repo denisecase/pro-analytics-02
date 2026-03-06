@@ -12,7 +12,7 @@ start with a working system, understand it, modify it, and adapt it to new situa
 
 Run → Understand → Modify → Apply
 
-## Steps
+## Five Phases
 
 1. [Start & Run](01-start-and-run/index.md)
 2. [Change Authorship](02-change-authorship/index.md)

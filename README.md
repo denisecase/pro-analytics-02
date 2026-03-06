@@ -33,7 +33,7 @@ For developers and maintainers (or if you want to fork your own copy).
 
 ### Set Up Machine
 
-- Complete 🟢 [A. Set Up Machine](workflow-a-set-up-machine/index.md) to **set up a machine** for Python development.
+- Complete 🟢 [Workflow A. Set Up Machine](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/) to **set up a machine** for Python development.
 
 ### Copy & Open this Project in VS Code
 

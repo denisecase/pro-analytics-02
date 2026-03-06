@@ -1,11 +1,11 @@
 # 🔵 Workflow 2.2: Change Authorship
 
-> Make the project yours while preserving credit for the original.
+> Phase 2. Make the project yours while preserving credit for the original.
 
-## Professional Practice
+## Goal
 
-After copying a repository, update the project to reflect your authorship.
-The repository now belongs to you, while the original source is acknowledged.
+In this phase, you update the project to reflect your authorship.
+The repository now belongs to you while crediting the original source.
 
 ## Steps
 

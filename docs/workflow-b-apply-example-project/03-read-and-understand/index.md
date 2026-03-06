@@ -1,6 +1,6 @@
 # 🔵 Workflow 2.3: Read and Understand the Project
 
-> Read and understand the tools and techniques used in the project.
+> Phase 3. Read and understand the tools and techniques used in the project.
 
 ## Professional Practice
 
@@ -23,7 +23,7 @@ The slash is not part of the folder name; it's just a convention used in documen
 
 ## Goal
 
-By the end of this step you should understand:
+By the end of this phase you should understand:
 
 - the purpose of the project
 - the main tools or techniques used

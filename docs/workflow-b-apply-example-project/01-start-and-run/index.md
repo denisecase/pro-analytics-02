@@ -1,14 +1,14 @@
 # 🔵 Workflow 2.1: Apply Course Project: Start & Run
 
-> Get started with an example project by copying and running the example.
+> Phase 1. Get started with an example project by copying and running the example.
 
 ## Goal
 
-The goal of this step is to get your own copy of the project and confirm it runs on your machine.
+The goal of this phase is to get your own working copy of the project and confirm it runs on your machine.
 
 ## Outcome
 
-At the end of this step you should have:
+At the end of this phase you should have:
 
 - Your own copy of the repository in GitHub
 - The project cloned down to your machine

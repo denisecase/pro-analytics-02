@@ -15,7 +15,7 @@ version = "0.1.0"
 
 dependencies = [
     # REQ.DEPS: External packages used by the project code.
-    "datafun-toolkit>=0.9.4",
+    "datafun-toolkit>=0.9.6",
     "ipykernel>=7.1.0",
     "ipython>=9.11.0",
     "pandas>=2.3.3",
@@ -36,7 +36,6 @@ dev = [
     "ruff>=0.15.5",
     "validate-pyproject>=0.24.1",
 ]
-
 
 docs = [
     # REQ.DOCS.DEPS: External packages used to generate project documentation.

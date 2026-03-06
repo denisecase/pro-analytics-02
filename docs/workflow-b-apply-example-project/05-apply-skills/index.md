@@ -1,12 +1,12 @@
 # 🔵 Workflow 2.5: Complete the Project
 
-> Complete the project by applying the techniques and skills to a new problem or dataset.
+> Phase 5. Complete the project by applying the techniques and skills to a new problem or dataset.
 
 ## Professional Practice
 
-After experimenting with a technical modification, the final step is to apply the techniques from the example project to a **new situation**.
+After experimenting with a technical modification, the final phase is to apply the skills from the example project to a **new problem**.
 
-This step demonstrates that you understand the approach and can use it independently.
+This phase demonstrates you understand the skills and can use them independently.
 
 Typical ways to apply the skills include:
 
