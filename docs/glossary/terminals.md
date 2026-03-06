@@ -50,9 +50,10 @@ Example: `cd ~` navigates to your home directory.
 
 A special environment variable listing directories where the shell looks for commands.
 
-### Root Directory
+### Root Directory / Root Project Folder / Project Root
 
-The top-level directory of a file system. All paths originate here.
+The top-level directory of a file system.
+All paths originate here.
 
 When working with projects, we call the project repository folder the root folder of that project (the topmost folder for that project).
 

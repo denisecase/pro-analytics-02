@@ -1,6 +1,6 @@
 # 🟠 Configure Repository Settings
 
-> Configure settings based on your project needs.
+> Configure repo settings based on your project needs.
 
 ## For Project Documentation, Enable GitHub Pages
 
@@ -15,7 +15,7 @@ This gives you a professional, shareable site for your project instructions, set
 Once enabled, GitHub will automatically build and publish your MkDocs documentation whenever you push changes to your repository.
 
 
-## For Keeping Project Dependencies Current, Enable Dependabot
+## OPTIONAL: For Keeping Project Dependencies Current, Enable Dependabot
 
 When viewing your repository in GitHub, enable **Dependabot** so the project action dependencies stay current.
 This provides a quick, automatic notification that can assist with keeping your projects secure.
@@ -30,7 +30,7 @@ Once enabled, Dependabot will automatically monitor the versions for the code us
 
 ---
 
-## Analytics Project Documentation
+## Project Documentation
 
 - Analytics work requires **clear communication**, not just code
 - MkDocs and GitHub Pages provide a **clean, professional documentation site**

@@ -14,7 +14,7 @@ For example: `pro_analytics_02`
 It is part of the Python weirdness that, when published, folders that use UNDERSCORES are typically converted to DASHES on package indexes like PyPI.
 
 - So a src/ folder named:  `pro_analytics_02`
-- Becomes a package named: `analytics-project`
+- Becomes a package named: `pro-analytics-02`
 
 ## Make it a Package
 

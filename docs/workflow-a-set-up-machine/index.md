@@ -1,6 +1,7 @@
-# 🟢 Workflow 1: Set Up Machine (Once per machine)
+# 🟢 Workflow A: Set Up Machine (Once per machine)
 
-> How to set up a machine for professional Python projects.
+> Set up a machine for professional Python projects.
+> Do this just once per machine (or periodically to update tools).
 
 ---
 
@@ -10,7 +11,7 @@
 2. [View File Extensions and Hidden Files and Folders](02-view-hidden-files-and-extensions.md)
 3. Install Tools: [Linux/WSL](03a-linux-install-tools.md) or [macOS](03b-mac-install-tools.md) or [Windows](03c-windows-install-tools.md)
 4. [Configure Git with name and email](04-configure-git.md)
-5. [Create `Repos/` Folder (to store all GitHub projects)](05-create-repos-folder.md)
+5. [Create `Repos/` Folder (to store GitHub projects)](05-create-repos-folder.md)
 6. [Verify](06-verify.md)
 
 ---

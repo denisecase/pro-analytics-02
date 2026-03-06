@@ -114,14 +114,14 @@ Details provided below.
 ## 01: Set Up Machine (Once Per Machine)
 
 Follow the detailed instructions at:
-[**01. Set Up Your Machine**](./docs/01-set-up-machine/index.md).
+[**01. Set Up Your Machine**](./docs/workflow-a-set-up-machine/index.md).
 
 🛑 Do not continue until all these steps are complete and verified.
 
 ## 02: Set Up Project (Once Per Project)
 
 Follow the detailed instructions at:
-[**02. Set Up Your Project**](./docs/02-set-up-project/index.md).
+[**02. Set Up Your Project**](./docs/workflow-c-start-new-project/index.md).
 
 Detailed instructions are provided to:
 
@@ -171,7 +171,7 @@ uvx pre-commit run --all-files
 ## 03: Daily Workflow (Working With Python Project Code)
 
 We follow the detailed instructions at:
-[**03. Daily Workflow**](./docs/03-daily-workflow/index.md).
+[**03. Daily Workflow**](./docs/workflow-b-apply-example-project/index.md).
 
 Commands are provided below to:
 
@@ -205,17 +205,23 @@ uv run pytest --cov=src --cov-report=term-missing
 Build and serve docs (hit **CTRL+c** in the VS Code terminal to quit serving):
 
 ```shell
-uv run mkdocs build --strict
-uv run mkdocs serve
+uv run zensical build
+uv run zensical serve
 ```
 
 While editing project code and docs, repeat the commands above to run files, check them, and rebuild docs as needed.
 
-Save progress frequently (some tools may make changes; you may need to **re-run git `add` and `commit`** to ensure everything gets committed before pushing):
+Save progress frequently.
+Some tools may make changes;
+you may need to **re-run git `add` and `commit`** to ensure everything gets committed before pushing.
 
 ```shell
 git add -A
 git commit -m "update"
+
+git add -A
+git commit -m "update"
+
 git push -u origin main
 ```
 

@@ -111,75 +111,98 @@ markdown_extensions:
 nav:
   - Home: index.md
 
-  - "1: Set Up Machine":
-      - Overview: 01-set-up-machine/index.md
-      - Create GitHub Account: 01-set-up-machine/01-create-github-account.md
-      - View Hidden Files and Extensions: 01-set-up-machine/02-view-hidden-files-and-extensions.md
-      - Linux Install Tools: 01-set-up-machine/03a-linux-install-tools.md
-      - Mac Install Tools: 01-set-up-machine/03b-mac-install-tools.md
-      - Windows Install Tools: 01-set-up-machine/03c-windows-install-tools.md
-      - Configure Git: 01-set-up-machine/04-configure-git.md
-      - Create Repos Folder: 01-set-up-machine/05-create-repos-folder.md
-      - Verify Setup: 01-set-up-machine/06-verify.md
+  - Workflow A. Set Up Machine:
+      - Overview: workflow-a-set-up-machine/index.md
+      - Create GitHub account: workflow-a-set-up-machine/01-create-github-account.md
+      - View hidden files and extensions: workflow-a-set-up-machine/02-view-hidden-files-and-extensions.md
+      - Install tools (Linux): workflow-a-set-up-machine/03a-linux-install-tools.md
+      - Install tools (macOS): workflow-a-set-up-machine/03b-mac-install-tools.md
+      - Install tools (Windows): workflow-a-set-up-machine/03c-windows-install-tools.md
+      - Configure Git: workflow-a-set-up-machine/04-configure-git.md
+      - Create Repos folder: workflow-a-set-up-machine/05-create-repos-folder.md
+      - Verify: workflow-a-set-up-machine/06-verify.md
 
-  - "2: Set Up Project":
-      - Overview: 02-set-up-project/index.md
-      - Start in GitHub and Get a Repo: 02-set-up-project/01-start-in-github.md
-      - Enable GitHub Pages: 02-set-up-project/02-configure-repo-settings.md
-      - Clone Repo to Local: 02-set-up-project/03-clone-repo-to-local.md
-      - Open VS Code and Install Extensions: 02-set-up-project/04-open-vscode-extensions.md
-      - Set Up Environment: 02-set-up-project/05-set-up-environment.md
-      - Verify Setup: 02-set-up-project/06-verify.md
+  - Workflow B. Apply Example Project:
+      - Overview: workflow-b-apply-example-project/index.md
+      - Run Python: workflow-b-apply-example-project/run-python.md
+      - Run notebook: workflow-b-apply-example-project/run-notebook.md
+      - Start and run:
+          - Overview: workflow-b-apply-example-project/01-start-and-run/index.md
+          - Start in GitHub: workflow-b-apply-example-project/01-start-and-run/01-start-in-github.md
+          - Configure repository settings: workflow-b-apply-example-project/01-start-and-run/02-configure-repo-settings.md
+          - Clone repo to local: workflow-b-apply-example-project/01-start-and-run/03-clone-repo-to-local.md
+          - Open VS Code and extensions: workflow-b-apply-example-project/01-start-and-run/04-open-vscode-extensions.md
+          - Set up environment: workflow-b-apply-example-project/01-start-and-run/05-set-up-environment.md
+          - Run project: workflow-b-apply-example-project/01-start-and-run/06-run-project.md
+          - Git add-commit-push: workflow-b-apply-example-project/01-start-and-run/07-git-add-commit-push.md
+      - Change authorship:
+          - Overview: workflow-b-apply-example-project/02-change-authorship/index.md
+          - Git pull before changes: workflow-b-apply-example-project/02-change-authorship/01-git-pull-before-changes.md
+          - Update authorship: workflow-b-apply-example-project/02-change-authorship/02-update-authorship.md
+          - Run project: workflow-b-apply-example-project/02-change-authorship/03-run-project.md
+          - Git add-commit-push: workflow-b-apply-example-project/02-change-authorship/04-git-add-commit-push.md
+      - Read and understand:
+          - Overview: workflow-b-apply-example-project/03-read-and-understand/index.md
+      - Make technical modification:
+          - Overview: workflow-b-apply-example-project/04-make-technical-modification/index.md
+          - Git pull before changes: workflow-b-apply-example-project/04-make-technical-modification/01-git-pull-before-changes.md
+          - Make a modification: workflow-b-apply-example-project/04-make-technical-modification/02-make-modification.md
+          - Run project: workflow-b-apply-example-project/04-make-technical-modification/03-run-project.md
+          - Git add-commit-push: workflow-b-apply-example-project/04-make-technical-modification/04-git-add-commit-push.md
+      - Apply skills:
+          - Overview: workflow-b-apply-example-project/05-apply-skills/index.md
+          - Git pull before changes: workflow-b-apply-example-project/05-apply-skills/01-git-pull-before-changes.md
+          - Apply skills: workflow-b-apply-example-project/05-apply-skills/02-apply-skills.md
+          - Run project: workflow-b-apply-example-project/05-apply-skills/03-run-project.md
+          - Git add-commit-push: workflow-b-apply-example-project/05-apply-skills/04-git-add-commit-push.md
+      - Update project files: workflow-b-apply-example-project/05-update-project-files.md
 
-  - "3: Daily Workflow":
-      - Overview: 03-daily-workflow/index.md
-      - Git Pull Before Changes: 03-daily-workflow/01-git-pull-before-changes.md
-      - Update and Check: 03-daily-workflow/02-run-and-check.md
-      - Run Python Script: 03-daily-workflow/02a-run-python.md
-      - Run Jupyter Notebook: 03-daily-workflow/02b-run-notebook.md
-      - Build and Serve Docs: 03-daily-workflow/03-build-serve-docs.md
-      - Git Add Commit Push: 03-daily-workflow/04-git-add-commit-push.md
-      - Update Project Files: 03-daily-workflow/05-update-project-files.md
-
-  - Concepts:
-      - Problem Types: problem-types.md
-      - Python Standard Library: py-standard-library.md
-      - Python Packages (Core): py-packages-core.md
-      - Python Packages (Extended): py-packages.md
-
-  - Python:
-      - Project Structure: 06-python/project-structure.md
-      - File Structure: 06-python/python-file-structure.md
-      - Running Python: 06-python/running-python.md
-      - Project docs (MkDocs): 06-python/project-mkdocs.md
-      - Standard Library: 06-python/standard-library.md
-      - Troubleshooting: 06-python/troubleshooting.md
-      - Writing README: 06-python/writing-readme.md
-      - VS Code Tips: 06-python/python-vscode-tips.md
-
-  - Glossary:
-      - Data Formats: glossary/data-formats.md
-      - Editors: glossary/editors.md
-      - Git & GitHub: glossary/git-github.md
-      - Project Workflow: glossary/project-workflow.md
-      - Python:
-        - environment: glossary/python/environment.md
-        - project-structure: glossary/python/project-structure.md
-        - language: glossary/python/python-language.md
-      - Terminals: glossary/terminals.md
-
-  - Terminals:
-      - Terminals, Shells, and Environments: 05-terminals/terminals-shells-envs.md
-      - Windows: 05-terminals/terminals-shells-windows.md
-      - Mac: 05-terminals/terminals-shells-mac-linux.md
-
-  - GitHub Actions:
-    - Pre-Commit: 07-github-actions/00-pre-commit.md
-    - Continuous Integration: 07-github-actions/01-ci.md
-
-  - Help:
-      - Taking Screenshots: 04-help/01-taking-screenshots.md
-      - Hosting Video: 04-help/02-hosting-video.md
+  - Workflow C. Start New Project:
+      - Overview: workflow-c-start-new-project/index.md
+      - Start in GitHub: workflow-c-start-new-project/01-start-in-github.md
+      - Configure repository settings: workflow-c-start-new-project/02-configure-repo-settings.md
+      - Clone repo to local: workflow-c-start-new-project/03-clone-repo-to-local.md
+      - Open VS Code and extensions: workflow-c-start-new-project/04-open-vscode-extensions.md
+      - Set up environment: workflow-c-start-new-project/05-set-up-environment.md
+      - Verify: workflow-c-start-new-project/06-verify.md
 
   - Reference:
-      - API: api.md
+      - Problem types: reference/problem-types/problem-types.md
+      - API: reference/api/api.md
+      - Packaging:
+          - Python packages: reference/packaging/py-packages.md
+          - Python packages (core): reference/packaging/py-packages-core.md
+          - Python standard library: reference/packaging/py-standard-library.md
+      - Python:
+          - Project structure: reference/python/project-structure.md
+          - Python file structure: reference/python/python-file-structure.md
+          - Running Python: reference/python/running-python.md
+          - VS Code tips: reference/python/python-vscode-tips.md
+          - Writing a README: reference/python/writing-readme.md
+          - MkDocs project: reference/python/project-mkdocs.md
+          - Standard library: reference/python/standard-library.md
+          - Troubleshooting: reference/python/troubleshooting.md
+
+  - Tools:
+      - Terminals:
+          - Terminals, shells, environments: tools/terminals/terminals-shells-envs.md
+          - macOS and Linux: tools/terminals/terminals-shells-mac-linux.md
+          - Windows: tools/terminals/terminals-shells-windows.md
+      - GitHub and CI:
+          - Pre-commit: tools/github-and-ci/00-pre-commit.md
+          - CI: tools/github-and-ci/01-ci.md
+
+  - Help:
+      - Taking screenshots: help/01-taking-screenshots.md
+      - Hosting video: help/02-hosting-video.md
+
+  - Glossary:
+      - Data formats: glossary/data-formats.md
+      - Editors: glossary/editors.md
+      - Git and GitHub: glossary/git-github.md
+      - Project workflow: glossary/project-workflow.md
+      - Terminals: glossary/terminals.md
+      - Python:
+          - Environment: glossary/python/environment.md
+          - Project structure: glossary/python/project-structure.md
+          - Python language: glossary/python/python-language.md

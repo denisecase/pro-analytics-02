@@ -1,0 +1,186 @@
+# ============================================================
+# zensical.toml (Zensical configuration file)
+# ============================================================
+
+# WHY: Centralizes project documentation configuration.
+# Zensical is a drop-in replacement for MkDocs that provides AI-assisted docstring generation and enhanced documentation features.
+# It is used in this project to streamline documentation and provide better support for docstring generation.
+
+[project]
+site_name = "Project Docs"
+site_url = "https://denisecase.github.io/pro-analytics-02/"
+repo_url = "https://github.com/denisecase/pro-analytics-02"
+repo_name = "denisecase/pro-analytics-02"
+site_description = "Opinionated guide to professional Python projects"
+docs_dir = "docs" # source directory for documentation markdown files
+site_dir = "site" # output directory for generated site (ignored by Git; not in repo)
+edit_uri = "edit/main/docs/" # "Edit this page" links (GitHub)
+
+[project.extra]
+# WHY: Social links provide easy access to project repositories and profiles.
+social = [
+    { icon = "fontawesome/brands/github", link = "https://github.com/denisecase/pro-analytics-02" },
+]
+
+# ------------------------------------------------------------
+# Plugins
+# ------------------------------------------------------------
+[project.plugins.search]
+lang = "en" # WHY: Search plugin provides instant search functionality for documentation.
+
+[project.plugins.mkdocstrings.handlers.python]
+paths = ["src"] # WHY: MkDocstrings auto-generates documentation from code; this points it to the source code directory.
+
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "google" # WHY: Google style docstrings are widely used and supported by many tools, including Zensical's AI-assisted generation.
+show_source = true # WHY: Showing source code in documentation can help users understand implementation details.
+show_root_heading = true
+show_root_toc_entry = true
+show_signature_annotations = true
+separate_signature = true
+
+[project.theme]
+# SEE: https://zensical.org/docs/setup/navigation/#instant-navigation-zensicaltoml
+features = [
+    "navigation.instant", # WHY: Instant navigation provides a faster and smoother user experience when navigating the documentation.
+    "navigation.instant.prefetch", # WHY: Prefetching improves performance by loading linked pages in the background.
+    "navigation.instant.progress", # WHY: Progress indicators enhance user experience by providing feedback during navigation.
+    "navigation.tracking", # WHY: Tracking allows for analytics on how users interact with the documentation, which can inform improvements.
+    "navigation.sections", # WHY: Sections provide better organization and readability for documentation, especially for larger projects.
+    "navigation.expand", # WHY: Expandable navigation allows users to focus on relevant sections while keeping the overall structure accessible.
+    "navigation.path", # WHY: Path navigation helps users understand their location within the documentation hierarchy.
+    "navigation.prune", # WHY: Pruning simplifies navigation by hiding irrelevant sections based on the current page.
+    "navigation.indexes", # WHY: Indexes provide an overview of the documentation structure and allow for quick access to different sections.
+    "toc.follow", # WHY: Following the table of contents enhances user experience by keeping the navigation in sync with the current page.
+    "toc.integrate", # WHY: Integrating the table of contents into the navigation provides a more cohesive and user-friendly interface.
+    "navigation.top",# WHY: A "Back to top" button improves usability by allowing users to quickly return to the top of the page.
+    # "navigation.tabs", # NOT USED: Tabs can be useful for certain documentation styles, but they may not fit the structure of this project.
+]
+
+# ------------------------------------------------------------
+# Navigation
+# ------------------------------------------------------------
+# Zensical supports navigation configuration; the shape below mirrors your MkDocs nav.
+# If you later decide to rely more on folder-based navigation, you can simplify.
+
+nav = [
+    { "Home" = "index.md" },
+
+    { "Workflow A. Set Up Machine" = [
+        { "Overview" = "workflow-a-set-up-machine/index.md" },
+        { "Create GitHub account" = "workflow-a-set-up-machine/01-create-github-account.md" },
+        { "View hidden files and extensions" = "workflow-a-set-up-machine/02-view-hidden-files-and-extensions.md" },
+        { "Install tools (Linux)" = "workflow-a-set-up-machine/03a-linux-install-tools.md" },
+        { "Install tools (macOS)" = "workflow-a-set-up-machine/03b-mac-install-tools.md" },
+        { "Install tools (Windows)" = "workflow-a-set-up-machine/03c-windows-install-tools.md" },
+        { "Configure Git" = "workflow-a-set-up-machine/04-configure-git.md" },
+        { "Create Repos folder" = "workflow-a-set-up-machine/05-create-repos-folder.md" },
+        { "Verify" = "workflow-a-set-up-machine/06-verify.md" },
+    ] },
+
+    { "Workflow B. Apply Example Project" = [
+        { "Overview" = "workflow-b-apply-example-project/index.md" },
+        { "Run Python" = "workflow-b-apply-example-project/run-python.md" },
+        { "Run notebook" = "workflow-b-apply-example-project/run-notebook.md" },
+
+        { "Start and run" = [
+            { "Overview" = "workflow-b-apply-example-project/01-start-and-run/index.md" },
+            { "Start in GitHub" = "workflow-b-apply-example-project/01-start-and-run/01-start-in-github.md" },
+            { "Configure repository settings" = "workflow-b-apply-example-project/01-start-and-run/02-configure-repo-settings.md" },
+            { "Clone repo to local" = "workflow-b-apply-example-project/01-start-and-run/03-clone-repo-to-local.md" },
+            { "Open VS Code and extensions" = "workflow-b-apply-example-project/01-start-and-run/04-open-vscode-extensions.md" },
+            { "Set up environment" = "workflow-b-apply-example-project/01-start-and-run/05-set-up-environment.md" },
+            { "Run project" = "workflow-b-apply-example-project/01-start-and-run/06-run-project.md" },
+            { "Git add-commit-push" = "workflow-b-apply-example-project/01-start-and-run/07-git-add-commit-push.md" },
+        ] },
+
+        { "Change authorship" = [
+            { "Overview" = "workflow-b-apply-example-project/02-change-authorship/index.md" },
+            { "Git pull before changes" = "workflow-b-apply-example-project/02-change-authorship/01-git-pull-before-changes.md" },
+            { "Update authorship" = "workflow-b-apply-example-project/02-change-authorship/02-update-authorship.md" },
+            { "Run project" = "workflow-b-apply-example-project/02-change-authorship/03-run-project.md" },
+            { "Git add-commit-push" = "workflow-b-apply-example-project/02-change-authorship/04-git-add-commit-push.md" },
+        ] },
+
+        { "Read and understand" = [
+            { "Overview" = "workflow-b-apply-example-project/03-read-and-understand/index.md" },
+        ] },
+
+        { "Make technical modification" = [
+            { "Overview" = "workflow-b-apply-example-project/04-make-technical-modification/index.md" },
+            { "Git pull before changes" = "workflow-b-apply-example-project/04-make-technical-modification/01-git-pull-before-changes.md" },
+            { "Make a modification" = "workflow-b-apply-example-project/04-make-technical-modification/02-make-modification.md" },
+            { "Run project" = "workflow-b-apply-example-project/04-make-technical-modification/03-run-project.md" },
+            { "Git add-commit-push" = "workflow-b-apply-example-project/04-make-technical-modification/04-git-add-commit-push.md" },
+        ] },
+
+        { "Apply skills" = [
+            { "Overview" = "workflow-b-apply-example-project/05-apply-skills/index.md" },
+            { "Git pull before changes" = "workflow-b-apply-example-project/05-apply-skills/01-git-pull-before-changes.md" },
+            { "Apply skills" = "workflow-b-apply-example-project/05-apply-skills/02-apply-skills.md" },
+            { "Run project" = "workflow-b-apply-example-project/05-apply-skills/03-run-project.md" },
+            { "Git add-commit-push" = "workflow-b-apply-example-project/05-apply-skills/04-git-add-commit-push.md" },
+        ] },
+
+        { "Update project files" = "workflow-b-apply-example-project/05-update-project-files.md" },
+    ] },
+
+    { "Workflow C. Start New Project" = [
+        { "Overview" = "workflow-c-start-new-project/index.md" },
+        { "Start in GitHub" = "workflow-c-start-new-project/01-start-in-github.md" },
+        { "Configure repository settings" = "workflow-c-start-new-project/02-configure-repo-settings.md" },
+        { "Clone repo to local" = "workflow-c-start-new-project/03-clone-repo-to-local.md" },
+        { "Open VS Code and extensions" = "workflow-c-start-new-project/04-open-vscode-extensions.md" },
+        { "Set up environment" = "workflow-c-start-new-project/05-set-up-environment.md" },
+        { "Verify" = "workflow-c-start-new-project/06-verify.md" },
+    ] },
+
+    { "Reference" = [
+        { "Problem types" = "reference/problem-types/problem-types.md" },
+        { "API" = "reference/api/api.md" },
+        { "Packaging" = [
+            { "Python packages" = "reference/packaging/py-packages.md" },
+            { "Python packages (core)" = "reference/packaging/py-packages-core.md" },
+            { "Python standard library" = "reference/packaging/py-standard-library.md" },
+        ] },
+        { "Python" = [
+            { "Project structure" = "reference/python/project-structure.md" },
+            { "Python file structure" = "reference/python/python-file-structure.md" },
+            { "Running Python" = "reference/python/running-python.md" },
+            { "VS Code tips" = "reference/python/python-vscode-tips.md" },
+            { "Writing a README" = "reference/python/writing-readme.md" },
+            { "Standard library" = "reference/python/standard-library.md" },
+            { "Troubleshooting" = "reference/python/troubleshooting.md" },
+        ] },
+    ] },
+
+    { "Tools" = [
+        { "Terminals" = [
+            { "Terminals, shells, environments" = "tools/terminals/terminals-shells-envs.md" },
+            { "macOS and Linux" = "tools/terminals/terminals-shells-mac-linux.md" },
+            { "Windows" = "tools/terminals/terminals-shells-windows.md" },
+        ] },
+        { "GitHub and CI" = [
+            { "Pre-commit" = "tools/github-and-ci/00-pre-commit.md" },
+            { "CI" = "tools/github-and-ci/01-ci.md" },
+        ] },
+    ] },
+
+    { "Help" = [
+        { "Taking screenshots" = "help/01-taking-screenshots.md" },
+        { "Hosting video" = "help/02-hosting-video.md" },
+    ] },
+
+    { "Glossary" = [
+        { "Data formats" = "glossary/data-formats.md" },
+        { "Editors" = "glossary/editors.md" },
+        { "Git and GitHub" = "glossary/git-github.md" },
+        { "Project workflow" = "glossary/project-workflow.md" },
+        { "Terminals" = "glossary/terminals.md" },
+        { "Python" = [
+            { "Environment" = "glossary/python/environment.md" },
+            { "Project structure" = "glossary/python/project-structure.md" },
+            { "Python language" = "glossary/python/python-language.md" },
+        ] },
+    ] },
+]

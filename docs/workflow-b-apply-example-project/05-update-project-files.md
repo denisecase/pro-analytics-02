@@ -40,7 +40,7 @@ The `pyproject.toml` file is the **single source of truth** for your project's d
 
 ---
 
-## Task 2. Update `mkdocs.yml`
+## Task 2. Update `zensical.toml`
 
 MkDocs is configured by the `mkdocs.yml` file in the root.
 MkDocs builds the project **documentation site** from the `docs/` folder.
@@ -92,13 +92,17 @@ Your starter repository includes additional files for code quality, automation, 
 
 ## Task 5. Git add-commit-push to GitHub
 
-Save progress frequently (some tools may make changes; you may need to **re-run git `add` and `commit`** to ensure everything gets committed before pushing):
+Save progress frequently.
+Some tools may make changes;
+you may need to **re-run git `add` and `commit`** to ensure everything gets committed before pushing.
 
 ```shell
 git add -A
 git commit -m "update"
+
 git add -A
 git commit -m "update"
+
 git push -u origin main
 ```
 ---

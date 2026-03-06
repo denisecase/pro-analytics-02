@@ -1,5 +1,5 @@
 # ============================================================
-# .github/workflows/ci-python-mkdocs.yml (Continuous Integration)
+# .github/workflows/ci-python-zensical.yml (Continuous Integration)
 # ============================================================
 # SOURCE: https://github.com/denisecase/templates
 #
@@ -8,7 +8,7 @@
 # REQ: CI MUST NOT introduce arbitrary rules that are not reproducible locally.
 # OBS: CI validates only; it never edits files or deploys docs.
 
-name: CI (Python + MkDocs)
+name: CI (Python + Zensical)
 
 # WHY: Validate code, docs, and repo metadata on PRs and pushes.
 # OBS: This workflow validates only; it never deploys.
@@ -29,7 +29,7 @@ env:
 
 jobs:
   ci:
-    name: Repository / Python checks and MkDocs build
+    name: Repository / Python checks and Zensical build
     runs-on: ubuntu-latest # WHY: Linux environment matches most production deployments
     timeout-minutes: 30 # WHY: Prevent hanging jobs. If over time, it is likely stuck.
 

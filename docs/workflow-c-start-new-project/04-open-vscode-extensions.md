@@ -1,6 +1,6 @@
-# 🟢 Open the Project in VS Code (and Install Recommended VS Code Extensions)
+# 🟢 Open the Project in VS Code (and Install Extensions as Needed)
 
-> How to Open the cloned project in VS Code and install the recommended extensions.
+> How to open the cloned project in VS Code and install the recommended extensions.
 
 ## Before Starting
 
@@ -13,7 +13,8 @@ git clone https://github.com/YOURACCOUNT/pro-analytics-02
 
 ## 1. CD Into Project Folder and Use Code to Open the Project
 
-Using that same terminal, change directory (cd) into the repo folder and run "code dot" as shown below:
+Using that same terminal, change directory (cd) into the repo folder and run "code dot" as shown below.
+Change the repo name from `pro-analytics-02` to your repository name:
 
 ```shell
 cd pro-analytics-02
@@ -22,17 +23,7 @@ code .
 
 ## 2. Install Recommended Extensions
 
-If you opened a project that already includes
-a `.vscode/extensions.json` file
-(for example, from this starter repository),
-then VS Code will automatically recommend extensions for that project.
-
-In that case:
-
-1. Watch for the "Recommended Extensions" popup
-2. Click "Install All"
-
-If there are no recommendations (or if you are working in a brand new project), install extensions manually using the steps below.
+Install extensions manually as needed for your project. See instructions below.
 
 ## 3. Verify Installation
 

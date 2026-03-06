@@ -1,30 +1,40 @@
-# Pro Analytics 02: Setup and Workflow Guide
+# Professional Python Guide
 
-This repository provides a clear, concise guide to help set up a machine for Python projects,
-initialize a new Python project, and follow a repeatable project workflow
-when developing professional Python projects.
+This repository provides a clear, concise guide for professional Python projects.
 
-The instructions are divided into three parts.
+This version (**Pro Analytics 02**) uses the newer, faster, Rust-based `uv` tool for managing Python environments and projects.
+An earlier version of the guide used `pip` and `venv`.
 
-- Go to [🟢 Set Up Machine](01-set-up-machine/index.md) to **set up a machine** for Python projects.
+Instructions are divided into stages.
 
-- Go to [🟠 Set Up Project](02-set-up-project/index.md) to **set up a new Python project**.
+- Go to [🟢 A. Set Up Machine](workflow-a-set-up-machine/index.md) to **set up a machine** for Python development.
 
-- Go to [🔵 Daily Workflow](03-daily-workflow/index.md) for ongoing project development.
+- Go to [🔵 B. Apply Example Project](workflow-b-apply-example-project/index.md) to **learn skills** by running, modifying, and applying an example project.
 
+- Go to [🟠 C. Start New Project](workflow-c-start-new-project/index.md) to **create and configure a new Python project** from scratch (e.g., Capstone projects).
 
-## Important
+## Reliable Foundations
 
-- Follow the instructions carefully.
-- Follow the instructions in the recommended order.
-- Verify each step before proceeding.
+Learning complex techniques is easier when the underlying structure stays consistent.
 
-## Explore
+In practice, professionals rarely start from scratch.
+They begin with a working example, get it running, and then adapt it to their needs.
 
-After this where the power and joy of working with Python begins.
-Keep good notes.
-Save working versions and experiment with changes.
-If you enjoy puzzles, getting value from data is a great way to earn a living.
+## How We Learn
+
+Example projects act as our textbook; we learn by seeing techniques in action.
+
+First, get the example project running.
+Then read through the code and documentation to understand how it works.
+
+Next, update the authorship so the project reflects your work.
+After that, begin making modifications and experimenting.
+
+Start with simple changes, then apply the techniques to new datasets, domains, or questions.
+
+Many useful discoveries come from small modifications and careful observation.
+
+If you enjoy solving puzzles, **extracting actionable value from data** can be a great way to earn a living.
 
 ## OPTIONAL: Share Feedback
 
