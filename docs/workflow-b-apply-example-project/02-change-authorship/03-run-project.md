@@ -44,8 +44,8 @@ Make sure the documentation dependencies in `pyproject.toml` are installed.
 Then build the project docs, fix any errors, and serve them locally to test.
 
 ```shell
-uv run python -m mkdocs build --strict
-uv run python -m mkdocs serve
+uv run zensical build
+uv run zensical serve
 ```
 
 - After running the `serve` command, a local URL for the documentation will be displayed.

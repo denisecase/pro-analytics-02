@@ -2,7 +2,7 @@
 
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://denisecase.github.io/pro-analytics-02/)
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
-[![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-mkdocs.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-mkdocs.yml)
+[![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml)
 [![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 
 > Professional Python project starter and guide.
@@ -64,7 +64,7 @@ You may:
 
 - Add or remove dependencies in `pyproject.toml`
 - Enable or disable tooling rules intentionally
-- Modify or remove documentation by editing `mkdocs.yml`
+- Modify or remove documentation by editing `zensical.toml`
 - Organize code using the provided `src/` layout
 
 Customization decisions are documented inline using annotations.
@@ -90,10 +90,10 @@ This repository includes an associated
 
 - The site provides both a **reference** and a **worked example**
 - Source files live in the `docs/` directory
-- Navigation and visibility are controlled by `mkdocs.yml`
+- Navigation and visibility are controlled by `zensical.toml`
 - Documentation may be edited, reorganized, or removed
 
-If documentation is not needed, you may delete `docs/` and `mkdocs.yml`
+If documentation is not needed, you may delete `docs/` and `zensical.toml`
 without affecting the rest of the project.
 
 <!--
@@ -161,8 +161,10 @@ Optional (recommended): install and run pre-commit checks (repeat the git `add` 
 ```shell
 uvx pre-commit install
 git add -A
+
 uvx pre-commit run --all-files
 git add -A
+
 uvx pre-commit run --all-files
 ```
 
@@ -232,11 +234,10 @@ This professional Python project uses:
 - `uv` for dependency management and command execution
 - `ruff` for formatting and linting
 - `pytest` for test execution
-- `mkdocs` for documentation
+- `zensical` for documentation
 
 Alternative tools and stricter configurations are documented inline
 and may be enabled intentionally.
-
 
 ## Annotations
 
