@@ -13,7 +13,7 @@ Instructions are divided into stages.
 
 - Go to 🟠 [C. Start New Project](workflow-c-start-new-project/index.md) to **create and configure a new Python project** from scratch (e.g., Capstone projects).
 
-## Reliable Foundations
+## Consistent Foundation across Courses and Projects
 
 Learning complex techniques is easier when the underlying structure stays consistent.
 
@@ -22,12 +22,13 @@ They begin with a working example, get it running, and then adapt it to their ne
 
 ## How We Learn
 
-Example projects act as our textbook; we learn by seeing techniques in action.
+Example projects are our textbooks; we learn by practicing techniques in action.
+We build on what works:
 
-- First, get the example project running.
-- Then read through the code and documentation to understand how it works.
-- Next, update the authorship so the project reflects your work.
-- After that, begin making modifications and experimenting.
+- First, you'll get the example project running on your machine.
+- Then, read through the code and documentation to understand how it works.
+- Next, update authorship to make the project yours.
+- Then, start making modifications and experimenting.
 
 Start with simple changes, then apply the techniques to new datasets, domains, or questions.
 Many useful discoveries come from small modifications and careful observation.
