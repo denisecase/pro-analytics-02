@@ -24,16 +24,13 @@ They begin with a working example, get it running, and then adapt it to their ne
 
 Example projects act as our textbook; we learn by seeing techniques in action.
 
-First, get the example project running.
-Then read through the code and documentation to understand how it works.
-
-Next, update the authorship so the project reflects your work.
-After that, begin making modifications and experimenting.
+- First, get the example project running.
+- Then read through the code and documentation to understand how it works.
+- Next, update the authorship so the project reflects your work.
+- After that, begin making modifications and experimenting.
 
 Start with simple changes, then apply the techniques to new datasets, domains, or questions.
-
 Many useful discoveries come from small modifications and careful observation.
-
 If you enjoy solving puzzles, **extracting actionable value from data** can be a great way to earn a living.
 
 ## OPTIONAL: Share Feedback

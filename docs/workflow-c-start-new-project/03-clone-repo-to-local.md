@@ -6,7 +6,7 @@
 
 In your browser, view your GitHub repository.
 You should see your account name and the repo name in the browser address bar.
-For example, the URL to this repository (in my account) is <https://github.com/denisecase/pro-analytics-01>.
+For example, the URL to this repository (in my account) is <https://github.com/denisecase/pro-analytics-02>.
 
 Verify you are working with a GitHub repository in YOUR account.
 Use `CTRL a` to select all and `CTRL c` to copy the URL to your clipboard. On Mac/Linux, use `CMD a` and `CMD c`.
