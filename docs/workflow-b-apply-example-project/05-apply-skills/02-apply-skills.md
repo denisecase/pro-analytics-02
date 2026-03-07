@@ -46,9 +46,11 @@ It should also **showcase your work**. Consider including:
 - a small table of important results
 - a short summary of insights or findings
 
-Images and charts can be saved in the repository, for example, in the docs/images folder, and then displayed in the README like so:
+Images and charts can be saved in the repository, for example, in the docs/images folder, and then displayed in pages using a relative path like so:
 
 ![Example Chart](../../images/example-chart.png)
+
+_Image credit: ChatGPT (2026-03) Note: We are not replacable just yet._
 
 ## Other Project Files
 
