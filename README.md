@@ -84,7 +84,6 @@ Open a VS Code terminal (menu: `Terminal` / `New Terminal`) and run:
 ```shell
 git pull
 
-uv run python src/pro_analytics_02/demo_module_basics.py
 uv run python -m pro_analytics_02.demo_module_basics
 
 uv run ruff format .
@@ -121,7 +120,7 @@ Core tools:
 
 ## Annotations
 
-[ANNOTATIONS.md](./ANNOTATIONS.md)
+[ANNOTATIONS.md](https://github.com/structural-explainability/.github/blob/main/ANNOTATIONS.md)
 
 <!--
 WHY: Keep decision rationale close to code and configuration.
