@@ -1,6 +1,7 @@
 # ============================================================
 # .yamllint.yml (Keep YAML files clean and consistent)
 # ============================================================
+# SOURCE: https://github.com/denisecase/templates
 
 # WHY: Enforce YAML correctness (.yamllint.yml) without arbitrary style constraints.
 # OBS: Default yamllint rules conflict with GitHub Actions YAML.

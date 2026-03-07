@@ -3,30 +3,37 @@
 ## Professional Authorship Updates
 
 Update common project locations where authorship appears.
-Typical places include:
 
-**README.md**
+## GitHub Repository "About" Section
 
-  - Replace the template author's name if shown as the project author
-  - Update badges or repository links if they reference the template repository
+When viewing your repository on GitHub, the **About** section appears in the upper right.
 
-**mkdocs.yml**
-  - Update the `site_name` if appropriate
-  - Update repository links if they reference the template repository
+- Update the repository description as needed
+- Update the link to your GitHub Pages site (check the box).
+- Add / modify keywords as you like.
 
-**Documentation pages (`docs/`)**
-  - Replace template references if they appear in navigation or footer links
+## README.md
 
-**Repository metadata**
-  - Update the GitHub repository description if needed
+- Update badges or repository links that reference the template repository
+- Replace the template author's name if shown as the project author
 
-## Attribution and Licensing
+## zensical.toml (or mkdocs.yml)
 
-Template projects may use the MIT License, which allows reuse and modification.
+- Update the `site_name` and `site_description` as needed
+- Update repository links, such as `site_url`, `repo_url`, `repo_name`, and `social` links.
 
-You may:
+## LICENSE
+
+If the project includes a `LICENSE` file:
 
 - keep the original attribution
 - add your name as the current author or maintainer
+- follow the terms of the license for your derived works
 
-If the project includes a `CITATION.cff` file, add your name as an additional author.
+## CITATION.cff
+
+If the project includes a `CITATION.cff` file:
+
+- add your name as an additional author
+- update the repository-code
+- update the url

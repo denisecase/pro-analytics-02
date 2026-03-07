@@ -1,36 +1,35 @@
 # 🔵 Run and Check
 
-This mirrors professional practice: run and check code as you work.
+Run and verify your code frequently as you work.
 
 ## Step 1. Run Code
 
-Run Python and/or notebooks as needed for your project.
+Run Python scripts or notebooks for your project.
 
-See [Run Python](../run-python.md) or [Run Notebooks](../run-notebook.md)
+See:
+- [Run Python](../run-python.md)
+- [Run Notebooks](../run-notebook.md)
 
-## Step 2. (As Needed) Add / Update Dependencies
+## Step 2. Add or Update Dependencies (as needed)
 
-As we work on the code, we may find we need additional dependencies listed in `pyproject.toml`.
-For example, after generating interesting results we may add `matplotlib` to visualize charts.
-Edit `pyproject.toml` and add packages to the **dependencies** section as needed.
-You may occasionally need to clean the cache (delete downloaded dependency files stored locally).
-Then re-run the `uv sync` command as shown below:
+If your project needs additional packages, add them to the `dependencies` section in `pyproject.toml`.
+
+Example: you might add `matplotlib` to create charts.
+
+After updating dependencies, run:
+
 
 ```shell
 uv cache clean
 uv sync --extra dev --extra docs --upgrade
 ```
 
-When working on a project, open the project repository folder in VS Code.
-In general, all terminal commands should be executed in the **root project folder**.
+All commands should be run from the **project root folder** in the VS Code terminal.
 
-## Step 3. Run Checks and Tests (as available)
 
-Run the following commands in a VS Code terminal to:
+## Step 3. Run Checks and Tests
 
-1. Format all project Python files using **Ruff**.
-2. Check and fix all project Python files (automatically "lint" or fix basic issues).
-3. Optional: Run pytest if you have working tests in the `tests/` folder.
+Run the following commands to format code, fix common issues, and run tests if available.
 
 ```shell
 uv run ruff format .
@@ -40,21 +39,20 @@ uv run pytest --cov=src --cov-report=term-missing
 
 ## Step 4. Build Documentation
 
-Make sure the documentation dependencies in `pyproject.toml` are installed.
-Then build the project docs, fix any errors, and serve them locally to test.
+Build and preview the project documentation locally.
 
 ```shell
 uv run zensical build
 uv run zensical serve
 ```
 
-- After running the `serve` command, a local URL for the documentation will be displayed.
-- To open the site, press **Ctrl and click** the provided link (at the same time) to view the documentation. Use **Cmd and click** on Mac.
-- To stop the server, click in the terminal, and press **Ctrl c** (or **Cmd c** on Mac) to terminate the local hosting process.
+A local URL will appear in the terminal.
+Ctrl+Click the link to open the documentation or try <localhost:8000>.
 
+Press **Ctrl+C** in the terminal to **stop** the server.
 
 ## Professional Reminders
 
-- Use the VS Code menu to turn on Auto Save (**File / Auto Save**), or remember to save your changes as you work.
-- Comment out code as needed to get a version that runs without errors.
-- If you encounter errors, use debugging tools, strategically placed logging statements, or `print()` calls to reveal where execution is occurring and what values are stored in variables.
+- Turn on **Auto Save** in VS Code (**File / Auto Save**), or save frequently.
+- Comment out code as needed to keep a working version.
+- If something fails, use debugging tools, logging, or `print()` to inspect values.

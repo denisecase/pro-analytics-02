@@ -1,110 +1,57 @@
 # 🔵  Apply Skills to Complete the Project
 
-Personalize core files common in professional analytics projects.
-Especially:
-
-- `pyproject.toml` - defines project metadata, dependencies, and build settings
-- `mkdocs.yml` - configures project documentation website (powered by MkDocs)
-- `README.md` - explains the project and how to use it
-
-> Note: A required `.gitignore` file is provided in this and most starter repositories. You need to have it, but you typically won't need to edit it.
-
----
-
 ## Before Starting
 
-1. Open your project repository in **VS Code**
-2. Confirm your terminal is in the **project root**
-3. Verify that `pyproject.toml`, `mkdocs.yml`, and `README.md` are in the root folder (same level as `.gitignore`)
+Open your project repository in **VS Code**
 
----
+## Task 1. Apply The Example To a Different Problem
 
-## Task 1. Update `pyproject.toml`
+Key techniques from the example are typically found in:
 
-The `pyproject.toml` file is the **single source of truth** for your project's dependencies and metadata. Tools like `uv`, `pip`, and VS Code use this file to understand how to install and run your project.
+- `src/` - Python modules that implement the project logic
+- `notebooks/` - Jupyter notebooks used for exploration and analysis
 
-### What it controls
+Apply the techniques shown in the example to a **different problem**.
 
-- The project name, version, and description
-- The list of required Python packages
-- Development-only tools (formatters, linters, testing)
-- Build and packaging settings (if you later publish your project)
+When finished, finalize the associated project metadata and documentation.
 
-### Task 1 Actions
+## Task 2. Update Documentation To Present Your Project
 
-1. Open `pyproject.toml` in the root of your repo
-2. Update:
-   - `name` to use your project's top-level package name
-   - `dependencies` to include only the packages you actually need
-   - Any **URLs** - replace starter GitHub links with those to your project
+Update `docs/` and `zensical.toml` to tell your story:
 
----
+- update navigation entries if pages were added or removed
+- edit pages in the `docs/` folder to narrate and present your project
 
-## Task 2. Update `mkdocs.yml`
 
-MkDocs is configured by the `mkdocs.yml` file in the root.
-MkDocs builds the project **documentation site** from the `docs/` folder.
-The `mkdocs.yml` file controls your site navigation, theme settings, and page structure.
+## Task 3. Finalize `pyproject.toml`
 
-### What it controls
+Finalize `pyproject.toml` as needed:
 
-- The site title
-- Which pages appear in the navigation
-- Markdown extensions, themes, and organization
+- `dependencies` - include only packages your project needs
+- ensure project **URLs** - replace starter GitHub links with your repository
 
-### Task 2 Actions
+## Task 4. Finalize `README.md`
 
-1. Open `mkdocs.yml` and update:
-   - The `site_name` field
-   - Navigation entries if needed
-2. Edit pages in the `docs/` folder (especially `index.md`) to match your project
+Update the README so a new user can understand and run your project.
+It should explain:
 
----
+- what the project does
+- how to set it up
+- how to run it
+- where to find documentation or notebooks
 
-## Task 3. Update `README.md`
+It should also **showcase your work**. Consider including:
 
-Your README is the **entry point to your project**.
-It should provide enough information for a new user to understand, set up, and run your project.
+- a key chart or visualization
+- a small table of important results
+- a short summary of insights or findings
 
-### A good README includes:
+Images and charts can be saved in the repository, for example, in the docs/images folder, and then displayed in the README like so:
 
-- What does this project do
-- How do I set it up
-- How do I run it
-- Where are the docs, notebooks, and report
-- Display key visuals and insights.
+![Example Chart](../../images/example-chart.png)
 
-### Task 3 Actions
+## Other Project Files
 
-- Update the README from the beginning (don't leave it as a placeholder)
-- Replace any references to the starter repo or starter GitHub account
+Your repository includes additional configuration files for quality checks and automation.
 
----
-
-## Task 4. (Optional) Review Other Project Files
-
-Your starter repository includes additional files for code quality, automation, and documentation. You generally won't edit them now, but you should know they exist.
-
-### Task 4 Actions
-
-- Skim these files so you know what they are for
-- Modify them only if your project requires customization later
-
-## Task 5. Git add-commit-push to GitHub
-
-Save progress frequently.
-Some tools may make changes;
-you may need to **re-run git `add` and `commit`** to ensure everything gets committed before pushing.
-
-```shell
-git add -A
-git commit -m "update"
-
-git add -A
-git commit -m "update"
-
-git push -u origin main
-```
----
-
-After this initial effort, your project will have a professional foundation.
+You are generally encouraged to keep them as they are and explore them as time permits.

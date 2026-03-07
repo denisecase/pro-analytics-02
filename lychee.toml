@@ -1,6 +1,7 @@
 # ============================================================
 # lychee.toml (Lychee link checker configuration)
 # ============================================================
+# SOURCE: https://github.com/denisecase/templates
 
 # REQ.PROJECT: Automatic link checking using GitHub Actions and Lychee.
 # WHY-FILE: Shared Lychee configuration (lychee.toml) for documentation-heavy repositories.

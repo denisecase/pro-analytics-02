@@ -1,6 +1,7 @@
 # ============================================================
 # .gitattributes (Keep files consistent across operating systems)
 # ============================================================
+# SOURCE: https://github.com/denisecase/templates
 
 # REQ.UNIVERSAL: All professional GitHub project repositories MUST include .gitattributes.
 # WHY: Ensure consistent line endings, diff behavior, and file classification
