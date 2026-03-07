@@ -21,14 +21,6 @@ They are **not included in the Python Standard Library** and must be installed a
 
 ---
 
-## Documentation
-
-| Package                                      | Description                                                                                                   | Links                           |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| [`mkdocs`](https://pypi.org/project/mkdocs/) | Fast, lightweight documentation site generator using Markdown. Often used with the Material for MkDocs theme. | [Docs](https://www.mkdocs.org/) |
-
----
-
 ## Text-to-Speech
 
 | Package                                        | Description                                                         | Links                                   |

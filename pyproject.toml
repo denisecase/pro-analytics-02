@@ -1,5 +1,5 @@
 # ============================================================
-# pyproject.toml (Python, MkDocs, and Notebooks project configuration)
+# pyproject.toml (project configuration)
 # ============================================================
 # REQ.PYTHON: Python projects MUST include pyproject.toml as the single source of truth.
 # WHY: Centralizes project configuration.

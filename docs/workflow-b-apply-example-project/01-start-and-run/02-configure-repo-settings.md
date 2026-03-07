@@ -4,7 +4,7 @@
 
 ## Enable GitHub Pages (for Project Documentation)
 
-Enabling **GitHub Pages** allows a project to publish its documentation site (built from `docs/` using MkDocs).
+Enabling **GitHub Pages** allows a project to publish its documentation site.
 This creates a professional, shareable documentation site for your project instructions, setup steps, and technical notes.
 Instructions:
 
@@ -27,7 +27,7 @@ A documentation site allows you to:
 - record experiments and results
 - provide clear instructions for others
 
-MkDocs and GitHub Pages provide a clean and professional way to publish project documentation.
+GitHub Pages provides a clean and professional way to publish project documentation.
 The documentation site is separate from the source code and project outputs, which reflects common professional practice.
 
 ## Note

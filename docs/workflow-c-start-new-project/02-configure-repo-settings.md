@@ -1,48 +1,36 @@
 # 🟠 Configure Repository Settings
 
-> Configure repo settings based on your project needs.
+> Configure repository settings for your project.
 
-## For Project Documentation, Enable GitHub Pages
+## Enable GitHub Pages (for Project Documentation)
 
-When viewing your repository in GitHub, turn on **GitHub Pages** so this project can publish its documentation site (built from `docs/` using MkDocs).
-This gives you a professional, shareable site for your project instructions, setup steps, and technical notes.
+Enabling **GitHub Pages** allows a project to publish its documentation site.
+This creates a professional, shareable documentation site for your project instructions, setup steps, and technical notes.
+Instructions:
 
 1. In your new repository, click the **Settings** tab (gear icon, far right).
 2. In the left sidebar, select **Pages**.
 3. Under **Build and deployment / Source**, choose **GitHub Actions**
-4. Click **Code** tab in the upper left to return to regular view.
+4. Click the **Code** tab (upper left) to return to the repository view.
 
-Once enabled, GitHub will automatically build and publish your MkDocs documentation whenever you push changes to your repository.
-
-
-## OPTIONAL: For Keeping Project Dependencies Current, Enable Dependabot
-
-When viewing your repository in GitHub, enable **Dependabot** so the project action dependencies stay current.
-This provides a quick, automatic notification that can assist with keeping your projects secure.
-
-1. In your new repository, click the **Settings** tab (gear icon, far right).
-2. In the left sidebar, select **Advanced Security**.
-3. Under Dependabot, enable **Dependabot security updates**.
-4. Under Dependabot, enable **Grouped security updates**.
-5. Click **Code** tab in the upper left to return to regular view.
-
-Once enabled, Dependabot will automatically monitor the versions for the code used in `.github/workflows` and let us know when updates are recommended.
-
----
+Once enabled, GitHub will automatically build and publish the documentation website when the documentation workflow runs.
+An associated workflow should be provided in `.github/workflows/`.
+You are not expected to write GitHub Actions on your own.
 
 ## Project Documentation
 
-- Analytics work requires **clear communication**, not just code
-- MkDocs and GitHub Pages provide a **clean, professional documentation site**
-- Anyone can read the project docs in a browser
-- It provides a separate **documentation site** from your **code and report**, just like real-world projects
+Our work requires **professional communication**, not just code.
+A documentation site allows you to:
 
-## Why GitHub Pages?
+- explain the purpose of the project
+- describe methods and techniques
+- record experiments and results
+- provide clear instructions for others
 
-Many data-science professionals build a personal portfolio site using GitHub Pages to showcase projects.
-We can use GitHub Pages as a free way to host a data-science portfolio site or client-side web site that links to projects.
+GitHub Pages provides a clean and professional way to publish project documentation.
+The documentation site is separate from the source code and project outputs, which reflects common professional practice.
 
-GitHub Pages is mentioned as one of the "5 places to host your data science portfolio" along with GitHub itself.
-- <https://www.datacamp.com/blog/5-places-to-host-your-data-science-portfolio?utm_source=chatgpt.com>
+## Note
 
-Not every analytics project uses GitHub Pages, but it is a valuable skill for those who want to present their work professionally.
+Not every analytics project publishes documentation publicly,
+but creating clear, professional project documentation is an important and valuable skill.

@@ -1,93 +1,86 @@
 # 🟠 Open the Project in VS Code (and Install Extensions as Needed)
 
-> How to open the cloned project in VS Code and install the recommended extensions.
+> Open the project in VS Code and install extensions.
 
-## Before Starting
+## Strong Recommendation
 
-This assumes you followed the earlier instruction to clone your repo into the Repos (non-synchronized) folder, e.g.,:
+Using **code dot** (`code .`) as shown below is the strongly recommended professional pattern because it guarantees:
+
+- the terminal is in the correct directory
+- VS Code opens the correct project root
+- environment discovery happens relative to that root
+- Git commands run in the right repository
+
+**IMPORTANT:** Any deviations from this process (especially the first time you open it) will not necessarily work later when we need to execute Python files.
+
+## Previously
+
+This assumes you followed the earlier instructions to clone your repo into the **Repos** (non-synchronized) folder, for example:
+
 ```shell
-git clone https://github.com/YOURACCOUNT/pro-analytics-02
+git clone https://github.com/youraccount/your-repo
 ```
 
----
+## Step 1. Open the Project Workspace
 
-## 1. CD Into Project Folder and Use Code to Open the Project
+Using that same terminal (or a machine terminal open in **Repos**),
+change directory (`cd`) into the repository folder and run **code dot** (`code .`).
 
-Using that same terminal, change directory (cd) into the repo folder and run "code dot" as shown below.
-Change the repo name from `pro-analytics-02` to your repository name:
+**IMPORTANT:** The command below is just an example.
+You must use **your exact repository name**.
 
 ```shell
-cd pro-analytics-02
+cd your-repo
 code .
 ```
 
-## 2. Install Recommended Extensions
+## Extensions NOT Recommended
 
-Install extensions manually as needed for your project. See instructions below.
-
-## 3. Verify Installation
-
-After installation:
-
-1. Restart VS Code
-2. Open the **Extensions** panel again.
-3. Confirm the recommended extensions show as **Installed** and **Enabled**.
-3. Confirm the extensions are installed and enabled
-
----
-
-## Recommendations
-
-- If VS Code recommends an extension, it is usually helpful to install it.
-- Projects that include `.vscode/extensions.json` can guide extension selections.
-- You can add more extensions as needed.
-
----
-
-## Adding Extensions
-
-### 1. Open the Extensions Marketplace
-
-With the project open in VS Code, from the Menu choose: View / Extensions.
-Or Use Keyboard shortcuts:
-  - Windows/Linux: `Ctrl+Shift+X`
-  - macOS: `Cmd+Shift+X`
-
-This opens the Extensions panel.
-
-### 2. Install Extensions
-
-Search for and install the extensions in the Extensions panel.
-
-For example, you might search for and install the following extensions in the Extensions panel.
-
-1. Core Python Extensions
-    - Python (ms-python.python) – Run, debug, and test Python code
-    - Pylance (ms-python.vscode-pylance) – Fast IntelliSense and type checking
-    - Ruff (charliermarsh.ruff) – Linting, formatting, and import cleanup in one tool
-
-2. Notebook Support
-    - Jupyter (ms-toolsai.jupyter) – Edit and run Jupyter notebooks in VS Code
-    - Jupyter Keymap (ms-toolsai.jupyter-keymap) – Familiar Jupyter keyboard shortcuts
-    - Jupyter Notebook Renderers (ms-toolsai.jupyter-renderers) – Rich rendering for plots, HTML, and outputs
-
-3. Documentation and Markdown
-    - Markdown All in One (yzhang.markdown-all-in-one) – Shortcuts, formatting, and table of contents
-
-4. CSV and Data Files
-    - Rainbow CSV (mechatroner.rainbow-csv) – Colorized CSV/TSV columns for quick inspection
-
-5. Configuration and Workflow Files
-    - YAML (redhat.vscode-yaml) – YAML schema validation (useful for configs and CI files)
-    - GitHub Actions (github.vscode-github-actions) – Syntax highlighting and validation for `.github/workflows`
-
-6. SQLite Tools - choose your favorites
-    - SQLite Viewer (by Florian Klampfer)
-    - SQLite (by alexcvzz)
-
-### 3. Extensions intentionally not used
-
-These tools are not needed because Ruff handles formatting and linting:
+These extensions are not needed because Ruff handles formatting and linting:
 
 - ms-python.black-formatter
 - ms-python.autopep8
+
+## Adding Extensions Manually
+
+### 1. Open the Extensions Panel
+
+With the project open in VS Code, choose:
+
+**View / Extensions**
+
+Or use the keyboard shortcut:
+
+- Windows/Linux: `Ctrl + Shift + X`
+- macOS: `Cmd + Shift + X`
+
+### 2. Install Extensions
+
+Search for and install extensions in the Extensions panel.
+
+For example:
+
+#### Core Python Extensions
+
+- **Python (ms-python.python)** run, debug, and test Python code
+- **Pylance (ms-python.vscode-pylance)** fast IntelliSense and type checking
+- **Ruff (charliermarsh.ruff)** linting, formatting, and import cleanup
+
+#### Notebook Support
+
+- **Jupyter (ms-toolsai.jupyter)** edit and run Jupyter notebooks
+- **Jupyter Keymap (ms-toolsai.jupyter-keymap)** Jupyter keyboard shortcuts
+- **Jupyter Notebook Renderers (ms-toolsai.jupyter-renderers)** rich output rendering
+
+#### Documentation and Markdown
+
+- **Markdown All in One (yzhang.markdown-all-in-one)** Markdown shortcuts and formatting
+
+#### CSV and Data Files
+
+- **Rainbow CSV (mechatroner.rainbow-csv)** colorized CSV/TSV columns for inspection
+
+#### Configuration and Workflow Files
+
+- **YAML (redhat.vscode-yaml)** YAML schema validation
+- **GitHub Actions (github.vscode-github-actions)** syntax highlighting for `.github/workflows`

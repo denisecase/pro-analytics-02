@@ -26,7 +26,6 @@ git clone https://github.com/youraccount/your-repo
 Using that same terminal (or a machine terminal open in **Repos**),
 change directory (`cd`) into the repository folder and run **code dot** (`code .`).
 
-
 **IMPORTANT:** The command below is just an example.
 You must use **your exact repository name**.
 
@@ -83,25 +82,25 @@ For example:
 
 #### Core Python Extensions
 
-- **Python (ms-python.python)**  run, debug, and test Python code
-- **Pylance (ms-python.vscode-pylance)**  fast IntelliSense and type checking
-- **Ruff (charliermarsh.ruff)**  linting, formatting, and import cleanup
+- **Python (ms-python.python)** run, debug, and test Python code
+- **Pylance (ms-python.vscode-pylance)** fast IntelliSense and type checking
+- **Ruff (charliermarsh.ruff)** linting, formatting, and import cleanup
 
 #### Notebook Support
 
-- **Jupyter (ms-toolsai.jupyter)**  edit and run Jupyter notebooks
-- **Jupyter Keymap (ms-toolsai.jupyter-keymap)**  Jupyter keyboard shortcuts
-- **Jupyter Notebook Renderers (ms-toolsai.jupyter-renderers)**  rich output rendering
+- **Jupyter (ms-toolsai.jupyter)** edit and run Jupyter notebooks
+- **Jupyter Keymap (ms-toolsai.jupyter-keymap)** Jupyter keyboard shortcuts
+- **Jupyter Notebook Renderers (ms-toolsai.jupyter-renderers)** rich output rendering
 
 #### Documentation and Markdown
 
-- **Markdown All in One (yzhang.markdown-all-in-one)**  Markdown shortcuts and formatting
+- **Markdown All in One (yzhang.markdown-all-in-one)** Markdown shortcuts and formatting
 
 #### CSV and Data Files
 
-- **Rainbow CSV (mechatroner.rainbow-csv)**  colorized CSV/TSV columns for inspection
+- **Rainbow CSV (mechatroner.rainbow-csv)** colorized CSV/TSV columns for inspection
 
 #### Configuration and Workflow Files
 
-- **YAML (redhat.vscode-yaml)**  YAML schema validation
-- **GitHub Actions (github.vscode-github-actions)**  syntax highlighting for `.github/workflows`
+- **YAML (redhat.vscode-yaml)** YAML schema validation
+- **GitHub Actions (github.vscode-github-actions)** syntax highlighting for `.github/workflows`

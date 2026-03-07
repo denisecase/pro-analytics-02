@@ -3,8 +3,8 @@
 # ============================================================
 
 # WHY: Centralizes project documentation configuration.
-# Zensical is a drop-in replacement for MkDocs that provides AI-assisted docstring generation and enhanced documentation features.
-# It is used in this project to streamline documentation and provide better support for docstring generation.
+# Zensical is a drop-in replacement for MkDocs.
+# It is used to streamline documentation.
 
 [project]
 site_name = "Professional Python Guide" # WHY: Match the title of docs/index.md.
@@ -29,7 +29,7 @@ social = [
 lang = "en" # WHY: Search plugin provides instant search functionality for documentation.
 
 [project.plugins.mkdocstrings.handlers.python]
-paths = ["src"] # WHY: MkDocstrings auto-generates documentation from code; this points it to the source code directory.
+paths = ["src"] # WHY: Auto-generates documentation from code; this points it to the source code directory.
 
 [project.plugins.mkdocstrings.handlers.python.options]
 docstring_style = "google" # WHY: Google style docstrings are widely used and supported by many tools, including Zensical's AI-assisted generation.
@@ -55,8 +55,7 @@ features = [
 # ------------------------------------------------------------
 # Navigation
 # ------------------------------------------------------------
-# Zensical supports navigation configuration; the shape below mirrors your MkDocs nav.
-# If you later decide to rely more on folder-based navigation, you can simplify.
+# Folder-based navigation is an optional alternative.
 
 nav = [
     { "Home" = "index.md" },

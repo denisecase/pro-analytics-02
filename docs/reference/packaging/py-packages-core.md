@@ -6,8 +6,6 @@ They are not part of the standard library - install them as needed using `uv add
 | Category | Package | Purpose |
 |-----------|----------|----------|
 | **Core Management** | [`pip`](https://pypi.org/project/pip/), [`setuptools`](https://pypi.org/project/setuptools/), [`wheel`](https://pypi.org/project/wheel/) | Package installation, building, and distribution. |
-| **Documentation** | [`mkdocs`](https://pypi.org/project/mkdocs/) | Simple, fast static site generator for project documentation. |
-| **Logging** | [`loguru`](https://pypi.org/project/loguru/) | Modern, colorized logging with rotation and context. |
 | **HTTP & Environment** | [`httpx`](https://pypi.org/project/httpx/), [`python-dotenv`](https://pypi.org/project/python-dotenv/) | Send modern HTTP/HTTPS requests (sync or async) and manage `.env` configuration. |
 | **Data Analysis** | [`numpy`](https://pypi.org/project/numpy/), [`pandas`](https://pypi.org/project/pandas/), [`polars`](https://pypi.org/project/polars/) | Numeric computing, dataframes, and high-speed analysis. |
 | **Visualization** | [`matplotlib`](https://pypi.org/project/matplotlib/), [`seaborn`](https://pypi.org/project/seaborn/) | Static and statistical visualizations. |
