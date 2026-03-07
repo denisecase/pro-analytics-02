@@ -130,7 +130,10 @@ nav = [
     ] },
 
     { "Reference" = [
-        { "Problem types" = "reference/problem-types/problem-types.md" },
+        { "Datasets" = [
+            { "01. Continuous Intelligence" = "datasets/cintel.md" },
+            { "02. Web Mining and NLP" = "datasets/nlp.md" },
+        ] },
         { "API" = "reference/api/api.md" },
         { "Packaging" = [
             { "Python packages" = "reference/packaging/py-packages.md" },
@@ -146,6 +149,7 @@ nav = [
             { "Standard library" = "reference/python/standard-library.md" },
             { "Troubleshooting" = "reference/python/troubleshooting.md" },
         ] },
+        { "Problem types" = "reference/problem-types/problem-types.md" },
     ] },
 
     { "Tools" = [
