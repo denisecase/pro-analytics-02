@@ -134,6 +134,10 @@ nav = [
             { "01. Continuous Intelligence" = "datasets/cintel.md" },
             { "02. Web Mining and NLP" = "datasets/nlp.md" },
         ] },
+        { "Portfolios" = [
+            { "01. Continuous Intelligence" = "portfolios/cintel.md" },
+            { "02. Web Mining and NLP" = "portfolios/nlp.md" },
+        ] },
         { "API" = "reference/api/api.md" },
         { "Packaging" = [
             { "Python packages" = "reference/packaging/py-packages.md" },
