@@ -1,5 +1,24 @@
 # 🔵 Make a Modification
 
+## Start by Copying the Example Files
+
+Keep the working examples.
+Copy each provided file so you have something to experiment with.
+
+For more information, see your project repo **docs/your-files.md**.
+
+It takes a few words but basically, copy each file in these folders:
+
+-  **data/**
+-  **src/**
+-  **notebook/**
+
+And change:
+
+`_case` to
+`_yourname`.
+
+
 ## Professional Modifications
 
 A technical modification is a deliberate change that affects what the project does or produces.

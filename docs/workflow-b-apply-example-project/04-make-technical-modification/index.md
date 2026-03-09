@@ -1,11 +1,13 @@
 # 🔵 Workflow 2.4: Make a Technical Modification to the Project
 
-> Phase 4. Experiment, make a technical modification, and observe the results.
+> Phase 4. Copy the example, experiment, make a technical modification, and observe the results.
 
 ## Professional Practice
 
 After gaining a basic understanding of the project, its goals, and its techniques,
-the next phase is to make a small change to the technical logic and observe the results.
+the next phase is to **copy each example file to your own file**.
+Start by modifying the opening information,
+then make a small change to the technical logic and observe the results.
 
 Save your work after each useful change.
 Git maintains a history of project changes, making it safe to experiment.
