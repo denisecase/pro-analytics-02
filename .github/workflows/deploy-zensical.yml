@@ -104,4 +104,4 @@ jobs:
       - name: D4) Deploy to GitHub Pages
         # WHY: This step takes the uploaded artifact and publishes it to
         # GitHub Pages so the documentation becomes publicly accessible.
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
