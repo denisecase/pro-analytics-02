@@ -1,9 +1,11 @@
 # Pro Analytics 02
 
-[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://denisecase.github.io/pro-analytics-02/)
+[![Docs](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical.yml/badge.svg?branch=main)](https://denisecase.github.io/pro-analytics-02/)
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
 [![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml)
-[![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT)
+[![Check Links](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml)
+[![Dependabot](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/denisecase/pro-analytics-02/security)
 
 > Professional Python project starter and guide.
 
@@ -72,6 +74,10 @@ Install and run pre-commit checks (twice if necessary as shown below):
 
 ```shell
 uvx pre-commit install
+
+git add -A
+uvx pre-commit run --all-files
+# repeat if changes were made
 git add -A
 uvx pre-commit run --all-files
 ```
@@ -92,10 +98,7 @@ uv run ruff check . --fix
 uv run pytest --cov=src --cov-report=term-missing
 
 uv run zensical build
-uv run zensical serve
 ```
-
-Hit **CTRL+c** in the VS Code terminal to quit serving.
 
 While editing project code and docs, repeat the commands above to run files, check them, and rebuild docs as needed.
 
@@ -105,7 +108,7 @@ you may need to **re-run git `add` and `commit`** to ensure everything gets comm
 
 ```shell
 git add -A
-git commit -m "update"
+git commit -m "your message here"
 git push -u origin main
 ```
 

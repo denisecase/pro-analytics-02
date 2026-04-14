@@ -8,36 +8,36 @@
 name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
 readme = "README.md"
 requires-python = ">=3.14"
-version = "0.1.0"
+version = "0.2.0"
 
 dependencies = [
     # REQ.DEPS: External packages used by the project code.
-    "datafun-toolkit>=1.0.0",
-    "ipykernel>=7.1.0",
-    "ipython>=9.11.0",
-    "pandas>=2.3.3",
-    "scikit-learn>=1.3.0",
-    "matplotlib>=3.8.0"
+    "datafun-toolkit",
+    "ipykernel",
+    "ipython",
+    "pandas",
+    "scikit-learn",
+    "matplotlib"
 ]
 
 [project.optional-dependencies]
 # WHY: Optional dependency groups keep the core install clean and focused.
 dev = [
     # REQ.DEV.DEPS: External packages used for linting, testing, type checking, etc.
-    "bandit>=1.9.2",
-    "packaging>=25.0",
-    "pre-commit>=4.5.1",
-    "pytest>=9.0.2",
-    "pytest-cov>=7.0.0",
-    "pyright>=1.1.407",
-    "ruff>=0.15.5",
-    "validate-pyproject>=0.24.1",
+    "bandit",
+    "packaging",
+    "pre-commit",
+    "pytest",
+    "pytest-cov",
+    "pyright",
+    "ruff",
+    "validate-pyproject",
 ]
 
 docs = [
     # REQ.DOCS.DEPS: External packages used to generate project documentation.
-    "mkdocstrings[python]>=1.0.0",
-    "zensical>=0.0.24",
+    "mkdocstrings[python]",
+    "zensical",
 ]
 
 # === PYTEST (VERIFY LOGIC) ===
@@ -118,32 +118,43 @@ force-sort-within-sections = true
 # REQ: Google style is the default policy for this repository.
 convention = "google" # ALT: "numpy" (choose one convention project-wide)
 
-# === BUILD SYSTEM ===
-
-# This repository includes scripts that are not standalone: they import shared
-# modules from a package under `src/`. To make imports reliable across IDEs,
-# tests, and CI, the code must be importable as a real package.
-
-# We use a `src/` layout and configure setuptools package discovery so imports work
-# because the package is installed (often in editable mode during development).
-
-# Why:
-# - Scripts can import shared code via normal package imports (no path hacks).
-# - Prevents accidental imports from the repository root, a common pitfall.
-# - Makes type checking, testing, and CI behavior consistent.
-
-# Tradeoff:
-# - Introduces light packaging configuration (build backend and package discovery).
-#   This is intentional and required when the project contains shared modules,
-#   rather than simply a set of completely standalone scripts.
+# === BUILD SYSTEM === CUSTOMIZE SRC/ FOLDERS IN 2 PLACES BELOW
+#
+# REQ.PROJECT:
+#   This project MUST define a build system so that Python modules
+#   can be discovered, imported, and published to PyPI reliably.
+#
+# WHY:
+#   Tools such as editors, test runners, CI, and PyPI need a consistent
+#   way to locate and package importable code.
+#
+# REQ.STRUCTURE:
+#   All importable Python code MUST live under src/.
+#
+# WHY:
+#   A src/ layout prevents accidental imports from the repository root and
+#   ensures consistent behavior across IDEs, tests, command-line runs,
+#   and published distributions.
 
 [build-system]
-# WHY: Define the build backend and minimum build requirements.
-build-backend = "setuptools.build_meta"
-requires = ["setuptools>=80.9.0"]
+# REQ.BUILD: A build backend MUST be declared to enable package discovery and publishing.
+build-backend = "hatchling.build"
+requires = ["hatchling", "hatch-vcs"]
 
-[tool.setuptools]
-package-dir = { "" = "src" } # WHY: src-layout keeps code separate from config and docs.
+[tool.hatch.build.targets.wheel]
+# REQ.PACKAGES: Package discovery MUST be rooted at src/.
+packages = ["src/pro_analytics_02"]
 
-[tool.setuptools.packages.find]
-where = ["src"] # WHY: Explicitly define package discovery location.
+[tool.hatch.version]
+# WHY: Version is derived from git tags at build time so the package version
+# always matches the release tag without manual updates to source files.
+# fallback-version is used when no git tags are present (e.g., fresh clone, CI without tags).
+# tag-pattern matches tags like v1.2.3 or 1.2.3 and extracts the numeric version.
+source = "vcs"
+fallback-version = "0.1.0"
+tag-pattern = "^(?:v)?(?P<version>\\d+\\.\\d+\\.\\d+)$"
+
+[tool.hatch.build.hooks.vcs]
+# WHY: Writes computed version into package at build time.
+# Can be read at runtime without importing hatch-vcs.
+version-file = "src/pro_analytics_02/_version.py"

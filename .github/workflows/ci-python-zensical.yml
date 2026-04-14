@@ -1,119 +1,136 @@
 # ============================================================
 # .github/workflows/ci-python-zensical.yml (Continuous Integration)
 # ============================================================
-# SOURCE: https://github.com/denisecase/templates
+# Updated: 2026-04-13
 #
-# WHY-FILE: Validate repository hygiene, python, and documentation builds.
+# WHY-FILE: Validate repository hygiene, Python correctness, and documentation builds.
 # REQ: CI MUST NOT introduce arbitrary rules that are not reproducible locally.
-# OBS: CI validates only; it should not edit files or deploy docs.
+# OBS: CI validates only; it does not edit files or deploy docs.
+# OBS: yamllint config lives at .github/yamllint.yml (not repo root).
+#
+# === WHAT IS AND IS NOT COVERED HERE ===
+#
+# COVERED BY PRE-COMMIT (step A6) - not repeated as explicit steps:
+#   - ruff-check (lint with autofix)
+#   - ruff-format (formatting)
+#   - trailing whitespace, line endings, JSON/TOML/YAML syntax, large files
+#
+# COVERED AS EXPLICIT STEPS - tools that pre-commit does not run:
+#   - validate-pyproject (B1)
+#   - pyright type checking (B2)
+#   - pytest (B3)
+#   - zensical docs build (D1)
+#
+# WHY SEPARATE: These tools are slower, require the full environment,
+# or produce output worth seeing in CI logs independently.
 
 name: CI (Python + Zensical)
 
-# WHY: Validate code, docs, and repo metadata on PRs and pushes.
-# OBS: This workflow validates only; it never deploys.
-
 on:
   push:
-    branches: [main] # WHY: Run when pushing to main branch.
+    branches: [main]       # WHY: Validate every push to main.
   pull_request:
-    branches: [main] # WHY: Run on pull requests targeting main branch.
-  workflow_dispatch: # WHY: Allow manual triggering from Actions tab.
+    branches: [main]       # WHY: Validate PRs before merge.
+  workflow_dispatch:        # WHY: Allow manual trigger from Actions tab.
 
-permissions: # WHY: Use least privileges required.
-  contents: read
+permissions:
+  contents: read            # WHY: Least privilege; CI only reads, never writes.
 
 env:
-  PYTHONUNBUFFERED: "1" # WHY: Real-time logging.
-  PYTHONIOENCODING: "utf-8" # WHY: Ensure UTF-8 encoding for international characters.
+  PYTHONUNBUFFERED: "1"    # WHY: Real-time log output in CI.
+  PYTHONIOENCODING: "utf-8" # WHY: Consistent encoding across platforms.
 
 jobs:
   ci:
     name: Repository / Python checks and Zensical build
-    runs-on: ubuntu-latest # WHY: Linux environment matches most production deployments
-    timeout-minutes: 30 # WHY: Prevent hanging jobs. If over time, it is likely stuck.
+    runs-on: ubuntu-latest  # WHY: Linux matches most production deployments.
+    timeout-minutes: 30     # WHY: Fail fast if a step hangs unexpectedly.
     env:
-      UV_PYTHON: "3.14" # WHY: Set Python version for all steps.
+      UV_PYTHON: "3.14"     # WHY: Pin Python version for all steps in this job.
 
     steps:
       # ============================================================
-      # ASSEMBLE: Get code and set up environment
+      # A) ASSEMBLE: Checkout code and set up environment
       # ============================================================
 
       - name: A1) Checkout repository code
-        # WHY: Needed to access files for checks.
         uses: actions/checkout@v6
+        # WHY: Required so all subsequent steps can access repo files.
 
-      - name: A2) Install uv (with caching and uv.lock awareness)
+      - name: A2) Install uv (with caching)
         uses: astral-sh/setup-uv@v7
         with:
-          enable-cache: true # WHY: Speed up installs on subsequent runs
-          cache-dependency-glob: "uv.lock" # WHY: Only re-cache when dependencies change
+          enable-cache: true
+          # WHY: Cache the uv tool itself for faster subsequent runs.
+          cache-dependency-glob: "uv.lock"
+          # WHY: Invalidate cache only when locked dependencies change.
 
-      - name: A3) Install Python 3.14 (no repo changes needed)
+      - name: A3) Install Python 3.14
         run: uv python install 3.14
+        # WHY: Ensures the pinned Python version is available in CI.
+        # OBS: Does not modify the repo; uv manages the interpreter locally.
 
-      - name: A4) Sync to install all dependencies
+      - name: A4) Install all dependencies
         run: uv sync --extra dev --extra docs --upgrade
+        # WHY: Install dev and docs extras so all check and build tools are available.
+        # OBS: --upgrade ensures CI catches dependency drift early.
 
       - name: A5) Show tool versions
         run: |
           uv --version
           uv run python --version
+          uv run ruff --version
+          uv run python -m pyright --version
           if [ -f "zensical.toml" ]; then
             uv run zensical --version
           fi
+        # WHY: Version output makes CI logs easier to debug when tools change.
 
-      - name: A6) Run pre-commit (all files)
+      - name: A6) Run pre-commit on all files
         run: uv tool run pre-commit run --all-files
+        # WHY: Enforces formatting, linting, and file hygiene in one step.
+        # OBS: Covers ruff-check, ruff-format, whitespace, line endings,
+        #      and JSON/TOML/YAML syntax checks defined in .pre-commit-config.yaml.
+        # OBS: Pre-commit hook order (lint then format) differs from manual
+        #      command order (format then lint). See .pre-commit-config.yaml.
 
       # ============================================================
-      # === BASELINE CHECKS ===
+      # B) BASELINE CHECKS: Tools not covered by pre-commit
       # ============================================================
 
-      - name: B1) validate-pyproject (must be in pyproject.toml dependencies)
+      - name: B1) Validate pyproject.toml schema
         run: uv run validate-pyproject pyproject.toml
+        # WHY: Catches malformed pyproject.toml before a broken release.
+        # OBS: validate-pyproject must be listed in [project.optional-dependencies].dev.
+
+      - name: B2) Run Pyright type checker
+        run: uv run python -m pyright
+        # WHY: Catches type errors that ruff does not check.
+        # OBS: Pyright reads settings from pyproject.toml [tool.pyright].
+        # OBS: Not included in pre-commit because it requires the full venv.
 
       # ============================================================
-      # === COVERAGE AND TESTS: Verify functionality ===
+      # C) COVERAGE & TESTING: Python tests (pytest)
       # ============================================================
 
-      - name: C1) Run pytest with coverage
-        run: |
-          if [ -d "tests" ] && [ -n "$(find tests -type f \( -name 'test_*.py' -o -name '*_test.py' \) -print -quit)" ]; then
-            uv run pytest --verbose --cov=src --cov-report=term-missing --cov-report=xml
-          else
-            echo "## No Tests Found" >> "$GITHUB_STEP_SUMMARY"
-            echo "Tests directory missing or empty. CI continues." >> "$GITHUB_STEP_SUMMARY"
-          fi
-
-      - name: C2) Upload test coverage to GitHub Summary
-        if: always()
-        run: |
-          echo "## Test Coverage Report" >> "$GITHUB_STEP_SUMMARY"
-          if [ -f ".coverage" ]; then
-            echo '```' >> "$GITHUB_STEP_SUMMARY"
-            uv run coverage report >> "$GITHUB_STEP_SUMMARY"
-            echo '```' >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "No coverage data available." >> "$GITHUB_STEP_SUMMARY"
-          fi
-
-      - name: C3) Upload coverage artifact
-        if: always() && hashFiles('coverage.xml') != ''
-        uses: actions/upload-artifact@v7
-        with:
-          name: coverage-report
-          path: coverage.xml
-          retention-days: 30
+      - name: C1) Run pytest
+        run: uv run pytest
+        # WHY: Confirms all Python tests pass in a clean CI environment.
+        # OBS: pytest config lives in pyproject.toml [tool.pytest.ini_options].
+        # OBS: Not included in pre-commit because tests can be slow.
 
       # ============================================================
-      # === DEPLOY: Build only, don't deploy yet ===
+      # D) Docs build (no deployment)
       # ============================================================
 
-      - name: D1) Build docs with Zensical
+      - name: D1) Build documentation with Zensical
         run: |
           if [ -f "zensical.toml" ]; then
             uv run zensical build
           else
-            echo "No zensical.toml config found; skipping docs build."
+            echo "No zensical.toml found; skipping docs build."
           fi
+        # WHY: Confirms docs build cleanly without errors or broken references.
+        # OBS: Build only; deployment is handled by a separate workflow if needed.
+        # OBS: Conditional on zensical.toml so this workflow is reusable across
+        #      repos that may not yet have docs configured.

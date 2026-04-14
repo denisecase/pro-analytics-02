@@ -1,7 +1,6 @@
 # ============================================================
 # .gitignore (Keep unnecessary files out of the repository)
 # ============================================================
-# SOURCE: https://github.com/denisecase/templates
 
 # REQ.UNIVERSAL: All professional GitHub project repositories MUST include .gitignore.
 # WHY: Prevent committing generated artifacts, local state, secrets, and OS-specific files.
@@ -14,8 +13,8 @@
 
 # WHY: Logs are useful during debugging and verification.
 # ALT: Comment if logs must be inspected or validated.
-*.log
-logs/
+# *.log
+# logs/
 PRIVATE_NOTES.md
 PRIVATE-NOTES.md
 

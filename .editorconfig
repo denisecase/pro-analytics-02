@@ -1,7 +1,6 @@
 # ============================================================
 # .editorconfig (Keep files consistent across editors and IDEs)
 # ============================================================
-# SOURCE: https://github.com/denisecase/templates
 
 # REQ.UNIVERSAL: All professional GitHub project repositories MUST include .editorconfig.
 # WHY: Establish a cross-editor baseline so diffs stay clean and formatting is consistent.

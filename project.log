@@ -1,0 +1,62 @@
+2026-04-14 07:53:48 | INFO | CI | === RUN START ===
+2026-04-14 07:53:48 | INFO | CI | project=Pro Python
+2026-04-14 07:53:48 | INFO | CI | repo_dir=pro-analytics-02
+2026-04-14 07:53:48 | INFO | CI | python=3.14.0
+2026-04-14 07:53:48 | INFO | CI | os=Windows 11
+2026-04-14 07:53:48 | INFO | CI | shell=powershell
+2026-04-14 07:53:48 | INFO | CI | cwd=.
+2026-04-14 07:53:48 | INFO | CI | github_actions=False
+2026-04-14 07:53:48 | INFO | CI | START main()
+2026-04-14 07:53:48 | INFO | CI | ROOT_PATH = .
+2026-04-14 07:53:48 | INFO | CI | NOTEBOOKS_PATH = notebooks
+2026-04-14 07:53:48 | INFO | CI | Starting demo_python() function.
+2026-04-14 07:53:48 | INFO | CI | Name Python files with lowercase and underscores.
+2026-04-14 07:53:48 | INFO | CI | In Python, comments start with a '#' symbol and are not executed.
+2026-04-14 07:53:48 | INFO | CI | Comments can also be wrapped in triple single quotes or triple backticks.
+2026-04-14 07:53:48 | INFO | CI | Variables are used to store values.
+2026-04-14 07:53:48 | INFO | CI | Type hints are optional but recommended for clarity.
+2026-04-14 07:53:48 | INFO | CI |   example_number = 42
+2026-04-14 07:53:48 | INFO | CI |   count: int = 42
+2026-04-14 07:53:48 | INFO | CI |   temp_F: float = 42.2
+2026-04-14 07:53:48 | INFO | CI |   user_name: str = "Data Analyst"
+2026-04-14 07:53:48 | INFO | CI | Result: example_number=42, count=42, temp_f=42.2, user_name='Data Analyst'.
+2026-04-14 07:53:48 | INFO | CI | Functions in Python are blocks of reusable code.
+2026-04-14 07:53:48 | INFO | CI | You can call a function by using its name followed by parentheses.
+2026-04-14 07:53:48 | INFO | CI | We use f-strings to combine text and values in Python.
+2026-04-14 07:53:48 | INFO | CI |   Put the 'f' immediately before the opening quote of the string text.
+2026-04-14 07:53:48 | INFO | CI | Python has many built-in functions, like min(), max(), and len().
+2026-04-14 07:53:48 | INFO | CI | For the list of numbers: [1, 2, 3]
+2026-04-14 07:53:48 | INFO | CI |   The minimum value is min(numbers): 1
+2026-04-14 07:53:48 | INFO | CI |   The maximum value is max(numbers): 3
+2026-04-14 07:53:48 | INFO | CI |   The length of the list is len(numbers): 3
+2026-04-14 07:53:48 | INFO | CI | In Python, indentation matters = True!
+2026-04-14 07:53:48 | INFO | CI | In Python, spelling matters = True!
+2026-04-14 07:53:48 | INFO | CI | In Python, uppercase/lowercase matters = True!
+2026-04-14 07:53:48 | INFO | CI | Experiment with this demo script to learn the basics quickly.
+2026-04-14 07:53:48 | INFO | CI | Exiting demo_python() function.
+2026-04-14 07:53:48 | INFO | CI | END main()
+2026-04-14 07:54:09 | INFO | CI | Starting demo_python() function.
+2026-04-14 07:54:09 | INFO | CI | Name Python files with lowercase and underscores.
+2026-04-14 07:54:09 | INFO | CI | In Python, comments start with a '#' symbol and are not executed.
+2026-04-14 07:54:09 | INFO | CI | Comments can also be wrapped in triple single quotes or triple backticks.
+2026-04-14 07:54:09 | INFO | CI | Variables are used to store values.
+2026-04-14 07:54:09 | INFO | CI | Type hints are optional but recommended for clarity.
+2026-04-14 07:54:09 | INFO | CI |   example_number = 42
+2026-04-14 07:54:09 | INFO | CI |   count: int = 42
+2026-04-14 07:54:09 | INFO | CI |   temp_F: float = 42.2
+2026-04-14 07:54:09 | INFO | CI |   user_name: str = "Data Analyst"
+2026-04-14 07:54:09 | INFO | CI | Result: example_number=42, count=42, temp_f=42.2, user_name='Data Analyst'.
+2026-04-14 07:54:09 | INFO | CI | Functions in Python are blocks of reusable code.
+2026-04-14 07:54:09 | INFO | CI | You can call a function by using its name followed by parentheses.
+2026-04-14 07:54:09 | INFO | CI | We use f-strings to combine text and values in Python.
+2026-04-14 07:54:09 | INFO | CI |   Put the 'f' immediately before the opening quote of the string text.
+2026-04-14 07:54:09 | INFO | CI | Python has many built-in functions, like min(), max(), and len().
+2026-04-14 07:54:09 | INFO | CI | For the list of numbers: [1, 2, 3]
+2026-04-14 07:54:09 | INFO | CI |   The minimum value is min(numbers): 1
+2026-04-14 07:54:09 | INFO | CI |   The maximum value is max(numbers): 3
+2026-04-14 07:54:09 | INFO | CI |   The length of the list is len(numbers): 3
+2026-04-14 07:54:09 | INFO | CI | In Python, indentation matters = True!
+2026-04-14 07:54:09 | INFO | CI | In Python, spelling matters = True!
+2026-04-14 07:54:09 | INFO | CI | In Python, uppercase/lowercase matters = True!
+2026-04-14 07:54:09 | INFO | CI | Experiment with this demo script to learn the basics quickly.
+2026-04-14 07:54:09 | INFO | CI | Exiting demo_python() function.
