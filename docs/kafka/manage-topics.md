@@ -128,7 +128,7 @@ cd ~/kafka
 
 bin/kafka-topics.sh --delete \
   --bootstrap-server localhost:9092 \
-  --topic streaming-02-kafka-case \
+  --topic streaming-02-kafka-case
 ```
 
 ---
@@ -155,5 +155,5 @@ bin/kafka-topics.sh --describe \
 
 bin/kafka-topics.sh --delete \
   --bootstrap-server localhost:9092 \
-  --topic streaming-02-kafka-case \
+  --topic streaming-02-kafka-case
 ```
