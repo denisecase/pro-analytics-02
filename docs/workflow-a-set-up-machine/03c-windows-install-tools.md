@@ -48,7 +48,7 @@ This is only for advanced users who need Linux-only tools
 (e.g., Kafka or Spark).
 
 To install WSL, follow Microsoft’s official instructions:
-<https://learn.microsoft.com/windows/wsl/install>
+<https://learn.microsoft.com/en-us/windows/wsl/install>
 
 Use WSL only when required; it is NOT normally needed
 for Python projects managed with `uv`.

@@ -136,7 +136,7 @@ Works well for modules:
 
 Example dataset:
 
-<https://www.kaggle.com/datasets/reddit/reddit-comments-may-2015>
+<https://www.kaggle.com/datasets/kaggle/reddit-comments-may-2015>
 
 Reddit comment datasets contain conversations from online forums.
 
@@ -197,7 +197,7 @@ Works well for modules:
 
 Example dataset:
 
-<https://www.githubarchive.org/>
+<https://www.gharchive.org/>
 
 GitHub issue comments contain technical discussions between developers.
 

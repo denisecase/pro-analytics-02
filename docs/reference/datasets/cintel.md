@@ -102,7 +102,7 @@ Works well for modules:
 
 Example datasets:
 
-- <https://www.kaggle.com/datasets/szymonjanowski/internet-traffic-data>
+- <https://www.kaggle.com/datasets/asfandyar250/network>
 
 These datasets represent website visits and user activity over time.
 
@@ -239,7 +239,7 @@ Works well for modules:
 ## 6. GitHub Activity Data
 
 Source:
-<https://www.githubarchive.org/>
+<https://www.gharchive.org/>
 
 GitHub activity datasets track development activity across repositories.
 
