@@ -2,9 +2,13 @@
 
 > Start **Apache Kafka** locally.
 
-## Prerequisite
+## Two Prerequisites
 
-You must have completed **SETUP_KAFKA.md** successfully before this will work.
+REQUIREMENT 1. Complete <mark>**SETUP_KAFKA.md**</mark> successfully.
+
+REQUIREMENT 2. Copy
+**.env.example** (committed to GitHub) to
+<mark>**.env**</mark> (not committed to GitHub as it could have secrets).
 
 ## When
 
