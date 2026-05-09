@@ -92,4 +92,4 @@ May be encountered in older projects and tutorials.
 
 The Python Package Index: the public repository of Python packages.
 pip and uv download packages from PyPI by default.
-Browse at: https://pypi.org/
+Browse at: <https://pypi.org/>

@@ -33,7 +33,6 @@ Confirm the project works as expected by running it and checking outputs and log
 The process of finding and fixing errors in code.
 Use log messages, print statements, and error messages to identify the source of problems.
 
-
 ## Logging
 
 Writing timestamped messages during execution to record what the program did.

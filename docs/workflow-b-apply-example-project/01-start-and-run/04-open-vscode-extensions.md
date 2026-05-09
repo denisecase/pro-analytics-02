@@ -4,18 +4,23 @@
 
 ## Strong Recommendation
 
-Using **code dot** (`code .`) as shown below is the strongly recommended professional pattern because it guarantees:
+Using **code dot** (`code .`) as shown below is the
+strongly recommended professional pattern
+because it guarantees:
 
 - the terminal is in the correct directory
 - VS Code opens the correct project root
 - environment discovery happens relative to that root
 - Git commands run in the right repository
 
-**IMPORTANT:** Any deviations from this process (especially the first time you open it) will not necessarily work later when we need to execute Python files.
+**IMPORTANT:** Any deviations from this process
+(especially the first time you open it)
+will not necessarily work later when we need to execute Python files.
 
 ## Previously
 
-This assumes you followed the earlier instructions to clone your repo into the **Repos** (non-synchronized) folder, for example:
+This assumes you followed the earlier instructions
+to clone your repo into the **Repos** (non-synchronized) folder, for example:
 
 ```shell
 git clone https://github.com/youraccount/your-repo
@@ -65,9 +70,7 @@ These extensions are not needed because Ruff handles formatting and linting:
 
 ### 1. Open the Extensions Panel
 
-With the project open in VS Code, choose:
-
-**View / Extensions**
+With the project open in VS Code, choose: **View / Extensions**
 
 Or use the keyboard shortcut:
 

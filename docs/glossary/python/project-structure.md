@@ -2,7 +2,6 @@
 
 > How professional Python projects are organized.
 
-
 ## Project
 
 A structured set of files and folders that work together to run code,
@@ -14,7 +13,7 @@ A project structure where all package code lives inside a `src/` folder.
 Keeps source code separate from configuration, data, and documentation.
 Example structure:
 
-```
+```text
 project-name/
 ├── src/
 │   └── packagename/

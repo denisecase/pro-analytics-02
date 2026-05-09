@@ -49,6 +49,7 @@ Verify VS Code shows `.venv` as the selected Python interpreter.
 - Select **Python: Select Interpreter**
 - Choose the interpreter inside this project's `.venv` folder
 - Reload VS Code (**Developer: Reload Window**)
+
 </details>
 
 ## Final Checklist

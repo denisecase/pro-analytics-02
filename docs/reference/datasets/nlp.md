@@ -48,7 +48,7 @@ More information appears in the sections below.
 ## 1. Project Gutenberg Books
 
 Source:
-https://www.gutenberg.org/
+<https://www.gutenberg.org/>
 
 Project Gutenberg provides thousands of public domain books
 that can be downloaded as plain text.
@@ -75,7 +75,7 @@ Works well for modules:
 
 Example dataset:
 
-https://www.kaggle.com/datasets/rmisra/news-category-dataset
+<https://www.kaggle.com/datasets/rmisra/news-category-dataset>
 
 This dataset contains thousands of news headlines across many topics.
 
@@ -106,7 +106,7 @@ Works well for modules:
 
 Example dataset:
 
-https://ai.stanford.edu/~amaas/data/sentiment/
+<https://ai.stanford.edu/~amaas/data/sentiment/>
 
 Movie review datasets contain opinion text written by viewers.
 
@@ -136,7 +136,7 @@ Works well for modules:
 
 Example dataset:
 
-https://www.kaggle.com/datasets/reddit/reddit-comments-may-2015
+<https://www.kaggle.com/datasets/reddit/reddit-comments-may-2015>
 
 Reddit comment datasets contain conversations from online forums.
 
@@ -167,7 +167,7 @@ Works well for modules:
 ## 5. Wikipedia Articles
 
 Source:
-https://dumps.wikimedia.org/
+<https://dumps.wikimedia.org/>
 
 Wikipedia articles provide structured informational text.
 
@@ -197,7 +197,7 @@ Works well for modules:
 
 Example dataset:
 
-https://www.githubarchive.org/
+<https://www.githubarchive.org/>
 
 GitHub issue comments contain technical discussions between developers.
 
@@ -228,7 +228,7 @@ Works well for modules:
 ## 7. MIT Shakespeare Page (Complete Works)
 
 Source:
-https://shakespeare.mit.edu/
+<https://shakespeare.mit.edu/>
 
 The MIT Shakespeare site provides the complete works of Shakespeare
 organized by play, act, and scene. The text is available in simple HTML pages,

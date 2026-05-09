@@ -9,7 +9,8 @@ A computer is like a building:
 - **Operating system** - the control room
 - **Terminal** - a room where you type commands
 - **Shell** - the interpreter that translates your commands for the control room
-- **Environment variables** - rules that govern each room (each terminal session can have different rules)
+- **Environment variables** - rules that govern each room
+  (each terminal session can have different rules)
 
 The most important environment variable is **PATH**:
 an ordered list of folders where the shell searches for programs.
@@ -24,17 +25,19 @@ Examples: Windows Terminal, macOS Terminal, iTerm2, VS Code integrated terminal.
 
 ## Shells
 
-A shell runs inside a terminal and interprets commands. The shell determines how commands are parsed, how environment variables are read, and which startup files are loaded.
+A shell runs inside a terminal and interprets commands.
+The shell determines how commands are parsed,
+how environment variables are read,
+and which startup files are loaded.
 
-| OS | Common Shells |
-|----|---------------|
-| Windows | PowerShell, Git Bash |
-| macOS/Linux | zsh, bash |
+| OS          | Common Shells        |
+| ----------- | -------------------- |
+| Windows     | PowerShell, Git Bash |
+| macOS/Linux | zsh, bash            |
 
 A single terminal can host different shells.
 Changing the shell changes command behavior.
 The old Windows Command Prompt (cmd) is deprecated and not recommended.
-
 
 ## Environment Variables
 

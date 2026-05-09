@@ -1,13 +1,17 @@
 # 🔵 Run Jupyter Notebooks
 
-This page explains how to run Jupyter notebooks in VS Code. When we execute code in a Jupyter notebook, the kernel runs the code interactively, allowing us to test, visualize, and document our analysis step by step.
+This page explains how to run Jupyter notebooks in VS Code.
+When we execute code in a Jupyter notebook,
+the kernel runs the code interactively,
+allowing us to test, visualize,
+and document our analysis step by step.
 
-A notebook is a web-based interactive environment commonly used for exploratory data analysis (EDA) and more.
+A notebook is a web-based interactive environment commonly
+used for exploratory data analysis (EDA) and more.
 
 ## Important Note
 
 Use this only when your project uses **Jupyter notebook (`.ipynb`)** files.
-
 
 ## Before Starting
 
@@ -17,6 +21,7 @@ Ensure the `.venv` is activated. If it is already active, you don't need to reac
 We must have installed all the external dependencies into the environment first.
 
 ### Install the Jupyter Extension for VS Code
+
 - Open the Extensions view in VS Code by pressing Ctrl+Shift+X (Windows/Linux) or Cmd+Shift+X (Mac).
 - Search for "Jupyter" and install the official extension.
 
@@ -43,12 +48,6 @@ Run notebooks directly in VS Code.
   - **Ctrl Enter** to run cell and stay in place
 - Save often or enable **File / Auto Save**.
 
-Alternative if you prefer JupyterLab to VS Code, open a terminal on your machine in the project folder and start JupyterLab:
-
-```shell
-uv run jupyter lab
-```
-
 ## AS-NEEDED: If `.venv` packages (e.g., `pandas`) are not recognized
 
 1. Create a `.vscode` folder in your project.
@@ -60,12 +59,16 @@ uv run jupyter lab
 
 ## AS-NEEDED: Restart
 
-You may need to exit the notebook and restart the kernel periodically for best results. As needed, reopen, and restart the kernel.
+You may need to exit the notebook and
+restart the kernel periodically for best results.
+As needed, reopen, and restart the kernel.
 Run all again to verify.
 
 ## AS-NEEDED: New External Dependencies
 
-If any new external dependencies have been added to any Python files, follow steps to install dependencies again first.
+If any new external dependencies have been added
+to any Python files,
+follow steps to install dependencies again first.
 
 ## ALWAYS: Fully Execute Notebooks before add-commit-push
 
@@ -74,7 +77,8 @@ Keep your notebooks organized and execute them fully before running git add-comm
 ## Experience
 
 - Understand the role of a Jupyter kernel.
-- Understand how to select and verify that the kernel and environment match to ensure all dependencies are correctly available.
+- Understand how to select and verify that the kernel
+  and environment match to ensure all dependencies are correctly available.
 - Learn Markdown to make professional notebooks.
 - Use exactly one top-level title.
 - Use numbered second-level headings to organize your work.

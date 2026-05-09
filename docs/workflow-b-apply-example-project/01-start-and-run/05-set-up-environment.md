@@ -9,7 +9,8 @@ project-repo-name/
 └─ README.md
 ```
 
-This isolates dependencies, prevents conflicts with system Python, and makes the project reproducible on any machine.
+This isolates dependencies, prevents conflicts with system Python,
+and makes the project reproducible on any machine.
 If something breaks, the `.venv` folder can be deleted and recreated.
 
 ## Before Starting
@@ -49,7 +50,8 @@ uv python pin 3.14
 uv sync --extra dev --extra docs --upgrade
 ```
 
-If prompted: "We noticed a new environment has been created. Do you want to select it for the workspace folder?", click **Yes**.
+If prompted: "We noticed a new environment has been created.
+Do you want to select it for the workspace folder?", click **Yes**.
 
 ### Step 1 Verify
 
@@ -59,16 +61,16 @@ If prompted: "We noticed a new environment has been created. Do you want to sele
 <details>
 <summary>If this step fails (click here)</summary>
 
-**`uv` command not found**
+`uv` command not found:
 
 - Close and reopen VS Code
 - Verify `uv` was installed during Workflow A. Set Up Machine.
 
-**Python version error**
+Python version error:
 
 - Rerun: `uv python pin 3.14`
 
-**Dependency install error**
+Dependency install error:
 
 - Delete the `.venv/` folder
 - Rerun: `uv sync --extra dev --extra docs --upgrade`
@@ -115,7 +117,7 @@ If this occurs, it is safe to skip pre-commit and continue with the project.
 
 ![Choose recommended local .venv](./images/Python-Recommended-Local-Dot-venv.png)
 
-### Step 3.2. Restart the Python language server:
+### Step 3.2. Restart the Python language server
 
 1. Open the **Command Palette** (same as before).
 2. Type or choose: `Developer: Reload Window`

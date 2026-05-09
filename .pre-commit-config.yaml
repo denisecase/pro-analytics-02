@@ -35,8 +35,8 @@
 #      If format ran first, lint fixes could undo the formatting.
 #
 # MANUAL ORDER (command line) is different: format first, then check.
-#   uv run ruff format .
-#   uv run ruff check . --fix
+#   uv run python -m ruff format .
+#   uv run python -m ruff check . --fix
 # WHY: When running manually, each command is a conscious step.
 #      Format cleans style first so lint sees tidy code.
 #      You are in control and can re-run either command as needed.
@@ -135,6 +135,19 @@ repos:
         name: D2) Ruff formatter (runs after linter fixes)
         # WHY: Formats whatever structure the linter left behind.
 
+  # === EXECUTE: LOCAL VALIDATION ===
+
+  - repo: local
+    hooks:
+
+      - id: markdownlint
+        name: E1) Markdown lint
+        # Uses .markdownlint-cli2.yaml if present, otherwise defaults.
+        language: system
+        entry: npx markdownlint-cli2 --fix
+        pass_filenames: false
+        always_run: true
+
 # === GLOBAL SETTINGS ===
 # ALT: Set fail_fast to true to stop at first failure.
-fail_fast: false # WHY: Run all hooks so all issues are visible at once.
+fail_fast: false # Run all hooks even if one fails

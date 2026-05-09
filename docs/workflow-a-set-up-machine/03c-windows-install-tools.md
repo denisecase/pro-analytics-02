@@ -42,7 +42,7 @@ Each command should display a version number.
 If any command fails, revisit the corresponding installer.
 
 <details>
-<summary><strong>OPTIONAL/ADVANCED: Windows Subsystem for Linux (WSL) - ONLY AS DIRECTED</strong></summary>
+<summary>OPTIONAL/ADVANCED: Windows Subsystem for Linux (WSL) - ONLY AS DIRECTED</summary>
 
 This is only for advanced users who need Linux-only tools
 (e.g., Kafka or Spark).

@@ -1,0 +1,75 @@
+# ============================================================
+# SE_MANIFEST.toml (Repository Intent, Scope, and Role)
+# ============================================================
+
+schema = "se-manifest-1"
+schema_url = "https://github.com/structural-explainability/spec-se/blob/main/manifests/se-manifest-1.md"
+
+[meta]
+# Non-normative contextual information
+framework = "Structural Explainability"
+framework_url = "https://github.com/structural-explainability"
+framework_note = "Provides definitions and conventions for SE_MANIFEST semantics."
+description = "Declarative claim of repository intent, scope, and role."
+purpose = "To make explicit the boundaries, responsibilities, and expectations of this repository relative to others."
+keywords_note = "Keywords live only in CITATION.cff (canonical)."
+
+[repo]
+name = "pro-analytics-02"
+org = "denisecase"
+kind = "educational"
+status = "active"
+since = "2026"
+summary = "Ready-to-use starter repository and reference guide for modern professional Python project structure, tooling, and workflow."
+
+[layer]
+space = "Data Analytics"
+role = "post-secondary-education"
+
+[depends]
+required = [
+  "python>=3.14",
+  "uv",
+  "git",
+]
+optional = [
+  "ruff",
+  "pyright",
+  "pytest",
+  "lychee",
+  "zensical",
+  "pre-commit",
+  "validate-pyproject",
+]
+
+[provides]
+artifacts = [
+    "ANNOTATIONS.md",
+    "CITATION.cff",
+    "LICENSE",
+    "README.md",
+    "SE_MANIFEST.toml",
+    "pyproject.toml",
+    "ruff.strict.toml",
+]
+
+[scope]
+includes = [
+    "professional Python project structure (src layout, hatchling build)",
+    "tooling configuration (ruff, pyright strict, pre-commit, uv)",
+    "CI/CD integration via GitHub Actions",
+    "documentation site via zensical",
+    "template repository for student and practitioner use",
+    "reference workflows for daily Python development",
+]
+excludes = [
+    "domain analytics content (e.g., EDA, ML, SQL)",
+    "dataset-specific logic or ingestion pipelines",
+    "collection of personally identifying information (PII)",
+    "production deployment configuration",
+]
+
+[citation]
+cff = "CITATION.cff"
+preferred = "repo"
+bib_hint = "case2026-pro-analytics-02"

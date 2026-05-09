@@ -6,7 +6,9 @@ REQ: Recognize tools that are already available.
 
 WHY: Knowing these exist can save time.
 
-OBS: Since they are built into Python they don't need to be added to `pyproject.toml` dependencies like we do with external libraries like `pandas`.
+OBS: Since they are built into Python
+they don't need to be added to `pyproject.toml` dependencies
+like we do with external libraries such as `pandas` or `polars`.
 
 ## Data Formats and Files
 

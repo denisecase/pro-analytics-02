@@ -8,19 +8,19 @@ Shell-specific details and diagnostic commands for macOS and Linux.
 
 Default on macOS. Configuration files:
 
-| File | Loaded When |
-|------|-------------|
-| `~/.zshrc` | Interactive shells |
-| `~/.zprofile` | Login shells |
+| File          | Loaded When        |
+| ------------- | ------------------ |
+| `~/.zshrc`    | Interactive shells |
+| `~/.zprofile` | Login shells       |
 
 ### bash
 
 Default on many Linux distributions. Configuration files:
 
-| File | Loaded When |
-|------|-------------|
-| `~/.bashrc` | Interactive non-login shells |
-| `~/.bash_profile` | Login shells |
+| File              | Loaded When                  |
+| ----------------- | ---------------------------- |
+| `~/.bashrc`       | Interactive non-login shells |
+| `~/.bash_profile` | Login shells                 |
 
 Which files load depends on whether the shell is a login shell, interactive, or both.
 Terminal apps and VS Code may launch shells differently, causing different files to load.

@@ -78,7 +78,7 @@ jobs:
           uv --version
           uv run python --version
           if [ -f "zensical.toml" ]; then
-            uv run zensical --version
+            uv run python -m zensical --version
           fi
         # WHY: Version output makes deployment logs easier to debug when tools change.
 
@@ -92,7 +92,7 @@ jobs:
             echo "zensical.toml not found; refusing to deploy." >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
-          uv run zensical build
+          uv run python -m zensical build
         # WHY: Hard-fail if zensical.toml is missing rather than deploying nothing.
         # OBS: In CI (ci-python-zensical.yml) the missing config is a soft skip.
         #      Here it is a hard failure because a deploy without docs is wrong.

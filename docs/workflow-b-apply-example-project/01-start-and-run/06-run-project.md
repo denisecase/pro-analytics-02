@@ -33,9 +33,9 @@ Run the following commands in a VS Code terminal to:
 3. Optional: Run pytest if you have working tests in the `tests/` folder.
 
 ```shell
-uv run ruff format .
-uv run ruff check . --fix
-uv run pytest --cov=src --cov-report=term-missing
+uv run python -m ruff format .
+uv run python -m ruff check . --fix
+uv run python -m pytest --cov=src --cov-report=term-missing
 ```
 
 ## Step 4. Build Documentation
@@ -44,17 +44,24 @@ Make sure the documentation dependencies in `pyproject.toml` are installed.
 Then build the project docs, fix any errors, and serve them locally to test.
 
 ```shell
-uv run zensical build
-uv run zensical serve
+uv run python -m zensical build
+uv run python -m zensical serve
 ```
 
-- After running the `serve` command, a local URL for the documentation will be displayed.
-- To open the site, press **Ctrl and click** the provided link (at the same time) to view the documentation. Use **Cmd and click** on Mac.
-- To stop the server, click in the terminal, and press **Ctrl c** (or **Cmd c** on Mac) to terminate the local hosting process.
-
+- After running the `serve` command,
+  a local URL for the documentation will be displayed.
+- To open the site, press **Ctrl and click**
+  the provided link (at the same time) to view the documentation.
+  Use **Cmd and click** on Mac.
+- To stop the server, click in the terminal, and
+  press **Ctrl c** (or **Cmd c** on Mac) to terminate the local hosting process.
 
 ## Professional Reminders
 
-- Use the VS Code menu to turn on Auto Save (**File / Auto Save**), or remember to save your changes as you work.
+- Use the VS Code menu to turn on Auto Save
+  (**File / Auto Save**), or remember to save your changes as you work.
 - Comment out code as needed to get a version that runs without errors.
-- If you encounter errors, use debugging tools, strategically placed logging statements, or `print()` calls to reveal where execution is occurring and what values are stored in variables.
+- If you encounter errors, use debugging tools,
+  strategically placed logging statements,
+  or `print()` calls to reveal where execution
+  is occurring and what values are stored in variables.

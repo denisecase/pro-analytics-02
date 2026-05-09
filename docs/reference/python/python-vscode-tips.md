@@ -6,18 +6,15 @@
 - **Open file quickly:** Use `Ctrl+P` (or `Cmd+P`) to search and open a file by name.
 - **Command Palette:** Use `Ctrl+Shift+P` (or `Cmd+Shift+P`) to access any VS Code command.
 
-
 ## VS Code Terminal Tips
 
 - Use the terminal command `clear` to clear output.
 - Use the **UP ARROW** key and **DOWN ARROW** key to scroll through past commands.
 
-
 ## Find and Replace (in a file)
 
 - **Find:** `Ctrl+F` (or `Cmd+F`)
 - **Replace:** `Ctrl+H` (or `Cmd+H`)
-
 
 ## Find and Replace (across the whole project)
 
@@ -29,11 +26,13 @@ Review changes carefully and prefer smaller, incremental edits.
 
 ## Python Interpreter (Important)
 
-If Python features do not behave correctly (linting, imports, type hints), the interpreter may not be set to the project environment.
+If Python features do not behave correctly (linting, imports, type hints),
+the interpreter may not be set to the project environment.
 
 - Open the Command Palette
 - Select **Python: Select Interpreter**
 - Choose the interpreter inside this project `.venv` folder
 - If things still look wrong, run **Developer: Reload Window**
 
-Tip: The selected interpreter typically appears in the bottom status bar when a Python file is open.
+Tip: The selected interpreter typically appears in the
+bottom status bar when a Python file is open.

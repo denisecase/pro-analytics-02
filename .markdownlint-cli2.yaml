@@ -1,0 +1,58 @@
+# ============================================================
+# .markdownlint-cli2.yaml (Markdownlint CLI2 configuration)
+# ============================================================
+# Updated: 2026-05-05
+# WHY: Generated and dependency directories are not source content.
+# REQ: Markdown lint should check authored Markdown, not virtual
+#      environments, dependency trees, build output, or generated docs.
+
+globs:
+  - "**/*.md"
+
+ignores:
+  - ".venv/**"
+  - "**/.venv/**"
+  - "node_modules/**"
+  - "**/node_modules/**"
+  - "site/**"
+  - "**/site/**"
+  - "dist/**"
+  - "**/dist/**"
+  - "build/**"
+  - "**/build/**"
+  - ".ruff_cache/**"
+  - "**/.ruff_cache/**"
+  - ".pytest_cache/**"
+  - "**/.pytest_cache/**"
+  - ".mypy_cache/**"
+  - "**/.mypy_cache/**"
+  - ".pyright/**"
+  - "**/.pyright/**"
+  - ".tox/**"
+  - "**/.tox/**"
+  - ".nox/**"
+  - "**/.nox/**"
+  - ".uv-cache/**"
+  - "**/.uv-cache/**"
+  - "htmlcov/**"
+  - "**/htmlcov/**"
+
+config:
+  default: true # WHY: This enables all default rules, which is a good starting point for linting Markdown files.
+
+  MD013:
+    line_length: 100
+    headings: false # WHY: This allows long headings, which can be necessary for clarity and SEO in Markdown files.
+    tables: false # WHY: This allows long table cells, which can be necessary for readability and completeness in Markdown files.
+    code_blocks: false # WHY: This allows long lines in code blocks, which can be necessary for readability and completeness in Markdown files.
+
+  MD025: false # WHY: This allows multiple top-level headings, which can be necessary in Markdown files that are not strictly linear documents (e.g., README files, documentation index files).
+
+  MD033:
+    allowed_elements:
+      - img # WHY: Images are common in Markdown files, and this allows them without triggering a lint error.
+      - mark # WHY: Mark elements are often used in Markdown files for highlighting, and this allows them without triggering a lint error.
+      - meta # WHY: Metadata is often needed in Markdown files, and this allows it without triggering a lint error.
+      - link # WHY: Links are common in Markdown files, and this allows them without triggering a lint error.
+      - details # WHY: Details elements are often used in Markdown files, and this allows them without triggering a lint error.
+      - summary # WHY: Summary elements are often used in Markdown files, and this allows them without triggering a lint error.

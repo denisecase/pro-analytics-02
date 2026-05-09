@@ -12,7 +12,8 @@ Before uploading:
 - Video codec: H.264
 - Audio codec: AAC
 - Recommended resolution: 720p or 1080p
-- Size: Under 100 MB (GitHub repository hard file limit. Large File Storage does not work with GitHub Pages.)
+- Size: Under 100 MB (GitHub repository hard file limit).
+- Large File Storage does not work with GitHub Pages.
 
 If needed, compress using a tool like HandBrake:
 
@@ -28,7 +29,8 @@ These instructions will not work if you don't have an initial file.
 ## Step 3: Clone Repo To Your Machine
 
 Clone your repo down to your Repos/ folder (not into a cloud-synced folder like Documents).
-Open your machine terminal in your Repos/ folder and run (replace with your GitHub user name and repo name):
+Open your machine terminal in your Repos/ folder and
+run (replace with your GitHub user name and repo name):
 
 ```shell
 git clone https://github.com/yourusername/your-repo-name
@@ -36,7 +38,9 @@ git clone https://github.com/yourusername/your-repo-name
 
 ## Step 4: Open the Repo in VS Code
 
-Change directory from Repos into your repo (replace with the actual name of your new repo) and open in VS Code using code dot:
+Change directory from Repos into your repo
+(replace with the actual name of your new repo)
+and open in VS Code using code dot:
 
 ```shell
 cd your-repo-name
@@ -110,7 +114,7 @@ git push
 
 GitHub will generate a URL like:
 
-```
+```text
 https://yourusername.github.io/your-repo-name/
 ```
 
@@ -161,10 +165,11 @@ Create transcript.txt and add it to `docs/` folder.
 Add access to index.html.
 See complete example at the end of this document.
 
+```html
 <p>
   <a href="transcript.txt">Download transcript</a>
 </p>
-
+```
 
 ## Save Your Work and Verify
 

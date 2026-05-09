@@ -77,6 +77,14 @@ nav = [
         { "Run Python" = "workflow-b-apply-example-project/run-python.md" },
         { "Run notebook" = "workflow-b-apply-example-project/run-notebook.md" },
 
+        { "Set up Kafka (Only For Streaming)" = [
+            { "Overview" = "workflow-b-apply-example-project/00-set-up-kafka/index.md" },
+            { "Install Kafka" = "workflow-b-apply-example-project/00-set-up-kafka/01-install-kafka.md" },
+            { "Start Kafka" = "workflow-b-apply-example-project/00-set-up-kafka/02-start-kafka.md" },
+            { "Create a topic" = "workflow-b-apply-example-project/00-set-up-kafka/03-create-topic.md" },
+            { "Open terminals" = "workflow-b-apply-example-project/00-set-up-kafka/04-open-terminals.md" },
+        ] },
+
         { "Start and run" = [
             { "Overview" = "workflow-b-apply-example-project/01-start-and-run/index.md" },
             { "Start in GitHub" = "workflow-b-apply-example-project/01-start-and-run/01-start-in-github.md" },
@@ -151,6 +159,7 @@ nav = [
             { "VS Code tips" = "reference/python/python-vscode-tips.md" },
             { "Writing a README" = "reference/python/writing-readme.md" },
             { "Standard library" = "reference/python/standard-library.md" },
+            { "Disk space" = "reference/python/disk-space.md" },
             { "Troubleshooting" = "reference/python/troubleshooting.md" },
         ] },
         { "Problem types" = "reference/problem-types/problem-types.md" },
@@ -165,6 +174,16 @@ nav = [
         { "GitHub and CI" = [
             { "Pre-commit" = "tools/github-and-ci/00-pre-commit.md" },
             { "CI" = "tools/github-and-ci/01-ci.md" },
+        ] },
+        { "Kafka" = [
+            { "Overview" = "kafka/index.md" },
+            { "Install Kafka" = "kafka/install-kafka.md" },
+            { "Start Kafka" = "kafka/start-kafka.md" },
+            { "Create a Topic" = "kafka/create-topic.md" },
+            { "Manage Topics" = "kafka/manage-topics.md" },
+            { "Many Terminals" = "kafka/many-terminals.md" },
+            { "Stop Kafka" = "kafka/stop-kafka.md" },
+            { "Windows and WSL" = "kafka/windows-wsl.md" },
         ] },
     ] },
 

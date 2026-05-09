@@ -34,7 +34,6 @@ When viewing your repository on GitHub, the **About** section appears in the upp
 
 ![Update GitHub "About"](../../images/update-gh-about.png)
 
-
 ## LICENSE
 
 If the project includes a `LICENSE` file:
@@ -45,7 +44,7 @@ If the project includes a `LICENSE` file:
 
 ![Update LICENSE](../../images/update-license.png)
 
-## CITATION.cff
+## CITATION
 
 If the project includes a `CITATION.cff` file:
 

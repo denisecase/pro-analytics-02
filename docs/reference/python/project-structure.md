@@ -33,7 +33,8 @@ Example:
   - additional modules as needed
 
 WHY:
-Placing code under `src/` prevents accidental imports from the project root and makes package boundaries explicit.
+Placing code under `src/` prevents accidental imports
+from the project root and makes package boundaries explicit.
 
 OBS:
 For very small or introductory projects, code may temporarily live at the project root.
@@ -125,7 +126,7 @@ Once a structure is chosen, it is reused across projects.
 
 ## Example
 
-```
+```text
 project-name/
   pyproject.toml
   README.md

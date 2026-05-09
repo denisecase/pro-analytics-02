@@ -48,7 +48,8 @@ This tells GitHub Pages to publish a site built by a `.github` workflow (instead
 ## Step 2: Configure a GitHub Actions Workflow
 
 See examples of automatic GitHub actions in this project.
-We first ensure the site builds in the CI (continuous integration) step and then deploy the docs in a separate step.
+We first ensure the site builds in the CI (continuous integration)
+step and then deploy the docs in a separate step.
 
 - CI: `.github/workflows/ci-python-zensical.yml`
 - Deploy: `.github/workflows/deploy-zensical.yml`
@@ -58,8 +59,8 @@ We first ensure the site builds in the CI (continuous integration) step and then
 From the repo root:
 
 ```shell
-uv run zensical build
-uv run zensical serve
+uv run python -m zensical build
+uv run python -m zensical serve
 ```
 
 Serving the docs will launch a local web server.
@@ -96,8 +97,9 @@ git push -u origin main
 - Confirm **Settings / Pages / Source** is set to **GitHub Actions**
 - Confirm the documentation workflow run succeeded (see the GitHub repo **Actions** tab)
 - Confirm the site builds locally without errors:
+
   ```shell
-  uv run zensical build --strict
+  uv run python -m zensical build --strict
   ```
 
 ### Build fails with "file not found"
@@ -111,6 +113,5 @@ git push -u origin main
 - Confirm changes were pushed to the `main` branch
 - Check the GitHub repo **Actions** tab to verify that a workflow run was triggered
 - If needed, re-run the workflow manually from the **Actions** tab
-
 
 <mark> Powerful tools make professional projects possible from the beginning.</mark>

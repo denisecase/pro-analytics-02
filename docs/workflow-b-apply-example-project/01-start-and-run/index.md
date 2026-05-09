@@ -30,4 +30,4 @@ At the end of this phase you should have:
 
 - [ ] The example runs without errors
 - [ ] A new `project.log` exists in the project root (and is visible in your GitHub repo)
-- [ ] Project outputs may be created (for example `output/` or `artifacts/`; see the specific project for details)
+- [ ] Project outputs may be created (for example `output/` or `artifacts/`)

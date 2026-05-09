@@ -11,7 +11,9 @@ Follow Python conventions and name folders with:
 
 For example: `pro_analytics_02`
 
-It is part of the Python weirdness that, when published, folders that use UNDERSCORES are typically converted to DASHES on package indexes like PyPI.
+It is part of the Python weirdness that, when published,
+folders that use UNDERSCORES are typically converted
+to DASHES on package indexes like PyPI.
 
 - So a src/ folder named:  `pro_analytics_02`
 - Becomes a package named: `pro-analytics-02`
@@ -22,7 +24,9 @@ To turn a folder into an importable Python package, add a file named: `__init__.
 
 It can be empty.
 
-This special "dunders" (double-underscores) file tells Python that the folder is a package, and that the modules inside can be imported and reused.
+This special "dunders" (double-underscores) file tells Python
+that the folder is a package, and that the modules
+inside can be imported and reused.
 
 ## It's Just Python
 

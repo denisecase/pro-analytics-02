@@ -9,15 +9,14 @@ For more information, see your project repo **docs/your-files.md**.
 
 It takes a few words but basically, copy each file in these folders:
 
--  **data/**
--  **src/**
--  **notebook/**
+- **data/**
+- **src/**
+- **notebook/**
 
 And change:
 
 `_case` to
 `_yourname`.
-
 
 ## Professional Modifications
 

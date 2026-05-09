@@ -55,7 +55,9 @@ A special environment variable listing directories where the shell looks for com
 The top-level directory of a file system.
 All paths originate here.
 
-When working with projects, we call the project repository folder the root folder of that project (the topmost folder for that project).
+When working with projects,
+we call the project repository folder the
+root folder of that project (the topmost folder for that project).
 
 ### Shell
 

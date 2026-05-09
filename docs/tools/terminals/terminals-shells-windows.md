@@ -29,10 +29,10 @@ but not Git Bash (or vice versa) depending on where PATH is set.
 
 Windows maintains two scopes:
 
-| Scope | Applies To | Common Use |
-|-------|-----------|------------|
-| System | All users | OS-level tools |
-| User | Single account | Developer tools like `uv` |
+| Scope  | Applies To     | Common Use                |
+| ------ | -------------- | ------------------------- |
+| System | All users      | OS-level tools            |
+| User   | Single account | Developer tools like `uv` |
 
 The effective PATH merges both.
 Changes apply only to newly started processes.
@@ -41,7 +41,7 @@ and sometimes **restart the machine**.
 
 ## Inspecting Your Environment
 
-### PowerShell
+### Inspecting PowerShell
 
 ```powershell
 # Which shell process
@@ -57,17 +57,7 @@ $env:Path
 Get-ChildItem Env:
 ```
 
-### Command Prompt (cmd)
-
-```cmd
-# Show PATH
-echo %PATH%
-
-# Find a command
-where uv
-```
-
-### Git Bash
+### Inspecting Git Bash
 
 ```bash
 # Which shell
@@ -97,10 +87,10 @@ After changes, close and reopen all terminals and VS Code.
 
 Run these in both terminals (working and failing):
 
-| Check | PowerShell | cmd | Git Bash |
-|-------|-----------|-----|----------|
-| Shell | `Get-Process -Id $PID` |  | `echo $0` |
-| PATH | `$env:Path` | `echo %PATH%` | `echo $PATH` |
-| Find uv | `Get-Command uv` | `where uv` | `command -v uv` |
+| Check   | PowerShell             | cmd           | Git Bash        |
+| ------- | ---------------------- | ------------- | --------------- |
+| Shell   | `Get-Process -Id $PID` |               | `echo $0`       |
+| PATH    | `$env:Path`            | `echo %PATH%` | `echo $PATH`    |
+| Find uv | `Get-Command uv`       | `where uv`    | `command -v uv` |
 
 The difference between outputs explains the problem.

@@ -69,7 +69,7 @@ More information in the sections below.
 ## 1. NYC Taxi Trip Data
 
 Source:
-https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+<https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page>
 
 This dataset records taxi rides occurring across New York City over time.
 
@@ -102,7 +102,7 @@ Works well for modules:
 
 Example datasets:
 
-- https://www.kaggle.com/datasets/szymonjanowski/internet-traffic-data
+- <https://www.kaggle.com/datasets/szymonjanowski/internet-traffic-data>
 
 These datasets represent website visits and user activity over time.
 
@@ -140,7 +140,7 @@ Prometheus-style monitoring metrics
 
 Example datasets:
 
-- https://prometheus.io/docs/introduction/overview/
+- <https://prometheus.io/docs/introduction/overview/>
 
 Example fields:
 
@@ -174,7 +174,7 @@ Works well for modules:
 ## 4. Air Quality Monitoring
 
 Source:
-https://www.epa.gov/outdoor-air-quality-data
+<https://www.epa.gov/outdoor-air-quality-data>
 
 Air quality sensors record environmental conditions across time.
 
@@ -207,7 +207,7 @@ Works well for modules:
 ## 5. Power Grid Load
 
 Source:
-https://www.eia.gov/opendata/
+<https://www.eia.gov/opendata/>
 
 Electricity demand datasets record power consumption over time.
 
@@ -239,7 +239,7 @@ Works well for modules:
 ## 6. GitHub Activity Data
 
 Source:
-https://www.githubarchive.org/
+<https://www.githubarchive.org/>
 
 GitHub activity datasets track development activity across repositories.
 
@@ -275,7 +275,7 @@ Example dataset:
 
 Chicago Transit Authority ridership data
 
-https://data.cityofchicago.org/Transportation/CTA-Ridership-L-Station-Entries-Daily-Totals/5neh-572f
+<https://data.cityofchicago.org/Transportation/CTA-Ridership-L-Station-Entries-Daily-Totals/5neh-572f>
 
 Example fields:
 
@@ -313,7 +313,8 @@ Small example dataset included in this guide:
 
 [transit_ridership.csv](files/transit_ridership.csv)
 
-This dataset represents daily ridership observations and includes a spike that can represent a special event.
+This dataset represents daily ridership observations
+and includes a spike that can represent a special event.
 
 Possible analyses:
 

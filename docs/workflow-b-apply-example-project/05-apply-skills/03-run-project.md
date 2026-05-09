@@ -7,6 +7,7 @@ Run and verify your code frequently as you work.
 Run Python scripts or notebooks for your project.
 
 See:
+
 - [Run Python](../run-python.md)
 - [Run Notebooks](../run-notebook.md)
 
@@ -18,7 +19,6 @@ Example: you might add `matplotlib` to create charts.
 
 After updating dependencies, run:
 
-
 ```shell
 uv cache clean
 uv sync --extra dev --extra docs --upgrade
@@ -26,15 +26,14 @@ uv sync --extra dev --extra docs --upgrade
 
 All commands should be run from the **project root folder** in the VS Code terminal.
 
-
 ## Step 3. Run Checks and Tests
 
 Run the following commands to format code, fix common issues, and run tests if available.
 
 ```shell
-uv run ruff format .
-uv run ruff check . --fix
-uv run pytest --cov=src --cov-report=term-missing
+uv run python -m ruff format .
+uv run python -m ruff check . --fix
+uv run python -m pytest --cov=src --cov-report=term-missing
 ```
 
 ## Step 4. Build Documentation
@@ -42,8 +41,8 @@ uv run pytest --cov=src --cov-report=term-missing
 Build and preview the project documentation locally.
 
 ```shell
-uv run zensical build
-uv run zensical serve
+uv run python -m zensical build
+uv run python -m zensical serve
 ```
 
 A local URL will appear in the terminal.

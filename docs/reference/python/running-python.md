@@ -21,12 +21,12 @@ Every time Python runs, it must answer three questions:
 3. **Which Python environment should be used?**
 
 If any of these are unclear, you may see:
+
 - import errors
 - _unknown type_ or _missing import_ diagnostics
 - code that behaves differently depending on how it is launched
 
 Python project structure helps make these answers explicit.
-
 
 ## 2. Recommended Project Structure (Use `src/`)
 
@@ -38,7 +38,7 @@ A widely used and recommended layout is the **src layout**, which separates:
 
 Example:
 
-```
+```text
 project-name/
 ├─ pyproject.toml        # Project definition (root)
 ├─ .venv/                # Project-specific Python environment
@@ -75,8 +75,6 @@ from project_package.other_module import some_function
 
 Absolute, **package-based local imports** are explicit help editors and tools.
 
-
-
 ## 4. Option 1: Run a File As a Script
 
 ```shell
@@ -84,6 +82,7 @@ python path/to/app_main.py
 ```
 
 Python:
+
 - treats the file as a standalone script
 - resolves imports relative to the current working directory
 - can behave differently depending on how and where it is launched
@@ -97,31 +96,35 @@ python -m project_package.app_main
 ```
 
 This tells Python:
+
 - the code belongs to a package
 - the package root should be added to the import path
 - imports should be resolved using package rules
 
 This matches:
+
 - how test runners execute code
 - how installed packages are invoked
 - how automation and CI systems run Python projects
 
 **Running as a module aligns with Python's packaging model and is more robust.**
 
-
 ## 6. Editor: Open One Project at a Time
 
 Editors such as VS Code:
+
 - cache interpreter selections
 - remember import resolution **per workspace**
 - infer project boundaries from the opened folder
 
 Opening multiple projects at once can cause:
+
 - the wrong environment to be selected
 - imports to resolve from another project
 - misleading diagnostics
 
 Recommended practice:
+
 - **open one project at a time**
 - ensure the project root is the folder opened in the editor and the default terminal
 
@@ -134,12 +137,12 @@ Recommended practice:
 When Python starts, it builds a list called `sys.path`.
 
 What affects it:
+
 - where Python is launched
 - whether code is run as a script or as a module
 - how the project is structured
 
 Two commands that look similar can behave differently because they produce different import paths.
-
 
 ### How to Inspect
 

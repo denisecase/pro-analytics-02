@@ -24,7 +24,9 @@ NOTE: School emails may be temporary - you may wish to use a more permanent emai
 
 ## Set Up Security
 
-GitHub asks for **2-factor authentication**, which just means confirming sign-in with a short code sent to your device.
+GitHub asks for **2-factor authentication**,
+which just means confirming sign-in with a short code
+sent to your device.
 
 1. Choose **Text message (SMS)** or **Authenticator app**.
    - An _authenticator app_ is a small app on your mobile device that shows a short code.

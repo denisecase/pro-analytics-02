@@ -14,13 +14,13 @@ Provides features like syntax highlighting, error detection, and terminal integr
 A free, widely used code editor developed by Microsoft.
 Supports Python, Git integration, terminal access, and extensions.
 Recommended editor for all operating systems.
-Download: https://code.visualstudio.com/
+Download: <https://code.visualstudio.com/>
 
 ## Zed Editor
 
 A fast, modern code editor built for performance.
 An alternative to VS Code, gaining adoption in the developer community.
-Download: https://zed.dev/
+Download: <https://zed.dev/>
 
 ## Extension
 
@@ -53,7 +53,7 @@ Example: `ruff format` enforces consistent indentation, spacing, and line length
 
 A fast Python linter and formatter.
 Configured in pyproject.toml.
-Run with `uv run ruff check .` and `uv run ruff format .`
+Run with `uv run python -m ruff check .` and `uv run python -m ruff format .`
 
 ## Workspace
 

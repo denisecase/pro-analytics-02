@@ -7,11 +7,11 @@ If you see `>>>` or `...` in the terminal, you accidentally started **Python int
 This happens sometimes.
 
 **Fix:**
+
 - Press `Ctrl + C`
 - On Windows, if needed: press `Ctrl + Z`, then `Enter`
 
 You should return to the normal terminal prompt.
-
 
 ## ERROR: Failed to canonicalize path
 
@@ -32,6 +32,7 @@ If **optional pre-commit** checks are enabled, they may modify files or report f
 This is normal.
 
 **Fix:**
+
 - Re-run `git add -A`
 - Commit again
 

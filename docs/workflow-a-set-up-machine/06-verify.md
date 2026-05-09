@@ -20,7 +20,8 @@ git config --global user.name
 git config --global user.email
 ```
 
-If versions or git config commands do NOT work correctly, re-do the associated installation and configuration steps above.
+If versions or git config commands do NOT work correctly,
+re-do the associated installation and configuration steps above.
 Work with an AI assistant (e.g. ChatGPT, Claude.ai, or other) to resolve any issues.
 
 ## Final Checklist

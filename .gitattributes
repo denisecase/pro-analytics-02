@@ -1,7 +1,8 @@
 # ============================================================
 # .gitattributes (Keep files consistent across operating systems)
 # ============================================================
-
+# Updated: 2026-05-05
+#
 # REQ.UNIVERSAL: All professional GitHub project repositories MUST include .gitattributes.
 # WHY: Ensure consistent line endings, diff behavior, and file classification
 # across Windows, macOS, and Linux environments.
@@ -24,8 +25,9 @@
 *.py    text eol=lf
 *.sh    text eol=lf
 
-# WHY: PowerShell convention on Windows uses CRLF.
-*.ps1   text eol=crlf
+# WHY: PowerShell runs on Windows, macOS, and Linux; LF keeps scripts aligned
+# with pre-commit mixed-line-ending checks and prevents CI-only normalization diffs.
+*.ps1   text eol=lf
 
 
 # === Markup and documentation ===

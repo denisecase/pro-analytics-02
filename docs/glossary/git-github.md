@@ -64,7 +64,9 @@ Example: `git push`
 ## Pull
 
 Downloading changes from GitHub to your local repository.
-Example: ```shell
+Example:
+
+```shell
 git pull
 ```
 

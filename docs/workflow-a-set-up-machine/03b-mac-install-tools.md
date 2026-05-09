@@ -30,7 +30,7 @@ After installation:
 
 - Move **Visual Studio Code.app** to the **Applications** folder
 - (Recommended) Enable the `code` command in Terminal by following:
-  https://code.visualstudio.com/docs/setup/mac
+  <https://code.visualstudio.com/docs/setup/mac>
 
 ### uv (Python environment and dependency manager)
 

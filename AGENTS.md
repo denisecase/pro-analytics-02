@@ -35,14 +35,14 @@ Run all commands via **uv**.
 Lint / format:
 
 ```shell
-uv run ruff format .
-uv run ruff check .
+uv run python -m ruff format .
+uv run python -m ruff check .
 ```
 
 Build documentation:
 
 ```shell
-uv run zensical build
+uv run python -m zensical build
 ```
 
 ## pre-commit

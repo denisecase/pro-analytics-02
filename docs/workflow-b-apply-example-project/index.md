@@ -3,7 +3,8 @@
 > Learn techniques and skills using a course example project.
 
 When a course includes an example project, the project is part of the lecture content.
-Copy and run the example, understand how it works, make a technical modification, and then apply the skills to a new problem.
+Copy and run the example, understand how it works,
+make a technical modification, and then apply the skills to a new problem.
 
 ## Professional Learning Loop
 

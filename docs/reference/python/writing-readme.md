@@ -1,4 +1,4 @@
-## Writing Good README.md Files
+# Writing Good README.md Files
 
 Every GitHub project has a README.md file with an overview.
 The file type is `Markdown` and it's a very simple Markup language for text.
@@ -10,7 +10,6 @@ The file type is `Markdown` and it's a very simple Markup language for text.
 - Markdown `code fencing` uses three **back tics** on their own line to display code and commands.
 - Markdown **bold text** is surrounded by: two asterisks
 - Markdown *underline text* is surrounded by: one asterisk
-
 
 Markdown skills are critical for project README files,
 Jupyter Notebooks (code, charts, and narrative together),

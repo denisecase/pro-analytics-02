@@ -29,7 +29,7 @@ In data analytics projects, we need to see these.
 
 ## Task 1. Enable View Settings
 
-### On Windows:
+### On Windows
 
 1. Open **File Explorer**.
 2. Click the **View** tab.
@@ -37,10 +37,10 @@ In data analytics projects, we need to see these.
    - **File name extensions**
    - **Hidden items**
 
-<img src="images/windows_show_extensions_and_hidden.png" alt="Windows: Show extensions and hidden items" width="300">
+<img src="images/windows_show_extensions_and_hidden.png"
+alt="Windows: Show extensions and hidden items" width="300">
 
-
-### On Mac:
+### On Mac
 
 1. Open **Finder**.
 2. Toggle hidden files and folders:
@@ -51,7 +51,7 @@ In data analytics projects, we need to see these.
 
 ![Mac: Show all filename extensions](images/mac_view_all_extensions.png)
 
-### On Linux:
+### On Linux
 
 1. Open your file manager.
 2. Enable viewing hidden files and folders:

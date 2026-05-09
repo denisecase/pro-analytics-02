@@ -22,7 +22,6 @@ Update `docs/` and `zensical.toml` to tell your story:
 - update navigation entries if pages were added or removed
 - edit pages in the `docs/` folder to narrate and present your project
 
-
 ## Task 3. Finalize `pyproject.toml`
 
 Finalize `pyproject.toml` as needed:
@@ -46,7 +45,9 @@ It should also **showcase your work**. Consider including:
 - a small table of important results
 - a short summary of insights or findings
 
-Images and charts can be saved in the repository, for example, in the docs/images folder, and then displayed in pages using a relative path like so:
+Images and charts can be saved in the repository, for example,
+in the docs/images folder, and then displayed in pages
+using a relative path like so:
 
 ![Example Chart](../../images/example-chart.png)
 

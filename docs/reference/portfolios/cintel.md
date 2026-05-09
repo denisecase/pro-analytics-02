@@ -1,5 +1,7 @@
 # Continuous Intelligence Portfolio
 
+<!-- markdownlint-disable MD024 -->
+
 Your name or alias
 
 YYYY-MM
@@ -103,3 +105,5 @@ This page summarizes my work on **continuous intelligence** projects.
 ### Assessment
 
 (What does the pipeline say about the system state?)
+
+<!-- markdownlint-enable MD024 -->

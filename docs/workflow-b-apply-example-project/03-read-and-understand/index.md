@@ -6,7 +6,8 @@
 
 Before modifying a project, first read and understand how it works.
 
-Professional developers often explore a project in a consistent order: documentation, code, data, and outputs.
+Professional developers often explore a project
+in a consistent order: documentation, code, data, and outputs.
 
 Focus on the overall flow of the project.
 It's not necessary to understand every line of code at this point.

@@ -1,10 +1,13 @@
 # Pro Analytics 02
 
-[![Docs](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical.yml/badge.svg?branch=main)](https://denisecase.github.io/pro-analytics-02/)
-[![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
+[![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/pro-analytics-02/)
+[![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](https://github.com/denisecase/pro-analytics-02/blob/main/pyproject.toml)
 [![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT)
-[![Check Links](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+[![CI](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml)
+[![Docs](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical.yml)
+[![Links](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml)
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/denisecase/pro-analytics-02/security)
 
 > Professional Python project starter and guide.
@@ -35,12 +38,15 @@ For developers and maintainers (or if you want to fork your own copy).
 
 ### Set Up Machine
 
-- Complete 🟢 [Workflow A. Set Up Machine](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/) to **set up a machine** for Python development.
+- Complete 🟢
+[Workflow A. Set Up Machine](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/)
+to **set up a machine** for Python development.
 
 ### Copy & Open this Project in VS Code
 
-1. Sign in to GitHub, open this repository in your browser, and click **Copy this template** to get a copy in **YOURACCOUNT**.
-2. Enable GitHub Pages.
+1. Sign in to GitHub, open this repository in your browser.
+2. Click **Copy this template** to get a copy in **YOURACCOUNT**.
+3. Enable GitHub Pages.
 
 Open a terminal on your machine (not VS Code) in your Repos folder and run:
 
@@ -55,18 +61,24 @@ When VS Code opens, accept the Extension Recommendations (click **`Install All`*
 
 ### Create and Manage the Project Environment
 
-Use VS Code menu option `Terminal` / `New Terminal` to open a **VS Code terminal** in the root project folder.
+Use VS Code menu option `Terminal` / `New Terminal` to open a
+**VS Code terminal** in the root project folder.
 
 To set up a project Python environment (managed by `uv`) and align VS Code with it,
 run the following commands, one at a time, hitting ENTER after each:
 
 ```shell
+# reset uv cache if strange dependency errors appear
+# del .venv
+# uv cache clean
+
 uv self update
 uv python pin 3.14
 uv sync --extra dev --extra docs --upgrade
 ```
 
-If asked: "We noticed a new environment has been created. Do you want to select it for the workspace folder?" Click **"Yes"**.
+If asked: "We noticed a new environment has been created.
+Do you want to select it for the workspace folder?" Click **"Yes"**.
 
 If successful, you'll see a new `.venv` folder appear in the root project folder.
 
@@ -92,15 +104,16 @@ git pull
 
 uv run python -m pro_analytics_02.demo_module_basics
 
-uv run ruff format .
-uv run ruff check . --fix
-
-uv run pytest --cov=src --cov-report=term-missing
-
-uv run zensical build
+# do chores
+uv run python -m ruff format .
+uv run python -m ruff check . --fix
+uv run python -m pyright
+uv run python -m pytest
+uv run python -m zensical build
 ```
 
-While editing project code and docs, repeat the commands above to run files, check them, and rebuild docs as needed.
+While editing project code and docs, repeat the commands above to
+run files, check them, and rebuild docs as needed.
 
 Save progress frequently.
 Some tools may make changes;

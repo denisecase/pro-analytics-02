@@ -2,7 +2,7 @@
 # CITATION.cff (How to cite this project)
 # ============================================================
 
-# REQ.UNIVERSAL: Professional open projects SHOULD include CITATION.cff.
+# REQ.UNIVERSAL: Professional open projects SHOULD include this file.
 # WHY: Support correct citation and attribution.
 # ALT: Internal or private repositories may omit citation metadata.
 # CUSTOM: Update author, repository, license, and keyword fields as needed.
@@ -12,8 +12,8 @@ cff-version: "1.2.0"
 type: software
 
 title: Pro Analytics 02 - Guide to Professional Python Projects
-version: "0.2.0"
-date-released: "2026-03-05"
+version: "0.3.0"
+date-released: "2026-05-08"
 
 authors:
   - family-names: Case

@@ -4,7 +4,9 @@
 
 ## Professional Practice
 
-After experimenting with a technical modification, the final phase is to apply the skills from the example project to a **new problem**.
+After experimenting with a technical modification,
+the final phase is to apply the skills
+from the example project to a **new problem**.
 
 This phase demonstrates you understand the skills and can use them independently.
 
@@ -16,7 +18,8 @@ Typical ways to apply the skills include:
 - extending the logic to answer a new question
 - improving the outputs, summaries, or visualizations
 
-The goal is not simply to reproduce the example, but to **use the techniques to produce meaningful results in a new context**.
+The goal is not simply to reproduce the example,
+but to **use the techniques to produce meaningful results in a new context**.
 
 ## Steps
 

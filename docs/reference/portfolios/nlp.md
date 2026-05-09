@@ -1,28 +1,32 @@
-# Continuous Intelligence Portfolio
+# NLP and Web Mining Portfolio
+
+<!-- markdownlint-disable MD024 -->
 
 Your name or alias
 
 YYYY-MM
 
-This page summarizes my work on **continuous intelligence** projects.
+This page summarizes my work on **web mining and applied natural language processing (NLP)** projects.
 
-## 1. Professional Project
+## 1. Getting Started
 
 ### Repository Link
 
-(clickable link to your repository)
+(clickable link to your nlp-01 repository)
 
 ### Brief Overview of Project Tools and Choices
 
-## 2. Anomaly Detection
+## 2. Text Preprocessing
 
 ### Repository Link
 
-(clickable link to your repository)
+(clickable link to your nlp-02 repository)
 
 ### Techniques
 
-(Explain how anomalies were detected.)
+(Describe the preprocessing steps you applied:
+tokenization, stopword removal, stemming, lemmatization,
+or other cleaning steps.)
 
 ### Artifacts
 
@@ -30,17 +34,17 @@ This page summarizes my work on **continuous intelligence** projects.
 
 ### Insights
 
-(What did this analysis reveal?)
+(How did preprocessing change the text? What did you keep, remove, or transform and why?)
 
-## 3. Signal Design
+## 3. Text Exploration
 
 ### Repository Link
 
-(clickable link to your repository)
+(clickable link to your nlp-03 repository)
 
-### Signals
+### Techniques
 
-(List the custom signals you created and why.)
+(Explain how you analyzed word frequencies, n-grams, TF-IDF scores, or visualizations.)
 
 ### Artifacts
 
@@ -48,17 +52,17 @@ This page summarizes my work on **continuous intelligence** projects.
 
 ### Insights
 
-(What did the signals reveal?)
+(What words, phrases, or patterns appeared most often? What did this reveal about the corpus?)
 
-## 4. Rolling Monitoring
+## 4. API Text Data
 
 ### Repository Link
 
-(clickable link to your repository)
+(clickable link to your nlp-04 repository)
 
 ### Techniques
 
-(Explain how rolling windows were used.)
+(Describe the API you used, how you authenticated, and how you collected and stored text data.)
 
 ### Artifacts
 
@@ -66,17 +70,17 @@ This page summarizes my work on **continuous intelligence** projects.
 
 ### Insights
 
-(What patterns appeared?)
+(What data did you collect? What did you observe about its structure, volume, or quality?)
 
-## 5. Drift Detection
+## 5. Web Documents
 
 ### Repository Link
 
-(clickable link to your repository)
+(clickable link to your nlp-05 repository)
 
 ### Techniques
 
-(Explain how reference and current periods were compared.)
+(Explain how you scraped or fetched web documents. What tools and approaches did you use?)
 
 ### Artifacts
 
@@ -84,17 +88,17 @@ This page summarizes my work on **continuous intelligence** projects.
 
 ### Insights
 
-(What changed? How do you know? How does this help make actionable decisions?)
+(What content did you retrieve? What challenges did you encounter with real web data?)
 
-## 6. Continuous Intelligence Pipeline
+## 6. NLP Pipeline
 
 ### Repository Link
 
-(clickable link to your repository)
+(clickable link to your nlp-06 repository)
 
 ### Techniques
 
-(Describe how signals and monitoring techniques were combined.)
+(Describe how you combined preprocessing, exploration, and collection techniques into a complete pipeline.)
 
 ### Artifacts
 
@@ -102,4 +106,26 @@ This page summarizes my work on **continuous intelligence** projects.
 
 ### Assessment
 
-(What does the pipeline say about the system state?)
+(What did the full pipeline reveal about your text corpus?
+What decisions or actions could this analysis support?)
+
+## 7. Toy GPT Exploration
+
+### Repository Link
+
+(clickable link to your toy-gpt repository)
+
+### Techniques
+
+(Describe which models you explored: unigram, bigram, trigram,
+or attention-based. What did you implement or modify?)
+
+### Artifacts
+
+(clickable link to artifacts/ folder and explain result files)
+
+### Insights
+
+(What did building or exploring a small language model reveal about how modern LLMs work?)
+
+<!-- markdownlint-enable MD024 -->

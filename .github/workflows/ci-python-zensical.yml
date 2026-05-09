@@ -79,10 +79,10 @@ jobs:
         run: |
           uv --version
           uv run python --version
-          uv run ruff --version
+          uv run python -m ruff --version
           uv run python -m pyright --version
           if [ -f "zensical.toml" ]; then
-            uv run zensical --version
+            uv run python -m zensical --version
           fi
         # WHY: Version output makes CI logs easier to debug when tools change.
 
@@ -114,7 +114,7 @@ jobs:
       # ============================================================
 
       - name: C1) Run pytest
-        run: uv run pytest
+        run: uv run python -m pytest
         # WHY: Confirms all Python tests pass in a clean CI environment.
         # OBS: pytest config lives in pyproject.toml [tool.pytest.ini_options].
         # OBS: Not included in pre-commit because tests can be slow.
@@ -126,7 +126,7 @@ jobs:
       - name: D1) Build documentation with Zensical
         run: |
           if [ -f "zensical.toml" ]; then
-            uv run zensical build
+            uv run python -m zensical build
           else
             echo "No zensical.toml found; skipping docs build."
           fi

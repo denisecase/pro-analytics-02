@@ -19,7 +19,6 @@ Professional Python programs typically follow this order:
 
 This structure appears in both small scripts and large codebases.
 
-
 ## The `main()` Function
 
 A `main()` function groups the primary actions of a script.
@@ -27,7 +26,6 @@ A `main()` function groups the primary actions of a script.
 OBS:
 The function name `main` is a convention.
 It signals where execution begins when a file is run directly.
-
 
 ## Conditional Execution Guard
 
@@ -39,7 +37,6 @@ if __name__ == "__main__":
 ```
 
 This pattern is standard across Python projects.
-
 
 ## What the Guard Means
 
