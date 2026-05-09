@@ -1,4 +1,4 @@
-# Kafka Setup (Only for Streaming Data)
+# 🏞️ STREAMING DATA ONLY: Kafka Setup (Only for Streaming Data)
 
 > Complete this once before starting any streaming data project.
 

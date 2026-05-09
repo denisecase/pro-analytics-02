@@ -1,6 +1,7 @@
-# 🔵 Open the Project in VS Code (and Install Recommended VS Code Extensions)
+# 🟠 Open Project in VS Code (and Install Extensions and Maybe Kafka)
 
-> Open the project in VS Code and install recommended extensions.
+> Open the project in VS Code and install extensions.
+> 🏞️ ONLY IF STREAMING DATA: Also Install Kafka (Step 3 below)
 
 ## Strong Recommendation
 
@@ -15,12 +16,14 @@ because it guarantees:
 
 **IMPORTANT:** Any deviations from this process
 (especially the first time you open it)
-will not necessarily work later when we need to execute Python files.
+will not necessarily work later
+when we need to execute Python files.
 
 ## Previously
 
 This assumes you followed the earlier instructions
-to clone your repo into the **Repos** (non-synchronized) folder, for example:
+to clone your repo into the **Repos**
+(non-synchronized) folder, for example:
 
 ```shell
 git clone https://github.com/youraccount/your-repo
@@ -61,7 +64,7 @@ install extensions manually using the steps below.
 
 ## Extensions NOT Recommended
 
-These extensions are not needed because Ruff handles formatting and linting:
+Some extensions are not needed because Ruff handles formatting and linting:
 
 - ms-python.black-formatter
 - ms-python.autopep8
@@ -107,3 +110,10 @@ For example:
 
 - **YAML (redhat.vscode-yaml)** YAML schema validation
 - **GitHub Actions (github.vscode-github-actions)** syntax highlighting for `.github/workflows`
+
+## 🏞️ Step 3. ONLY FOR STREAMING DATA: Install Kafka
+
+In the Streaming Data course:
+
+- [Install Kafka](../kafka/install-kafka.md)
+- [Create Topic](../kafka/create-topic.md)

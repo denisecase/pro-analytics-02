@@ -1,6 +1,7 @@
-# 🟠 Open the Project in VS Code (and Install Extensions as Needed)
+# 🔵 Open the Project in VS Code (and Install Extensions and Maybe Kafka)
 
 > Open the project in VS Code and install extensions.
+> 🏞️ ONLY IF STREAMING DATA: Also Install Kafka (Step 3 below)
 
 ## Strong Recommendation
 
@@ -41,9 +42,29 @@ cd your-repo
 code .
 ```
 
+The `code .` command opens the **current folder** as the project workspace in VS Code.
+
+When VS Code opens, it may make extension recommendations.
+
+- If VS Code recommends an extension, it is usually helpful to install it.
+- Projects that include `.vscode/extensions.json` can guide extension selections.
+- You can add additional extensions later as needed.
+
+## Step 2. Install Recommended Extensions
+
+If the project includes a `.vscode/extensions.json` file,
+VS Code will automatically recommend extensions for the project.
+In that case:
+
+1. Watch for the **Recommended Extensions** popup
+2. Click **Install All**
+
+If there are no recommendations (or if you are working in a brand new project),
+install extensions manually using the steps below.
+
 ## Extensions NOT Recommended
 
-These extensions are not needed because Ruff handles formatting and linting:
+Some extensions are not needed because Ruff handles formatting and linting:
 
 - ms-python.black-formatter
 - ms-python.autopep8
@@ -89,3 +110,10 @@ For example:
 
 - **YAML (redhat.vscode-yaml)** YAML schema validation
 - **GitHub Actions (github.vscode-github-actions)** syntax highlighting for `.github/workflows`
+
+## 🏞️ Step 3. ONLY FOR STREAMING DATA: Install Kafka
+
+In the Streaming Data course:
+
+- [Install Kafka](../../kafka/install-kafka.md)
+- [Create a Topic for the Project](../../kafka/create-topic.md)

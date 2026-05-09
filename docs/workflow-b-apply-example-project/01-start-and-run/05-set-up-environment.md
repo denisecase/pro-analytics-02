@@ -1,6 +1,7 @@
 # 🔵 Set up Project Python Environment (managed by uv)
 
-Each project uses its own Python environment stored in a folder named `.venv` inside the project.
+Each project uses its own Python environment
+stored in a folder named `.venv` inside the project.
 
 ```text
 project-repo-name/
@@ -17,7 +18,12 @@ If something breaks, the `.venv` folder can be deleted and recreated.
 
 You should have already opened the project in **VS Code** using `code .`.
 
-Open a **VS Code terminal** and list the contents of the current folder:
+## Step 0. Open a New Terminal in VS Code
+
+- Open a new terminal in VS Code,
+  e.g., from the VS Code menu, select **Terminal / New Terminal**.
+
+List the contents of the current folder:
 
 ```shell
 ls
@@ -129,11 +135,12 @@ If this occurs, it is safe to skip pre-commit and continue with the project.
 
 ## OPTION for Step 3.1: Pin a Different Python Version
 
-Some tools (such as Spark or Kafka) may require an earlier Python version.
-If so, pin the required version.
+Some projects may require a specific Python version.
+If so, pin the required version as shown in the project README.md.
+
 For example:
 
 ```bash
-uv python pin 3.12
+uv python pin 3.15
 uv sync --extra dev --extra docs --upgrade
 ```

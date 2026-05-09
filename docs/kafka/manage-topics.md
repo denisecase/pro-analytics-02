@@ -1,4 +1,4 @@
-# Manage Kafka Topics
+# 🏞️ STREAMING DATA ONLY: Manage Kafka Topics
 
 Kafka topics are **infrastructure**.
 They exist independently of any code.
@@ -18,7 +18,7 @@ The Kafka CLI scripts are `.sh` files and require a Linux shell.
 ## Open a Terminal (WSL if Windows)
 
 Open a new VS Code terminal.
-For example, from the menu select Terminal / New Terminal.
+For example, from the menu select **Terminal / New Terminal**.
 
 If running Windows, type the following command:
 

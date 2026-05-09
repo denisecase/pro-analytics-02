@@ -1,8 +1,8 @@
-# START_KAFKA.md
+# 🏞️ STREAMING DATA ONLY: Start Kafka Message Broker Service
 
-> Run **Apache Kafka 4.2** locally.
+> Start **Apache Kafka** locally.
 
-## Prerequiste
+## Prerequisite
 
 You must have completed **SETUP_KAFKA.md** successfully before this will work.
 

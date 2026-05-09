@@ -1,4 +1,4 @@
-# Managing Many Terminals in VS Code
+# 🏞️ STREAMING DATA ONLY: Managing Many Terminals in VS Code
 
 Streaming projects require multiple terminals running at the same time.
 Each terminal has a specific job.

@@ -21,7 +21,7 @@ At the end of this phase you should have:
 1. [Start in GitHub to Copy a Template Repository](01-start-in-github.md)
 2. [Configure Repository Settings](02-configure-repo-settings.md)
 3. [Clone the Repository To Your Machine](03-clone-repo-to-local.md)
-4. [Open the Project in VS Code (and Install Recommended VS Code Extensions)](04-open-vscode-extensions.md)
+4. [Open the Project in VS Code (and Install Recommended VS Code Extensions and, if Streaming Data, Install Kafka)](04-open-vscode-extensions-maybe-kafka.md)
 5. [Set up Project Python Environment (managed by uv)](05-set-up-environment.md)
 6. [Run the Project Code](06-run-project.md)
 7. [Git add-commit-push](07-git-add-commit-push.md)

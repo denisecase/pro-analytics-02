@@ -130,11 +130,12 @@ If this occurs, it is safe to skip pre-commit and continue with the project.
 
 ## OPTION for Step 3.1: Pin a Different Python Version
 
-Some tools (such as Spark or Kafka) may require an earlier Python version.
-If so, pin the required version.
+Some projects may require a specific Python version.
+If so, pin the required version as shown in the project README.md.
+
 For example:
 
 ```bash
-uv python pin 3.12
+uv python pin 3.15
 uv sync --extra dev --extra docs --upgrade
 ```

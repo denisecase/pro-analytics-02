@@ -1,4 +1,4 @@
-# STOP_KAFKA.md
+# 🏞️ STREAMING DATA ONLY: Stop Kafka Service
 
 > Stop Apache Kafka when you are done working.
 

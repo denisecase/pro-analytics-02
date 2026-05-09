@@ -6,6 +6,7 @@ Before making changes to a project, ALWAYS pull the latest changes from GitHub.
 
 Open your project repository in VS Code.
 Open a new terminal in VS Code.
+For example, from the menu, select **Terminal / New Terminal**.
 
 ## Pull Code from GitHub
 
