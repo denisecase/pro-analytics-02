@@ -105,6 +105,8 @@ It shows partition count, replication, leader, and current offsets.
 Run this after a producer to see how many messages are stored.
 
 ```bash
+cd ~/kafka
+
 bin/kafka-topics.sh --describe \
   --bootstrap-server localhost:9092 \
   --topic streaming-02-kafka-case
@@ -122,6 +124,8 @@ This is just an example.
 **Change the name of the topic as needed.**
 
 ```bash
+cd ~/kafka
+
 bin/kafka-topics.sh --delete \
   --bootstrap-server localhost:9092 \
   --topic streaming-02-kafka-case \
