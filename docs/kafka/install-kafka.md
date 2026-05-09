@@ -186,6 +186,29 @@ echo "Cluster ID: $KAFKA_CLUSTER_ID"
 bin/kafka-storage.sh format --standalone -t $KAFKA_CLUSTER_ID -c config/server.properties
 ```
 
+## Step 9. One-Time Edit to server.properties
+
+Use the following commands to edit the
+Kafka server.properties file and:
+
+1. Find the listeners line and update it
+2. Find the advertised.listeners line and update it (or add if missing)
+
+```bash
+cd ~/kafka
+
+sed -i 's|^listeners=PLAINTEXT://.*|listeners=PLAINTEXT://0.0.0.0:9092,CONTROLLER://localhost:9093|' ~/kafka/config/server.properties
+
+
+grep -q "^advertised.listeners" ~/kafka/config/server.properties \
+  && sed -i 's|^advertised.listeners=.*|advertised.listeners=PLAINTEXT://localhost:9092|' ~/kafka/config/server.properties \
+  || echo "advertised.listeners=PLAINTEXT://localhost:9092" >> ~/kafka/config/server.properties
+
+clear
+
+cat ~/kafka/config/server.properties
+```
+
 ## Success
 
 Celebrate if you see the

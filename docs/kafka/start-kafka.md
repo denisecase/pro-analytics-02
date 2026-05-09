@@ -1,6 +1,6 @@
 # 🏞️ STREAMING DATA ONLY: Start Kafka Message Broker Service
 
-> Start **Apache Kafka** locally.
+> Start **Apache Kafka 4.2** locally using `confluent-kafka` package.
 
 ## Two Prerequisites
 
