@@ -2,13 +2,24 @@
 
 > Start **Apache Kafka 4.2** locally using `confluent-kafka` package.
 
-## Two Prerequisites
+## Prerequisites
 
 REQUIREMENT 1. Complete <mark>**SETUP_KAFKA.md**</mark> successfully.
 
 REQUIREMENT 2. Copy
 **.env.example** (committed to GitHub) to
 <mark>**.env**</mark> (not committed to GitHub as it could have secrets).
+
+REQUIREMENT 3. WINDOWS ONLY: in `.env` and `.env.example`,
+**uncomment this line**:
+
+```text
+KAFKA_BROKER_ADDRESS_FAMILY=v6
+```
+
+WHY: On Windows with WSL2, `localhost` resolves to `::1` (IPv6).
+The default `any` tries IPv4 first, which fails.
+Setting `v6` tells the Kafka client to use IPv6 directly.
 
 ## When
 
