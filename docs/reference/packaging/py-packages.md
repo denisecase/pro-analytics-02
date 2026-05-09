@@ -227,7 +227,6 @@ LLMs and embedding models now outperform classical pipelines.
 | ------------------------------------------------ | -------------------------------------------------------------- | --------------------------------------- |
 | [`fastapi`](https://pypi.org/project/fastapi/)   | High-performance web API framework.                            | [Docs](https://fastapi.tiangolo.com/)   |
 | [`pydantic`](https://pypi.org/project/pydantic/) | Data validation and settings management using type hints (v2). | [Docs](https://docs.pydantic.dev/)      |
-| [`uvicorn`](https://pypi.org/project/uvicorn/)   | ASGI server used to run FastAPI apps.                          | [Docs](https://www.uvicorn.org/)        |
 | [`slowapi`](https://pypi.org/project/slowapi/)   | Simple rate limiting for FastAPI/Starlette.                    | [Docs](https://slowapi.readthedocs.io/) |
 
 ---

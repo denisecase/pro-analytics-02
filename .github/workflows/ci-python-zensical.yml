@@ -99,7 +99,7 @@ jobs:
       # ============================================================
 
       - name: B1) Validate pyproject.toml schema
-        run: uv run validate-pyproject pyproject.toml
+        run: uvx validate-pyproject[all] pyproject.toml
         # WHY: Catches malformed pyproject.toml before a broken release.
         # OBS: validate-pyproject must be listed in [project.optional-dependencies].dev.
 
