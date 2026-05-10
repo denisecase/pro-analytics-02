@@ -12,7 +12,7 @@ Applies across operating systems (e.g. Windows, macOS, Linux).
 
 The old Windows command-line interface. Not recommended for professional use.
 Many modern commands and tools will not work in cmd.
-If you see a black window with `C:\>`, you are in cmd. Open Powershell instead.
+If you see a black window with `C:\>`, you are in cmd. Open PowerShell instead.
 
 ### Command
 

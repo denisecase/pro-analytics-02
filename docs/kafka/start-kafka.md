@@ -21,16 +21,14 @@
 ## Windows Users
 
 Use **WSL** terminals for Kafka and topics.
-Use **Powershell** terminals for the project, producers, and consumers.
+Use **PowerShell** terminals for the project, producers, and consumers.
 
 ## Open a Terminal (WSL if Windows)
 
 Open a new VS Code terminal.
 For example, from the menu select **Terminal / New Terminal**.
-
-If running Windows, specify the terminal type as wsl or
+If running Windows, specify the terminal type as **wsl** or
 type `wsl`.
-
 Your prompt will change to something like `username@DESKTOP:~$`.
 
 ### Recommended: Rename the Terminal to `kafka`
