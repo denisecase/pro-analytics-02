@@ -4,48 +4,36 @@
 
 ## Prerequisites
 
-REQUIREMENT 1. Complete <mark>**SETUP_KAFKA.md**</mark> successfully.
+1. Complete <mark>[**install-kafka**](./index.md)</mark> successfully.
+2. Copy **.env.example** (committed) to <mark>**.env**</mark> (not committed, possible secrets).
+3. If **Windows** only: in `.env` and `.env.example`, **uncomment this line**:
 
-REQUIREMENT 2. Copy
-**.env.example** (committed to GitHub) to
-<mark>**.env**</mark> (not committed to GitHub as it could have secrets).
+   Remove the leading # to uncomment it:
 
-REQUIREMENT 3. WINDOWS ONLY: in `.env` and `.env.example`,
-**uncomment this line**:
+   ```text
+   KAFKA_BROKER_ADDRESS_FAMILY=v6
+   ```
 
-```text
-KAFKA_BROKER_ADDRESS_FAMILY=v6
-```
-
-WHY: On Windows with WSL2, `localhost` resolves to `::1` (IPv6).
-The default `any` tries IPv4 first, which fails.
-Setting `v6` tells the Kafka client to use IPv6 directly.
-
-## When
-
-- After completing SETUP_KAFKA.md for the first time.
-- Again, whenever you are working on a project that uses
-  the Kafka message broker service.
+   WHY: On Windows with WSL2, `localhost` resolves to `::1` (IPv6).
+   The default `any` tries IPv4 first, which fails.
+   Setting `v6` tells the Kafka client to use IPv6 directly.
 
 ## Windows Users
 
-Run commands in **WSL**, not PowerShell.
+Use **WSL** terminals for Kafka and topics.
+Use **Powershell** terminals for the project, producers, and consumers.
 
 ## Open a Terminal (WSL if Windows)
 
 Open a new VS Code terminal.
 For example, from the menu select **Terminal / New Terminal**.
 
-If running Windows, type the following command:
-
-```powershell
-wsl
-```
+If running Windows, specify the terminal type as wsl or
+type `wsl`.
 
 Your prompt will change to something like `username@DESKTOP:~$`.
-Do all steps in this WSL terminal.
 
-## Recommended: Rename the Terminal to kafka
+### Recommended: Rename the Terminal to `kafka`
 
 In the VS Code terminal, look for an icon with the terminal type (e.g., `wsl`, `bash`, `zsh`).
 Click the default name / Select "Change name".
@@ -54,24 +42,25 @@ Type the new name **kafka**.
 ## Step 1. (WSL if Windows) Verify Java
 
 Verify Java is available in this terminal.
-Then start the kafka broker service.
 
 ```shell
 echo "$JAVA_HOME"
+
 "$JAVA_HOME/bin/java" --version
 ```
 
 If you get **`java: command not found`**
 Java is not installed or not on your PATH.
-Work through **SETUP_KAFKA.md** and verify each step.
+Work through [**install-kafka**](./index.md) and verify each step.
 The remaining steps will not work until
 `java --version` returns a number.
 
-## Step 3. (WSL if Windows) Rebuild Cluster ID (as needed)
+## Step 2. (WSL if Windows) Rebuild Cluster ID (as needed)
 
-You must have Java installed and on the path
-and you must be in the ~/kafka folder for these commands to work.
-Run each command by itself.
+You must have Java installed and on the path.
+You must be in the `~/kafka` folder for these commands to work.
+Run each command by itself by pasting into your terminal
+and hitting Enter or Return. Inspect the output.
 
 ```shell
 cd ~/kafka
@@ -85,7 +74,7 @@ echo "Cluster ID: $KAFKA_CLUSTER_ID"
 bin/kafka-storage.sh format --standalone -t "$KAFKA_CLUSTER_ID" -c config/server.properties
 ```
 
-## Step 4. (WSL if Windows) Start Kafka Server
+## Step 3. (WSL if Windows) Start Kafka Server
 
 ```shell
 cd ~/kafka
@@ -131,7 +120,7 @@ sudo lsof -i :9092
 sudo kill <PID>
 ```
 
-**Storage already formatted (re-running Step 4)**
+**Storage already formatted (re-running Step 2)**
 If you see `Log directory /tmp/kraft-combined-logs is already formatted`,
 either delete the directory and reformat, or skip formatting - it is already ready.
 
@@ -139,7 +128,3 @@ either delete the directory and reformat, or skip formatting - it is already rea
 rm -rf /tmp/kraft-combined-logs
 # then rerun the format command
 ```
-
-**Windows: Python cannot connect to Kafka**
-Confirm you are running the Python command in **PowerShell**, not in WSL.
-WSL2 bridges `localhost:9092` automatically - no extra configuration needed.

@@ -20,14 +20,14 @@ Wait for the command prompt to return.
 
 The next time you work on this project:
 
-1. Follow the `START_KAFKA.md` process.
+1. Follow the [**start-kafka**](./start-kafka.md) process.
 2. Leave the Kafka terminal open.
 3. Run the Python producer and consumer from Python.
 
 ## Important
 
-You only need to run `SETUP_KAFKA.md` once per machine.
+You only need to run [**install-kafka**](./index.md) once per machine.
 
-Use `START_KAFKA.md` each time you begin working.
+Use [**start-kafka**](./start-kafka.md) each time you begin working.
 
-Use `STOP_KAFKA.md` when you are done.
+Use [**stop-kafka**](./stop-kafka.md) when you finish a work session.
