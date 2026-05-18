@@ -35,8 +35,8 @@
 #      If format ran first, lint fixes could undo the formatting.
 #
 # MANUAL ORDER (command line) is different: format first, then check.
-#   uv run python -m ruff format .
-#   uv run python -m ruff check . --fix
+#   uv run ruff format .
+#   uv run ruff check . --fix
 # WHY: When running manually, each command is a conscious step.
 #      Format cleans style first so lint sees tidy code.
 #      You are in control and can re-run either command as needed.
@@ -124,7 +124,7 @@ repos:
   #      See RUFF HOOK ORDER note at the top of this file.
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.10
+    rev: v0.15.12
     hooks:
       - id: ruff-check
         name: D1) Ruff linter with autofix (runs first in pre-commit)

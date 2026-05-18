@@ -71,13 +71,26 @@ Set it once so future terminals can find Java reliably.
 
 ### Option 4A. Windows WSL / Ubuntu / Debian
 
+**IMPORTANT:** If your Java installs to a different location,
+you must use that path instead.
+
 ```bash
+# OPTION A (most users) if Windows (AMD) your path may look like this:
 echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc
+
+# OPTION B for Windows (ARM), it may be:
+echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-arm64' >> ~/.bashrc
+
+
 echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.bashrc
+
 source ~/.bashrc
 ```
 
 ### Option 4B. macOS Apple Silicon
+
+**IMPORTANT:** If your Java installs to a different location,
+you must use that path instead.
 
 ```bash
 echo 'export JAVA_HOME=/opt/homebrew/opt/openjdk@17' >> ~/.zshrc
@@ -87,6 +100,9 @@ source ~/.zshrc
 
 ### Option 4C. macOS Intel
 
+**IMPORTANT:** If your Java installs to a different location,
+you must use that path instead.
+
 ```bash
 echo 'export JAVA_HOME=/usr/local/opt/openjdk@17' >> ~/.zshrc
 echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.zshrc
@@ -94,6 +110,9 @@ source ~/.zshrc
 ```
 
 ### Option 4D. Red Hat / Fedora
+
+**IMPORTANT:** If your Java installs to a different location,
+you must use that path instead.
 
 ```bash
 echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk' >> ~/.bashrc

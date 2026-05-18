@@ -36,6 +36,7 @@ ignores:
   - "**/.uv-cache/**"
   - "htmlcov/**"
   - "**/htmlcov/**"
+  - "LICENSE"
 
 config:
   default: true # WHY: This enables all default rules, which is a good starting point for linting Markdown files.

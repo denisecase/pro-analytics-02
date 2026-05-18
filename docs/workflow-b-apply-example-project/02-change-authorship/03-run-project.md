@@ -31,8 +31,8 @@ All commands should be run from the **project root folder** in the VS Code termi
 Run the following commands to format code, fix common issues, and run tests if available.
 
 ```shell
-uv run python -m ruff format .
-uv run python -m ruff check . --fix
+uv run ruff format .
+uv run ruff check . --fix
 uv run python -m pytest --cov=src --cov-report=term-missing
 ```
 

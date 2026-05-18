@@ -105,8 +105,8 @@ git pull
 uv run python -m pro_analytics_02.demo_module_basics
 
 # do chores
-uv run python -m ruff format .
-uv run python -m ruff check . --fix
+uv run ruff format .
+uv run ruff check . --fix
 uv run python -m pyright
 uv run python -m pytest
 uv run python -m zensical build

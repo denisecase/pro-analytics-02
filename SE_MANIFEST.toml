@@ -39,7 +39,6 @@ optional = [
   "lychee",
   "zensical",
   "pre-commit",
-  "validate-pyproject",
 ]
 
 [provides]

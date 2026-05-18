@@ -33,8 +33,8 @@ Run the following commands in a VS Code terminal to:
 3. Optional: Run pytest if you have working tests in the `tests/` folder.
 
 ```shell
-uv run python -m ruff format .
-uv run python -m ruff check . --fix
+uv run ruff format .
+uv run ruff check . --fix
 uv run python -m pytest --cov=src --cov-report=term-missing
 ```
 

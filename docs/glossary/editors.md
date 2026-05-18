@@ -53,7 +53,7 @@ Example: `ruff format` enforces consistent indentation, spacing, and line length
 
 A fast Python linter and formatter.
 Configured in pyproject.toml.
-Run with `uv run python -m ruff check .` and `uv run python -m ruff format .`
+Run with `uv run python -m ruff check .` and `uv run ruff format .`
 
 ## Workspace
 
