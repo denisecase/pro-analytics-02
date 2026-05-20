@@ -2,6 +2,19 @@
 
 > Phase 4. Copy the example, experiment, make a technical modification, and observe the results.
 
+<details>
+<summary>WHY?</summary>
+
+A technical modification confirms that the project can be changed
+intentionally without breaking the existing workflow.
+
+Small, controlled changes provide practice with editing code, running checks,
+and verifying results.
+
+This phase connects project understanding to hands-on implementation.
+
+</details>
+
 ## Professional Practice
 
 After gaining a basic understanding of the project, its goals, and its techniques,

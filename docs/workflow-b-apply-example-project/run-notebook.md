@@ -9,6 +9,21 @@ and document our analysis step by step.
 A notebook is a web-based interactive environment commonly
 used for exploratory data analysis (EDA) and more.
 
+<details>
+<summary>WHY?</summary>
+
+Jupyter notebooks are commonly used for exploratory data analysis because
+code, results, charts, and notes can **appear together** in one document.
+
+Notebooks are useful when analysis is being explored step by step, when
+intermediate results need to be inspected, or when charts and explanations
+are part of the work.
+
+Use notebooks when the project includes `.ipynb` files and the work benefits
+from combined presentation, calculation, visualization, and notes.
+
+</details>
+
 ## Important Note
 
 Use this only when your project uses **Jupyter notebook (`.ipynb`)** files.

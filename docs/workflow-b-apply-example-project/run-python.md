@@ -2,6 +2,21 @@
 
 How to run a Python file (`.py`) in VS Code.
 
+<details>
+<summary>WHY?</summary>
+
+Python files are commonly used for reusable scripts, applications, packages,
+and project code that should run from a command.
+
+Python files are useful when the same instructions need to run repeatedly,
+reliably, or automatically.
+
+Use Python file commands when the project includes `.py` files or when code
+should be run from the command line, tested, reused, scheduled, or included
+as part of a larger project.
+
+</details>
+
 ## Before Starting
 
 - Open your project repository folder in VS Code.

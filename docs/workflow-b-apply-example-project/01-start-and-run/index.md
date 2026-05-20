@@ -2,6 +2,17 @@
 
 > Phase 1. Get started with an example project by copying and running the example.
 
+<details>
+<summary>WHY?</summary>
+
+Running an example project first confirms that the project works before
+starting to make any changes.
+
+A working starting point makes later errors easier to diagnose
+and establishes the baseline behavior of the project.
+
+</details>
+
 ## Goal
 
 The goal of this phase is to get your own working copy of the project and confirm it runs on your machine.

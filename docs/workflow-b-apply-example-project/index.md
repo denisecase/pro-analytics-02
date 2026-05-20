@@ -11,7 +11,23 @@ make a technical modification, and then apply the skills to a new problem.
 This reflects how professionals often learn new tools and techniques:
 start with a working system, understand it, modify it, and adapt it to new situations.
 
-Run → Understand → Modify → Apply
+<details>
+<summary>WHY?</summary>
+
+Example projects provide a working system for learning professional analytics
+tools and techniques.
+
+Starting from working code makes it possible to inspect real project
+structure, run commands, trace results, and make controlled changes.
+
+This workflow builds practice with a common professional pattern:
+
+- run an existing project,
+- understand it,
+- modify it, and
+- adapt the approach to a new problem.
+
+</details>
 
 ## Five Phases
 

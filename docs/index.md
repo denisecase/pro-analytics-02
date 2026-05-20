@@ -13,7 +13,7 @@ Instructions are divided into stages.
   to **set up a machine** for Python development.
 
 - Go to 🔵 [B. Apply Example Project](./workflow-b-apply-example-project/index.md)
-- to **learn skills** by running, modifying, and applying an example project.
+  to **learn skills** by running, modifying, and applying an example project.
 
 - Go to 🟠 [C. Start New Project](./workflow-c-start-new-project/index.md)
   to **create and configure a new Python project** from scratch (e.g., Capstone projects).

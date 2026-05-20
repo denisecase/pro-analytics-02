@@ -2,6 +2,20 @@
 
 > Phase 3. Read and understand the tools and techniques used in the project.
 
+<details>
+<summary>WHY?</summary>
+
+Reading the project before changing it builds understanding of the project
+structure, data flow, commands, and outputs.
+
+Professional work often requires maintaining or extending existing code
+rather than starting from an empty folder.
+
+**Understanding** an example first supports better technical decisions
+in later modification and application phases.
+
+</details>
+
 ## Professional Practice
 
 Before modifying a project, first read and understand how it works.

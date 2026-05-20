@@ -2,6 +2,21 @@
 
 > Phase 5. Complete the project by applying the techniques and skills to a new problem or dataset.
 
+<details>
+<summary>WHY?</summary>
+
+Applying the skills to a new problem shows that you can apply
+the skills and techniques to new areas, beyond the original example.
+
+Your work turns the example into a reusable pattern for solving
+related analytics problems.
+
+Adapting the approach strengthens professional judgment about what to keep,
+what to change, and how to verify the new result and
+provides a working foundation to experiment with new enhancements.
+
+</details>
+
 ## Professional Practice
 
 After experimenting with a technical modification,
