@@ -35,6 +35,20 @@ git --version
 If Git is missing or outdated, install it from the official site:
 <https://git-scm.com/>
 
+<details>
+<summary>WHY?</summary>
+
+Git **tracks changes** in project files over time.
+
+It records what changed, when it changed, and who made the change.
+
+Git is used with GitHub, but they are different.
+
+- **Git is version control software** that runs on a machine.
+- **GitHub is a cloud platform** that stores Git projects online.
+
+</details>
+
 ### Visual Studio Code
 
 Download and install Visual Studio Code from:
@@ -46,6 +60,22 @@ After installation:
 - (Recommended) Enable the `code` command in Terminal by following:
   <https://code.visualstudio.com/docs/setup/mac>
 
+<details>
+<summary>WHY?</summary>
+
+Visual Studio Code is a **code editor** used to
+open, inspect, edit, and run project files.
+
+It provides an integrated **terminal**,
+which allows project commands to be run
+from inside the same workspace.
+
+The `code` command makes it possible to
+open a project folder in VS Code
+directly from the terminal.
+
+</details>
+
 ### uv (Python environment and dependency manager)
 
 Follow the official installation instructions from Astral:
@@ -53,6 +83,30 @@ Follow the official installation instructions from Astral:
 
 > Note: Python is **not** installed at this step.
 > Python will be installed per-project using `uv`, which also manages versions.
+
+<details>
+<summary>WHY?</summary>
+
+`uv` manages the Python version and project packages used by a project.
+
+Using `uv` helps each project install the correct Python version and
+packages from the project configuration in `pyproject.toml`
+and keeps project Python **separate** from any other Python being used
+on the machine.
+
+If you worked with older Python projects, you might have used `pip` to
+manage required packages and `venv` to manage the virtual environment
+kept in the local `.venv` folder.
+
+We moved to `uv` because:
+
+- it is fast
+- it uses the same commands on Windows, macOS, and Linux
+- it creates and updates the local `.venv` project environment
+- it can install and manage the Python version for the project
+- it reduces the number of separate Python setup tools needed
+
+</details>
 
 ## Verify
 
