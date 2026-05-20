@@ -1,13 +1,31 @@
 # 🟢 Create a Place for all Projects (Repos/)
 
-Each project has its own folder. We need a place to keep all these shared folders on our machine.
+Each project has its own folder.
+We need one place on the machine to keep all project folders together.
 
-This page talks about creating a folder to hold ALL our project folders.
+This page explains how to create a `Repos/` folder to hold project folders.
 
-We don't want to make this container folder in a place
-that is automatically synced because each Python
-project folder can get very large.
-Automatic syncing is NOT wanted.
+Do NOT create this folder inside a location that is automatically synced,
+such as OneDrive, iCloud Drive, Google Drive, or Dropbox.
+
+<details>
+<summary>WHY?</summary>
+
+A dedicated `Repos/` folder provides a consistent location for cloned
+GitHub repositories.
+
+Keeping projects in one predictable folder makes commands, paths, tools,
+and troubleshooting easier.
+
+A consistent project location also helps separate code repositories from
+downloads, documents, and temporary files.
+
+It is important to avoid locations that are automatically synced because
+Python project folders can become large,
+and automatic syncing can cause slowdowns,
+conflicts, or file-locking problems.
+
+</details>
 
 ## Windows Users
 

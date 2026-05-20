@@ -5,6 +5,20 @@
 Linux distributions vary, so follow the
 vendor-recommended steps for your system.
 
+<details>
+<summary>WHY?</summary>
+
+Professional analytics projects depend on local tools for running code,
+managing packages, checking quality, and working with GitHub repositories.
+
+Installing the required tools creates a consistent project environment
+across machines and operating systems.
+
+Correct tool installation reduces setup errors and makes later project
+commands more predictable.
+
+</details>
+
 ## Required Tools
 
 ### Git

@@ -5,6 +5,20 @@ on Windows. Always follow the vendor-recommended installers.
 
 These tools are essential for professional data analytics.
 
+<details>
+<summary>WHY?</summary>
+
+Professional analytics projects depend on local tools for running code,
+managing packages, checking quality, and working with GitHub repositories.
+
+Installing the required tools creates a consistent project environment
+across machines and operating systems.
+
+Correct tool installation reduces setup errors and makes later project
+commands more predictable.
+
+</details>
+
 ## Required Tools
 
 ### Git

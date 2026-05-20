@@ -1,6 +1,22 @@
 # 🟢 Verify Workflow 01: Set Up Machine
 
-> This page verifies that your **Machine** is correctly set up for professional Python projects.
+> This page verifies that your **machine** is correctly set up for professional Python projects.
+
+<details>
+<summary>WHY?</summary>
+
+Verification confirms that required tools are installed, available, and
+configured before project work begins.
+
+Successful checks show that the machine can run the expected commands for
+professional Python and GitHub workflows.
+
+Finding setup problems early makes later project errors easier to diagnose.
+
+For your own benefit, do not attempt to continue until all these setup tasks
+have been completed successfully.
+
+</details>
 
 ---
 
@@ -20,17 +36,22 @@ git config --global user.name
 git config --global user.email
 ```
 
-If versions or git config commands do NOT work correctly,
-re-do the associated installation and configuration steps above.
-Work with an AI assistant (e.g. ChatGPT, Claude.ai, or other) to resolve any issues.
+If any version or Git configuration command does not work correctly,
+repeat the associated installation or configuration step above.
+
+Work with an AI such as ChatGPT, Claude, Gemini, or other
+to resolve any issues.
 
 ## Final Checklist
 
-When all of these are true, your setup is complete:
+When all of these are true, setup is complete:
 
+- [ ] You can share your GitHub account with a link, such as <https://github.com/denisecase/>.
 - [ ] You can see hidden files and folders.
 - [ ] You can see file extensions.
-- [ ] All three version commands respond with version numbers.
-- [ ] Your Git configuration information is correct.
+- [ ] The three version commands respond with version numbers.
+- [ ] Your Git global `user.name` configuration is correct.
+- [ ] Your Git global `user.email` configuration is correct.
+- [ ] You have a `Repos` folder in a non-synced location on your machine.
 
-Congratulations - your machine is ready for Python projects!
+Congratulations - your machine is ready for professional Python projects!

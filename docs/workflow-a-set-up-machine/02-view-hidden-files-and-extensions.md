@@ -22,10 +22,21 @@ and working with project files.
 Some files and folders are hidden by default to prevent accidental
 modification or deletion.
 
-These hidden items often contain system configuration or project
-settings.
-
 In data analytics projects, we need to see these.
+
+<details>
+<summary>WHY?</summary>
+
+Professional projects often include configuration files, environment files,
+and folders that may be hidden by default.
+
+File extensions show the real file type, such as `.py`, `.md`, `.json`,
+`.toml`, or `.csv`.
+
+Viewing hidden files and file extensions makes it easier to inspect,
+edit, troubleshoot, and verify project files accurately.
+
+</details>
 
 ## Task 1. Enable View Settings
 

@@ -2,6 +2,18 @@
 
 After installing Git, configure Git to handle notebooks, and set your global `user.name` and `user.email`.
 
+<details>
+<summary>WHY?</summary>
+
+Git records the name and email associated with each saved project change.
+
+This information helps identify who made each change in a project history.
+
+Configuring Git correctly makes local commits match the expected GitHub
+identity and keeps project history clear.
+
+</details>
+
 ## 1. Open VS Code
 
 Open your VS Code editor. We'll use the terminal available in VS Code.

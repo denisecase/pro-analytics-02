@@ -3,6 +3,26 @@
 > Set up a machine for professional Python projects.
 > Do this just once per machine (or periodically to update tools).
 
+<details>
+<summary>WHY?</summary>
+
+Professional Python projects depend on several tools working together:
+
+- GitHub stores projects,
+- Git tracks changes,
+- Python runs the code, and
+- local folders keep work organized.
+
+These setup steps reduce avoidable errors later.
+
+Most project problems are easier to solve when the
+machine, tools, folders, and Git identity have been configured correctly.
+
+For best results, complete each step carefully and ensure
+things are working as expected before continuing.
+
+</details>
+
 ---
 
 ## Steps
