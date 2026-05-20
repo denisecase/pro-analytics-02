@@ -2,6 +2,22 @@
 
 > Create a topic for the project
 
+<details>
+<summary>WHY?</summary>
+
+A Kafka topic gives the project a named place to send specific streaming messages.
+
+Creating a project topic keeps those messages separate from
+other projects, examples, and tests.
+
+A producer must know the topic name and ensure the topic exists
+**before** sending messages to that topic.
+
+A topic must exist **before** a consumer can begin
+consuming messages from that topic.
+
+</details>
+
 ## Step 1. Open a New Terminal in VS Code
 
 Windows users:

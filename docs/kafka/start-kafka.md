@@ -2,6 +2,27 @@
 
 > Start **Apache Kafka 4.2** locally using `confluent-kafka` package.
 
+<details>
+<summary>WHY?</summary>
+
+Apache Kafka must be running before topics, producers, and consumers can
+work.
+
+The Kafka broker service manages topics, accepts messages from producers,
+and makes messages available to consumers.
+
+**Starting Kafka** at the beginning of each streaming project session is
+necessary so the local message broker is available while project messages
+are flowing.
+
+**Keeping Kafka running** during the work session is necessary because topics,
+producers, and consumers depend on the broker service.
+
+**Restarting Kafka** after closing the VS Code terminal or VS Code is necessary
+because closing the terminal automatically stops the local Kafka service.
+
+</details>
+
 ## Prerequisites
 
 1. Complete <mark>[**install-kafka**](./index.md)</mark> successfully.

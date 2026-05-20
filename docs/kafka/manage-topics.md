@@ -4,6 +4,22 @@ Kafka topics are **infrastructure**.
 They exist independently of any code.
 They are created once, producers fill them, consumers read them.
 
+<details>
+<summary>WHY?</summary>
+
+Kafka topics are part of the streaming data infrastructure.
+
+Creating, listing, describing, and deleting topics are useful skills for
+working with streaming data systems.
+
+Topic management helps confirm that the correct topic exists, inspect topic
+details, and remove old project or test topics.
+
+These checks help verify the streaming environment before producer or
+consumer code is run.
+
+</details>
+
 ## Prerequisites
 
 Kafka must be running before any of these commands will work.

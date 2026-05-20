@@ -5,6 +5,24 @@
 This may be challenging, but it is a one-time process.
 Once we get it set up successfully, we use it throughout the course.
 
+<details>
+<summary>WHY?</summary>
+
+Apache Kafka provides a local message broker for practicing streaming data
+workflows.
+
+Running Kafka locally gives a project a controlled place to create, send,
+receive, and inspect streaming messages without using cloud services,
+credit cards, or external accounts.
+
+In many organizations, managing Apache Kafka is typically more data
+engineering or platform engineering work.
+
+Local Kafka setup supports streaming analytics experimentation, technical
+practice, and skill development.
+
+</details>
+
 ## Step 1. Open a New Terminal in VS Code
 
 Windows users:
