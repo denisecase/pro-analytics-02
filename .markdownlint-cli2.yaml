@@ -1,59 +1,71 @@
 # ============================================================
 # .markdownlint-cli2.yaml (Markdownlint CLI2 configuration)
 # ============================================================
-# Updated: 2026-05-05
+# Updated: 2026-06-04
 # WHY: Generated and dependency directories are not source content.
 # REQ: Markdown lint should check authored Markdown, not virtual
 #      environments, dependency trees, build output, or generated docs.
+# Run with:
+# npx markdownlint-cli2 --fix
 
+# === Set the scope of files to check ===
+
+# Check these types of files
 globs:
   - "**/*.md"
 
+# Do not check these files or directories
 ignores:
+  - ".lake/**"
+  - "**/.lake/**"
+  - ".mypy_cache/**"
+  - "**/.mypy_cache/**"
+  - ".nox/**"
+  - "**/.nox/**"
+  - ".pyright/**"
+  - "**/.pyright/**"
+  - ".pytest_cache/**"
+  - "**/.pytest_cache/**"
+  - ".ruff_cache/**"
+  - "**/.ruff_cache/**"
+  - ".tox/**"
+  - "**/.tox/**"
+  - ".uv-cache/**"
+  - "**/.uv-cache/**"
   - ".venv/**"
   - "**/.venv/**"
+  - "build/**"
+  - "**/build/**"
+  - "dist/**"
+  - "**/dist/**"
+  - "htmlcov/**"
+  - "**/htmlcov/**"
   - "node_modules/**"
   - "**/node_modules/**"
   - "site/**"
   - "**/site/**"
-  - "dist/**"
-  - "**/dist/**"
-  - "build/**"
-  - "**/build/**"
-  - ".ruff_cache/**"
-  - "**/.ruff_cache/**"
-  - ".pytest_cache/**"
-  - "**/.pytest_cache/**"
-  - ".mypy_cache/**"
-  - "**/.mypy_cache/**"
-  - ".pyright/**"
-  - "**/.pyright/**"
-  - ".tox/**"
-  - "**/.tox/**"
-  - ".nox/**"
-  - "**/.nox/**"
-  - ".uv-cache/**"
-  - "**/.uv-cache/**"
-  - "htmlcov/**"
-  - "**/htmlcov/**"
+  - ".github/CODEOWNERS"
   - "LICENSE"
 
+
+# === Configure rules ===
+
 config:
-  default: true # WHY: This enables all default rules, which is a good starting point for linting Markdown files.
+  default: true # WHY: Enables all default rules, which is a good starting point for linting Markdown files.
 
   MD013:
     line_length: 100
-    headings: false # WHY: This allows long headings, which can be necessary for clarity and SEO in Markdown files.
-    tables: false # WHY: This allows long table cells, which can be necessary for readability and completeness in Markdown files.
-    code_blocks: false # WHY: This allows long lines in code blocks, which can be necessary for readability and completeness in Markdown files.
+    headings: false # WHY: Allows long headings for clarity and SEO in Markdown files.
+    tables: false # WHY: Allows long table cells for readability and completeness in Markdown files.
+    code_blocks: false # WHY: Allows long lines in code blocks for readability and completeness in Markdown files.
 
-  MD025: false # WHY: This allows multiple top-level headings, which can be necessary in Markdown files that are not strictly linear documents (e.g., README files, documentation index files).
+  MD025: false # WHY: Allow multiple H1 headings when a file is not a linear document.
 
   MD033:
     allowed_elements:
-      - img # WHY: Images are common in Markdown files, and this allows them without triggering a lint error.
-      - mark # WHY: Mark elements are often used in Markdown files for highlighting, and this allows them without triggering a lint error.
-      - meta # WHY: Metadata is often needed in Markdown files, and this allows it without triggering a lint error.
-      - link # WHY: Links are common in Markdown files, and this allows them without triggering a lint error.
-      - details # WHY: Details elements are often used in Markdown files, and this allows them without triggering a lint error.
-      - summary # WHY: Summary elements are often used in Markdown files, and this allows them without triggering a lint error.
+      - details # collapsible sections
+      - img # images
+      - link # links
+      - mark # highlighting
+      - meta # metadata
+      - summary # summary elements

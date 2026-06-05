@@ -43,7 +43,7 @@ By the end of setting up a Kafka project you will have:
 
 Project instructions are provided with the project.
 There will be additional tasks as you work through
-[Workflow B: Apply Example Project](../workflow-b-apply-example-project/index.md).
+[Workflow B: Apply Example Project](../workflow-b-apply-example-project/).
 
 ## After Finishing a Work Session
 

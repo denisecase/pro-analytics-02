@@ -14,8 +14,8 @@ managing packages, checking quality, and working with GitHub repositories.
 Installing the required tools creates a consistent project environment
 across machines and operating systems.
 
-Correct tool installation reduces setup errors and makes later project
-commands more predictable.
+Correct tool installation reduces setup errors and makes later
+commands predictable.
 
 </details>
 
@@ -96,6 +96,20 @@ We moved to `uv` because:
 
 </details>
 
+### Node.js
+
+Follow the official Node.js installation instructions
+for Windows:
+<https://nodejs.org/en/download>
+
+<details>
+<summary>WHY?</summary>
+
+Node.js provides `npm` and `npx`.
+Many helpful professional tools can be run with `npx`.
+
+</details>
+
 ## Verify
 
 After installation, open **PowerShell** and run:
@@ -104,6 +118,7 @@ After installation, open **PowerShell** and run:
 git --version
 code --version
 uv --version
+npx --version
 ```
 
 Each command should display a version number.

@@ -32,6 +32,7 @@ On your machine:
 git --version
 uv --version
 code --version
+npx --version
 git config --global user.name
 git config --global user.email
 ```
@@ -49,7 +50,7 @@ When all of these are true, setup is complete:
 - [ ] You can share your GitHub account with a link, such as <https://github.com/denisecase/>.
 - [ ] You can see hidden files and folders.
 - [ ] You can see file extensions.
-- [ ] The three version commands respond with version numbers.
+- [ ] The version commands respond with version numbers.
 - [ ] Your Git global `user.name` configuration is correct.
 - [ ] Your Git global `user.email` configuration is correct.
 - [ ] You have a `Repos` folder in a non-synced location on your machine.

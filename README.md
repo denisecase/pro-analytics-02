@@ -68,12 +68,9 @@ To set up a project Python environment (managed by `uv`) and align VS Code with 
 run the following commands, one at a time, hitting ENTER after each:
 
 ```shell
-# reset uv cache if strange dependency errors appear
-# del .venv
-# uv cache clean
-
 uv self update
 uv python pin 3.14
+uv lock --upgrade
 uv sync --extra dev --extra docs --upgrade
 ```
 
@@ -142,6 +139,14 @@ Core tools:
 WHY: Keep decision rationale close to code and configuration.
 -->
 
+## Authority Manifest
+
+[.accountability/surfaces.toml](./.accountability/surfaces.toml)
+
+<!--
+WHY: Define the accountable surfaces.
+-->
+
 ## Citation
 
 [CITATION.cff](./CITATION.cff)
@@ -158,7 +163,7 @@ WHY: Support correct citation and attribution.
 WHY: Provide terms of reuse and limits of liability.
 -->
 
-## SE Manifest
+## Repository Manifest
 
 [SE_MANIFEST.toml](./SE_MANIFEST.toml)
 

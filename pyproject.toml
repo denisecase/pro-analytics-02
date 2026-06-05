@@ -1,7 +1,7 @@
 # ============================================================
 # pyproject.toml (Python project configuration)
 # ============================================================
-# Updated: 2026-04-15
+# Updated: 2026-06-04
 # REQ.PYTHON: Python projects MUST include pyproject.toml as the single source of truth.
 # WHY: Centralizes project configuration.
 # CUSTOM: Update identity and build tool src folders.
@@ -14,7 +14,7 @@
 name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
 readme = "README.md"
 requires-python = ">=3.14"
-version = "0.3.0"
+version = "0.4.0"
 description = "Professional Python for analytics."
 license = "MIT"
 authors = [

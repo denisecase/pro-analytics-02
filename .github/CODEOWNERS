@@ -1,0 +1,94 @@
+# ============================================================
+# .github/CODEOWNERS
+# ============================================================
+# GENERATED FILE -- do not edit by hand.
+#
+# Source:     .accountability/surfaces.toml
+# Generator:  se-codeowners
+# Repository: pro-analytics-02
+# Regenerate: se-codeowners generate --output .github/CODEOWNERS
+#
+# [codeowners].informs = true means this surfaces manifest intentionally
+# informs the generated GitHub CODEOWNERS projection.
+#
+# [codeowners].requires_code_owner_review = false
+# records whether repository governance expects GitHub branch protection or
+# rulesets to require CODEOWNER review before protected changes merge.
+# Actual enforcement is configured in GitHub, not in this generated file.
+#
+# Each entry reflects the oversight_role assigned to an accountability
+# surface, resolved to a handle via [codeowners.role_handles]. GitHub
+# applies the LAST matching pattern for a given path, so order matters.
+# Surfaces are emitted by codeowners_order, then surface id.
+
+# Surface: course-home-and-navigation (role: curriculum)
+/README.md                                 @denisecase
+/docs/index.md                             @denisecase
+
+# Surface: workflow-a-machine-setup (role: curriculum)
+/docs/workflow-a-set-up-machine/**         @denisecase
+
+# Surface: workflow-b-example-project (role: curriculum)
+/docs/workflow-b-apply-example-project/**  @denisecase
+
+# Surface: workflow-c-new-project (role: curriculum)
+/docs/workflow-c-start-new-project/**      @denisecase
+
+# Surface: ai-use-and-governance (role: curriculum)
+/docs/ai-use-and-governance/**             @denisecase
+/AI_USE.md                                 @denisecase
+
+# Surface: reference-documentation (role: curriculum)
+/docs/reference/**                         @denisecase
+/docs/tools/**                             @denisecase
+/docs/help/**                              @denisecase
+/docs/glossary/**                          @denisecase
+
+# Surface: dataset-and-portfolio-references (role: curriculum)
+/docs/datasets/**                          @denisecase
+/docs/portfolios/**                        @denisecase
+
+# Surface: documentation-build-configuration (role: tooling)
+/zensical.toml                             @denisecase
+
+# Surface: project-configuration (role: tooling)
+/pyproject.toml                            @denisecase
+/uv.lock                                   @denisecase
+
+# Surface: repository-hygiene-configuration (role: tooling)
+/.editorconfig                             @denisecase
+/.gitattributes                            @denisecase
+/.gitignore                                @denisecase
+/.markdownlint-cli2.yaml                   @denisecase
+/.pre-commit-config.yaml                   @denisecase
+
+# Surface: project-log-evidence (role: curriculum)
+/project.log                               @denisecase
+
+# Surface: repository-manifest (role: repository_governance)
+/SE_MANIFEST.toml                          @denisecase
+
+# Surface: citation-identity (role: repository_governance)
+/CITATION.cff                              @denisecase
+
+# Surface: repository-governance (role: repository_governance)
+/AGENTS.md                                 @denisecase
+/CONTRIBUTING.md                           @denisecase
+/DECISIONS.md                              @denisecase
+/CHANGELOG.md                              @denisecase
+
+# Surface: license-surface (role: repository_governance)
+/LICENSE                                   @denisecase
+
+# Surface: release-and-automation-authority (role: release)
+/.github/dependabot.yml                    @denisecase
+/.github/workflows/**                      @denisecase
+
+# Surface: generated-codeowners (role: release)
+/.github/CODEOWNERS                        @denisecase
+
+# Surface: repository-security (role: security)
+/SECURITY.md                               @denisecase
+
+# Surface: authority-manifest (role: owner)
+/.accountability/surfaces.toml             @denisecase

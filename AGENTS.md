@@ -9,7 +9,7 @@
 
 - Use **uv** for all environment, dependency, and run commands in this repo.
 - Do **not** recommend or use `pip install ...` as the primary workflow.
-- This repo targets **Python 3.14**, pinned via uv.
+- This repo targets a specific version of Python, pinned via uv.
 - Commands and guidance must work on Windows, macOS, and Linux.
 - If shell-specific commands are unavoidable, provide both:
   - PowerShell (Windows)
@@ -19,12 +19,14 @@
 
 - Install **uv** using the official method for your OS.
 - Keep uv current.
-- Pin Python 3.14 for this project using uv.
-- Sync dependencies (dev + docs) and upgrade.
+- Pin Python using uv.
+- Upgrade the lock packages
+- Sync all dependencies (dev + docs) and upgrade.
 
 ```shell
 uv self update
 uv python pin 3.14
+uv lock --upgrade
 uv sync --extra dev --extra docs --upgrade
 ```
 

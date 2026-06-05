@@ -187,6 +187,11 @@ nav = [
         ] },
     ] },
 
+    { "AI Use and Governance" = [
+        { "AI power, capability, and governance" = "ai-use-and-governance/ai-power-capability-governance.md" },
+        { "AI policy and regulation" = "ai-use-and-governance/ai-policy-and-regulation.md" },
+    ] },
+
     { "Help" = [
         { "Taking screenshots" = "help/01-taking-screenshots.md" },
         { "Hosting video" = "help/02-hosting-video.md" },

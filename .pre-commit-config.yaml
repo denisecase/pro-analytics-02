@@ -1,51 +1,26 @@
 # ============================================================
-# .pre-commit-config.yaml (Python Hygiene)
+# .pre-commit-config.yaml (Markdown Hygiene)
 # ============================================================
-# Updated: 2026-04-13
-
-# REQ: Professional Python projects SHOULD include a .pre-commit-config.yaml
-# to minimize git diffs and support collaboration.
-# WHY: Provide fast, consistent checks before committing code.
+# Updated: 2026-06-04
+# WHY: Fast, consistent repo hygiene before commit.
 #
-# OBS: These hooks use and do NOT override:
-#   - .editorconfig (whitespace / indentation)
-#   - .gitattributes (EOL normalization)
-#   - pyproject.toml (Python tool settings)
+# These hooks complement and do not replace:
+# - .editorconfig
+# - .gitattributes
+# - pyproject.toml
 #
-# OPTIONAL LOCAL USAGE (no repo venv required):
-#   You must have uv installed locally.
-#   Run these commands once from the repo root to enable pre-commit:
-#
+# Local usage:
 #   uv self update
 #   uvx pre-commit install
 #   uvx pre-commit run --all-files
 #
-# This enables the pre-commit hooks for this project repo.
-# ALL subsequent commits in this repo will AUTOMATICALLY run these
-# pre-commit hooks, after `git add` and before `git commit`.
-#
-# NOTE: enabling pre-commit is optional. It is not needed to clone or commit.
-#
-# === RUFF HOOK ORDER (pre-commit vs. manual) ===
-#
-# PRE-COMMIT ORDER: lint first, then format.
-# WHY: Hooks run sequentially in a single automated pass.
-#      ruff-check --fix may change code structure (e.g., remove unused imports,
-#      rewrite expressions). ruff-format then cleans up the result.
-#      If format ran first, lint fixes could undo the formatting.
-#
-# MANUAL ORDER (command line) is different: format first, then check.
-#   uv run ruff format .
-#   uv run ruff check . --fix
-# WHY: When running manually, each command is a conscious step.
-#      Format cleans style first so lint sees tidy code.
-#      You are in control and can re-run either command as needed.
-#      The single-pass sequencing constraint does not apply.
+# Ruff lint runs before Ruff format in pre-commit so autofixes
+# are formatted in the same pass.
 
 exclude: |
   (?x)^(
-    \.DS_Store|
     \.coverage|
+    \.DS_Store|
     \.ipynb_checkpoints/|
     \.mypy_cache/|
     \.nox/|
@@ -64,7 +39,9 @@ exclude: |
     lake-packages/|
     node_modules/|
     out/|
-    site/
+    site/|
+    LICENSE|
+    CODEOWNERS
   )
 
 repos:
@@ -145,6 +122,21 @@ repos:
         # Uses .markdownlint-cli2.yaml if present, otherwise defaults.
         language: system
         entry: npx markdownlint-cli2 --fix
+        pass_filenames: false
+        always_run: true
+
+      - id: se-validate-manifest
+        name: E2) Validate SE manifest against schema
+        language: system
+        entry: uvx se-manifest-schema validate-manifest --path SE_MANIFEST.toml --strict
+        pass_filenames: false
+        always_run: true
+
+      - id: se-codeowners-check
+        name: E3) Check generated CODEOWNERS is current
+        language: system
+        entry: uvx se-codeowners check --strict
+        files: ^(\.accountability/surfaces\.toml|\.github/CODEOWNERS)$
         pass_filenames: false
         always_run: true
 

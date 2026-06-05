@@ -89,12 +89,12 @@ __pycache__/
 *.pyo
 
 # WHY: Build and packaging artifacts are generated.
-.eggs/
-build/
-dist/
 *.egg
 *.egg-info/
+.eggs/
 *.whl
+build/
+dist/
 
 # WHY: Tooling caches should not be tracked.
 .coverage

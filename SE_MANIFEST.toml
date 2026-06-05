@@ -1,56 +1,71 @@
 # ============================================================
-# SE_MANIFEST.toml (Repository Intent, Scope, and Role)
+# SE_MANIFEST.toml (Repository Declaration)
 # ============================================================
 
-schema = "se-manifest-1"
-schema_url = "https://github.com/structural-explainability/spec-se/blob/main/manifests/se-manifest-1.md"
+schema = "se-manifest-schema"
+schema_version = "0.5.0"
+schema_url = "https://raw.githubusercontent.com/structural-explainability/se-manifest-schema/main/manifest-schema.toml"
+
+# === Framework Context ===
 
 [meta]
-# Non-normative contextual information
 framework = "Structural Explainability"
 framework_url = "https://github.com/structural-explainability"
-framework_note = "Provides definitions and conventions for SE_MANIFEST semantics."
-description = "Declarative claim of repository intent, scope, and role."
-purpose = "To make explicit the boundaries, responsibilities, and expectations of this repository relative to others."
-keywords_note = "Keywords live only in CITATION.cff (canonical)."
+purpose = "Declares this repository's role in the Structural Explainability ecosystem."
 
-[repo]
+# === Repository Identity ===
+
+[repository]
+organization = "structural-explainability"
 name = "pro-analytics-02"
-org = "denisecase"
-kind = "educational"
+class = "docs"
+kind  = "educational"
 status = "active"
 since = "2026"
-summary = "Ready-to-use starter repository and reference guide for modern professional Python project structure, tooling, and workflow."
+summary = "Reference guide for modern professional Python project structure, tooling, and workflow."
+
+# === Layer Position ===
 
 [layer]
 space = "Data Analytics"
 role = "post-secondary-education"
 
+# === Dependency Declarations ===
+
 [depends]
-required = [
-  "python>=3.14",
-  "uv",
-  "git",
-]
+required = ["git", "node", "python>=3.14", "uv"]
 optional = [
-  "ruff",
-  "pyright",
-  "pytest",
-  "lychee",
-  "zensical",
-  "pre-commit",
+    "lychee",
+    "pre-commit",
+    "pyright",
+    "pytest",
+    "ruff",
+    "se-codeowners",
+    "se-manifest-schema",
+    "zensical",
+      { repository = "se-manifest-schema", kind = "tooling", version = "v0.4.1" },
+
 ]
+
+# === Provided Artifacts ===
+
 
 [provides]
 artifacts = [
+    ".accountability/surfaces.toml",
+    ".github/CODEOWNERS",
+    "AGENTS.md",
     "ANNOTATIONS.md",
+    "CHANGELOG.md",
     "CITATION.cff",
     "LICENSE",
     "README.md",
     "SE_MANIFEST.toml",
+    "SECURITY.md",
     "pyproject.toml",
-    "ruff.strict.toml",
 ]
+
+# === Scope ===
 
 [scope]
 includes = [
@@ -58,17 +73,28 @@ includes = [
     "tooling configuration (ruff, pyright strict, pre-commit, uv)",
     "CI/CD integration via GitHub Actions",
     "documentation site via zensical",
-    "template repository for student and practitioner use",
-    "reference workflows for daily Python development",
+    "reference workflows for Python development",
+    "AI-use guidance and agentic capability awareness",
+    "accountable surface declarations for shared resources",
 ]
 excludes = [
     "domain analytics content (e.g., EDA, ML, SQL)",
     "dataset-specific logic or ingestion pipelines",
-    "collection of personally identifying information (PII)",
+    "personally identifying information (PII)",
     "production deployment configuration",
 ]
 
+# === Validation ===
+
+[validation]
+entrypoint = "uvx se-manifest-schema validate-manifest --path SE_MANIFEST.toml"
+strict_entrypoint = "uvx se-manifest-schema validate-manifest --path SE_MANIFEST.toml --strict"
+
+# === External references ===
+
 [citation]
 cff = "CITATION.cff"
-preferred = "repo"
-bib_hint = "case2026-pro-analytics-02"
+preferred = "software"
+
+[traceability]
+identifier_map = "none"
