@@ -64,6 +64,7 @@ config:
   MD033:
     allowed_elements:
       - details # collapsible sections
+      - iframe # embedded content
       - img # images
       - link # links
       - mark # highlighting

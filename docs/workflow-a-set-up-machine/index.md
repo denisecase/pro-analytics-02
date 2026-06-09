@@ -55,12 +55,21 @@ AI-generated materials have been created, and you can access:
 
 - workflow-specific chatbot
 - slides
-- audio podcast (pronunciation may be slightly off)
-- video
+- audio podcast (try **interactive mode** and question the presenters)
+- video (below)
 - and more
 
 Recommendation 🔊
 
 [Listen to the 20-minute Audio Overview](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
-or watch the video before you start.
+or watch the video below before you start.
 It provides good background on WHY we do these things.
+
+<iframe
+  width="100%"
+  style="aspect-ratio: 16 / 9; max-width: 800px; border: 0;"
+  src="https://www.youtube-nocookie.com/embed/AQeRgX2f8QE"
+  title="Machine Set Up Overview"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+  loading="lazy"></iframe>
