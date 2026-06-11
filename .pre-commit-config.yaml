@@ -1,24 +1,36 @@
 # ============================================================
-# .pre-commit-config.yaml (Markdown Hygiene)
+# .pre-commit-config.yaml (ALL-PY)
 # ============================================================
-# Updated: 2026-06-04
-# WHY: Fast, consistent repo hygiene before commit.
+# Updated: 2026-06-06
 #
-# These hooks complement and do not replace:
-# - .editorconfig
-# - .gitattributes
-# - pyproject.toml
+# REQ: Professional Python projects SHOULD include pre-commit checks.
+# WHY: Minimize git diffs, catch common issues early, and support collaboration.
 #
-# Local usage:
+# OBS: These hooks use and do NOT override:
+#   - .editorconfig (whitespace / indentation)
+#   - .gitattributes (EOL normalization)
+#   - pyproject.toml (Python tool settings)
+#
+# OPTIONAL LOCAL USAGE:
 #   uv self update
 #   uvx pre-commit install
 #   uvx pre-commit run --all-files
 #
-# Ruff lint runs before Ruff format in pre-commit so autofixes
-# are formatted in the same pass.
+# NOTE: Enabling pre-commit is optional. It is not needed to clone or commit.
+#
+# RUFF ORDER:
+#   Pre-commit runs lint first, then format.
+#   Manual command-line use usually runs format first, then lint:
+#     uv run ruff format .
+#     uv run ruff check . --fix
+#
+# WHY: In pre-commit, ruff-check --fix may change code structure first.
+#      ruff-format then cleans up the result.
 
 exclude: |
   (?x)^(
+    .*\.egg-info/|
+    .*\.log|
     \.coverage|
     \.DS_Store|
     \.ipynb_checkpoints/|
@@ -28,8 +40,6 @@ exclude: |
     \.ruff_cache/|
     \.tox/|
     \.venv/|
-    .*\.(egg-info)/|
-    .*\.log|
     __pycache__/|
     _minted.*/|
     build/|
@@ -39,9 +49,7 @@ exclude: |
     lake-packages/|
     node_modules/|
     out/|
-    site/|
-    LICENSE|
-    CODEOWNERS
+    site/
   )
 
 repos:
@@ -71,7 +79,7 @@ repos:
 
       - id: check-json
         name: B1) Validate JSON syntax (except .vscode/)
-        # WHY: VSCode settings may include comments, which are non-standard JSON.
+        # WHY: VS Code settings may include comments, which are non-standard JSON.
         exclude: ^\.vscode/.*\.json$
 
       - id: check-toml
@@ -80,8 +88,8 @@ repos:
       - id: check-yaml
         name: B3) Validate YAML syntax
         files: \.(yml|yaml)$
-        # WHY: VS Code config files are editor-specific
-        exclude: ^(\.vscode/)
+        # WHY: VS Code config files are editor-specific.
+        exclude: ^\.vscode/
 
       # === PRE-COMMIT: CHECK FOR COMMON PROBLEMS ===
 
@@ -96,12 +104,12 @@ repos:
         name: C3) Check for filename case conflicts
 
   # === REPO: RUFF PRE-COMMIT (for Python code) ===
-
-  # WHY: Lint runs before format in pre-commit (opposite of manual order).
-  #      See RUFF HOOK ORDER note at the top of this file.
+  #
+  # WHY: Lint runs before format in pre-commit.
+  #      See RUFF ORDER note at the top of this file.
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.12
+    rev: v0.15.16
     hooks:
       - id: ruff-check
         name: D1) Ruff linter with autofix (runs first in pre-commit)
@@ -112,34 +120,6 @@ repos:
         name: D2) Ruff formatter (runs after linter fixes)
         # WHY: Formats whatever structure the linter left behind.
 
-  # === EXECUTE: LOCAL VALIDATION ===
-
-  - repo: local
-    hooks:
-
-      - id: markdownlint
-        name: E1) Markdown lint
-        # Uses .markdownlint-cli2.yaml if present, otherwise defaults.
-        language: system
-        entry: npx markdownlint-cli2 --fix
-        pass_filenames: false
-        always_run: true
-
-      - id: se-validate-manifest
-        name: E2) Validate SE manifest against schema
-        language: system
-        entry: uvx se-manifest-schema validate-manifest --path SE_MANIFEST.toml --strict
-        pass_filenames: false
-        always_run: true
-
-      - id: se-codeowners-check
-        name: E3) Check generated CODEOWNERS is current
-        language: system
-        entry: uvx se-codeowners check --strict
-        files: ^(\.accountability/surfaces\.toml|\.github/CODEOWNERS)$
-        pass_filenames: false
-        always_run: true
-
 # === GLOBAL SETTINGS ===
 # ALT: Set fail_fast to true to stop at first failure.
-fail_fast: false # Run all hooks even if one fails
+fail_fast: false # WHY: Run all hooks so all issues are visible at once.

@@ -14,7 +14,7 @@
 name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
 readme = "README.md"
 requires-python = ">=3.14"
-version = "0.4.0"
+version = "0.4.1"
 description = "Professional Python for analytics."
 license = "MIT"
 authors = [
@@ -103,72 +103,97 @@ addopts = "--cov=pro_analytics_02 --cov-report=term-missing --cov-fail-under=70"
 # === RUFF (PYTHON FORMATTING AND LINTING) ===
 
 [tool.ruff]
-# WHY: Fast linting and formatting in one tool.
+# WHY: Use one fast tool for Python linting and formatting across maintained repos.
+# WHY: Keep generated, cached, virtualenv, build, and docs-site output out of lint scope.
 exclude = [
+    ".eggs",
     "*.egg-info",
-    "**/.venv",
+    ".ruff_cache",
     ".venv",
     "__pycache__",
+    "build",
+    "dist",
     "site",
 ]
-line-length = 88 # WHY: PEP 8 standard, wrap when possible.
-preview = false # WHY: Stable features only; avoid preview features.
-target-version = "py314" # WHY: Match latest supported Python version.
-unsafe-fixes = false # WHY: Avoid potentially unsafe automatic fixes.
+
+# WHY: Match Black/Ruff formatter default; keeps diffs compact and predictable.
+line-length = 88
+
+# WHY: Avoid unstable preview behavior unless a repo intentionally opts in.
+preview = false
+
+# WHY: Match the current repo target; modernization rules should track the supported runtime.
+target-version = "py314"
+
+# WHY: Do not apply fixes Ruff marks unsafe in shared/release-oriented repos.
+unsafe-fixes = false
+
 
 [tool.ruff.format]
-# WHY: Formatter choices should be stable to keep diffs small and predictable.
-indent-style = "space" # See also .gitattributes for indent style.
-line-ending = "auto" # Match existing files and let .gitattributes handle it.
-quote-style = "preserve" # Preserve existing quote styles to minimize churn.
+# WHY: Spaces are the Python standard and match formatter defaults.
+indent-style = "space"
+
+# WHY: Preserve platform-appropriate line endings across Windows/macOS/Linux contributors.
+line-ending = "auto"
+
+# WHY: Preserve existing quote style to minimize meaningless diff churn.
+quote-style = "preserve"
+
 
 [tool.ruff.lint]
-# WHY: Professional baseline rules without requiring advanced refactors.
+# WHY: Professional baseline for research, package, and infrastructure code.
+# WHY: Catch correctness issues, import disorder, modernization drift, bug patterns,
+# WHY: path handling problems, avoidable complexity, weak return flow, doc gaps,
+# WHY: and obvious security hazards.
 select = [
-    "E",   # Basic syntax and structural correctness
-    "F",   # Undefined names and unused imports
-    "W",   # Warnings that catch easy issues early
-    "I",   # Import ordering
-    "UP",  # Modern Python constructs
-    "B",   # Common bug-prone patterns
-    "PTH", # Prefer pathlib patterns
+    "E",   # WHY: Basic syntax and structural correctness.
+    "F",   # WHY: Undefined names, unused imports, and likely real errors.
+    "W",   # WHY: Warnings that catch easy issues early.
+    "I",   # WHY: Deterministic import ordering for stable diffs.
+    "UP",  # WHY: Modern Python constructs for the pinned Python version.
+    "B",   # WHY: Common bug patterns.
 
-    # TEMPORARY: Stricter categories for maintainers and local development (not CI).
-    "C4",  # Comprehension correctness and clarity
-    "SIM", # Simplify obvious complexity
-    "RET", # Return practices
+    "PTH", # WHY: Prefer pathlib for cross-platform path handling.
+    "C4",  # WHY: Comprehension correctness and clarity.
+    "SIM", # WHY: Remove obvious unnecessary complexity.
+    "RET", # WHY: Keep return behavior explicit and readable.
 
-    "D", # Docstring standards (see convention below)
-    "D417", # Enforce Google-style docstring sections (Args, Returns, etc.)
-    "S", # Security checks (with deliberate exceptions)
-
+    "D",   # WHY: Public/reusable code needs docstrings.
+    "S",   # WHY: Catch obvious security hazards before release or reuse.
 ]
+
 ignore = [
-    "E501", # line length handled by formatter
-    "D203", # conflicts with D211
-    "D213", # conflicts with D212 (Google standard summary placement)
-    "S101", # allow assert (tests + internal invariants)
+    "E501", # WHY: Line length is handled by the formatter, not Ruff lint.
+    "D203", # WHY: Conflicts with D211; use the no-blank-line convention.
+    "D213", # WHY: Conflicts with D212; use first-line summary convention.
+    "S101", # WHY: Allow assert for tests and intentional internal invariants.
 ]
+
 
 [tool.ruff.lint.isort]
-# WHY: Ordering imports helps keep code diffs (differences) readable.
+# WHY: Ordered imports keep reviews and generated diffs readable.
 force-sort-within-sections = true
 
-# === PER-FILE IGNORES (DEPENDS ON DOCSTRING POLICY) ===
 
 [tool.ruff.lint.per-file-ignores]
-# WHY: Some files must not be auto-modified.
-"src/**/__init__.py" = ["F401"]     # Allow re-export patterns
-"src/**/_version.py" = ["ALL"]      # Auto-generated file (do not lint)
-"tests/**/*.py" = ["D", "B018", "B011", "S101"]
-"src/**/py.typed" = ["ALL"]
-"notebooks/**/*.ipynb" = ["F821"]   # Notebooks may have runtime-defined names
+# WHY: Package __init__ files often re-export public API names.
+"src/**/__init__.py" = ["F401"]
 
-# === CHOOSE PROJECT DOC STYLE ===
+# WHY: Generated/version files are build metadata, not authored implementation.
+"src/**/_version.py" = ["ALL"]
+
+# WHY: Tests prioritize behavior clarity over public API documentation.
+# WHY: B011/B018 may be acceptable in tests depending on the assertion pattern.
+# WHY: S101 is retained here even though it is also globally ignored.
+"tests/**/*.py" = ["D", "B018", "B011", "S101"]
+
+# WHY: Marker files are intentionally empty/non-Python content.
+"src/**/py.typed" = ["ALL"]
+
 
 [tool.ruff.lint.pydocstyle]
-# REQ: Google style is the project-wide docstring convention.
-convention = "google"   # ALT: "numpy" - choose one, never mix.
+# WHY: Google style is the project-wide docstring convention.
+convention = "google"
 
 # ============================================================
 # SECTION 3: BUILD SYSTEM (boilerplate; CUSTOM src/ agreement)

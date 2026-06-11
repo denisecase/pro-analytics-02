@@ -23,7 +23,7 @@ commands predictable.
 
 ## Required Tools
 
-### Git
+### 1. Git
 
 Most Linux distributions include Git in their package manager.
 
@@ -44,7 +44,7 @@ Git is used with GitHub, but they are different.
 
 </details>
 
-### Visual Studio Code
+### 2. Visual Studio Code
 
 Follow Microsoft's official Linux setup instructions
 for your distribution:
@@ -66,7 +66,7 @@ directly from the terminal.
 
 </details>
 
-### uv (Python environment and dependency manager)
+### 3. uv (Python environment and dependency manager)
 
 Follow the official installation instructions from Astral:
 <https://docs.astral.sh/uv/getting-started/installation/>
@@ -97,7 +97,7 @@ We moved to `uv` because:
 
 </details>
 
-### Node.js
+### 4. Node.js
 
 Follow the official Node.js installation instructions
 for your Linux distribution:

@@ -1,9 +1,9 @@
 # ============================================================
-# .github/workflows/deploy-zensical.yml (Deploy Docs)
+# .github/workflows/deploy-zensical.yml (ALL-PY-SRC)
 # ============================================================
-# Updated: 2026-04-13
+# Updated: 2026-06-06
 #
-# WHY-FILE: Build and deploy documentation to GitHub Pages on pushes to main.
+# WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 #
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:
 #      GitHub Actions
@@ -17,25 +17,26 @@
 name: Docs Deploy (Zensical)
 
 on:
-  push:
-    branches: [main]    # WHY: Deploy on every confirmed push to main.
-  workflow_dispatch:     # WHY: Allow manual redeploy from Actions tab if needed.
+  workflow_dispatch:  # WHY: Allow manual redeploy from Actions tab if needed.
+  workflow_run:       # WHY: After successful CI on main, trigger deployment.
+    workflows: ["CI (Python + Zensical)"]
+    branches: [main]
+    types: [completed]
 
 permissions:
   contents: read        # WHY: Needed to checkout code.
   pages: write          # WHY: Required to deploy to GitHub Pages.
   id-token: write       # WHY: Required by deploy-pages for OIDC authentication.
 
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+  # WHY: GitHub Pages is a shared deployment target.
+  # OBS: Do not cancel an in-progress Pages deployment with another deployment.
+
 env:
   PYTHONUNBUFFERED: "1"     # WHY: Real-time log output in CI.
   PYTHONIOENCODING: "utf-8" # WHY: Consistent encoding across platforms.
-
-concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: true
-  # WHY: Only one Pages deployment runs at a time per branch.
-  # OBS: A second push to main while deploying cancels the in-progress run.
-  #      This prevents partial or stale deployments from racing.
 
 jobs:
   docs:
@@ -44,6 +45,9 @@ jobs:
     timeout-minutes: 30   # WHY: Fail fast if a step hangs unexpectedly.
     env:
       UV_PYTHON: "3.14"   # WHY: Pin Python version for all steps in this job.
+
+    # WHY: Only run deployment if triggered manually or if the triggering CI workflow run concluded successfully.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       # ============================================================
@@ -69,9 +73,10 @@ jobs:
       - name: A4) Install Python 3.14
         run: uv python install 3.14
 
-      - name: A5) Install all dependencies
-        run: uv sync --extra dev --extra docs --upgrade
+      - name: A5) Install all dependencies with locked versions
+        run: uv sync --extra dev --extra docs --locked
         # WHY: Docs extras required for Zensical build; dev extras for consistency.
+        # OBS: Deployment validates the committed lock file; it must not upgrade dependencies.
 
       - name: A6) Show tool versions
         run: |

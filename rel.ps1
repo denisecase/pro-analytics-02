@@ -82,7 +82,15 @@ Invoke-Step "A2) Sync all dependencies" "uv sync --extra dev --extra docs --upgr
     uv sync --extra dev --extra docs --upgrade
 }
 
-Invoke-Step "A3) Run pre-commit autofix pass" "uvx pre-commit run --all-files" {
+Invoke-Step "A3) Install pre-commit" "uvx pre-commit install" {
+    uvx pre-commit install
+}
+
+Invoke-Step "A4) Pre-commit autoupdate" "uvx pre-commit autoupdate" {
+    uvx pre-commit autoupdate
+}
+
+Invoke-Step "A5) Run pre-commit autofix pass" "uvx pre-commit run --all-files" {
     $oldNativePreference = $PSNativeCommandUseErrorActionPreference
     $PSNativeCommandUseErrorActionPreference = $false
 
@@ -98,7 +106,7 @@ Invoke-Step "A3) Run pre-commit autofix pass" "uvx pre-commit run --all-files" {
     }
 }
 
-Invoke-Step "A4) Run pre-commit verification pass" "uvx pre-commit run --all-files" {
+Invoke-Step "A6) Run pre-commit verification pass" "uvx pre-commit run --all-files" {
     uvx pre-commit run --all-files
 }
 
@@ -106,15 +114,11 @@ Invoke-Step "A4) Run pre-commit verification pass" "uvx pre-commit run --all-fil
 # C) Package command surface and manifest validation
 # ============================================================
 
-Invoke-Checked "C1) Validate SE manifest against schema" {
-    uvx se-manifest-schema validate-manifest --path SE_MANIFEST.toml --strict
-} -FailureHint "SE_MANIFEST.toml did not validate. See schema: https://github.com/structural-explainability/se-manifest-schema/blob/main/manifest-schema.toml"
-
-Invoke-Step "C2) Generate CODEOWNERS file" "uvx se-codeowners generate --strict --output .github/CODEOWNERS" {
+Invoke-Step "C1) Generate CODEOWNERS file" "uvx se-codeowners generate --strict --output .github/CODEOWNERS" {
     uvx se-codeowners generate --strict --output .github/CODEOWNERS
 }
 
-Invoke-Step "C3) Confirm current CODEOWNERS" "uvx se-codeowners check" {
+Invoke-Step "C2) Confirm current CODEOWNERS" "uvx se-codeowners check" {
     uvx se-codeowners check
 }
 

@@ -1,121 +1,167 @@
 # ============================================================
-# .gitattributes (Keep files consistent across operating systems)
+# .gitattributes (ALL)
 # ============================================================
-# Updated: 2026-06-04
+# Updated: 2026-06-06
+#
+# REQ: All professional GitHub project repositories MUST include .gitattributes.
+# WHY: Keep line endings, diffs, and file classification consistent across
+# Windows, macOS, Linux, GitHub Actions, and environments.
+# CUSTOM: Add rules when new shared file types are introduced.
+# Git attributes: https://git-scm.com/docs/gitattributes
 
-# WHY-FILE: Normalize line endings and GitHub language classification
-# to ensure cross-platform consistency and predictable CI behavior.
 
-# === Core: Text normalization ===
+# === Core defaults ===
 
+# WHY: Auto-detect text files and normalize text unless a later rule is more specific.
 * text=auto eol=lf
 
-# WHY: Explicit EOL rules avoid platform-specific diffs and tool failures.
 
-# === Scripts ===
+# === Named root and metadata files ===
 
-# Python and shell scripts must always use LF (CI, Linux, macOS, containers)
-*.py  text eol=lf
-*.sh  text eol=lf
+# WHY: Important extensionless repo files are text and should use LF.
+CODEOWNERS  text eol=lf
+LICENSE     text eol=lf
 
-# PowerShell scripts force to cross-platform LF
-*.ps1 text eol=lf
 
-# === Docs and configs ===
+# === Operating-system files ===
 
-# Cross-platform; tooling expects LF
+# WHY: OS metadata files are binary/noisy and should not be normalized.
+.DS_Store    binary
+Thumbs.db    binary
+desktop.ini  binary
+
+
+# === Markup and documentation ===
+
+# WHY: Documentation, web, and math markup use LF for stable cross-platform diffs.
 *.bib   text eol=lf
 *.cls   text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
 *.md    text eol=lf
-*.tex   text eol=lf
+*.qmd   text eol=lf
+*.rst   text eol=lf
 *.sty   text eol=lf
+*.tex   text eol=lf
+*.xml   text eol=lf
 
-# === Log files ===
-
-# WHY: Log files are text evidence of commands, checks, and outputs.
-# Keep them diffable and readable in GitHub.
-# CUSTOM: Alter for real-world projects as needed.
-*.log       text eol=lf
-project.log text eol=lf
 
 # === Configuration and structured text ===
 
-# WHY: Configuration and structured text formats use LF for stable diffs.
-*.json     text eol=lf
+# WHY: Config and structured text files should produce stable diffs.
+*.cfg     text eol=lf
+*.env     text eol=lf
+*.ini     text eol=lf
+*.json    text eol=lf
 *.jsonc   text eol=lf
 *.jsonl   text eol=lf
 *.ndjson  text eol=lf
 *.toml    text eol=lf
+*.txt     text eol=lf
 *.yaml    text eol=lf
 *.yml     text eol=lf
 
-# === Proof assistants and formal languages ===
 
-# WHY: Lean source files must use LF for cross-platform consistency and CI.
-*.lean   text eol=lf
+# === Programming languages and scripts ===
 
-# WHY: Lean build artifacts are binary; prevent normalization and meaningless diffs.
-*.olean  binary
+# WHY: Source and script files use LF for CI, shells, containers, and tooling.
+*.bat   text eol=crlf
+*.c     text eol=lf
+*.cpp   text eol=lf
+*.cs    text eol=lf
+*.go    text eol=lf
+*.h     text eol=lf
+*.hpp   text eol=lf
+*.java  text eol=lf
+*.jl    text eol=lf
+*.js    text eol=lf
+*.mojo  text eol=lf
+*.ps1   text eol=lf
+*.py    text eol=lf
+*.r     text eol=lf
+*.R     text eol=lf
+*.rs    text eol=lf
+*.sh    text eol=lf
+*.sql   text eol=lf
+*.ts    text eol=lf
+
+
+# === Formal, math, and proof languages ===
+
+# WHY: Lean source files are text; Lean build artifacts are binary.
 *.ilean  binary
+*.lean   text eol=lf
+*.olean  binary
 *.trace  binary
 
-# WHY: Coq source uses LF; compiled objects are binary.
-*.v      text eol=lf
-*.vo     binary
-*.vok    binary
-*.vos    binary
-*.glob   binary
-
-# WHY: Lake build directory should be excluded, but if tracked, treat as binary.
+# WHY: Lake build output should not be normalized if accidentally tracked.
 .lake/**  binary
+
 
 # === Notebooks ===
 
-# WHY: Jupyter notebooks require specialized diff and merge handling.
-*.ipynb   diff=jupyternotebook
-*.ipynb   merge=jupyternotebook
+# WHY: Jupyter notebooks can contain Python, R, Julia, and other kernels.
+*.ipynb  text eol=lf diff=jupyternotebook merge=jupyternotebook
 
-# === Databases (binary) ===
 
-# WHY: Database files are binary; prevent text normalization and meaningless diffs.
+# === Text and tabular data ===
+
+# WHY: Small text data files benefit from readable diffs.
+*.csv  text eol=lf
+*.dat  text eol=lf
+*.psv  text eol=lf
+*.tsv  text eol=lf
+
+
+# === Databases ===
+
+# WHY: Database files are binary; text diffs are not meaningful.
 *.db       binary
 *.duckdb   binary
 *.sqlite   binary
 *.sqlite3  binary
 
-# === Columnar and analytical data (binary) ===
 
-# WHY: Columnar and analytical data formats are binary; diffs are not meaningful.
+# === Columnar and analytical data ===
+
+# WHY: Columnar/analytical formats are binary; text diffs are not meaningful.
 *.arrow    binary
 *.avro     binary
 *.feather  binary
 *.orc      binary
 *.parquet  binary
 
-# === Office, BI, PDFs, and compressed artifacts (binary) ===
 
-# WHY: Office documents, BI files, PDFs, and compressed artifacts are binary.
-*.7z     binary
-*.bz2    binary
-*.docx   binary
-*.gz     binary
-*.pbix   binary
-*.pbit   binary
-*.pdf    binary
-*.pptx   binary
-*.rar    binary
-*.tar    binary
-*.tgz    binary
-*.xls    binary
-*.xlsm   binary
-*.xlsx   binary
-*.xz     binary
-*.zip    binary
+# === Office, BI, PDF, and compressed artifacts ===
+
+# WHY: Office, BI, PDF, and archive files are binary.
+*.7z    binary
+*.bz2   binary
+*.docx  binary
+*.gz    binary
+*.pbix  binary
+*.pbit  binary
+*.pdf   binary
+*.pptx  binary
+*.rar   binary
+*.tar   binary
+*.tgz   binary
+*.xls   binary
+*.xlsm  binary
+*.xlsx  binary
+*.xz    binary
+*.zip   binary
+
+
+# === Logs and generated runtime output ===
+
+# WHY: Logs are generated runtime evidence; avoid normalization churn.
+*.log        binary
+project.log  binary
+
 
 # === GitHub metadata and UI ===
 
-# WHY: Exclude generated documentation and coverage outputs
-# so they don't distort GitHub language statistics.
-site/**      linguist-documentation
-htmlcov/**   linguist-documentation
-coverage/**  linguist-documentation
+# WHY: Exclude documentation and tests from GitHub language statistics.
+docs/**   linguist-documentation
+tests/**  linguist-documentation

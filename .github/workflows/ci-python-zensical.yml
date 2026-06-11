@@ -1,12 +1,12 @@
 # ============================================================
-# .github/workflows/ci-python-zensical.yml (Continuous Integration)
+# .github/workflows/ci-python-zensical.yml (ALL-PY-SRC)
 # ============================================================
-# Updated: 2026-04-13
+# Updated: 2026-06-06
 #
-# WHY-FILE: Validate repository hygiene, Python correctness, and documentation builds.
+# WHY: Validate repository hygiene, Python correctness, and documentation builds.
 # REQ: CI MUST NOT introduce arbitrary rules that are not reproducible locally.
 # OBS: CI validates only; it does not edit files or deploy docs.
-# OBS: yamllint config lives at .github/yamllint.yml (not repo root).
+# OBS: yamllint config lives at .github/.yamllint.yml (not repo root).
 #
 # Some tools are slower, require the full environment,
 # or produce output worth seeing in CI logs independently.
@@ -15,16 +15,22 @@ name: CI (Python + Zensical)
 
 on:
   push:
-    branches: [main]       # WHY: Validate every push to main.
+    branches: [main]  # WHY: Validate every push to main.
   pull_request:
-    branches: [main]       # WHY: Validate PRs before merge.
-  workflow_dispatch:        # WHY: Allow manual trigger from Actions tab.
+    branches: [main]  # WHY: Validate PRs before merge.
+  workflow_dispatch:  # WHY: Allow manual trigger from Actions tab.
 
 permissions:
-  contents: read            # WHY: Least privilege; CI only reads, never writes.
+  contents: read      # WHY: Least privilege; CI only reads, never writes.
+
+concurrency:
+  group: ci-python-zensical-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+  # WHY: Cancel stale CI runs for the same workflow/ref when a newer commit arrives.
+  # OBS: Different PRs and branches still run independently.
 
 env:
-  PYTHONUNBUFFERED: "1"    # WHY: Real-time log output in CI.
+  PYTHONUNBUFFERED: "1"     # WHY: Real-time log output in CI.
   PYTHONIOENCODING: "utf-8" # WHY: Consistent encoding across platforms.
 
 jobs:
@@ -57,10 +63,9 @@ jobs:
         # WHY: Ensures the pinned Python version is available in CI.
         # OBS: Does not modify the repo; uv manages the interpreter locally.
 
-      - name: A4) Install all dependencies
-        run: uv sync --extra dev --extra docs --upgrade
+      - name: A4) Install all dependencies without upgrading
+        run: uv sync --extra dev --extra docs
         # WHY: Install dev and docs extras so all check and build tools are available.
-        # OBS: --upgrade ensures CI catches dependency drift early.
 
       - name: A5) Show tool versions
         run: |
@@ -74,7 +79,7 @@ jobs:
         # WHY: Version output makes CI logs easier to debug when tools change.
 
       - name: A6) Run pre-commit on all files
-        run: uv tool run pre-commit run --all-files
+        run: uvx pre-commit run --all-files
         # WHY: Enforces formatting, linting, and file hygiene in one step.
         # OBS: Covers ruff-check, ruff-format, whitespace, line endings,
         #      and JSON/TOML/YAML syntax checks defined in .pre-commit-config.yaml.
@@ -86,7 +91,7 @@ jobs:
       # ============================================================
 
       - name: B1) Validate pyproject.toml schema
-        run: uvx validate-pyproject[all] pyproject.toml
+        run: uvx "validate-pyproject[all]" pyproject.toml
         # WHY: Catches malformed pyproject.toml before a broken release.
 
       - name: B2) Run Pyright type checker

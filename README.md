@@ -83,6 +83,7 @@ Install and run pre-commit checks (twice if necessary as shown below):
 
 ```shell
 uvx pre-commit install
+uvx pre-commit autoupdate
 
 git add -A
 uvx pre-commit run --all-files
@@ -133,7 +134,7 @@ Core tools:
 
 ## Annotations
 
-[ANNOTATIONS.md](https://github.com/structural-explainability/.github/blob/main/ANNOTATIONS.md)
+[.annotations/annotations.md](./.annotations/annotations.md)
 
 <!--
 WHY: Keep decision rationale close to code and configuration.
@@ -161,12 +162,4 @@ WHY: Support correct citation and attribution.
 
 <!--
 WHY: Provide terms of reuse and limits of liability.
--->
-
-## Repository Manifest
-
-[SE_MANIFEST.toml](./SE_MANIFEST.toml)
-
-<!--
-WHY: Make explicit the intent, boundaries, and scope of this repository.
 -->

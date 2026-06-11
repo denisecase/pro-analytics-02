@@ -1,72 +1,64 @@
 # ============================================================
-# .markdownlint-cli2.yaml (Markdownlint CLI2 configuration)
+# .markdownlint-cli2.yaml (ALL-REPOS)
 # ============================================================
-# Updated: 2026-06-04
-# WHY: Generated and dependency directories are not source content.
-# REQ: Markdown lint should check authored Markdown, not virtual
-#      environments, dependency trees, build output, or generated docs.
+# Updated: 2026-06-10
+#
+# WHY: Check authored Markdown while ignoring generated output,
+# dependency directories, virtual environments, caches, and build artifacts.
+# REQ: Markdown lint should check source documentation, not generated docs,
+# dependency trees, coverage output, or runtime artifacts.
+#
 # Run with:
 # npx markdownlint-cli2 --fix
 
-# === Set the scope of files to check ===
-
-# Check these types of files
 globs:
   - "**/*.md"
 
-# Do not check these files or directories
 ignores:
-  - ".lake/**"
-  - "**/.lake/**"
-  - ".mypy_cache/**"
   - "**/.mypy_cache/**"
-  - ".nox/**"
   - "**/.nox/**"
-  - ".pyright/**"
-  - "**/.pyright/**"
-  - ".pytest_cache/**"
   - "**/.pytest_cache/**"
-  - ".ruff_cache/**"
+  - "**/.pyright/**"
   - "**/.ruff_cache/**"
-  - ".tox/**"
   - "**/.tox/**"
-  - ".uv-cache/**"
   - "**/.uv-cache/**"
-  - ".venv/**"
   - "**/.venv/**"
-  - "build/**"
   - "**/build/**"
-  - "dist/**"
   - "**/dist/**"
-  - "htmlcov/**"
   - "**/htmlcov/**"
-  - "node_modules/**"
   - "**/node_modules/**"
-  - "site/**"
   - "**/site/**"
   - ".github/CODEOWNERS"
+  - ".mypy_cache/**"
+  - ".nox/**"
+  - ".pytest_cache/**"
+  - ".pyright/**"
+  - ".ruff_cache/**"
+  - ".tox/**"
+  - ".uv-cache/**"
+  - ".venv/**"
+  - "build/**"
+  - "dist/**"
+  - "htmlcov/**"
   - "LICENSE"
-
-
-# === Configure rules ===
+  - "node_modules/**"
+  - "site/**"
 
 config:
-  default: true # WHY: Enables all default rules, which is a good starting point for linting Markdown files.
+  default: true # WHY: Enable default Markdown rules as the project baseline.
 
   MD013:
-    line_length: 100
-    headings: false # WHY: Allows long headings for clarity and SEO in Markdown files.
-    tables: false # WHY: Allows long table cells for readability and completeness in Markdown files.
-    code_blocks: false # WHY: Allows long lines in code blocks for readability and completeness in Markdown files.
+    line_length: 100 # WHY: Keep authored prose readable in source and diffs.
+    headings: false # WHY: Long headings may be needed for clarity.
+    tables: false # WHY: Long table cells may be needed for readability.
+    code_blocks: false # WHY: Long code lines should not be wrapped by Markdown lint.
 
-  MD025: false # WHY: Allow multiple H1 headings when a file is not a linear document.
+  MD025: false # WHY: Allow multiple top-level headings in README/docs/index style files.
 
   MD033:
     allowed_elements:
-      - details # collapsible sections
-      - iframe # embedded content
-      - img # images
-      - link # links
-      - mark # highlighting
-      - meta # metadata
-      - summary # summary elements
+      - details # WHY: Details elements support collapsible documentation sections.
+      - link # WHY: Link elements are sometimes needed for metadata or styling.
+      - mark # WHY: Mark elements support intentional highlighting.
+      - meta # WHY: Metadata elements may be needed in generated/static docs.
+      - summary # WHY: Summary elements support collapsible documentation sections.

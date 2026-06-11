@@ -13,6 +13,12 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.4.1] - 2026-06-10
+
+- used dc-up to update baseline files (except zensical.toml).
+
+---
+
 ## [0.4.0] - 2026-06-04
 
 ## Updated
@@ -67,11 +73,10 @@ Follow these steps exactly when creating a new release.
 uv lock --upgrade
 uv sync --extra dev --extra docs --upgrade
 uvx pre-commit install
+uvx pre-commit autoupdate
 
-# validate SE manifest
-uvx se-manifest-schema validate-manifest --path SE_MANIFEST.toml --strict
-
-# generate and check CODEOWNERS
+# optional: generate and check CODEOWNERS
+# based on roles defined in .accountability/surfaces.toml
 uvx se-codeowners generate --strict --output .github/CODEOWNERS
 uvx se-codeowners check
 
@@ -122,7 +127,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.1
 [0.4.0]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.0
 [0.3.0]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.3.0
 

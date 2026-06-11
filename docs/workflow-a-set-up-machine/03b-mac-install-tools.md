@@ -24,7 +24,7 @@ commands predictable.
 
 ## Required Tools
 
-### Git
+### 1. Git
 
 Git is often already installed on macOS.
 
@@ -51,7 +51,7 @@ Git is used with GitHub, but they are different.
 
 </details>
 
-### Visual Studio Code
+### 2. Visual Studio Code
 
 Download and install Visual Studio Code from:
 <https://code.visualstudio.com/>
@@ -78,7 +78,7 @@ directly from the terminal.
 
 </details>
 
-### uv (Python environment and dependency manager)
+### 3. uv (Python environment and dependency manager)
 
 Follow the official installation instructions from Astral:
 <https://docs.astral.sh/uv/getting-started/installation/>
@@ -112,7 +112,7 @@ We moved to `uv` because:
 
 </details>
 
-### Node.js
+### 4. Node.js
 
 Follow the official Node.js installation instructions
 for macOS:
