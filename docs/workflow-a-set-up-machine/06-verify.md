@@ -2,8 +2,6 @@
 
 > This page verifies that your **machine** is correctly set up for professional Python projects.
 
-![steps](https://lh3.googleusercontent.com/notebooklm/AKXwDQFuuVF3tGtsPbT50CsQIy6wa2lAVYE9JIJ4h4nCNeTnKwM6bFuh98xDitFUUc6PmGl9q27EW63OeBEKdd8U56Osz0t1SgpXZoIufkK8p7yXbOP4CmxDU8CrRmDJ7MZILkwZOJVSBrtNZD0zpAX52YHXLt6VNnWu8DvFWg=w1376-h768?authuser=0)
-
 <details>
 <summary>WHY?</summary>
 

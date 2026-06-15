@@ -9,8 +9,6 @@ software, data, and technology work.
 
 Go to <https://github.com/> and create a new account.
 
-![slide](https://lh3.googleusercontent.com/notebooklm/AKXwDQELbxzHct8M56VtBkmkL56gYP2A4vjz1MTyXBBhObvR6axrR5Df4beLsLMi3qaV0DT1iXcFSSiIQm825IghMIfJqi6iRRQLk8gFT0rii7Be2C1p_pP6KlH77G9JzKKsbXAQEe7Rq_c0rEvGMHYBnLVPfT2UdcWS5-az5CU=w1376-h768?authuser=0)
-
 <details>
 <summary>WHY?</summary>
 
@@ -78,5 +76,3 @@ to your phone or authenticator app.
   alt="Microsoft Authenticator app icon"
   width="48"
 />
-
-![slide](https://lh3.googleusercontent.com/notebooklm/AKXwDQHenw_eBkGvB2NYX_HENGOikTJeWhS9CnmkMRrZJEZ3srILPN7siejp8iqyplAZkFYrwzIeTBc0A5-2UCDqs0HtIVQOhUd6574ig11yOyP2X0HvqJBW2Uhz2AOPL8_RrzpT1KhY6V321U4xi_BxgkiClJjbXFihidW8BGc=w1376-h768?authuser=0)

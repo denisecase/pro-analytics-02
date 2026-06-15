@@ -5,8 +5,6 @@ on Windows. Always follow the vendor-recommended installers.
 
 These tools are essential for professional data analytics.
 
-![slide](https://lh3.googleusercontent.com/notebooklm/AKXwDQE6RFO6UNLwv_KS_JMYeJtRJn6K7LOQj_SrcJ9qgN7bj2M_bm9-tmXD-Cd-m-yJA2yrq0A0U4gVGi1b6FjiqzwY4klAunSWFYTcwFakzH_O1pX_N-oISiatPI7iENw1dmwBzpT2Cpw-H62G-4iXlvIOMjLuOglWv_Hz9a8=w1376-h768?authuser=0)
-
 <details>
 <summary>WHY?</summary>
 
@@ -73,8 +71,6 @@ Install `uv` using the official Windows method:
 
 Note: Python is **not** installed at this step.
 Python will be installed per-project using `uv`, which also manages versions.
-
-![slide](https://lh3.googleusercontent.com/notebooklm/AKXwDQHrKLJMnzbHcw4ZN9yGHpfzm3YqJlUT-j6Sos7GQ-uPB9JVlBBYetRrM9OBy5A85L96fTvLJGgLz-vmyt4Sp6ZPOgNr3cabO5hHg5c7HVFCoq8IOvMSz8Yy0BMt43xYp79KDALXlXLDiHhJ1TIMpgUAGM9e0sHJXmW3mw=w1376-h768?authuser=0)
 
 <details>
 <summary>WHY?</summary>

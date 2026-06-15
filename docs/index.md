@@ -1,4 +1,4 @@
-# Professional Python Guide
+# Professional Analytics (Version 2)
 
 This repository provides a clear, concise guide for professional Python projects.
 

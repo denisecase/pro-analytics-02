@@ -8,8 +8,6 @@ This page explains how to create a `Repos/` folder to hold project folders.
 Do NOT create this folder inside a location that is automatically synced,
 such as OneDrive, iCloud Drive, Google Drive, or Dropbox.
 
-![steps](https://lh3.googleusercontent.com/notebooklm/AKXwDQF9GdiYZvNQdPqjicVi7fNgbdJFNmi8L7WBpJ4WuJ557893XTkRgitSxhP8GRKmMi47AanfUSVf54i6LnZGeRduV72c_QuaajVNWBCpcjK8X1dDLHHJ10RGnQ-5P4dKDgVt-F3x568Dhvt698WxLIF0qwab5kuOJPvMli4=w1376-h768?authuser=0)
-
 <details>
 <summary>WHY?</summary>
 

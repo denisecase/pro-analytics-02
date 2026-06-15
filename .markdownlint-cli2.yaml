@@ -58,6 +58,8 @@ config:
   MD033:
     allowed_elements:
       - details # WHY: Details elements support collapsible documentation sections.
+      - iframe # WHY: Iframe elements may be needed for embedded content in documentation.
+      - img # WHY: Image elements are needed for visual documentation.
       - link # WHY: Link elements are sometimes needed for metadata or styling.
       - mark # WHY: Mark elements support intentional highlighting.
       - meta # WHY: Metadata elements may be needed in generated/static docs.

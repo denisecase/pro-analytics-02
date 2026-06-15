@@ -3,10 +3,6 @@
 > Set up a machine for professional Python projects.
 > Do this just once per machine (or periodically to update tools).
 
-![slide](https://lh3.googleusercontent.com/notebooklm/AKXwDQH0pHo0yM-q58xafdO0vaAJPvIpT66SVtdsO5kHkDySTpEBSfjs7NGiLvaU-yfcHUsqYqZiR91W8EzmkRNG__lPyNs3e5NWKVgkhW1GKCeIqcT6ILapkB1c5vqje50limzrnj_kHdh4eNwT28Axtx-dHcU7snw3TeXNdQc=w1376-h768?authuser=0)
-
-![steps](https://lh3.googleusercontent.com/notebooklm/AKXwDQGTU3TxEdnp1Km3Jv_-OYfjo1jKQohFP73nFFmtbNRMx_MRESBIuLTwkESfOXr9DiwQAOJ7oEoIXo0-t607j2ZEi5nfalRx6DqEjOxa9VskxIfHr3Pc1yzZnXoSpN9Jb7M9fOhFCvQTvCwMYNuMd1-n-bPzksl6ADw9PGE=w1376-h768?authuser=0)
-
 <details>
 <summary>WHY?</summary>
 

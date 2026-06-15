@@ -2,8 +2,6 @@
 
 After installing Git, configure Git to handle notebooks, and set your global `user.name` and `user.email`.
 
-![steps](https://lh3.googleusercontent.com/notebooklm/AKXwDQEiTpQMEvQMcnezm1uGEm5wEEm2Q72y-zSMiPIpYciIFXIvEd7LEgfZORa9si9S0xWQW3tEIDgdYSfKoBRD4XXqxgsR-J5GqGwMAcSgfFA_44s3Qomp8hPvI5lnsFGc33ad0dYzUsr018rN96mKFaJAyA7nX-fCFEAYvzE=w1376-h768?authuser=0)
-
 <details>
 <summary>WHY?</summary>
 

@@ -109,7 +109,7 @@ repos:
   #      See RUFF ORDER note at the top of this file.
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.16
+    rev: v0.15.17
     hooks:
       - id: ruff-check
         name: D1) Ruff linter with autofix (runs first in pre-commit)

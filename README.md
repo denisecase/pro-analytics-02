@@ -1,5 +1,8 @@
 # Pro Analytics 02
 
+[![NotebookLM: Set Up Machine](https://img.shields.io/badge/NotebookLM-Set%20Up%20Machine-blue?logo=google)](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
+[![NotebookLM: Apply Example Project](https://img.shields.io/badge/NotebookLM-Apply%20Example%20Project-blue?logo=google)](https://notebooklm.google.com/notebook/2f486eda-5ea5-4a05-9311-b6373859b82f)
+
 [![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/pro-analytics-02/)
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](https://github.com/denisecase/pro-analytics-02/blob/main/pyproject.toml)
 [![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml)
@@ -17,6 +20,24 @@ REQ: Title, badges, and positioning statement appear before anything else.
 WHY: README opens with exactly one page title, credibility signals, then a concise scope statement.
 -->
 
+## Guide
+
+For best results, consult the detailed instructions in the written
+[**guide**](https://denisecase.github.io/pro-analytics-02/).
+Instructions are provided for all major operating systems and assume no prior experience.
+
+## Audio Guides
+
+Additional interactive materials are provided.
+You can listen to **audio summaries**, watch videos, chat with a
+specially trained bot, and more.
+
+Note: I found the AI-generated audio podcast to be pretty good. It says it allows us to
+interrupt and ask questions of the presenters (haven't tried that yet).
+
+[![NotebookLM: Set Up Machine](https://img.shields.io/badge/NotebookLM-Set%20Up%20Machine-blue?logo=google)](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
+[![NotebookLM: Apply Example Project](https://img.shields.io/badge/NotebookLM-Apply%20Example%20Project-blue?logo=google)](https://notebooklm.google.com/notebook/2f486eda-5ea5-4a05-9311-b6373859b82f)
+
 ## Overview and Scope
 
 This repository serves two purposes:
@@ -26,11 +47,6 @@ This repository serves two purposes:
 
 It demonstrates a professional Python project structure, tooling configuration, and documentation practices.
 
-## Documentation Site
-
-This repository includes an associated
-[**documentation site**](https://denisecase.github.io/pro-analytics-02/).
-
 ## Developers and Maintainers
 
 This is a reference site. Most people do not need to get this running on their machine.
@@ -39,8 +55,8 @@ For developers and maintainers (or if you want to fork your own copy).
 ### Set Up Machine
 
 - Complete 🟢
-[Workflow A. Set Up Machine](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/)
-to **set up a machine** for Python development.
+  [Workflow A. Set Up Machine](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/)
+  to **set up a machine** for Python development.
 
 ### Copy & Open this Project in VS Code
 
@@ -88,7 +104,6 @@ uvx pre-commit autoupdate
 git add -A
 uvx pre-commit run --all-files
 # repeat if changes were made
-git add -A
 uvx pre-commit run --all-files
 ```
 
@@ -108,6 +123,7 @@ uv run ruff check . --fix
 uv run python -m pyright
 uv run python -m pytest
 uv run python -m zensical build
+npx markdownlint-cli2 --fix
 ```
 
 While editing project code and docs, repeat the commands above to

@@ -1,10 +1,14 @@
 # 🔵 Workflow B: Apply Example Project
 
-> Learn techniques and skills using a course example project.
+> Learn techniques and skills using an example project.
 
 When a course includes an example project, the project is part of the lecture content.
-Copy and run the example, understand how it works,
-make a technical modification, and then apply the skills to a new problem.
+
+Start from the example project.
+Copy it into your GitHub, and clone your GitHub repository down to your machine.
+Run the example code and understand how it works.
+Make a small technical modification and ensure it still runs.
+Then, apply the skills to a new problem.
 
 ## Professional Learning Loop
 
@@ -19,13 +23,6 @@ tools and techniques.
 
 Starting from working code makes it possible to inspect real project
 structure, run commands, trace results, and make controlled changes.
-
-This workflow builds practice with a common professional pattern:
-
-- run an existing project,
-- understand it,
-- modify it, and
-- adapt the approach to a new problem.
 
 </details>
 

@@ -24,8 +24,6 @@ modification or deletion.
 
 In data analytics projects, we need to see these.
 
-![slide](https://lh3.googleusercontent.com/notebooklm/AKXwDQH5WLDpqgiKBSSQsyKhj66WZw2G6wCrCtQQRkF8BhMn8G9xyouvGhiU5nVPP4nhQrksn1kHxh36JJQH0UOAsjutM6cQ3OyW_psUddejf6FY1CVAz3FXCOS4OUUtNDYTzHj_6YQ3GdjvBcvE9SuI-upEnxVYB2hD7hPjZmM=w1376-h768?authuser=0)
-
 <details>
 <summary>WHY?</summary>
 
