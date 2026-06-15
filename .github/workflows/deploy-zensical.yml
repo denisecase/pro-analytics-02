@@ -18,10 +18,8 @@ name: Docs Deploy (Zensical)
 
 on:
   workflow_dispatch:  # WHY: Allow manual redeploy from Actions tab if needed.
-  workflow_run:       # WHY: After successful CI on main, trigger deployment.
-    workflows: ["CI (Python + Zensical)"]
+  push:
     branches: [main]
-    types: [completed]
 
 permissions:
   contents: read        # WHY: Needed to checkout code.
@@ -45,9 +43,6 @@ jobs:
     timeout-minutes: 30   # WHY: Fail fast if a step hangs unexpectedly.
     env:
       UV_PYTHON: "3.14"   # WHY: Pin Python version for all steps in this job.
-
-    # WHY: Only run deployment if triggered manually or if the triggering CI workflow run concluded successfully.
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       # ============================================================
