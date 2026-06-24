@@ -53,6 +53,16 @@ Do not leave Kafka running.
 Streaming analytics can keep running indefinitely.
 **ALWAYS shut down** at the end of a work session.
 
+## Kafka Pages
+
+- [Install Kafka](install-kafka.md)
+- [Start Kafka](start-kafka.md)
+- [Stop Kafka](stop-kafka.md)
+- [Many Terminals](many-terminals.md)
+- [Create Topic](create-topic.md)
+- [Manage Topics](manage-topics.md)
+- [Windows WSL](windows-wsl.md)
+
 ## Troubleshooting
 
 Kafka setup is the step where most issues occur.
