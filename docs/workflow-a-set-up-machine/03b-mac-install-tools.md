@@ -51,14 +51,17 @@ Git is used with GitHub, but they are different.
 
 ### 2. Visual Studio Code
 
-Download and install Visual Studio Code from:
-<https://code.visualstudio.com/>
+Task 2.1. REQUIRED. Download VS Code and follow all instructions in
+**Install VS Code on macOS**:
+<https://code.visualstudio.com/docs/setup/mac>.
 
-After installation:
+Task 2.2 REQUIRED. Enable the `code` command in Terminal by following
+all instructions to
+**Launch VS Code from the command line** at:
+<https://code.visualstudio.com/docs/setup/mac#_launch-vs-code-from-the-command-line>.
 
-- Move **Visual Studio Code.app** to the **Applications** folder
-- (Recommended) Enable the `code` command in Terminal by following:
-  <https://code.visualstudio.com/docs/setup/mac>
+Task 2.3 OPTIONAL. Follow additional instructions including
+**After installation** as desired.
 
 <details>
 <summary>WHY?</summary>
