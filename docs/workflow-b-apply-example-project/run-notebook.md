@@ -1,6 +1,7 @@
 # 🔵 Run Jupyter Notebooks
 
 This page explains how to run Jupyter notebooks in VS Code.
+
 When we execute code in a Jupyter notebook,
 the kernel runs the code interactively,
 allowing us to test, visualize,
@@ -63,27 +64,51 @@ Run notebooks directly in VS Code.
   - **Ctrl Enter** to run cell and stay in place
 - Save often or enable **File / Auto Save**.
 
-## AS-NEEDED: If `.venv` packages (e.g., `pandas`) are not recognized
+## Tips: Working with Notebooks
 
-1. Create a `.vscode` folder in your project.
-2. Add a `settings.json` file.
-3. Copy the full content from your example `.vscode/settings.json`
-4. Close and reopen your notebook.
-5. Activate the `.venv` environment.
-6. Verify or set the kernel as needed.
+### How to Copy a Notebook
 
-## AS-NEEDED: Restart
+1. In the VS Code Explorer panel, right-click the notebook file (`.ipynb`) and select **Copy**.
+2. Right-click the `notebooks/` folder and select **Paste**.
+3. Right-click the pasted file and select **Rename**.
+4. Replace `_case` with your alias, for example `ml_stellar_analytics.ipynb`.
+5. Open your renamed notebook and select your kernel before running.
+
+### If a Notebook Gets Stuck
+
+If Run All disappears and only Interrupt is available:
+
+1. Wait briefly. Some cells (package imports, dataset downloads) take a few seconds on first run.
+2. Click **Interrupt** to stop execution, then **Run All** again.
+3. Restart the Kernel (Kernel menu or Command Palette).
+4. View / Command Palette / **Developer: Reload Window**.
+
+### If You Can't Delete project.log
+
+The notebook kernel may hold a log file open.
+Open the notebook in VS Code and click **Restart** on the kernel,
+then try again to delete the log file.
+
+### AS-NEEDED: Restart the Kernel
 
 You may need to exit the notebook and
 restart the kernel periodically for best results.
 As needed, reopen, and restart the kernel.
 Run all again to verify.
 
-## AS-NEEDED: New External Dependencies
+### AS-NEEDED: Add New External Dependencies
 
-If any new external dependencies have been added
-to any Python files,
-follow steps to install dependencies again first.
+If you want to add any new external packages,
+add them to pyproject.toml and follow the steps
+to install and upgrade the full set of dependencies.
+
+### AS-NEEDED: If `.venv` packages (e.g., `pandas`) are not recognized
+
+1. Create a `.vscode` folder in the new project (if it doesn't exist).
+2. Add a `settings.json` file.
+3. Copy the full content from an example `.vscode/settings.json`
+4. Close and reopen the notebook.
+5. Verify or set the kernel as needed.
 
 ## ALWAYS: Fully Execute Notebooks before add-commit-push
 
