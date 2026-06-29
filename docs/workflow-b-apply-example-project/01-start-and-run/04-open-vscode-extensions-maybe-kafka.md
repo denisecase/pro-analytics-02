@@ -2,6 +2,7 @@
 
 > Open the project in VS Code and install extensions.
 > 🏞️ ONLY IF STREAMING DATA: Also Install Kafka (Step 3 below)
+> 🏞️ ONLY IF BUSINESS INTELLIGENCE: Also Install Spark (Step 4 below)
 
 ## Strong Recommendation
 
@@ -117,3 +118,10 @@ In the Streaming Data course:
 
 - [Install Kafka](../../kafka/install-kafka.md)
 - [Create a Topic for the Project](../../kafka/create-topic.md)
+
+## 🏞️ Step 4. ONLY FOR BUSINESS INTELLIGENCE: Install Spark
+
+In the Business Intelligence course, Mac and Linux users install Spark.
+It is optional (and nice to know) for Windows users.
+
+- [Install Spark](../../spark/index.md)

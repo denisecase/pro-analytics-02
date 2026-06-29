@@ -78,11 +78,16 @@ nav = [
         { "Run notebook" = "workflow-b-apply-example-project/run-notebook.md" },
 
         { "Set up Kafka (Only For Streaming)" = [
-            { "Overview" = "workflow-b-apply-example-project/00-set-up-kafka/index.md" },
-            { "Install Kafka" = "workflow-b-apply-example-project/00-set-up-kafka/01-install-kafka.md" },
-            { "Start Kafka" = "workflow-b-apply-example-project/00-set-up-kafka/02-start-kafka.md" },
-            { "Create a topic" = "workflow-b-apply-example-project/00-set-up-kafka/03-create-topic.md" },
-            { "Open terminals" = "workflow-b-apply-example-project/00-set-up-kafka/04-open-terminals.md" },
+            { "Overview" = "kafka/index.md" },
+            { "Install Kafka" = "kafka/install-kafka.md" },
+            { "Start Kafka" = "kafka/start-kafka.md" },
+            { "Manage topics" = "kafka/manage-topics.md" },
+            { "Open terminals" = "kafka/many-terminals.md" },
+            { "Stop Kafka" = "kafka/stop-kafka.md" },
+        ] },
+
+        { "Set up Spark (Only For Business Intelligence)" = [
+            { "Overview" = "spark/index.md" },
         ] },
 
         { "Start and run" = [
@@ -184,6 +189,9 @@ nav = [
             { "Many Terminals" = "kafka/many-terminals.md" },
             { "Stop Kafka" = "kafka/stop-kafka.md" },
             { "Windows and WSL" = "kafka/windows-wsl.md" },
+        ] },
+        { "Spark" = [
+            { "Overview" = "spark/index.md" },
         ] },
     ] },
 
