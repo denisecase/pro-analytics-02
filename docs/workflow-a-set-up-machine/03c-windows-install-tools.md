@@ -27,7 +27,18 @@ Download and install Git from the official site:
 <https://git-scm.com/>
 
 <details>
-<summary>WHY?</summary>
+<summary>Have Git and want to update?</summary>
+
+Try:
+
+```powershell
+git update-git-for-windows
+```
+
+</details>
+
+<details>
+<summary>WHY Git?</summary>
 
 Git **tracks changes** in project files over time.
 
