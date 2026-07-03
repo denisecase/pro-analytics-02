@@ -109,8 +109,8 @@ We moved to `uv` because:
 
 ### 4. Node.js
 
-Follow the official Node.js installation instructions
-for Windows:
+#### Task 4.1. Follow the Node.js installation instructions for Windows
+
 <https://nodejs.org/en/download>
 
 <details>
@@ -121,9 +121,33 @@ Many helpful professional tools can be run with `npx`.
 
 </details>
 
-## Verify
+#### Task 4.2 Change the PowerShell execution policy
 
-After installation, open **PowerShell** and run:
+Press Win + X and select Terminal (Admin) or Windows PowerShell (Admin).
+Run:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+
+Type Y (Yes) and hit Enter to confirm the change.
+
+<details>
+<summary>WHY?</summary>
+
+By default, Windows 11 restricts running scripts (.ps1 files) for security reasons.
+Since npx on Windows executes via npx.ps1,
+you will get a "running scripts is disabled on this system"
+error unless you change this policy.
+
+</details>
+
+## Refresh Your Terminal and Verify
+
+**Close** all open terminal windows, command prompts, or IDEs (like VS Code).
+Environment paths will not update in terminals that are already open.
+
+Open a brand new **PowerShell** terminal window and run:
 
 ```powershell
 git --version
