@@ -36,7 +36,7 @@ Using that same terminal (or a machine terminal open in **Repos**),
 change directory (`cd`) into the repository folder and run **code dot** (`code .`).
 
 **IMPORTANT:** The command below is just an example.
-You must use **your exact repository name**.
+You must use **your exact repository name**, e.g. `cd bintel-01-intro` or `cd datafun-01-intro`:
 
 ```shell
 cd your-repo
@@ -45,7 +45,22 @@ code .
 
 The `code .` command opens the **current folder** as the project workspace in VS Code.
 
-When VS Code opens, it may make extension recommendations.
+<details>
+<summary>Help: `code .` didn't open VS Code</summary>
+
+On Windows, try re-running the installer with `add to path` checked.
+You must close and reopen your terminal for it to take effect.
+
+Download the standard installer from the Official Visual Studio Code Download Page.
+Run the executable setup file.
+Advance through the prompt screens.
+Look for the "Select Additional Tasks" screen.
+**Check the box** labeled **Add to PATH (requires shell restart)**.
+Click next and complete the installation.
+
+</details>
+
+When VS Code opens, it may make **extension recommendations**.
 
 - If VS Code recommends an extension, it is usually helpful to install it.
 - Projects that include `.vscode/extensions.json` can guide extension selections.
