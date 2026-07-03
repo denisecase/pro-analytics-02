@@ -48,16 +48,30 @@ Run the following commands in the VS Code terminal to:
 
 1. Update `uv`.
 2. Pin the Python version for this repository (installing that version if needed).
-3. Create the `.venv` environment and install dependencies from `pyproject.toml` using `uv sync`.
+3. Upgrade the packages in the uv lock file for better security.
+4. Create the `.venv` environment and install dependencies from the lock file using `uv sync`.
 
 ```bash
 uv self update
 uv python pin 3.14
-uv sync --extra dev --extra docs --upgrade
+uv lock --upgrade
+uv sync --extra dev --extra docs
 ```
 
 If prompted: "We noticed a new environment has been created.
 Do you want to select it for the workspace folder?", click **Yes**.
+
+<details>
+<summary>WHY?</summary>
+
+Keeping tools updated is critical for security.
+Each powerful tool may pull in many dependency packages.
+When a vulnerability is found in a dependency, a patched version is usually released quickly,
+so we teach these update habits at school, where working on the edge is allowed and encouraged.
+
+In production, updates may need to be more controlled.
+
+</details>
 
 ### Step 1 Verify
 
@@ -90,11 +104,14 @@ Pre-commit hooks catch common issues before code is committed and pushed to GitH
 Run the following commands in the VS Code terminal to:
 
 1. Install the pre-commit Git hooks for this repository
-2. Stage all files (so pre-commit can check them)
-3. Run the checks once explicitly
+2. Run the autoupdate to keep tools current and dependencies updated for better security.
+3. Stage all files (so pre-commit can check them)
+4. Run the checks once explicitly
 
 ```shell
 uvx pre-commit install
+uvx pre-commit autoupdate
+
 git add -A
 uvx pre-commit run --all-files
 ```
