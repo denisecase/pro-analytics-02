@@ -29,8 +29,13 @@ Do NOT use Command Prompt, it is deprecated.
 
 ## 3. Configure Git
 
-Change these commands to use YOUR name and the same email you used for GitHub.
+Change these commands to use YOUR name/alias and the same email you used for GitHub.
 Run one command at a time and hit ENTER or RETURN after each line to execute it.
+
+The **name** (or alias) will be publicly associated with your contributions on GitHub.
+Since GitHub is part of my professional portfolio, I use "Denise Case".
+If anonymity is required, choose differently.
+You are never required to use your real name.
 
 ```shell
 git config --global user.name "Your Name"
