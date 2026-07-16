@@ -42,7 +42,7 @@ jobs:
       # === ASSEMBLE ===
 
       - name: A1) Checkout repository code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
 
       # === CHECK  ===
