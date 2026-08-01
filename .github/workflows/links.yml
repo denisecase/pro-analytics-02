@@ -48,7 +48,7 @@ jobs:
       # === CHECK  ===
 
       - name: C1) Run Lychee
-        uses: lycheeverse/lychee-action@v2.8.0
+        uses: lycheeverse/lychee-action@v2.9.0
         with:
           fail: true # WHY: This dedicated links workflow should fail when Lychee finds broken links.
           args: >
