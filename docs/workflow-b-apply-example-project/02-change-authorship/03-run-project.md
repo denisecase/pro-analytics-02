@@ -11,7 +11,7 @@ See:
 - [Run Python](../run-python.md)
 - [Run Notebooks](../run-notebook.md)
 
-## Step 2. Add or Update Dependencies (as needed)
+## Step 2. AS NEEDED: Add or Update Dependencies
 
 If your project needs additional packages, add them to the `dependencies` section in `pyproject.toml`.
 
@@ -49,6 +49,28 @@ A local URL will appear in the terminal.
 Ctrl+Click the link to open the documentation or try <localhost:8000>.
 
 Press **Ctrl+C** in the terminal to **stop** the server.
+
+<details>
+<summary>Why we include `python -m`</summary>
+
+In a command like this:
+
+```shell
+uv run python -m zensical build
+```
+
+The `python -m` is sometimes optional.
+This form is used for heterogeneous environments.
+
+It:
+
+- explicitly uses the Python interpreter selected by `uv`
+- avoids relying on a separate console-script wrapper
+- behaves consistently across Windows, macOS, and Linux
+- is officially supported by the Zensical package
+- provides one standard command form for all users and machines wherever possible
+
+</details>
 
 ## Professional Reminders
 

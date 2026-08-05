@@ -68,6 +68,21 @@ uv run python src/pro_analytics_02/demo_module_basics.py
 - If you are not using the `src` organization, and you don't have
   any local imports, then this will work to run your script.
 
+<details>
+<summary>⭐ If Windows "Smart" Application Control error (click here)</summary>
+
+If Windows reports:
+
+```text
+An Application Control policy has blocked this file.
+```
+
+or reports that `python.exe` was blocked, see:
+[Windows: Smart App Control Blocks python.exe](../help/04-windows-smart-app-control-python.md)
+This is a Windows security-policy issue that happens on some machines.
+
+</details>
+
 ## Task 4. Update Project README.md
 
 Record your process and your project commands in your project README.md.

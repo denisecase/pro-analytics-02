@@ -18,7 +18,8 @@ Then re-run the `uv sync` command as shown below:
 
 ```shell
 uv cache clean
-uv sync --extra dev --extra docs --upgrade
+uv lock --upgrade
+uv sync --extra dev --extra docs
 ```
 
 When working on a project, open the project repository folder in VS Code.
@@ -55,6 +56,28 @@ uv run python -m zensical serve
   Use **Cmd and click** on Mac.
 - To stop the server, click in the terminal, and
   press **Ctrl c** (or **Cmd c** on Mac) to terminate the local hosting process.
+
+<details>
+<summary>Why we include `python -m`</summary>
+
+In a command like this:
+
+```shell
+uv run python -m zensical build
+```
+
+The `python -m` is sometimes optional.
+This form is used for heterogeneous environments.
+
+It:
+
+- explicitly uses the Python interpreter selected by `uv`
+- avoids relying on a separate console-script wrapper
+- behaves consistently across Windows, macOS, and Linux
+- is officially supported by the Zensical package
+- provides one standard command form for all users and machines wherever possible
+
+</details>
 
 ## Professional Reminders
 

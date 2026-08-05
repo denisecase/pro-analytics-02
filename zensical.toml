@@ -203,6 +203,8 @@ nav = [
     { "Help" = [
         { "Taking screenshots" = "help/01-taking-screenshots.md" },
         { "Hosting video" = "help/02-hosting-video.md" },
+        { "Polars and older machines" = "help/03-polars-and-older-machines.md" },
+        { "Windows Smart App Control blocks python.exe" = "help/04-windows-smart-app-control-python.md" },
     ] },
 
     { "Glossary" = [

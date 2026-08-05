@@ -81,19 +81,31 @@ In production, updates may need to be more controlled.
 <details>
 <summary>If this step fails (click here)</summary>
 
-`uv` command not found:
+Possible Issue 1. `uv` command not found:
 
 - Close and reopen VS Code
 - Verify `uv` was installed during Workflow A. Set Up Machine.
 
-Python version error:
+Possible Issue 2. Python version error:
 
 - Rerun: `uv python pin 3.14`
 
-Dependency install error:
+Possible Issue 3. Dependency install error:
 
 - Delete the `.venv/` folder
 - Rerun: `uv sync --extra dev --extra docs --upgrade`
+
+Possible Issue 4. Windows "Smart" Application Control error:
+
+If Windows reports:
+
+```text
+An Application Control policy has blocked this file.
+```
+
+or reports that `python.exe` was blocked, see:
+[Windows: Smart App Control Blocks python.exe](../../help/04-windows-smart-app-control-python.md)
+This is a Windows security-policy issue that happens on some machines.
 
 </details>
 

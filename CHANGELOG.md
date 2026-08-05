@@ -71,7 +71,7 @@ Follow these steps exactly when creating a new release.
 
 ```shell
 uv lock --upgrade
-uv sync --extra dev --extra docs --upgrade
+uv sync --extra dev --extra docs
 uvx pre-commit install
 uvx pre-commit autoupdate
 
