@@ -22,6 +22,9 @@ social = [
     { icon = "fontawesome/brands/github", link = "https://github.com/denisecase/pro-analytics-02" },
 ]
 
+[project.markdown_extensions.md_in_html]
+# WHY: Allow Markdown inside HTML blocks that use markdown="1".
+
 # ------------------------------------------------------------
 # Plugins
 # ------------------------------------------------------------

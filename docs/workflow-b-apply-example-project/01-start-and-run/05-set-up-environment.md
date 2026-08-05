@@ -80,31 +80,26 @@ In production, updates may need to be more controlled.
 - A `.venv/` folder appears in the project root
 - The command finishes without errors
 
-<details>
+<details markdown="1">
 <summary>If this step fails (click here)</summary>
 
-Possible Issue 1. `uv` command not found:
+#### If `uv` command not found
 
-- Close and reopen VS Code
+- Close and reopen VS Code.
 - Verify `uv` was installed during Workflow A. Set Up Machine.
 
-Possible Issue 2. Python version error:
+#### If Python version error
 
 - Rerun: `uv python pin 3.14`
 
-Possible Issue 3. Dependency install error:
+#### If Dependency install error
 
-- Delete the `.venv/` folder
+- Delete the `.venv/` folder.
 - Rerun: `uv sync --extra dev --extra docs --upgrade`
 
-Possible Issue 4. Windows "Smart" Application Control error:
+#### If Windows "Smart" Application Control error
 
-If Windows reports:
-
-```text
-An Application Control policy has blocked this file.
-```
-
+If Windows reports: `An Application Control policy has blocked this file.`
 or reports that `python.exe` was blocked, see:
 [Windows: Smart App Control Blocks python.exe](../../help/04-windows-smart-app-control-python.md)
 This is a Windows security-policy issue that happens on some machines.
