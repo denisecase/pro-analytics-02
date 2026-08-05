@@ -55,7 +55,7 @@ Download the standard installer from the Official Visual Studio Code Download Pa
 Run the executable setup file.
 Advance through the prompt screens.
 Look for the "Select Additional Tasks" screen.
-**Check the box** labeled **Add to PATH (requires shell restart)**.
+<strong>Check the box</strong> labeled <strong>Add to PATH (requires shell restart)</strong>.
 Click next and complete the installation.
 
 </details>

@@ -37,10 +37,10 @@ git push
 
 <summary>If pre-commit modifies files or blocks the commit</summary>
 
-This project uses **pre-commit hooks**
+This project uses <strong>pre-commit hooks</strong>
 that run automatically when you run `git commit`.
 
-Case 1. If pre-commit **modifies files** (for example, formatting),
+Case 1. If pre-commit <strong>modifies files</strong> (for example, formatting),
 the commit may stop so you can review the changes.
 This is common. Just run the commands again as shown above.
 
@@ -49,7 +49,7 @@ git add -A
 git commit -m "update"
 ```
 
-Case 2. If pre-commit **reports errors**,
+Case 2. If pre-commit <strong>reports errors</strong>,
 read the messages in the terminal, fix the issue, and try again.
 
 Case 3. If you cannot resolve the issue after reviewing the messages,

@@ -38,8 +38,10 @@ README.md
 
 <details>
 <summary>If you do NOT see those files (click here)</summary>
+
 Follow the earlier steps carefully.
 Continue once you see both `pyproject.toml` and `README.md`.
+
 </details>
 
 ## Step 1. Create the Project Environment
@@ -136,8 +138,10 @@ After the hooks are installed, pre-commit checks run automatically on every `git
 
 <details>
 <summary>If pre-commit fails</summary>
+
 Pre-commit may fail on restricted machines where Git hooks cannot be installed.
 If this occurs, it is safe to skip pre-commit and continue with the project.
+
 </details>
 
 ## Step 3. Align VS Code with the Project Environment

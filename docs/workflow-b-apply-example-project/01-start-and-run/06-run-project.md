@@ -60,22 +60,18 @@ uv run python -m zensical serve
 <details>
 <summary>Why we include `python -m`</summary>
 
-In a command like this:
-
-```shell
-uv run python -m zensical build
-```
-
-The `python -m` is sometimes optional.
-This form is used for heterogeneous environments.
-
+In a command like this: `uv run python -m zensical build`,
+the `python -m` is sometimes optional.
+The longer form is safer for heterogeneous environments.
 It:
 
-- explicitly uses the Python interpreter selected by `uv`
-- avoids relying on a separate console-script wrapper
-- behaves consistently across Windows, macOS, and Linux
-- is officially supported by the Zensical package
-- provides one standard command form for all users and machines wherever possible
+<ul>
+<li>explicitly uses the Python interpreter selected by `uv`</li>
+<li>avoids relying on a separate console-script wrapper</li>
+<li>behaves consistently across Windows, macOS, and Linux</li>
+<li>is officially supported by the Zensical package</li>
+<li>provides one standard command form for all users and machines wherever possible</li>
+</ul>
 
 </details>
 

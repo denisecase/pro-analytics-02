@@ -11,9 +11,9 @@ Creating a project topic keeps those messages separate from
 other projects, examples, and tests.
 
 A producer must know the topic name and ensure the topic exists
-**before** sending messages to that topic.
+<strong>before</strong> sending messages to that topic.
 
-A topic must exist **before** a consumer can begin
+A topic must exist <strong>before</strong> a consumer can begin
 consuming messages from that topic.
 
 </details>

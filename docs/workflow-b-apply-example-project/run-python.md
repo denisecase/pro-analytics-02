@@ -71,14 +71,9 @@ uv run python src/pro_analytics_02/demo_module_basics.py
 <details>
 <summary>⭐ If Windows "Smart" Application Control error (click here)</summary>
 
-If Windows reports:
-
-```text
-An Application Control policy has blocked this file.
-```
-
+If Windows reports: `An Application Control policy has blocked this file.`
 or reports that `python.exe` was blocked, see:
-[Windows: Smart App Control Blocks python.exe](../help/04-windows-smart-app-control-python.md)
+<a href="../../help/04-windows-smart-app-control-python.md">Windows: Smart App Control Blocks python.exe</a>
 This is a Windows security-policy issue that happens on some machines.
 
 </details>

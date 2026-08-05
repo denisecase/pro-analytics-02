@@ -32,8 +32,10 @@ README.md
 
 <details>
 <summary>If you do NOT see those files (click here)</summary>
+
 Follow the earlier steps carefully.
 Continue once you see both `pyproject.toml` and `README.md`.
+
 </details>
 
 ## Step 1. Create the Project Environment
@@ -63,18 +65,24 @@ Do you want to select it for the workspace folder?", click **Yes**.
 
 `uv` command not found:
 
-- Close and reopen VS Code
-- Verify `uv` was installed during Workflow A. Set Up Machine.
+<ul>
+<li>Close and reopen VS Code</li>
+<li>Verify `uv` was installed during Workflow A. Set Up Machine.</li>
+</ul>
 
 Python version error:
 
-- Rerun: `uv python pin 3.14`
-- Use the version for your project (e.g., 3.15)
+<ul>
+<li>Rerun: `uv python pin 3.14`</li>
+<li>Use the version for your project (e.g., 3.15)</li>
+</ul>
 
 Dependency install error:
 
-- Delete the `.venv/` folder
-- Rerun: `uv sync --extra dev --extra docs --upgrade`
+<ul>
+<li>Delete the `.venv/` folder</li>
+<li>Rerun: `uv sync --extra dev --extra docs --upgrade`</li>
+</ul>
 
 </details>
 
@@ -102,8 +110,10 @@ After the hooks are installed, pre-commit checks run automatically on every `git
 
 <details>
 <summary>If pre-commit fails</summary>
+
 Pre-commit may fail on restricted machines where Git hooks cannot be installed.
 If this occurs, it is safe to skip pre-commit and continue with the project.
+
 </details>
 
 ## Step 3. Align VS Code with the Project Environment

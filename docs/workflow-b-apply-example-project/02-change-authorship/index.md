@@ -8,7 +8,7 @@
 Changing authorship is a safe, common, and necessary first change to a
 working project.
 
-Authorship indicates who is responsible for various project parts.
+Authorship identifies who created or is responsible for the work added to a project.
 
 Authorship helps keep a working example side-by-side with
 custom code you develop.
@@ -16,6 +16,17 @@ custom code you develop.
 Clear authorship is important at work and on teams.
 It helps others understand who created, changed, reviewed, and is responsible
 for specific parts of the project.
+
+Reusing templates, starter projects, and shared infrastructure
+is a standard professional practice.
+Updating authorship identifies responsibility for the new work
+completed in a repository;
+it does not remove or replace original
+attribution, license notices, citations, or Git history.
+
+To see how widely this approach is used, explore GitHub repository templates,
+starter kits, and projects such as Cookiecutter Data Science at
+<https://github.com/drivendataorg/cookiecutter-data-science>.
 
 </details>
 

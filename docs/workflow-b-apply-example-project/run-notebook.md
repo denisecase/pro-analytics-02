@@ -14,7 +14,7 @@ used for exploratory data analysis (EDA) and more.
 <summary>WHY?</summary>
 
 Jupyter notebooks are commonly used for exploratory data analysis because
-code, results, charts, and notes can **appear together** in one document.
+code, results, charts, and notes can <strong>appear together</strong> in one document.
 
 Notebooks are useful when analysis is being explored step by step, when
 intermediate results need to be inspected, or when charts and explanations
