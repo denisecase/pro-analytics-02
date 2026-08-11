@@ -1,7 +1,7 @@
 # ============================================================
-# .editorconfig (ALL)
+# .editorconfig (ALL-REPOS)
 # ============================================================
-# Updated: 2026-06-06
+# Updated: 2026-07-03
 #
 # REQ: All professional GitHub project repositories MUST include .editorconfig.
 # WHY: Establish a cross-editor baseline so diffs stay clean and formatting
@@ -189,7 +189,7 @@ indent_style = space
 
 # === Text and tabular data ===
 
-[*.{csv,dat,psv,tsv,txt}]
+[*.{csv,dat,psv,tsv,txt,ged}]
 # WHY: Text and tabular data should remain simple line-oriented text.
 indent_size = 2
 indent_style = space

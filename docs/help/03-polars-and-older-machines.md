@@ -61,6 +61,7 @@ Add the following **before importing Polars**:
 
 ```python
 import os
+
 os.environ["POLARS_SKIP_CPU_CHECK"] = "1"
 
 import polars as pl
@@ -91,6 +92,7 @@ Use the following order of preference:
 
    ```python
    import os
+
    os.environ["POLARS_SKIP_CPU_CHECK"] = "1"
    import polars as pl
    ```

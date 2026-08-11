@@ -92,7 +92,7 @@ For example:
 
 ```powershell
 uv lock --upgrade
-uv sync --extra dev --extra docs
+uv sync
 
 uv run python --version
 uv run python -c "import sys; print(sys.executable)"
@@ -142,7 +142,7 @@ Report in your course discussion when you encounter this issue.
 
 On an organization-managed computer,
 application installation or execution may be controlled by institutional security policy.
-Assistance from the organization’s information technology or security team may be required.
+Assistance from the organizationâ€™s information technology or security team may be required.
 
 ## Python: Kind of Cross-Platform, Kind of Not
 

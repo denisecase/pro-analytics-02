@@ -41,7 +41,7 @@ AI assistance does not replace human review.
 Run the repository checks before committing:
 
 ```shell
-uvx pre-commit run --all-files
+uv run pre-commit run --all-files
 ```
 
 Some hooks may modify files.
@@ -49,7 +49,7 @@ If that happens, review the changes, then run:
 
 ```shell
 git add -A
-uvx pre-commit run --all-files
+uv run pre-commit run --all-files
 ```
 
 ## Terminals

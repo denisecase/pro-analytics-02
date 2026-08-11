@@ -1,12 +1,12 @@
-# 🟠 Set up Project Python Environment (managed by uv)
+# 🟠 Set up Project Python Environment (managed by uv)
 
 Each project uses its own Python environment stored in a folder named `.venv` inside the project.
 
 ```text
 project-repo-name/
-├─ .venv/           # project Python environment
-├─ pyproject.toml
-└─ README.md
+  .venv/             # <--- project Python environment
+  pyproject.toml
+  README.md
 ```
 
 This isolates dependencies, prevents conflicts with
@@ -44,12 +44,14 @@ Run the following commands in the VS Code terminal to:
 
 1. Update `uv`.
 2. Pin the Python version for this repository (installing that version if needed).
-3. Create the `.venv` environment and install dependencies from `pyproject.toml` using `uv sync`.
+3. Update the dependencies listed in the `uv.lock` file.
+4. Create the `.venv` environment and install dependencies using `uv sync`.
 
 ```bash
 uv self update
 uv python pin 3.14
-uv sync --extra dev --extra docs --upgrade
+uv lock --upgrade
+uv sync
 ```
 
 If prompted: "We noticed a new environment has been created.
@@ -81,7 +83,8 @@ Dependency install error:
 
 <ul>
 <li>Delete the `.venv/` folder</li>
-<li>Rerun: `uv sync --extra dev --extra docs --upgrade`</li>
+<li>Rerun: `uv lock --upgrade`</li>
+<li>Rerun: `uv sync`</li>
 </ul>
 
 </details>
@@ -97,9 +100,9 @@ Run the following commands in the VS Code terminal to:
 3. Run the checks once explicitly
 
 ```shell
-uvx pre-commit install
+uv run pre-commit install
 git add -A
-uvx pre-commit run --all-files
+uv run pre-commit run --all-files
 ```
 
 After the hooks are installed, pre-commit checks run automatically on every `git commit` command.
@@ -147,5 +150,6 @@ For example:
 
 ```bash
 uv python pin 3.15
-uv sync --extra dev --extra docs --upgrade
+uv lock --upgrade
+uv sync
 ```

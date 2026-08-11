@@ -1,21 +1,26 @@
 # ============================================================
 # .gitignore (ALL-REPOS)
 # ============================================================
-# Updated: 2026-06-06
+# Updated: 2026-08-04
 #
 # REQ: All professional GitHub project repositories MUST include .gitignore.
 # WHY: Keep generated artifacts, local state, secrets, and OS-specific files
 # out of the repository.
 # ALT: Repository may customize ignores, but MUST preserve universal safety rules.
-# CUSTOM: Logs may be committed for verification; keep ignored for
-# production use and security.
+
+# === pup-up fragments ===
+
+# WHY: The pup-up (professional Python project updater) may provide temporary configuration fragments for manual merging.
+# WHY: Ruff settings belong in the repository's authoritative pyproject.toml.
+/pyproject.toml.ruff
+
 
 # === Logs and generated runtime output ===
 
-# WHY: Logs are useful during debugging and verification.
-# ALT: Comment when logs must be inspected or validated.
+# WHY: Ignore logs and runtime output by default; share only project.log for evidence.
 *.log
 logs/
+!/project.log
 
 
 # === Private notes and local-only files ===
@@ -30,6 +35,10 @@ PRIVATE_NOTES.md
 *.env
 .env
 .env.*
+
+# WHY: Commit .env.example as a template showing which variables to set.
+# Copy this file to .env and customize.
+!.env.example
 
 
 # === Operating-system files ===

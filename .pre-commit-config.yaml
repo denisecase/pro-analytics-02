@@ -1,9 +1,9 @@
 # ============================================================
-# .pre-commit-config.yaml (ALL-PY)
+# .pre-commit-config.yaml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-06-06
+# Updated: 2026-06-27
 #
-# REQ: Professional Python projects SHOULD include pre-commit checks.
+# REQ: Professional projects using Python src/ SHOULD include pre-commit checks.
 # WHY: Minimize git diffs, catch common issues early, and support collaboration.
 #
 # OBS: These hooks use and do NOT override:
@@ -11,21 +11,19 @@
 #   - .gitattributes (EOL normalization)
 #   - pyproject.toml (Python tool settings)
 #
-# OPTIONAL LOCAL USAGE:
+# OPTIONAL LOCAL USAGE (keep tools updated):
 #   uv self update
-#   uvx pre-commit install
-#   uvx pre-commit run --all-files
+#   uv run pre-commit install
+#   uv run pre-commit autoupdate
+#
+# OPTIONAL LOCAL USAGE (run all hooks on all git-tracked files):
+#   uv run pre-commit run --all-files
+#   The first time, it may indicate errors / fixes,
+#   So just re-run the command (up arrow) and it often goes all green.
 #
 # NOTE: Enabling pre-commit is optional. It is not needed to clone or commit.
-#
-# RUFF ORDER:
-#   Pre-commit runs lint first, then format.
-#   Manual command-line use usually runs format first, then lint:
-#     uv run ruff format .
-#     uv run ruff check . --fix
-#
-# WHY: In pre-commit, ruff-check --fix may change code structure first.
-#      ruff-format then cleans up the result.
+# You can skip it with the --no-verify option, e.g.:
+#   git commit -m "your message" --no-verify
 
 exclude: |
   (?x)^(
@@ -80,7 +78,7 @@ repos:
       - id: check-json
         name: B1) Validate JSON syntax (except .vscode/)
         # WHY: VS Code settings may include comments, which are non-standard JSON.
-        exclude: ^\.vscode/.*\.json$
+        exclude: (^|/)\.vscode/.*\.json$
 
       - id: check-toml
         name: B2) Validate TOML syntax
@@ -104,21 +102,17 @@ repos:
         name: C3) Check for filename case conflicts
 
   # === REPO: RUFF PRE-COMMIT (for Python code) ===
-  #
-  # WHY: Lint runs before format in pre-commit.
-  #      See RUFF ORDER note at the top of this file.
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.16.1
+    rev: v0.16.2
     hooks:
-      - id: ruff-check
-        name: D1) Ruff linter with autofix (runs first in pre-commit)
-        # WHY: Lint fixes run first so formatter sees the corrected code.
-        args: [--fix, --exit-non-zero-on-fix]
-
+      # === RUFF PRE-COMMIT CHECKS ===
       - id: ruff-format
-        name: D2) Ruff formatter (runs after linter fixes)
-        # WHY: Formats whatever structure the linter left behind.
+        name: D1) Ruff format (before linting)
+
+      - id: ruff
+        name: D2) Ruff linter (autofix errors, style issues )
+        args: [--fix, --exit-non-zero-on-fix]
 
 # === GLOBAL SETTINGS ===
 # ALT: Set fail_fast to true to stop at first failure.

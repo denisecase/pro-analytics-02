@@ -1,12 +1,11 @@
 # ============================================================
-# .github/workflows/links.yml (ALL REPOS)
+# .github/workflows/links.yml (ALL-REPOS)
 # ============================================================
-# Updated: 2026-06-10
+# Updated: 2026-08-08
 
 # WHY: Automated link checking.
 # OBS: Behavior is configured in .github/lychee.toml in this repository.
-# OBS: This workflow is separate from hygiene CI and may fail when links are broken.
-# OBS: Runs on pull requests and monthly on schedule; manual trigger always available.
+# OBS: Runs monthly on schedule; manual trigger also available.
 
 name: Check Links
 
@@ -25,12 +24,6 @@ concurrency:
 permissions:
   contents: read # WHY: Needed to checkout code.
 
-env:
-  PYTHONUNBUFFERED: "1" # WHY: Real-time logging.
-  PYTHONIOENCODING: "utf-8" # WHY: Ensure UTF-8 encoding for international characters.
-  REPORT_PATH: "./lychee/out.md" # WHY: Predictable markdown report path for summary generation.
-
-
 jobs:
   lychee:
     name: Link checks
@@ -43,18 +36,15 @@ jobs:
 
       - name: A1) Checkout repository code
         uses: actions/checkout@v7
+        # WHY: Required so Lychee can inspect repository files.
 
+      # === BASIC CHECKS ===
 
-      # === CHECK  ===
-
-      - name: C1) Run Lychee
+      - name: B1) Run Lychee link checker
         uses: lycheeverse/lychee-action@v2.9.0
         with:
-          fail: true # WHY: This dedicated links workflow should fail when Lychee finds broken links.
           args: >
             --config .github/lychee.toml
-            --verbose
-            --no-progress
             './**/*.md'
             './**/*.html'
             './**/*.yml'

@@ -1,9 +1,9 @@
 # ============================================================
-# .gitattributes (ALL)
+# .gitattributes (ALL-REPOS)
 # ============================================================
-# Updated: 2026-06-06
+# Updated: 2026-06-27
 #
-# REQ: All professional GitHub project repositories MUST include .gitattributes.
+# REQ: All professional GitHub repositories SHOULD include .gitattributes.
 # WHY: Keep line endings, diffs, and file classification consistent across
 # Windows, macOS, Linux, GitHub Actions, and environments.
 # CUSTOM: Add rules when new shared file types are introduced.
@@ -12,7 +12,8 @@
 
 # === Core defaults ===
 
-# WHY: Auto-detect text files and normalize text unless a later rule is more specific.
+# WHY: Auto-detect text files and normalize text
+# unless a later rule is more specific.
 * text=auto eol=lf
 
 
@@ -64,8 +65,10 @@ desktop.ini  binary
 
 # === Programming languages and scripts ===
 
+# WHY: Windows specific script types (.bat, .cmd)
+# are covered under the general LF text policy.
+
 # WHY: Source and script files use LF for CI, shells, containers, and tooling.
-*.bat   text eol=crlf
 *.c     text eol=lf
 *.cpp   text eol=lf
 *.cs    text eol=lf
@@ -101,7 +104,7 @@ desktop.ini  binary
 # === Notebooks ===
 
 # WHY: Jupyter notebooks can contain Python, R, Julia, and other kernels.
-*.ipynb  text eol=lf diff=jupyternotebook merge=jupyternotebook
+*.ipynb  text eol=lf
 
 
 # === Text and tabular data ===

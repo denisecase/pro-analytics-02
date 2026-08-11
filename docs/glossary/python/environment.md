@@ -49,7 +49,7 @@ Key commands:
 Reads pyproject.toml and installs all required dependencies
 into the project's managed virtual environment.
 Run this once after cloning a project.
-Example: `uv sync --extra dev --extra docs --upgrade`
+Example: `uv sync`
 
 ## uv run
 

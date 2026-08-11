@@ -1,4 +1,4 @@
-# 🔵 Run and Check
+# ðŸ”µ Run and Check
 
 Run and verify your code frequently as you work.
 
@@ -21,7 +21,8 @@ After updating dependencies, run:
 
 ```shell
 uv cache clean
-uv sync --extra dev --extra docs --upgrade
+uv lock --upgrade
+uv sync
 ```
 
 All commands should be run from the **project root folder** in the VS Code terminal.

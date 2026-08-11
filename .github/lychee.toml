@@ -1,7 +1,7 @@
 # ============================================================
-# .github/lychee.toml (ALL REPOS)
+# .github/lychee.toml (ALL-REPOS)
 # ============================================================
-# Updated: 2026-06-10
+# Updated: 2026-06-27
 
 # REQ: Automatic link checking using GitHub Actions and Lychee.
 # WHY: Shared Lychee configuration for documentation repositories.
@@ -46,3 +46,6 @@ exclude = [
   "127\\.0\\.0\\.1", # WHY: Exclude local loopback
   "\\.local",        # WHY: Exclude local network domains
 ]
+
+# WHY: Exclude paths not relevant for link checking
+exclude_path = ["ALL", "ALL-PY", "ALL-PY-SRC", "ALL-COURSE", "ALL-COURSE-PY-SRC"]

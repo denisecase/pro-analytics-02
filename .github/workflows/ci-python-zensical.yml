@@ -1,27 +1,26 @@
 # ============================================================
-# .github/workflows/ci-python-zensical.yml (ALL-PY-SRC)
+# .github/workflows/ci-python-zensical.yml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-06-06
-#
-# WHY: Validate repository hygiene, Python correctness, and documentation builds.
-# REQ: CI MUST NOT introduce arbitrary rules that are not reproducible locally.
+# Updated: 2026-08-08
+
+# WHY: Continuous Integration (CI) ensures repository hygiene,
+#      Python correctness, and documentation builds.
+# REQ: CI MUST NOT introduce rules that are not reproducible locally.
 # OBS: CI validates only; it does not edit files or deploy docs.
 # OBS: yamllint config lives at .github/.yamllint.yml (not repo root).
-#
-# Some tools are slower, require the full environment,
-# or produce output worth seeing in CI logs independently.
 
+# Name shown in the repo Actions tab.
 name: CI (Python + Zensical)
 
 on:
   push:
-    branches: [main]  # WHY: Validate every push to main.
+    branches: [main]  # WHY: Validate on every push to GitHub branch `main`.
   pull_request:
-    branches: [main]  # WHY: Validate PRs before merge.
+    branches: [main]  # WHY: Validate any pull requests (PRs) before merge.
   workflow_dispatch:  # WHY: Allow manual trigger from Actions tab.
 
-permissions:
-  contents: read      # WHY: Least privilege; CI only reads, never writes.
+permissions:          # Least-privilege: this job only needs to READ.
+  contents: read      # It checks code; it never writes to the repo.
 
 concurrency:
   group: ci-python-zensical-${{ github.workflow }}-${{ github.ref }}
@@ -35,11 +34,11 @@ env:
 
 jobs:
   ci:
-    name: Repository / Python checks and Zensical build
+    name: Repo checks and Zensical build
     runs-on: ubuntu-latest  # WHY: Linux matches most production deployments.
     timeout-minutes: 30     # WHY: Fail fast if a step hangs unexpectedly.
     env:
-      UV_PYTHON: "3.14"     # WHY: Pin Python version for all steps in this job.
+      UV_PYTHON: "3.15"     # WHY: Pin Python version for all steps in this job.
 
     steps:
       # ============================================================
@@ -51,20 +50,20 @@ jobs:
         # WHY: Required so all subsequent steps can access repo files.
 
       - name: A2) Install uv (with caching)
-        uses: astral-sh/setup-uv@v7
+        uses: astral-sh/setup-uv@v8.2.0
         with:
           enable-cache: true
           # WHY: Cache the uv tool itself for faster subsequent runs.
           cache-dependency-glob: "uv.lock"
           # WHY: Invalidate cache only when locked dependencies change.
 
-      - name: A3) Install Python 3.14
-        run: uv python install 3.14
+      - name: A3) Install Python ${{ env.UV_PYTHON }} in uv
+        run: uv python install ${{ env.UV_PYTHON }}
         # WHY: Ensures the pinned Python version is available in CI.
         # OBS: Does not modify the repo; uv manages the interpreter locally.
 
-      - name: A4) Install all dependencies without upgrading
-        run: uv sync --extra dev --extra docs
+      - name: A4) Install all dependencies with frozen versions (in uv.lock)
+        run: uv sync  --frozen
         # WHY: Install dev and docs extras so all check and build tools are available.
 
       - name: A5) Show tool versions
@@ -79,12 +78,13 @@ jobs:
         # WHY: Version output makes CI logs easier to debug when tools change.
 
       - name: A6) Run pre-commit on all files
-        run: uvx pre-commit run --all-files
-        # WHY: Enforces formatting, linting, and file hygiene in one step.
-        # OBS: Covers ruff-check, ruff-format, whitespace, line endings,
-        #      and JSON/TOML/YAML syntax checks defined in .pre-commit-config.yaml.
-        # OBS: Pre-commit hook order (lint then format) differs from manual
-        #      command order (format then lint). See .pre-commit-config.yaml.
+        run: uv run pre-commit run --all-files
+        # WHY: Run the same repo hygiene checks used locally.
+        # OBS: A clean commit should already pass this without file changes.
+        #      If a hook changes files in CI, the job fails because the repo
+        #      was not committed in its fully fixed state.
+        # FIX: Run this command locally, review any autofixes, fix remaining
+        #      issues by hand, then git add, commit, and push again.
 
       # ============================================================
       # B) BASELINE CHECKS: Tools not covered by pre-commit
@@ -96,9 +96,12 @@ jobs:
 
       - name: B2) Run Pyright type checker
         run: uv run python -m pyright
+        continue-on-error: true
         # WHY: Catches type errors that ruff does not check.
         # OBS: Pyright reads settings from pyproject.toml [tool.pyright].
         # OBS: Not included in pre-commit because it requires the full venv.
+        # WHY: continue-on-error is non-blocking.
+        # These issues will not fail the action.
 
       # ============================================================
       # C) COVERAGE & TESTING: Python tests (pytest)

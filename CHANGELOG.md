@@ -13,6 +13,17 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.4.2] - 2026-08-11
+
+- changed pyproject.toml from old `[project.optional-dependencies]` to new `[dependency-groups]`
+- changed from old `uv sync --extra dev --extra docs` to new `uv sync`.
+- always `uv lock --upgrade` to keep deps current (then run `uv sync`).
+- updated supporting files using `uvx pup-up` - IMPORTANT: back up zensical.toml navigation first.
+- must remain 3.14
+- used `uvx pup-clean`, `uvx pup-clean --delete`, and `.\sit.ps1` after changing to 3.14 to rebuild.
+
+---
+
 ## [0.4.1] - 2026-06-10
 
 - used dc-up to update baseline files (except zensical.toml).
@@ -71,9 +82,9 @@ Follow these steps exactly when creating a new release.
 
 ```shell
 uv lock --upgrade
-uv sync --extra dev --extra docs
-uvx pre-commit install
-uvx pre-commit autoupdate
+uv sync
+uv run pre-commit install
+uv run pre-commit autoupdate
 
 # optional: generate and check CODEOWNERS
 # based on roles defined in .accountability/surfaces.toml
@@ -81,9 +92,9 @@ uvx se-codeowners generate --strict --output .github/CODEOWNERS
 uvx se-codeowners check
 
 git add -A
-uvx pre-commit run --all-files
+uv run pre-commit run --all-files
 # repeat if changes were made
-uvx pre-commit run --all-files
+uv run pre-commit run --all-files
 
 uv run python -m pyright
 uv run python -m pytest
@@ -127,7 +138,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.1...HEAD
+[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.2...HEAD
+[0.4.2]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.2
 [0.4.1]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.1
 [0.4.0]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.0
 [0.3.0]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.3.0

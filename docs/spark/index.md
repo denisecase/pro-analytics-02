@@ -178,10 +178,11 @@ dependencies = [
 ]
 ```
 
-Then install and upgrade dependencies with:
+Then upgrade and install dependencies with:
 
 ```shell
-uv sync --upgrade
+uv lock --upgrade
+uv sync
 ```
 
 This installs PySpark and all other required Python packages.
@@ -193,7 +194,6 @@ and run it to verify.
 Adjust paths as needed for your project.
 
 ```python
-
 """src/bizintel/sparktest.py - Verify PySpark installation.
 
 Run with:

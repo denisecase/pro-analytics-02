@@ -1,4 +1,4 @@
-# 🔵 Run and Check
+# ðŸ”µ Run and Check
 
 Run and verify your code frequently as you work.
 
@@ -17,11 +17,12 @@ If your project needs additional packages, add them to the `dependencies` sectio
 
 Example: you might add `matplotlib` to create charts.
 
-After updating dependencies, run:
+After updating `pyproject.toml`, run:
 
 ```shell
 uv cache clean
-uv sync --extra dev --extra docs --upgrade
+uv lock --upgrade
+uv sync
 ```
 
 All commands should be run from the **project root folder** in the VS Code terminal.

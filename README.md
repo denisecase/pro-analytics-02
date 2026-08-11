@@ -54,7 +54,7 @@ For developers and maintainers (or if you want to fork your own copy).
 
 ### Set Up Machine
 
-- Complete 🟢
+- Complete ðŸŸ¢
   [Workflow A. Set Up Machine](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/)
   to **set up a machine** for Python development.
 
@@ -85,9 +85,9 @@ run the following commands, one at a time, hitting ENTER after each:
 
 ```shell
 uv self update
-uv python pin 3.14
+uv python pin 3.15
 uv lock --upgrade
-uv sync --extra dev --extra docs --upgrade
+uv sync
 ```
 
 If asked: "We noticed a new environment has been created.
@@ -98,13 +98,13 @@ If successful, you'll see a new `.venv` folder appear in the root project folder
 Install and run pre-commit checks (twice if necessary as shown below):
 
 ```shell
-uvx pre-commit install
-uvx pre-commit autoupdate
+uv run pre-commit install
+uv run pre-commit autoupdate
 
 git add -A
-uvx pre-commit run --all-files
+uv run pre-commit run --all-files
 # repeat if changes were made
-uvx pre-commit run --all-files
+uv run pre-commit run --all-files
 ```
 
 ## Daily Workflow (Working With Python Project Code)

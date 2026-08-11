@@ -1,4 +1,4 @@
-# 🔵 Run and Check
+# ðŸ”µ Run and Check
 
 This mirrors professional practice: run and check code as you work.
 
@@ -19,7 +19,7 @@ Then re-run the `uv sync` command as shown below:
 ```shell
 uv cache clean
 uv lock --upgrade
-uv sync --extra dev --extra docs
+uv sync
 ```
 
 When working on a project, open the project repository folder in VS Code.

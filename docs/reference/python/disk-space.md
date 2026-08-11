@@ -12,8 +12,8 @@ The tradeoff is disk space.
 | Basic Python + dev tools + zensical docs           | ~100 MB              | ~47                   |
 | + Data files (openpyxl, csv)                       | ~100 MB              | ~49                   |
 | + SQL (duckdb, pandas)                             | ~200 MB              | ~51                   |
-| + Notebooks (jupyter, pandas, matplotlib, seaborn) | ~350–400 MB          | ~80–85                |
-| + Machine learning (scikit-learn added)            | ~400–450 MB          | ~88–92                |
+| + Notebooks (jupyter, pandas, matplotlib, seaborn) | ~350-400 MB          | ~80-85                |
+| + Machine learning (scikit-learn added)            | ~400-450 MB          | ~88-92                |
 
 These sizes reflect installed packages only.
 Project source code and data files are small by comparison.
@@ -26,7 +26,7 @@ When you finish a project and push to GitHub,
 you can delete the **local project repository folder** entirely.
 
 Peak disk usage following this practice is the size of one project,
-or about 100–450 MB depending on the project.
+or about 100â€“450 MB depending on the project.
 
 ## Deleting a Project to Reclaim Space
 
@@ -44,7 +44,8 @@ And follow the steps to recreate your environment using uv.
 
 ```shell
 uv python pin 3.14
-uv sync --extra dev --extra docs --upgrade
+uv lock --upgrade
+uv sync
 ```
 
 ## Safe to Delete
@@ -65,7 +66,7 @@ uv sync --extra dev --extra docs --upgrade
 | `uv.lock`         | Commit first    | Commit this to ensure reproducible installs |
 | `pyproject.toml`  | Commit first    | Commit this as it defines the project       |
 | `src/`            | Commit first    | Your code lives here                        |
-| `notebooks/`      | Commit first    | Your analysis lives here                    |
+| `notebooks/`      | Commit first    | Your notebooks live here                    |
 
 ## Dependabot and Long-Term Maintenance
 
@@ -83,8 +84,9 @@ If you let a repo go inactive, Dependabot will eventually stop opening PRs autom
 
 ```shell
 git pull
-uv sync --extra dev --extra docs --upgrade
-uvx pre-commit run --all-files
+uv lock --upgrade
+uv sync
+uv run pre-commit run --all-files
 ```
 
-Verify everything still runs before pushing.
+Verify everything runs before pushing.

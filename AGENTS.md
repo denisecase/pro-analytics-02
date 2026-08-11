@@ -1,4 +1,4 @@
-# .\AGENTS.md (ALL-PY)
+# .\AGENTS.md (ALL-PY-REPOS)
 
 ## WHY
 

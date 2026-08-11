@@ -5,9 +5,9 @@ stored in a folder named `.venv` inside the project.
 
 ```text
 project-repo-name/
-├─ .venv/           # project Python environment
-├─ pyproject.toml
-└─ README.md
+  .venv/              # <--- project Python environment
+  pyproject.toml
+  README.md
 ```
 
 This isolates dependencies, prevents conflicts with system Python,
@@ -51,13 +51,20 @@ Run the following commands in the VS Code terminal to:
 1. Update `uv`.
 2. Pin the Python version for this repository (installing that version if needed).
 3. Upgrade the packages in the uv lock file for better security.
-4. Create the `.venv` environment and install dependencies from the lock file using `uv sync`.
+4. Create the `.venv` environment and install dependencies from `uv.lock` using `uv sync`. Updated 2026-Aug.
 
-```bash
+**Updated 2026-Aug:** IMPORTANT NOTE ABOUT `uv sync` and `pyproject.toml`.
+
+- If your pyproject.toml uses the new  `[dependency-groups]`,
+use `uv sync`.
+- If your pyproject.toml uses the old  `[project.optional-dependencies]`,
+use `uv sync --extra dev --extra docs`.
+
+```shell
 uv self update
 uv python pin 3.14
 uv lock --upgrade
-uv sync --extra dev --extra docs
+uv sync
 ```
 
 If prompted: "We noticed a new environment has been created.
@@ -95,7 +102,7 @@ In production, updates may need to be more controlled.
 #### If Dependency install error
 
 - Delete the `.venv/` folder.
-- Rerun: `uv sync --extra dev --extra docs --upgrade`
+- Rerun: `uv lock --upgrade && uv sync`
 
 #### If Windows "Smart" Application Control error
 
@@ -118,11 +125,11 @@ Run the following commands in the VS Code terminal to:
 4. Run the checks once explicitly
 
 ```shell
-uvx pre-commit install
-uvx pre-commit autoupdate
+uv run pre-commit install
+uv run pre-commit autoupdate
 
 git add -A
-uvx pre-commit run --all-files
+uv run pre-commit run --all-files
 ```
 
 After the hooks are installed, pre-commit checks run automatically on every `git commit` command.
@@ -170,5 +177,6 @@ For example:
 
 ```bash
 uv python pin 3.15
-uv sync --extra dev --extra docs --upgrade
+uv lock --upgrade
+uv sync
 ```
