@@ -1,11 +1,19 @@
-# Professional Analytics (Version 2)
+# Guide to Professional Python
 
 This repository provides a clear, concise guide for professional Python projects.
 
 This version (**Pro Analytics 02**) uses the
 newer, faster, Rust-based `uv` tool for managing
 Python environments and projects.
-An earlier version of the guide used `pip` and `venv`.
+(An earlier version, 01, of the guide used `pip` and `venv`.)
+
+## New to Terminals, Git, or Repositories?
+
+Start with
+**[Applied Computing Foundations](https://denisecase.github.io/applied-computing-foundations/)**,
+a short prerequisite covering files, folders, terminals, and Git.
+
+## Common Workflows
 
 Instructions are provided for common workflows.
 

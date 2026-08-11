@@ -55,14 +55,14 @@ Run the following commands in the VS Code terminal to:
 
 **Updated 2026-Aug:** IMPORTANT NOTE ABOUT `uv sync` and `pyproject.toml`.
 
-- If your pyproject.toml uses the new  `[dependency-groups]`,
-use `uv sync`.
-- If your pyproject.toml uses the old  `[project.optional-dependencies]`,
-use `uv sync --extra dev --extra docs`.
+This new version assumes `pyproject.toml` uses the new  `[dependency-groups]`, with
+`[tool.uv] default-groups = "all"`, so we can use the simple `uv sync`.
+
+If your pyproject.toml uses the old  `[project.optional-dependencies]`,
+use `uv sync --extra dev --extra docs` in place of `uv sync`.
 
 ```shell
 uv self update
-uv python pin 3.14
 uv lock --upgrade
 uv sync
 ```
@@ -93,16 +93,12 @@ In production, updates may need to be more controlled.
 #### If `uv` command not found
 
 - Close and reopen VS Code.
-- Verify `uv` was installed during Workflow A. Set Up Machine.
-
-#### If Python version error
-
-- Rerun: `uv python pin 3.14`
+- Verify `uv` was installed during `Workflow A. Set Up Machine`.
 
 #### If Dependency install error
 
 - Delete the `.venv/` folder.
-- Rerun: `uv lock --upgrade && uv sync`
+- Rerun: `uv lock --upgrade` and `uv sync`
 
 #### If Windows "Smart" Application Control error
 

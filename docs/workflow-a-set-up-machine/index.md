@@ -26,6 +26,12 @@ For best results, <strong>complete each step carefully</strong> and
 
 </details>
 
+## New to Terminals, Git, or Repositories?
+
+Start with
+**[Applied Computing Foundations](https://denisecase.github.io/applied-computing-foundations/)**,
+a short prerequisite covering files, folders, terminals, and Git.
+
 ---
 
 ## Steps
