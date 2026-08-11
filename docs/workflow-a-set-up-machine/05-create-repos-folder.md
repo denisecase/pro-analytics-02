@@ -48,7 +48,7 @@ in the root of your C: drive (i.e. `C:\Repos`, directions below).
 
 Important
 
-- Capitalize the "R" in Repos as programming is case-sensitive.
+- Use `Repos` (with a capital R), so paths and instructions are consistent.
 - Verify the folder is directly in C:\ (`C:\Repos`),
   not inside another folder such as Documents or Desktop.
 - Optional: Ensure the new directory is NOT being backed
@@ -85,7 +85,7 @@ iCloud's sync scope, for example, a folder named
 
 Important
 
-- Capitalize the "R" in Repos as programming is case-sensitive.
+- Use `Repos` (with a capital R), so paths and instructions are consistent.
 - Verify the folder is directly in your Home folder (~/Repos),
 - not inside another folder like Documents or Desktop.
 - Optional: Ensure this folder is NOT being backed up by iCloud

@@ -22,7 +22,8 @@ Open a terminal in the folder where you keep your GitHub repositories
 If you don't have this folder, see the instructions in "Workflow A: Set Up a Machine".
 
 On Mac/Linux, use the default **Terminal** (zsh or bash).
-On Windows, use **PowerShell**.
+On Windows, use **PowerShell** or **PowerShell Core**.
+Do NOT use the older Command Prompt for these instructions.
 
 In the terminal:
 

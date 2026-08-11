@@ -68,17 +68,17 @@ The shell determines which syntax and commands are available.
 | ------- | ------------- | --------------------------------------------- |
 | macOS   | zsh           | bash also common, especially on older systems |
 | Linux   | bash          | most distributions                            |
-| Windows | PowerShell    | cmd is deprecated and not recommended         |
+| Windows | PowerShell    | cmd is older and not recommended              |
 
 ### Terminal
 
 A text-based interface for running commands, navigating folders, and executing scripts.
 
-| OS      | Default Terminal | Notes                                    |
-| ------- | ---------------- | ---------------------------------------- |
-| macOS   | Terminal         | iTerm2 is a popular alternative          |
-| Linux   | varies by distro | GNOME Terminal, Konsole, etc.            |
-| Windows | Windows Terminal | recommended, runs PowerShell by default  |
+| OS      | Default Terminal | Notes                                   |
+| ------- | ---------------- | --------------------------------------- |
+| macOS   | Terminal         | iTerm2 is a popular alternative         |
+| Linux   | varies by distro | GNOME Terminal, Konsole, etc.           |
+| Windows | Windows Terminal | recommended, runs PowerShell by default |
 
 ### Working Directory
 

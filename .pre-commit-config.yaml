@@ -1,7 +1,7 @@
 # ============================================================
 # .pre-commit-config.yaml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-06-27
+# Updated: 2026-08-11
 #
 # REQ: Professional projects using Python src/ SHOULD include pre-commit checks.
 # WHY: Minimize git diffs, catch common issues early, and support collaboration.

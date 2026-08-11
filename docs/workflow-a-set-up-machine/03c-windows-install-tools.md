@@ -80,8 +80,8 @@ directly from the terminal.
 Install `uv` using the official Windows method:
 <https://docs.astral.sh/uv/getting-started/installation/>
 
-Note: Python is **not** installed at this step.
-Python will be installed per-project using `uv`, which also manages versions.
+> Do not install a project Python separately at this step.
+> Python will be installed per-project using `uv`.
 
 <details>
 <summary>WHY?</summary>
@@ -125,7 +125,7 @@ Many helpful professional tools can be run with `npx`.
 
 #### Task 4.2 Change the PowerShell execution policy
 
-Press Win + X and select Terminal (Admin) or Windows PowerShell (Admin).
+Press `Win + X` and select Terminal or Windows PowerShell.
 Run:
 
 ```powershell
@@ -137,10 +137,8 @@ Type Y (Yes) and hit Enter to confirm the change.
 <details>
 <summary>WHY?</summary>
 
-By default, Windows 11 restricts running scripts (.ps1 files) for security reasons.
-Since npx on Windows executes via npx.ps1,
-you will get a "running scripts is disabled on this system"
-error unless you change this policy.
+On some Windows systems, PowerShell may block `npx.ps1` and report that running scripts is disabled.
+This setting allows the recommended tooling to run.
 
 </details>
 

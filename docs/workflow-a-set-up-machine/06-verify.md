@@ -1,4 +1,4 @@
-# 🟢 Verify Workflow 01: Set Up Machine
+# 🟢 Verify Workflow A: Set Up Machine
 
 > This page verifies that your **machine** is correctly set up for professional Python projects.
 

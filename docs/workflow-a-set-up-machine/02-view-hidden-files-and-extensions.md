@@ -43,10 +43,8 @@ edit, troubleshoot, and verify project files accurately.
 ### On Windows
 
 1. Open **File Explorer**.
-2. Click the **View** tab.
-3. In the **Show** group, check:
-   - **File name extensions**
-   - **Hidden items**
+2. Click **View > Show > File name extensions**.
+3. Click **View > Show > Hidden items**.
 
 <img src="images/windows_show_extensions_and_hidden.png"
 alt="Windows: Show extensions and hidden items" width="300">

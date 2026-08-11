@@ -7,7 +7,7 @@ newer, faster, Rust-based `uv` tool for managing
 Python environments and projects.
 An earlier version of the guide used `pip` and `venv`.
 
-Instructions are divided into stages.
+Instructions are provided for common workflows.
 
 - Go to 🟢 [A. Set Up Machine](workflow-a-set-up-machine/)
   to **set up a machine** for Python development.

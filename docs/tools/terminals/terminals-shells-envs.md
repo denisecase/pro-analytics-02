@@ -37,7 +37,7 @@ and which startup files are loaded.
 
 A single terminal can host different shells.
 Changing the shell changes command behavior.
-The old Windows Command Prompt (cmd) is deprecated and not recommended.
+The old Windows Command Prompt (cmd) is not recommended.
 
 ## Environment Variables
 

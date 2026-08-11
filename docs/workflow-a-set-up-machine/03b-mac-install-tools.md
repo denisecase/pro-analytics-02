@@ -84,8 +84,8 @@ directly from the terminal.
 Follow the official installation instructions from Astral:
 <https://docs.astral.sh/uv/getting-started/installation/>
 
-> Note: Python is **not** installed at this step.
-> Python will be installed per-project using `uv`, which also manages versions
+> Do not install a project Python separately at this step.
+> Python will be installed per-project using `uv`.
 
 <details>
 <summary>WHY?</summary>
