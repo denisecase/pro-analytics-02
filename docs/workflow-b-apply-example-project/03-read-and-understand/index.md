@@ -11,7 +11,7 @@ structure, data flow, commands, and outputs.
 Professional work often requires maintaining or extending existing code
 rather than starting from an empty folder.
 
-<strong>Understanding</strong> an example first supports better technical decisions
+Understanding an example first supports better technical decisions
 in later modification and application phases.
 
 </details>

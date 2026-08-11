@@ -11,6 +11,8 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
+- used
+
 ---
 
 ## [0.4.2] - 2026-08-11
@@ -95,6 +97,9 @@ git add -A
 uv run pre-commit run --all-files
 # repeat if changes were made
 uv run pre-commit run --all-files
+
+npx markdownlint-cli2 --fix
+uvx cffconvert --validate
 
 uv run python -m pyright
 uv run python -m pytest

@@ -708,7 +708,7 @@ ai_max_authority = "prohibited"
 [verification]
 commands = [
     "uv lock --upgrade",
-    "uv sync --extra dev --extra docs --upgrade",
+    "uv sync",
     "uv run pre-commit install",
     "uvx se-manifest-schema validate-manifest --path SE_MANIFEST.toml --strict",
     "uvx se-codeowners generate --strict --output .github/CODEOWNERS",

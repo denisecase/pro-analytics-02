@@ -1,10 +1,25 @@
-# Pro Analytics 02
+# Pro Analytics 02: GUIDE to Professional Python
+
+<!-- README opening order
+
+1. Title
+2. Project-specific resource badges (NotebookLM, etc.)
+3. Standard badges: Docs Site / Python / uv / CI / License / Links / Dependabot
+4. One-line positioning statement
+5. Hosted documentation link
+6. Requirements
+7. Developer / Updating the Documentation
+8. Resources
+9. Citation
+10. License
+-->
 
 [![NotebookLM: Set Up Machine](https://img.shields.io/badge/NotebookLM-Set%20Up%20Machine-blue?logo=google)](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
 [![NotebookLM: Apply Example Project](https://img.shields.io/badge/NotebookLM-Apply%20Example%20Project-blue?logo=google)](https://notebooklm.google.com/notebook/2f486eda-5ea5-4a05-9311-b6373859b82f)
 
 [![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/pro-analytics-02/)
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](https://github.com/denisecase/pro-analytics-02/blob/main/pyproject.toml)
+![uv](https://img.shields.io/badge/uv-managed-DE5FE9)
 [![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -20,7 +35,7 @@ REQ: Title, badges, and positioning statement appear before anything else.
 WHY: README opens with exactly one page title, credibility signals, then a concise scope statement.
 -->
 
-## Guide
+## Professional Python Guide
 
 For best results, consult the detailed instructions in the written
 [**guide**](https://denisecase.github.io/pro-analytics-02/).
@@ -54,7 +69,7 @@ For developers and maintainers (or if you want to fork your own copy).
 
 ### Set Up Machine
 
-- Complete ðŸŸ¢
+- Complete 🟢
   [Workflow A. Set Up Machine](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/)
   to **set up a machine** for Python development.
 
@@ -85,7 +100,7 @@ run the following commands, one at a time, hitting ENTER after each:
 
 ```shell
 uv self update
-uv python pin 3.15
+uv python pin 3.14
 uv lock --upgrade
 uv sync
 ```

@@ -75,8 +75,8 @@ Do you want to select it for the workspace folder?", click **Yes**.
 Python version error:
 
 <ul>
-<li>Rerun: `uv python pin 3.14`</li>
-<li>Use the version for your project (e.g., 3.15)</li>
+<li>Rerun: `uv python pin 3.xx`</li>
+<li>where xx indicates the version for your project (e.g., 3.14)</li>
 </ul>
 
 Dependency install error:

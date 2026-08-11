@@ -131,7 +131,7 @@ Many helpful professional tools can be run with `npx`.
 
 After installation, open a new Terminal window and run:
 
-```zsh
+```shell
 git --version
 code --version
 uv --version

@@ -71,7 +71,7 @@ This ensures smoother performance and avoids syncing unnecessary
 temporary files from your GitHub Python projects.
 
 We recommend creating a dedicated folder outside of
-OneDrive's sync scope, for example, a folder named
+iCloud's sync scope, for example, a folder named
 `Repos` (short for *repositories*) (i.e. `~/Repos`, directions below).
 
 ### Mac/Linux Task 1. Create `~/Repos` Directory

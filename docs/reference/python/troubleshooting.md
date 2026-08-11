@@ -19,8 +19,11 @@ This usually means the virtual environment needs to be rebuilt.
 
 **Fix:**
 
+Delete `.venv` folder. Then rebuild.
+
 ```shell
-uv sync --extra dev --reinstall
+uv lock --upgrade
+uv sync
 ```
 
 Then continue with the workflow steps.

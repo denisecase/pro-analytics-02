@@ -58,7 +58,6 @@ keywords:
   - professional-practice
 
   # tools and ecosystem
-  - python
   - git
   - github
   - pre-commit

@@ -151,7 +151,7 @@ Environment paths will not update in terminals that are already open.
 
 Open a brand new **PowerShell** terminal window and run:
 
-```powershell
+```shell
 git --version
 code --version
 uv --version

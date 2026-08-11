@@ -1,6 +1,6 @@
 # 🟢 Configure Git
 
-After installing Git, configure Git to handle notebooks, and set your global `user.name` and `user.email`.
+After installing Git, configure Git by setting your global `user.name` and `user.email`.
 
 <details>
 <summary>WHY?</summary>

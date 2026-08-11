@@ -13,7 +13,7 @@
 [project]
 name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
 readme = "README.md"
-requires-python = ">=3.14" # STILL REQUIRED AUG-2026
+requires-python = ">=3.14" # 3.14 STILL REQUIRED AUG-2026
 version = "0.4.2"
 description = "Professional Python for analytics."
 license-files = ["LICENSE"]
@@ -42,6 +42,7 @@ dependencies = [
 [dependency-groups]
 # NOTE: CHANGED FROM [optional-dependencies] and `uv sync --extra dev --extra docs`
 #       CHANGED TO [dependency-groups] and `uv sync` in PEP 621 (AUG 2026).
+#       MUST ALSO ADD `[tool.uv] block below.
 # WHY: Optional dependency groups keep the core install clean and focused.
 dev = [
     # REQ.DEV.DEPS: External packages used for linting, testing, type checking, etc.
@@ -195,6 +196,14 @@ force-sort-within-sections = true
 [tool.ruff.lint.pydocstyle]
 # WHY: Google style is the project-wide docstring convention.
 convention = "google"
+
+# === UV ===
+
+[tool.uv]
+# WHY: Install all dependency groups defined by this repository by default.
+# This keeps the canonical setup command identical across project types while
+# allowing each repository to declare only the tooling it actually needs.
+default-groups = "all"
 
 # ============================================================
 # SECTION 3: BUILD SYSTEM (boilerplate; CUSTOM src/ agreement)

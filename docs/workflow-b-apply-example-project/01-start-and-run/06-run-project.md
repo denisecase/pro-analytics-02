@@ -36,7 +36,7 @@ Run the following commands in a VS Code terminal to:
 ```shell
 uv run ruff format .
 uv run ruff check . --fix
-uv run python -m pytest --cov=src --cov-report=term-missing
+uv run python -m pytest
 ```
 
 ## Step 4. Build Documentation
@@ -55,7 +55,7 @@ uv run python -m zensical serve
   the provided link (at the same time) to view the documentation.
   Use **Cmd and click** on Mac.
 - To stop the server, click in the terminal, and
-  press **Ctrl c** (or **Cmd c** on Mac) to terminate the local hosting process.
+  press **Ctrl c** to terminate the local hosting process.
 
 <details>
 <summary>Why we include `python -m`</summary>
