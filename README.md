@@ -18,7 +18,7 @@
 [![NotebookLM: Apply Example Project](https://img.shields.io/badge/NotebookLM-Apply%20Example%20Project-blue?logo=google)](https://notebooklm.google.com/notebook/2f486eda-5ea5-4a05-9311-b6373859b82f)
 
 [![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/pro-analytics-02/)
-[![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](https://github.com/denisecase/pro-analytics-02/blob/main/pyproject.toml)
+[![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](https://github.com/denisecase/pro-analytics-02/blob/main/pyproject.toml)
 ![uv](https://img.shields.io/badge/uv-managed-DE5FE9)
 [![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -138,6 +138,7 @@ uv run ruff check . --fix
 uv run python -m pyright
 uv run python -m pytest
 uv run python -m zensical build
+
 npx markdownlint-cli2 --fix
 ```
 

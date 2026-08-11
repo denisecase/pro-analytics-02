@@ -11,7 +11,7 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
-- used
+- used `uvx pup-up` to get new ci and docs actions and sit that use local py version
 
 ---
 
