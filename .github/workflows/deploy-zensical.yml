@@ -1,7 +1,7 @@
 # ============================================================
 # .github/workflows/deploy-zensical.yml (ALL-PY-REPOS)
 # ============================================================
-# Updated: 2026-08-11
+# Updated: 2026-08-12
 
 # WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:
@@ -60,12 +60,16 @@ jobs:
           cache-dependency-glob: "uv.lock"
           # WHY: Invalidate cache only when locked dependencies change.
 
-      - name: A4) Install all dependencies with frozen versions (in uv.lock)
-        run: uv sync  --frozen
-        # WHY: Docs extras required for Zensical build; dev extras for consistency.
-        # OBS: Deployment validates the committed lock file; it must not upgrade dependencies.
+      - name: A4) Install project Python
+        run: uv python install
+        # WHY: Ensures the pinned Python version is available in CI.
+        # OBS: Does not modify the repo; uv manages the interpreter locally.
 
-      - name: A5) Show tool versions
+      - name: A5) Install all dependencies with frozen versions (in uv.lock)
+        run: uv sync --frozen
+        # WHY: Install dev and docs extras so all check and build tools are available.
+
+      - name: A6) Show tool versions
         run: |
           uv --version
           uv run python --version

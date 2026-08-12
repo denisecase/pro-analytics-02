@@ -1,7 +1,7 @@
 # ============================================================
 # .github/workflows/ci-python-zensical.yml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-08-08
+# Updated: 2026-08-12
 
 # WHY: Continuous Integration (CI) ensures repository hygiene,
 #      Python correctness, and documentation builds.
@@ -37,8 +37,6 @@ jobs:
     name: Repo checks and Zensical build
     runs-on: ubuntu-latest  # WHY: Linux matches most production deployments.
     timeout-minutes: 30     # WHY: Fail fast if a step hangs unexpectedly.
-    env:
-      UV_PYTHON: "3.15"     # WHY: Pin Python version for all steps in this job.
 
     steps:
       # ============================================================
@@ -57,13 +55,13 @@ jobs:
           cache-dependency-glob: "uv.lock"
           # WHY: Invalidate cache only when locked dependencies change.
 
-      - name: A3) Install Python ${{ env.UV_PYTHON }} in uv
-        run: uv python install ${{ env.UV_PYTHON }}
+      - name: A3) Install project Python
+        run: uv python install
         # WHY: Ensures the pinned Python version is available in CI.
         # OBS: Does not modify the repo; uv manages the interpreter locally.
 
       - name: A4) Install all dependencies with frozen versions (in uv.lock)
-        run: uv sync  --frozen
+        run: uv sync --frozen
         # WHY: Install dev and docs extras so all check and build tools are available.
 
       - name: A5) Show tool versions
