@@ -4,7 +4,7 @@ Kafka topics are **infrastructure**.
 They exist independently of any code.
 They are created once, producers fill them, consumers read them.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Kafka topics are part of the streaming data infrastructure.

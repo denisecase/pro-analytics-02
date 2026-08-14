@@ -2,7 +2,7 @@
 
 > Phase 3. Read and understand the tools and techniques used in the project.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Reading the project before changing it builds understanding of the project

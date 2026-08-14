@@ -36,7 +36,7 @@ pyproject.toml
 README.md
 ```
 
-<details>
+<details markdown>
 <summary>If you do NOT see those files (click here)</summary>
 
 Follow the earlier steps carefully.
@@ -63,6 +63,7 @@ use `uv sync --extra dev --extra docs` in place of `uv sync`.
 
 ```shell
 uv self update
+uv python install
 uv lock --upgrade
 uv sync
 ```
@@ -70,7 +71,7 @@ uv sync
 If prompted: "We noticed a new environment has been created.
 Do you want to select it for the workspace folder?", click **Yes**.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Keeping tools updated is critical for security.
@@ -134,7 +135,7 @@ After the hooks are installed, pre-commit checks run automatically on every `git
 
 - Commands complete without fatal errors
 
-<details>
+<details markdown>
 <summary>If pre-commit fails</summary>
 
 Pre-commit may fail on restricted machines where Git hooks cannot be installed.
@@ -163,16 +164,3 @@ If this occurs, it is safe to skip pre-commit and continue with the project.
 
 - VS Code reloads
 - No warnings about missing Python environments appear
-
-## OPTION for Step 3.1: Pin a Different Python Version
-
-Some projects may require a specific Python version.
-If so, pin the required version as shown in the project README.md.
-
-For example:
-
-```bash
-uv python pin 3.15
-uv lock --upgrade
-uv sync
-```

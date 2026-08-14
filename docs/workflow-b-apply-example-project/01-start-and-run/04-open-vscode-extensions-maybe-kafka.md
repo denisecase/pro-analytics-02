@@ -45,7 +45,7 @@ code .
 
 The `code .` command opens the **current folder** as the project workspace in VS Code.
 
-<details>
+<details markdown>
 <summary>Help: `code .` didn't open VS Code</summary>
 
 On Windows, try re-running the installer with `add to path` checked.
@@ -55,7 +55,7 @@ Download the standard installer from the Official Visual Studio Code Download Pa
 Run the executable setup file.
 Advance through the prompt screens.
 Look for the "Select Additional Tasks" screen.
-<strong>Check the box</strong> labeled <strong>Add to PATH (requires shell restart)</strong>.
+**Check the box** labeled **Add to PATH (requires shell restart)**.
 Click next and complete the installation.
 
 </details>
@@ -100,6 +100,9 @@ Or use the keyboard shortcut:
 
 Search for and install extensions in the Extensions panel.
 
+<details markdown>
+<summary>Some Popular Extensions</summary>
+
 For example:
 
 #### Core Python Extensions
@@ -110,9 +113,15 @@ For example:
 
 #### Notebook Support
 
-- **Jupyter (ms-toolsai.jupyter)** edit and run Jupyter notebooks
-- **Jupyter Keymap (ms-toolsai.jupyter-keymap)** Jupyter keyboard shortcuts
-- **Jupyter Notebook Renderers (ms-toolsai.jupyter-renderers)** rich output rendering
+For projects using **marimo** (official name is lowercase):
+
+- **marimo (marimo-team.vscode-marimo)** - edit and run marimo notebooks
+
+For projects using traditional Jupyter notebooks (.ipynb):
+
+- Jupyter (ms-toolsai.jupyter) - edit and run Jupyter notebooks
+- Jupyter Keymap (ms-toolsai.jupyter-keymap) - Jupyter keyboard shortcuts
+- Jupyter Notebook Renderers (ms-toolsai.jupyter-renderers) - rich output rendering
 
 #### Documentation and Markdown
 
@@ -126,6 +135,8 @@ For example:
 
 - **YAML (redhat.vscode-yaml)** YAML schema validation
 - **GitHub Actions (github.vscode-github-actions)** syntax highlighting for `.github/workflows`
+
+</details>
 
 ## 🏞️ Step 3. ONLY FOR STREAMING DATA: Install Kafka
 

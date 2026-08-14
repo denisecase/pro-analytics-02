@@ -1,60 +1,76 @@
 # ============================================================
 # shape.ps1 (ALL-REPOS)
 # ============================================================
-# Updated: 2026-08-08
+# Updated: 2026-08-13
 #
-# REQ: List project working files.
+# REQ: List project working files and directories that currently exist on disk.
 # WHY: Provide a concise, copyable view of the current project structure.
-# OBS: Inside a Git repository, uses Git's own ignore rules.
-# OBS: Includes tracked files and untracked non-ignored files.
-# OBS: Reflects the working tree as it is NOW: files moved/renamed/deleted on
-#      disk but not yet staged are dropped, so stale index paths do not appear.
-# OBS: Outside a Git repository, lists all files recursively from the current
-#      directory without applying .gitignore.
+# OBS: Does NOT depend on Git tracking or staging status.
+# OBS: Newly created files and directories appear immediately without git add.
+# OBS: Empty authored directories are included in the project shape.
+# OBS: Excludes common generated, cached, virtual environment, and build folders.
 # CUSTOM: Add path filters only if you want a narrower project shape.
-
+#
 # Run in a PowerShell terminal (available cross platform) with:
 # .\shape.ps1
 
-$repoRoot = git rev-parse --show-toplevel 2>$null
 
-if ($repoRoot) {
-    # WHY: Temporarily move to the repository root while preserving the
-    #      caller's original working directory.
-    Push-Location $repoRoot
+# === CONFIGURE EXCLUDED DIRECTORIES ===
 
-    try {
-        # WHY: --cached lists the INDEX, which still holds files moved/renamed/
-        #      deleted on disk but not staged.
-        #      Subtract --deleted so the listing
-        #      shows the current on-disk shape without requiring git add first.
-        $deleted = git ls-files --deleted
+# WHY: These directories contain generated, cached, downloaded, or temporary
+#      content rather than authored project structure.
 
-        git ls-files --cached --others --exclude-standard |
-            Where-Object { $deleted -notcontains $_ } |
-            Sort-Object -Unique |
-            ForEach-Object {
-                ".\$_"
+$excludedDirectories = @(
+    ".git",
+    ".venv",
+    "__pycache__",
+    ".ruff_cache",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".tox",
+    ".nox",
+    "node_modules",
+    "build",
+    "dist",
+    "site"
+)
+
+
+# === GET PROJECT SHAPE ===
+
+$projectRoot = (Get-Location).Path
+
+Get-ChildItem -Path $projectRoot -Recurse -Force |
+    Where-Object {
+        $relativePath = [System.IO.Path]::GetRelativePath(
+            $projectRoot,
+            $_.FullName
+        )
+
+        $pathParts = $relativePath -split '[\\/]'
+
+        $exclude = $false
+
+        foreach ($directory in $excludedDirectories) {
+            if ($pathParts -contains $directory) {
+                $exclude = $true
+                break
             }
-    }
-    finally {
-        # WHY: Restore the working directory from which the script was called.
-        Pop-Location
-    }
-}
-else {
-    # WHY: The project may need to be inspected before git init has been run.
-    # OBS: Without a Git repository, report the complete on-disk file shape.
-    $projectRoot = (Get-Location).Path
+        }
 
-    Get-ChildItem -Path $projectRoot -File -Recurse -Force |
-        ForEach-Object {
-            $relativePath = [System.IO.Path]::GetRelativePath(
-                $projectRoot,
-                $_.FullName
-            )
+        -not $exclude
+    } |
+    ForEach-Object {
+        $relativePath = [System.IO.Path]::GetRelativePath(
+            $projectRoot,
+            $_.FullName
+        )
 
+        if ($_.PSIsContainer) {
+            ".\$relativePath\"
+        }
+        else {
             ".\$relativePath"
-        } |
-        Sort-Object -Unique
-}
+        }
+    } |
+    Sort-Object -Unique

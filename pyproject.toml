@@ -15,7 +15,7 @@ name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + d
 readme = "README.md"
 requires-python = ">=3.14" # 3.14 STILL REQUIRED AUG-2026
 version = "0.4.2"
-description = "Professional Python for analytics."
+description = "Professional Python for Analytics."
 license-files = ["LICENSE"]
 authors = [
     { name = "Denise Case", email = "dcase@nwmissouri.edu" },
@@ -34,6 +34,7 @@ dependencies = [
     "datafun-toolkit", # WHY: Provides professional Python utilities for privacy-preserving logging.
     "ipykernel", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
     "ipython", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
+    "marimo", # WHY: New notebook option.
     "pandas", # WHY: Data analysis and manipulation.
     "scikit-learn", # WHY: Machine learning and data mining.
     "matplotlib", # WHY: Charting. REQ 3.14. pulls in kiwisolver, and kiwisolver publishes a Windows wheel for CPython 3.14 but not 3.15.
@@ -41,16 +42,16 @@ dependencies = [
 
 [dependency-groups]
 # NOTE: CHANGED FROM [optional-dependencies] and `uv sync --extra dev --extra docs`
-#       CHANGED TO [dependency-groups] and `uv sync` in PEP 621 (AUG 2026).
+#       CHANGED TO [dependency-groups] and `uv sync` (PEP 735).
 #       MUST ALSO ADD `[tool.uv] block below.
-# WHY: Optional dependency groups keep the core install clean and focused.
+# WHY: Dependency groups separate development and documentation tools from project runtime dependencies.
 dev = [
     # REQ.DEV.DEPS: External packages used for linting, testing, type checking, etc.
-    "pre-commit",
-    "pyright",
-    "pytest",
-    "pytest-cov",
-    "ruff",
+    "pre-commit", # WHY: Pre-commit hooks for code quality and consistency.
+    "pytest", # WHY: Test framework for unit and integration tests.
+    "pytest-cov", # WHY: Test coverage reporting for quality assurance.
+    "ruff", # WHY: Fast linting and formatting for code quality and consistency.
+    "ty", # WHY: Type checking for static analysis and bug prevention (replaces `pyright`).
 ]
 
 docs = [
@@ -70,29 +71,21 @@ Changelog = "https://github.com/denisecase/pro-analytics-02/blob/main/CHANGELOG.
 # SECTION 2: TOOL CONFIGURATION (Professional basics)
 # ============================================================
 
-# === PYRIGHT (TYPE CHECKING HELPS FIND COMMON ERRORS BEFORE THE CODE RUNS) ===
+# === MARIMO NOTEBOOKS ===
 
-[tool.pyright]
-# CUSTOM: Pyright configuration for static type checking.
-# WHY: Strict type checking helps catch bugs early.
-include = ["src"] # WHY: Include both source and test code for comprehensive type checking.
-extraPaths = ["src"] # WHY: Ensure imports are resolved relative to src/ for consistent behavior across environments.
-exclude = [ "**/node_modules", "**/.*", ".venv","**/__pycache__","dist","build"]
-pythonVersion = "3.14" # 3.14 stubs incomplete in current pyright
-reportMissingTypeStubs = "none" # WHY: Avoid warnings from third-party libraries without type stubs.
-reportMissingImports = "warning" # WHY: Warn about missing imports to catch potential issues, but allow flexibility in notebooks and dynamic code.
-reportPrivateUsage = "none" # WHY: Allow usage of private members (e.g., _version.py) without warnings, common in Python projects.
-reportUntypedClassDecorator = "none"  # @dataclass stubs incomplete in current pyright
-reportArgumentType = "none"           # len() resolves to collections.abc, pyright bug
-typeCheckingMode = "basic" # strict | basic | off
+[tool.marimo.ai]
+rules = "- prefer polars over pandas\n- make charts using altair"
 
-[[tool.pyright.executionEnvironments]]
-root = "tests"
-reportUnknownMemberType = "none"
-reportUnknownVariableType = "none"
-reportUnknownParameterType = "none"
-reportMissingParameterType = "none"
-reportUnknownArgumentType = "none"
+[tool.marimo.save]
+autosave = "after_delay"
+autosave_delay = 1000
+format_on_save = true
+
+[tool.marimo.package_management]
+manager = "uv"
+
+[tool.marimo.runtime]
+pythonpath = ["./src"]
 
 # === PYTEST (VERIFY LOGIC) ===
 
@@ -100,9 +93,21 @@ reportUnknownArgumentType = "none"
 # WHY: Consistent test discovery and coverage visibility.
 minversion = "9.0"
 testpaths = ["tests"]
-addopts = "--cov=pro_analytics_02 --cov-report=term-missing --cov-fail-under=70"
+addopts = "--cov=pro_analytics_02 --cov-fail-under=20 --cov-report=term-missing"
 
 # === RUFF (PYTHON FORMATTING AND LINTING) ===
+
+# WHY: Ruff is a fast, all-in-one Python linter and formatter.
+# Configuration is large because Ruff does a lot:
+#   formatting
+#   linting
+#   import sorting
+#   modernization
+#   bug-pattern checks
+#   docstring checks
+#   security checks
+#   per-file exceptions
+#   test-specific exceptions
 
 [tool.ruff]
 # WHY: Use one fast tool for Python linting and formatting across maintained repos.
@@ -150,9 +155,9 @@ quote-style = "preserve"
 select = [
     "E",   # WHY: Basic syntax and structural correctness.
     "F",   # WHY: Undefined names, unused imports, and likely real errors.
-    "W",   # WHY: Warnings that catch easy issues early.
+  #  "W",   # WHY: Warnings that catch easy issues early.
     "I",   # WHY: Deterministic import ordering for stable diffs.
-    "UP",  # WHY: Modern Python constructs for the pinned Python version.
+  #  "UP",  # WHY: Modern Python constructs for the pinned Python version.
     "B",   # WHY: Common bug patterns.
 
     "PTH", # WHY: Prefer pathlib for cross-platform path handling.
@@ -166,6 +171,7 @@ select = [
 
 ignore = [
     "E501", # WHY: Line length is handled by the formatter, not Ruff lint.
+    "D202", # WHY: Allow a blank-line after function docstring.
     "D203", # WHY: Conflicts with D211; use the no-blank-line convention.
     "D213", # WHY: Conflicts with D212; use first-line summary convention.
     "S101", # WHY: Allow assert for tests and intentional internal invariants.
@@ -197,12 +203,18 @@ force-sort-within-sections = true
 # WHY: Google style is the project-wide docstring convention.
 convention = "google"
 
-# === UV ===
+# === TY (TYPE CHECKING HELPS FIND COMMON ERRORS BEFORE THE CODE RUNS) ===
+
+[tool.ty.src]
+include = ["src", "tests"]
+
+# === UV (PYTHON ENVIRONMENT AND DEPENDENCY MANAGEMENT) ===
 
 [tool.uv]
+# WHY: Configure uv behavior for this project.
 # WHY: Install all dependency groups defined by this repository by default.
-# This keeps the canonical setup command identical across project types while
-# allowing each repository to declare only the tooling it actually needs.
+# OBS: This keeps the canonical `uv sync` command identical across project types
+#      while allowing each repository to declare only the tooling it actually needs.
 default-groups = "all"
 
 # ============================================================

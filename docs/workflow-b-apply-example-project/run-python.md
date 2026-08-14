@@ -2,7 +2,7 @@
 
 How to run a Python file (`.py`) in VS Code.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Python files are commonly used for reusable scripts, applications, packages,
@@ -68,7 +68,7 @@ uv run python src/pro_analytics_02/demo_module_basics.py
 - If you are not using the `src` organization, and you don't have
   any local imports, then this will work to run your script.
 
-<details>
+<details markdown>
 <summary>⭐ If Windows "Smart" Application Control error (click here)</summary>
 
 If Windows reports: `An Application Control policy has blocked this file.`

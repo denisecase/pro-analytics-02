@@ -5,7 +5,7 @@
 Linux distributions vary, so follow the
 vendor-recommended steps for your system.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Professional analytics projects depend on local tools for running code,
@@ -28,17 +28,17 @@ Most Linux distributions include Git in their package manager.
 Official instructions:
 <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
-Git <strong>tracks changes</strong> in project files over time.
+Git **tracks changes** in project files over time.
 
 It records what changed, when it changed, and who made the change.
 
 Git is used with GitHub, but they are different.
 
-- <strong>Git is version control software</strong> that runs on a machine.
-- <strong>GitHub is a cloud platform</strong> that stores Git projects online.
+- **Git is version control software** that runs on a machine.
+- **GitHub is a cloud platform** that stores Git projects online.
 
 </details>
 
@@ -48,13 +48,13 @@ Follow Microsoft's official Linux setup instructions
 for your distribution:
 <https://code.visualstudio.com/docs/setup/linux>
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
-Visual Studio Code is a <strong>code editor</strong> used to
+Visual Studio Code is a **code editor** used to
 open, inspect, edit, and run project files.
 
-It provides an integrated <strong>terminal</strong>,
+It provides an integrated **terminal**,
 which allows project commands to be run
 from inside the same workspace.
 
@@ -69,14 +69,14 @@ directly from the terminal.
 Follow the official installation instructions from Astral:
 <https://docs.astral.sh/uv/getting-started/installation/>
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 `uv` manages the Python version and project packages used by a project.
 
 Using `uv` helps each project install the correct Python version and
 packages from the project configuration in `pyproject.toml`
-and keeps project Python <strong>separate</strong>
+and keeps project Python **separate**
 from any other Python being used on the machine.
 
 If you worked with older Python projects, you might have used `pip` to
@@ -85,13 +85,11 @@ kept in the local `.venv` folder.
 
 We moved to `uv` because:
 
-<ul>
-  <li>it is fast</li>
-  <li>it uses the same commands on Windows, macOS, and Linux</li>
-  <li>it creates and updates the local `.venv` project environment</li>
-  <li>it can install and manage the Python version for the project</li>
-  <li>it reduces the number of separate Python setup tools needed</li>
-</ul>
+- it is fast
+- it uses the same commands on Windows, macOS, and Linux
+- it creates and updates the local `.venv` project environment
+- it can install and manage the Python version for the project
+- it reduces the number of separate Python setup tools needed
 
 </details>
 
@@ -101,7 +99,7 @@ Follow the official Node.js installation instructions
 for your Linux distribution:
 <https://nodejs.org/en/download>
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Node.js provides `npm` and `npx`.

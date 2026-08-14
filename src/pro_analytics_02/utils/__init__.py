@@ -1,4 +1,4 @@
-"""Package for Pro Analytics 02 - Guide to Professional Python Projects.
+"""Utils package.
 
 This file (with this exact name)
 is how Python recognizes this directory as a package of modules.

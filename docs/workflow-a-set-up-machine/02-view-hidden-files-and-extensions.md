@@ -24,7 +24,7 @@ modification or deletion.
 
 In data analytics projects, we need to see these.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Professional projects often include configuration files, environment files,

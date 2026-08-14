@@ -43,7 +43,7 @@ To pick up where you left off, use git clone to copy your GitHub repo to your ma
 And follow the steps to recreate your environment using uv.
 
 ```shell
-uv python pin 3.14
+uv python install
 uv lock --upgrade
 uv sync
 ```

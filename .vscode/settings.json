@@ -25,11 +25,13 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  "ruff.exclude": [
+    "**/notebooks/**"
+  ],
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": [
       ".github/workflows/*.yml",
       ".github/workflows/*.yaml"
     ]
-  },
-  "python-envs.pythonProjects": []
+  }
 }

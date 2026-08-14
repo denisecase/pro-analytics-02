@@ -2,7 +2,7 @@
 
 > Phase 1. Get started with an example project by copying and running the example.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Running an example project first confirms that the project works before

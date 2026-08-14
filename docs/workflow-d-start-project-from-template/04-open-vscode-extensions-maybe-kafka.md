@@ -1,4 +1,4 @@
-# 🟠 Open Project in VS Code (and Install Extensions and Maybe Kafka)
+# 🟡 Open Project in VS Code (and Install Extensions and Maybe Kafka)
 
 > Open the project in VS Code and install extensions.
 > 🏞️ ONLY IF STREAMING DATA: Also Install Kafka (Step 3 below)
@@ -46,25 +46,26 @@ The `code .` command opens the **current folder** as the project workspace in VS
 
 When VS Code opens, it may make extension recommendations.
 
-- If VS Code recommends an extension, it is usually helpful to install it.
-- Projects that include `.vscode/extensions.json` can guide extension selections.
-- You can add additional extensions later as needed.
+- Projects that include `.vscode/extensions.json` provide recommended extensions for that project.
+- Install the recommended extensions unless your instructor or project instructions say otherwise.
+- Different project templates may recommend different extensions.
 
 ## Step 2. Install Recommended Extensions
 
 If the project includes a `.vscode/extensions.json` file,
-VS Code will automatically recommend extensions for the project.
+VS Code should recommend extensions for the project.
 In that case:
 
 1. Watch for the **Recommended Extensions** popup
 2. Click **Install All**
 
-If there are no recommendations (or if you are working in a brand new project),
-install extensions manually using the steps below.
+The project template is the primary source for which extensions are needed.
+If there are no recommendations, or if you need to install an extension manually,
+use the steps below.
 
 ## Extensions NOT Recommended
 
-Some extensions are not needed because Ruff handles formatting and linting:
+Some extensions are not needed because **Ruff** handles formatting and linting:
 
 - ms-python.black-formatter
 - ms-python.autopep8
@@ -82,7 +83,8 @@ Or use the keyboard shortcut:
 
 ### 2. Install Extensions
 
-Search for and install extensions in the Extensions panel.
+If the project includes a `.vscode/extensions.json` file,
+VS Code should recommend the extensions selected for the project.
 
 <details markdown>
 <summary>Some Popular Extensions</summary>
@@ -91,9 +93,9 @@ For example:
 
 #### Core Python Extensions
 
-- **Python (ms-python.python)** run, debug, and test Python code
-- **Pylance (ms-python.vscode-pylance)** fast IntelliSense and type checking
-- **Ruff (charliermarsh.ruff)** linting, formatting, and import cleanup
+- **Python (ms-python.python)** - run, debug, and test Python code
+- **Ruff (charliermarsh.ruff)** - linting, formatting, and import cleanup
+- **ty (astral-sh.ty)** - Python type checking and language support (replaces earlier pylance)
 
 #### Notebook Support
 
@@ -109,11 +111,11 @@ For projects using traditional Jupyter notebooks (.ipynb):
 
 #### Documentation and Markdown
 
-- **Markdown All in One (yzhang.markdown-all-in-one)** Markdown shortcuts and formatting
+- **Markdown All in One (yzhang.markdown-all-in-one)** - Markdown shortcuts and formatting
 
 #### CSV and Data Files
 
-- **Rainbow CSV (mechatroner.rainbow-csv)** colorized CSV/TSV columns for inspection
+- **Rainbow CSV (mechatroner.rainbow-csv)** - colorized CSV/TSV columns for inspection
 
 #### Configuration and Workflow Files
 

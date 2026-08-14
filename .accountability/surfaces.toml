@@ -714,7 +714,7 @@ commands = [
     "uvx se-codeowners generate --strict --output .github/CODEOWNERS",
     "uvx se-codeowners check",
     "uv run pre-commit run --all-files",
-    "uv run python -m pyright",
+    "uv run ty check",
     "uv run python -m pytest",
     "uv run python -m zensical build",
 ]

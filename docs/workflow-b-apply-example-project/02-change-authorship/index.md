@@ -2,7 +2,7 @@
 
 > Phase 2. Make the project yours while preserving credit for the original.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Changing authorship is a safe, common, and necessary first change to a

@@ -57,7 +57,7 @@ uv run python -m zensical serve
 - To stop the server, click in the terminal, and
   press **Ctrl c** to terminate the local hosting process.
 
-<details>
+<details markdown>
 <summary>Why we include `python -m`</summary>
 
 In a command like this: `uv run python -m zensical build`,
@@ -65,13 +65,11 @@ the `python -m` is sometimes optional.
 The longer form is safer for heterogeneous environments.
 It:
 
-<ul>
-<li>explicitly uses the Python interpreter selected by `uv`</li>
-<li>avoids relying on a separate console-script wrapper</li>
-<li>behaves consistently across Windows, macOS, and Linux</li>
-<li>is officially supported by the Zensical package</li>
-<li>provides one standard command form for all users and machines wherever possible</li>
-</ul>
+- explicitly uses the Python interpreter selected by `uv`
+- avoids relying on a separate console-script wrapper
+- behaves consistently across Windows, macOS, and Linux
+- is officially supported by the Zensical package
+- provides one standard command form for all users and machines wherever possible
 
 </details>
 

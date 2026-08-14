@@ -5,7 +5,7 @@
 This may be challenging, but it is a one-time process.
 Once we get it set up successfully, we use it throughout the course.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Apache Kafka provides a local message broker for practicing streaming data

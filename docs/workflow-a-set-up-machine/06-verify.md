@@ -2,7 +2,7 @@
 
 > This page verifies that your **machine** is correctly set up for professional Python projects.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Verification confirms that required tools are installed, available, and

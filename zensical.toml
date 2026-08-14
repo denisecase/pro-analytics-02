@@ -1,9 +1,11 @@
 # ============================================================
 # zensical.toml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-08-08
+# Updated: 2026-08-14
 #
 # REQ: Python src/ repositories SHOULD provide documentation configuration.
+# NEED: plugins.mkdocstrings for src/ api generation.
+# pyproject.toml docs needs zensical and mkdocstrings[python].
 # WHY: Centralizes project documentation configuration.
 
 [project]
@@ -22,12 +24,12 @@ social = [
     {icon = "fontawesome/brands/github", link = "https://github.com/denisecase/pro-analytics-02" },
 ]
 
+[project.markdown_extensions]
+md_in_html = {} # WHY: Allow Markdown inside HTML blocks when the opening tag includes `markdown`, e.g. <details markdown>...</details>
+
 # ------------------------------------------------------------
 # Plugins
 # ------------------------------------------------------------
-
-[project.plugins.search]
-lang = "en" # WHY: Search plugin provides instant search functionality for documentation.
 
 [project.plugins.mkdocstrings.handlers.python]
 paths = ["src"] # WHY: MkDocstrings auto-generates documentation from code; this points it to the source code directory.
@@ -40,6 +42,9 @@ show_root_toc_entry = true # WHY: Including the root in the table of contents he
 show_signature_annotations = true # WHY: Displaying type annotations in function signatures improves clarity and understanding of the code's expected inputs and outputs.
 separate_signature = true # WHY: Separating the signature from the description enhances readability and comprehension of the documentation.
 show_submodules = true # WHY: Including submodules in the documentation provides a complete view of the codebase and its structure.
+
+[project.plugins.search]
+lang = "en" # WHY: Search plugin provides instant search functionality for documentation.
 
 [project.theme]
 # SEE: https://zensical.org/docs/setup/navigation/#instant-navigation-zensicaltoml
@@ -57,7 +62,8 @@ features = [
 # ------------------------------------------------------------
 # Navigation
 # ------------------------------------------------------------
-# Folder-based navigation is an optional alternative.
+# If no explicit navigation is provided,
+# then folder-based navigation will be used automatically.
 
 nav = [
     { "Home" = "index.md" },
@@ -134,7 +140,7 @@ nav = [
         { "Update project files" = "workflow-b-apply-example-project/05-update-project-files.md" },
     ] },
 
-    { "Workflow C. Start New Project" = [
+    { "Workflow C. Start Project From Nothing" = [
         { "Overview" = "workflow-c-start-new-project/index.md" },
         { "Start in GitHub" = "workflow-c-start-new-project/01-start-in-github.md" },
         { "Configure repository settings" = "workflow-c-start-new-project/02-configure-repo-settings.md" },

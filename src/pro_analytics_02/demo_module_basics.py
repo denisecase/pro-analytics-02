@@ -162,8 +162,7 @@ def main() -> None:
 # === CONDITIONAL EXECUTION GUARD ===
 
 # WHY: If running this file as a script, then call main() function.
-# OBS: This is just standard Python boilerplate.
-# OBS: Just copy and paste it - do not bother to memorize it.
+# OBS: This is standard Python boilerplate.
 
 if __name__ == "__main__":
     main()

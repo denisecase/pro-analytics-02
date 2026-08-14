@@ -1,16 +1,17 @@
-# 🟠 Clone the Repository To Your Machine
+# 🟡 Clone the Repository To Your Machine
 
-> Copy (clone) a GitHub repository to your local machine
+> Copy (clone) a GitHub repository to your local machine.
 
 ## 1. Copy the Web Address (URL) of the GitHub Repository
 
-In your browser, view your GitHub repository.
+In your browser, view the new GitHub repository you created from the template.
 You should see your account name and the repository name in the browser address bar.
 
 For example, the URL to this repository (in my account) is:
 <https://github.com/denisecase/pro-analytics-02>
 
-Verify that you are working with a GitHub repository in **your account**.
+Verify that you are working with the new GitHub repository in **your account**,
+not the original template repository.
 
 Use `CTRL a` to select all and `CTRL c` to copy the URL to your clipboard.
 On Mac/Linux, use `CMD a` and `CMD c`.

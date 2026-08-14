@@ -15,7 +15,7 @@ Then, apply the skills to a new problem.
 This reflects how professionals often learn new tools and techniques:
 start with a working system, understand it, modify it, and adapt it to new situations.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Example projects provide a working system for learning professional analytics

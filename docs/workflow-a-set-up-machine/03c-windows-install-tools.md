@@ -5,7 +5,7 @@ on Windows. Always follow the vendor-recommended installers.
 
 These tools are essential for professional data analytics.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Professional analytics projects depend on local tools for running code,
@@ -26,7 +26,7 @@ commands predictable.
 Download and install Git from the official site:
 <https://git-scm.com/>
 
-<details>
+<details markdown>
 <summary>Have Git and want to update?</summary>
 
 Try:
@@ -37,17 +37,17 @@ git update-git-for-windows
 
 </details>
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
-Git <strong>tracks changes</strong> in project files over time.
+Git **tracks changes** in project files over time.
 
 It records what changed, when it changed, and who made the change.
 
 Git is used with GitHub, but they are different.
 
-- <strong>Git is version control software</strong> that runs on a machine.
-- <strong>GitHub is a cloud platform</strong> that stores Git projects online.
+- **Git is version control software** that runs on a machine.
+- **GitHub is a cloud platform** that stores Git projects online.
 
 </details>
 
@@ -59,13 +59,13 @@ Download and install Visual Studio Code from:
 (Recommended) Enable the `code` command in PowerShell by following:
 <https://code.visualstudio.com/docs/setup/windows>
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
-Visual Studio Code is a <strong>code editor</strong> used to
+Visual Studio Code is a **code editor** used to
 open, inspect, edit, and run project files.
 
-It provides an integrated <strong>terminal</strong>,
+It provides an integrated **terminal**,
 which allows project commands to be run
 from inside the same workspace.
 
@@ -83,14 +83,14 @@ Install `uv` using the official Windows method:
 > Do not install a project Python separately at this step.
 > Python will be installed per-project using `uv`.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 `uv` manages the Python version and project packages used by a project.
 
 Using `uv` helps each project install the correct Python version and
 packages from the project configuration in `pyproject.toml`
-and keeps project Python <strong>separate</strong>
+and keeps project Python **separate**
 from any other Python being used on the machine.
 
 If you worked with older Python projects, you might have used `pip` to
@@ -99,13 +99,11 @@ kept in the local `.venv` folder.
 
 We moved to `uv` because:
 
-<ul>
-  <li>it is fast</li>
-  <li>it uses the same commands on Windows, macOS, and Linux</li>
-  <li>it creates and updates the local `.venv` project environment</li>
-  <li>it can install and manage the Python version for the project</li>
-  <li>it reduces the number of separate Python setup tools needed</li>
-</ul>
+- it is fast
+- it uses the same commands on Windows, macOS, and Linux
+- it creates and updates the local `.venv` project environment
+- it can install and manage the Python version for the project
+- it reduces the number of separate Python setup tools needed
 
 </details>
 
@@ -115,7 +113,7 @@ We moved to `uv` because:
 
 <https://nodejs.org/en/download>
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Node.js provides `npm` and `npx`.
@@ -134,7 +132,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 
 Type Y (Yes) and hit Enter to confirm the change.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 On some Windows systems, PowerShell may block `npx.ps1` and report that running scripts is disabled.
@@ -159,7 +157,7 @@ npx --version
 Each command should display a version number.
 If any command fails, revisit the corresponding installer.
 
-<details>
+<details markdown>
 <summary>OPTIONAL/ADVANCED: Windows Subsystem for Linux (WSL) - ONLY AS DIRECTED</summary>
 
 This is only for advanced users who need Linux-only tools
@@ -173,7 +171,7 @@ for Python projects managed with `uv`.
 
 </details>
 
-<details>
+<details markdown>
 <summary>OPTIONAL/ADVANCED: WHY WSL?</summary>
 
 WSL provides a Linux environment on Windows.

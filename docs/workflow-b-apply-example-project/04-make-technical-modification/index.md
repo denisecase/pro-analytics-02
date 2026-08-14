@@ -2,7 +2,7 @@
 
 > Phase 4. Copy the example, experiment, make a technical modification, and observe the results.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 A technical modification confirms that the project can be changed

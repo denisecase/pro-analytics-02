@@ -83,6 +83,12 @@ Follow these steps exactly when creating a new release.
 ### Task 2. Validate
 
 ```shell
+uvx pup-clean --delete
+uvx pup-up
+.\sit.ps1
+
+# OR
+
 uv lock --upgrade
 uv sync
 uv run pre-commit install
@@ -101,7 +107,7 @@ uv run pre-commit run --all-files
 npx markdownlint-cli2 --fix
 uvx cffconvert --validate
 
-uv run python -m pyright
+uv run ty check
 uv run python -m pytest
 uv run python -m zensical build
 

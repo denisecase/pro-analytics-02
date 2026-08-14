@@ -1,12 +1,15 @@
-# 🟠 Workflow C: Start a New Project
+# 🟠 Workflow C: Start New Project from Nothing
 
-> How to start a new professional Python project.
+> Start a new professional Python project from nothing.
 
-The easiest and most reliable way to start your own professional Python project.
-First, create a new GitHub repo with a default README.md, then clone it down to your machine.
-Add scaffolding, and build your own project.
+Understand and demonstrate how a professional Python project is assembled
+by starting with a new repository and building the scaffolding yourself.
 
-<details>
+First, create a new GitHub repo with a default README.md,
+then clone it down to your machine, then
+add the project structure, configuration, tools, and code.
+
+<details markdown>
 <summary>WHY?</summary>
 
 Custom projects are a great way to experiment with tools and techniques

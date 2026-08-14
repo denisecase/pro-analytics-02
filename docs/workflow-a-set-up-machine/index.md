@@ -3,26 +3,25 @@
 > Set up a machine for professional Python projects.
 > Do this just once per machine (or periodically to update tools).
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Professional Python projects depend on several tools working together:
 
-<ul>
-<li>GitHub stores projects,</li>
-<li>Git tracks changes,</li>
-<li>Python and `uv` run course code and tools,</li>
-<li>Node.js runs some project tools,</li>
-<li>Visual Studio Code provides the coding workspace, and</li>
-<li>local folders keep work organized.</li>
-</ul>
+- GitHub stores projects,
+- Git tracks changes,
+- Python and `uv` run course code and tools,
+- Node.js runs some project tools,
+- Visual Studio Code provides the coding workspace, and
+- local folders keep work organized.
+
 Careful setup reduces errors later.
 
 Project problems are easier to solve when the
 machine, tools, folders, and Git identity have been configured correctly.
 
-For best results, <strong>complete each step carefully</strong> and
-<strong>ensure everything works</strong> as expected before continuing.
+For best results, **complete each step carefully** and
+**ensure everything works** as expected before continuing.
 
 </details>
 

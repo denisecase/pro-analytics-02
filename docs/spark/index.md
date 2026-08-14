@@ -62,7 +62,7 @@ All other users:
 
 Choose the option for your operating system.
 
-<details>
+<details markdown>
 <summary>Option 2A: Windows WSL / Ubuntu / Debian</summary>
 
 ```bash
@@ -73,7 +73,7 @@ java --version
 
 </details>
 
-<details>
+<details markdown>
 <summary>Option 2B: macOS</summary>
 
 ```bash
@@ -83,7 +83,7 @@ java --version
 
 </details>
 
-<details>
+<details markdown>
 <summary>Option 2C: Red Hat / Fedora</summary>
 
 ```bash
@@ -100,7 +100,7 @@ Expected output: `openjdk 17.x.x` or higher.
 PySpark needs `JAVA_HOME` to locate Java at runtime.
 Detect the actual path first, then write it to your profile.
 
-<details>
+<details markdown>
 <summary>Option 3A: Windows WSL / Ubuntu / Debian (tested)</summary>
 
 Tested on WSL.
@@ -123,7 +123,7 @@ source ~/.bashrc
 
 </details>
 
-<details>
+<details markdown>
 <summary>Option 3B: macOS (please report any issues)</summary>
 
 ```bash
@@ -139,7 +139,7 @@ source ~/.zshrc
 
 </details>
 
-<details>
+<details markdown>
 <summary>Option 3C: Red Hat / Fedora please report issues)</summary>
 
 ```bash
@@ -231,7 +231,7 @@ PySpark is working.
 
 ## Troubleshooting
 
-<details>
+<details markdown>
 <summary>Click for more information</summary>
 
 ### SPARK_HOME conflict

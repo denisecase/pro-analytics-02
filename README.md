@@ -95,12 +95,15 @@ When VS Code opens, accept the Extension Recommendations (click **`Install All`*
 Use VS Code menu option `Terminal` / `New Terminal` to open a
 **VS Code terminal** in the root project folder.
 
+This project uses `scikit-learn`, so we must stay with Python 3.14.
+
 To set up a project Python environment (managed by `uv`) and align VS Code with it,
 run the following commands, one at a time, hitting ENTER after each:
 
 ```shell
 uv self update
 uv python pin 3.14
+uv python install
 uv lock --upgrade
 uv sync
 ```
@@ -131,11 +134,12 @@ Open a VS Code terminal (menu: `Terminal` / `New Terminal`) and run:
 git pull
 
 uv run python -m pro_analytics_02.demo_module_basics
+uv run python -m pro_analytics_02.ml_example
 
 # do chores
 uv run ruff format .
 uv run ruff check . --fix
-uv run python -m pyright
+uv run ty check
 uv run python -m pytest
 uv run python -m zensical build
 

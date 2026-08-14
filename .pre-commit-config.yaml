@@ -1,7 +1,7 @@
 # ============================================================
 # .pre-commit-config.yaml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-08-11
+# Updated: 2026-08-13
 #
 # REQ: Professional projects using Python src/ SHOULD include pre-commit checks.
 # WHY: Minimize git diffs, catch common issues early, and support collaboration.
@@ -104,7 +104,7 @@ repos:
   # === REPO: RUFF PRE-COMMIT (for Python code) ===
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.16.2
+    rev: v0.16.3
     hooks:
       # === RUFF PRE-COMMIT CHECKS ===
       - id: ruff-format

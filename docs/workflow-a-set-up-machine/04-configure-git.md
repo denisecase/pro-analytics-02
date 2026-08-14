@@ -2,7 +2,7 @@
 
 After installing Git, configure Git by setting your global `user.name` and `user.email`.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Git records the name and email associated with each saved project change.

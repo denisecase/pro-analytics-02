@@ -2,7 +2,7 @@
 
 > Stop Apache Kafka when you are done working.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 Apache Kafka should be stopped when the streaming work session is finished.

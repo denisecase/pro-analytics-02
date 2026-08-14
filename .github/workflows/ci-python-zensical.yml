@@ -69,7 +69,7 @@ jobs:
           uv --version
           uv run python --version
           uv run python -m ruff --version
-          uv run python -m pyright --version
+          uv run ty --version
           if [ -f "zensical.toml" ]; then
             uv run python -m zensical --version
           fi
@@ -93,7 +93,7 @@ jobs:
         # WHY: Catches malformed pyproject.toml before a broken release.
 
       - name: B2) Run Pyright type checker
-        run: uv run python -m pyright
+        run: uv run ty check
         continue-on-error: true
         # WHY: Catches type errors that ruff does not check.
         # OBS: Pyright reads settings from pyproject.toml [tool.pyright].

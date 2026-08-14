@@ -1,4 +1,4 @@
-# 🟠 Verify Workflow: Set Up Project
+# 🟡 Verify Workflow
 
 > This page verifies that your **Python Project** is correctly set up and aligned with VS Code.
 
@@ -18,7 +18,9 @@ On your machine:
 code .
 ```
 
-## 2. Verify uv and Python Environment
+This ensures VS Code opens the repository root as the project workspace.
+
+## 2. Verify uv and Python
 
 Open the VS Code terminal and run the following commands one at a time:
 
@@ -30,10 +32,14 @@ uv run python --version
 ### Verify
 
 - `uv --version` prints a version number
-- `uv run python --version` prints the Python version pinned for this project
+- `uv run python --version` prints the Python version declared for this project
 - No error messages appear
 
-## 3. Verify Virtual Environment
+If the project contains a `.python-version` file,
+the Python version reported by `uv run python --version`
+should match the version requested by the project.
+
+## 3. Verify the Project Environment
 
 Look at the VS Code Explorer (left panel). Verify:
 

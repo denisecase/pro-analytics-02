@@ -9,7 +9,7 @@ software, data, and technology work.
 
 Go to <https://github.com/> and create a new account.
 
-<details>
+<details markdown>
 <summary>WHY?</summary>
 
 GitHub provides a place to store, share, and recover code projects.
