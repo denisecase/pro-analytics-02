@@ -76,3 +76,7 @@ to your phone or authenticator app.
   alt="Microsoft Authenticator app icon"
   width="48"
 />
+
+---
+
+[◄ Back to 🟢 Workflow A](index.md)

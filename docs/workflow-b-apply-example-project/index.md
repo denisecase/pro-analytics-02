@@ -41,3 +41,7 @@ structure, run commands, trace results, and make controlled changes.
 3. [Read & Understand](03-read-and-understand/index.md)
 4. [Make a Technical Modification](04-make-technical-modification/index.md)
 5. [Apply the Skills to a New Problem](05-apply-skills/index.md)
+
+---
+
+[◄ Back to 🏠 Guide Home](../index.md)

@@ -72,3 +72,7 @@ alt="Windows: Show extensions and hidden items" width="300">
 
 Open a folder and check that file names end with extensions
 (for example `.txt` or `.py`) and that hidden files are visible.
+
+---
+
+[◄ Back to 🟢 Workflow A](index.md)

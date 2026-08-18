@@ -66,3 +66,7 @@ Your project setup is complete when all are true:
 - [ ] the project `.venv` appears in the bottom status bar when a Python file is selected
 
 Congratulations - your project environment is ready for work!
+
+---
+
+[◄ Back to 🟠 Workflow C](index.md)

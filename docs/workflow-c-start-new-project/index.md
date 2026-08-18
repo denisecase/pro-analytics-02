@@ -32,3 +32,7 @@ a short prerequisite covering files, folders, terminals, and Git.
 4. [Open the Project in VS Code & Install Recommended VS Code Extensions](04-open-vscode-extensions-maybe-kafka.md)
 5. [Set up Project Python Environment](05-set-up-environment.md)
 6. [Verify](06-verify.md)
+
+---
+
+[◄ Back to 🏠 Guide Home](../index.md)

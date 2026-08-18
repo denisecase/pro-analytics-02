@@ -51,3 +51,7 @@ If not, repeat the installation and configuration until successful.
 git config --global user.name
 git config --global user.email
 ```
+
+---
+
+[◄ Back to 🟢 Workflow A](index.md)

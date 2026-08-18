@@ -138,3 +138,7 @@ npx --version
 
 Each command should display a version number.
 If any command fails, revisit the corresponding installer.
+
+---
+
+[◄ Back to 🟢 Workflow A](index.md)

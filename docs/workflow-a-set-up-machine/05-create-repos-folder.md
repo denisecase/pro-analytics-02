@@ -100,3 +100,7 @@ Your terminal should be your machine's native shell
 
 From in the Repos directory, you should be able to
 see `~/Repos $` or `Repos %` in the terminal prompt.
+
+---
+
+[◄ Back to 🟢 Workflow A](index.md)

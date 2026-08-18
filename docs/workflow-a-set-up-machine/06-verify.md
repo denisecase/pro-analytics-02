@@ -56,3 +56,7 @@ When all of these are true, setup is complete:
 - [ ] You have a `Repos` folder in a non-synced location on your machine.
 
 Congratulations - your machine is ready for professional Python projects!
+
+---
+
+[◄ Back to 🟢 Workflow A](index.md)

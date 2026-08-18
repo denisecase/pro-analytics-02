@@ -128,3 +128,7 @@ In the Streaming Data course:
 
 - [Install Kafka](../kafka/install-kafka.md)
 - [Create Topic](../kafka/create-topic.md)
+
+---
+
+[◄ Back to 🟠 Workflow C](index.md)
