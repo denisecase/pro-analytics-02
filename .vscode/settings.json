@@ -1,7 +1,8 @@
 // ============================================================
 // .vscode/settings.json (ALL-PY-REPOS)
 // ============================================================
-// Updated: 2026-08-15
+// Updated: 2026-08-18
+//
 // Basis: cross-platform (all 3 OS), popular, reliable, and/or safe.
 // NOTE: Comments are not allowed in standard JSON files,
 //       but Microsoft allows them in their .vscode config files (JSONC).
@@ -12,7 +13,10 @@
 // Order: top-level editor settings, then [language] blocks A-Z, then
 //        other namespaced settings.
 {
+  // WHY: Avoid automatic file changes on save; format explicitly when intended.
   "editor.formatOnSave": false,
+  // WHY: Use explicit `uv run` commands instead of auto-activating an environment.
+  "python-envs.terminal.autoActivationType": "off",
 
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"

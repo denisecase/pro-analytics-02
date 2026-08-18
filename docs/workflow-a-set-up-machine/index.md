@@ -51,19 +51,22 @@ a short prerequisite covering files, folders, terminals, and Git.
 
 ## Optional Resources
 
-A [Google NotebookLM](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
-has been created based on this workflow.
-AI-generated materials have been created, and you can access:
+Google NotebookLMs have been set up to help with:
+
+- [Workflow A: Set Up Machine](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
+- [Workflow B: Apply Example Project](https://notebook.google.com/notebook/c2de21ca-e973-4a44-9de6-be7ac501eb5d)
+
+Those links allow you to access:
 
 - workflow-specific chatbot
 - slides
-- audio podcast (try **interactive mode** and question the presenters)
+- audio podcast
 - video (below)
 - and more
 
 Recommendation 🔊
 
-[Listen to the 20-minute Audio Overview](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
+[Listen to the Workflow A: Set Up Machine 20-minute Audio Overview](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
 or watch the video below before you start.
 It provides good background on WHY we do these things.
 

@@ -1,6 +1,6 @@
 # 🔵 Initialize Git
 
-Create a new Git history for your independent project and connect it to your new GitHub repository.
+Create a new Git history for your project and connect it to your new GitHub repository.
 
 ## Intent
 

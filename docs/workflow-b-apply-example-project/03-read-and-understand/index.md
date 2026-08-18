@@ -59,9 +59,7 @@ By the end of this phase you should understand:
 - Explanations of the project
 - Descriptions of techniques used
 
-### Notebooks and Source Code (`notebooks/` and `src/`)
-
-Jupyter notebooks usually run from top to bottom.
+### Source Code (`src/`)
 
 Python modules are typically stored in `src/`.
 Execution often begins at an entry point near the end of the file:
@@ -69,9 +67,6 @@ Execution often begins at an entry point near the end of the file:
 ```python
 def main():
     # This is where execution logic begins
-
-if __name__ == "__main__":
-    main()
 ```
 
 When reading a Python file:

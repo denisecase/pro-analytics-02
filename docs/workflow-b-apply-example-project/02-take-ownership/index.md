@@ -28,13 +28,22 @@ and publish it as a new repository in your own GitHub account.
 
 ## Steps
 
+Part 1. In GitHub (via web browser)
+
 1. [Start in GitHub to Create a New Repository](01-start-in-github.md)
 2. [Configure GitHub Repository Settings](02-configure-repo-settings.md)
+
+Part 2. In VS Code Terminal:
+
+<!-- markdownlint-disable MD029 -->
+
 3. In VS Code, with the example project open, [Delete the Original Git History (`.git/`)](03-delete-git.md)
 4. [Initialize Git](04-init-git.md)
 5. [Update authorship and repository references](05-update-authorship.md)
 6. [Run the project](../run-project.md)
 7. [Git add-commit-push](07-git-add-commit-push.md)
+
+<!-- markdownlint-enable MD029 -->
 
 ## Success
 
