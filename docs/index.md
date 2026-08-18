@@ -1,4 +1,4 @@
-# Guide to Professional Python
+# 🏠 Guide to Professional Python
 
 This repository provides a clear, concise guide for professional Python projects.
 
