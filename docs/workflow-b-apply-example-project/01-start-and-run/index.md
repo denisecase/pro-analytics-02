@@ -1,6 +1,6 @@
 # 🔵 Start & Run
 
-> Phase 1. Clone the example project and run it.
+> Phase 1. **Clone** the example and run it.
 
 <details markdown>
 <summary>WHY?</summary>
@@ -118,13 +118,11 @@ The example should run from beginning to end without an error.
 
 ## Success
 
-Before continuing, verify:
+You are ready to continue after:
 
-- [ ] You cloned the correct example repository.
-- [ ] You opened only the example project in VS Code.
-- [ ] The Python environment (`.venv`) appears.
-- [ ] The example runs successfully.
-- [ ] The expected output and `project.log` appears.
+- [ ] `uv run python -m datafun.app` printed log lines ending in "Executed successfully!"
+- [ ] A new `project.log` file appears in the project root
+- [ ] Your commit is pushed and visible in your GitHub repo "Commits" tab.
 
 ---
 

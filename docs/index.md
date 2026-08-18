@@ -47,9 +47,9 @@ adapting existing work, and using professional scaffolding efficiently.
 The goal is to become comfortable working with professional Python projects
 regardless of how they begin.
 
-## Recent Updates (August 2026)
+## For Returning Users: What Changed (August 2026)
 
-- improved and standardized `uv` environment setup
+- streamlined `uv` usage
 - added support for `marimo` notebooks stored as plain `.py` files
 - updated `pyproject.toml` conventions ([dependency-groups] and [tool.uv])
 - replaced Pyright/Pylance with `ty` for type checking, affects:
