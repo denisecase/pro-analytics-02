@@ -151,3 +151,7 @@ In the Business Intelligence course, Mac and Linux users install Spark.
 It is optional (and nice to know) for Windows users.
 
 - [Install Spark](../../spark/index.md)
+
+---
+
+[◄ Back to 🔵 Phase 1](index.md)

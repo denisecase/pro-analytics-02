@@ -26,9 +26,13 @@ Save your work after each useful change.
 Git maintains a history of project changes, making it safe to experiment.
 When something goes wrong, we can review Git history and return to a working version.
 
-## Steps
+## Step List
 
 1. [Git pull before changes](01-git-pull-before-changes.md)
 2. [Make a technical modification](02-make-modification.md)
 3. [Run the project code](03-run-project.md)
 4. [Git add-commit-push](04-git-add-commit-push.md)
+
+---
+
+[◄ Back to 🔵 Workflow B](../index.md)

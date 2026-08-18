@@ -1,12 +1,12 @@
 # ============================================================
 # .github/workflows/ci-python-zensical.yml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-08-12
-
+# Updated: 2026-08-16
+#
 # WHY: Continuous Integration (CI) ensures repository hygiene,
-#      Python correctness, and documentation builds.
+#      Python correctness, testing, and documentation builds.
 # REQ: CI MUST NOT introduce rules that are not reproducible locally.
-# OBS: CI validates only; it does not edit files or deploy docs.
+# OBS: CI validates only; it never persists file changes or deploys docs.
 # OBS: yamllint config lives at .github/.yamllint.yml (not repo root).
 
 # Name shown in the repo Actions tab.
@@ -16,11 +16,11 @@ on:
   push:
     branches: [main]  # WHY: Validate on every push to GitHub branch `main`.
   pull_request:
-    branches: [main]  # WHY: Validate any pull requests (PRs) before merge.
+    branches: [main]  # WHY: Validate pull requests before merge.
   workflow_dispatch:  # WHY: Allow manual trigger from Actions tab.
 
-permissions:          # Least-privilege: this job only needs to READ.
-  contents: read      # It checks code; it never writes to the repo.
+permissions:          # WHY: Least privilege; this job only needs repository read access.
+  contents: read      # WHY: CI validates repository contents and never pushes changes.
 
 concurrency:
   group: ci-python-zensical-${{ github.workflow }}-${{ github.ref }}
@@ -31,6 +31,7 @@ concurrency:
 env:
   PYTHONUNBUFFERED: "1"     # WHY: Real-time log output in CI.
   PYTHONIOENCODING: "utf-8" # WHY: Consistent encoding across platforms.
+  UV_FROZEN: "1"            # WHY: CI MUST use the committed lockfile without updating it.
 
 jobs:
   ci:
@@ -48,21 +49,22 @@ jobs:
         # WHY: Required so all subsequent steps can access repo files.
 
       - name: A2) Install uv (with caching)
-        uses: astral-sh/setup-uv@v8.2.0
+        uses: astral-sh/setup-uv@v10.0.0
         with:
           enable-cache: true
-          # WHY: Cache the uv tool itself for faster subsequent runs.
+          # WHY: Cache uv-managed artifacts for faster subsequent runs.
           cache-dependency-glob: "uv.lock"
-          # WHY: Invalidate cache only when locked dependencies change.
+          # WHY: Invalidate dependency cache when the committed lockfile changes.
 
       - name: A3) Install project Python
         run: uv python install
-        # WHY: Ensures the pinned Python version is available in CI.
-        # OBS: Does not modify the repo; uv manages the interpreter locally.
+        # WHY: Ensures the Python version declared in .python-version is available.
+        # OBS: uv manages the interpreter locally in the CI environment.
 
-      - name: A4) Install all dependencies with frozen versions (in uv.lock)
+      - name: A4) Install dependencies from committed lockfile
         run: uv sync --frozen
-        # WHY: Install dev and docs extras so all check and build tools are available.
+        # WHY: Install all configured dependency groups exactly from uv.lock.
+        # REQ: CI MUST fail rather than update a stale or incompatible lockfile.
 
       - name: A5) Show tool versions
         run: |
@@ -77,10 +79,11 @@ jobs:
 
       - name: A6) Run pre-commit on all files
         run: uv run pre-commit run --all-files
-        # WHY: Run the same repo hygiene checks used locally.
-        # OBS: A clean commit should already pass this without file changes.
-        #      If a hook changes files in CI, the job fails because the repo
-        #      was not committed in its fully fixed state.
+        # WHY: Run the same repository hygiene checks used locally.
+        # OBS: A clean commit should already pass without file changes.
+        # OBS: Autofixing hooks may modify the ephemeral CI checkout.
+        #      If they do, pre-commit fails because the committed files
+        #      were not already in their required final state.
         # FIX: Run this command locally, review any autofixes, fix remaining
         #      issues by hand, then git add, commit, and push again.
 
@@ -90,29 +93,28 @@ jobs:
 
       - name: B1) Validate pyproject.toml schema
         run: uvx "validate-pyproject[all]" pyproject.toml
-        # WHY: Catches malformed pyproject.toml before a broken release.
+        # WHY: Catch malformed project metadata before downstream CI or release work.
 
-      - name: B2) Run Pyright type checker
+      - name: B2) Run ty type checker
         run: uv run ty check
         continue-on-error: true
-        # WHY: Catches type errors that ruff does not check.
-        # OBS: Pyright reads settings from pyproject.toml [tool.pyright].
-        # OBS: Not included in pre-commit because it requires the full venv.
-        # WHY: continue-on-error is non-blocking.
-        # These issues will not fail the action.
+        # WHY: Catch type errors that Ruff does not check.
+        # OBS: ty uses the installed project environment for analysis.
+        # OBS: Not included in pre-commit because it requires the full environment.
+        # OBS: continue-on-error keeps type checking non-blocking in this workflow.
 
       # ============================================================
-      # C) COVERAGE & TESTING: Python tests (pytest)
+      # C) COVERAGE & TESTING: Python tests
       # ============================================================
 
       - name: C1) Run pytest
         run: uv run python -m pytest
-        # WHY: Confirms all Python tests pass in a clean CI environment.
+        # WHY: Confirm all Python tests pass in a clean CI environment.
         # OBS: pytest config lives in pyproject.toml [tool.pytest.ini_options].
-        # OBS: Not included in pre-commit because tests can be slow.
+        # OBS: Not included in pre-commit because tests can be slower.
 
       # ============================================================
-      # D) Docs build (no deployment)
+      # D) DOCS: Build documentation without deployment
       # ============================================================
 
       - name: D1) Build documentation with Zensical
@@ -122,7 +124,7 @@ jobs:
           else
             echo "No zensical.toml found; skipping docs build."
           fi
-        # WHY: Confirms docs build cleanly without errors or broken references.
-        # OBS: Build only; deployment is handled by a separate workflow if needed.
-        # OBS: Conditional on zensical.toml so this workflow is reusable across
-        #      repos that may not yet have docs configured.
+        # WHY: Confirm documentation builds without errors.
+        # OBS: This workflow builds only; deployment is handled separately.
+        # OBS: Conditional on zensical.toml so this workflow remains reusable
+        #      across src-layout Python repos that do not require documentation.

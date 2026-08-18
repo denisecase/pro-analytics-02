@@ -32,9 +32,9 @@ keywords = ["python", "analytics", "data science", "professional development"]
 dependencies = [
     # REQ.DEPS: External packages used by the project code.
     "datafun-toolkit", # WHY: Provides professional Python utilities for privacy-preserving logging.
-    "ipykernel", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
-    "ipython", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
-    "marimo", # WHY: New notebook option.
+    # "ipykernel", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
+    # "ipython", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
+    # "marimo", # WHY: New notebook option.
     "pandas", # WHY: Data analysis and manipulation.
     "scikit-learn", # WHY: Machine learning and data mining.
     "matplotlib", # WHY: Charting. REQ 3.14. pulls in kiwisolver, and kiwisolver publishes a Windows wheel for CPython 3.14 but not 3.15.

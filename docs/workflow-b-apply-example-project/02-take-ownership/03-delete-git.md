@@ -24,3 +24,7 @@ If there are merge conflicts, resolve them before continuing.
 
 The best way to handle merge conflicts is to **avoid them** - always pull first.
 Most of us learn this the hard way. :)
+
+---
+
+[◄ Back to 🔵 Phase 2](index.md)

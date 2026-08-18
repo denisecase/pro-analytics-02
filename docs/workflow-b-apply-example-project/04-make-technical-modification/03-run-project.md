@@ -1,4 +1,4 @@
-# ðŸ”µ Run and Check
+# 🔵 Run and Check
 
 Run and verify your code frequently as you work.
 
@@ -8,8 +8,7 @@ Run Python scripts or notebooks for your project.
 
 See:
 
-- [Run Python](../run-python.md)
-- [Run Notebooks](../run-notebook.md)
+- [Run the project](../run-project.md)
 
 ## Step 2. Add or Update Dependencies (as needed)
 
@@ -56,3 +55,7 @@ Press **Ctrl+C** in the terminal to **stop** the server.
 - Turn on **Auto Save** in VS Code (**File / Auto Save**), or save frequently.
 - Comment out code as needed to keep a working version.
 - If something fails, use debugging tools, logging, or `print()` to inspect values.
+
+---
+
+[◄ Back to 🔵 Phase 4](index.md)

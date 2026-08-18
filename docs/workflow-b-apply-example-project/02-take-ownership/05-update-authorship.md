@@ -1,11 +1,14 @@
-# 🔵 Update Authorship
+# 🔵 Update Authorship and Project Identity
 
-After copying a template repo into your account, update the authorship.
+After creating your independent project repository,
+update the project authorship and repository references.
+
 Details are provided below so:
 
-- README.md links reflect YOUR GitHub account.
-- Your `zensical.toml` file makes a docs website for YOUR repository.
-- Your Repo **About** section reflects YOUR GitHub Pages site.
+- `README.md` links reflect YOUR GitHub account.
+- `pyproject.toml` identifies YOUR project and authorship.
+- `zensical.toml` builds documentation for YOUR repository.
+- Your GitHub repository **About** section reflects YOUR project and documentation site.
 
 ## README.md
 
@@ -53,3 +56,7 @@ If the project includes a `CITATION.cff` file:
 - update `url`
 
 ![Update CITATION.cff](../../images/update-cff.png)
+
+---
+
+[◄ Back to 🔵 Phase 2](index.md)

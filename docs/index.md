@@ -21,7 +21,8 @@ Instructions are provided for common workflows.
   to **set up a machine** for Python development.
 
 - Go to 🔵 [B. Apply Example Project](workflow-b-apply-example-project/)
-  to **learn skills** by running, modifying, and applying an example project.
+  to **learn skills** by running, taking ownership of,
+  modifying, and applying a working example project.
 
 - Go to 🟠 [C. Start Project From Nothing](workflow-c-start-new-project/)
   to **create and configure a new Python project** from scratch (e.g., Capstone projects).

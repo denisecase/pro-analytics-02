@@ -58,3 +58,7 @@ _Image credit: ChatGPT (2026-03) Note: We are not replacable just yet._
 Your repository includes additional configuration files for quality checks and automation.
 
 You are generally encouraged to keep them as they are and explore them as time permits.
+
+---
+
+[◄ Back to 🔵 Phase 5](index.md)

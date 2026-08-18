@@ -37,3 +37,7 @@ which reflects common professional practice.
 
 Not every analytics project publishes documentation publicly,
 but creating clear, professional project documentation is an important and valuable skill.
+
+---
+
+[◄ Back to 🔵 Phase 2](index.md)

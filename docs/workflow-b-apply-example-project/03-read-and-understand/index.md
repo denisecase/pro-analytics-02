@@ -1,6 +1,6 @@
 # 🔵 Workflow 2.3: Read and Understand the Project
 
-> Phase 3. Read and understand the tools and techniques used in the project.
+> Phase 3. Study the working example before making substantial technical changes.
 
 <details markdown>
 <summary>WHY?</summary>
@@ -95,3 +95,7 @@ When reading a Python file:
 - Shows what the program did during execution
 - Useful for understanding program flow and debugging
 - Confirms the program was executed successfully
+
+---
+
+[◄ Back to 🔵 Workflow B](../index.md)

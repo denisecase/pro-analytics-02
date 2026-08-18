@@ -15,7 +15,6 @@
 -->
 
 [![NotebookLM: Set Up Machine](https://img.shields.io/badge/NotebookLM-Set%20Up%20Machine-blue?logo=google)](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
-[![NotebookLM: Apply Example Project](https://img.shields.io/badge/NotebookLM-Apply%20Example%20Project-blue?logo=google)](https://notebooklm.google.com/notebook/2f486eda-5ea5-4a05-9311-b6373859b82f)
 
 [![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/pro-analytics-02/)
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](https://github.com/denisecase/pro-analytics-02/blob/main/pyproject.toml)
@@ -51,7 +50,6 @@ Note: I found the AI-generated audio podcast to be pretty good. It says it allow
 interrupt and ask questions of the presenters (haven't tried that yet).
 
 [![NotebookLM: Set Up Machine](https://img.shields.io/badge/NotebookLM-Set%20Up%20Machine-blue?logo=google)](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
-[![NotebookLM: Apply Example Project](https://img.shields.io/badge/NotebookLM-Apply%20Example%20Project-blue?logo=google)](https://notebooklm.google.com/notebook/2f486eda-5ea5-4a05-9311-b6373859b82f)
 
 ## Overview and Scope
 

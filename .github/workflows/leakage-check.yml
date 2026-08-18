@@ -1,0 +1,52 @@
+# ============================================================
+# .github/workflows/leakage-check.yml (ALL-PY-REPOS)
+# ============================================================
+# Updated: 2026-08-16
+
+# Fails a PR/commit if metadata files leak another project's name,
+# mismatch versions, or reference a stale template source.
+# Dependency-free: runs check_leakage.py with system Python.
+
+# Name shown in the repo Actions tab.
+name: Leakage-Check (from Copy/Paste)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:  # WHY: Allow manual trigger from Actions tab.
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUNBUFFERED: "1"     # WHY: Real-time log output in CI.
+  PYTHONIOENCODING: "utf-8" # WHY: Consistent encoding across platforms.
+
+jobs:
+  check:
+    name: Check for copy-paste errors in metadata
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # WHY: Fail fast if a step hangs unexpectedly.
+
+    steps:
+      # ============================================================
+      # A) ASSEMBLE: Checkout code and set up environment
+      # ============================================================
+
+      - name: A1) Checkout repository code
+        uses: actions/checkout@v7
+        # WHY: Required so all subsequent steps can access repo files.
+
+      - name: A2) Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+        # WHY: Stdlib-only script; no uv or project dependencies needed.
+
+      # ============================================================
+      # B) BASELINE CHECKS: Check for copy-paste leakage in metadata
+      # ============================================================
+
+      - name: B1) Check metadata for copy-paste leakage
+        run: python .github/scripts/check_leakage.py .

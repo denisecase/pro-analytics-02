@@ -110,42 +110,9 @@ This is a Windows security-policy issue that happens on some machines.
 
 </details>
 
-## Step 2. Set Up Pre-Commit Hooks
+## Step 2. Align VS Code with the Project Environment
 
-Pre-commit hooks catch common issues before code is committed and pushed to GitHub.
-
-Run the following commands in the VS Code terminal to:
-
-1. Install the pre-commit Git hooks for this repository
-2. Run the autoupdate to keep tools current and dependencies updated for better security.
-3. Stage all files (so pre-commit can check them)
-4. Run the checks once explicitly
-
-```shell
-uv run pre-commit install
-uv run pre-commit autoupdate
-
-git add -A
-uv run pre-commit run --all-files
-```
-
-After the hooks are installed, pre-commit checks run automatically on every `git commit` command.
-
-### Step 2 Verify
-
-- Commands complete without fatal errors
-
-<details markdown>
-<summary>If pre-commit fails</summary>
-
-Pre-commit may fail on restricted machines where Git hooks cannot be installed.
-If this occurs, it is safe to skip pre-commit and continue with the project.
-
-</details>
-
-## Step 3. Align VS Code with the Project Environment
-
-### Step 3.1 Ensure VS Code uses the project `.venv`
+### Step 2.1 Ensure VS Code uses the project `.venv`
 
 1. Open the **Command Palette** (menu: **View** / **Command Palette**, or `Ctrl+Shift+P`)
 2. Type and choose: `Python: Select Interpreter`
@@ -155,12 +122,16 @@ If this occurs, it is safe to skip pre-commit and continue with the project.
 
 ![Choose recommended local .venv](./images/Python-Recommended-Local-Dot-venv.png)
 
-### Step 3.2. Restart the Python language server
+### Step 2.2. Restart the Python language server
 
 1. Open the **Command Palette** (same as before).
 2. Type or choose: `Developer: Reload Window`
 
-### Step 3 Verify
+### Step 2 Verify
 
 - VS Code reloads
 - No warnings about missing Python environments appear
+
+---
+
+[◄ Back to 🔵 Phase 1](index.md)

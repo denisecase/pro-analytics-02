@@ -1,27 +1,28 @@
 # ============================================================
 # .github/workflows/deploy-zensical.yml (ALL-PY-REPOS)
 # ============================================================
-# Updated: 2026-08-12
-
+# Updated: 2026-08-16
+#
 # WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:
 #      GitHub Actions
 # WHY: Without this setting, the deploy-pages action will fail with a 403.
 # REQ: Repository MUST contain .python-version.
 # WHY: The repository declares the Python version used locally and by CI.
+# REQ: Deployment MUST use the committed uv.lock without updating it.
 
 # Name shown in the repo Actions tab.
 name: Docs Deploy (Zensical)
 
 on:
   push:
-    branches: [main]  # WHY: Validate on every push to GitHub branch `main`.
+    branches: [main]  # WHY: Deploy docs on every push to GitHub branch `main`.
   workflow_dispatch:  # WHY: Allow manual trigger from Actions tab.
 
 permissions:
-  contents: read        # WHY: Needed to checkout code.
-  pages: write          # WHY: Required to deploy to GitHub Pages.
-  id-token: write       # WHY: Required by deploy-pages for OIDC authentication.
+  contents: read   # WHY: Needed to checkout code.
+  pages: write     # WHY: Required to deploy to GitHub Pages.
+  id-token: write  # WHY: Required by deploy-pages for OIDC authentication.
 
 concurrency:
   group: github-pages
@@ -32,12 +33,13 @@ concurrency:
 env:
   PYTHONUNBUFFERED: "1"     # WHY: Real-time log output in CI.
   PYTHONIOENCODING: "utf-8" # WHY: Consistent encoding across platforms.
+  UV_FROZEN: "1"            # WHY: Deployment MUST use uv.lock without updating it.
 
 jobs:
   docs:
     name: Deploy Documentation site
     runs-on: ubuntu-latest
-    timeout-minutes: 30   # WHY: Fail fast if a step hangs unexpectedly.
+    timeout-minutes: 30 # WHY: Fail fast if a step hangs unexpectedly.
 
     steps:
       # ============================================================
@@ -54,20 +56,21 @@ jobs:
         # OBS: Must run before the build step so base URL is available if needed.
 
       - name: A3) Install uv (with caching)
-        uses: astral-sh/setup-uv@v8.2.0
+        uses: astral-sh/setup-uv@v10.0.0
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
-          # WHY: Invalidate cache only when locked dependencies change.
+          # WHY: Invalidate dependency cache when the committed lockfile changes.
 
       - name: A4) Install project Python
         run: uv python install
-        # WHY: Ensures the pinned Python version is available in CI.
-        # OBS: Does not modify the repo; uv manages the interpreter locally.
+        # WHY: Ensures the Python version declared in .python-version is available.
+        # OBS: uv manages the interpreter locally in the CI environment.
 
-      - name: A5) Install all dependencies with frozen versions (in uv.lock)
+      - name: A5) Install dependencies from committed lockfile
         run: uv sync --frozen
-        # WHY: Install dev and docs extras so all check and build tools are available.
+        # WHY: Install all configured dependency groups exactly from uv.lock.
+        # REQ: Deployment MUST fail rather than update a stale lockfile.
 
       - name: A6) Show tool versions
         run: |

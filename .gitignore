@@ -69,6 +69,7 @@ ehthumbs.db
 # NOTE: Use .vscode/* (contents), not .vscode/ (directory). Git will not
 #       re-include a file whose parent directory is excluded.
 .vscode/*
+!.vscode/ABOUT_THIS_FOLDER.md
 !.vscode/extensions.json
 !.vscode/settings.json
 !.vscode/launch.json

@@ -1,12 +1,18 @@
-# ðŸ”µ Run and Check
+# 🔵  Run and Check
 
 This mirrors professional practice: run and check code as you work.
 
 ## Step 1. Run Code
 
-Run Python and/or notebooks as needed for your project.
+Run Python scripts as needed for your project.
+Exact commands should be listed in the project `README.md`.
+The command should look something like this,
+but the package name might be different than
+`datafun` to match your project:
 
-See [Run Python](../run-python.md) or [Run Notebooks](../run-notebook.md)
+```shell
+uv run python -m datafun.app
+```
 
 ## Step 2. (As Needed) Add / Update Dependencies
 
@@ -18,6 +24,7 @@ Then re-run the `uv sync` command as shown below:
 
 ```shell
 uv cache clean
+uv python install
 uv lock --upgrade
 uv sync
 ```
@@ -36,6 +43,7 @@ Run the following commands in a VS Code terminal to:
 ```shell
 uv run ruff format .
 uv run ruff check . --fix
+uv run ty check
 uv run python -m pytest
 ```
 
@@ -82,3 +90,7 @@ It:
   strategically placed logging statements,
   or `print()` calls to reveal where execution
   is occurring and what values are stored in variables.
+
+---
+
+[◄ Back to 🔵 Phase 2](index.md)

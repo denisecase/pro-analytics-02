@@ -4,7 +4,7 @@
 ============================================================
 sit.ps1 (ALL-PY-SRC-REPOS)
 ============================================================
-Updated: 2026-08-10 (uses pyproject.toml [dependency-groups]; uv sync installs dev and docs groups by default)
+Updated: 2026-08-15 (uses pyproject.toml [dependency-groups]; uv sync installs dev and docs groups by default)
 
 Situate project dependencies, lint, test, and build docs.
 For Python tooling repos only.
@@ -40,6 +40,8 @@ if (Test-Path "pyproject.toml") {
 }
 
 uv self update
+uv python pin 3.14
+uv python install
 uv lock --upgrade
 uv sync
 

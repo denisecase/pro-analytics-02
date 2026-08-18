@@ -42,3 +42,7 @@ but to **use the techniques to produce meaningful results in a new context**.
 2. [Apply skills to complete the project](02-apply-skills.md)
 3. [Run the project code](03-run-project.md)
 4. [Git add-commit-push](04-git-add-commit-push.md)
+
+---
+
+[◄ Back to 🔵 Workflow B](../index.md)

@@ -1,7 +1,7 @@
 # ============================================================
 # shape.ps1 (ALL-REPOS)
 # ============================================================
-# Updated: 2026-08-13
+# Updated: 2026-08-16
 #
 # REQ: List project working files and directories that currently exist on disk.
 # WHY: Provide a concise, copyable view of the current project structure.
@@ -24,6 +24,7 @@ $excludedDirectories = @(
     ".git",
     ".venv",
     "__pycache__",
+    ".cache",
     ".ruff_cache",
     ".pytest_cache",
     ".mypy_cache",
