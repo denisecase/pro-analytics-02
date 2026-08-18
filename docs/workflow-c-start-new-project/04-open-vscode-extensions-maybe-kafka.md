@@ -92,8 +92,8 @@ For example:
 #### Core Python Extensions
 
 - **Python (ms-python.python)** run, debug, and test Python code
-- **Pylance (ms-python.vscode-pylance)** fast IntelliSense and type checking
 - **Ruff (charliermarsh.ruff)** linting, formatting, and import cleanup
+- **ty (astral-sh.ty)** fast type checking
 
 #### Notebook Support
 

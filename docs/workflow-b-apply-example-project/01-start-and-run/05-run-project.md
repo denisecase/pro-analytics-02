@@ -5,9 +5,7 @@
 ## Step 1. Find the Run Command
 
 Open the project `README.md`.
-
 Use the exact run command shown there.
-
 For example:
 
 ```shell
@@ -17,7 +15,6 @@ uv run python -m datafun.app
 ## Step 2. Run the Project
 
 Open a VS Code terminal in the project root folder.
-
 Copy the command from the README,
 paste it into the terminal,
 and press **Enter**.
@@ -25,8 +22,18 @@ and press **Enter**.
 ## Step 3. Verify
 
 The project should run from beginning to end without an unexpected error.
-
 You may see terminal output and a new `project.log` file.
+
+<details markdown>
+<summary>If the terminal ran an `activate` command automatically</summary>
+
+If your terminal ran an `activate` command by itself when it opened,
+that's expected and harmless.
+`uv run` manages the environment.
+We do not need to activate anything.
+Most example projects turn this off in the `.vscode/settings.json` file.
+
+</details>
 
 <details markdown>
 <summary>If the project does not run</summary>
@@ -85,9 +92,10 @@ Running as a module helps Python find local imports correctly.
 
 ## Success
 
-- [ ] The example runs without an unexpected error.
-- [ ] Expected output appears.
-- [ ] `project.log` appears if the project creates one.
+- [ ] The project should run and end with a line
+      like **"Executed successfully!"** in the terminal.
+- [ ] You may see a new `project.log` file appear.
+- [ ] You may see new generated artifacts appear.
 
 ---
 

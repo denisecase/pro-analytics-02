@@ -2,6 +2,20 @@
 
 > Phase 1. **Clone** the example and run it.
 
+## ⚠️ New to Terminals, Git, or Repositories?
+
+This guide assumes you can open a terminal and run a command.
+If that is new to you (it often is), start with
+**[Applied Computing Foundations](https://denisecase.github.io/applied-computing-foundations/)**,
+a short prerequisite covering files, folders, terminals, and Git.
+
+## ⚠️ Get Your Machine Ready First
+
+Complete
+[🟢 **Workflow A: Set Up Machine**](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/)
+first.
+This phase requires successful completion of all those steps.
+
 <details markdown>
 <summary>WHY?</summary>
 
@@ -50,10 +64,10 @@ Cloning a repo to a local machine involves the following steps (shown below).
 
 ### 2.1. Copy the Web Address (URL) of the GitHub Repository
 
-In your browser, view the example GitHub repository.
-
-Use `CTRL a` to select all and `CTRL c` to copy the URL to your clipboard.
-On Mac/Linux, use `CMD a` and `CMD c`.
+View the example GitHub repository in your web browser.
+Click once in the browser's **address bar** to
+highlight the entire URL,
+then `CTRL c` (Mac: `CMD c`) to copy it.
 
 ### 2.2. Clone the Repository to Your Local Machine
 
@@ -86,10 +100,10 @@ After running the command verify:
 - A new folder (with the repository name) appears in your current directory
 - The terminal shows no error messages about authentication or repository not found
 
-## Step 2.3. Open the Project in VS Code
+## Step 3. Open the Project in VS Code
 
 Follow:
-[Open the Project in VS Code (and Install Recommended VS Code Extensions and maybe Kafka)].
+[Open the Project in VS Code (and Install Recommended VS Code Extensions and maybe Kafka)](03-open-vscode-extensions-maybe-kafka.md).
 
 This step includes any course-specific setup for:
 
@@ -98,7 +112,7 @@ This step includes any course-specific setup for:
 
 Return here when the project is open correctly in VS Code.
 
-## Step 2.4. Set Up the Python Environment
+## Step 4. Set Up the Python Environment
 
 Follow:
 [Set up Project Python Environment (managed by uv)](04-set-up-environment.md).
@@ -120,9 +134,8 @@ The example should run from beginning to end without an error.
 
 You are ready to continue after:
 
-- [ ] `uv run python -m datafun.app` printed log lines ending in "Executed successfully!"
+- [ ] The example printed log lines ending in "Executed successfully!"
 - [ ] A new `project.log` file appears in the project root
-- [ ] Your commit is pushed and visible in your GitHub repo "Commits" tab.
 
 ---
 
