@@ -11,6 +11,11 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
+---
+
+## [0.4.3] - 2026-08-17
+
+- new process with real example projects and taking ownership (rather than templates)
 - used `uvx pup-up` to get new ci and docs actions and sit that use local py version
 
 ---
@@ -138,7 +143,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.2...HEAD
+[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.3...HEAD
+[0.4.3]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.3
 [0.4.2]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.2
 [0.4.1]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.1
 [0.4.0]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.0

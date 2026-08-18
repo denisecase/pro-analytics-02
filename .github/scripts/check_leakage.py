@@ -83,6 +83,19 @@ KNOWN_PROJECTS = [
     "applied-computing-foundations",
 ]
 
+# Fleet TOOLS meant to be RUN from any repo. Allowed as commands
+# (uvx pup-up, pup-clean --delete), but still flagged if they appear
+# in identity metadata where a name should never leak.
+FLEET_TOOLS = {"pup-core", "pup-up", "pup-check", "pup-clean"}
+
+# A pup name used as a command is intended. Matches: uvx pup-up,
+# uv run pup-clean, or the bare `pup-up ...` command at a line/code start.
+_TOOL_COMMAND_RE = re.compile(
+    r'(?:uvx|uv run|uvx run)\s+(pup-(?:core|up|check|clean))\b'
+    r'|(?:^|\s)(pup-(?:core|up|check|clean))\s+--',
+    re.MULTILINE,
+)
+
 
 # ============================================================
 # Helpers
@@ -166,17 +179,46 @@ def check_src_package(root: Path) -> list[str]:
 
 
 def check_foreign_projects(root: Path) -> list[str]:
-    """A fleet project named in a repo that isn't it is a likely copy-paste leak."""
+    """A fleet project named in a repo that isn't it is a likely copy-paste leak.
+
+    Fleet TOOLS (pup-*) are allowed when written as commands to run, since
+    instructions legitimately tell users to invoke them. They are still
+    flagged if they appear in metadata files, where a name should not leak.
+    """
     repo = norm(repo_name(root))
     problems: list[str] = []
-    for filename in ("pyproject.toml", "CITATION.cff", "CHANGELOG.md", "README.md"):
+
+    # Metadata files: any known name (including pup tools) that isn't THIS
+    # repo is a leak. Commands don't belong in metadata, so no exception here.
+    metadata_files = ("pyproject.toml", "CITATION.cff", "CHANGELOG.md")
+    # Prose files: allow pup tools when used as commands.
+    prose_files = ("README.md",)
+
+    all_names = KNOWN_PROJECTS + list(FLEET_TOOLS)
+
+    for filename in metadata_files:
         text = read(root, filename)
         if text is None:
             continue
-        for proj in KNOWN_PROJECTS:
+        for proj in all_names:
             if norm(proj) == repo:
-                continue  # naming yourself is fine
+                continue
             if re.search(rf'(?<![\w-]){re.escape(proj)}(?![\w-])', text):
+                problems.append(
+                    f"{filename}: mentions other project {proj!r} (copy-paste leak?)"
+                )
+
+    for filename in prose_files:
+        text = read(root, filename)
+        if text is None:
+            continue
+        # Blank out legitimate tool COMMANDS first, so only stray
+        # (non-command) mentions remain to be checked.
+        scrubbed = _TOOL_COMMAND_RE.sub(" ", text)
+        for proj in all_names:
+            if norm(proj) == repo:
+                continue
+            if re.search(rf'(?<![\w-]){re.escape(proj)}(?![\w-])', scrubbed):
                 problems.append(
                     f"{filename}: mentions other project {proj!r} (copy-paste leak?)"
                 )
