@@ -40,7 +40,6 @@ if (Test-Path "pyproject.toml") {
 }
 
 uv self update
-uv python pin 3.14
 uv python install
 uv lock --upgrade
 uv sync
