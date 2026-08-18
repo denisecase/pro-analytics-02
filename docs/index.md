@@ -27,9 +27,6 @@ Instructions are provided for common workflows.
 - Go to 🟠 [C. Start Project From Nothing](workflow-c-start-new-project/)
   to **create and configure a new Python project** from scratch (e.g., Capstone projects).
 
-- Go to 🟡 [D. Start Project From Template](workflow-d-start-project-from-template/)
-  to **create from a template** (e.g. marimo notebooks).
-
 ## Consistent Foundation across Courses and Projects
 
 Learning complex techniques is easier when the underlying project structure stays consistent.

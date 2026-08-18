@@ -94,10 +94,8 @@ uv sync
 uv run pre-commit install
 uv run pre-commit autoupdate
 
-# optional: generate and check CODEOWNERS
-# based on roles defined in .accountability/surfaces.toml
-uvx se-codeowners generate --strict --output .github/CODEOWNERS
-uvx se-codeowners check
+uv run python -m pro_analytics_02.demo_module_basics
+uv run python -m pro_analytics_02.ml_example
 
 git add -A
 uv run pre-commit run --all-files
@@ -130,15 +128,6 @@ Verify actions run on GitHub. After success:
 git tag vX.Y.Z -m "X.Y.Z"
 git push origin vX.Y.Z
 ```
-
-### Task 5. Verify tag consistency
-
-```shell
-uvx se-manifest-schema check-version --require-tag
-```
-
-Confirms CITATION.cff version matches the pushed git tag.
-Run this after `git push origin vX.Y.Z`; it will fail before that point.
 
 ## Only As Needed (delete a tag)
 
