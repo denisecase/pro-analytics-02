@@ -21,8 +21,9 @@ Instructions are provided for common workflows.
   to **set up a machine** for Python development.
 
 - Go to 🔵 [B. Apply Example Project](workflow-b-apply-example-project/)
-  to **learn skills** by running, taking ownership of,
-  modifying, and applying a working example project.
+  to **learn skills** cloning and running a working example,
+  taking ownership of it with a new Git history, modifying it,
+  and applying the skills to a new problem.
 
 - Go to 🟠 [C. Start Project From Nothing](workflow-c-start-new-project/)
   to **create and configure a new Python project** from scratch (e.g., Capstone projects).
@@ -32,12 +33,13 @@ Instructions are provided for common workflows.
 Learning complex techniques is easier when the underlying project structure stays consistent.
 
 Professional work does not follow a single starting pattern.
-Sometimes we join and adapt an existing project,
-sometimes we build a new project from scratch,
-and often we begin from an established template.
+Sometimes we begin from a working example or existing codebase,
+sometimes we build a new project from scratch, and
+sometimes we begin from a template.
 These workflows develop different skills:
-reading unfamiliar projects, understanding how project infrastructure is assembled,
-and using proven scaffolding efficiently.
+reading unfamiliar projects,
+understanding how project infrastructure is assembled,
+adapting existing work, and using professional scaffolding efficiently.
 
 The goal is to become comfortable working with professional Python projects
 regardless of how they begin.
