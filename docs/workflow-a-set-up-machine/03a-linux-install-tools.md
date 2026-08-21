@@ -93,20 +93,6 @@ We moved to `uv` because:
 
 </details>
 
-### 4. Node.js
-
-Follow the official Node.js installation instructions
-for your Linux distribution:
-<https://nodejs.org/en/download>
-
-<details markdown>
-<summary>WHY?</summary>
-
-Node.js provides `npm` and `npx`.
-Many helpful professional tools can be run with `npx`.
-
-</details>
-
 ## Verify
 
 After installation, open a terminal and run:
@@ -115,7 +101,6 @@ After installation, open a terminal and run:
 git --version
 code --version
 uv --version
-npx --version
 ```
 
 ---

@@ -1,7 +1,7 @@
 # ============================================================
 # pyproject.toml (Python project configuration)
 # ============================================================
-# Updated: 2026-08-11
+# Updated: 2026-08-21
 # REQ.PYTHON: Python projects MUST include pyproject.toml as the single source of truth.
 # WHY: Centralizes project configuration.
 # CUSTOM: Update identity and build tool src folders.
@@ -34,7 +34,7 @@ dependencies = [
     "datafun-toolkit", # WHY: Provides professional Python utilities for privacy-preserving logging.
     # "ipykernel", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
     # "ipython", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
-    # "marimo", # WHY: New notebook option.
+    "marimo", # WHY: New reactive / notebook option.
     "pandas", # WHY: Data analysis and manipulation.
     "scikit-learn", # WHY: Machine learning and data mining.
     "matplotlib", # WHY: Charting. REQ 3.14. pulls in kiwisolver, and kiwisolver publishes a Windows wheel for CPython 3.14 but not 3.15.
@@ -87,135 +87,40 @@ manager = "uv"
 [tool.marimo.runtime]
 pythonpath = ["./src"]
 
+# === MARKDOWNLINT (MARKDOWN LINTING) ===
+
+[tool.markdownlint]
+MD033 = false # WHY: Allow inline HTML such as details, summary, iframe, and video.
+
 # === PYTEST (VERIFY LOGIC) ===
 
 [tool.pytest.ini_options]
 # WHY: Consistent test discovery and coverage visibility.
 minversion = "9.0"
 testpaths = ["tests"]
-addopts = "--cov=pro_analytics_02 --cov-fail-under=20 --cov-report=term-missing"
+addopts = "--cov=src --cov-fail-under=20 --cov-report=term-missing"
+filterwarnings = [
+    "ignore:FigureCanvasAgg is non-interactive, and thus cannot be shown:UserWarning",
+]
 
 # === RUFF (PYTHON FORMATTING AND LINTING) ===
 
-# WHY: Ruff is a fast, all-in-one Python linter and formatter.
-# Configuration is large because Ruff does a lot:
-#   formatting
-#   linting
-#   import sorting
-#   modernization
-#   bug-pattern checks
-#   docstring checks
-#   security checks
-#   per-file exceptions
-#   test-specific exceptions
-
-[tool.ruff]
-# WHY: Use one fast tool for Python linting and formatting across maintained repos.
-# WHY: Keep generated, cached, virtualenv, build, and docs-site output out of lint scope.
-exclude = [
-    ".eggs",
-    "*.egg-info",
-    ".ruff_cache",
-    ".venv",
-    "__pycache__",
-    "build",
-    "dist",
-    "site",
+[tool.ruff.lint] # WHY: Extend Ruff's default rule set as needed.
+extend-select = [
+    # --- turn on for additional linting rules ---
+    "D",  # WHY: Require docstrings; VS Code helps generate them.
 ]
 
-# WHY: Match Black/Ruff formatter default; keeps diffs compact and predictable.
-line-length = 88
-
-# WHY: Avoid unstable preview behavior unless a repo intentionally opts in.
-preview = false
-
-# WHY: Match the current repo target; modernization rules should track the supported runtime.
-target-version = "py314"
-
-# WHY: Do not apply fixes Ruff marks unsafe in shared/release-oriented repos.
-unsafe-fixes = false
-
-
-[tool.ruff.format]
-# WHY: Spaces are the Python standard and match formatter defaults.
-indent-style = "space"
-
-# WHY: Preserve platform-appropriate line endings across Windows/macOS/Linux contributors.
-line-ending = "auto"
-
-# WHY: Preserve existing quote style to minimize meaningless diff churn.
-quote-style = "preserve"
-
-
-[tool.ruff.lint]
-# WHY: Professional baseline for research, package, and infrastructure code.
-# WHY: Catch correctness issues, import disorder, modernization drift, bug patterns,
-# WHY: path handling problems, avoidable complexity, weak return flow, doc gaps,
-# WHY: and obvious security hazards.
-select = [
-    "E",   # WHY: Basic syntax and structural correctness.
-    "F",   # WHY: Undefined names, unused imports, and likely real errors.
-  #  "W",   # WHY: Warnings that catch easy issues early.
-    "I",   # WHY: Deterministic import ordering for stable diffs.
-  #  "UP",  # WHY: Modern Python constructs for the pinned Python version.
-    "B",   # WHY: Common bug patterns.
-
-    "PTH", # WHY: Prefer pathlib for cross-platform path handling.
-    "C4",  # WHY: Comprehension correctness and clarity.
-    "SIM", # WHY: Remove obvious unnecessary complexity.
-    "RET", # WHY: Keep return behavior explicit and readable.
-
-    "D",   # WHY: Public/reusable code needs docstrings.
-    "S",   # WHY: Catch obvious security hazards before release or reuse.
-]
-
-ignore = [
-    "E501", # WHY: Line length is handled by the formatter, not Ruff lint.
-    "D202", # WHY: Allow a blank-line after function docstring.
-    "D203", # WHY: Conflicts with D211; use the no-blank-line convention.
-    "D213", # WHY: Conflicts with D212; use first-line summary convention.
-    "S101", # WHY: Allow assert for tests and intentional internal invariants.
-]
-
-
-[tool.ruff.lint.isort]
-# WHY: Ordered imports keep reviews and generated diffs readable.
+[tool.ruff.lint.isort] # WHY: Sort plain-import and from-import lines together within each section.
 force-sort-within-sections = true
 
+[tool.ruff.lint.per-file-ignores] # WHY: Some file types need lint exceptions.
+"src/**/__init__.py" = ["F401"] # Allow re-export patterns.
+"src/**/_version.py" = ["ALL"]  # Auto-generated file; do not lint.
+"tests/**/*.py" = ["D", "B018"] # Tests need no docstrings; B018 is default-on.
 
-[tool.ruff.lint.per-file-ignores]
-# WHY: Package __init__ files often re-export public API names.
-"src/**/__init__.py" = ["F401"]
-
-# WHY: Generated/version files are build metadata, not authored implementation.
-"src/**/_version.py" = ["ALL"]
-
-# WHY: Tests prioritize behavior clarity over public API documentation.
-# WHY: B011/B018 may be acceptable in tests depending on the assertion pattern.
-# WHY: S101 is retained here even though it is also globally ignored.
-"tests/**/*.py" = ["D", "B018", "B011", "S101"]
-
-# WHY: Marker files are intentionally empty/non-Python content.
-"src/**/py.typed" = ["ALL"]
-
-
-[tool.ruff.lint.pydocstyle]
-# WHY: Google style is the project-wide docstring convention.
+[tool.ruff.lint.pydocstyle] # WHY: Use Google docstring style when D is enabled.
 convention = "google"
-
-# === TY (TYPE CHECKING HELPS FIND COMMON ERRORS BEFORE THE CODE RUNS) ===
-
-[tool.ty.src]
-include = ["src", "tests"]
-
-# === UV (PYTHON ENVIRONMENT AND DEPENDENCY MANAGEMENT) ===
-
-[tool.uv]
-# WHY: Configure uv behavior for this project.
-# WHY: Install all dependency groups defined by this repository by default.
-# OBS: This keeps the canonical `uv sync` command identical across project types
-#      while allowing each repository to declare only the tooling it actually needs.
-default-groups = "all"
 
 # ============================================================
 # SECTION 3: BUILD SYSTEM (boilerplate; CUSTOM src/ agreement)

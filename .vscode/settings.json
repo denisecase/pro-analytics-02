@@ -1,7 +1,7 @@
 // ============================================================
 // .vscode/settings.json (ALL-PY-REPOS)
 // ============================================================
-// Updated: 2026-08-18
+// Updated: 2026-08-21
 //
 // Basis: cross-platform (all 3 OS), popular, reliable, and/or safe.
 // NOTE: Comments are not allowed in standard JSON files,
@@ -15,9 +15,9 @@
 {
   // WHY: Avoid automatic file changes on save; format explicitly when intended.
   "editor.formatOnSave": false,
-  // WHY: Use explicit `uv run` commands instead of auto-activating an environment.
-  "python-envs.terminal.autoActivationType": "off",
-
+  // WHY: Configure Markdown linting in pyproject.toml.
+  "markdownlint.configFile": "./pyproject.toml",
+  "markdownlint.configPointer": "/tool/markdownlint",
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
@@ -40,7 +40,6 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": [
       ".github/workflows/*.yml",

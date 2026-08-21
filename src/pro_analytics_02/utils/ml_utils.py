@@ -7,6 +7,7 @@ for convenience.
 # === DECLARE IMPORTS (BRING IN FREE CODE) ===
 
 import logging
+from typing import Any
 
 from sklearn.dummy import DummyClassifier, DummyRegressor
 from sklearn.metrics import accuracy_score
@@ -33,7 +34,6 @@ def get_model_type(is_supervised: bool, is_target_categorical: bool) -> str:
 
 def build_given_baseline_classification_model(log: logging.Logger):
     """Build and log a given baseline classification model for a categorical target."""
-
     # A baseline model is provided.
     is_supervised: bool = True
     is_target_categorical: bool = True
@@ -61,7 +61,6 @@ def build_given_baseline_classification_model(log: logging.Logger):
 
 def build_given_baseline_regression_model(log: logging.Logger):
     """Build and log a given baseline regression model for a numerical target."""
-
     is_supervised: bool = True
     is_target_categorical: bool = False
 
@@ -87,8 +86,25 @@ def build_given_baseline_regression_model(log: logging.Logger):
     return DummyRegressor(strategy=strategy)
 
 
-def evaluate_classification_model(model, X_test, y_test):
+def evaluate_classification_model(
+    model: Any,
+    X_test: Any,
+    y_test: Any,
+) -> tuple[Any, float]:
     """Generate predictions and calculate classification accuracy.
+
+    Works with classification models that follow the usual scikit-learn
+    estimator interface and provide a `predict()` method.
+
+    Args:
+        model: Trained classification model used to generate predictions.
+        X_test: Test feature data supplied to the model.
+        y_test: Known target values for the test data.
+
+    Returns:
+        A tuple containing:
+        - Predicted target values for `X_test`.
+        - Classification accuracy as a value from 0.0 to 1.0.
 
     Works with any classification model that follows the usual
     scikit-learn estimator interface and provides .predict().

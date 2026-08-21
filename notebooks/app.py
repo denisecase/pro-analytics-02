@@ -51,7 +51,6 @@ def _():
     1. **Supervised Setup** - define the prediction problem and design the experiment.
     2. **Supervised Execution** - train, evaluate, compare, and interpret models.
     """)
-    return
 
 
 @app.cell
@@ -65,7 +64,6 @@ def _():
     4. Prepare and preprocess the data.
     5. Design the train/test experiment.
     """)
-    return
 
 
 @app.cell
@@ -139,7 +137,6 @@ def _(X_test, X_train, available_features, df, selected_features, target):
     The test set is held out for evaluation.
     """
     )
-    return
 
 
 @app.cell
@@ -156,7 +153,6 @@ def _():
     7. Interpret the results and draw conclusions.
     8. Identify limitations and propose the next experiment.
     """)
-    return
 
 
 @app.cell
@@ -215,7 +211,6 @@ def _(baseline_accuracy, improvement, primary_accuracy):
     model choice, preprocessing, or experiment design should change.
     """
     )
-    return
 
 
 @app.cell
@@ -226,7 +221,6 @@ def _(confusion_df):
             confusion_df,
         ]
     )
-    return
 
 
 @app.cell
@@ -246,7 +240,6 @@ def _():
     A machine learning result is not the end of the analysis.
     It should lead to the next well-defined experiment.
     """)
-    return
 
 
 if __name__ == "__main__":

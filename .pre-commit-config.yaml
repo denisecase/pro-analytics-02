@@ -104,7 +104,7 @@ repos:
   # === REPO: RUFF PRE-COMMIT (for Python code) ===
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.16.3
+    rev: v0.16.4
     hooks:
       # === RUFF PRE-COMMIT CHECKS ===
       - id: ruff-format

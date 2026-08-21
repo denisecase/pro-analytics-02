@@ -14,8 +14,6 @@ Detects the copy-paste failure modes seen across the fleet:
 Dependency-free (stdlib + regex). Exit code is non-zero if anything is found.
 """
 
-from __future__ import annotations
-
 import argparse
 from pathlib import Path
 import re
@@ -40,7 +38,7 @@ _WHEEL_PACKAGES_RE = re.compile(r'packages\s*=\s*\[\s*"src/([^"\]]+)"')
 # Captures <pkg> from:  --cov=<pkg>  (inside addopts)
 #   --cov=            the literal coverage-target flag
 #   ([A-Za-z0-9_]+)   <pkg>: an import name (letters, digits, underscores)
-_COV_TARGET_RE = re.compile(r'--cov=([A-Za-z0-9_]+)')
+_COV_TARGET_RE = re.compile(r"--cov=([A-Za-z0-9_]+)")
 
 # Identity fields that should name THIS repo. If they name something else,
 # it is almost always leftover copy-paste from a source template/repo.
@@ -59,7 +57,7 @@ _VERSION_PATTERNS: dict[str, re.Pattern[str]] = {
     "CITATION.cff (version)": re.compile(
         r'(?m)^\s*version:\s*"?([0-9]+\.[0-9]+\.[0-9]+)"?'
     ),
-    "CHANGELOG.md (top release)": re.compile(r'##\s*\[([0-9]+\.[0-9]+\.[0-9]+)\]'),
+    "CHANGELOG.md (top release)": re.compile(r"##\s*\[([0-9]+\.[0-9]+\.[0-9]+)\]"),
 }
 
 # ============================================================
@@ -91,8 +89,8 @@ FLEET_TOOLS = {"pup-core", "pup-up", "pup-check", "pup-clean"}
 # A pup name used as a command is intended. Matches: uvx pup-up,
 # uv run pup-clean, or the bare `pup-up ...` command at a line/code start.
 _TOOL_COMMAND_RE = re.compile(
-    r'(?:uvx|uv run|uvx run)\s+(pup-(?:core|up|check|clean))\b'
-    r'|(?:^|\s)(pup-(?:core|up|check|clean))\s+--',
+    r"(?:uvx|uv run|uvx run)\s+(pup-(?:core|up|check|clean))\b"
+    r"|(?:^|\s)(pup-(?:core|up|check|clean))\s+--",
     re.MULTILINE,
 )
 
@@ -100,8 +98,8 @@ _TOOL_COMMAND_RE = re.compile(
 # DEPENDENCY (not a leaked identity). A name inside a dependency spec is fine.
 _DEP_CONTEXT_RE = re.compile(
     r'^\s*["\']?[A-Za-z0-9_.-]*'  # optional leading name/quote
-    r'(datafun-toolkit|datafun-streaming|composable-data-core|ml-vizkit'
-    r'|se-manifest-schema|se-codeowners)'
+    r"(datafun-toolkit|datafun-streaming|composable-data-core|ml-vizkit"
+    r"|se-manifest-schema|se-codeowners)"
     r'[>=<~!\s"\',\]]',  # followed by a version/spec delimiter
 )
 
@@ -204,7 +202,7 @@ def check_foreign_projects(root: Path) -> list[str]:
         for proj in all_names:
             if norm(proj) == repo:
                 continue
-            for m in re.finditer(rf'(?<![\w-]){re.escape(proj)}(?![\w-])', text):
+            for m in re.finditer(rf"(?<![\w-]){re.escape(proj)}(?![\w-])", text):
                 line = text[
                     text.rfind("\n", 0, m.start()) + 1 : text.find("\n", m.start())
                 ]
@@ -220,7 +218,7 @@ def check_foreign_projects(root: Path) -> list[str]:
         for proj in all_names:
             if norm(proj) == repo:
                 continue
-            if re.search(rf'(?<![\w-]){re.escape(proj)}(?![\w-])', text):
+            if re.search(rf"(?<![\w-]){re.escape(proj)}(?![\w-])", text):
                 problems.append(
                     f"CITATION.cff: mentions other project {proj!r} (copy-paste leak?)"
                 )
@@ -234,7 +232,7 @@ def check_foreign_projects(root: Path) -> list[str]:
         for proj in all_names:
             if norm(proj) == repo:
                 continue
-            if re.search(rf'(?<![\w-]){re.escape(proj)}(?![\w-])', scrubbed):
+            if re.search(rf"(?<![\w-]){re.escape(proj)}(?![\w-])", scrubbed):
                 problems.append(
                     f"{filename}: mentions other project {proj!r} (copy-paste leak?)"
                 )

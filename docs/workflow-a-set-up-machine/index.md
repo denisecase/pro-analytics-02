@@ -11,7 +11,6 @@ Professional Python projects depend on several tools working together:
 - GitHub stores projects,
 - Git tracks changes,
 - Python and `uv` run course code and tools,
-- Node.js runs some project tools,
 - Visual Studio Code provides the coding workspace, and
 - local folders keep work organized.
 

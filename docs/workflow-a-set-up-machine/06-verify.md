@@ -32,7 +32,7 @@ On your machine:
 git --version
 uv --version
 code --version
-npx --version
+
 git config --global user.name
 git config --global user.email
 ```

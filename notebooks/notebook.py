@@ -30,7 +30,7 @@ app = marimo.App(width="medium")
 # === Set up the app context and import modules ===
 
 with app.setup:
-    from pro_analytics_02.app_utils import add
+    from pro_analytics_02.utils.app_utils import add
 
 # ==================
 # === App Cells ===
@@ -47,7 +47,6 @@ def _(mo):
 You can import your library code.
 """
     )
-    return
 
 
 @app.cell
@@ -59,4 +58,3 @@ def _():
 def _(add):
     """App cell that uses the add function from the utils module."""
     add(1, 2)
-    return

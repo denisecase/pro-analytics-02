@@ -83,7 +83,6 @@ def build_primary_model():
 
     This function tries to improve on the simple given baseline model.
     """
-
     # TODO: ANALYST DECISION: Choose an appropriate classification model
     # from the scikit-learn library.
     # You can find them at https://scikit-learn.org/stable/supervised_learning.html
@@ -271,7 +270,7 @@ def main():
 
     # 2.3. Generate predictions on the test data.
 
-    baseline_predictions, baseline_accuracy = evaluate_classification_model(
+    _, baseline_accuracy = evaluate_classification_model(
         baseline_model,
         X_test,
         y_test,

@@ -11,6 +11,11 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
+- Remove Node installation (os-tools number four), node --version
+- Remove the associated markdownlint-cli2 --fix command
+- Remove .markdownlint-cli2.yaml from root
+- NOTE: works great, just simplifying. May pick up a Python Markdown Linter if I miss it
+
 ---
 
 ## [0.4.3] - 2026-08-17
@@ -107,7 +112,6 @@ uv run pre-commit run --all-files
 # repeat if changes were made
 uv run pre-commit run --all-files
 
-npx markdownlint-cli2 --fix
 uvx cffconvert --validate
 
 uv run ty check

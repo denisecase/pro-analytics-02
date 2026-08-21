@@ -107,39 +107,6 @@ We moved to `uv` because:
 
 </details>
 
-### 4. Node.js
-
-#### Task 4.1. Follow the Node.js installation instructions for Windows
-
-<https://nodejs.org/en/download>
-
-<details markdown>
-<summary>WHY?</summary>
-
-Node.js provides `npm` and `npx`.
-Many helpful professional tools can be run with `npx`.
-
-</details>
-
-#### Task 4.2 Change the PowerShell execution policy
-
-Press `Win + X` and select Terminal or Windows PowerShell.
-Run:
-
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-```
-
-Type Y (Yes) and hit Enter to confirm the change.
-
-<details markdown>
-<summary>WHY?</summary>
-
-On some Windows systems, PowerShell may block `npx.ps1` and report that running scripts is disabled.
-This setting allows the recommended tooling to run.
-
-</details>
-
 ## Refresh Your Terminal and Verify
 
 **Close** all open terminal windows, command prompts, or IDEs (like VS Code).
@@ -151,7 +118,6 @@ Open a brand new **PowerShell** terminal window and run:
 git --version
 code --version
 uv --version
-npx --version
 ```
 
 Each command should display a version number.
