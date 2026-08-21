@@ -32,9 +32,6 @@ keywords = ["python", "analytics", "data science", "professional development"]
 dependencies = [
     # REQ.DEPS: External packages used by the project code.
     "datafun-toolkit", # WHY: Provides professional Python utilities for privacy-preserving logging.
-    # "ipykernel", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
-    # "ipython", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
-    "marimo", # WHY: New reactive / notebook option.
     "pandas", # WHY: Data analysis and manipulation.
     "scikit-learn", # WHY: Machine learning and data mining.
     "matplotlib", # WHY: Charting. REQ 3.14. pulls in kiwisolver, and kiwisolver publishes a Windows wheel for CPython 3.14 but not 3.15.
@@ -60,6 +57,12 @@ docs = [
     "zensical", # WHY: Generate and maintain project documentation.
 ]
 
+notebooks = [
+    # "ipykernel", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
+    # "ipython", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
+    "marimo", # WHY: New reactive / notebook option.
+]
+
 [project.urls]
 Homepage = "https://github.com/denisecase/pro-analytics-02"
 Repository = "https://github.com/denisecase/pro-analytics-02"
@@ -71,10 +74,7 @@ Changelog = "https://github.com/denisecase/pro-analytics-02/blob/main/CHANGELOG.
 # SECTION 2: TOOL CONFIGURATION (Professional basics)
 # ============================================================
 
-# === MARIMO NOTEBOOKS ===
-
-[tool.marimo.ai]
-rules = "- prefer polars over pandas\n- make charts using altair"
+# === MARIMO REACTIVE NOTEBOOKS ===
 
 [tool.marimo.save]
 autosave = "after_delay"
@@ -121,6 +121,14 @@ force-sort-within-sections = true
 
 [tool.ruff.lint.pydocstyle] # WHY: Use Google docstring style when D is enabled.
 convention = "google"
+
+# === UV (PYTHON ENVIRONMENT AND DEPENDENCY MANAGEMENT) ===
+
+[tool.uv]
+# WHY: Install all dependency groups defined by this repository by default.
+# OBS: This keeps the canonical `uv sync` command identical across project types
+#      and ensures all repository features work after setup.
+default-groups = "all"
 
 # ============================================================
 # SECTION 3: BUILD SYSTEM (boilerplate; CUSTOM src/ agreement)
