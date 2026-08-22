@@ -5,10 +5,10 @@ This mirrors professional practice: run and check code as you work.
 ## Step 1. Run Code
 
 Run Python scripts as needed for your project.
-Exact commands should be listed in the project `README.md`.
+Exact commands should be listed in the project **README.md**.
 The command should look something like this,
 but the package name might be different than
-`datafun` to match your project:
+**datafun** to match your project:
 
 ```shell
 uv run python -m datafun.app
@@ -16,14 +16,16 @@ uv run python -m datafun.app
 
 ## Step 2. (As Needed) Add / Update Dependencies
 
-As we work on the code, we may find we need additional dependencies listed in `pyproject.toml`.
-For example, after generating interesting results we may add `matplotlib` to visualize charts.
-Edit `pyproject.toml` and add packages to the **dependencies** section as needed.
-You may occasionally need to clean the cache (delete downloaded dependency files stored locally).
-Then re-run the `uv sync` command as shown below:
+As we work on the code, we may find we need additional dependencies listed in **pyproject.toml**.
+For example, after generating results we may add **matplotlib** to visualize charts.
+Edit **pyproject.toml** and add packages to the **dependencies** section as needed.
+You may occasionally need to clean the cache
+(delete downloaded dependency files stored locally).
+Then re-run the **uv sync** command as shown below:
 
 ```shell
 uv cache clean
+
 uv python install
 uv lock --upgrade
 uv sync
@@ -38,7 +40,7 @@ Run the following commands in a VS Code terminal to:
 
 1. Format all project Python files using **Ruff**.
 2. Check and fix all project Python files (automatically "lint" or fix basic issues).
-3. Optional: Run pytest if you have working tests in the `tests/` folder.
+3. Optional: Run pytest if you have working tests in the **tests/** folder.
 
 ```shell
 uv run ruff format .
@@ -49,7 +51,7 @@ uv run python -m pytest
 
 ## Step 4. Build Documentation
 
-Make sure the documentation dependencies in `pyproject.toml` are installed.
+Make sure the documentation dependencies in **pyproject.toml** are installed.
 Then build the project docs, fix any errors, and serve them locally to test.
 
 ```shell
@@ -57,7 +59,7 @@ uv run python -m zensical build
 uv run python -m zensical serve
 ```
 
-- After running the `serve` command,
+- After running the **serve** command,
   a local URL for the documentation will be displayed.
 - To open the site, press **Ctrl and click**
   the provided link (at the same time) to view the documentation.
@@ -66,14 +68,14 @@ uv run python -m zensical serve
   press **Ctrl c** to terminate the local hosting process.
 
 <details markdown>
-<summary>Why we include `python -m`</summary>
+<summary>Why we include python -m</summary>
 
-In a command like this: `uv run python -m zensical build`,
-the `python -m` is sometimes optional.
+In a command like this: **uv run python -m zensical build**,
+the **python -m** is sometimes optional.
 The longer form is safer for heterogeneous environments.
 It:
 
-- explicitly uses the Python interpreter selected by `uv`
+- explicitly uses the Python interpreter selected by **uv**
 - avoids relying on a separate console-script wrapper
 - behaves consistently across Windows, macOS, and Linux
 - is officially supported by the Zensical package
@@ -88,7 +90,7 @@ It:
 - Comment out code as needed to get a version that runs without errors.
 - If you encounter errors, use debugging tools,
   strategically placed logging statements,
-  or `print()` calls to reveal where execution
+  or **print()** calls to reveal where execution
   is occurring and what values are stored in variables.
 
 ---

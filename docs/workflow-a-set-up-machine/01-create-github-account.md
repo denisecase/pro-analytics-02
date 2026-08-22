@@ -28,7 +28,8 @@ Additional steps are below.
 
 ## Sign up for GitHub
 
-NOTE: School emails may be temporary. You may wish to use a more permanent email address.
+NOTE: School emails may be temporary.
+You may wish to use a more permanent email address.
 
 1. Open a browser, such as Safari or Chrome.
 2. Go to <https://github.com/>

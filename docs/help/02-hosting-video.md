@@ -28,8 +28,9 @@ These instructions will not work if you don't have an initial file.
 
 ## Step 3: Clone Repo To Your Machine
 
-Clone your repo down to your Repos/ folder (not into a cloud-synced folder like Documents).
-Open your machine terminal in your Repos/ folder and
+Clone your repo down to your **Repos/** folder
+(not into a cloud-synced folder like Documents).
+Open your machine terminal in your **Repos/** folder and
 run (replace with your GitHub user name and repo name):
 
 ```shell
@@ -38,7 +39,7 @@ git clone https://github.com/yourusername/your-repo-name
 
 ## Step 4: Open the Repo in VS Code
 
-Change directory from Repos into your repo
+Change directory from **Repos/** into your repo
 (replace with the actual name of your new repo)
 and open in VS Code using code dot:
 
@@ -47,7 +48,7 @@ cd your-repo-name
 code .
 ```
 
-## Step 5: Create `docs/` Folder and add .mp4 file
+## Step 5: Create docs/ Folder and add .mp4 file
 
 Inside your repository, you'll need the following:
 
@@ -59,12 +60,12 @@ docs/
 
 If `docs/` does not exist, create it.
 
-Upload the compressed video file into the `docs/` folder.
+Upload the compressed video file into the **docs/** folder.
 This example assumes the video is named demo.mp4.
 
 ## Step 6: Create index.html Page
 
-Inside `docs/`, create a file named `index.html`.
+Inside **docs/**, create a file named **index.html**.
 
 Add the following HTML5 code:
 
@@ -94,7 +95,7 @@ Add the following HTML5 code:
 
 Ensure the filename in `<source src="demo.mp4">` matches the actual video filename.
 
-Git add-commit-push to GitHub:
+Git add-commit-push to GitHub.
 
 ```shell
 git add .
@@ -108,8 +109,8 @@ git push
 2. Click **Settings**.
 3. Click **Pages** in the left sidebar.
 4. Under **Source**, select:
-   - Branch: `main`
-   - Folder: `/docs`
+   - Branch: **main**
+   - Folder: **/docs**
 5. Click **Save**.
 
 GitHub will generate a URL like:

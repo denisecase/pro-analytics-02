@@ -1,5 +1,9 @@
 # 🟢 Workflow A: Set Up Machine (Once per machine)
 
+<!-- On a page that could be read aloud,
+use two asterisks instead of backticks
+for code. -->
+
 > Set up a machine for professional Python projects.
 > Do this just once per machine (or periodically to update tools).
 
@@ -10,7 +14,7 @@ Professional Python projects depend on several tools working together:
 
 - GitHub stores projects,
 - Git tracks changes,
-- Python and `uv` run course code and tools,
+- Python and **uv** run course code and tools,
 - Visual Studio Code provides the coding workspace, and
 - local folders keep work organized.
 
@@ -36,9 +40,12 @@ a short prerequisite covering files, folders, terminals, and Git.
 
 1. [Create GitHub Account](01-create-github-account.md)
 2. [View File Extensions and Hidden Files and Folders](02-view-hidden-files-and-extensions.md)
-3. Install Tools: [Linux/WSL](03a-linux-install-tools.md) OR [macOS](03b-mac-install-tools.md) OR [Windows](03c-windows-install-tools.md)
+3. Install Tools:
+   [Linux/WSL](03a-linux-install-tools.md) OR
+   [macOS](03b-mac-install-tools.md) OR
+   [Windows](03c-windows-install-tools.md)
 4. [Configure Git with name and email](04-configure-git.md)
-5. [Create `Repos/` Folder (to store GitHub projects)](05-create-repos-folder.md)
+5. [Create **Repos/** Folder (to store GitHub projects)](05-create-repos-folder.md)
 6. [Verify](06-verify.md)
 
 ---

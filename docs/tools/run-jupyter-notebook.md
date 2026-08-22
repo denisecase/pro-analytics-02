@@ -1,6 +1,6 @@
 # 🔵 Run Jupyter Notebooks
 
-This page explains how to run Jupyter notebooks in VS Code.
+> How to run Jupyter notebooks in VS Code.
 
 When we execute code in a Jupyter notebook,
 the kernel runs the code interactively,
@@ -32,13 +32,15 @@ Use this only when your project uses **Jupyter notebook (`.ipynb`)** files.
 ## Before Starting
 
 Open your project repository folder in VS Code.
-Ensure the `.venv` is activated. If it is already active, you don't need to reactivate it.
+Ensure the `.venv` is activated.
+If it is already active, you don't need to reactivate it.
 
-We must have installed all the external dependencies into the environment first.
+We must have installed all external dependencies into the environment first.
 
 ### Install the Jupyter Extension for VS Code
 
-- Open the Extensions view in VS Code by pressing Ctrl+Shift+X (Windows/Linux) or Cmd+Shift+X (Mac).
+- Open the Extensions view in VS Code by
+  pressing **Ctrl+Shift+X** (on Windows/Linux) or **Cmd+Shift+X** (on Mac).
 - Search for "Jupyter" and install the official extension.
 
 ### Open the Notebook in VS Code
@@ -48,7 +50,8 @@ Open the notebook in VS Code. The file will have a .ipynb extension.
 ## Task 1. Select Notebook Kernel
 
 1. Open the notebook (`.ipynb`) file in VS Code.
-2. If prompted, select a **Python interpreter** that corresponds to your project’s `.venv`.
+2. If prompted, select a **Python interpreter**
+   that corresponds to your project **.venv/**.
 3. If not prompted:
    - Click the **Kernel Selector** in the top-right corner.
    - Choose the interpreter labeled with your project name and path.
@@ -68,17 +71,17 @@ Run notebooks directly in VS Code.
 
 ### How to Copy a Notebook
 
-1. In the VS Code Explorer panel, right-click the notebook file (`.ipynb`) and select **Copy**.
-2. Right-click the `notebooks/` folder and select **Paste**.
+1. In the VS Code Explorer panel,
+   right-click the notebook file (`.ipynb**), select **Copy**.
+2. Right-click the **notebooks/** folder and select **Paste**.
 3. Right-click the pasted file and select **Rename**.
-4. Replace `_case` with your alias, for example `ml_stellar_analytics.ipynb`.
-5. Open your renamed notebook and select your kernel before running.
+4. Open your renamed notebook and select your kernel before running.
 
 ### If a Notebook Gets Stuck
 
 If Run All disappears and only Interrupt is available:
 
-1. Wait briefly. Some cells (package imports, dataset downloads) take a few seconds on first run.
+1. Wait briefly. Some cells take a few seconds on first run.
 2. Click **Interrupt** to stop execution, then **Run All** again.
 3. Restart the Kernel (Kernel menu or Command Palette).
 4. View / Command Palette / **Developer: Reload Window**.
@@ -112,7 +115,8 @@ to install and upgrade the full set of dependencies.
 
 ## ALWAYS: Fully Execute Notebooks before add-commit-push
 
-Keep your notebooks organized and execute them fully before running git add-commit-push to GitHub.
+Keep your notebooks organized and execute them fully
+before running git add-commit-push to GitHub.
 
 ## Experience
 

@@ -22,11 +22,11 @@
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
 [![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
 [![Zensical docs](https://img.shields.io/badge/Zensical-docs-purple)](https://zensical.org/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
-[![CI](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml)
-[![Docs](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical.yml)
-[![Links](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml)
+[![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml)
+[![Deploy Docs](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical.yml)
+[![Check Links](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml)
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/denisecase/pro-analytics-02/security)
 
 > Reusable professional Python workflows,
@@ -66,6 +66,18 @@ This site is updated somewhat frequently to take advantage of new
 advances in tools and practices.
 A professional environment enables more time for the work that matters.
 
+## Requirements
+
+No setup is required to view or use the documentation site linked above.
+
+## Key Files
+
+- `docs/` (folder with Markdown files)
+- `zensical.toml` (in the root project folder): scroll to end for the `nav` section.
+
+If curious about the supporting files, see
+[this explainer site](https://denisecase.github.io/professional-python-project-explainer/).
+
 ## Developers and Maintainers
 
 This is a reference site.
@@ -84,7 +96,8 @@ Follow the guide for the **full instructions**.
 ### Set Up Machine
 
 - Complete [Workflow A. Set Up Machine](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/)
-  to **set up a machine** for Python development.
+  to **set up a machine** and create a non-cloud-synced
+  `Repos` folder for development.
 
 ### In a machine terminal (open in your `Repos` folder)
 

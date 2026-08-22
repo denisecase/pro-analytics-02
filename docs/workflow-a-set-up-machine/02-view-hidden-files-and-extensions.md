@@ -9,10 +9,9 @@ File extensions indicate the file's format or type.
 
 Common file extensions include:
 
-- `.py` (Python files)
-- `.ipynb` (Jupyter Notebook files)
-- `.csv` (Comma-separated value files)
-- `.md` (Markdown files)
+- **.py** (Python files)
+- **.csv** (Comma-separated value files)
+- **.md** (Markdown files)
 
 Understanding file extensions is essential for identifying file types
 and working with project files.
@@ -30,8 +29,8 @@ In data analytics projects, we need to see these.
 Professional projects often include configuration files, environment files,
 and folders that may be hidden by default.
 
-File extensions show the real file type, such as `.py`, `.md`, `.json`,
-`.toml`, or `.csv`.
+File extensions show the real file type, such as **.py**, **.md**, **.json**,
+**.toml**, or **.csv**.
 
 Viewing hidden files and file extensions makes it easier to inspect,
 edit, troubleshoot, and verify project files accurately.
@@ -53,7 +52,7 @@ alt="Windows: Show extensions and hidden items" width="300">
 
 1. Open **Finder**.
 2. Toggle hidden files and folders:
-   - Press `Cmd` + `Shift` + `.` (dot)
+   - Press **Cmd** + **Shift** + **.** (dot)
 3. Enable file extensions:
    - In Finder, go to **Finder > Settings > Advanced**
    - Check **Show all filename extensions**
@@ -71,7 +70,7 @@ alt="Windows: Show extensions and hidden items" width="300">
 ## Verify
 
 Open a folder and check that file names end with extensions
-(for example `.txt` or `.py`) and that hidden files are visible.
+(for example **.txt** or **.py**) and that hidden files are visible.
 
 ---
 

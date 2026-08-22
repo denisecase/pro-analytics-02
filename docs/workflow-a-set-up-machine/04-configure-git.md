@@ -23,9 +23,10 @@ Open your VS Code editor. We'll use the terminal available in VS Code.
 Use the VS Code menu to select **Terminal /  New Terminal**.
 Opening a new terminal ensures the terminal knows about recently installed git.
 
-- If **Windows**, always use a terminal type of `PowerShell` (powershell) or `PowerShell Core` (pwsh).
-Do NOT use Command Prompt, it is older and not recommended.
-- If **Mac/Linux**, use your default terminal (typically `zsh` or `bash`).
+- If **Windows**, always use a terminal type of **PowerShell** (powershell)
+  or **PowerShell Core** (pwsh).
+  Do NOT use the older Command Prompt.
+- If **Mac/Linux**, use your default terminal (typically **zsh** or **bash**).
 
 ## 3. Configure Git
 

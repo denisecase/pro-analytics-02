@@ -33,8 +33,8 @@ predictable organization.
 
 ## Folder Naming Conventions
 
-When referring to a folder in documentation, a `/` is often added to the name.
-For example, `data/`.
+When referring to a folder in documentation, a **slash** is often added to the name.
+For example, **data/**.
 
 The slash is **not part of the folder name** - it just indicates a folder.
 
@@ -54,38 +54,38 @@ By the end of this phase you should understand:
 - Description of the problem and approach
 - Instructions for running the project
 
-### Documentation (`docs/`)
+### Documentation (docs/)
 
 - Explanations of the project
 - Descriptions of techniques used
 
-### Source Code (`src/`)
+### Source Code (src/)
 
-Python modules are typically stored in `src/`.
+Python modules are typically stored in src/.
 Execution often begins at an entry point near the end of the file:
 
 ```python
 def main():
     # This is where execution logic begins
-```
+``**
 
 When reading a Python file:
 
-- locate the `main()` function
+- locate the **main()** function
 - observe which functions are called
 - follow how information flows through the program
 - note what is passed to each function as arguments (inside the parentheses)
 
-### Data (`data/`)
+### Data (data/)
 
 - Explore the input datasets
 - Observe how data is used in the program
 
-### Outputs (`artifacts/` or `output/`)
+### Outputs (artifacts/ or output/)
 
 - Review generated results, charts, or reports
 
-### Log File (`project.log`)
+### Log File (project.log)
 
 - Shows what the program did during execution
 - Useful for understanding program flow and debugging

@@ -8,8 +8,6 @@ Because of this design, Polars may fail to import on some machines
 that lack certain CPU instruction sets or that
 run Python under unusual architectures or emulation layers.
 
-This page explains what the issue is, how to recognize it, and how to proceed.
-
 ## Why This Happens
 
 Unlike many Python libraries that are mostly pure Python,

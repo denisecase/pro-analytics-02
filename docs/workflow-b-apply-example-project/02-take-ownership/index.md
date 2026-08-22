@@ -49,7 +49,7 @@ Part 2. In VS Code Terminal:
 
 Before continuing, verify:
 
-- [ ] The original `.git` folder was removed.
+- [ ] The original **.git** folder was removed.
 - [ ] A new Git repository was initialized.
 - [ ] The project is connected to a repository in your GitHub account.
 - [ ] Your name appears as the project author where required.

@@ -1,6 +1,6 @@
 # 🟢 Verify Workflow A: Set Up Machine
 
-> This page verifies that your **machine** is correctly set up for professional Python projects.
+> Verify your **machine** is set up for professional Python projects.
 
 <details markdown>
 <summary>WHY?</summary>
@@ -25,7 +25,7 @@ have been completed successfully.
 On your machine:
 
 1. Open a **machine terminal**.
-2. Navigate to your `Repos` folder.
+2. Navigate to your **Repos** folder.
 3. Paste one command at a time into the terminal and hit ENTER after each:
 
 ```bash
@@ -51,9 +51,9 @@ When all of these are true, setup is complete:
 - [ ] You can see hidden files and folders.
 - [ ] You can see file extensions.
 - [ ] The version commands respond with version numbers.
-- [ ] Your Git global `user.name` configuration is correct.
-- [ ] Your Git global `user.email` configuration is correct.
-- [ ] You have a `Repos` folder in a non-synced location on your machine.
+- [ ] Your Git global **user.name** configuration is correct.
+- [ ] Your Git global **user.email** configuration is correct.
+- [ ] You have a **Repos** folder in a non-synced location on your machine.
 
 Congratulations - your machine is ready for professional Python projects!
 

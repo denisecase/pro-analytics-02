@@ -1,5 +1,9 @@
 # 🔵 Workflow B: Apply Example Project
 
+<!-- On a page that could be read aloud,
+use two asterisks instead of backticks
+for code. -->
+
 > Learn techniques and skills using an example.
 
 When a course includes an **example project**,

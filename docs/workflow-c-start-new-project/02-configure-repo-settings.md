@@ -37,7 +37,8 @@ and project outputs, which reflects common professional practice.
 ## Note
 
 Not every analytics project publishes documentation publicly,
-but creating clear, professional project documentation is an important and valuable skill.
+but creating clear, professional project documentation
+is a valuable skill.
 
 ---
 

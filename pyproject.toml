@@ -1,7 +1,7 @@
 # ============================================================
 # pyproject.toml (Python project configuration)
 # ============================================================
-# Updated: 2026-08-21
+# Updated: 2026-08-22
 # REQ.PYTHON: Python projects MUST include pyproject.toml as the single source of truth.
 # WHY: Centralizes project configuration.
 # CUSTOM: Update identity and build tool src folders.
@@ -118,6 +118,7 @@ force-sort-within-sections = true
 "src/**/__init__.py" = ["F401"] # Allow re-export patterns.
 "src/**/_version.py" = ["ALL"]  # Auto-generated file; do not lint.
 "tests/**/*.py" = ["D", "B018"] # Tests need no docstrings; B018 is default-on.
+"notebooks/**/*.py" = ["D", "PLR1711", "RUF059"]   # marimo cells: bare returns + cell-scoped unused vars are the format, not defects
 
 [tool.ruff.lint.pydocstyle] # WHY: Use Google docstring style when D is enabled.
 convention = "google"

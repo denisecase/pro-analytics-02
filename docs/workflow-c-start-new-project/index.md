@@ -1,5 +1,9 @@
 # 🟠 Workflow C: Start New Project from Nothing
 
+<!-- On a page that could be read aloud,
+use two asterisks instead of backticks
+for code. -->
+
 > Start a new professional Python project from nothing.
 
 Understand and demonstrate how a professional Python project is assembled

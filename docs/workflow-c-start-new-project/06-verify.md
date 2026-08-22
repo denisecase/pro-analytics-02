@@ -1,6 +1,10 @@
 # 🟠 Verify Workflow: Set Up Project
 
-> This page verifies that your **Python Project** is correctly set up and aligned with VS Code.
+<!-- On a page that could be read aloud,
+use two asterisks instead of backticks
+for code. -->
+
+Verify that your **Python Project** is correctly set up and aligned with VS Code.
 
 ---
 
@@ -63,7 +67,7 @@ Your project setup is complete when all are true:
 - [ ] VS Code Terminal opens in the project root folder
 - [ ] `.venv/` exists in the project
 - [ ] `uv run python --version` works
-- [ ] the project `.venv` appears in the bottom status bar when a Python file is selected
+- [ ] the project `.venv` appears in the bottom status bar when a .py file is selected
 
 Congratulations - your project environment is ready for work!
 

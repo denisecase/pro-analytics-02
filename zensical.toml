@@ -1,7 +1,7 @@
 # ============================================================
 # zensical.toml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-08-14
+# Updated: 2026-08-20
 #
 # REQ: Python src/ repositories SHOULD provide documentation configuration.
 # NEED: plugins.mkdocstrings for src/ api generation.
@@ -17,7 +17,10 @@ site_description = "Project Documentation" # CUSTOM: Set the description.
 docs_dir = "docs" # source directory for documentation markdown files
 site_dir = "site" # output directory for generated site (ignored by Git; not in repo)
 edit_uri = "edit/main/docs/" # "Edit this page" links (GitHub)
-
+extra_javascript = [
+    "javascripts/read-aloud.js", # CUSTOM: adds optional Read Aloud functionality to pages.
+    "javascripts/concept-quiz.js", # CUSTOM: adds optional Concept Quiz functionality to pages.
+]
 [project.extra]
 # WHY: Social links provide easy access to project repositories and profiles.
 social = [

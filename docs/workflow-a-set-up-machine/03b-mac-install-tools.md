@@ -55,7 +55,7 @@ Task 2.1. REQUIRED. Download VS Code and follow all instructions in
 **Install VS Code on macOS**:
 <https://code.visualstudio.com/docs/setup/mac>.
 
-Task 2.2 REQUIRED. Enable the `code` command in Terminal by following
+Task 2.2 REQUIRED. Enable the **code** command in Terminal by following
 all instructions to
 **Launch VS Code from the command line** at:
 <https://code.visualstudio.com/docs/setup/mac#_launch-vs-code-from-the-command-line>.
@@ -73,7 +73,7 @@ It provides an integrated **terminal**,
 which allows project commands to be run
 from inside the same workspace.
 
-The `code` command makes it possible to
+The **code** command makes it possible to
 open a project folder in VS Code
 directly from the terminal.
 
@@ -85,27 +85,27 @@ Follow the official installation instructions from Astral:
 <https://docs.astral.sh/uv/getting-started/installation/>
 
 > Do not install a project Python separately at this step.
-> Python will be installed per-project using `uv`.
+> Python will be installed per-project using **uv**.
 
 <details markdown>
 <summary>WHY?</summary>
 
-`uv` manages the Python version and project packages used by a project.
+**uv** manages the Python version and project packages used by a project.
 
-Using `uv` helps each project install the correct Python version and
-packages from the project configuration in `pyproject.toml`
+Using **uv** helps each project install the correct Python version and
+packages from the project configuration in **pyproject.toml**
 and keeps project Python **separate**
 from any other Python being used on the machine.
 
-If you worked with older Python projects, you might have used `pip` to
-manage required packages and `venv` to manage the virtual environment
-kept in the local `.venv` folder.
+If you worked with older Python projects, you might have used **pip** to
+manage required packages and **venv** to manage the virtual environment
+kept in the local **.venv** folder.
 
-We moved to `uv` because:
+We moved to **uv** because:
 
 - it is fast
 - it uses the same commands on Windows, macOS, and Linux
-- it creates and updates the local `.venv` project environment
+- it creates and updates the local **.venv** project environment
 - it can install and manage the Python version for the project
 - it reduces the number of separate Python setup tools needed
 
