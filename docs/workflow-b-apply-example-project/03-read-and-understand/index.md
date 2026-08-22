@@ -67,7 +67,7 @@ Execution often begins at an entry point near the end of the file:
 ```python
 def main():
     # This is where execution logic begins
-``**
+```
 
 When reading a Python file:
 

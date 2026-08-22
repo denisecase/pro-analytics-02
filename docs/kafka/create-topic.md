@@ -80,9 +80,8 @@ Verify each step as you go and use the course discussions to get help.
 
 A Kafka topic is a named **stream of messages** stored on the Kafka broker.
 
-**Producers write messages into** the topic.
-
-**Consumers read messages from** the topic.
+- **Producers write messages into** the topic.
+- **Consumers read messages from** the topic.
 
 ## Topic Messages
 
@@ -97,11 +96,12 @@ We run a producer and a consumer together for convenience.
 But in reality, the producer may be running on a website in Utah.
 The consumer may be running in a commercial cloud.
 
-Using topics means producers and consumers do not need to know anything about the other.
-The system is distributed, with analytics running far
-from where the messages are created.
+Using topics means producers and consumers
+don't need to know about each other.
+The system is **distributed**, with analytics running far
+from where messages are created.
 
-All they need to communicate is the location and name of the topic.
+To communicate, they just need the location and name of the topic.
 
 Our Kafka broker is hosted on our machine with the same address for all projects.
 

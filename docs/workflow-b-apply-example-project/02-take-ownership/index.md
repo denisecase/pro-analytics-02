@@ -12,7 +12,7 @@ Use the working example to create an **independent project** with:
 - your own Git history,
 - your own GitHub repository,
 - your name as the project author,
-- your own project name and description,
+- your own project description,
 - your own repository and documentation links.
 
 The original example remains available as a textbook and reference.
@@ -37,9 +37,11 @@ Part 2. In VS Code Terminal:
 
 <!-- markdownlint-disable MD029 -->
 
-3. In VS Code, with the example project open, [Delete the Original Git History (`.git/`)](03-delete-git.md)
+In VS Code, with the example project open,
+
+3. [Delete the original git history (`.git/`)](03-delete-git.md)
 4. [Initialize Git](04-init-git.md)
-5. [Update authorship and repository references](05-update-authorship.md)
+5. [Update project authorship and repository references](05-update-authorship.md)
 6. [Run the project](../run-project.md)
 7. [Git add-commit-push](07-git-add-commit-push.md)
 
@@ -49,14 +51,10 @@ Part 2. In VS Code Terminal:
 
 Before continuing, verify:
 
-- [ ] The original **.git** folder was removed.
-- [ ] A new Git repository was initialized.
 - [ ] The project is connected to a repository in your GitHub account.
 - [ ] Your name appears as the project author where required.
-- [ ] The project name and description describe your project.
 - [ ] Repository and documentation URLs point to your project.
-- [ ] Appropriate source credit remains.
-- [ ] The project still runs successfully.
+- [ ] The project runs successfully.
 - [ ] The standard checks pass.
 - [ ] Your first commits are visible in your GitHub repository.
 

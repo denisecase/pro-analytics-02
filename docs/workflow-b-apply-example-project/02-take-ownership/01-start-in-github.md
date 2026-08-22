@@ -8,6 +8,7 @@
 
 3. Name Your Repository
    - Enter a name for your new repository.
+   - If following an example, for best results, keep the original name.
    - IMPORTANT: Follow naming guidelines for Python Projects:
      - Use all lowercase.
      - Use dashes between words.
@@ -15,12 +16,12 @@
      - Good Examples: my-python-project, python-experiments, baseball-stats,
        python-personal-project, website-analytics, student-impact-analysis
 
-4. Provide a brief description of your project. This is optional but recommended.
+4. Provide a brief description of your project. Optional, but recommended.
 
 5. Select the `Public` option so others can view your repository.
-   You may always use a fake name or alias.
+   **You may always use a fake name or alias**.
 
-6. **IMPORTANT: Do NOT initialize the repository with files.**
+6. **IMPORTANT: Do NOT initialize the repository with default files.**
    - Do NOT add a README.
    - Do NOT add a `.gitignore`.
    - Do NOT add a license.
@@ -29,12 +30,15 @@
 7. Click the `Create repository` button to finalize the process
    and create your repo in GitHub.
 
-## IMPORTANT
+## IMPORTANT: Repo must be EMPTY
 
 Create an **empty GitHub repository**.
-
 The existing project files will be pushed from your machine after
 you create the new Git history and connect it to this repository.
+If any files default files are added when you create it,
+you will get a **merge conflict** and no one likes
+dealing with merge conflicts.
+If that happens, delete the repo and recreate it **empty**.
 
 ---
 

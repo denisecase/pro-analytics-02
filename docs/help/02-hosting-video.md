@@ -125,7 +125,6 @@ GitHub may take time to deploy.
 ## Step 8: Verify Deployment
 
 Open the GitHub Pages URL in a browser.
-
 You should see:
 
 - The page title

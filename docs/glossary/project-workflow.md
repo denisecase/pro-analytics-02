@@ -31,7 +31,8 @@ Confirm the project works as expected by running it and checking outputs and log
 ## Debug
 
 The process of finding and fixing errors in code.
-Use log messages, print statements, and error messages to identify the source of problems.
+Use log messages, print statements, and error messages
+to identify the source of problems.
 
 ## Logging
 
@@ -84,5 +85,7 @@ Identifies bugs, unclear logic, missing documentation, and improvement opportuni
 
 ## Maintenance
 
-The ongoing work required to keep a system accurate, functional, and trustworthy over time.
-Includes updating dependencies, adjusting thresholds, and refining logic as conditions change.
+The ongoing work required to keep a system accurate, functional,
+and trustworthy over time.
+Includes updating dependencies, adjusting thresholds,
+and refining logic as conditions change.
