@@ -1,6 +1,6 @@
 # 🟠 Set up Project Python Environment (managed by uv)
 
-Each project uses its own Python environment stored in a folder named `.venv` inside the project.
+Each project uses its own Python environment stored in a project folder named `.venv`.
 
 ```text
 project-repo-name/
@@ -43,7 +43,8 @@ Continue once you see both `pyproject.toml` and `README.md`.
 Run the following commands in the VS Code terminal to:
 
 1. Update `uv`.
-2. Pin the desired Python version for this project (scikit-learn, Apache packages may still need 3.14).
+2. Pin the desired Python version for this project
+   (scikit-learn, Apache packages may still need 3.14).
 3. Install/verify the Python version declared by the project.
 4. Update the dependencies listed in the `uv.lock` file.
 5. Create the `.venv` environment and install dependencies using `uv sync`.

@@ -7,7 +7,7 @@
 This guide assumes you can open a terminal and run a command.
 If that is new to you (it often is), start with
 **[Applied Computing Foundations](https://denisecase.github.io/applied-computing-foundations/)**,
-a short prerequisite covering files, folders, terminals, and Git.
+a short prerequisite.
 
 ## ⚠️ Get Your Machine Ready First
 
@@ -73,7 +73,8 @@ then **CTRL c** (Mac: **CMD c**) to copy it.
 
 Open a **machine terminal** in the folder where you keep your GitHub repositories
 (for example **C:\Repos** on Windows or **~/Repos** on Mac/Linux).
-If you don't have a **Repos** folder, see instructions in "Workflow A: Set Up a Machine".
+If you don't have a **Repos** folder,
+see instructions in "Workflow A: Set Up a Machine".
 
 - On Mac/Linux, use the default **Terminal** (zsh or bash).
 - On Windows, use **PowerShell** or **PowerShell Core**.

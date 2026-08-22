@@ -14,7 +14,7 @@ the project is a key part of the lecture content.
 This guide assumes you can open a terminal and run a command.
 If that is new to you (it often is), start with
 **[Applied Computing Foundations](https://denisecase.github.io/applied-computing-foundations/)**,
-a short prerequisite covering files, folders, terminals, and Git.
+a short prerequisite.
 
 ## ⚠️ Get Your Machine Ready First
 

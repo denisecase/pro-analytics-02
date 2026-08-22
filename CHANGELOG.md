@@ -13,8 +13,14 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 - Remove Node installation (os-tools number four), node --version
 - Remove the associated markdownlint-cli2 --fix command
-- Remove .markdownlint-cli2.yaml from root
-- NOTE: works great, just simplifying. May pick up a Python Markdown Linter if I miss it
+- Remove .markdownlint-cli2.yaml from root to simplify
+
+---
+
+## [0.4.4] - 2026-08-22
+
+- updated links
+- updated NotebookLM and video
 
 ---
 
@@ -30,9 +36,10 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 - changed pyproject.toml from old `[project.optional-dependencies]` to new `[dependency-groups]`
 - changed from old `uv sync --extra dev --extra docs` to new `uv sync`.
 - always `uv lock --upgrade` to keep deps current (then run `uv sync`).
-- updated supporting files using `uvx pup-up` - IMPORTANT: back up zensical.toml navigation first.
+- updated supporting files using `uvx pup-up`
 - must remain 3.14
-- used `uvx pup-clean`, `uvx pup-clean --delete`, and `.\sit.ps1` after changing to 3.14 to rebuild.
+- used `uvx pup-clean`, `uvx pup-clean --delete`, and `.\sit.ps1`
+  after changing to 3.14 to rebuild.
 
 ---
 
@@ -47,16 +54,14 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 ## Updated
 
 - Updated release validation order to run `uv lock --upgrade` before `uv sync`.
-- Updated repository hygiene configuration for cross-platform line endings and generated outputs.
+- Updated repository hygiene configuration for cross-platform.
 - Updated Markdown lint configuration for authored course documentation.
 - Updated setup guidance to include Node.js for tools that run through `npx`.
-- Updated release procedure to validate the SE manifest and generated CODEOWNERS before release.
 
 ## Added
 
-- Added accountable surface declaration for central teaching instructions and repository governance.
+- Added accountable surface declaration.
 - Added generated GitHub CODEOWNERS projection from accountable surfaces.
-- Added governance checks for SE manifest validation and CODEOWNERS drift where applicable.
 
 ## Fixed
 
@@ -147,7 +152,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.3...HEAD
+[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.4...HEAD
+[0.4.4]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.4
 [0.4.3]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.3
 [0.4.2]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.2
 [0.4.1]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.1

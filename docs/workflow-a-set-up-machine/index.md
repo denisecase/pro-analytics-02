@@ -28,11 +28,12 @@ For best results, **complete each step carefully** and
 
 </details>
 
-## New to Terminals, Git, or Repositories?
+## ⚠️ New to Terminals, Git, or Repositories?
 
-Start with
+This guide assumes you can open a terminal and run a command.
+If that is new to you (it often is), start with
 **[Applied Computing Foundations](https://denisecase.github.io/applied-computing-foundations/)**,
-a short prerequisite covering files, folders, terminals, and Git.
+a short prerequisite.
 
 ---
 
@@ -76,6 +77,8 @@ Recommendation 🔊
 or watch the video below before you start.
 It provides good background on WHY we do these things.
 
+<!-- markdownlint-disable MD013 -->
+
 <iframe
 width="100%"
 style="aspect-ratio: 16 / 9; max-width: 800px; border: 0;"
@@ -84,6 +87,8 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 referrerpolicy="strict-origin-when-cross-origin"
 allowfullscreen
 loading="lazy"></iframe>
+
+<!-- markdownlint-enable MD013 -->
 
 ---
 
