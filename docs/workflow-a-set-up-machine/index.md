@@ -59,7 +59,7 @@ a short prerequisite covering files, folders, terminals, and Git.
 
 Google NotebookLMs have been set up to help with:
 
-- [Workflow A: Set Up Machine](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
+- [Workflow A: Set Up Machine](https://notebooklm.google.com/notebook/7a2a6711-9cd0-4f3b-a39a-13f7a361d072)
 - [Workflow B: Apply Example Project](https://notebook.google.com/notebook/c2de21ca-e973-4a44-9de6-be7ac501eb5d)
 
 Those links allow you to access:
@@ -72,18 +72,18 @@ Those links allow you to access:
 
 Recommendation 🔊
 
-[Listen to the Workflow A: Set Up Machine 20-minute Audio Overview](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
+[Listen to the Workflow A: Set Up Machine 20-minute Audio Overview](https://notebooklm.google.com/notebook/7a2a6711-9cd0-4f3b-a39a-13f7a361d072)
 or watch the video below before you start.
 It provides good background on WHY we do these things.
 
 <iframe
-  width="100%"
-  style="aspect-ratio: 16 / 9; max-width: 800px; border: 0;"
-  src="https://www.youtube-nocookie.com/embed/AQeRgX2f8QE"
-  title="Machine Set Up Overview"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen
-  loading="lazy"></iframe>
+width="100%"
+style="aspect-ratio: 16 / 9; max-width: 800px; border: 0;"
+src="https://www.youtube-nocookie.com/embed/mAXZbNQUvZM?si=kXwcemMDwIWeWHPU"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin"
+allowfullscreen
+loading="lazy"></iframe>
 
 ---
 

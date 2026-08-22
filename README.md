@@ -14,7 +14,7 @@
 10. License
 -->
 
-[![NotebookLM: Set Up Machine](https://img.shields.io/badge/NotebookLM-Set%20Up%20Machine-blue?logo=google)](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
+[![NotebookLM: Set Up Machine](https://img.shields.io/badge/NotebookLM-Set%20Up%20Machine-blue?logo=google)](https://notebooklm.google.com/notebook/7a2a6711-9cd0-4f3b-a39a-13f7a361d072)
 [![NotebookLM: Apply Example Project](https://img.shields.io/badge/NotebookLM-Set%20Up%20Machine-blue?logo=google)](https://notebook.google.com/notebook/c2de21ca-e973-4a44-9de6-be7ac501eb5d)
 
 [![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/pro-analytics-02/)
