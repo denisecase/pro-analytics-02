@@ -1,6 +1,6 @@
-# 🔵 Workflow 2.5: Complete the Project
+# 🔵 Complete the Project
 
-> Phase 5. Complete the project by applying the techniques and skills to a new problem or dataset.
+> Complete the project by applying the techniques to a new problem or dataset.
 
 <details markdown>
 <summary>WHY?</summary>

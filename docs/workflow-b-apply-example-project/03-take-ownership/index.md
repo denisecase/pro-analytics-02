@@ -1,6 +1,6 @@
-# 🔵 Workflow 2.2: Take Ownership
+# 🔵 Take Ownership
 
-> Phase 2. Make the example project yours for experimentation.
+> Make the example project yours for experimentation.
 
 <details markdown>
 <summary>WHY?</summary>
@@ -57,8 +57,6 @@ Before continuing, verify:
 - [ ] The project runs successfully.
 - [ ] The standard checks pass.
 - [ ] Your first commits are visible in your GitHub repository.
-
-The working example is now your independent project foundation.
 
 ---
 

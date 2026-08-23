@@ -25,15 +25,12 @@ This phase requires successful completion of all those steps.
 
 ## Examples are Regular GitHub Repositories
 
-Course example repositories are regular GitHub repositories,
-not template repositories.
-They are complete, working professional projects on GitHub.
+Course example repositories are complete, working professional projects on GitHub.
 
-## Run the Example, Then Make it Your Own
+## Run the Example, Then Explore
 
-Clone the example repository first, in Phase 1.
-After it runs successfully,
-Phase 2 creates a new Git history for your independent project.
+Clone the example repository first and get it running.
+That way it is ready for experiments as you start reading.
 
 ## Professional Learning Loop
 
@@ -44,11 +41,8 @@ and adapt it to new situations.
 <details markdown>
 <summary>WHY?</summary>
 
-Example projects provide a working system for learning professional analytics
-tools and techniques.
-
-Starting from working code makes it possible to inspect real project
-structure, run commands, trace results, and make controlled changes.
+Starting from working code makes it possible to inspect project
+structure, run commands, check results, and make controlled changes.
 
 </details>
 

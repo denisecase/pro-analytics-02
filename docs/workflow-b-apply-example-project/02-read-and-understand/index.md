@@ -1,49 +1,40 @@
-# 🔵 Workflow 2.3: Read and Understand the Project
+# 🔵 Read and Understand the Project
 
-> Phase 3. Study the working example before making substantial technical changes.
+> Study the working example.
 
 <details markdown>
 <summary>WHY?</summary>
 
+Before modifying a project, first read and understand how it works.
+
 Reading the project before changing it builds understanding of the project
 structure, data flow, commands, and outputs.
 
-Professional work often requires maintaining or extending existing code
-rather than starting from an empty folder.
+Professional work often requires extending existing code
+rather than starting from nothing.
 
-Understanding an example first supports better technical decisions
+Understanding a working example supports better technical decisions
 in later modification and application phases.
+
+Focus on the **overall flow of the project**.
+It's not necessary to understand every line of code at this point.
 
 </details>
 
-## Professional Practice
-
-Before modifying a project, first read and understand how it works.
-
-Professional developers often explore a project
-in a consistent order: documentation, code, data, and outputs.
-
-Focus on the overall flow of the project.
-It's not necessary to understand every line of code at this point.
-
 ## Professional Project Organization
 
-Real-world projects contain many files, so most professional projects follow a
-predictable organization.
+Real-world projects contain many files,
+so most professional projects follow a predictable organization.
+You can use the
+[Professional Python Project Explainer](https://denisecase.github.io/professional-python-project-explainer/)
+to get information about common files and folders.
 
-## Folder Naming Conventions
-
-When referring to a folder in documentation, a **slash** is often added to the name.
-For example, **data/**.
-
-The slash is **not part of the folder name** - it just indicates a folder.
-
-## Goal
+## Objectives
 
 By the end of this phase you should understand:
 
-- the purpose of the project
-- the main tools or techniques used
+- the **purpose** of the project
+- the main **tools and techniques** used
 - how data flows through the program
 
 ## Suggested Reading Order

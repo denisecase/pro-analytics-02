@@ -1,6 +1,6 @@
 # 🔵 Git Pull Before Changes
 
-Before making changes to a project, ALWAYS pull the latest changes from GitHub.
+Before making changes to a project, we generally pull the latest changes from GitHub.
 
 ## Before Starting
 
