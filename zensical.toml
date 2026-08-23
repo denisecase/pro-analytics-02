@@ -86,8 +86,8 @@ nav = [
     { "Workflow B. Apply Example Project" = [
         { "Overview" = "workflow-b-apply-example-project/index.md" },
         { "1. Start & Run" = "workflow-b-apply-example-project/01-start-and-run/index.md" },
-        { "2. Take Ownership" = "workflow-b-apply-example-project/02-take-ownership/index.md" },
-        { "3. Read & Understand" = "workflow-b-apply-example-project/03-read-and-understand/index.md" },
+        { "2. Read & Understand" = "workflow-b-apply-example-project/02-read-and-understand/index.md" },
+        { "3. Take Ownership" = "workflow-b-apply-example-project/03-take-ownership/index.md" },
         { "4. Make Technical Modification" = "workflow-b-apply-example-project/04-make-technical-modification/index.md" },
         { "5. Apply Skills" = "workflow-b-apply-example-project/05-apply-skills/index.md" },
     ] },

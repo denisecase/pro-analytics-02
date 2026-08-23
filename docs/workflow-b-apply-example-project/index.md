@@ -55,8 +55,8 @@ structure, run commands, trace results, and make controlled changes.
 ## Five Phases
 
 1. [Start & Run](01-start-and-run/index.md)
-2. [Take Ownership](02-take-ownership/index.md)
-3. [Read & Understand](03-read-and-understand/index.md)
+2. [Read & Understand](02-read-and-understand/index.md)
+3. [Take Ownership](03-take-ownership/index.md)
 4. [Make a Technical Modification](04-make-technical-modification/index.md)
 5. [Apply the Skills to a New Problem](05-apply-skills/index.md)
 
