@@ -1,5 +1,3 @@
-# editors.md
-
 # Editors and Development Environment Glossary
 
 A reference for code editors and the development environment.

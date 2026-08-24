@@ -1,15 +1,5 @@
 # Python File Structure
 
-REQ:  Introduce the standard structure used in Python scripts and modules.
-
-WHY:  Consistent structure improves readability and reuse.
-
-OBS:  This structure is reused across projects.
-
----
-
-## Standard Python Programs
-
 Professional Python programs typically follow this order:
 
 - imports at the top

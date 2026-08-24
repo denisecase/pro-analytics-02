@@ -142,14 +142,16 @@ What affects it:
 - whether code is run as a script or as a module
 - how the project is structured
 
-Two commands that look similar can behave differently because they produce different import paths.
+Two commands that look similar can behave differently
+because they produce different import paths.
 
 ### How to Inspect
 
 We may want to know what interpreter path Python is using,
 regardless of editor UI or labels.
 
-If you use `uv`, this command reports the interpreter used for the current project environment:
+If you use `uv`, this command reports the interpreter
+used for the current project environment:
 
 ```shell
 uv run python -c "import sys; print(sys.executable)"

@@ -2,11 +2,7 @@
 
 > Free code when using Python for analytics.
 
-REQ: Recognize tools that are already available.
-
-WHY: Knowing these exist can save time.
-
-OBS: Since they are built into Python
+Since they are built into Python
 they don't need to be added to `pyproject.toml` dependencies
 like we do with external libraries such as `pandas` or `polars`.
 
@@ -40,4 +36,6 @@ like we do with external libraries such as `pandas` or `polars`.
 - typing - For type hints and static type checking
 - unittest - For writing and running unit tests
 
-WHY: We are aware of what's out there, in case they might be helpful.
+Save time by knowing what is available in case a project needs these capabilities.
+Python can be learned in weeks or months, it's familarity
+with all the available tools and packages where experience is measured in years.

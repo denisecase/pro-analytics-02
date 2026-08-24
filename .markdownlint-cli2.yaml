@@ -1,0 +1,16 @@
+# ============================================================
+# .markdownlint-cli2.yaml (Markdown lint configuration)
+# ============================================================
+# WHY: Keep Markdown checks reproducible locally and in pre-commit.
+
+globs:
+  - "**/*.md"
+ignores:
+  - "site/**"
+  - ".venv/**"
+  - "node_modules/**"
+config:
+  default: true
+  MD013: false
+  MD033: false
+  MD041: false

@@ -1,82 +1,71 @@
 # Project Structure
 
-REQ: Introduce a clear, repeatable layout for Python projects.
-
-WHY: Consistent organization supports reuse, testing, and collaboration.
-
-OBS: This structure scales from small scripts to professional projects.
- Not every project uses every folder immediately.
-
----
+There is a relatively common, clear, repeatable layout for Python projects.
+This consistent organization supports reuse, testing, and collaboration.
+It scales from small scripts to professional projects.
 
 ## Common Project Layout
 
 A typical Python project is organized into folders by purpose:
 
-- `src/` - Python source code
-- `data/` - data files used by the project
-- `notebooks/` - exploratory analysis and experiments
-- `docs/` - written documentation
-- `pyproject.toml` - project configuration and dependencies
+- **src/** - Python source code
+- **data/** - data files used by the project
+- **notebooks/** - exploratory analysis and experiments
+- **docs/** - written documentation
+- **pyproject.toml** - project configuration and dependencies
 
 This separation keeps concerns clear and avoids mixing code, data, and notes.
 
-## The `src/` Directory
+## The src/ Directory
 
-The `src/` directory contains Python packages.
+The **src/** directory contains Python packages.
 
 Example:
 
-- `src/project_name/`
-  - `__init__.py`
-  - `main.py`
+- **src/project_name/**
+  - ****init**.py**
+  - **main.py**
   - additional modules as needed
 
-WHY:
-Placing code under `src/` prevents accidental imports
+Placing code under **src/** prevents accidental imports
 from the project root and makes package boundaries explicit.
 
-OBS:
-For very small or introductory projects, code may temporarily live at the project root.
-The `src/` layout becomes increasingly valuable as projects grow.
+For very small or introductory projects,
+code may temporarily live at the project root.
+The **src/** layout becomes increasingly valuable as projects grow.
 
-## The `data/` Directory
+## The data/ Directory
 
-The `data/` directory stores input files such as:
+The **data/** directory stores input files such as:
 
 - CSV files
 - JSON files
 - SQLite databases
 
-WHY:
 Data is not code.
 Keeping data separate avoids confusion and accidental modification.
 
-OBS:
 Small example datasets are often included directly in the repository.
 Large or sensitive datasets are typically excluded.
 
-## The `notebooks/` Directory
+## The notebooks/ Directory
 
-The `notebooks/` directory is used for exploratory work.
-
-Typical contents:
+The **notebooks/** directory is used for exploratory work.
+Typical contents include:
 
 - Jupyter notebooks
 - temporary experiments
 - visualizations and scratch analysis
 
-WHY:
-Notebooks support exploration and learning.
-They are well suited for trying ideas before writing reusable code.
+Notebooks support exploration and learning
+and are well suited for trying ideas before writing reusable code.
 
-OBS:
 Notebooks are not required for every project.
-Core logic should eventually live in Python modules under `src/`.
+Core logic should live in Python modules under `src/`.
 
-## The `docs/` Directory
+## The docs/ Directory
 
-The `docs/` directory contains written explanations and reference material.
+The **docs/** directory contains written explanations and reference material.
 
 Examples:
 
@@ -84,35 +73,32 @@ Examples:
 - project structure references
 - usage notes
 
-WHY: Documentation supports understanding and reuse.
-
-OBS: Documentation can be simple Markdown files.
+Documentation supports understanding and reuse.
+Documentation can be simple Markdown files.
 A documentation site can be added later without restructuring content.
 
-## `pyproject.toml`
+## pyproject.toml
 
-The `pyproject.toml` file defines:
+The **pyproject.toml** file defines:
 
 - project metadata
 - Python version requirements
 - dependencies
 - development tools
 
-WHY: Modern Python projects use `pyproject.toml` as a single source of truth.
+Modern Python projects use **pyproject.toml** as a single source of truth.
 
 ## Choosing a Structure
 
 For introductory projects:
 
 - a single Python file at the root is acceptable
-- `data/` and `docs/` can still be introduced early
+- **data/** and **docs/** are often the first additions
 
 For multi-file or long-lived projects:
 
-- use `src/` for code
+- use **src/** for code
 - separate data and documentation
-
-The goal is not complexity, but clarity.
 
 ## Consistency Matters More Than Perfection
 
@@ -121,8 +107,6 @@ A consistent structure:
 - reduces cognitive load
 - makes projects easier to navigate
 - supports professional habits
-
-Once a structure is chosen, it is reused across projects.
 
 ## Example
 

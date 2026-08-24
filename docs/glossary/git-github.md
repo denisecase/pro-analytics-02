@@ -1,5 +1,3 @@
-# git-github.md
-
 # Git and GitHub Glossary
 
 A reference for version control with Git and GitHub.

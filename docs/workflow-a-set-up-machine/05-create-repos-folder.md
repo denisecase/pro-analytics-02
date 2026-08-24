@@ -20,10 +20,14 @@ and troubleshooting easier.
 A consistent project location also helps separate code repositories from
 downloads, documents, and temporary files.
 
-It is important to avoid locations that are automatically synced because
-Python project folders can become large,
-and automatic syncing can cause slowdowns,
-conflicts, or file-locking problems.
+It is important to avoid locations that are automatically synced
+because Python project folders can become large.
+A project that uses key packages like pandas, numpy, matplotlib,
+may have a .venv/ around 200 MB.
+Automatic syncing of large, disposable folders causes slowdowns, conflicts,
+and file-locking problems.
+See [Disk Space](../reference/python/disk-space.md)
+to reclaim space when not actively working on a project.
 
 </details>
 

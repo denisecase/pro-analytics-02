@@ -1,7 +1,7 @@
 # 🔵 Set up Project Python Environment (managed by uv)
 
 Each project uses its own Python environment
-stored in a folder named `.venv` inside the project.
+stored in a folder named **.venv** inside the project.
 
 ```text
 project-repo-name/
@@ -12,7 +12,7 @@ project-repo-name/
 
 This isolates dependencies, prevents conflicts with system Python,
 and makes the project reproducible on any machine.
-If something breaks, the `.venv` folder can be deleted and recreated.
+If something breaks, the **.venv** folder can be deleted and recreated.
 
 ## Before Starting
 
@@ -51,7 +51,8 @@ Run the following commands in the VS Code terminal to:
 1. Update `uv`.
 2. Pin the Python version for this repository (installing that version if needed).
 3. Upgrade the packages in the uv lock file for better security.
-4. Create the `.venv` environment and install dependencies from `uv.lock` using `uv sync`. Updated 2026-Aug.
+4. Create the `.venv` environment and install dependencies
+   from `uv.lock` using `uv sync`.
 
 **Updated 2026-Aug:** IMPORTANT NOTE ABOUT `uv sync` and `pyproject.toml`.
 
@@ -76,9 +77,10 @@ Do you want to select it for the workspace folder?", click **Yes**.
 
 Keeping tools updated is critical for security.
 Each powerful tool may pull in many dependency packages.
-When a vulnerability is found in a dependency, a patched version is usually released quickly,
-so we teach these update habits at school, where working on the edge is allowed and encouraged.
-
+When a vulnerability is found in a dependency,
+a patched version is usually released quickly,
+so we teach continuous update habits at school,
+where working on the edge is allowed.
 In production, updates may need to be more controlled.
 
 </details>

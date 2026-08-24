@@ -1,5 +1,3 @@
-# data-formats.md
-
 # Data Formats Glossary
 
 A reference for some file formats found in data analytics projects.
