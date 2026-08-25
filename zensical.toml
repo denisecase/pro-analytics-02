@@ -29,6 +29,7 @@ social = [
 
 [project.markdown_extensions]
 md_in_html = {} # WHY: Allow Markdown inside HTML blocks when the opening tag includes `markdown`, e.g. <details markdown>...</details>
+pymdownx.superfences = {} # WHY: Enables support for fenced code blocks with syntax highlighting and custom options.
 
 # ------------------------------------------------------------
 # Plugins
