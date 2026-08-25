@@ -34,6 +34,6 @@ Verify that `origin` points to **your new GitHub repository**.
 3. **git remote add origin URL** - sets **origin** to work as an alias
    for your remote GitHub repository.
 
-## </details>
+</details>
 
-[◄ Back to 🔵 Phase 2](index.md)
+[◄ Back to 🔵 Phase 3](index.md)

@@ -64,4 +64,4 @@ NOTE: Repository Settings / Pages must be set to "GitHub Actions"
 
 ![Update GitHub "About"](../../images/update-gh-about.png)
 
-[◄ Back to 🔵 Phase 2](index.md)
+[◄ Back to 🔵 Phase 3](index.md)
