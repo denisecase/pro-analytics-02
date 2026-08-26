@@ -73,6 +73,10 @@ uv sync
 If prompted: "We noticed a new environment has been created.
 Do you want to select it for the workspace folder?", click **Yes**.
 
+NOTE: If uv sync completes successfully but reports that it could not hardlink files
+and is falling back to copying them, you may continue.
+This is a performance warning, not an installation failure.
+
 <details markdown>
 <summary>WHY?</summary>
 

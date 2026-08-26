@@ -26,6 +26,10 @@ uv sync
 
 All commands should be run from the **project root folder** in the VS Code terminal.
 
+NOTE: If uv sync completes successfully but reports that it could not hardlink files
+and is falling back to copying them, you may continue.
+This is a performance warning, not an installation failure.
+
 ## Step 3. Run Checks and Tests
 
 Run the following commands to format code, fix common issues, and run tests if available.

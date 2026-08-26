@@ -41,6 +41,10 @@ These commands ensure the required Python version is available,
 update project dependencies to the latest compatible versions,
 and install the locked dependencies in the local project environment (.venv/).
 
+NOTE: If uv sync completes successfully but reports that it could not hardlink files
+and is falling back to copying them, you may continue.
+This is a performance warning, not an installation failure.
+
 ## Step 3. Run Checks and Tests (as available)
 
 Run the following commands in a VS Code terminal to:
