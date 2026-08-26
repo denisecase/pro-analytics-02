@@ -105,7 +105,7 @@ bin/kafka-server-start.sh config/server.properties
 
 The last line of output should look something like this:
 
-```shell
+```text
 [KafkaRaftServer nodeId=1] Kafka Server started (kafka.server.KafkaRaftServer)
 ```
 

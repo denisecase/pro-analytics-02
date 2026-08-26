@@ -1,6 +1,6 @@
 # 🟠 Set up Project Python Environment (managed by uv)
 
-Each project uses its own Python environment stored in a project folder named `.venv`.
+Each project uses its own Python environment stored in a project folder named **.venv**.
 
 ```text
 project-repo-name/
@@ -11,7 +11,7 @@ project-repo-name/
 
 This isolates dependencies, prevents conflicts with
 system Python, and makes the project reproducible on any machine.
-If something breaks, the `.venv` folder can be deleted and recreated.
+If something breaks, the **.venv/** folder can be deleted and recreated.
 
 ## Before Starting
 
@@ -25,7 +25,7 @@ ls
 
 You are in the correct folder when you see files such as:
 
-```shell
+```text
 pyproject.toml
 README.md
 ```
@@ -34,7 +34,7 @@ README.md
 <summary>If you do NOT see those files (click here)</summary>
 
 Follow the earlier steps carefully.
-Continue once you see both `pyproject.toml` and `README.md`.
+Continue once you see both **pyproject.toml** and **README.md**.
 
 </details>
 
@@ -42,16 +42,17 @@ Continue once you see both `pyproject.toml` and `README.md`.
 
 Run the following commands in the VS Code terminal to:
 
-1. Update `uv`.
+1. Update **uv**.
 2. Pin the desired Python version for this project
    (scikit-learn, Apache packages may still need 3.14).
 3. Install/verify the Python version declared by the project.
-4. Update the dependencies listed in the `uv.lock` file.
-5. Create the `.venv` environment and install dependencies using `uv sync`.
+4. Update the dependencies listed in the **uv.lock** file.
+5. Create the **.venv** environment and install dependencies using **uv sync**.
 
 ```bash
 uv self update
 uv python pin 3.14
+
 uv python install
 uv lock --upgrade
 uv sync
@@ -62,22 +63,22 @@ Do you want to select it for the workspace folder?", click **Yes**.
 
 ### Step 1 Verify
 
-- A `.venv/` folder appears in the project root
+- A **.venv/** folder appears in the project root
 - The command finishes without errors
 
 <details markdown>
 <summary>If this step fails (click here)</summary>
 
-`uv` command not found:
+**uv** command not found:
 
 - Close and reopen VS Code
-- Verify `uv` was installed during Workflow A. Set Up Machine.
+- Verify **uv** was installed during **Workflow A. Set Up Machine**.
 
 Dependency install error:
 
-- Delete the `.venv/` folder
-- Rerun: `uv lock --upgrade`
-- Rerun: `uv sync`
+- Delete the **.venv/** folder
+- Rerun: **uv lock --upgrade**
+- Rerun: **uv sync**
 
 </details>
 
@@ -97,7 +98,8 @@ git add -A
 uv run pre-commit run --all-files
 ```
 
-After the hooks are installed, pre-commit checks run automatically on every `git commit` command.
+After the hooks are installed,
+pre-commit checks run automatically on every **git commit** command.
 
 ### Step 2 Verify
 
@@ -113,11 +115,11 @@ If this occurs, it is safe to skip pre-commit and continue with the project.
 
 ## Step 3. Align VS Code with the Project Environment
 
-### Step 3.1 Ensure VS Code uses the project `.venv`
+### Step 3.1 Ensure VS Code uses the project .venv/
 
-1. Open the **Command Palette** (menu: **View** / **Command Palette**, or `Ctrl+Shift+P`)
-2. Type and choose: `Python: Select Interpreter`
-3. Choose the interpreter inside **this project's `.venv` folder**
+1. Open the **Command Palette** (menu: **View** / **Command Palette**, or **Ctrl+Shift+P**)
+2. Type and choose: **Python: Select Interpreter**
+3. Choose the interpreter inside **this project's **.venv** folder**
 
 ![Choose Python: Select Interpreter](./images/Python-Select-Interpreter.png)
 
@@ -126,7 +128,7 @@ If this occurs, it is safe to skip pre-commit and continue with the project.
 ### Step 3.2. Reload the VS Code Window
 
 1. Open the **Command Palette** (same as before).
-2. Type or choose: `Developer: Reload Window`
+2. Type or choose: **Developer: Reload Window**
 
 ### Step 3 Verify
 
