@@ -111,9 +111,16 @@ We moved to **uv** because:
 
 </details>
 
-## Verify
+## Open a NEW Terminal and Verify
 
-After installation, open a new Terminal window and run:
+**Close** all open terminal windows, command prompts, or IDEs (like VS Code).
+Environment changes may not be available in terminals that are already open.
+
+Open a **brand new terminal** window and run the following commands.
+
+- **copy and paste the first command** into the terminal and hit Enter or Return.
+- **copy and paste the second command** into the terminal and hit Enter or Return.
+- **copy and paste the third command** into the terminal and hit Enter or Return.
 
 ```shell
 git --version

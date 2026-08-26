@@ -57,9 +57,6 @@ Git is used with GitHub, but they are different.
 Download and install Visual Studio Code from:
 <https://code.visualstudio.com/>
 
-(Recommended) Enable the **code** command in PowerShell by following:
-<https://code.visualstudio.com/docs/setup/windows>
-
 <details markdown>
 <summary>WHY?</summary>
 
@@ -108,12 +105,18 @@ We moved to **uv** because:
 
 </details>
 
-## Refresh Your Terminal and Verify
+## Open a NEW Terminal and Verify
 
 **Close** all open terminal windows, command prompts, or IDEs (like VS Code).
-Environment paths will not update in terminals that are already open.
+Environment changes may not be available in terminals that are already open.
 
-Open a brand new **PowerShell** terminal window and run:
+Open a **brand new PowerShell** terminal window.
+On Windows, search for PowerShell from the Start menu and open it.
+Then use the new PowerShell terminal to run the following commands.
+
+- **copy and paste the first command** into the terminal and hit Enter or Return.
+- **copy and paste the second command** into the terminal and hit Enter or Return.
+- **copy and paste the third command** into the terminal and hit Enter or Return.
 
 ```shell
 git --version

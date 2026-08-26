@@ -81,7 +81,6 @@ nav = [
         { "Install tools (Windows)" = "workflow-a-set-up-machine/03c-windows-install-tools.md" },
         { "Configure Git" = "workflow-a-set-up-machine/04-configure-git.md" },
         { "Create Repos folder" = "workflow-a-set-up-machine/05-create-repos-folder.md" },
-        { "Verify" = "workflow-a-set-up-machine/06-verify.md" },
     ] },
 
     { "Workflow B. Apply Example Project" = [

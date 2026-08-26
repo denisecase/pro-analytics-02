@@ -64,7 +64,7 @@ git config --global user.email youremail@example.com
 
 <!-- markdownlint-enable MD034 -->
 
-## 3. Verify
+## 3. Verify Git Configuration
 
 In the same terminal,
 

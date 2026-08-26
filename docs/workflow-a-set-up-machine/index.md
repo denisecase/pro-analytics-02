@@ -47,7 +47,6 @@ a short prerequisite.
    [Windows](03c-windows-install-tools.md)
 4. [Configure Git with name and email](04-configure-git.md)
 5. [Create **Repos** Folder (for GitHub projects)](05-create-repos-folder.md)
-6. [Verify](06-verify.md)
 
 Note: Your Repos folder must be in a non-cloud-synced location.
 For best results, follow instructions carefully.
