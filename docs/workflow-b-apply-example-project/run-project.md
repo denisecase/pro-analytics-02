@@ -4,7 +4,7 @@ This mirrors professional practice: run and check code as you work.
 
 ## Step 1. Run the Project Code
 
-The project repository folder should already be open in VS Code.
+Ensure only the **project repository folder** is open in VS Code.
 
 Open a new VS Code terminal using the VS Code menu
 **Terminal / New Terminal**.
@@ -22,20 +22,24 @@ The exact command and package name may be different for your project.
 
 ## Step 2. (As Needed) Add / Update Dependencies
 
-As we work on the code, we may find we need additional dependencies listed in **pyproject.toml**.
-For example, after generating results we may add **matplotlib** to visualize charts.
-Edit **pyproject.toml** and add packages to the **dependencies** section as needed.
-You may occasionally need to clean the cache
-(delete downloaded dependency files stored locally).
-Then re-run the **uv sync** command as shown below:
+As you modify the project,
+you may need to add or update dependencies in pyproject.toml.
+
+Periodically (to keep dependencies current)
+or after changing project dependencies,
+run these commands
+(copy and paste one at a time and hit ENTER or RETURN after each)
+in the VS Code terminal:
 
 ```shell
-uv cache clean
-
 uv python install
 uv lock --upgrade
 uv sync
 ```
+
+These commands ensure the required Python version is available,
+update project dependencies to the latest compatible versions,
+and install the locked dependencies in the local project environment (.venv/).
 
 ## Step 3. Run Checks and Tests (as available)
 
@@ -43,7 +47,8 @@ Run the following commands in a VS Code terminal to:
 
 1. Format all project Python files using **Ruff**.
 2. Check and fix all project Python files (automatically "lint" or fix basic issues).
-3. Optional: Run pytest if you have working tests in the **tests/** folder.
+3. Check Python types using **ty**.
+4. Run **pytest** if you have working tests in the **tests/** folder.
 
 ```shell
 uv run ruff format .
@@ -92,7 +97,7 @@ It:
   (**File / Auto Save**), or remember to save your changes as you work.
 - Comment out code as needed to get a version that runs without errors.
 - If you encounter errors, use debugging tools,
-  strategically placed logging statements,
+  strategically placed **logging statements**,
   or **print()** calls to reveal where execution
   is occurring and what values are stored in variables.
 
