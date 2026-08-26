@@ -1,4 +1,4 @@
-# 🔵 Start & Run
+# 🔵 Start & Run The Example
 
 > Phase 1. **Clone** the example and run it.
 

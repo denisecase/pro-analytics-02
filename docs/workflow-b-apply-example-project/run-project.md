@@ -2,17 +2,23 @@
 
 This mirrors professional practice: run and check code as you work.
 
-## Step 1. Run Code
+## Step 1. Run the Project Code
 
-Run Python scripts as needed for your project.
-Exact commands should be listed in the project **README.md**.
-The command should look something like this,
-but the package name might be different than
-**datafun** to match your project:
+The project repository folder should already be open in VS Code.
+
+Open a new VS Code terminal using the VS Code menu
+**Terminal / New Terminal**.
+The terminal should open in the root project folder.
+
+Find the exact command to run the project in the **project README.md**.
+In the VS Code terminal, copy and paste that command and hit ENTER or RETURN.
+For example, a project command might look like:
 
 ```shell
 uv run python -m datafun.app
 ```
+
+The exact command and package name may be different for your project.
 
 ## Step 2. (As Needed) Add / Update Dependencies
 
@@ -30,9 +36,6 @@ uv python install
 uv lock --upgrade
 uv sync
 ```
-
-When working on a project, open the project repository folder in VS Code.
-In general, all terminal commands should be executed in the **root project folder**.
 
 ## Step 3. Run Checks and Tests (as available)
 
