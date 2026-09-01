@@ -1,15 +1,15 @@
-# 🔵 Configure Repository Settings
+# 🔵 Configure GitHub Repository Settings
 
-> Configure repository settings for your project.
+> Configure GitHub repository settings for your project.
 
 ## Enable GitHub Pages (for Project Documentation)
 
 Enabling **GitHub Pages** allows a project to publish its documentation site.
 This creates a professional, shareable documentation site
 for your project instructions, setup steps, and technical notes.
-Instructions:
+Instructions (see image below):
 
-1. In your new repository, click the **Settings** tab (gear icon, far right).
+1. In your new GitHub repository, click the **Settings** tab (gear icon, far right).
 2. In the left sidebar, select **Pages**.
 3. Under **Build and deployment / Source**, choose **GitHub Actions**
 4. Click the **Code** tab (upper left) to return to the repository view.
@@ -18,6 +18,11 @@ Once enabled, GitHub will automatically build and publish
 the documentation website when the documentation workflow runs.
 An associated workflow should be provided in `.github/workflows/`.
 You are not expected to write GitHub Actions on your own.
+
+Note: Your project information will be different from the image,
+but the settings work the same.
+
+![GitHub Settings tab](images/GitHub_settings_tab.png)
 
 ## Project Documentation
 
