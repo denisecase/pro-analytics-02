@@ -1,0 +1,45 @@
+# ============================================================
+# worker/wrangler.toml
+# ============================================================
+# Cloudflare Worker: assistant proxy for the pro-analytics-02 guide.
+# ai-assistant.js calls this endpoint; the Gemini key stays here as a
+# secret and never reaches the browser.
+
+name = "pro-analytics-02-assistant"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# ------------------------------------------------------------
+# Non-secret vars (safe to commit)
+# ------------------------------------------------------------
+[vars]
+# Free-tier Gemini model. The free tier is Flash-only; pick the current
+# free Flash model from AI Studio (ids change). gemini-2.5-flash and the
+# Flash-Lite line carry the most generous free daily request limits.
+GEMINI_MODEL = "gemini-2.5-flash"
+
+# Only these origins may call the worker (CORS + a 403 gate).
+ALLOWED_ORIGINS = "https://denisecase.github.io,http://localhost:8000"
+
+# Guardrails that keep a public endpoint from draining your free quota.
+MAX_QUESTION_CHARS = "1000"
+MAX_CONTEXT_CHARS = "20000"
+DAILY_CALLS_PER_IP = "50"
+
+# ------------------------------------------------------------
+# Optional KV for the per-IP daily cap. Without this binding the worker
+# still runs — it just skips the cap. To enable:
+#   1) wrangler kv namespace create RATE
+#   2) paste the returned id below
+#   3) uncomment the three lines
+# ------------------------------------------------------------
+# [[kv_namespaces]]
+# binding = "RATE"
+# id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# ------------------------------------------------------------
+# Secret — do NOT put this in the file. Set it once with:
+#   wrangler secret put GEMINI_API_KEY
+# Get the key free (no credit card) from Google AI Studio:
+#   https://aistudio.google.com/apikey
+# ------------------------------------------------------------

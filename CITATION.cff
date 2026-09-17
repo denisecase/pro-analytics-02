@@ -9,11 +9,12 @@
 # USAGE: See https://citation-file-format.github.io/ for details.
 
 cff-version: "1.2.0"
+message: "If using this project, please cite it as described in this file."
 type: software
 
 title: pro-analytics-02
-version: "0.4.4"
-date-released: "2026-08-22"
+version: "0.4.5"
+date-released: "2026-09-17"
 
 authors:
   - family-names: Case
@@ -70,5 +71,3 @@ keywords:
   - machine setup
   - project-setup
   - development-workflow
-
-message: "If using this project, please cite it as described in this file."

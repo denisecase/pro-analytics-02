@@ -1,7 +1,7 @@
 # ============================================================
-# .github/workflows/deploy-zensical.yml (ALL-PY-REPOS)
+# .github/workflows/deploy-zensical-ga.yml (CUSTOM: ALL-PY-REPOS+GA)
 # ============================================================
-# Updated: 2026-08-16
+# Updated: 2026-09-17
 #
 # WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:
@@ -17,6 +17,8 @@ name: Docs Deploy (Zensical)
 on:
   push:
     branches: [main]  # WHY: Deploy docs on every push to GitHub branch `main`.
+  schedule:
+    - cron: "0 12 * * *"   # daily at 12:00 UTC
   workflow_dispatch:  # WHY: Allow manual trigger from Actions tab.
 
 permissions:
@@ -80,6 +82,35 @@ jobs:
             uv run python -m zensical --version
           fi
         # WHY: Version output makes deployment logs easier to debug when tools change.
+
+      # ============================================================
+      # B) BUILD VIEW ANALYTICS AND INTEGRATED AI CONTEXT
+      # ============================================================
+
+      - name: B1) Authenticate to Google Cloud
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GA4_SERVICE_ACCOUNT }}
+        # WHY: Obtain short-lived Google credentials through GitHub OIDC.
+        # OBS: Exports credentials for subsequent Google API operations.
+
+      - name: B2) Generate anonymous view analytics data (GA4 -> view-analytics.json)
+        env:
+          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
+        run: uv run python -m pro_analytics_02.view_analytics.build_analytics
+        # WHY: Query GA4 for the current academic block.
+        # WHY: Write docs/assets/data/view-analytics.json before building.
+        # OBS: The generated file contains only anonymous aggregate counts.
+        # REQ: Configure these GitHub Actions repository variables:
+        #      GA4_PROPERTY_ID
+        #      GA4_SERVICE_ACCOUNT
+        #      GCP_WORKLOAD_IDENTITY_PROVIDER
+
+      - name: B3) Generate integrated AI context (guide-context.json)
+        run: uv run python -m pro_analytics_02.integrated_ai.build_guide_context
+        # WHY: Collect documentation text for the guide assistant.
+        # WHY: Write docs/assets/data/guide-context.json before building.
 
       # ============================================================
       # D) DEPLOY: Build and publish docs

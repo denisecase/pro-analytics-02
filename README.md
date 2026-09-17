@@ -25,7 +25,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
 [![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml)
-[![Deploy Docs](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical.yml)
+[![Deploy Docs](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical-ga.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical-ga.yml)
 [![Check Links](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml)
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/denisecase/pro-analytics-02/security)
 
@@ -83,6 +83,14 @@ If curious about the supporting files, see
 This is a reference site.
 Most people do not need this running on their machine.
 The following steps are for developers and maintainers of this guide.
+
+## Optional: Add Google Analytics (Page View Data)
+
+To add page view data, see [SET-UP-GA](./SET-UP-GA.md).
+
+## Optional: Add Integrated AI Assistant
+
+To add an integrated AI assistant, see [SET-UP-AI](./SET-UP-AI.md).
 
 ## Command Reference
 
@@ -191,6 +199,21 @@ git add -A
 git commit -m "your message here"
 
 git push -u origin main
+```
+
+### Adding Google Analytics Page Views
+
+```text
+src/pro_analytics_02/build_analytics.py
+    reads the current academic block
+    reads the estimated enrollment
+    requests all /pro-analytics-02/ page metrics
+    writes docs/assets/data/view-analytics.json
+
+docs/javascript/view-analytics.js (added to zensical.toml)
+    reads window.location.pathname
+    finds that path in view-analytics.json
+    inserts the counts at the bottom of the current page
 ```
 
 </details>

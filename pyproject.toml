@@ -1,7 +1,7 @@
 # ============================================================
 # pyproject.toml (Python project configuration)
 # ============================================================
-# Updated: 2026-08-22
+# Updated: 2026-09-15
 # REQ.PYTHON: Python projects MUST include pyproject.toml as the single source of truth.
 # WHY: Centralizes project configuration.
 # CUSTOM: Update identity and build tool src folders.
@@ -14,7 +14,7 @@
 name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
 readme = "README.md"
 requires-python = ">=3.14" # 3.14 STILL REQUIRED AUG-2026
-version = "0.4.4"
+version = "0.4.5"
 description = "Professional Python for Analytics."
 license-files = ["LICENSE"]
 authors = [
@@ -35,6 +35,7 @@ dependencies = [
     "pandas", # WHY: Data analysis and manipulation.
     "scikit-learn", # WHY: Machine learning and data mining.
     "matplotlib", # WHY: Charting. REQ 3.14. pulls in kiwisolver, and kiwisolver publishes a Windows wheel for CPython 3.14 but not 3.15.
+    "google-analytics-data>=0.23.0",
 ]
 
 [dependency-groups]
@@ -98,7 +99,7 @@ MD033 = false # WHY: Allow inline HTML such as details, summary, iframe, and vid
 # WHY: Consistent test discovery and coverage visibility.
 minversion = "9.0"
 testpaths = ["tests"]
-addopts = "--cov=src --cov-fail-under=20 --cov-report=term-missing"
+addopts = "--cov=src --cov-fail-under=30 --cov-report=term-missing"
 filterwarnings = [
     "ignore:FigureCanvasAgg is non-interactive, and thus cannot be shown:UserWarning",
 ]

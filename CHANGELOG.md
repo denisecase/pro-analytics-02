@@ -11,9 +11,19 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
-- Remove Node installation (os-tools number four), node --version
-- Remove the associated markdownlint-cli2 --fix command
-- Remove .markdownlint-cli2.yaml from root to simplify
+---
+
+## [0.4.5] - 2026-09-17
+
+- Add initial Google Analytics page-view and unique-visitor counts to documentation pages.
+- Add daily scheduled refresh of documentation analytics.
+- Add initial Google Gemini integrated AI assistant with an “Ask the agent” dialog.
+- Add a Cloudflare Worker to keep the Gemini API key outside browser code.
+- Add build-time generation of guide-context.json for assistant integration.
+- Add Google Analytics and AI assistant setup instructions.
+- Remove Node installation (os-tools number four) and the node --version check.
+- Remove the associated markdownlint-cli2 --fix command.
+- Keep .markdownlint-cli2.yaml in the repository root for optional use.
 
 ---
 

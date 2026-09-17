@@ -8,6 +8,11 @@
 # out of the repository.
 # ALT: Repository may customize ignores, but MUST preserve universal safety rules.
 
+# === GENERATED FILES FOR THIS REPOSITORY ===
+
+docs/assets/data/view-analytics.json
+docs/assets/data/guide-context.json
+
 # === pup-up fragments ===
 
 # WHY: The pup-up (professional Python project updater) may provide temporary configuration fragments for manual merging.
@@ -20,7 +25,7 @@
 # WHY: Ignore logs and runtime output by default; share only project.log for evidence.
 *.log
 logs/
-!/project.log
+# !/project.log
 
 
 # === Private notes and local-only files ===

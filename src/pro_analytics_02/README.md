@@ -18,6 +18,15 @@ to DASHES on package indexes like PyPI.
 - So a src/ folder named:  `pro_analytics_02`
 - Becomes a package named: `pro-analytics-02`
 
+## Example Paths
+
+```text
+/pro-analytics-02/
+/pro-analytics-02/docs/workflow-a-set-up-machine
+/pro-analytics-02/docs/workflow-b-apply-example-project
+/pro-analytics-02/docs/workflow-c-start-new-project
+```
+
 ## Make it a Package
 
 To turn a folder into an importable Python package, add a file named: `__init__.py`.

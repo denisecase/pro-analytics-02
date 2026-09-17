@@ -20,6 +20,8 @@ edit_uri = "edit/main/docs/" # "Edit this page" links (GitHub)
 extra_javascript = [
     "javascripts/read-aloud.js", # CUSTOM: adds optional Read Aloud functionality to pages.
     "javascripts/concept-quiz.js", # CUSTOM: adds optional Concept Quiz functionality to pages.
+    "javascripts/view-analytics.js", # CUSTOM: adds optional View Analytics functionality to pages.
+    "javascripts/ai-assistant.js", # CUSTOM: adds optional AI Assistant functionality to pages.
 ]
 [project.extra]
 # WHY: Social links provide easy access to project repositories and profiles.
