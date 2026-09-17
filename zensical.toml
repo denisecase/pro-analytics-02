@@ -29,6 +29,15 @@ social = [
     {icon = "fontawesome/brands/github", link = "https://github.com/denisecase/pro-analytics-02" },
 ]
 
+[project.extra.analytics]
+# WHY: Configure Google Analytics for the documentation site.
+# analytics.google.com / denisecase.github.io / property = Denise Case (GitHub Pages) - GA4
+# Analytics / Admin (lower left corner) / Property Settings
+# / Data collection and modification / Data streams
+# / Web stream details / Measurement ID
+provider = "google"
+property = "G-E2DY1M4TB4"
+
 [project.markdown_extensions]
 md_in_html = {} # WHY: Allow Markdown inside HTML blocks when the opening tag includes `markdown`, e.g. <details markdown>...</details>
 pymdownx.superfences = {} # WHY: Enables support for fenced code blocks with syntax highlighting and custom options.

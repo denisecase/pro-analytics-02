@@ -163,7 +163,7 @@ Immediately switch to your GitHub repository:
 If the command reports that the provider does not exist, stop:
 the Workload Identity setup must be completed before proceeding.
 
-### 2.4. Verify
+### 2.4. Wire Up and Verify
 
 The GitHub **Variables** tab must now contain:
 
@@ -223,6 +223,14 @@ See the `.yml` file for details.
 
 Counts update when the deploy workflow runs.
 Check the schedule runs on a regular basis (e.g. daily).
+
+Add to zensical.toml (use your property ID as described in the toml file):
+
+```toml
+[project.extra.analytics]
+provider = "google"
+property = "G-E2DY1M4TB4"
+```
 
 ## Task 4. Ignore the Generated File
 

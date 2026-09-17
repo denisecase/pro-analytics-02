@@ -62,7 +62,7 @@
     summary.append(
       `${metrics.unique_visitors} unique visitors · `,
       `${metrics.page_views} page views · `,
-      `approximately ${analytics.estimated_viewers} viewers`,
+      `approximately ${analytics.estimated_students} viewers`,
     );
 
     period.textContent =

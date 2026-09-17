@@ -128,6 +128,7 @@ uv run pre-commit run --all-files
 uv run pre-commit run --all-files
 
 uvx cffconvert --validate
+npx markdownlint-cli2 --fix
 
 uv run ty check
 uv run python -m pytest
