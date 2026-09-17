@@ -12,7 +12,7 @@
 # REQ: Deployment MUST use the committed uv.lock without updating it.
 
 # Name shown in the repo Actions tab.
-name: Docs Deploy (Zensical)
+name: Docs Deploy (Zensical + GA + AI)
 
 on:
   push:

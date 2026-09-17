@@ -171,6 +171,49 @@ The GitHub **Variables** tab must now contain:
 - `GA4_SERVICE_ACCOUNT`: an email address
 - `GCP_WORKLOAD_IDENTITY_PROVIDER`: a path beginning with `projects/`
 
+In the console.cloud.google.com for this account open a cloud shell in the browser and run:
+
+```shell
+GA_PROJECT_ID="github-pages-analytics"
+
+GA_PROJECT_NUMBER="$(gcloud projects describe "$GA_PROJECT_ID" \
+  --format='value(projectNumber)')"
+
+GA_SERVICE_ACCOUNT="ga4-reader@${GA_PROJECT_ID}.iam.gserviceaccount.com"
+
+gcloud iam service-accounts describe "$GA_SERVICE_ACCOUNT" \
+  --project="$GA_PROJECT_ID" \
+  --format="value(email)"
+```
+
+Confirm the printed email matches `GA4_SERVICE_ACCOUNT` in GitHub.
+
+Then run:
+
+```bash
+gcloud iam service-accounts add-iam-policy-binding "$GA_SERVICE_ACCOUNT" \
+  --project="$GA_PROJECT_ID" \
+  --role="roles/iam.workloadIdentityUser" \
+  --member="principalSet://iam.googleapis.com/projects/${GA_PROJECT_NUMBER}/locations/global/workloadIdentityPools/github-actions/attribute.repository/denisecase/pro-analytics-02"
+```
+
+This grants the repository permission to impersonate `ga4-reader`.
+It does not create or download a service-account key.
+
+Verify the Grant by running:
+
+```bash
+gcloud iam service-accounts get-iam-policy "$GA_SERVICE_ACCOUNT" \
+  --project="$GA_PROJECT_ID" \
+  --format=yaml
+```
+
+Confirm the output includes:
+
+- Role: `roles/iam.workloadIdentityUser`
+- A member ending with:
+  `/attribute.repository/denisecase/pro-analytics-02`
+
 ## Task 3. Verify Deploy Workflow
 
 The action `.github/workflows/deploy-zensical-ga.yml`
