@@ -77,6 +77,7 @@
         Ask about this page. Your question and the page text are sent
         to Google Gemini through the guide's assistant service.
         Do not include passwords, API keys, or personal information.
+        Press Enter to submit your question, or Shift+Enter for a new line.
       </p>
       <form>
         <label for="ai-assistant-question">Your question</label>
@@ -154,6 +155,15 @@
     const answer = dialog.querySelector("[data-answer]");
 
     let controller = null;
+
+    textarea.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" || event.shiftKey || event.isComposing) return;
+
+      event.preventDefault();
+      if (!controller && !event.repeat) {
+        form.requestSubmit(submit);
+      }
+    });
 
     button.addEventListener("click", () => {
       dialog.showModal();
