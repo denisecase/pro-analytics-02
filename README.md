@@ -86,14 +86,15 @@ The following steps are for developers and maintainers of this guide.
 
 ## Optional: Add Google Analytics (Page View Data)
 
-To add page view data, see [SET-UP-GA](./SET-UP-GA.md).
+To add page view data, see [SET-UP-GOOGLE-ANALYTICS](./SET-UP-GOOGLE-ANALYTICS.md).
 
 To view generated data, see the published
 [view-analytics.json](https://denisecase.github.io/pro-analytics-02/assets/data/view-analytics.json).
 
 ## Optional: Add Integrated AI Assistant
 
-To add an integrated AI assistant, see [SET-UP-AI](./SET-UP-AI.md).
+To add an integrated AI assistant,
+see [SET-UP-INTEGRATED-AI](./SET-UP-INTEGRATED-AI.md).
 
 ## Command Reference
 

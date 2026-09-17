@@ -99,8 +99,8 @@ export default {
         (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || "").join("").trim();
       if (!answer) return json({ error: "empty response", detail: data.promptFeedback ?? null }, 502, cors);
       return json({ answer }, 200, cors);
-    } catch (err) {
-      return json({ error: "upstream failure", detail: String(err) }, 502, cors);
+    } catch {
+      return json({ error: "upstream failure" }, 502, cors);
     }
   },
 };
