@@ -1,3 +1,13 @@
+/**
+ * Welcome to Cloudflare Workers! This is your first worker.
+ *
+ * - Run "npm run dev" in your terminal to start a development server
+ * - Open a browser tab at http://localhost:8787/ to see your worker in action
+ * - Run "npm run deploy" to publish your worker
+ *
+ * Learn more at https://developers.cloudflare.com/workers/
+ */
+
 // ============================================================
 // worker/src/index.js
 // ============================================================
@@ -65,7 +75,7 @@ export default {
       await env.RATE.put(key, String(used + 1), { expirationTtl: 172800 }); // ~2 days
     }
 
-    const model = env.GEMINI_MODEL || "gemini-2.5-flash";
+    const model = env.GEMINI_MODEL || "gemini-3.6-flash";
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
     const payload = {
       systemInstruction: { parts: [{ text: SYSTEM_INSTRUCTION }] },
@@ -92,15 +102,25 @@ export default {
         body: JSON.stringify(payload),
       });
       if (!res.ok) {
-        return json({ error: "model request failed", status: res.status }, 502, cors);
+        const detail = await res.text();
+        console.error("Gemini request failed:", res.status, detail);
+
+        return json(
+          {
+            error: "model request failed",
+            status: res.status,
+          },
+          502,
+          cors
+        );
       }
       const data = await res.json();
       const answer =
         (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || "").join("").trim();
       if (!answer) return json({ error: "empty response", detail: data.promptFeedback ?? null }, 502, cors);
       return json({ answer }, 200, cors);
-    } catch {
-      return json({ error: "upstream failure" }, 502, cors);
+    } catch (err) {
+      return json({ error: "upstream failure", detail: String(err) }, 502, cors);
     }
   },
 };

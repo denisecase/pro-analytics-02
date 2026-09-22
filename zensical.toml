@@ -141,6 +141,8 @@ nav = [
         { "Problem types" = "reference/problem-types/problem-types.md" },
     ] },
 
+    { "Security" = "security/index.md" },
+
     { "Tools" = [
         { "Terminals" = [
             { "Terminals, shells, environments" = "tools/terminals/terminals-shells-envs.md" },

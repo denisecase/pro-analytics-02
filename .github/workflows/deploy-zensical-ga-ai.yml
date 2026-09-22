@@ -1,7 +1,7 @@
 # ============================================================
-# .github/workflows/deploy-zensical-ga.yml (CUSTOM: ALL-PY-REPOS+GA)
+# .github/workflows/deploy-zensical-ga-ai.yml (CUSTOM: ALL-PY-REPOS-GA-AI)
 # ============================================================
-# Updated: 2026-09-17
+# Updated: 2026-09-22
 #
 # WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:
@@ -58,7 +58,7 @@ jobs:
         # OBS: Must run before the build step so base URL is available if needed.
 
       - name: A3) Install uv (with caching)
-        uses: astral-sh/setup-uv@v10.0.1
+        uses: astral-sh/setup-uv@v10.2.0
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"

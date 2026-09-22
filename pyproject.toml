@@ -1,8 +1,9 @@
 # ============================================================
 # pyproject.toml (Python project configuration)
 # ============================================================
-# Updated: 2026-09-15
-# REQ.PYTHON: Python projects MUST include pyproject.toml as the single source of truth.
+# Updated: 2026-09-22
+
+# REQ: Python projects MUST include pyproject.toml as the single source of truth.
 # WHY: Centralizes project configuration.
 # CUSTOM: Update identity and build tool src folders.
 
@@ -13,7 +14,7 @@
 [project]
 name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
 readme = "README.md"
-requires-python = ">=3.14" # 3.14 STILL REQUIRED AUG-2026
+requires-python = ">=3.14" # 3.14 STILL REQUIRED SEP-2026
 version = "0.4.5"
 description = "Professional Python for Analytics."
 license-files = ["LICENSE"]
@@ -45,6 +46,7 @@ dependencies = [
 # WHY: Dependency groups separate development and documentation tools from project runtime dependencies.
 dev = [
     # REQ.DEV.DEPS: External packages used for linting, testing, type checking, etc.
+    "pip-audit", # WHY: Audit dependencies for known vulnerabilities.
     "pre-commit", # WHY: Pre-commit hooks for code quality and consistency.
     "pytest", # WHY: Test framework for unit and integration tests.
     "pytest-cov", # WHY: Test coverage reporting for quality assurance.
@@ -105,6 +107,8 @@ filterwarnings = [
 ]
 
 # === RUFF (PYTHON FORMATTING AND LINTING) ===
+
+# OBS: v0.16 formats Python in Markdown by default.
 
 [tool.ruff.lint] # WHY: Extend Ruff's default rule set as needed.
 extend-select = [

@@ -14,9 +14,10 @@ compatibility_date = "2026-09-01"
 # ------------------------------------------------------------
 [vars]
 # Free-tier Gemini model. The free tier is Flash-only; pick the current
-# free Flash model from AI Studio (ids change). gemini-2.5-flash and the
+# free Flash model from AI Studio (ids change).
+# gemini-3.6-flash and the
 # Flash-Lite line carry the most generous free daily request limits.
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3.6-flash"
 
 # Only these origins may call the worker (CORS + a 403 gate).
 ALLOWED_ORIGINS = "https://denisecase.github.io,http://localhost:8000"

@@ -216,7 +216,7 @@ Confirm the output includes:
 
 ## Task 3. Verify Deploy Workflow
 
-The action `.github/workflows/deploy-zensical-ga.yml`
+The action `.github/workflows/deploy-zensical-ga-ai.yml`
 includes steps **before** the `zensical build` step,
 so the JSON exists when the site is built.
 See the `.yml` file for details.

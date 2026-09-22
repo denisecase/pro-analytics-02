@@ -1,7 +1,7 @@
 # ============================================================
 # .github/workflows/ci-python-zensical.yml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-08-16
+# Updated: 2026-09-22
 #
 # WHY: Continuous Integration (CI) ensures repository hygiene,
 #      Python correctness, testing, and documentation builds.
@@ -49,7 +49,7 @@ jobs:
         # WHY: Required so all subsequent steps can access repo files.
 
       - name: A2) Install uv (with caching)
-        uses: astral-sh/setup-uv@v10.0.1
+        uses: astral-sh/setup-uv@v10.2.0
         with:
           enable-cache: true
           # WHY: Cache uv-managed artifacts for faster subsequent runs.
@@ -102,6 +102,13 @@ jobs:
         # OBS: ty uses the installed project environment for analysis.
         # OBS: Not included in pre-commit because it requires the full environment.
         # OBS: continue-on-error keeps type checking non-blocking in this workflow.
+
+      - name: B3) Audit dependencies for known vulnerabilities
+        run: uv run pip-audit --local
+        # WHY: SCA (software composition analysis) gate;
+        #      fail CI when an installed dependency has a known vulnerability.
+        # OBS: Audits the environment installed from the committed uv.lock.
+        # OBS: Dependabot provides ongoing monitoring; this provides an explicit CI gate.
 
       # ============================================================
       # C) COVERAGE & TESTING: Python tests

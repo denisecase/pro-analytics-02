@@ -13,6 +13,32 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.4.6] - 2026-09-22
+
+### Added
+
+- Added `docs/security/index.md` with software security gates.
+- Added `docs\security\CAE-NOTES-ON-USING-AI.md`.
+- Added `sbom.yml` to generate SPDX and CycloneDX SBOMs.
+- Added `pip-audit` for software composition analysis (SCA).
+
+### Updated
+
+- Updated `docs\workflow-a-set-up-machine\03b-mac-install-tools.md` to install using native so `uv self update` works.
+- Updated `.pre-commit-config.yaml`.
+- Updated `pyproject.toml` development dependencies.
+- Updated `.github/dependabot.yml` for automated dependency updates.
+- Updated `.github/workflows/ci-python-zensical.yml` with the SCA security check.
+- Updated to `.github/workflows/deploy-zensical-ga-ai.yml` to reflect both Google Analytics and addition of AI assistant.
+- `worker\src\index.js` here and in CloudFlare
+  Workers & Pages / pro-analytics-02-assistant / Edit code.
+  (See observability / logs for debugging.)
+- updated from `gemini-2.5-flash` to `gemini-3.6-flash` in `worker\wrangler.toml` and `worker\src\index.js`.
+
+### Fixed
+
+- Ask the Assistant integrated AI is working (with limits).
+
 ## [0.4.5] - 2026-09-17
 
 - Add initial Google Analytics page-view and unique-visitor counts to documentation pages.
@@ -163,7 +189,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.4...HEAD
+[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.5...HEAD
+[0.4.5]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.5
 [0.4.4]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.4
 [0.4.3]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.3
 [0.4.2]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.2

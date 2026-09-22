@@ -1,7 +1,7 @@
 # ============================================================
 # .pre-commit-config.yaml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-08-13
+# Updated: 2026-09-22
 #
 # REQ: Professional projects using Python src/ SHOULD include pre-commit checks.
 # WHY: Minimize git diffs, catch common issues early, and support collaboration.
@@ -106,13 +106,18 @@ repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.16.8
     hooks:
-      # === RUFF PRE-COMMIT CHECKS ===
-      - id: ruff-format
-        name: D1) Ruff format (before linting)
 
-      - id: ruff
-        name: D2) Ruff linter (autofix errors, style issues )
+      # === RUFF PRE-COMMIT CHECKS ===
+      # REQ: Lint first, format last, so lint autofixes land already formatted
+      #      and the run settles in one pass instead of needing a re-run.
+      - id: ruff-check
+        name: D1) Ruff linter (autofix errors, style issues)
         args: [--fix, --exit-non-zero-on-fix]
+
+      - id: ruff-format
+        name: D2) Ruff format (last, after lint fixes)
+
+
 
 # === GLOBAL SETTINGS ===
 # ALT: Set fail_fast to true to stop at first failure.

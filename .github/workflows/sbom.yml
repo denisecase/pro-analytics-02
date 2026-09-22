@@ -1,0 +1,152 @@
+# ============================================================
+# .github/workflows/sbom.yml (ALL-PY-SRC-REPOS)
+# ============================================================
+# Updated: 2026-09-22
+#
+# REQ: Generate machine-readable Software Bills of Materials (SBOMs)
+# for the repository on every push to main and on manual request.
+#
+# WHY: An SBOM is an inventory of software components and dependencies,
+# analogous to an ingredients list for software.
+#
+# Generate two complementary machine-readable SBOMs:
+# - SPDX JSON: exported from GitHub's native Dependency Graph.
+# - CycloneDX JSON: independently generated from the repository.
+#
+# The generated SBOMs are workflow artifacts rather than committed files.
+#
+# OBS: GitHub maintains the Dependency Graph separately. For supported
+# Python repositories, GitHub can resolve dependencies from uv.lock.
+# This workflow does not submit a competing dependency snapshot.
+#
+# OBS: SBOM generation inventories software components. It does not
+# determine whether a dependency is vulnerable or exploitable.
+# SCA and VEX interpretation are separate analyses.
+
+name: SBOM
+
+on:
+  push:
+    branches: [main] # WHY: Refresh SBOM artifacts after changes reach main.
+  workflow_dispatch: # WHY: Allow manual generation from the Actions tab.
+
+concurrency:
+  group: sbom-${{ github.ref }}
+  cancel-in-progress: true
+  # WHY: On rapid pushes to main, supersede in-flight SBOM runs.
+
+permissions:
+  contents: read
+  # WHY: SBOM export requires only repository read access.
+  # REQ: Follow least privilege.
+
+jobs:
+  sbom:
+    name: Generate SBOMs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # ============================================================
+      # A) ASSEMBLE: Checkout repository contents
+      # ============================================================
+
+      - name: A1) Checkout repository code
+        uses: actions/checkout@v7
+        # WHY: CycloneDX generation inspects the checked-out repository.
+
+      # ============================================================
+      # B) SPDX: Export GitHub Dependency Graph
+      # ============================================================
+
+      - name: B1) Request GitHub SPDX SBOM
+        id: request-sbom
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          SBOM_URL="$(
+            gh api \
+              --method GET \
+              -H "X-GitHub-Api-Version: 2026-03-10" \
+              "/repos/${GITHUB_REPOSITORY}/dependency-graph/sbom/generate-report" \
+              --jq '.sbom_url'
+          )"
+
+          # WHY: Fail clearly if the request returned no fetch URL.
+          if [ -z "$SBOM_URL" ]; then
+            echo "No sbom_url returned from generate-report request."
+            exit 1
+          fi
+
+          echo "sbom_url=$SBOM_URL" >> "$GITHUB_OUTPUT"
+        # WHY: Request an SPDX SBOM generated from GitHub's native
+        # Dependency Graph.
+        # OBS: GitHub generates this report asynchronously.
+
+      - name: B2) Download GitHub SPDX SBOM
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SBOM_URL: ${{ steps.request-sbom.outputs.sbom_url }}
+        run: |
+          for attempt in {1..24}; do
+            HTTP_STATUS="$(
+              curl \
+                --silent \
+                --output sbom-response.json \
+                --write-out "%{http_code}" \
+                --location \
+                --header "Accept: application/vnd.github+json" \
+                --header "Authorization: Bearer ${GH_TOKEN}" \
+                --header "X-GitHub-Api-Version: 2026-03-10" \
+                "$SBOM_URL"
+            )"
+
+            if [ "$HTTP_STATUS" = "200" ]; then
+              mv sbom-response.json sbom.spdx.json
+              exit 0
+            fi
+
+            if [ "$HTTP_STATUS" != "202" ]; then
+              echo "GitHub SBOM export failed with HTTP $HTTP_STATUS."
+              cat sbom-response.json
+              exit 1
+            fi
+
+            echo "GitHub SBOM is still being generated; waiting..."
+            sleep 5
+          done
+
+          echo "Timed out waiting for GitHub SBOM generation."
+          exit 1
+        # WHY: Fetch the completed SPDX SBOM when GitHub finishes
+        # asynchronous generation.
+
+      # ============================================================
+      # C) CycloneDX: Generate independent repository SBOM
+      # ============================================================
+
+      - name: C1) Generate CycloneDX JSON SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          path: .
+          format: cyclonedx-json
+          output-file: sbom.cdx.json
+          upload-artifact: false
+        # WHY: CycloneDX is commonly used by vulnerability-management,
+        # SBOM, VEX, and software-supply-chain security tooling.
+        # OBS: This SBOM is generated independently of GitHub's
+        # Dependency Graph.
+
+      # ============================================================
+      # D) PUBLISH: Retain generated SBOMs
+      # ============================================================
+
+      - name: D1) Upload SBOM artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: sbom
+          path: |
+            sbom.spdx.json
+            sbom.cdx.json
+        # WHY: Retain both machine-readable SBOM representations
+        # without committing generated files to the repository.

@@ -39,7 +39,6 @@ If Git is missing or outdated, install it from the official site:
 <summary>WHY?</summary>
 
 Git **tracks changes** in project files over time.
-
 It records what changed, when it changed, and who made the change.
 
 Git is used with GitHub, but they are different.
@@ -86,6 +85,11 @@ Follow the official installation instructions from Astral:
 
 > Do not install a project Python separately at this step.
 > Python will be installed per-project using **uv**.
+
+NOTE: We use `uv self update` to keep `uv` updated.
+That command only works when `uv` is installed via the standalone installer.
+It errors out for `uv` installed through Homebrew, pip, or pipx,
+so installing via those methods is not recommended.
 
 <details markdown>
 <summary>WHY?</summary>

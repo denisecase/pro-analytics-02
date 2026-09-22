@@ -1,24 +1,64 @@
 # ============================================================
-# .github/dependabot.yml (Check for GitHub Actions updates)
+# .github/dependabot.yml (ALL-PY-SRC-REPOS)
 # ============================================================
-# REQ.PROJECT: This repository SHOULD track GitHub Actions updates automatically.
-# WHY: GitHub Actions are executable dependencies and may receive security or behavior updates.
-# OBS: Language-level dependencies (e.g., Python packages) are upgraded manually.
-# OBS: GitHub Actions are the only dependency class automated here.
-# ALT: Dependabot could be omitted if workflows are pinned and reviewed manually.
+# Updated: 2026-09-22
+#
+# REQ: This repository SHOULD track dependency updates automatically.
+# WHY: Dependencies, development tools, pre-commit hooks, and GitHub
+#      Actions may receive security, compatibility, and maintenance updates.
+# OBS: Security updates are not delayed by the configured cooldown.
 # CUSTOM: Update interval if CI cadence or security posture changes.
 
-# NOTE: This file automatically updates the versions used in Actions workflows.
-# You don't need to modify this file.
-# To disable: Delete this file or set enabled: false below.
-# enabled: false # Uncomment to disable Dependabot
-
-version: 2 # Dependabot configuration version
+version: 2
 
 updates:
-  - package-ecosystem: "github-actions" # Dependency type
-    directory: "/" # Location of GitHub Actions workflows
+  # ============================================================
+  # PYTHON / UV
+  # ============================================================
+
+  - package-ecosystem: "uv"
+    directory: "/"
     schedule:
-      interval: "monthly" # ALT: Use "weekly" for higher security when needed
+      interval: "monthly"
+    cooldown:
+      default-days: 7
     commit-message:
-      prefix: "(deps)" # WHY: enable filtering by commit type
+      prefix: "(deps)"
+    groups:
+      python:
+        patterns:
+          - "*"
+
+  # ============================================================
+  # GITHUB ACTIONS
+  # ============================================================
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: "(deps)"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  # ============================================================
+  # PRE-COMMIT
+  # ============================================================
+
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: "(deps)"
+    groups:
+      pre-commit:
+        patterns:
+          - "*"
