@@ -13,8 +13,8 @@ message: "If using this project, please cite it as described in this file."
 type: software
 
 title: pro-analytics-02
-version: "0.4.5"
-date-released: "2026-09-17"
+version: "0.4.6"
+date-released: "2026-09-22"
 
 authors:
   - family-names: Case
