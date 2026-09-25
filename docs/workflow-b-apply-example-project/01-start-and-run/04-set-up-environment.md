@@ -41,10 +41,10 @@ Copy and paste one command at a time and hit Enter or Return after pasting to ru
 
 ```shell
 uv self update
-
 uv python install
 uv lock --upgrade
 uv sync
+uv audit
 ```
 
 These commands:
@@ -55,6 +55,7 @@ These commands:
 3. Update the project dependency versions allowed by pyproject.toml and
    record the resolved versions in `uv.lock`.
 4. Create or update the project `.venv` and install the project dependencies recorded in `uv.lock`.
+5. Audit all dependencies for known vulnerabilities and adverse package statuses.
 
 If prompted: "We noticed a new environment has been created.
 Do you want to select it for the workspace folder?", click **Yes**.

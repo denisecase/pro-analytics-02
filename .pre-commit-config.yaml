@@ -1,7 +1,7 @@
 # ============================================================
 # .pre-commit-config.yaml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-09-22
+# Updated: 2026-09-25 add uvx zizmor check
 #
 # REQ: Professional projects using Python src/ SHOULD include pre-commit checks.
 # WHY: Minimize git diffs, catch common issues early, and support collaboration.
@@ -11,18 +11,17 @@
 #   - .gitattributes (EOL normalization)
 #   - pyproject.toml (Python tool settings)
 #
-# OPTIONAL LOCAL USAGE (keep tools updated):
-#   uv self update
-#   uv run pre-commit install
-#   uv run pre-commit autoupdate
+# OPTIONAL LOCAL USAGE (keep hooks updated):
+#   uv run prek install -f
+#   uv run prek update --freeze --cooldown-days 7
 #
 # OPTIONAL LOCAL USAGE (run all hooks on all git-tracked files):
-#   uv run pre-commit run --all-files
+#   uv run prek run --all-files
 #   The first time, it may indicate errors / fixes,
-#   So just re-run the command (up arrow) and it often goes all green.
+#   so just re-run the command (up arrow) and it often goes all green.
 #
-# NOTE: Enabling pre-commit is optional. It is not needed to clone or commit.
-# You can skip it with the --no-verify option, e.g.:
+# NOTE: Enabling prek is optional. It is not needed to clone or commit.
+# You can skip the installed Git hook with --no-verify, e.g.:
 #   git commit -m "your message" --no-verify
 
 exclude: |
@@ -58,7 +57,7 @@ repos:
   #   - broken builds on another OS
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v6.0.0
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c  # frozen: v6.0.0
     hooks:
       # === PRE-COMMIT: NORMALIZE FILE FORMATTING ===
 
@@ -104,7 +103,7 @@ repos:
   # === REPO: RUFF PRE-COMMIT (for Python code) ===
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.16.8
+    rev: a56c0b927e6465d37cae3e97d35d4d18ab2b96cd  # frozen: v0.16.9
     hooks:
 
       # === RUFF PRE-COMMIT CHECKS ===
@@ -117,7 +116,22 @@ repos:
       - id: ruff-format
         name: D2) Ruff format (last, after lint fixes)
 
+  # === EXTRA LOCAL HOOKS ===
 
+  - repo: local
+    hooks:
+      # === ZIZMOR: GITHUB ACTIONS SECURITY AUDIT (advisory) ===
+      # WHY: --no-exit-codes reports findings without blocking the commit;
+      #      verbose prints them even on a passing run.
+      # WHY: files limits this to when a workflow or Dependabot file exists,
+      #      avoiding zizmor's "no inputs collected" error.
+      - id: zizmor
+        name: E1) zizmor (advisory audit of GitHub Actions workflows)
+        entry: uvx zizmor@latest --no-exit-codes .github/
+        language: system
+        pass_filenames: false
+        verbose: true
+        files: ^\.github/(workflows/[^/]+\.ya?ml|dependabot\.ya?ml)$
 
 # === GLOBAL SETTINGS ===
 # ALT: Set fail_fast to true to stop at first failure.

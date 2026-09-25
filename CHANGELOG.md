@@ -11,16 +11,37 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
+---
+
+## [0.4.7] - 2026-09-25
+
+### Before Next Block TODOS
+
+- Update instructions and projects to use `prek` instead of `pre-commit`.
+- Update project `pyproject.toml` files: add `prek`; remove `pre-commit`,
+  `pip-audit`, and project-installed `zizmor` where present.
+- Update project README/setup commands to use `prek` and `uv audit`.
+- Update `.pre-commit-config.yaml` to use advisory `uvx zizmor@latest`.
+- Update `sit.ps1` to use `prek` and run `uv audit`.
+- Update CI to run `uv audit`.
+- SHA-pin GitHub Actions in the canonical workflows with `gha-tools`,
+  then verify with `zizmor`.
+
 ### Added
 
-- Added `docs\stylesheets\extra.css`.
+- Added `docs/stylesheets/extra.css`.
+- Added advisory zizmor audit to repository hooks.
+- Added `uv audit` to `sit.ps1` and Workflow B for dependency security auditing.
 
 ### Updated
 
-- Updated `zensical.toml` to include admonitions and css.
-- Updated `worker\src\index.js` to avoid Information exposure through a stack trace.
-- Updated CloudFlare worker code and re-deployed.
-- Updated / simplified opening page.
+- Replaced `pip-audit` with uv's built-in `uv audit`.
+- Changed the Git hook runner from `pre-commit` to `prek` for this repo.
+- Updated all GitHub Actions references to immutable SHAs for increased security.
+- Updated `zensical.toml` to include admonitions and CSS.
+- Updated `worker/src/index.js` to avoid information exposure through a stack trace.
+- Updated Cloudflare Worker code and redeployed.
+- Updated and simplified the opening page.
 - Updated Workflow A Set Up Machine home page to include verification.
 
 ---
@@ -140,33 +161,30 @@ Follow these steps exactly when creating a new release.
 ### Task 1. Update release metadata (manual edits)
 
 1.1. `CITATION.cff` - update `version` and `date-released`
-1.2. CHANGELOG.md: add section, move unreleased entries, update links
-1.3. `pyproject.toml` - update `version`
+1.2. `pyproject.toml` - update `version`
+1.3. CHANGELOG.md: add section, move unreleased entries, update links
 
 ### Task 2. Validate
 
 ```shell
 uvx pup-clean --delete
-uvx pup-up
+# uvx pup-up
+
 .\sit.ps1
 
-# OR
+# Update GitHub Actions and pin all action references to immutable SHAs
+uvx gha-tools autoupdate --pin=all --write .github/workflows
 
-uv lock --upgrade
-uv sync
-uv run pre-commit install
-uv run pre-commit autoupdate
+# Then audit the resulting GitHub configuration for security findings
+uvx zizmor@latest .github/
+
+uvx cffconvert --validate
+npx markdownlint-cli2 --fix
 
 uv run python -m pro_analytics_02.demo_module_basics
 uv run python -m pro_analytics_02.ml_example
 
-git add -A
-uv run pre-commit run --all-files
-# repeat if changes were made
-uv run pre-commit run --all-files
-
-uvx cffconvert --validate
-npx markdownlint-cli2 --fix
+Remove-Item project.log
 
 uv run ty check
 uv run python -m pytest
@@ -201,7 +219,9 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.5...HEAD
+[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.7...HEAD
+[0.4.7]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.7
+[0.4.6]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.6
 [0.4.5]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.5
 [0.4.4]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.4
 [0.4.3]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.3

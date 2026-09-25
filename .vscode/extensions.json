@@ -1,7 +1,7 @@
 // ============================================================
 // .vscode/extensions.json (ALL-PY-SRC-REPOS)
 // ============================================================
-// Updated: 2026-08-15
+// Updated: 2026-09-25
 // Basis: cross-platform (all 3 OS), popular, reliable.
 // NOTE: Comments are not allowed in standard JSON files,
 //       but Microsoft allows them in their .vscode config files (JSONC).
@@ -71,7 +71,7 @@
     // ============================================================
     // === OPTIONAL (try if you want) ===
     // ============================================================
-    // "fill-labs.dependi", // depdency update notifications in VS Code
+    // "fill-labs.dependi", // dependency update notifications in VS Code
     // "usernamehw.errorlens", // Inline error messages - helpful but can be noisy
     // "eamodio.gitlens", // Git history visualization - powerful but can be noisy
   ],
@@ -79,8 +79,8 @@
     // ============================================================
     // === NOT RECOMMENDED: CONFLICTS WITH CURRENT SETUP ===
     // ============================================================
-    "ms-pyright.pyright", // Switching to uv ty for type checking
-    "ms-python.vscode-pylance", // Switching to uv ty for type checking
+    "ms-pyright.pyright", // We use ty for type checking and language support
+    "ms-python.vscode-pylance", // We use ty for type checking and language support
     "ms-python.black-formatter", // We use ruff format instead
     "ms-python.isort", // We use ruff for import sorting
     "ms-vscode.live-server", // Not needed for Python/analytics projects

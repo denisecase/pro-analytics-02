@@ -35,13 +35,15 @@ jobs:
       # === ASSEMBLE ===
 
       - name: A1) Checkout repository code
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
         # WHY: Required so Lychee can inspect repository files.
 
       # === BASIC CHECKS ===
 
       - name: B1) Run Lychee link checker
-        uses: lycheeverse/lychee-action@v2.9.0
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
         with:
           args: >
             --config .github/lychee.toml

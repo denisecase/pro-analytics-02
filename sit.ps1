@@ -4,7 +4,7 @@
 ============================================================
 sit.ps1 (ALL-PY-SRC-REPOS)
 ============================================================
-Updated: 2026-08-15 (uses pyproject.toml [dependency-groups]; uv sync installs dev and docs groups by default)
+Updated: 2026-09-25: add prek, zizmor, audits
 
 Situate project dependencies, lint, test, and build docs.
 For Python tooling repos only.
@@ -39,18 +39,100 @@ if (Test-Path "pyproject.toml") {
     }
 }
 
+# ============================================================
+# Precheck: dev dependencies must use the current repository tools.
+#
+# REQ:
+# - prek MUST be a dev dependency because it is run with `uv run prek`.
+# - pre-commit MUST NOT remain after migration to prek.
+# - zizmor MUST NOT be a dev dependency because it is run independently
+#   with `uvx zizmor@latest`.
+# ============================================================
+if (Test-Path "pyproject.toml") {
+    $dependencyGroupsMatch = [regex]::Match(
+        $pyproject,
+        '(?ms)^\[dependency-groups\]\s*(.*?)(?=^\[|\z)'
+    )
+
+    if ($dependencyGroupsMatch.Success) {
+        $devMatch = [regex]::Match(
+            $dependencyGroupsMatch.Groups[1].Value,
+            '(?ms)^\s*dev\s*=\s*\[(.*?)^\s*\]'
+        )
+
+        if ($devMatch.Success) {
+            $devPackages = @(
+                [regex]::Matches(
+                    $devMatch.Groups[1].Value,
+                    '(?m)^\s*"([^"]+)"\s*,?'
+                ) | ForEach-Object {
+                    $_.Groups[1].Value
+                }
+            )
+
+            $hasPreCommit = @(
+                $devPackages | Where-Object {
+                    $_ -match '^pre-commit(?:$|[<>=!~;\[])'
+                }
+            ).Count -gt 0
+
+            $hasPrek = @(
+                $devPackages | Where-Object {
+                    $_ -match '^prek(?:$|[<>=!~;\[])'
+                }
+            ).Count -gt 0
+
+            $hasZizmor = @(
+                $devPackages | Where-Object {
+                    $_ -match '^zizmor(?:$|[<>=!~;\[])'
+                }
+            ).Count -gt 0
+
+            if ($hasPreCommit -or -not $hasPrek -or $hasZizmor) {
+                Write-Host ""
+                Write-Host "ERROR: pyproject.toml uses outdated dev dependencies." -ForegroundColor Red
+                Write-Host ""
+
+                if ($hasPreCommit) {
+                    Write-Host "REMOVE: `"pre-commit`"" -ForegroundColor Yellow
+                    Write-Host "WHY:    prek replaces pre-commit." -ForegroundColor Yellow
+                    Write-Host ""
+                }
+
+                if (-not $hasPrek) {
+                    Write-Host "ADD:    `"prek`"" -ForegroundColor Cyan
+                    Write-Host "WHY:    This repo runs hooks with 'uv run prek'." -ForegroundColor Cyan
+                    Write-Host ""
+                }
+
+                if ($hasZizmor) {
+                    Write-Host "REMOVE: `"zizmor`"" -ForegroundColor Yellow
+                    Write-Host "WHY:    zizmor runs independently with 'uvx zizmor@latest'." -ForegroundColor Yellow
+                    Write-Host ""
+                }
+
+                Write-Host "Update the dev dependency group, then run .\sit.ps1 again." -ForegroundColor Cyan
+                Write-Host ""
+                exit 1
+            }
+        }
+    }
+}
+
 uv self update
 uv python install
 uv lock --upgrade
 uv sync
+uv audit
 
-uv run pre-commit install
-uv run pre-commit autoupdate
+# install prek as the Git hook runner and update/freeze hook revisions
+uv run prek install -f
+uv run prek update --freeze --cooldown-days 7
 
 git add -A
-uv run pre-commit run --all-files
+uv run prek run --all-files
 # repeat if changes were made
-uv run pre-commit run --all-files
+uv run prek run --all-files
 
 # run common chores
 uv run ruff format .

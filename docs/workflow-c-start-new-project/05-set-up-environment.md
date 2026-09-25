@@ -40,23 +40,28 @@ Continue once you see both **pyproject.toml** and **README.md**.
 
 ## Step 1. Create the Project Environment
 
-Run the following commands in the VS Code terminal to:
-
-1. Update **uv**.
-2. Pin the desired Python version for this project
-   (scikit-learn, Apache packages may still need 3.14).
-3. Install/verify the Python version declared by the project.
-4. Update the dependencies listed in the **uv.lock** file.
-5. Create the **.venv** environment and install dependencies using **uv sync**.
+Run the following commands in the VS Code terminal.
+Copy and paste one command at a time and hit Enter or Return after pasting to run it.
 
 ```bash
 uv self update
 uv python pin 3.14
-
 uv python install
 uv lock --upgrade
 uv sync
+uv audit
 ```
+
+These commands:
+
+1. Keep `uv` updated. This may not work if uv was installed with a package manager
+   such as Homebrew; in that case, update uv with that package manager.
+2. Pin the desired Python version (creates `.python-version`).
+3. Install the Python version pinned by the project (see `.python-version`).
+4. Update the project dependency versions allowed by pyproject.toml and
+   record the resolved versions in `uv.lock`.
+5. Create or update the project `.venv` and install the project dependencies recorded in `uv.lock`.
+6. Audit all dependencies for known vulnerabilities and adverse package statuses.
 
 If prompted: "We noticed a new environment has been created.
 Do you want to select it for the workspace folder?", click **Yes**.
@@ -65,12 +70,22 @@ NOTE: If uv sync completes successfully but reports that it could not hardlink f
 and is falling back to copying them, you may continue.
 This is a performance warning, not an installation failure.
 
-### Step 1 Verify
+## Important: Environment Verification
 
-- A **.venv/** folder appears in the project root
-- The command finishes without errors
+Run:
 
-<details markdown>
+```shell
+uv run python --version
+uv run python -c "import sys; print(sys.executable)"
+```
+
+Verify:
+
+- **.venv/** appears in the project root.
+- The commands complete without errors.
+- The reported Python executable is inside this project's **.venv** folder.
+
+<details markdown="1">
 <summary>If this step fails (click here)</summary>
 
 **uv** command not found:
@@ -86,7 +101,7 @@ Dependency install error:
 
 </details>
 
-## Step 2. Set Up Pre-Commit Hooks
+## 2. Set Up Pre-Commit Hooks
 
 Pre-commit hooks catch common issues before code is committed and pushed to GitHub.
 
@@ -105,10 +120,6 @@ uv run pre-commit run --all-files
 After the hooks are installed,
 pre-commit checks run automatically on every **git commit** command.
 
-### Step 2 Verify
-
-- Commands complete without fatal errors
-
 <details markdown>
 <summary>If pre-commit fails</summary>
 
@@ -117,9 +128,9 @@ If this occurs, it is safe to skip pre-commit and continue with the project.
 
 </details>
 
-## Step 3. Align VS Code with the Project Environment
+## 3. Align VS Code with the Project Environment
 
-### Step 3.1 Ensure VS Code uses the project .venv/
+### Ensure VS Code uses the project .venv/
 
 1. Open the **Command Palette** (menu: **View** / **Command Palette**, or **Ctrl+Shift+P**)
 2. Type and choose: **Python: Select Interpreter**
@@ -129,15 +140,15 @@ If this occurs, it is safe to skip pre-commit and continue with the project.
 
 ![Choose recommended local .venv](./images/Python-Recommended-Local-Dot-venv.png)
 
-### Step 3.2. Reload the VS Code Window
+### Reload VS Code
 
 1. Open the **Command Palette** (same as before).
 2. Type or choose: **Developer: Reload Window**
 
-### Step 3 Verify
+## Verification
 
-- VS Code reloads
-- No warnings about missing Python environments appear
+- VS Code uses the Python interpreter inside this project's **.venv/** folder.
+- VS Code reloads without warnings about a missing Python environment.
 
 ---
 

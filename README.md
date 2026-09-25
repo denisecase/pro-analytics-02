@@ -149,6 +149,7 @@ uv python pin 3.14
 uv python install
 uv lock --upgrade
 uv sync
+uv audit
 ```
 
 If asked: "We noticed a new environment has been created.

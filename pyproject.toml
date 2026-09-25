@@ -1,21 +1,21 @@
 # ============================================================
-# pyproject.toml (Python project configuration)
+# pyproject.toml (CUSTOM)
 # ============================================================
-# Updated: 2026-09-22
+# Updated: 2026-09-25: replace pre-commit with prek, add exclude-newer = "7 days"
 
 # REQ: Python projects MUST include pyproject.toml as the single source of truth.
 # WHY: Centralizes project configuration.
 # CUSTOM: Update identity and build tool src folders.
 
 # ============================================================
-# SECTION 1: PROJECT IDENTITY (name, version, CUSTOM dependencies)
+# === SECTION 1: PROJECT IDENTITY ===
 # ============================================================
 
 [project]
 name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
 readme = "README.md"
 requires-python = ">=3.14" # 3.14 STILL REQUIRED SEP-2026
-version = "0.4.6"
+version = "0.4.7"
 description = "Professional Python for Analytics."
 license-files = ["LICENSE"]
 authors = [
@@ -45,17 +45,16 @@ dependencies = [
 #       MUST ALSO ADD `[tool.uv] block below.
 # WHY: Dependency groups separate development and documentation tools from project runtime dependencies.
 dev = [
-    # REQ.DEV.DEPS: External packages used for linting, testing, type checking, etc.
-    "pip-audit", # WHY: Audit dependencies for known vulnerabilities.
-    "pre-commit", # WHY: Pre-commit hooks for code quality and consistency.
-    "pytest", # WHY: Test framework for unit and integration tests.
+    # REQ: External packages used for linting, testing, type checking, etc.
+    "prek",      # WHY: Run repository hooks for consistent formatting, linting, and checks.
+    "pytest>=9", # WHY: Test framework for unit and integration tests.
     "pytest-cov", # WHY: Test coverage reporting for quality assurance.
     "ruff", # WHY: Fast linting and formatting for code quality and consistency.
-    "ty", # WHY: Type checking for static analysis and bug prevention (replaces `pyright`).
+    "ty", # WHY: Type checking for static analysis and bug prevention (replaces pyright).
 ]
 
 docs = [
-    # REQ.DOCS.DEPS: External packages used to generate project documentation.
+    # REQ: External packages used to generate project documentation.
     "mkdocstrings[python]", # WHY: Auto-generate API docs from docstrings.
     "zensical", # WHY: Generate and maintain project documentation.
 ]
@@ -74,7 +73,7 @@ Issues = "https://github.com/denisecase/pro-analytics-02/issues"
 Changelog = "https://github.com/denisecase/pro-analytics-02/blob/main/CHANGELOG.md"
 
 # ============================================================
-# SECTION 2: TOOL CONFIGURATION (Professional basics)
+# === SECTION 2: TOOL CONFIGURATION ===
 # ============================================================
 
 # === MARIMO REACTIVE NOTEBOOKS ===
@@ -135,13 +134,16 @@ convention = "google"
 # OBS: This keeps the canonical `uv sync` command identical across project types
 #      and ensures all repository features work after setup.
 default-groups = "all"
+# WHY: Give a bit of time to find hijacked releases before installing.
+# CUSTOM: Should match `uv run prek update --freeze --cooldown-days 7`
+exclude-newer = "7 days"
 
 # ============================================================
-# SECTION 3: BUILD SYSTEM (boilerplate; CUSTOM src/ agreement)
+# === SECTION 3: BUILD SYSTEM ===
 # ============================================================
 #
-# REQ.PROJECT: A build system MUST be declared for package discovery and publishing.
-# REQ.STRUCTURE: All importable code MUST live under src/.
+# REQ: A build system MUST be declared for package discovery.
+# REQ: All importable code MUST live under src/.
 # WHY src/ layout: Prevents accidental imports from the repo root;
 #     ensures consistent behavior across IDEs, tests, CI, and PyPI.
 
@@ -151,4 +153,4 @@ requires = ["hatchling"]
 
 [tool.hatch.build.targets.wheel]
 # CUSTOM: Must match src/ folders.
-packages = ["src/pro_analytics_02"]  # REQ.PACKAGES: Discovery rooted at src/.
+packages = ["src/pro_analytics_02"]  # REQ: Discovery rooted at src/.
