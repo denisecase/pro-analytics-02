@@ -173,3 +173,7 @@ bin/kafka-topics.sh --delete \
   --bootstrap-server localhost:9092 \
   --topic streaming-02-kafka-case
 ```
+
+---
+
+[◄ Back to Kafka Home](index.md)

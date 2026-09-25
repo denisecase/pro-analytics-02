@@ -71,3 +71,7 @@ wsl
 ## After Completing This Page
 
 Return to [Install Kafka](./install-kafka.md) and continue.
+
+---
+
+[◄ Back to Kafka Home](index.md)

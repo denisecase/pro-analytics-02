@@ -260,3 +260,7 @@ Formatting dynamic metadata voter directory /tmp/kraft-combined-logs with metada
 If things don't work, try a web search or LLM AI.
 Share your commands, results, and screenshots in the course discussions
 and we can help.
+
+---
+
+[◄ Back to Kafka Home](index.md)

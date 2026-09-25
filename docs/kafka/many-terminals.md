@@ -148,3 +148,7 @@ or open a file normally. VS Code will restore the editor area.
 - **Lost track of which terminal is which?**
   Click each tab and look at what command was last run.
   The terminal history stays visible until you close it.
+
+---
+
+[◄ Back to Kafka Home](index.md)

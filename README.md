@@ -25,7 +25,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
 [![CI Status](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/ci-python-zensical.yml)
-[![Deploy Docs](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical-ga.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical-ga.yml)
+[![Deploy Docs](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical-ga-ai.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/deploy-zensical-ga-ai.yml)
 [![Check Links](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml/badge.svg?branch=main)](https://github.com/denisecase/pro-analytics-02/actions/workflows/links.yml)
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/denisecase/pro-analytics-02/security)
 

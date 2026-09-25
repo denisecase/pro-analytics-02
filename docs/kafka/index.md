@@ -76,3 +76,7 @@ Common problems include:
 When issues occur, share a screenshot of the error in the course channel.
 Include the command you ran and the full error message.
 Working through setup issues is part of the course.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

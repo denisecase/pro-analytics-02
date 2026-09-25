@@ -128,3 +128,7 @@ how to delete them and start fresh,
 and how to list all topics,
 and how to get more information about a topic
 (including how many messages are on the topic).
+
+---
+
+[◄ Back to Kafka Home](index.md)

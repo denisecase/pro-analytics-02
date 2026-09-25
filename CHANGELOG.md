@@ -222,10 +222,6 @@ git push origin :refs/tags/vX.Z.Y
 [Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.7...HEAD
 [0.4.7]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.7
 [0.4.6]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.6
-[0.4.5]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.5
-[0.4.4]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.4
-[0.4.3]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.3
-[0.4.2]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.2
 [0.4.1]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.1
 [0.4.0]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.0
 [0.3.0]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.3.0

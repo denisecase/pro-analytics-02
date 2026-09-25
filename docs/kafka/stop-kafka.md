@@ -48,3 +48,7 @@ You only need to run [**install-kafka**](./index.md) once per machine.
 Use [**start-kafka**](./start-kafka.md) each time you begin working.
 
 Use [**stop-kafka**](./stop-kafka.md) when you finish a work session.
+
+---
+
+[◄ Back to Kafka Home](index.md)

@@ -147,3 +147,7 @@ either delete the directory and reformat, or skip formatting - it is already rea
 rm -rf /tmp/kraft-combined-logs
 # then rerun the format command
 ```
+
+---
+
+[◄ Back to Kafka Home](index.md)
