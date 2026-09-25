@@ -25,3 +25,7 @@ Notes:
 
 For the full curated reference (including Excel, orchestration, streaming, and alerts), see
 **[Essential External Tools](py-packages.md)** in the documentation site.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

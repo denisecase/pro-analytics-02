@@ -159,3 +159,7 @@ at the language semantics level.
 It is often false at the installation, tooling, and operations level.
 Being able to deal with Python environment issues is NOT easy,
 but it is a valuable skill.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

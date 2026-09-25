@@ -127,3 +127,7 @@ before running git add-commit-push to GitHub.
 - Use exactly one top-level title.
 - Use numbered second-level headings to organize your work.
 - Document your process and steps in the notebook and tell a story with data.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

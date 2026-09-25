@@ -71,3 +71,7 @@ wsl
 ## After Completing This Page
 
 Return to [Install Spark](./index.md) and continue.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

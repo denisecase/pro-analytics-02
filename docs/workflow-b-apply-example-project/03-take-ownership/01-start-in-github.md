@@ -1,4 +1,4 @@
-# 🟠 Start in GitHub to Create a New Repository
+# 🔵 Start in GitHub to Create a New Repository
 
 1. Log in to GitHub. Open your browser and log in to your GitHub account.
 

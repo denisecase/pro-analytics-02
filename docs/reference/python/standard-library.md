@@ -37,5 +37,9 @@ like we do with external libraries such as `pandas` or `polars`.
 - unittest - For writing and running unit tests
 
 Save time by knowing what is available in case a project needs these capabilities.
-Python can be learned in weeks or months, it's familarity
+Python can be learned in weeks or months, it's familiarity
 with all the available tools and packages where experience is measured in years.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

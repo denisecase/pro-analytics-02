@@ -17,21 +17,20 @@ uv run python -m datafun.app
 Open a VS Code terminal in the project root folder.
 Copy the command from the README,
 paste it into the terminal,
-and press **Enter**.
+and press **Enter** or **Return**.
 
-## Step 3. Verify
+## Verification
 
-The project should run from beginning to end without an unexpected error.
-You may see terminal output and a new `project.log` file.
+1. The project should run from beginning to end without an unexpected error.
+2. You may see a success message indicating it executed successfully.
+3. You may see terminal output and a new `project.log` file may appear.
 
 <details markdown>
 <summary>If the terminal ran an `activate` command automatically</summary>
 
-If your terminal ran an `activate` command by itself when it opened,
-that's expected and harmless.
-`uv run` manages the environment.
-We do not need to activate anything.
-Most example projects turn this off in the `.vscode/settings.json` file.
+Some terminals may automatically activate the selected environment.
+This is harmless. `uv run` manages the project environment,
+so manual activation is not required.
 
 </details>
 

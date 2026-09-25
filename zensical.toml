@@ -153,6 +153,9 @@ nav = [
             { "macOS and Linux" = "tools/terminals/terminals-shells-mac-linux.md" },
             { "Windows" = "tools/terminals/terminals-shells-windows.md" },
         ] },
+        { "Visual Studio Code" = [
+            { "Extensions" = "tools/vscode/extensions.md" },
+        ] },
         { "GitHub and CI" = [
             { "Pre-commit" = "tools/github-and-ci/00-pre-commit.md" },
             { "CI" = "tools/github-and-ci/01-ci.md" },

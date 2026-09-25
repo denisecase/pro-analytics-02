@@ -6,3 +6,7 @@ Auto-generated code documentation.
     options:
       show_submodules: true
       show_source: true
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

@@ -1,49 +1,39 @@
-# 🔵 Open the Project in VS Code (and Install Extensions and Maybe Kafka)
+# 🔵 Open the Project in VS Code and Install Extensions
 
-> Open the project in VS Code and install extensions.
-> 🏞️ ONLY IF STREAMING DATA: Also Install Kafka (Step 3 below)
-> 🏞️ ONLY IF BUSINESS INTELLIGENCE: Also Install Spark (Step 4 below)
+> Open the project in VS Code and install extensions (and additional tools as directed).
 
-## Strong Recommendation
-
-Using **code dot** (`code .`) as shown below is the
-strongly recommended professional pattern
-because it guarantees:
-
-- the terminal is in the correct directory
-- VS Code opens the correct project root
-- environment discovery happens relative to that root
-- Git commands run in the right repository
-
-**IMPORTANT:** Any deviations from this process
-(especially the first time you open it)
-will not necessarily work later
-when we need to execute Python files.
-
-## Previously
-
-This assumes you followed the earlier instructions
-to clone your repo into the **Repos**
-(non-synchronized) folder, for example:
-
-```shell
-git clone https://github.com/youraccount/your-repo
-```
-
-## Step 1. Open the Project Workspace
+## 1. Open the Project Workspace
 
 Using that same terminal (or a machine terminal open in **Repos**),
 change directory (`cd`) into the repository folder and run **code dot** (`code .`).
 
+The `code .` command opens the **current folder**
+as the project workspace in VS Code.
+
 **IMPORTANT:** The command below is just an example.
-You must use **your exact repository name**, e.g. `cd bintel-01-intro` or `cd datafun-01-intro`:
+
+Use **your exact repository name**, e.g. `cd bintel-01-intro` or `cd datafun-01-intro`:
 
 ```shell
 cd your-repo
 code .
 ```
 
-The `code .` command opens the **current folder** as the project workspace in VS Code.
+<details markdown>
+
+<summary>WHY use **code .**?</summary>
+
+Using **code .** is the strongly recommended professional pattern because it helps ensure:
+
+- the terminal is in the correct directory
+- VS Code opens the correct project root
+- environment discovery happens relative to that root
+- Git commands run in the right repository
+
+Opening the correct project root is especially important
+when we need to execute Python files.
+
+</details>
 
 <details markdown>
 <summary>Help: `code .` didn't open VS Code</summary>
@@ -62,95 +52,53 @@ Click next and complete the installation.
 
 When VS Code opens, it may make **extension recommendations**.
 
-- If VS Code recommends an extension, it is usually helpful to install it.
-- Projects that include `.vscode/extensions.json` can guide extension selections.
-- You can add additional extensions later as needed.
+## 2. Install Recommended Extensions
 
-## Step 2. Install Recommended Extensions
-
-If the project includes a `.vscode/extensions.json` file,
+If the project includes a **.vscode/extensions.json** file,
 VS Code will automatically recommend extensions for the project.
 In that case:
 
 1. Watch for the **Recommended Extensions** popup
 2. Click **Install All**
 
-If there are no recommendations (or if you are working in a brand new project),
-install extensions manually using the steps below.
+You can also [install extensions manually](../../tools/vscode/extensions.md)
+or as VS Code recommends them based on the file types in your projects.
 
-## Extensions NOT Recommended
+<details markdown>
+
+<summary>Extensions NOT Recommended</summary>
 
 Some extensions are not needed because Ruff handles formatting and linting:
 
-- ms-python.black-formatter
-- ms-python.autopep8
-
-## Adding Extensions Manually
-
-### 1. Open the Extensions Panel
-
-With the project open in VS Code, choose: **View / Extensions**
-
-Or use the keyboard shortcut:
-
-- Windows/Linux: `Ctrl + Shift + X`
-- macOS: `Cmd + Shift + X`
-
-### 2. Install Extensions
-
-Search for and install extensions in the Extensions panel.
-
-<details markdown>
-<summary>Some Popular Extensions</summary>
-
-For example:
-
-#### Core Python Extensions
-
-- **Python (ms-python.python)** run, debug, and test Python code
-- **Ruff (charliermarsh.ruff)** linting, formatting, and import cleanup
-- **ty (astral-sh.ty)** fast type checking
-
-#### Notebook Support
-
-For projects using **marimo** (official name is lowercase):
-
-- **marimo (marimo-team.vscode-marimo)** - edit and run marimo notebooks
-
-For projects using traditional Jupyter notebooks (.ipynb):
-
-- Jupyter (ms-toolsai.jupyter) - edit and run Jupyter notebooks
-- Jupyter Keymap (ms-toolsai.jupyter-keymap) - Jupyter keyboard shortcuts
-- Jupyter Notebook Renderers (ms-toolsai.jupyter-renderers) - rich output rendering
-
-#### Documentation and Markdown
-
-- **Markdown All in One (yzhang.markdown-all-in-one)** Markdown shortcuts and formatting
-
-#### CSV and Data Files
-
-- **Rainbow CSV (mechatroner.rainbow-csv)** colorized CSV/TSV columns for inspection
-
-#### Configuration and Workflow Files
-
-- **YAML (redhat.vscode-yaml)** YAML schema validation
-- **GitHub Actions (github.vscode-github-actions)** syntax highlighting for `.github/workflows`
+- **ms-python.black-formatter**
+- **ms-python.autopep8**
 
 </details>
 
-## 🏞️ Step 3. ONLY FOR STREAMING DATA: Install Kafka
+## 🏞️ ONLY FOR STREAMING DATA: Install Kafka
 
 In the Streaming Data course:
 
 - [Install Kafka](../../kafka/install-kafka.md)
 - [Create a Topic for the Project](../../kafka/create-topic.md)
 
-## 🏞️ Step 4. ONLY FOR BUSINESS INTELLIGENCE: Install Spark
+## 🏞️ ONLY FOR BUSINESS INTELLIGENCE: Install Spark
 
 In the Business Intelligence course, Mac and Linux users install Spark.
 It is optional (and nice to know) for Windows users.
 
 - [Install Spark](../../spark/index.md)
+
+## Verification
+
+1. I opened the repository root folder as the project workspace in VS Code using **code .**
+   and can take a screenshot showing VS Code with only my project open.
+
+2. I installed the recommended VS Code extensions for the project.
+
+3. If I am in Streaming Data, I completed the required Kafka setup.
+
+4. If I am in Business Intelligence, I completed the required Spark setup.
 
 ---
 

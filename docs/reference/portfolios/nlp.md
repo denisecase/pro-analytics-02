@@ -129,3 +129,7 @@ or attention-based. What did you implement or modify?)
 (What did building or exploring a small language model reveal about how modern LLMs work?)
 
 <!-- markdownlint-enable MD024 -->
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

@@ -11,6 +11,18 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `docs\stylesheets\extra.css`.
+
+### Updated
+
+- Updated `zensical.toml` to include admonitions and css.
+- Updated `worker\src\index.js` to avoid Information exposure through a stack trace.
+- Updated CloudFlare worker code and re-deployed.
+- Updated / simplified opening page.
+- Updated Workflow A Set Up Machine home page to include verification.
+
 ---
 
 ## [0.4.6] - 2026-09-22

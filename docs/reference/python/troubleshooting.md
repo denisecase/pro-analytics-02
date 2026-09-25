@@ -40,3 +40,7 @@ This is normal.
 - Commit again
 
 Some tools make changes during checks; re-running ensures everything is saved.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

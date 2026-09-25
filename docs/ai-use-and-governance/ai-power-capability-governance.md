@@ -216,3 +216,7 @@ and knowing how to manage the risks and rewards **before** requesting the result
 Responsibility for all outcomes
 remain with the people and institutions that
 build, release, deploy, authorize, operate, and review these systems.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

@@ -92,3 +92,7 @@ uv run pre-commit run --all-files
 ```
 
 Verify everything runs before pushing.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

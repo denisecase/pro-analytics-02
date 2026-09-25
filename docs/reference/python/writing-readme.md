@@ -22,3 +22,7 @@ Know how to display an image in Markdown.
 you'll want this to highlight your charts and more.
 
 ![VS Code While Working](images/vs_code_while_working.png)
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

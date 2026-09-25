@@ -237,3 +237,7 @@ LLMs and embedding models now outperform classical pipelines.
 | -------------------------------------------- | --------------------------------------------------------- | ------------------------------------ |
 | [`modal`](https://pypi.org/project/modal/)   | Cloud platform for running Python functions serverlessly. | [Docs](https://modal.com/docs/)      |
 | [`gradio`](https://pypi.org/project/gradio/) | Build and share ML/LLM web interfaces easily.             | [Docs](https://www.gradio.app/docs/) |
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

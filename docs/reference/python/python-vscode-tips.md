@@ -36,3 +36,7 @@ the interpreter may not be set to the project environment.
 
 Tip: The selected interpreter typically appears in the
 bottom status bar when a Python file is open.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

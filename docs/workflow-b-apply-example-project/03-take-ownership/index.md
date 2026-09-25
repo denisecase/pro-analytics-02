@@ -47,16 +47,43 @@ In VS Code, with the example project open,
 
 <!-- markdownlint-enable MD029 -->
 
-## Success
+## Verification
 
-Before continuing, verify:
+All commands below are intended to be run in a VS Code terminal open
+in the root project folder.
 
-- [ ] The project is connected to a repository in your GitHub account.
-- [ ] Your name appears as the project author where required.
-- [ ] Repository and documentation URLs point to your project.
-- [ ] The project runs successfully.
-- [ ] The standard checks pass.
-- [ ] Your first commits are visible in your GitHub repository.
+1. I can open the new repository in my GitHub account.
+
+2. I can verify that my local project is connected to my repository:
+
+        git remote -v
+
+   Both the fetch and push URLs point to my GitHub repository.
+
+3. I can verify that the project has its own Git history:
+
+        git log --oneline
+
+   The history begins with the commits for my new project, not the original example history.
+
+4. I can verify that the project identity has been updated:
+
+   - my name appears as the project author where required
+   - the project description describes my project
+   - repository URLs point to my repository
+   - documentation URLs point to my project
+
+5. I can run the project successfully using the command in the README.
+
+6. I can run the standard project checks successfully.
+
+7. I can verify that all changes are committed and pushed:
+
+        git status
+
+   The working tree is clean and the branch is up to date.
+
+8. I can see my latest commits in my GitHub repository.
 
 ---
 

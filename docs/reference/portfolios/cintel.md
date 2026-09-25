@@ -107,3 +107,7 @@ This page summarizes my work on **continuous intelligence** projects.
 (What does the pipeline say about the system state?)
 
 <!-- markdownlint-enable MD024 -->
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

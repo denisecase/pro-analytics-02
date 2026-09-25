@@ -115,3 +115,7 @@ git push -u origin main
 - If needed, re-run the workflow manually from the **Actions** tab
 
 <mark> Powerful tools make professional projects possible from the beginning.</mark>
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

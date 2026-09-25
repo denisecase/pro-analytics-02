@@ -1,35 +1,25 @@
-# 🔵 Set up Project Python Environment (managed by uv)
+# 🔵 Set up Project Environment (managed by uv)
 
-Each project uses its own Python environment
-stored in a folder named **.venv** inside the project.
+Each project uses its own Python environment in a **.venv** folder.
 
-```text
-project-repo-name/
-  .venv/              # <--- project Python environment
-  pyproject.toml
-  README.md
-```
+The same uv commands work on Windows, macOS, and Linux.
 
-This isolates dependencies, prevents conflicts with system Python,
-and makes the project reproducible on any machine.
 If something breaks, the **.venv** folder can be deleted and recreated.
 
 ## Before Starting
 
-You should have already opened the project in **VS Code** using `code .`.
+Open the project in VS Code using **code .**.
 
-## Step 0. Open a New Terminal in VS Code
+## 1. Open a VS Code Terminal
 
-- Open a new terminal in VS Code,
-  e.g., from the VS Code menu, select **Terminal / New Terminal**.
-
-List the contents of the current folder:
+In VS Code, select **Terminal / New Terminal**.
+Verify that the terminal is open in the project root:
 
 ```shell
 ls
 ```
 
-You are in the correct folder when you see files such as:
+You should see files such as:
 
 ```text
 pyproject.toml
@@ -44,23 +34,10 @@ Continue once you see both `pyproject.toml` and `README.md`.
 
 </details>
 
-## Step 1. Create the Project Environment
+## 2. Create or Update the Project Environment
 
-Run the following commands in the VS Code terminal to:
-
-1. Update **uv**.
-2. Install the pinned Python version for this repository (installing that version if needed).
-3. Upgrade the packages in the uv lock file for better security.
-4. Create the **.venv** environment and install dependencies
-   from **uv.lock** using **uv sync**.
-
-**Updated 2026-Aug:** IMPORTANT NOTE ABOUT **uv sync** and **pyproject.toml**.
-
-This new version assumes **pyproject.toml** uses the new  **[dependency-groups]**, with
-**[tool.uv] default-groups = "all"**, so we can use the simple **uv sync**.
-
-If your pyproject.toml uses the old  **[project.optional-dependencies]**,
-use **uv sync --extra dev --extra docs** in place of **uv sync**.
+Run the following commands in the VS Code terminal.
+Copy and paste one command at a time and hit Enter or Return after pasting to run it.
 
 ```shell
 uv self update
@@ -69,6 +46,15 @@ uv python install
 uv lock --upgrade
 uv sync
 ```
+
+These commands:
+
+1. Keep `uv` updated. This may not work if uv was installed with a package manager
+   such as Homebrew; in that case, update uv with that package manager.
+2. Install the Python version pinned by the project (see `.python-version`).
+3. Update the project dependency versions allowed by pyproject.toml and
+   record the resolved versions in `uv.lock`.
+4. Create or update the project `.venv` and install the project dependencies recorded in `uv.lock`.
 
 If prompted: "We noticed a new environment has been created.
 Do you want to select it for the workspace folder?", click **Yes**.
@@ -90,25 +76,35 @@ In production, updates may need to be more controlled.
 
 </details>
 
-### Step 1 Verify
+## Important: Environment Verification
 
-- A **.venv/** folder appears in the project root
-- The command finishes without errors
+Run:
+
+```shell
+uv run python --version
+uv run python -c "import sys; print(sys.executable)"
+```
+
+Verify:
+
+- **.venv/** appears in the project root.
+- The commands complete without errors.
+- The reported Python executable is inside this project's **.venv** folder.
 
 <details markdown="1">
 <summary>If this step fails (click here)</summary>
 
-#### If uv command not found
+### If uv command not found
 
 - Close and reopen VS Code.
 - Verify **uv** was installed during **Workflow A. Set Up Machine**.
 
-#### If Dependency install error
+### If Dependency install error
 
 - Delete the **.venv/** folder.
 - Rerun: **uv lock --upgrade** and **uv sync**
 
-#### If Windows "Smart" Application Control error
+### If Windows "Smart" Application Control error
 
 If Windows reports: **An Application Control policy has blocked this file.**
 or reports that **python.exe** was blocked, see:
@@ -117,9 +113,9 @@ This is a Windows security-policy issue that happens on some machines.
 
 </details>
 
-## Step 2. Align VS Code with the Project Environment
+## 3. Align VS Code with the Project Environment
 
-### Step 2.1 Ensure VS Code uses the project .venv/
+### Ensure VS Code uses the project .venv/
 
 1. Open the **Command Palette** (menu: **View** / **Command Palette**, or **Ctrl+Shift+P**)
 2. Type and choose: **Python: Select Interpreter**
@@ -129,15 +125,15 @@ This is a Windows security-policy issue that happens on some machines.
 
 ![Choose recommended local .venv](./images/Python-Recommended-Local-Dot-venv.png)
 
-### Step 2.2. Restart the Python language server
+### Reload VS Code
 
 1. Open the **Command Palette** (same as before).
 2. Type or choose: **Developer: Reload Window**
 
-### Step 2 Verify
+## Verification
 
-- VS Code reloads
-- No warnings about missing Python environments appear
+- VS Code uses the Python interpreter inside this project's **.venv/** folder.
+- VS Code reloads without warnings about a missing Python environment.
 
 ---
 

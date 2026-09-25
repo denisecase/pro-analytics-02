@@ -44,3 +44,7 @@ A May 2026 simplification package deferred high-risk obligations
 to December 2027.
 
 Overview from the European Commission: [Regulatory framework on AI](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai).
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

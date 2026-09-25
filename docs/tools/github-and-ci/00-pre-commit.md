@@ -106,3 +106,7 @@ is going to be rejected for a merge conflict (caught in C).
 Prefixes (e.g. A1) are just concise identifiers.
 When a check fails, the prefix identifies the step that had the problem.
 They do not need to match across different projects, they are only for convenience.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

@@ -170,3 +170,7 @@ This section links common problem types to relevant Python tools introduced else
 All analytics and ML projects start with a clear question.
 Once you know *what kind of question you're asking*,
 the right tools, models, and techniques naturally follow.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

@@ -103,3 +103,7 @@ When working on shared projects or course repositories:
 - Prefer **installation fixes** over runtime workarounds
 - Place compatibility notes (like this) in your project documentation
 - Ensure notebooks import libraries **only after environment configuration**
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

@@ -23,3 +23,7 @@ On a Mac, use hot keys (several options):
 
 On Windows, use Snipping Tool or other similar app to select a rectangle,
 copy to clipboard, and paste into your submission.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

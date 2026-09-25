@@ -288,3 +288,7 @@ Works well for modules:
 - Module 3: Text Exploration
 - Module 4: API Data Workflows
 - Module 5: Web Document Structure
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

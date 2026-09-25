@@ -156,3 +156,7 @@ used for the current project environment:
 ```shell
 uv run python -c "import sys; print(sys.executable)"
 ```
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)
