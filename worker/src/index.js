@@ -1,11 +1,24 @@
 /**
- * Welcome to Cloudflare Workers! This is your first worker.
+ * Welcome to Cloudflare Workers! This is your project worker.
  *
  * - Run "npm run dev" in your terminal to start a development server
  * - Open a browser tab at http://localhost:8787/ to see your worker in action
  * - Run "npm run deploy" to publish your worker
  *
  * Learn more at https://developers.cloudflare.com/workers/
+ *
+ * The worker/ directory for this project is for storing the code only.
+ * - worker/wrangler.toml contains the configuration for this worker.
+ * - worker/src/index.js contains the main worker code.
+ *
+ * The content of both files
+ * must be copied into your project for the worker to function correctly.
+ * Go to CloudFlare (https://www.cloudflare.com/)
+ * Then click Dashboard or Get Started to
+ * edit the code and deploy the associated worker.
+ *
+ * See SET-UP-INTEGRATED-AI.md for more.
+ * Updated: 2026-09-25
  */
 
 // ============================================================
@@ -120,7 +133,8 @@ export default {
       if (!answer) return json({ error: "empty response", detail: data.promptFeedback ?? null }, 502, cors);
       return json({ answer }, 200, cors);
     } catch (err) {
-      return json({ error: "upstream failure", detail: String(err) }, 502, cors);
+      console.error("Upstream request failed:", err);
+      return json({ error: "upstream failure" }, 502, cors);
     }
   },
 };
