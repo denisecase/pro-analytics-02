@@ -1,7 +1,7 @@
 # ============================================================
 # .github/workflows/sbom.yml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-09-22
+# Updated: 2026-09-25
 #
 # REQ: Generate machine-readable Software Bills of Materials (SBOMs)
 # for the repository on every push to main and on manual request.

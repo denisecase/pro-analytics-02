@@ -1,7 +1,7 @@
 # ============================================================
 # .github/workflows/deploy-zensical-ga-ai.yml (CUSTOM: ALL-PY-REPOS-GA-AI)
 # ============================================================
-# Updated: 2026-09-22
+# Updated: 2026-09-25
 #
 # WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:

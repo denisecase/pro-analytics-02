@@ -1,7 +1,7 @@
 # ============================================================
 # .github/workflows/ci-python-zensical.yml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-09-22
+# Updated: 2026-09-25 changed pre-commit to prek
 #
 # WHY: Continuous Integration (CI) ensures repository hygiene,
 #      Python correctness, testing, and documentation builds.
@@ -79,15 +79,26 @@ jobs:
           fi
         # WHY: Version output makes CI logs easier to debug when tools change.
 
-      - name: A6) Run pre-commit on all files
-        run: uv run pre-commit run --all-files
-        # WHY: Run the same repository hygiene checks used locally.
-        # OBS: A clean commit should already pass without file changes.
+      - name: A6) Run repository hooks if available
+        run: |
+          if uv run prek --version > /dev/null 2>&1; then
+            echo "Running repository hooks with prek."
+            uv run prek run --all-files
+          elif uv run pre-commit --version > /dev/null 2>&1; then
+            echo "Running repository hooks with pre-commit."
+            uv run pre-commit run --all-files
+          else
+            echo "Neither prek nor pre-commit is installed; skipping repository hooks."
+          fi
+        # WHY: Run the repository's configured local hygiene checks when available.
+        # OBS: Prefer prek for current repositories; support pre-commit during migration.
+        # OBS: Repository hooks are optional, so repositories with neither still pass CI.
+        # OBS: CI does not install either tool; it uses the dependencies already
+        #      installed from the committed project configuration and lockfile.
         # OBS: Autofixing hooks may modify the ephemeral CI checkout.
-        #      If they do, pre-commit fails because the committed files
-        #      were not already in their required final state.
-        # FIX: Run this command locally, review any autofixes, fix remaining
-        #      issues by hand, then git add, commit, and push again.
+        #      If they do, the hook runner fails because committed files were
+        #      not already in their required final state.
+
 
       # ============================================================
       # B) BASELINE CHECKS: Tools not covered by pre-commit
@@ -106,7 +117,7 @@ jobs:
         # OBS: continue-on-error keeps type checking non-blocking in this workflow.
 
       - name: B3) Audit dependencies for known vulnerabilities
-        run: uv run pip-audit --local
+        run: uv audit
         # WHY: SCA (software composition analysis) gate;
         #      fail CI when an installed dependency has a known vulnerability.
         # OBS: Audits the environment installed from the committed uv.lock.
