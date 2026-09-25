@@ -6,37 +6,31 @@ for code. -->
 
 This repository provides a clear, concise guide for professional Python projects.
 
-## ⚠️ New to Terminals, Git, or Repositories?
+!!! returning "For Returning Users"
 
-This guide assumes you can open a terminal and run a command.
-If that is new to you (it often is), start with
-**[Applied Computing Foundations](https://denisecase.github.io/applied-computing-foundations/)**,
-a short prerequisite.
+    If you have used this guide before, some tools and conventions have evolved.
 
-## For Returning Users: What Changed (August 2026)
+    - Updated **uv** Python manager process.
+    - Python is managed per project by **uv**.
+    - Updated **pyproject.toml** conventions.
+    - Dropped Node and npx installation.
+    - Replaced Pyright/Pylance with new
+      **ty** for type checking. Affects:
+      **.vscode/extensions.json** and **pyproject.toml**.
+    - Added support for **marimo** notebooks stored as plain **.py** files.
 
-If you have used this guide before, some tools and conventions have evolved.
+    For best results, please do not assume an earlier setup is still current.
+    Follow the steps below to confirm the recommended setup is complete.
 
-- Updated **uv** Python manager process.
-- NOTE: we never install Python directly, it is only installed via **uv**.
-- Updated **pyproject.toml** conventions.
-- Dropped Node and npx from the recommended workflow
-- Replaced Pyright/Pylance with the new Rust-based **ty** for type checking. Affects:
-  **.vscode/extensions.json** and **pyproject.toml**.
-- Added support for **marimo** notebooks stored as plain **.py** files.
+!!! first "First is the Worst"
 
-For best results, please do not assume an earlier setup is still current.
-Follow the steps below to confirm the recommended setup is complete.
+    The first time through each step is the hardest.
+    New tools, new terms, and new steps all have to line up,
+    so **allow extra time when performing a workflow for the first time**.
 
-## First is the Worst
-
-The first time through each step is the hardest.
-New tools, new terms, and new steps all have to line up,
-so **allow extra time when performing a workflow for the first time**.
-
-It gets easier with experience.
-The tools are installed just once and the project setup steps become routine.
-The professional workflow enables every project that follows.
+    It gets easier with experience.
+    The tools are installed just once and the project setup steps become routine.
+    The professional workflow enables every project that follows.
 
 ## First, Set Up Machine (One-Time)
 

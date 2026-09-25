@@ -1,7 +1,7 @@
 # ============================================================
-# zensical.toml (ALL-PY-SRC-REPOS)
+# zensical.toml (CUSTOM-ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-08-20
+# Updated: 2026-09-25 css
 #
 # REQ: Python src/ repositories SHOULD provide documentation configuration.
 # NEED: plugins.mkdocstrings for src/ api generation.
@@ -17,6 +17,9 @@ site_description = "Project Documentation" # CUSTOM: Set the description.
 docs_dir = "docs" # source directory for documentation markdown files
 site_dir = "site" # output directory for generated site (ignored by Git; not in repo)
 edit_uri = "edit/main/docs/" # "Edit this page" links (GitHub)
+extra_css = [
+  "stylesheets/extra.css",
+]
 extra_javascript = [
     "javascripts/read-aloud.js", # CUSTOM: adds optional Read Aloud functionality to pages.
     "javascripts/concept-quiz.js", # CUSTOM: adds optional Concept Quiz functionality to pages.
@@ -39,6 +42,7 @@ provider = "google"
 property = "G-E2DY1M4TB4"
 
 [project.markdown_extensions]
+admonition = {}
 md_in_html = {} # WHY: Allow Markdown inside HTML blocks when the opening tag includes `markdown`, e.g. <details markdown>...</details>
 pymdownx.superfences = {} # WHY: Enables support for fenced code blocks with syntax highlighting and custom options.
 

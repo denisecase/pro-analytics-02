@@ -28,12 +28,12 @@ For best results, **complete each step carefully** and
 
 </details>
 
-## ⚠️ New to Terminals, Git, or Repositories?
+!!! prerequisite "⚠️ New to Terminals, Git, or Repositories?"
 
-This guide assumes you can open a terminal and run a command.
-If that is new to you (it often is), start with
-**[Applied Computing Foundations](https://denisecase.github.io/applied-computing-foundations/)**,
-a short prerequisite.
+    This guide assumes you can open a terminal and run a command.
+    If that is new to you (it often is), start with
+    [**Applied Computing Foundations**](https://denisecase.github.io/applied-computing-foundations/),
+    a short prerequisite.
 
 ---
 
@@ -52,6 +52,25 @@ Note: Your Repos folder must be in a non-cloud-synced location.
 For best results, follow instructions carefully.
 
 ---
+
+## Verification
+
+1. I can provide a link to my GitHub account.
+
+2. I can View File Extensions and Hidden Files and Folders.
+
+3. I can verify the required development tools:
+
+        git --version
+        code --version
+        uv --version
+
+4. I can verify my Git global configuration:
+
+        git config --global user.name
+        git config --global user.email
+
+5. I can cd to my **Repos** folder where I will organize my projects.
 
 ## Important
 

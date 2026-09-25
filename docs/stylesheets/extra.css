@@ -1,0 +1,9 @@
+.md-typeset .admonition.prerequisite {
+  background-color: rgba(120, 140, 160, 0.06);
+  border-color: rgba(120, 140, 160, 0.20);
+  box-shadow: none;
+}
+
+.md-typeset .prerequisite > .admonition-title {
+  background-color: rgba(120, 140, 160, 0.08);
+}
