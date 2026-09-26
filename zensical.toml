@@ -86,6 +86,7 @@ features = [
 
 nav = [
     { "Home" = "index.md" },
+    { "Learning Philosophy" = "learning-philosophy.md" },
 
     { "Workflow A. Set Up Machine" = [
         { "Overview" = "workflow-a-set-up-machine/index.md" },
