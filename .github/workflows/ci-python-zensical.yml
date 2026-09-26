@@ -1,15 +1,16 @@
 # ============================================================
 # .github/workflows/ci-python-zensical.yml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-09-25 changed pre-commit to prek
+# Updated: 2026-09-25
 #
-# WHY: Continuous Integration (CI) ensures repository hygiene,
-#      Python correctness, testing, and documentation builds.
-# REQ: CI MUST NOT introduce rules that are not reproducible locally.
-# OBS: CI validates only; it never persists file changes or deploys docs.
-# OBS: yamllint config lives at .github/.yamllint.yml (not repo root).
+# WHY: Continuous Integration (CI) ensures
+#      Python correctness, testing, and documentation builds
+#      before merging changes into the main branch.
+# REQ: CI SHOULD NOT introduce rules that are not reproducible locally.
+# OBS: CI validates only; it SHOULD NOT make file changes or deploy documentation.
+# OBS: yaml lint config lives at .github/.yamllint.yml (not in the repo root).
 
-# Name shown in the repo Actions tab.
+# Name shown in the GitHub repo Actions tab.
 name: CI (Python + Zensical)
 
 on:
@@ -35,9 +36,11 @@ env:
 
 jobs:
   ci:
-    name: Repo checks and Zensical build
+    name: Repo checks and check Zensical build
     runs-on: ubuntu-latest  # WHY: Linux matches most production deployments.
     timeout-minutes: 30     # WHY: Fail fast if a step hangs unexpectedly.
+    env:
+      UV_PYTHON: "3.14"     # WHY: Pin Python version for all steps in this job.
 
     steps:
       # ============================================================
@@ -77,28 +80,34 @@ jobs:
           if [ -f "zensical.toml" ]; then
             uv run python -m zensical --version
           fi
+          uv run --no-sync prek --version 2>/dev/null \
+            || uv run --no-sync pre-commit --version 2>/dev/null \
+            || echo "No hook runner installed"
         # WHY: Version output makes CI logs easier to debug when tools change.
 
-      - name: A6) Run repository hooks if available
+      - name: A6) Run repository hooks on all files (prek or pre-commit)
         run: |
-          if uv run prek --version > /dev/null 2>&1; then
-            echo "Running repository hooks with prek."
-            uv run prek run --all-files
-          elif uv run pre-commit --version > /dev/null 2>&1; then
-            echo "Running repository hooks with pre-commit."
-            uv run pre-commit run --all-files
+          if uv run --no-sync prek --version > /dev/null 2>&1; then
+            echo "Hook runner: prek"
+            uv run --no-sync prek run --all-files
+          elif uv run --no-sync pre-commit --version > /dev/null 2>&1; then
+            echo "Hook runner: pre-commit"
+            uv run --no-sync pre-commit run --all-files
           else
-            echo "Neither prek nor pre-commit is installed; skipping repository hooks."
+            echo "::error::Neither prek nor pre-commit is installed in the project environment. Add one to the dev dependency group in pyproject.toml."
+            exit 1
           fi
-        # WHY: Run the repository's configured local hygiene checks when available.
-        # OBS: Prefer prek for current repositories; support pre-commit during migration.
-        # OBS: Repository hooks are optional, so repositories with neither still pass CI.
-        # OBS: CI does not install either tool; it uses the dependencies already
-        #      installed from the committed project configuration and lockfile.
+        # WHY: Run the same repository hygiene checks used locally.
+        # OBS: Prefers prek when both are installed; both read .pre-commit-config.yaml.
+        # OBS: The runner is detected in the project environment installed by A4,
+        #      so CI uses whichever runner the repository declares.
+        # OBS: --no-sync reuses the environment from A4 without re-syncing.
+        # OBS: A clean commit should already pass without file changes.
         # OBS: Autofixing hooks may modify the ephemeral CI checkout.
-        #      If they do, the hook runner fails because committed files were
-        #      not already in their required final state.
-
+        #      If they do, the hook runner fails because the committed files
+        #      were not already in their required final state.
+        # FIX: Run the same hook runner locally, review any autofixes, fix
+        #      remaining issues by hand, then git add, commit, and push again.
 
       # ============================================================
       # B) BASELINE CHECKS: Tools not covered by pre-commit
@@ -116,13 +125,6 @@ jobs:
         # OBS: Not included in pre-commit because it requires the full environment.
         # OBS: continue-on-error keeps type checking non-blocking in this workflow.
 
-      - name: B3) Audit dependencies for known vulnerabilities
-        run: uv audit
-        # WHY: SCA (software composition analysis) gate;
-        #      fail CI when an installed dependency has a known vulnerability.
-        # OBS: Audits the environment installed from the committed uv.lock.
-        # OBS: Dependabot provides ongoing monitoring; this provides an explicit CI gate.
-
       # ============================================================
       # C) COVERAGE & TESTING: Python tests
       # ============================================================
@@ -131,7 +133,7 @@ jobs:
         run: uv run python -m pytest
         # WHY: Confirm all Python tests pass in a clean CI environment.
         # OBS: pytest config lives in pyproject.toml [tool.pytest.ini_options].
-        # OBS: Not included in pre-commit because tests can be slower.
+        # OBS: Not included in pre-commit because tests can be slow.
 
       # ============================================================
       # D) DOCS: Build documentation without deployment

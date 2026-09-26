@@ -40,9 +40,6 @@ dependencies = [
 ]
 
 [dependency-groups]
-# NOTE: CHANGED FROM [optional-dependencies] and `uv sync --extra dev --extra docs`
-#       CHANGED TO [dependency-groups] and `uv sync` (PEP 735).
-#       MUST ALSO ADD `[tool.uv] block below.
 # WHY: Dependency groups separate development and documentation tools from project runtime dependencies.
 dev = [
     # REQ: External packages used for linting, testing, type checking, etc.
