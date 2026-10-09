@@ -101,30 +101,33 @@ Dependency install error:
 
 </details>
 
-## 2. Set Up Pre-Commit Hooks
+## 2. Set Up Git Hooks
 
-Pre-commit hooks catch common issues before code is committed and pushed to GitHub.
+Git hooks catch common issues before code is committed and pushed to GitHub.
 
 Run the following commands in the VS Code terminal to:
 
-1. Install the pre-commit Git hooks for this repository
-2. Stage all files (so pre-commit can check them)
-3. Run the checks once explicitly
+1. Install the tool to run the hooks for this repository.
+2. Stage all files (so hooks can check them).
+3. Run the checks once. This may autofix files. If so,
+4. Run the checks again.
 
 ```shell
-uv run pre-commit install
+uvx prek install --force
 git add -A
-uv run pre-commit run --all-files
+uvx prek run --all-files
+# if changes were made, re-run:
+uvx prek run --all-files
 ```
 
 After the hooks are installed,
-pre-commit checks run automatically on every **git commit** command.
+checks run automatically on every **git commit** command.
 
 <details markdown>
-<summary>If pre-commit fails</summary>
+<summary>If checks fail</summary>
 
-Pre-commit may fail on restricted machines where Git hooks cannot be installed.
-If this occurs, it is safe to skip pre-commit and continue with the project.
+Checks may fail on restricted machines where Git hooks cannot be installed.
+If this occurs, it is safe to skip them and continue with the project.
 
 </details>
 

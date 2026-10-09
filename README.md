@@ -20,7 +20,6 @@
 [![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/pro-analytics-02/)
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](https://github.com/denisecase/pro-analytics-02/blob/main/pyproject.toml)
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
-[![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
 [![Zensical docs](https://img.shields.io/badge/Zensical-docs-purple)](https://zensical.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
@@ -50,10 +49,6 @@ Instructions are provided for all major operating systems and assume no prior ex
 Additional interactive materials are provided.
 You can listen to **audio summaries**, watch videos, chat with a
 specially trained bot, and more.
-
-Note: I found the AI-generated audio podcast to be pretty good.
-
-[![NotebookLM: Set Up Machine](https://img.shields.io/badge/NotebookLM-Set%20Up%20Machine-blue?logo=google)](https://notebooklm.google.com/notebook/cb972adf-b31e-455a-804e-76ba39783dc4)
 
 ## Overview and Scope
 
@@ -156,16 +151,16 @@ If asked: "We noticed a new environment has been created.
 Do you want to select it for the workspace folder?" Click **"Yes"**.
 If successful, you'll see a new `.venv` folder appear in the root project folder.
 
-Install and run pre-commit checks (twice if necessary as shown below):
+Install and run git hooks (twice if necessary as shown below):
 
 ```shell
-uv run pre-commit install
-uv run pre-commit autoupdate
-
+# set up and run git hooks
+uvx prek install --force
+uvx prek update
 git add -A
-uv run pre-commit run --all-files
+uvx prek run --all-files
 # repeat if changes were made
-uv run pre-commit run --all-files
+uvx prek run --all-files
 ```
 
 ### Daily Workflow (Working With Python Project Code)
@@ -176,15 +171,6 @@ Open a VS Code terminal (menu: `Terminal` / `New Terminal`) and run:
 ```shell
 git pull
 
-# run the module
-uv run python -m pro_analytics_02.demo_module_basics
-uv run python -m pro_analytics_02.ml_example
-
-# do chores
-uv run ruff format .
-uv run ruff check . --fix
-uv run ty check
-uv run python -m pytest
 uv run python -m zensical build
 ```
 
@@ -223,42 +209,6 @@ docs/javascript/view-analytics.js (added to zensical.toml)
 
 </details>
 
-## Helpful Tips
-
-- Use the **UP ARROW** and **DOWN ARROW** in the terminal
-  to scroll through past commands.
-- Use `CTRL+f` to find (and replace) text within a file.
-
-## Much Can Be Ignored
-
-- You do not need to add to or modify `tests/`.
-  Tests are recommended and provided for example only.
-- Many files are silent helpers.
-  [Explore](https://denisecase.github.io/professional-python-project-explainer/)
-  as you like, but most files are never touched.
-- You do NOT need to understand everything;
-- understanding builds naturally over time.
-
-## As Needed
-
-If VS Code does not automatically use the new `.venv` environment:
-
-1. Open the Command Palette (`Ctrl+Shift+P`).
-2. Run **Python: Select Interpreter**.
-3. Select the interpreter from this project's `.venv` folder.
-
-If VS Code still does not recognize the environment or newly installed tools:
-
-1. Open the Command Palette (`Ctrl+Shift+P`).
-2. Run **Developer: Reload Window**.
-
-## Troubleshooting >>>
-
-If you see something like this in your terminal: `>>>` or `...`
-You accidentally started Python interactive mode.
-It happens.
-Press `Ctrl c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
-
 ## Documentation
 
 - [Documentation](https://denisecase.github.io/pro-analytics-02/)
@@ -286,6 +236,10 @@ WHY: Define the accountable surfaces.
 <!--
 WHY: Support correct citation and attribution.
 -->
+
+## Documentation
+
+[Documentation (The Guide)](https://denisecase.github.io/pro-analytics-02/)
 
 ## License
 

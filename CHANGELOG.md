@@ -13,6 +13,15 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.5.0] - 2026-10-08
+
+### Changed
+
+- ran pup-up to get more current support files.
+- Updated `sit.ps1` to use `prek` and run `uv audit`.
+
+---
+
 ## [0.4.7] - 2026-09-25
 
 ### Before Next Block TODOS
@@ -22,8 +31,6 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
   `pip-audit`, and project-installed `zizmor` where present.
 - Update project README/setup commands to use `prek` and `uv audit`.
 - Update `.pre-commit-config.yaml` to use advisory `uvx zizmor@latest`.
-- Update `sit.ps1` to use `prek` and run `uv audit`.
-- Update CI to run `uv audit`.
 - SHA-pin GitHub Actions in the canonical workflows with `gha-tools`,
   then verify with `zizmor`.
 
@@ -167,9 +174,6 @@ Follow these steps exactly when creating a new release.
 ### Task 2. Validate
 
 ```shell
-uvx pup-clean --delete
-# uvx pup-up
-
 .\sit.ps1
 
 # Update GitHub Actions and pin all action references to immutable SHAs

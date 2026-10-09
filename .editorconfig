@@ -1,7 +1,7 @@
 # ============================================================
 # .editorconfig (ALL-REPOS)
 # ============================================================
-# Updated: 2026-07-03
+# Updated: 2026-09-25
 #
 # REQ: All professional GitHub project repositories MUST include .editorconfig.
 # WHY: Establish a cross-editor baseline so diffs stay clean and formatting
@@ -54,12 +54,14 @@ indent_style = space
 # === Build systems ===
 
 [Makefile]
-# WHY: Makefiles require tabs.
+# WHY: Makefile recipe lines require real tab characters.
 indent_style = tab
+indent_size = tab
 
 [*.mk]
-# WHY: Makefile includes require tabs.
+# WHY: Makefile includes may contain recipes and should preserve real tabs.
 indent_style = tab
+indent_size = tab
 
 
 # === Markup and documentation ===
@@ -79,8 +81,8 @@ indent_style = space
 indent_size = 2
 indent_style = space
 
-[*.{bib,cls,sty,tex}]
-# WHY: LaTeX and BibTeX convention is 2 spaces.
+[*.{bib,cls,sty,tex,typ}]
+# WHY: LaTeX, BibTeX, and Typst source use a stable 2-space convention.
 indent_size = 2
 indent_style = space
 
@@ -120,8 +122,8 @@ indent_style = space
 
 # === Programming languages and scripts ===
 
-[*.bat]
-# WHY: Windows batch files commonly use tabs or editor defaults; keep simple.
+[*.{bat,cmd}]
+# WHY: Windows batch and command scripts use a simple 2-space shared baseline.
 indent_size = 2
 indent_style = space
 
@@ -140,8 +142,8 @@ indent_style = space
 indent_size = 4
 indent_style = space
 
-[*.{js,ts}]
-# WHY: JS/TS ecosystem commonly uses 2 spaces.
+[*.{cjs,js,jsx,mjs,ts,tsx}]
+# WHY: JavaScript and TypeScript ecosystems commonly use 2 spaces.
 indent_size = 2
 indent_style = space
 

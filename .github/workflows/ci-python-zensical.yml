@@ -1,27 +1,28 @@
 # ============================================================
 # .github/workflows/ci-python-zensical.yml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-09-25
+# Updated: 2026-10-08
 #
-# WHY: Continuous Integration (CI) ensures
-#      Python correctness, testing, and documentation builds
-#      before merging changes into the main branch.
-# REQ: CI SHOULD NOT introduce rules that are not reproducible locally.
-# OBS: CI validates only; it SHOULD NOT make file changes or deploy documentation.
-# OBS: yaml lint config lives at .github/.yamllint.yml (not in the repo root).
+# WHY: Continuous Integration (CI) ensures repository hygiene,
+#      Python correctness, and documentation builds.
+# REQ: Repository MUST contain .python-version.
+# WHY: The repository declares the Python version used locally and by CI.
+# REQ: CI MUST NOT introduce rules that are not reproducible locally.
+# OBS: CI validates only; it never persists file changes or deploys docs.
+# OBS: yamllint config lives at .github/.yamllint.yml (not repo root).
 
-# Name shown in the GitHub repo Actions tab.
+# Name shown in the repo Actions tab.
 name: CI (Python + Zensical)
 
 on:
   push:
-    branches: [main]  # WHY: Validate on every push to GitHub branch `main`.
+    branches: [main] # WHY: Validate on every push to GitHub branch `main`.
   pull_request:
-    branches: [main]  # WHY: Validate pull requests before merge.
-  workflow_dispatch:  # WHY: Allow manual trigger from Actions tab.
+    branches: [main] # WHY: Validate pull requests before merge.
+  workflow_dispatch: # WHY: Allow manual trigger from Actions tab.
 
-permissions:          # WHY: Least privilege; this job only needs repository read access.
-  contents: read      # WHY: CI validates repository contents and never pushes changes.
+permissions: # WHY: Least privilege; this job only needs repository read access.
+  contents: read # WHY: CI validates repository contents and never pushes changes.
 
 concurrency:
   group: ci-python-zensical-${{ github.workflow }}-${{ github.ref }}
@@ -30,17 +31,15 @@ concurrency:
   # OBS: Different PRs and branches still run independently.
 
 env:
-  PYTHONUNBUFFERED: "1"     # WHY: Real-time log output in CI.
+  PYTHONUNBUFFERED: "1" # WHY: Real-time log output in CI.
   PYTHONIOENCODING: "utf-8" # WHY: Consistent encoding across platforms.
-  UV_FROZEN: "1"            # WHY: CI MUST use the committed lockfile without updating it.
+  UV_FROZEN: "1" # WHY: CI MUST use the committed lockfile without updating it.
 
 jobs:
   ci:
-    name: Repo checks and check Zensical build
-    runs-on: ubuntu-latest  # WHY: Linux matches most production deployments.
-    timeout-minutes: 30     # WHY: Fail fast if a step hangs unexpectedly.
-    env:
-      UV_PYTHON: "3.14"     # WHY: Pin Python version for all steps in this job.
+    name: Repo checks and Zensical build
+    runs-on: ubuntu-latest # WHY: Linux matches most production deployments.
+    timeout-minutes: 30 # WHY: Fail fast if a step hangs unexpectedly.
 
     steps:
       # ============================================================
@@ -68,15 +67,13 @@ jobs:
 
       - name: A4) Install dependencies from committed lockfile
         run: uv sync --frozen
-        # WHY: Install all configured dependency groups exactly from uv.lock.
+        # WHY: Create the project environment exactly from the committed uv.lock.
         # REQ: CI MUST fail rather than update a stale or incompatible lockfile.
 
       - name: A5) Show tool versions
         run: |
           uv --version
           uv run python --version
-          uv run python -m ruff --version
-          uv run ty --version
           if [ -f "zensical.toml" ]; then
             uv run python -m zensical --version
           fi
@@ -110,9 +107,8 @@ jobs:
         #      remaining issues by hand, then git add, commit, and push again.
 
       # ============================================================
-      # B) BASELINE CHECKS: Tools not covered by pre-commit
+      # B) BASELINE CHECKS: Tools not covered by hooks
       # ============================================================
-
       - name: B1) Validate pyproject.toml schema
         run: uvx "validate-pyproject[all]" pyproject.toml
         # WHY: Catch malformed project metadata before downstream CI or release work.
@@ -122,23 +118,21 @@ jobs:
         continue-on-error: true
         # WHY: Catch type errors that Ruff does not check.
         # OBS: ty uses the installed project environment for analysis.
-        # OBS: Not included in pre-commit because it requires the full environment.
+        # OBS: Not included in hooks because it requires the full environment.
         # OBS: continue-on-error keeps type checking non-blocking in this workflow.
 
       # ============================================================
       # C) COVERAGE & TESTING: Python tests
       # ============================================================
-
       - name: C1) Run pytest
         run: uv run python -m pytest
         # WHY: Confirm all Python tests pass in a clean CI environment.
         # OBS: pytest config lives in pyproject.toml [tool.pytest.ini_options].
-        # OBS: Not included in pre-commit because tests can be slow.
+        # OBS: Not included in hooks because tests can be slow.
 
       # ============================================================
       # D) DOCS: Build documentation without deployment
       # ============================================================
-
       - name: D1) Build documentation with Zensical
         run: |
           if [ -f "zensical.toml" ]; then

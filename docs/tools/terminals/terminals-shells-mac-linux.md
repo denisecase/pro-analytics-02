@@ -92,3 +92,7 @@ command -v uv
 ```
 
 The difference between outputs explains the problem.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

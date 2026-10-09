@@ -13,8 +13,8 @@ message: "If using this project, please cite it as described in this file."
 type: software
 
 title: pro-analytics-02
-version: "0.4.7"
-date-released: "2026-09-25"
+version: "0.5.0"
+date-released: "2026-10-08"
 
 authors:
   - family-names: Case
@@ -33,23 +33,18 @@ abstract: |
   Serves as a professional template for data analytics and data science projects.
 
 keywords:
-  # identity
-  - data analytics
+  - data-analytics
   - python
   - professional-workflows
   - project-template
   - developer-tools
   - logging
-
-  # audience
   - education
   - teaching
   - learning
   - practitioners
   - computer-science-education
   - data-analytics-education
-
-  # practices
   - professional-python
   - src-layout
   - ci-cd
@@ -57,17 +52,15 @@ keywords:
   - reproducible-workflows
   - software-quality
   - professional-practice
-
-  # tools and ecosystem
   - git
   - github
-  - pre-commit
+  - prek
   - open-source
   - uv
   - ruff
   - zensical
-
-  # workflows
-  - machine setup
+  - hatchling
+  - ty
+  - machine-setup
   - project-setup
   - development-workflow

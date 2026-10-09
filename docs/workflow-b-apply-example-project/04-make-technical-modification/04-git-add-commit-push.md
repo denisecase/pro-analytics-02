@@ -35,12 +35,12 @@ git push
 
 <details markdown>
 
-<summary>If pre-commit modifies files or blocks the commit</summary>
+<summary>If git hooks modified files or blocks the commit</summary>
 
-This project uses **pre-commit hooks**
+A project may use **git hooks**
 that run automatically when you run `git commit`.
 
-Case 1. If pre-commit **modifies files** (for example, formatting),
+Case 1. If the hooks **modify files** (for example, formatting),
 the commit may stop so you can review the changes.
 This is common. Just run the commands again as shown above.
 
@@ -49,11 +49,11 @@ git add -A
 git commit -m "update"
 ```
 
-Case 2. If pre-commit **reports errors**,
+Case 2. If the checks **report errors**,
 read the messages in the terminal, fix the issue, and try again.
 
 Case 3. If you cannot resolve the issue after reviewing the messages,
-you can bypass the checks for that commit using the `--no-verify` flag.
+you can bypass checks for that commit using the `--no-verify` flag.
 
 ```shell
 git commit -m "update" --no-verify

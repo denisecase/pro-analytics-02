@@ -1,37 +1,68 @@
 # ============================================================
 # .gitignore (ALL-REPOS)
 # ============================================================
-# Updated: 2026-08-04
+# Updated: 2026-10-02
 #
 # REQ: All professional GitHub project repositories MUST include .gitignore.
-# WHY: Keep generated artifacts, local state, secrets, and OS-specific files
-# out of the repository.
+# WHY: Keep generated artifacts, local state, secrets, temporary files,
+# machine-specific files, and reproducible build output out of the repository.
 # ALT: Repository may customize ignores, but MUST preserve universal safety rules.
+#
+# ============================================================
+# === How .gitignore patterns work ===
+# ============================================================
+# NOTE: .gitignore uses glob-style patterns, not regular expressions.
+#
+# /name
+# WHY: A leading slash anchors the pattern to the directory containing this
+# .gitignore file. In a repository-root .gitignore, /name matches only name
+# at the repository root.
+# EXAMPLE: /pyproject.toml.ruff ignores only the root-level temporary fragment.
+#
+# name/
+# WHY: A trailing slash means the pattern matches directories, not files.
+# EXAMPLE: bin/ ignores directories named bin and their contents.
+#
+# *.ext
+# WHY: An asterisk (*) matches any number of characters within one path component.
+# EXAMPLE: *.log ignores files ending in .log.
+#
+# **
+# WHY: A double asterisk (**) can match across directory levels.
+# EXAMPLE: **/src/**/_version.py matches generated _version.py files inside
+# src trees regardless of repository depth or package name.
+#
+# ?
+# WHY: A question mark (?) matches exactly one character within a path component.
+# EXAMPLE: temp?.txt matches temp1.txt and tempa.txt, but not temp10.txt.
+#
+# [abc]
+# WHY: Square brackets match one character from the listed set or range.
+# EXAMPLE: file[0-9].txt matches file0.txt through file9.txt.
+#
+# !pattern
+# WHY: An exclamation point (!) negates an earlier ignore rule and re-includes
+# a matching file when its parent directory has not itself been excluded.
+# EXAMPLE: !.env.example keeps the safe example file even though .env.* is ignored.
+#
+# # text
+# WHY: A leading # makes the line a comment unless the # is escaped.
+#
+# NOTE: Prefer the narrowest pattern that expresses the intent.
+# Anchored patterns such as /name are safer when
+# only a repository-root file should be ignored.
+# ============================================================
 
-# === GENERATED FILES FOR THIS REPOSITORY ===
 
+# === Generated files for supported repositories ===
+
+# WHY: Generated analytics and guide-context artifacts should be rebuilt rather
+# than committed.
+# NOTE: These entries are harmless in repositories that do not generate them.
 docs/assets/data/view-analytics.json
 docs/assets/data/guide-context.json
-
-# === pup-up fragments ===
-
-# WHY: The pup-up (professional Python project updater) may provide temporary configuration fragments for manual merging.
-# WHY: Ruff settings belong in the repository's authoritative pyproject.toml.
-/pyproject.toml.ruff
-
-
-# === Logs and generated runtime output ===
-
-# WHY: Ignore logs and runtime output by default; share only project.log for evidence.
-*.log
-logs/
-# !/project.log
-
-
-# === Private notes and local-only files ===
-
-PRIVATE-NOTES.md
-PRIVATE_NOTES.md
+# marimo WASM export; built at deploy time, not committed
+docs/app/
 
 
 # === Environment variables and secrets ===
@@ -41,14 +72,28 @@ PRIVATE_NOTES.md
 .env
 .env.*
 
-# WHY: Commit .env.example as a template showing which variables to set.
-# Copy this file to .env and customize.
+# WHY: Commit .env.example as a safe template showing which variables to set.
+# NOTE: Copy .env.example to .env locally and customize the local copy.
 !.env.example
+
+
+# === Private notes and local-only files ===
+
+# WHY: Private working notes should remain local unless intentionally published.
+PRIVATE-NOTES.md
+PRIVATE_NOTES.md
+
+# WHY: The root-level refs directory holds local reference papers and source
+# materials that should be cited or linked to rather than committed.
+# NOTE: The leading slash limits this rule to the repository-root refs directory.
+# ALT: Commit only reference material that is intentionally redistributable and
+# appropriate to include in the repository.
+/refs/
 
 
 # === Operating-system files ===
 
-# WHY: OS-generated metadata files should never be tracked.
+# WHY: OS-generated metadata files are machine-specific and should not be tracked.
 .AppleDouble
 .DS_Store
 .LSOverride
@@ -63,16 +108,16 @@ ehthumbs.db
 
 # === Editors and IDEs ===
 
-# WHY: IDE metadata is machine-local and should not be tracked.
+# WHY: IDE metadata is generally machine-local and should not be tracked.
 *.code-workspace
 .idea/
 
 
 # === VS Code ===
 
-# WHY: Ignore editor state by default; share only project-level config.
+# WHY: Ignore editor state by default while allowing shared project configuration.
 # NOTE: Use .vscode/* (contents), not .vscode/ (directory). Git will not
-#       re-include a file whose parent directory is excluded.
+# re-include a file whose parent directory is excluded.
 .vscode/*
 !.vscode/ABOUT_THIS_FOLDER.md
 !.vscode/extensions.json
@@ -82,7 +127,7 @@ ehthumbs.db
 !.vscode/*.code-snippets
 
 
-# === Temporary and swap files ===
+# === Temporary, lock, and swap files ===
 
 # WHY: Temporary and swap files are machine-local noise and create meaningless diffs.
 *.swo
@@ -90,11 +135,25 @@ ehthumbs.db
 *.tmp
 *~
 
+# WHY: Microsoft Office creates temporary owner/lock files beside open documents.
+# NOTE: These patterns cover Word, Excel, and PowerPoint temporary files without
+# ignoring the actual Office documents.
+~$*.doc*
+~$*.xls*
+~$*.ppt*
 
-# === Markup and documentation ===
+# WHY: LibreOffice and OpenOffice create temporary lock files beside open documents.
+.~lock.*#
 
-# WHY: Static site build output is generated.
-site/
+
+# === Logs and generated runtime output ===
+
+# WHY: Ignore logs and runtime output by default.
+# ALT: Explicitly re-include a specific log only when it is intentionally used
+# as project evidence.
+*.log
+logs/
+# !/project.log
 
 
 # === Generic caches ===
@@ -103,12 +162,110 @@ site/
 .cache/
 
 
+# === Generic bin (binary) folder ===
+
+# WHY: The root-level bin directory contains generated executable or build output.
+# NOTE: The leading slash limits this rule to the repository-root bin directory
+# and avoids ignoring a nested source directory that happens to be named bin.
+/bin/
+
+# === Lean ===
+
+# WHY: Lake build and dependency state is generated.
+.lake/
+lake-packages/
+/docbuild/
+
+# === Markup and documentation ===
+
+# WHY: Static site build output is generated from the documentation source.
+# NOTE: Zensical uses site/ as the generated site output directory.
+site/
+
+
+# === Python environments ===
+
+# WHY: Virtual environments are machine-local and reproducible from project files.
+.venv/
+venv/
+
+
+# === Python project state ===
+
+# REQ: Do NOT git ignore .python-version.
+# WHY: Commit .python-version to declare the Python version used by the project.
+
+# REQ: Do NOT git ignore uv.lock.
+# WHY: Commit uv.lock to preserve the resolved dependency environment and use it
+# in CI/CD pipelines.
+
+# WHY: Generated SCM version modules should not be tracked.
+# NOTE: This recursive pattern works regardless of repository depth or package name.
+**/src/**/_version.py
+
+
+# === Python bytecode ===
+
+# WHY: Python bytecode is generated automatically and is machine-specific.
+*.pyc
+*.pyd
+*.pyo
+__pycache__/
+
+
+# === Python build and packaging artifacts ===
+
+# WHY: Build and packaging artifacts are generated from project source.
+*.egg
+*.egg-info/
+*.whl
+.eggs/
+build/
+dist/
+
+
+# === Python testing and coverage output ===
+
+# WHY: Test and coverage reports are generated and can be reproduced.
+.coverage
+.coverage.*
+.pytest_cache/
+htmlcov/
+coverage.xml
+coverage.json
+coverage.lcov
+
+
+# === Python tooling caches ===
+
+# WHY: Tooling caches improve local performance but should not be tracked.
+.mypy_cache/
+.pytype/
+.ruff_cache/
+.tox/
+
+
+# === Notebooks and marimo ===
+
+# WHY: Jupyter notebook checkpoint state is generated.
+.ipynb_checkpoints/
+
+# REQ: Do NOT git ignore layouts/ when using marimo custom layouts.
+# WHY: Marimo layout files are project source and should be version controlled.
+
+# REQ: Do NOT git ignore public/ when it contains source assets or data
+# used by marimo or WASM applications.
+# WHY: These files may be required to reproduce or publish the application.
+
+
 # === Node dependencies ===
 
 # WHY: Node dependencies are restored from package-lock.json with npm ci.
 node_modules/
 
-# REQ.NODE: Do NOT git ignore package-lock.json. Commit it and use it in CI/CD pipelines.
+# REQ: Do NOT git ignore package-lock.json.
+# WHY: Commit package-lock.json to preserve reproducible Node dependency
+# resolution and use it in CI/CD pipelines.
 
 
 # === Node package-manager caches ===
@@ -127,17 +284,13 @@ node_modules/
 # WHY: Compiled JavaScript output is generated from TypeScript source.
 out/
 
-# WHY: Distribution/build output is generated.
-build/
-dist/
-
 # WHY: TypeScript incremental build metadata is generated.
 *.tsbuildinfo
 
 
 # === TypeScript and JavaScript tooling caches ===
 
-# WHY: Tooling caches are generated and machine-local.
+# WHY: Tooling caches and generated coverage output should not be tracked.
 .eslintcache
 .nyc_output/
 coverage/
@@ -145,59 +298,17 @@ coverage/
 
 # === VS Code extension test and package output ===
 
-# WHY: VS Code extension test host files are generated by @vscode/test-electron.
+# WHY: VS Code extension test-host files are generated by @vscode/test-electron.
 .vscode-test/
 
 # WHY: VSIX packages are generated release artifacts.
 *.vsix
 
 
-# === Python environments ===
+# === pup-up temporary fragments ===
 
-# WHY: Virtual environments are machine-local and reproducible.
-.venv/
-venv/
-
-
-# === Python version files ===
-
-# REQ.PYTHON: Do NOT git ignore uv.lock. Commit it and use it in CI/CD pipelines.
-
-# WHY: Python version when using scm matches any repo depth and any package name.
-**/src/**/_version.py
-
-
-# === Python bytecode ===
-
-# WHY: Python bytecode is generated.
-*.pyc
-*.pyd
-*.pyo
-__pycache__/
-
-
-# === Python build and packaging artifacts ===
-
-# WHY: Build and packaging artifacts are generated.
-*.egg
-*.egg-info/
-*.whl
-.eggs/
-
-
-# === Python tooling caches ===
-
-# WHY: Tooling caches should not be tracked.
-.coverage
-.coverage.*
-.mypy_cache/
-.pytest_cache/
-.pytype/
-.ruff_cache/
-.tox/
-
-
-# === Notebooks ===
-
-# WHY: Notebook checkpoint state is generated.
-.ipynb_checkpoints/
+# WHY: pup-up may provide temporary configuration fragments for manual merging.
+# WHY: Ruff settings belong in the repository's authoritative pyproject.toml.
+# NOTE: Remove this rule when pup-up directly reconciles the managed Ruff
+# configuration in pyproject.toml and no longer creates this fragment.
+/pyproject.toml.ruff

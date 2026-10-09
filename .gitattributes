@@ -1,32 +1,37 @@
 # ============================================================
 # .gitattributes (ALL-REPOS)
 # ============================================================
-# Updated: 2026-06-27
+# Updated: 2026-09-25
 #
 # REQ: All professional GitHub repositories SHOULD include .gitattributes.
-# WHY: Keep line endings, diffs, and file classification consistent across
-# Windows, macOS, Linux, GitHub Actions, and environments.
-# CUSTOM: Add rules when new shared file types are introduced.
+# WHY: Keep line endings, diffs, merges, and file classification consistent
+# across Windows, macOS, Linux, GitHub Actions, and other environments.
+# CUSTOM: Add repository-specific rules when files require different handling.
 # Git attributes: https://git-scm.com/docs/gitattributes
 
 
 # === Core defaults ===
 
-# WHY: Auto-detect text files and normalize text
-# unless a later rule is more specific.
+# WHY: Auto-detect text files and normalize text to LF unless a later rule
+# is more specific.
 * text=auto eol=lf
 
 
 # === Named root and metadata files ===
 
-# WHY: Important extensionless repo files are text and should use LF.
-CODEOWNERS  text eol=lf
-LICENSE     text eol=lf
+# WHY: Important repository metadata files are text and should use LF.
+.gitattributes   text eol=lf
+.gitignore       text eol=lf
+.editorconfig    text eol=lf
+.python-version  text eol=lf
+CODEOWNERS       text eol=lf
+LICENSE          text eol=lf
+uv.lock          text eol=lf
 
 
 # === Operating-system files ===
 
-# WHY: OS metadata files are binary/noisy and should not be normalized.
+# WHY: OS metadata files are binary/noisy and should not be normalized or diffed.
 .DS_Store    binary
 Thumbs.db    binary
 desktop.ini  binary
@@ -36,6 +41,7 @@ desktop.ini  binary
 
 # WHY: Documentation, web, and math markup use LF for stable cross-platform diffs.
 *.bib   text eol=lf
+*.cff   text eol=lf
 *.cls   text eol=lf
 *.css   text eol=lf
 *.html  text eol=lf
@@ -44,12 +50,13 @@ desktop.ini  binary
 *.rst   text eol=lf
 *.sty   text eol=lf
 *.tex   text eol=lf
+*.typ   text eol=lf
 *.xml   text eol=lf
 
 
 # === Configuration and structured text ===
 
-# WHY: Config and structured text files should produce stable diffs.
+# WHY: Configuration and structured text files should produce stable diffs.
 *.cfg     text eol=lf
 *.env     text eol=lf
 *.ini     text eol=lf
@@ -65,9 +72,6 @@ desktop.ini  binary
 
 # === Programming languages and scripts ===
 
-# WHY: Windows specific script types (.bat, .cmd)
-# are covered under the general LF text policy.
-
 # WHY: Source and script files use LF for CI, shells, containers, and tooling.
 *.c     text eol=lf
 *.cpp   text eol=lf
@@ -78,15 +82,25 @@ desktop.ini  binary
 *.java  text eol=lf
 *.jl    text eol=lf
 *.js    text eol=lf
+*.jsx   text eol=lf
+*.mjs   text eol=lf
+*.cjs   text eol=lf
 *.mojo  text eol=lf
 *.ps1   text eol=lf
 *.py    text eol=lf
+*.pyi   text eol=lf
 *.r     text eol=lf
 *.R     text eol=lf
 *.rs    text eol=lf
 *.sh    text eol=lf
 *.sql   text eol=lf
 *.ts    text eol=lf
+*.tsx   text eol=lf
+
+# WHY: Windows batch scripts conventionally use CRLF and may be consumed by
+# Windows tooling that expects Windows-style line endings.
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
 
 
 # === Formal, math, and proof languages ===
@@ -103,7 +117,8 @@ desktop.ini  binary
 
 # === Notebooks ===
 
-# WHY: Jupyter notebooks can contain Python, R, Julia, and other kernels.
+# WHY: Jupyter notebooks are JSON-based text files and benefit from stable
+# cross-platform line endings.
 *.ipynb  text eol=lf
 
 
@@ -114,6 +129,23 @@ desktop.ini  binary
 *.dat  text eol=lf
 *.psv  text eol=lf
 *.tsv  text eol=lf
+
+
+# === Images and web binary assets ===
+
+# WHY: Image and compiled web asset formats are binary; text diffs are not meaningful.
+*.avif   binary
+*.bmp    binary
+*.gif    binary
+*.ico    binary
+*.jpeg   binary
+*.jpg    binary
+*.png    binary
+*.webp   binary
+*.wasm   binary
+
+# WHY: SVG is XML-based text and benefits from readable diffs.
+*.svg  text eol=lf
 
 
 # === Databases ===
@@ -127,7 +159,7 @@ desktop.ini  binary
 
 # === Columnar and analytical data ===
 
-# WHY: Columnar/analytical formats are binary; text diffs are not meaningful.
+# WHY: Columnar and analytical formats are binary; text diffs are not meaningful.
 *.arrow    binary
 *.avro     binary
 *.feather  binary
@@ -140,11 +172,16 @@ desktop.ini  binary
 # WHY: Office, BI, PDF, and archive files are binary.
 *.7z    binary
 *.bz2   binary
+*.doc   binary
 *.docx  binary
 *.gz    binary
+*.odp   binary
+*.ods   binary
+*.odt   binary
 *.pbix  binary
 *.pbit  binary
 *.pdf   binary
+*.ppt   binary
 *.pptx  binary
 *.rar   binary
 *.tar   binary
@@ -158,9 +195,11 @@ desktop.ini  binary
 
 # === Logs and generated runtime output ===
 
-# WHY: Logs are generated runtime evidence; avoid normalization churn.
-*.log        binary
-project.log  binary
+# WHY: Logs are text when intentionally committed and should remain readable
+# and diffable.
+# NOTE: Most logs are ignored by .gitignore. Repository-specific research
+# evidence may override text normalization with -text when exact bytes matter.
+*.log  text eol=lf
 
 
 # === GitHub metadata and UI ===

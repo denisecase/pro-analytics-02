@@ -65,8 +65,8 @@ uv sync
 | **data/processed/** | Commit first    | Generated output, commit before deleting    |
 | **uv.lock**         | Commit first    | Commit this to ensure reproducible installs |
 | **pyproject.toml**  | Commit first    | Commit this as it defines the project       |
-| **src/**            | Commit first    | Your code lives here                        |
-| **notebooks/**      | Commit first    | Your notebooks live here                    |
+| **src/**            | Commit first    | Project code lives here                     |
+| **notebooks/**      | Commit first    | Project Jupyter notebooks may live here     |
 
 ## Dependabot and Long-Term Maintenance
 
@@ -88,7 +88,7 @@ Dependabot will eventually stop opening PRs automatically.
 git pull
 uv lock --upgrade
 uv sync
-uv run pre-commit run --all-files
+uvx prek run --all-files
 ```
 
 Verify everything runs before pushing.

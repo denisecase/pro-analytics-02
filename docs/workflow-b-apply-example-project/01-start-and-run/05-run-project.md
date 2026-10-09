@@ -68,7 +68,8 @@ If Windows reports that `python.exe` was blocked, see:
 <summary>More about the Python command</summary>
 
 For professional projects that use a `src/` layout,
-we usually run Python code as a module:
+we usually run Python code as a module
+where package_name is specific to the project:
 
 ```shell
 uv run python -m package_name.module_name

@@ -1,7 +1,7 @@
 # ============================================================
-# .github/workflows/deploy-zensical-ga-ai.yml (CUSTOM: ALL-PY-REPOS-GA-AI)
+# .github/workflows/deploy-zensical.yml (ALL-PY-REPOS)
 # ============================================================
-# Updated: 2026-09-25
+# Updated: 2026-08-18
 #
 # WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:
@@ -12,13 +12,11 @@
 # REQ: Deployment MUST use the committed uv.lock without updating it.
 
 # Name shown in the repo Actions tab.
-name: Docs Deploy (Zensical + GA + AI)
+name: Docs Deploy (Zensical)
 
 on:
   push:
     branches: [main]  # WHY: Deploy docs on every push to GitHub branch `main`.
-  schedule:
-    - cron: "0 12 * * *"   # daily at 12:00 UTC
   workflow_dispatch:  # WHY: Allow manual trigger from Actions tab.
 
 permissions:
@@ -59,7 +57,7 @@ jobs:
         # WHY: Sets Pages metadata used by upload-pages-artifact and deploy-pages.
         # OBS: Must run before the build step so base URL is available if needed.
 
-      - name: A3) Install uv (with caching and uv.lock awareness)
+      - name: A3) Install uv (with caching)
         uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
         with:
           enable-cache: true
@@ -84,35 +82,6 @@ jobs:
             uv run python -m zensical --version
           fi
         # WHY: Version output makes deployment logs easier to debug when tools change.
-
-      # ============================================================
-      # B) BUILD VIEW ANALYTICS AND INTEGRATED AI CONTEXT
-      # ============================================================
-
-      - name: B1) Authenticate to Google Cloud
-        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3
-        with:
-          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: ${{ vars.GA4_SERVICE_ACCOUNT }}
-        # WHY: Obtain short-lived Google credentials through GitHub OIDC.
-        # OBS: Exports credentials for subsequent Google API operations.
-
-      - name: B2) Generate anonymous view analytics data (GA4 -> view-analytics.json)
-        env:
-          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
-        run: uv run python -m pro_analytics_02.view_analytics.build_analytics
-        # WHY: Query GA4 for the current academic block.
-        # WHY: Write docs/assets/data/view-analytics.json before building.
-        # OBS: The generated file contains only anonymous aggregate counts.
-        # REQ: Configure these GitHub Actions repository variables:
-        #      GA4_PROPERTY_ID
-        #      GA4_SERVICE_ACCOUNT
-        #      GCP_WORKLOAD_IDENTITY_PROVIDER
-
-      - name: B3) Generate integrated AI context (guide-context.json)
-        run: uv run python -m pro_analytics_02.integrated_ai.build_guide_context
-        # WHY: Collect documentation text for the guide assistant.
-        # WHY: Write docs/assets/data/guide-context.json before building.
 
       # ============================================================
       # D) DEPLOY: Build and publish docs
@@ -146,7 +115,7 @@ jobs:
         with:
           path: site
         # WHY: Packages the built static site for the deploy-pages action.
-        # OBS: path must match the output directory verified above.
+        # OBS: path must match the output directory verified in D2.
 
       - name: D4) Deploy to GitHub Pages
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5

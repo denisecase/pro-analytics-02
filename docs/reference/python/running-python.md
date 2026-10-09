@@ -1,32 +1,32 @@
 # Running Python Projects Reliably
 
-Python is an **interpreted language**, not a compiled one.
-That means Python code always runs **inside an active runtime environment**,
-much like an operating system is required to run programs on a machine.
+Running a Python project requires the correct Python interpreter,
+project dependencies, and import paths.
 
-Because of this, certain aspects of Python execution are inherently more complex
-than in compiled languages such as Java, C#, Go, or Rust,
-where the compiler resolves many decisions ahead of time.
+A project may run successfully in one environment but fail in another
+if these are configured differently.
 
-In Python, those decisions are made **every time the program runs**.
+Professional Python project conventions help make execution
+consistent across Windows, macOS, and Linux.
 
 ---
 
 ## 1. Python Run Requirements
 
-Every time Python runs, it must answer three questions:
+When running a Python project:
 
-1. **Where is the project root?**
-2. **What code belongs to this project (the package)?**
-3. **Which Python environment should be used?**
+1. Run commands from the root project folder containing `pyproject.toml`.
+2. Use the local `.venv` with the Python version and dependencies managed by `uv`.
+3. Resolve local imports (e.g. from a util.py file) correctly.
 
-If any of these are unclear, you may see:
+If these are incorrect, you may see:
 
-- import errors
-- _unknown type_ or _missing import_ diagnostics
-- code that behaves differently depending on how it is launched
+- `ModuleNotFoundError` or other import errors
+- missing-import diagnostics in VS Code
+- different results depending on how the program is launched
 
-Python project structure helps make these answers explicit.
+Using a consistent project structure and `uv run` commands
+helps prevent these problems.
 
 ## 2. Recommended Project Structure (Use `src/`)
 
@@ -43,7 +43,7 @@ project-name/
 ├─ pyproject.toml        # Project definition (root)
 ├─ .venv/                # Project-specific Python environment
 ├─ src/
-│  └─ project_package/
+│  └─ project_package/   # custom package name (see note)
 │     ├─ __init__.py
 │     ├─ app_main.py
 │     └─ other_module.py
@@ -52,20 +52,29 @@ project-name/
 │  └─ processed/
 ```
 
+### Custom Package Names (Must Use Underscores)
+
+Python import rules do not allow dashes.
+Use **underscores** in Python folder and file names.
+
+- Underscores used on the Python side (imports, modules, folders).
+- Dashes used on the packaging side (repo name, PyPI, metadata).
+
 ### Benefits
 
-- `src/` defines **exactly** which code is importable
-- it prevents accidental imports from unrelated files
-- it matches how Python packages are built, tested, and deployed
-- `src/ is widely used in professional Python projects.
+- Separates importable project code from configuration and other files.
+- Reduces accidental imports from the project root.
+- Supports consistent packaging, testing, and deployment.
+- Follows a widely used professional Python project convention.
 
-## 3. Import Local Modules Using Package
+## 3. Import Local Modules Using Package Names
 
-Inside the package directory (`src/project_package/`):
+Inside `src/project_package/`:
 
-- each `.py` file is a **module**
-- the directory itself is a **package**
-- imports use the **full package path**
+- `project_package/` is the Python package for that project (e.g., `datafun`).
+- Each `.py` file can be imported as a module.
+- `__init__.py` identifies the directory as a regular Python package.
+- Absolute imports use the package name.
 
 Example:
 
@@ -73,41 +82,47 @@ Example:
 from project_package.other_module import some_function
 ```
 
-Absolute, **package-based local imports** are explicit help editors and tools.
+Package-based imports make dependencies between modules explicit
+and help Python, VS Code, and automated tools resolve them consistently.
 
-## 4. Option 1: Run a File As a Script
+## 4. Option 1: Run a File as a Script
 
-```shell
-python path/to/app_main.py
-```
-
-Python:
-
-- treats the file as a standalone script
-- resolves imports relative to the current working directory
-- can behave differently depending on how and where it is launched
-
-This often works, but can be sensitive to context and tooling.
-
-## 5. Option 2: Run a File As a Module (Preferred)
+From the project root:
 
 ```shell
-python -m project_package.app_main
+uv run python src/project_package/app_main.py
 ```
 
-This tells Python:
+Python executes the file directly and places the script's directory
+at the beginning of its import search path.
 
-- the code belongs to a package
-- the package root should be added to the import path
-- imports should be resolved using package rules
+This can cause problems when the script imports other modules
+using the full project package name.
 
-This matches:
+Direct script execution is useful for standalone scripts,
+but is generally **not recommended** for applications organized
+as Python packages.
 
-- how test runners execute code
-- how installed packages are invoked
-- how automation and CI systems run Python projects
+## 5. Option 2: Run a File as a Module (Preferred)
 
-**Running as a module aligns with Python's packaging model and is more robust.**
+From the project root:
+
+```shell
+uv run python -m project_package.app_main
+```
+
+Python locates the module through its import system
+and executes it within its package context.
+
+This approach:
+
+- Supports package-based imports.
+- Works consistently with a properly installed project package.
+- Matches common Python testing and automation practices.
+- Uses the project's Python environment through `uv run`.
+
+For `src/` projects, **run code as a module**
+unless the project README specifies otherwise.
 
 ## 6. Editor: Open One Project at a Time
 

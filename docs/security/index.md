@@ -23,7 +23,7 @@ including example and instructional projects.
 
 Set up these automatic checks:
 
-- [ ] (pre-commit) Ruff runs locally; CI verifies repository quality.
+- [ ] (git hooks) use prek to run quick pre-checks.
 - [ ] (ci) `ty` runs and reports type issues.
 - [ ] (ci) Tests run and pass before completion.
 - [ ] (ci) SCA runs, e.g. `pip-audit`, and known vulnerabilities are addressed.
@@ -41,16 +41,12 @@ Always ensure:
 
 ### Python Project Configuration
 
-In `pyproject.toml`, include
+A common Python `pyproject.toml`, may include
 
 ```toml
 [dependency-groups]
 dev = [
-
 # REQ: External packages used for linting, testing, type checking, etc.
-
-"pip-audit", # WHY: Audit dependencies for known vulnerabilities.
-"pre-commit", # WHY: Pre-commit hooks for code quality and consistency.
 "pytest", # WHY: Test framework for unit and integration tests.
 "pytest-cov", # WHY: Test coverage reporting for quality assurance.
 "ruff", # WHY: Fast linting and formatting for code quality and consistency.
@@ -58,9 +54,9 @@ dev = [
 ]
 ```
 
-### Configure Pre-Commit
+### Configure Git Hooks
 
-Install pre-commit, keep it updated, and configure checks.
+Configure checks.
 See this project's `.pre-commit-config.yaml` for an example.
 
 ### Configure GitHub Project Repository

@@ -709,11 +709,11 @@ ai_max_authority = "prohibited"
 commands = [
     "uv lock --upgrade",
     "uv sync",
-    "uv run pre-commit install",
+    "uvx prek install --force",
     "uvx se-manifest-schema validate-manifest --path SE_MANIFEST.toml --strict",
     "uvx se-codeowners generate --strict --output .github/CODEOWNERS",
     "uvx se-codeowners check",
-    "uv run pre-commit run --all-files",
+    "uvx prek run --all-files",
     "uv run ty check",
     "uv run python -m pytest",
     "uv run python -m zensical build",

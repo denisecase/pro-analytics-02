@@ -9,12 +9,8 @@ They are **not included in the Python Standard Library** and must be installed a
 
 | Package                                                    | Description                                                             | Links                                            |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------ |
-| [`pip`](https://pypi.org/project/pip/)                     | Python’s package installer (standard tool for managing packages).       | [Docs](https://pip.pypa.io/en/stable/)           |
-| [`setuptools`](https://pypi.org/project/setuptools/)       | Build system and packaging library for Python.                          | [Docs](https://setuptools.pypa.io/en/latest/)    |
-| [`loguru`](https://pypi.org/project/loguru/)               | Simple, powerful logging with colorized output and rotation support.    | [Docs](https://loguru.readthedocs.io/)           |
 | [`httpx`](https://pypi.org/project/httpx/)                 | Modern, async-capable HTTP client for sending web requests and APIs.    | [Docs](https://www.python-httpx.org/)            |
 | [`python-dotenv`](https://pypi.org/project/python-dotenv/) | Loads environment variables from `.env` files.                          | [Docs](https://saurabh-kumar.com/python-dotenv/) |
-| [`pre-commit`](https://pypi.org/project/pre-commit/)       | Automates linting, formatting, and quality checks before commits.       | [Docs](https://pre-commit.com/)                  |
 | [`uv`](https://pypi.org/project/uv/)                       | Fast Python package manager and environment tool (replaces pip + venv). | [Docs](https://docs.astral.sh/uv/)               |
 
 **Note:** `httpx` replaces `requests` as the modern,
@@ -42,7 +38,6 @@ installing the full JupyterLab environment.
 | -------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------- |
 | [`ipython`](https://pypi.org/project/ipython/)     | Enhanced interactive Python shell with colorized output and `%magic` commands.                     | [Docs](https://ipython.readthedocs.io/)   |
 | [`ipykernel`](https://pypi.org/project/ipykernel/) | Kernel interface used by VS Code’s Jupyter extension to execute notebook cells.                    | [Docs](https://ipykernel.readthedocs.io/) |
-| [`jupyter`](https://pypi.org/project/jupyter/)     | Core metapackage that ties together IPython and notebook execution; recommended for compatibility. | [Docs](https://jupyter.org/)              |
 | [`nbdime`](https://pypi.org/project/nbdime/)       | Tools for diffing and merging Jupyter notebooks - useful with Git.                                 | [Docs](https://nbdime.readthedocs.io/)    |
 
 ### Optional Jupyter

@@ -91,3 +91,7 @@ The difference between working and failing terminals is the explanation.
 
 - [Windows: Shells and PATH Configuration](terminals-shells-windows.md)
 - [macOS/Linux: Shells and PATH Configuration](terminals-shells-mac-linux.md)
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

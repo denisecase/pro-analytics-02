@@ -65,9 +65,6 @@
 # Surface: project-log-evidence (role: curriculum)
 /project.log                               @denisecase
 
-# Surface: repository-manifest (role: repository_governance)
-/SE_MANIFEST.toml                          @denisecase
-
 # Surface: citation-identity (role: repository_governance)
 /CITATION.cff                              @denisecase
 

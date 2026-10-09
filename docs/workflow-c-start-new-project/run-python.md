@@ -1,90 +1,97 @@
-# 🔵 Run Python Code
+# 🔵 Run and Check
 
-How to run a Python file (`.py`) in VS Code.
+Professional practice is to run, check, and test code regularly as changes are made.
 
-<details markdown>
-<summary>WHY?</summary>
+Ensure only the **project repository folder** is open in VS Code.
 
-Python files are commonly used for reusable scripts, applications, packages,
-and project code that should run from a command.
+Open a new VS Code terminal using the VS Code menu
+**Terminal / New Terminal**.
+The terminal should open in the root project folder.
 
-Python files are useful when the same instructions need to run repeatedly,
-reliably, or automatically.
+## Step 1. Run the Project Code
 
-Use Python file commands when the project includes `.py` files or when code
-should be run from the command line, tested, reused, scheduled, or included
-as part of a larger project.
+Find the exact command to run the project in the **project README.md**.
+In the VS Code terminal,
+copy and paste that command, then hit ENTER or RETURN.
 
-</details>
-
-## Before Starting
-
-- Open your project repository folder in VS Code.
-- Open a terminal.
-- If external dependencies have not been installed, see the prior step for instructions.
-
-## Task 1. Confirm VS Code Interpreter
-
-VS Code needs a populated `.venv` to interpret our files correctly.
-Check the Python version shown in the lower-right status bar.
-If you've activated your `.venv` with `uv` once during project initialization, you should be fine.
-
-If not activated already, set the VS Code Interpreter:
-
-1. Open the Command Palette: Press **Ctrl Shift P** (Windows/Linux) or **Cmd Shift P** (Mac).
-2. Type **Python: Select Interpreter** in the Command Palette search bar.
-3. Select it from the dropdown.
-4. Choose the recommended local `.venv` interpreter.
-5. Confirm the Python version in the lower-right status bar.
-
-### Task 2. Set Auto Save Option (If you haven't already)
-
-In VS Code, use the menu to enable the **File / Auto Save** option.
-
-## Task 3. Run the Python File (Recommended)
-
-If your code is part of a package inside `src/`, run it as a **module**.
-Replace `demo_module_basics` with your actual script name.
-Run from the **project root directory** (same level as `pyproject.toml`).
+For example:
 
 ```shell
-uv run python -m pro_analytics_02.demo_module_basics
+uv run python -m datafun.app
 ```
 
-This helps local imports get picked up correctly.
+The package and module names may differ by project.
+For more information, see
+[Running Python Projects Reliably](../reference/python/running-python.md).
 
-### Alternatively, Run as a Script
+## Step 2. Update Dependencies (As Needed)
 
-Replace `demo_module_basics.py` with your actual script name.
-Run from the **project root directory** (same level as `pyproject.toml`).
+As you modify the project,
+you may need to add or update dependencies in pyproject.toml.
+
+After changing dependencies in `pyproject.toml`,
+and periodically to keep dependencies current,
+run these commands
+(copy and paste one at a time and hit ENTER or RETURN after each)
+in the VS Code terminal:
 
 ```shell
-uv run python src/pro_analytics_02/demo_module_basics.py
+uv python install
+uv lock --upgrade
+uv sync
 ```
 
-### IMPORTANT
+These commands install the required Python version,
+update the dependency lockfile, and
+synchronize the project's `.venv` environment.
 
-- Running as a script will fail if your file imports other local modules.
-- If you are not using the `src` organization, and you don't have
-  any local imports, then this will work to run your script.
+For additional instructions and troubleshooting, see
+[Set Up Project Environment](05-set-up-environment.md).
 
-<details markdown>
-<summary>⭐ If Windows "Smart" Application Control error (click here)</summary>
+## Step 3. Run Checks and Tests (as available)
 
-If Windows reports: `An Application Control policy has blocked this file.`
-or reports that `python.exe` was blocked, see:
-[Windows: Smart App Control Blocks python.exe](https://denisecase.github.io/pro-analytics-02/help/04-windows-smart-app-control-python/).
-This is a Windows security-policy issue that happens on some machines.
+Use the project's configured development tools to format,
+check, and test the code:
 
-</details>
+```shell
+uv run ruff format .
+uv run ruff check . --fix
+uv run ty check
+uv run python -m pytest
+```
+
+- **Ruff:** Formats code and identifies common programming problems.
+- **ty:** Checks Python types.
+- **pytest:** Runs automated tests, when available.
+  Skip the `pytest` command in projects with no `tests` folder.
+
+Review and address reported issues before continuing.
+
+## Step 4. Build Documentation (If Applicable)
+
+For projects using Zensical to build an associated project
+documentation site, run:
+
+```shell
+uv run python -m zensical build
+uv run python -m zensical serve
+```
+
+Open the local URL displayed in the terminal to review the documentation.
+
+Press **Ctrl+C** in the terminal to stop the local server.
+
+## Professional Reminders
+
+- Enable **File / Auto Save** in VS Code or save changes regularly.
+- Run the project and checks after making changes.
+- Use logging, debugging tools, or `print()` statements to investigate errors.
+- Review results and resolve unexpected errors before committing changes.
+
+---
+
+[◄ Back to 🟠 Workflow C](index.md)
 
 ## Task 4. Update Project README.md
 
 Record your process and your project commands in your project README.md.
-
-## Note on Underscores
-
-Python import rules do not allow dashes. Use underscores in folder and file names.
-
-- Underscores used on the Python side (imports, modules, folders).
-- Dashes used on the packaging side (PyPI, metadata).

@@ -94,3 +94,18 @@ Run these in both terminals (working and failing):
 | Find uv | `Get-Command uv`       | `where uv`    | `command -v uv` |
 
 The difference between outputs explains the problem.
+
+## PowerShell Script Execution Errors
+
+PowerShell may prevent a `.ps1` script from running because of its execution policy.
+
+If you see an error such as **"is not digitally signed"** or
+**"You cannot run this script on the current system"**,
+see [Windows PowerShell Execution Policy Troubleshooting](../../reference/python/troubleshooting.md#windows-powershell-error-execution-policy-not-digitally-signed).
+
+The troubleshooting guide explains how to temporarily allow a trusted script
+to run without permanently changing your machine's execution policy.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)
