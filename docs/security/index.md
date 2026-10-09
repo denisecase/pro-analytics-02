@@ -57,7 +57,7 @@ dev = [
 ### Configure Git Hooks
 
 Configure checks.
-See this project's `.pre-commit-config.yaml` for an example.
+See this project's `prek.toml` for an example.
 
 ### Configure GitHub Project Repository
 
@@ -90,17 +90,19 @@ Use a triggered GitHub action to automatically create the SBOM using recommended
 process and formats.
 See this repo's `.github\workflows\sbom.yml` for an example.
 
-### Periodically Monitor The Project Repository
+### Periodically Monitor the Project Repository
 
-Watch the GitHub project repository.
+Check your GitHub repository regularly for security alerts,
+workflow failures, and pull requests.
 
-When you see a **Pull Request** (e.g. on created by Dependabot).
-Accept the Pull Request in the GitHub web interface.
-After, on your machine, open a terminal in the root project folder and run
-`git pull` to stay synchronized.
+When Dependabot creates a pull request, review the proposed changes
+and automated check results before deciding whether to merge.
 
-View Dependency graph:
-GitHub repo / Insights tab / Dependency graph / Dependencies
+See [How to Accept a Dependabot Pull Request](../tools/github-and-ci/03-accept-dependabot-pr.md)
+for step-by-step instructions, including how to update your local project afterward.
+
+To view project dependencies, open your GitHub repository and select
+**Insights / Dependency graph / Dependencies**.
 
 ## Note on Instructional Projects
 

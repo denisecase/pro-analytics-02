@@ -45,7 +45,7 @@ Copy and paste one command at a time and hit Enter or Return after pasting to ru
 
 ```bash
 uv self update
-uv python pin 3.14
+uv python pin 3.15
 uv python install
 uv lock --upgrade
 uv sync
@@ -103,25 +103,53 @@ Dependency install error:
 
 ## 2. Set Up Git Hooks
 
+You should have already created the project environment
+and opened the project in VS Code.
+
 Git hooks catch common issues before code is committed and pushed to GitHub.
 
 Run the following commands in the VS Code terminal to:
 
-1. Install the tool to run the hooks for this repository.
-2. Stage all files (so hooks can check them).
-3. Run the checks once. This may autofix files. If so,
-4. Run the checks again.
+1. Set up prek to run Git hooks for this repository.
+2. Stage all project files.
+3. Run the configured checks.
+4. If any files are automatically corrected, review the changes and run the checks again.
+
+Copy and paste one command at a time and press Enter or Return.
 
 ```shell
 uvx prek install --force
 git add -A
 uvx prek run --all-files
-# if changes were made, re-run:
+```
+
+If checks automatically modify files,
+**review the changes and re-run** (UP ARROW):
+
+```shell
 uvx prek run --all-files
 ```
 
-After the hooks are installed,
-checks run automatically on every **git commit** command.
+After the hooks are installed, they run automatically during `git commit`.
+
+For more information, see
+[Git Hooks: Automated Quality Checks](../../tools/github-and-ci/00-git-hooks.md).
+
+<details markdown>
+<summary>If Git hooks cannot be installed</summary>
+
+On some restricted machines, Git hooks may not be permitted.
+
+You can continue working without installing the hooks.
+Run the configured checks manually when possible:
+
+```shell
+uvx prek run --all-files
+```
+
+Required project checks must still pass before work is considered complete.
+
+</details>
 
 <details markdown>
 <summary>If checks fail</summary>

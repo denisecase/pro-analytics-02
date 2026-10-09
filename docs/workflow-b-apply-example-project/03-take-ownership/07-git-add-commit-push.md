@@ -14,10 +14,11 @@ to ensure everything is committed before pushing.
 
 ```shell
 git add -A
-git commit -m "update"
+git commit -m "your message here"
 
+# repeat if changes were made (try the UP ARROW)
 git add -A
-git commit -m "update"
+git commit -m "your message here"
 
 git push -u origin main
 ```
@@ -44,7 +45,7 @@ This is common. Just run the commands again as shown above.
 
 ```shell
 git add -A
-git commit -m "update"
+git commit -m "your message here"
 ```
 
 Case 2. If the checks **report errors**,
@@ -54,8 +55,12 @@ Case 3. If you cannot resolve the issue after reviewing the messages,
 you can bypass checks for that commit using the `--no-verify` flag.
 
 ```shell
-git commit -m "update" --no-verify
+git commit -m "your message here" --no-verify
 ```
+
+**Important:** `--no-verify` bypasses local Git hooks for this commit only.
+It does not bypass GitHub Actions, CI, or required security checks.
+Those checks still run independently when changes are pushed to GitHub.
 
 </details>
 

@@ -157,9 +157,10 @@ Install and run git hooks (twice if necessary as shown below):
 # set up and run git hooks
 uvx prek install --force
 uvx prek update
+
 git add -A
 uvx prek run --all-files
-# repeat if changes were made
+# repeat if changes were made (UP ARROW)
 uvx prek run --all-files
 ```
 
@@ -185,6 +186,7 @@ to ensure everything gets committed before pushing.
 ```shell
 git add -A
 git commit -m "your message here"
+
 # repeat if changes were made (try the UP ARROW)
 git add -A
 git commit -m "your message here"

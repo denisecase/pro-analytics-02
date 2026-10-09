@@ -25,11 +25,19 @@ Git hooks are configured once per local repository.
 To run all configured checks manually:
 
 ```shell
+git add -A
+uvx prek run --all-files
+```
+
+Some hooks may modify files.
+If that happens, review the changes, then re-run (UP ARROW):
+
+```shell
 uvx prek run --all-files
 ```
 
 The checks are defined in the repository's
-`.pre-commit-config.yaml` file.
+`prek.toml` file.
 
 ## What Happens When You Commit?
 
@@ -74,7 +82,7 @@ Catch malformed configuration files before they cause problems.
 
 Prevent mistakes that can affect Git history or other developers.
 
-- **check-added-large-files:** Reject newly added files exceeding the configured 500 KB limit.
+- **check-added-large-files:** Reject newly added files exceeding the configured limit.
 - **check-merge-conflict:** Detect unresolved Git merge conflict markers.
 - **check-case-conflict:** Detect filenames that differ only by capitalization.
 
@@ -104,5 +112,3 @@ They help:
 ---
 
 [◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)
-
-One operational point worth verifying: when uvx prek instal

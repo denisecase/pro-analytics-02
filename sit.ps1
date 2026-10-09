@@ -55,6 +55,7 @@ uv audit
 # set up and run git hooks
 uvx prek install --force
 uvx prek update
+
 git add -A
 uvx prek run --all-files
 # repeat if changes were made

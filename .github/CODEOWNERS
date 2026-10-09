@@ -60,7 +60,7 @@
 /.gitattributes                            @denisecase
 /.gitignore                                @denisecase
 /.markdownlint-cli2.yaml                   @denisecase
-/.pre-commit-config.yaml                   @denisecase
+/prek.toml                   @denisecase
 
 # Surface: project-log-evidence (role: curriculum)
 /project.log                               @denisecase

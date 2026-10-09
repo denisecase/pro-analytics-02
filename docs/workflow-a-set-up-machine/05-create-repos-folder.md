@@ -66,9 +66,11 @@ not the older Command Window and open in the Repos folder.
 From in the Repos folder, should be able to see **C:\Repos>**
 in the terminal prompt.
 
+Once verified, this folder is ready to hold your GitHub project repositories.
+
 ---
 
-## Mac/Linux Users
+## Mac Users
 
 Keep your projects outside any cloud-sync folders like iCloud's Desktop or Documents.
 This ensures smoother performance and avoids syncing unnecessary
@@ -78,7 +80,7 @@ We recommend creating a dedicated folder outside of
 iCloud's sync scope, for example, a folder named
 **Repos** (short for *repositories*) (i.e. **~/Repos**, directions below).
 
-### Mac/Linux Task 1. Create ~/Repos Directory
+### Mac Task 1. Create ~/Repos Directory
 
 1. Click the Finder icon in your Dock to open a new Finder window.
 2. Access Your Home Directory: In the Finder menu bar
@@ -97,13 +99,71 @@ Important
   To check: Go to System Settings > Apple ID > iCloud > iCloud Drive > Options
   and ensure "Desktop & Documents Folders" is unchecked.
 
-### Verify on Mac/Linux
+### Verify on Mac
 
 Your terminal should be your machine's native shell
 (usually **zsh** or **bash**) and open in the Repos folder.
 
 From in the Repos directory, you should be able to
 see **~/Repos $** or **Repos %** in the terminal prompt.
+
+Once verified, this folder is ready to hold your GitHub project repositories.
+
+---
+
+## Linux Users
+
+Keep your projects outside any cloud-sync folders.
+This avoids syncing unnecessary temporary files and Python environments.
+
+We recommend creating a dedicated folder named **Repos**
+(short for *repositories*) directly in your home directory (`~/Repos`).
+
+### Linux Task 1. Create ~/Repos Directory
+
+1. Open your Linux terminal.
+2. Copy and paste the following command.
+3. Press **Enter** or **Return** to run it.
+
+```bash
+mkdir -p ~/Repos
+```
+
+This creates the **Repos** folder in your home directory.
+If the folder already exists, the command leaves it unchanged.
+
+### Linux Task 2. Open the Repos Directory
+
+In the same terminal, run:
+
+```bash
+cd ~/Repos
+```
+
+### Verify on Linux
+
+Run:
+
+```bash
+pwd
+```
+
+You should see a path similar to:
+
+```text
+/home/username/Repos
+```
+
+Your actual username will be different.
+
+**Important:**
+
+- Use **Repos** with a capital R to keep paths consistent with course instructions.
+- Keep this folder directly in your home directory (`~/Repos`).
+- Do not create it inside Documents, Desktop, or any cloud-synchronized folder.
+- Use your machine's native terminal (usually **bash** or **zsh**).
+
+Once verified, this folder is ready to hold your GitHub project repositories.
 
 ---
 

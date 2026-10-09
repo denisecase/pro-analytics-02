@@ -82,10 +82,11 @@ you may need to **re-run git `add` and `commit`** to ensure everything gets comm
 
 ```shell
 git add -A
-git commit -m "update"
+git commit -m "your message here"
 
+# repeat if changes were made (try the UP ARROW)
 git add -A
-git commit -m "update"
+git commit -m "your message here"
 
 git push -u origin main
 ```

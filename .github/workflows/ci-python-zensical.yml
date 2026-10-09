@@ -1,7 +1,7 @@
 # ============================================================
 # .github/workflows/ci-python-zensical.yml (ALL-PY-SRC-REPOS)
 # ============================================================
-# Updated: 2026-10-08
+# Updated: 2026-10-09
 #
 # WHY: Continuous Integration (CI) ensures repository hygiene,
 #      Python correctness, and documentation builds.
@@ -77,34 +77,19 @@ jobs:
           if [ -f "zensical.toml" ]; then
             uv run python -m zensical --version
           fi
-          uv run --no-sync prek --version 2>/dev/null \
-            || uv run --no-sync pre-commit --version 2>/dev/null \
-            || echo "No hook runner installed"
         # WHY: Version output makes CI logs easier to debug when tools change.
 
-      - name: A6) Run repository hooks on all files (prek or pre-commit)
-        run: |
-          if uv run --no-sync prek --version > /dev/null 2>&1; then
-            echo "Hook runner: prek"
-            uv run --no-sync prek run --all-files
-          elif uv run --no-sync pre-commit --version > /dev/null 2>&1; then
-            echo "Hook runner: pre-commit"
-            uv run --no-sync pre-commit run --all-files
-          else
-            echo "::error::Neither prek nor pre-commit is installed in the project environment. Add one to the dev dependency group in pyproject.toml."
-            exit 1
-          fi
+      - name: A6) Run repository hooks on all files (prek)
+        run: uvx prek run --all-files
         # WHY: Run the same repository hygiene checks used locally.
-        # OBS: Prefers prek when both are installed; both read .pre-commit-config.yaml.
-        # OBS: The runner is detected in the project environment installed by A4,
-        #      so CI uses whichever runner the repository declares.
-        # OBS: --no-sync reuses the environment from A4 without re-syncing.
+        # OBS: uvx runs prek independently of the project environment.
+        # OBS: prek reads the repository's prek.toml configuration.
         # OBS: A clean commit should already pass without file changes.
         # OBS: Autofixing hooks may modify the ephemeral CI checkout.
         #      If they do, the hook runner fails because the committed files
         #      were not already in their required final state.
-        # FIX: Run the same hook runner locally, review any autofixes, fix
-        #      remaining issues by hand, then git add, commit, and push again.
+        # FIX: Run uvx prek run --all-files locally, review any autofixes,
+        #      fix remaining issues by hand, then git add, commit, and push.
 
       # ============================================================
       # B) BASELINE CHECKS: Tools not covered by hooks

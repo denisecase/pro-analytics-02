@@ -41,14 +41,14 @@ AI assistance does not replace human review.
 Run the repository checks before committing:
 
 ```shell
+git add -A
 uvx prek run --all-files
 ```
 
 Some hooks may modify files.
-If that happens, review the changes, then run:
+If that happens, review the changes, then re-run (UP ARROW):
 
 ```shell
-git add -A
 uvx prek run --all-files
 ```
 

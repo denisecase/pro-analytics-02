@@ -468,7 +468,7 @@ paths = [
     ".gitattributes",
     ".gitignore",
     ".markdownlint-cli2.yaml",
-    ".pre-commit-config.yaml",
+    "prek.toml",
 ]
 description = "Repository hygiene configuration for formatting, line endings, ignored files, Markdown linting, and local validation."
 oversight_role = "tooling"

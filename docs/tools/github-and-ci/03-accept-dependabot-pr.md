@@ -117,7 +117,7 @@ it is important to keep your local copy in sync with the updated GitHub.
 **Important:** Before making any local changes,
 open the project in VS Code and update your local copy
 by running `git pull` to fetch and merge the recent changes,
-and then running `git sync` to update the environment:
+and then running `uv sync` to update the environment:
 
 ```powershell
 git pull
@@ -154,7 +154,6 @@ These habits apply to many professional software projects.
 - Git merge a pull request.
 - Verification
 - Repository synchronization.
--
 
 ## Reference
 

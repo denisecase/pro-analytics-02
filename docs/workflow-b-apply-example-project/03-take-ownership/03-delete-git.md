@@ -27,7 +27,7 @@ and find this **exact project**.
 Delete the hidden **.git/** folder.
 After Workflow A, you should be able to view hidden folders.
 
-For a safer way, using a terminal command see the detailed instructions.
+For a safer way using a terminal command, see the detailed instructions.
 
 <details markdown>
 
@@ -90,7 +90,7 @@ Your files are still present; only the Git history was removed.
 
 ## Success
 
-- [ ] The `.git/** folder in the example project is gone.
+- [ ] The `.git` folder in the example project is gone.
 - [ ] **git status** reports this is **not** a git repository.
 - [ ] Your project files (**src/**, **pyproject.toml**, **README.md**) are still present.
 
