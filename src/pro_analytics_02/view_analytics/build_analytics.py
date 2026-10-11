@@ -87,12 +87,21 @@ def write_analytics_json(
 
 
 def main() -> None:
-    """Build the guide analytics file using repository defaults."""
+    """Build guide analytics when an academic block is active."""
+    today = get_today(ACADEMIC_TIMEZONE)
+
+    # WHY: Academic breaks have no current block.
+    # OBS: Documentation deployment must continue during academic breaks.
+    try:
+        get_current_block(load_blocks(ACADEMIC_BLOCKS_PATH), today)
+    except LookupError:
+        print(f"No active academic block on {today}; skipping GA4 analytics.")
+        return
+
     property_id = os.environ.get("GA4_PROPERTY_ID")
     if property_id is None:
         raise RuntimeError("GA4_PROPERTY_ID is required.")
 
-    today = get_today(ACADEMIC_TIMEZONE)
     document = build_analytics_document(
         property_id=property_id,
         academic_blocks_path=ACADEMIC_BLOCKS_PATH,
