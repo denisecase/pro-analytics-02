@@ -32,29 +32,40 @@ This repository provides a clear, concise guide for professional Python projects
     The tools are installed just once and the project setup steps become routine.
     The professional workflow enables every project that follows.
 
-## First, Set Up Machine (One-Time)
+## A: Set Up Machine
 
-This is done once, then revisited as needed.
+This is typically done once, then revisited as needed,
+for example when setting up a new machine and
+to keep tools updated before starting a new
+course.
+
 Go to:
 
 - 🟢 [Workflow A. Set Up Machine](workflow-a-set-up-machine/)
   to install a few professional tools and get the machine ready for development.
   A machine that is set up correctly makes everything that follows easier.
 
-## Then, Start a Project
+## B: Explore an Example Project
 
-We have centralized the instructions for common workflows.
-Most people start with:
+Explore an existing, working professional Python project.
 
-- 🔵 [Workflow B. Apply Example Project](workflow-b-apply-example-project/)
-  to start with an existing project and apply the skills to a new problem.
+- 🔵 [Workflow B. Explore Example Project](workflow-b-explore-example-project/)
+  to clone, run, read, and experiment with an example project locally.
 
-## Later, Start a Project From Nothing
+## C: Start New Project
 
-For independent projects, the steps are similar.
+Build your own project, using the example as a guide.
 
-- Go to 🟠 [Workflow C. Start Project From Nothing](workflow-c-start-new-project/)
-  to **create and configure a new Python project** from scratch.
+- Go to 🟠 [Workflow C. Start New Project](workflow-c-start-new-project/)
+  to **create and configure a new Python project**.
+
+## D: Apply Skills
+
+Using the example skills, demonstrate their application to a
+unique data problem.
+
+- Go to 🟣 [Workflow D. Apply Skills](workflow-d-apply-skills/)
+  to **apply your new skills**.
 
 ## OPTIONAL: Share Feedback
 

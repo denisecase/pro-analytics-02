@@ -1,20 +1,46 @@
 # ============================================================
 # .markdownlint-cli2.yaml (ALL-PY-SRC-PYPI-REPOS)
 # ============================================================
-# Updated: 2026-08-26
+# Updated: 2026-10-11
 #
-# WHY: Check authored Markdown while ignoring generated output,
-# dependency directories, virtual environments, caches, and build artifacts.
-# REQ: Markdown lint should check source documentation, not generated docs,
-# dependency trees, coverage output, or runtime artifacts.
+# WHAT: Configures Markdown validation for published Python packages.
+#       YAML is a human-readable configuration file format.
+#       Markdownlint checks documentation against formatting rules.
 #
-# Run with:
-# npx markdownlint-cli2 --fix
+# WHEN: Use in repositories that publish Python packages to PyPI.
+#       Run checks when reviewing or preparing documentation.
+#
+# WHY: Published package documentation follows a more consistent
+#      formatting standard while excluding generated and external files.
+#
+# HOW: Open a terminal in the repository root and run:
+#
+#      npx markdownlint-cli2
+#
+#      To automatically correct supported formatting problems:
+#
+#      npx markdownlint-cli2 --fix
+#
+# TOOLS: markdownlint-cli2 runs using Node.js and npx.
+#        The VS Code markdownlint extension also recognizes these rules.
+#
+# SKILLS: Markdown, YAML, documentation quality, automated validation,
+#         file patterns, and software publishing.
+#
+# REQ: Check authored Markdown rather than generated documentation,
+#      dependency trees, caches, or build artifacts.
+#
+# OBS: The --fix option modifies Markdown files.
+# OBS: Publication rules replace the relaxed Markdown rule configuration.
+#
+# CUSTOM: Adjust file exclusions and rules for project requirements.
+# ============================================================
 
 # === Authored Markdown inputs ===
 
 globs:
   - "**/*.md"
+
 
 # === Generated, dependency, cache, and non-source ignores ===
 
@@ -58,23 +84,32 @@ ignores:
   - "**/CODEOWNERS"
   - "**/.github/CODEOWNERS"
 
-# === Markdown lint defaults ===
 
-config:
-  default: true # WHY: Enable default Markdown rules as the project baseline.
+# === Published package Markdown rules ===
 
-  # === Line length ===
+# WHY: Apply the publication standard rather than the relaxed ALL-REPOS rules.
+# WHY: Replace ensures disabled rules in .markdownlint.jsonc do not
+#      prevent stricter validation here.
 
-  MD013:
-    line_length: 100 # WHY: Keep authored prose readable in source and diffs.
-    headings: false # WHY: Long headings may be needed for clarity.
-    tables: false # WHY: Long table cells may be needed for readability.
-    code_blocks: false # WHY: Long code lines should not be wrapped by Markdown lint.
+overrides:
+  - filter:
+      - "**/*.md"
+    combine: replace
+    config:
+      default: true # WHY: Enable the standard Markdown rules.
 
-  # === Document structure ===
+      # === Line length ===
 
-  MD025: false # WHY: Allow multiple top-level headings in README/docs/index style files.
+      MD013:
+        line_length: 100 # WHY: Keep authored prose readable in source and diffs.
+        headings: false # WHY: Long headings may be needed for clarity.
+        tables: false # WHY: Long table cells may be needed for readability.
+        code_blocks: false # WHY: Long code lines should not be wrapped by Markdown lint.
 
-  # === Inline HTML ===
+      # === Document structure ===
 
-  MD033: false # WHY: Markdown allows raw HTML; docs may need embeds, details, video, images, and custom layout.
+      MD025: false # WHY: Allow multiple top-level headings in README/docs/index style files.
+
+      # === Inline HTML ===
+
+      MD033: false # WHY: Allow HTML embeds, details, video, images, and custom layouts.

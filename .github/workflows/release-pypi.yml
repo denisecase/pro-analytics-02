@@ -1,0 +1,111 @@
+# ============================================================
+# .github/workflows/release-pypi.yml (ALL-PY-SRC-PYPI-REPOS)
+# ============================================================
+# Updated: 2026-09-25
+#
+# WHY: Publish a tagged Python package release to PyPI.
+# REQ: Trigger ONLY on version tags like v1.2.3.
+# REQ: PyPI project must be configured for Trusted Publishing (OIDC).
+# REQ: pre-release.yml must build, validate, and upload the dist artifact.
+#
+# OBS: Two jobs, deliberately separated:
+#      1) pre-release - validates and builds the dist once.
+#      2) publish     - downloads that exact dist, creates the GitHub Release,
+#                       and publishes to PyPI. No rebuild, no re-check.
+
+name: Release (PyPI)
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: read # WHY: Workflow default is read-only; jobs elevate as needed.
+
+env:
+  PYTHONUNBUFFERED: "1"     # WHY: Real-time logging.
+  PYTHONIOENCODING: "utf-8" # WHY: Ensure UTF-8 encoding for international characters.
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+  # WHY: Serialize releases per tag and never cancel a release in progress.
+
+jobs:
+
+  # ------------------------------------------------------------
+  # 1) Validate and build once. Produces the `dist` artifact.
+  # ------------------------------------------------------------
+  pre-release:
+    uses: $/.github/workflows/pre-release.yml
+
+  # ------------------------------------------------------------
+  # 2) Publish the exact artifact that pre-release built and checked.
+  # ------------------------------------------------------------
+  publish:
+    needs: pre-release    # WHY: Never publish if pre-release checks fail.
+    runs-on: ubuntu-latest
+    timeout-minutes: 30   # WHY: Prevent hanging jobs. If over, it is likely stuck.
+    environment: pypi     # WHY: PyPI Trusted Publishing environment.
+    permissions:
+      contents: write     # WHY: Create the GitHub Release.
+      id-token: write     # WHY: PyPI Trusted Publishing (OIDC).
+
+    steps:
+      - name: A1) Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+        # WHY: Provides git/repo context for the release step.
+        # OBS: No deep history needed here; the artifact is downloaded, not rebuilt.
+
+      - name: A2) Download the built distribution
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        # OBS: Major must match the upload-artifact major in pre-release.yml.
+        with:
+          name: dist
+          path: dist
+
+      - name: A3) Extract plain version from tag
+        id: ver
+        shell: bash
+        run: echo "plain=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: A4) Verify downloaded artifact version matches tag
+        shell: bash
+        run: |
+          set -e
+          TAG="${STEPS_VER_OUTPUTS_PLAIN}"
+          echo "Tag version: $TAG"
+          ls dist
+
+          if ! ls dist/*"$TAG"*.whl dist/*"$TAG"*.tar.gz >/dev/null 2>&1; then
+            echo "ERROR: Downloaded artifact version does not match tag $TAG"
+            exit 1
+          fi
+
+          echo "Artifact version matches tag."
+        env:
+          STEPS_VER_OUTPUTS_PLAIN: ${{ steps.ver.outputs.plain }}
+
+      # ============================================================
+      # B) RELEASE AND PUBLISH
+      # ============================================================
+
+      - name: B1) Create GitHub Release and upload artifacts
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          generate_release_notes: true
+          files: |
+            dist/*.whl
+            dist/*.tar.gz
+          draft: false
+          prerelease: false
+          make_latest: true
+
+      - name: B2) Publish to PyPI with Trusted Publishing
+        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2
+        # OBS: Uploads dist/* by default; the downloaded artifact lands in dist/.

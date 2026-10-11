@@ -1,4 +1,4 @@
-# 🔵 Workflow B: Apply Example Project
+# 🔵 Workflow B: Explore Example Project
 
 <!-- On a page that could be read aloud,
 use two asterisks instead of backticks
@@ -36,41 +36,30 @@ That way it is ready for experiments as you start reading.
 <summary>WHY?</summary>
 
 This reflects how professionals often learn new tools and techniques:
-start with a working system, understand it, modify it,
-and adapt it to new situations.
+start with a working system and understand it.
+Consider how you could modify it
+and adapt it to new data problems.
 
-Starting from working code makes it possible to inspect project
-structure, run commands, check results, and make controlled changes.
+Example projects are a critical part of course content.
 
 </details>
 
-## Five Phases
+## Three Phases
 
 1. [Start & Run](01-start-and-run/index.md)
 2. [Read & Understand](02-read-and-understand/index.md)
-3. [Take Ownership](03-take-ownership/index.md)
-4. [Make a Technical Modification](04-make-technical-modification/index.md)
-5. [Apply the Skills to a New Problem](05-apply-skills/index.md)
+3. [Identify Reusable Techniques](03-identify-techniques/index.md)
 
-Each step is critical. Follow the detailed instructions.
+Complete all three phases using the detailed instructions.
 
 ---
 
 ## Verification
 
-1. I can clone, set up, and successfully run the example project on my machine.
+1. Clone, set up, and successfully run the example project on my machine.
 
-2. I can explain the purpose of the project, the main tools and techniques used,
+2. Explain the purpose of the project, the main tools and techniques used,
    and how data flows through the program.
-
-3. I can verify the project is now mine, with my own GitHub repository,
-   project identity, and Git history.
-
-4. I can make a technical modification, run and check the project,
-   and push the working changes to GitHub.
-
-5. I can apply the skills and techniques from the example to a new problem
-   or dataset, verify the results, communicate them professionally, and push the completed work to GitHub.
 
 ---
 

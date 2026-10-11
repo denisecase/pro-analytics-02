@@ -46,7 +46,7 @@ update the dependency lockfile, and
 synchronize the project's `.venv` environment.
 
 For additional instructions and troubleshooting, see
-[Set Up Project Environment](05-set-up-environment.md).
+[Set Up Project Environment](22-set-up-environment.md).
 
 ## Step 3. Run Checks and Tests (as available)
 

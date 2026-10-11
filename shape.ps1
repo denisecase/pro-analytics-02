@@ -1,19 +1,44 @@
-# ============================================================
-# shape.ps1 (ALL-REPOS)
-# ============================================================
-# Updated: 2026-10-04
-#
-# REQ: List project working files and directories that currently exist on disk.
-# WHY: Provide a concise, copyable view of the current project structure.
-# OBS: Does NOT depend on Git tracking or staging status.
-# OBS: Newly created files and directories appear immediately without git add.
-# OBS: Empty authored directories are included in the project shape.
-# OBS: Excludes common generated, cached, virtual environment, and build folders.
-# CUSTOM: Add path filters only if you want a narrower project shape.
-#
-# Run in a PowerShell terminal (available cross platform) with:
-# .\shape.ps1
+#Requires -Version 5.1
 
+<#
+============================================================
+shape.ps1 (ALL-REPOS) - Show Project Shape
+============================================================
+Updated: 2026-10-11
+
+WHAT: A PowerShell script that lists the files and directories
+      currently present in a project.
+      PowerShell scripts use the .ps1 file extension.
+
+WHEN: Use when reviewing or sharing the current project structure.
+      Running the script is optional.
+
+WHY: Provide a concise, copyable view of the current project
+     structure for communication and collaboration.
+
+POWERSHELL: PowerShell is a command shell and scripting language.
+            Windows includes Windows PowerShell 5.1.
+            The newer PowerShell (pwsh) is free and cross-platform.
+            Windows, macOS, and Linux users can install pwsh.
+
+HOW: Open a PowerShell terminal in the project root and run:
+
+     .\shape.ps1
+
+TOOLS: PowerShell inspects the local file system.
+       Git, Python, and other development tools are not required.
+
+SKILLS: PowerShell, scripting, project structure,
+        file-system navigation, and technical communication.
+
+OBS: Lists files and directories whether or not Git tracks them.
+OBS: Includes newly created files and empty directories.
+OBS: Excludes common generated, cached, and build directories.
+OBS: Does not modify project files or directories.
+
+CUSTOM: Adjust excluded directory names when necessary.
+============================================================
+#>
 
 # === CONFIGURE EXCLUDED DIRECTORIES ===
 
@@ -58,10 +83,7 @@ $projectRoot = (Get-Location).Path
 
 Get-ChildItem -Path $projectRoot -Recurse -Force |
     Where-Object {
-        $relativePath = [System.IO.Path]::GetRelativePath(
-            $projectRoot,
-            $_.FullName
-        )
+        $relativePath = $_.FullName.Substring($projectRoot.Length).TrimStart('\', '/')
 
         $pathParts = $relativePath -split '[\\/]'
 
@@ -77,10 +99,7 @@ Get-ChildItem -Path $projectRoot -Recurse -Force |
         -not $exclude
     } |
     ForEach-Object {
-        $relativePath = [System.IO.Path]::GetRelativePath(
-            $projectRoot,
-            $_.FullName
-        )
+        $relativePath = $_.FullName.Substring($projectRoot.Length).TrimStart('\', '/')
 
         if ($_.PSIsContainer) {
             ".\$relativePath\"

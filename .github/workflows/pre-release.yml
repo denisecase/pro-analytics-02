@@ -1,0 +1,123 @@
+# ============================================================
+# .github/workflows/pre-release.yml (ALL-PY-SRC-PYPI-REPOS)
+# ============================================================
+# Updated: 2026-09-25
+#
+# WHY: Validate tagged Python package artifacts before release.
+# REQ: Reusable by PyPI package repositories.
+# OBS: Generic only; repo-specific artifact checks belong in separate workflows.
+
+name: Pre-Release Checks and Build
+
+on:
+  workflow_call:     # WHY: Allow calling from PyPI repos in this org.
+  workflow_dispatch: # WHY: Allow manual trigger for pre-release checks if needed.
+
+permissions: # WHY: Use least privileges required.
+  contents: read
+
+env:
+  PYTHONUNBUFFERED: "1"     # WHY: Real-time logging.
+  PYTHONIOENCODING: "utf-8" # WHY: Ensure UTF-8 encoding for international characters.
+  UV_FROZEN: "1"            # WHY: Release validation MUST use uv.lock without updating it.
+
+jobs:
+  pre-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # WHY: Prevent hanging jobs. If over, it is likely stuck.
+
+    steps:
+      # ============================================================
+      # A) ASSEMBLE: Checkout code and set up environment
+      # ============================================================
+
+      - name: A1) Checkout repository with full history and tags
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0   # WHY: hatch-vcs needs full history to derive version from tags.
+          fetch-tags: true
+          ref: ${{ github.ref }}
+          persist-credentials: false
+
+      - name: A2) Install uv (with caching)
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          enable-cache: true
+          # WHY: Cache uv-managed artifacts for faster subsequent runs.
+          cache-dependency-glob: "uv.lock"
+          # WHY: Invalidate dependency cache when the committed lockfile changes.
+
+      - name: A3) Install project Python
+        run: uv python install
+        # WHY: Ensures the Python version declared in .python-version is available.
+        # OBS: uv manages the interpreter locally in the CI environment.
+
+      - name: A4) Display versions
+        run: |
+          uv --version
+          uv run python --version
+        # WHY: Version output makes release logs easier to debug.
+
+      # ============================================================
+      # B) BASELINE CHECKS: Build while git is pristine
+      # ============================================================
+
+      - name: B1) Extract plain version from tag (no leading 'v')
+        id: ver
+        shell: bash
+        run: echo "plain=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: B2) Verify git is clean before build
+        shell: bash
+        run: |
+          echo "Git status:"
+          git status --short
+          echo "Git describe:"
+          git describe --tags --always --dirty
+
+          if [[ $(git status --porcelain) ]]; then
+            echo "ERROR: Git tree is dirty before build!"
+            echo "Likely causes include an out-of-date uv.lock or another"
+            echo "workflow step modifying tracked repository files."
+            echo "Fix locally, commit the corrected files, then recreate the tag."
+            exit 1
+          fi
+
+      - name: B3) Build sdist + wheel
+        # WHY: hatch-vcs derives version from the git tag.
+        # WHY: Build before dependency sync so artifact creation starts
+        #      from the pristine tagged repository state.
+        run: uv build
+
+      - name: B4) Ensure built artifact version matches tag
+        shell: bash
+        run: |
+          set -e
+          TAG="${STEPS_VER_OUTPUTS_PLAIN}"
+          echo "Tag version: $TAG"
+          ls dist
+
+          if ! ls dist/*"$TAG"*.whl dist/*"$TAG"*.tar.gz >/dev/null 2>&1; then
+            echo "ERROR: Built artifact version does not match tag $TAG"
+            exit 1
+          fi
+
+          echo "Artifact version matches tag."
+        env:
+          STEPS_VER_OUTPUTS_PLAIN: ${{ steps.ver.outputs.plain }}
+
+      - name: B5) Install dependencies from committed lockfile
+        run: uv sync --frozen
+        # WHY: Install all configured dependency groups exactly from uv.lock.
+        # REQ: Release validation MUST fail rather than update a stale lockfile.
+
+      - name: B6) Validate built artifacts
+        run: uvx twine check dist/*
+        # WHY: Confirm wheel and sdist metadata are valid before publishing.
+
+      - name: B7) Upload built distribution artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: dist
+          path: dist/*
+        # WHY: Publish the exact validated artifacts to the release workflow.

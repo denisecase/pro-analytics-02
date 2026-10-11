@@ -23,7 +23,7 @@ to DASHES on package indexes like PyPI.
 ```text
 /pro-analytics-02/
 /pro-analytics-02/docs/workflow-a-set-up-machine
-/pro-analytics-02/docs/workflow-b-apply-example-project
+/pro-analytics-02/docs/workflow-b-explore-example-project
 /pro-analytics-02/docs/workflow-c-start-new-project
 ```
 

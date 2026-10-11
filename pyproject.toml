@@ -1,151 +1,98 @@
 # ============================================================
-# pyproject.toml (CUSTOM)
+# pyproject.toml (Python project configuration)
 # ============================================================
-# Updated: 2026-10-09: replace pre-commit with prek, add exclude-newer = "7 days"
-
-# REQ: Python projects MUST include pyproject.toml as the single source of truth.
-# WHY: Centralizes project configuration.
-# CUSTOM: Update identity and build tool src folders.
+# Updated: 2026-10-11
+#
+# REQ: All Python src/ projects SHOULD include pyproject.toml.
+# WHAT: Defines project identity, dependencies, and build configuration.
+# WHY: Keeps Python project metadata and package requirements together.
+# CUSTOM: Update project identity, dependencies, and package paths.
 
 # ============================================================
-# === SECTION 1: PROJECT IDENTITY ===
+# === SECTION: PROJECT IDENTITY ===
 # ============================================================
 
 [project]
 name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
 readme = "README.md"
 requires-python = ">=3.14" # 3.14 STILL REQUIRED SEP-2026
-version = "0.4.7"
+dynamic = ["version"]
 description = "Professional Python for Analytics."
 license-files = ["LICENSE"]
-authors = [
-    { name = "Denise Case", email = "dcase@nwmissouri.edu" },
-]
-classifiers = [
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Developers",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.14",
-    "Typing :: Typed",
-]
-keywords = ["python", "analytics", "data science", "professional development"]
+
+# ============================================================
+# SECTION: PROJECT RUNTIME DEPENDENCIES
+# ============================================================
+
 dependencies = [
     # REQ.DEPS: External packages used by the project code.
     "datafun-toolkit", # WHY: Provides professional Python utilities for privacy-preserving logging.
-    "pandas", # WHY: Data analysis and manipulation.
-    "scikit-learn", # WHY: Machine learning and data mining.
-    "matplotlib", # WHY: Charting. REQ 3.14. pulls in kiwisolver, and kiwisolver publishes a Windows wheel for CPython 3.14 but not 3.15.
     "google-analytics-data>=0.23.0",
+    "tzdata>=2026.5",
 ]
+
+# ============================================================
+# === SECTION: DEVELOPMENT AND DOCUMENTATION DEPENDENCIES ===
+# ============================================================
+# These packages support developing, testing, and documenting the project.
+# They are not required to execute the project code.
 
 [dependency-groups]
-# WHY: Development dependencies support maintaining and validating the project
-# but are not runtime dependencies or optional features of the published package.
+# WHY: Development and documentation tools support maintaining, validating,
+#      and documenting the project without becoming runtime dependencies.
 
 dev = [
-    # REQ.DEV.DEPS: External packages used for linting, testing, type checking, etc.
-    "pytest>=9",  # WHY: Test framework for unit and integration tests.
-    "pytest-cov", # WHY: Test coverage reporting for quality metrics and CI gating.
-    "ruff",       # WHY: Fast linting and formatting for Python code.
-    "ty",         # WHY: Type checking for static analysis and type safety.
+    # REQ.DEV.DEPS: Standard tools for Python development and validation.
+    "pytest",     # WHY: Run automated tests.
+    "pytest-cov", # WHY: Measure and report test coverage.
+    "ruff",       # WHY: Lint and format Python code.
+    "ty",         # WHY: Check Python types using static analysis.
 ]
+
 docs = [
-    # REQ.DOCS.DEPS: External packages used to generate project documentation.
-    "zensical",
-    "mkdocstrings[python]", # WHY: Auto-generate API docs from docstrings.
+    # REQ.DOCS.DEPS: Standard tools for generating project documentation.
+    "mkdocstrings[python]", # WHY: Generate API documentation from Python docstrings.
+    "zensical",             # WHY: Build the project documentation website.
 ]
-
-notebooks = [
-    # "ipykernel", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
-    # "ipython", # WHY: Required for Jupyter notebooks to run in VS Code and other IDEs.
-    # "marimo", # WHY: New reactive / notebook option.
-]
-
-[project.urls]
-Homepage = "https://github.com/denisecase/pro-analytics-02"
-Repository = "https://github.com/denisecase/pro-analytics-02"
-Documentation = "https://denisecase.github.io/pro-analytics-02/"
-Issues = "https://github.com/denisecase/pro-analytics-02/issues"
-Changelog = "https://github.com/denisecase/pro-analytics-02/blob/main/CHANGELOG.md"
 
 # ============================================================
-# SECTION 2: TOOL CONFIGURATION (Professional basics)
+# === SECTION: TOOL CONFIGURATION ===
 # ============================================================
-
-# === PYTEST (VERIFY LOGIC) ===
-
-[tool.pytest.ini_options]
-# WHY: Consistent test discovery and coverage visibility.
-minversion = "9.0"
-testpaths = ["tests"]
-addopts = "--cov=src/pro_analytics_02/ --cov-fail-under=30 --cov-report=term-missing"
-filterwarnings = [
-    "ignore:FigureCanvasAgg is non-interactive, and thus cannot be shown:UserWarning",
-]
-
-# === RUFF (PYTHON FORMATTING AND LINTING) ===
-[tool.ruff]
-# CUSTOM for this research project
-extend-exclude = [
-    "generalization/sources",
-    "generalization/results",
-    "validation",
-]
-
-[tool.ruff.lint] # WHY: Evolve with Ruff's defaults; production might pin an explicit set.
-extend-select = [
-    # --- turn on for additional linting rules ---
-    "D", # WHY: Require docstrings; VS Code helps generate them.
-]
-
-[tool.ruff.lint.isort] # WHY: Sort plain-import and from-import lines together within each section.
-force-sort-within-sections = true
-
-[tool.ruff.lint.per-file-ignores] # WHY: Some file types need lint exceptions.
-"src/**/__init__.py" = ["F401"] # Allow re-export patterns.
-"src/**/_version.py" = ["ALL"] # Auto-generated file; do not lint.
-"tests/**/*.py" = ["D", "B018"] # Tests need no docstrings; B018 is default-on.
-"notebooks/**/*.py" = [
-    "D",
-    "PLR1711",
-    "RUF059",
-] # marimo cells: bare returns + cell-scoped unused vars are the format, not defects
-
-[tool.ruff.lint.pydocstyle] # WHY: Use Google docstring style when D is enabled.
-convention = "google"
 
 # === UV (PYTHON ENVIRONMENT AND DEPENDENCY MANAGEMENT) ===
 
 [tool.uv]
-# WHY: Install all dependency groups defined by this repository by default.
-# OBS: This keeps the canonical `uv sync` command identical across project types
-#      and ensures all repository features work after setup.
+# WHY: Install all dependency groups with the canonical uv sync.
 default-groups = "all"
-# WHY: Give a bit of time to find hijacked releases before installing.
-# CUSTOM: Should match `uvx prek update --freeze --cooldown-days 7`
+
+# WHY: Allow time for newly published dependency releases to be evaluated.
 exclude-newer = "7 days"
 
 # ============================================================
-# SECTION 3: BUILD SYSTEM
+# === SECTION: BUILD SYSTEM ===
 # ============================================================
 #
-# REQ: A build system MUST be declared for package discovery.
-# REQ: All importable code MUST live under src/.
-# WHY src/ layout: Prevents accidental imports from the repo root;
-# ensures consistent behavior across IDEs, tests, CI, and PyPI.
+# WHAT: Defines how the project's Python package is built and installed.
+# WHY: Hatchling enables uv to install the local src/ package so
+#      Python modules and tests can import project code consistently.
+# REQ: All importable project code MUST live under src/.
+# CUSTOM: Match the package directory under src/ exactly.
 
 [build-system]
 build-backend = "hatchling.build"
 requires = ["hatchling", "hatch-vcs"]
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/pro_analytics_02"]
+
+# ============================================================
+# === SECTION: BUILD SYSTEM DYNAMIC TAGS ===
+# ============================================================
+
 [tool.hatch.build.hooks.vcs]
 # WHY: Writes computed version into src/*/_version.py at build time.
 # CUSTOM: Must match src/ folders.
 version-file = "src/pro_analytics_02/_version.py"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/pro_analytics_02"]
 
 [tool.hatch.version]
 # Used when no git tags present (fresh clone, CI). Keep in sync with CITATION.cff.

@@ -13,10 +13,11 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
-## [0.5.0] - 2026-10-08
+## [0.5.0] - 2026-10-11
 
 ### Changed
 
+- updated workflows to learn from example, but create own from scratch
 - ran pup-up to get more current support files.
 - Updated `sit.ps1` to use `prek` and run `uv audit`.
 
@@ -223,7 +224,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.4.7...HEAD
+[Unreleased]: https://github.com/denisecase/pro-analytics-02/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.5.0
 [0.4.7]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.7
 [0.4.6]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.6
 [0.4.1]: https://github.com/denisecase/pro-analytics-02/releases/tag/v0.4.1

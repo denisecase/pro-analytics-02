@@ -82,7 +82,7 @@ For best results, follow instructions carefully.
 Google NotebookLMs have been set up to help with:
 
 - [Workflow A: Set Up Machine](https://notebooklm.google.com/notebook/7a2a6711-9cd0-4f3b-a39a-13f7a361d072)
-- [Workflow B: Apply Example Project](https://notebooklm.google.com/notebook/c2de21ca-e973-4a44-9de6-be7ac501eb5d)
+- [Workflow B: Explore Example Project](https://notebooklm.google.com/notebook/c2de21ca-e973-4a44-9de6-be7ac501eb5d)
 
 Those links allow you to access:
 

@@ -236,12 +236,12 @@ requires_review = ["human_review"]
 requires_evidence = ["decision_note"]
 ai_max_authority = "drafting"
 
-# --- Workflow B: Apply Example Project ---
+# --- Workflow B: Explore Example Project ---
 
 [[surface]]
 id = "workflow-b-example-project"
 object_kind = "directory"
-paths = ["docs/workflow-b-apply-example-project/**"]
+paths = ["docs/workflow-b-explore-example-project/**"]
 description = "Example-project workflow instructions that guide cloning, setup, authorship changes, project execution, technical modifications, and applied skills."
 oversight_role = "curriculum"
 codeowners_order = 120
