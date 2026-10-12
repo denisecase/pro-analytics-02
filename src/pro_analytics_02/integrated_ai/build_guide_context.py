@@ -12,13 +12,15 @@
 import json
 from pathlib import Path
 import re
-from typing import TypedDict
+import tomllib
+from typing import Any, TypedDict
 
 
 class GuidePage(TypedDict):
     """Documentation page available to the assistant."""
 
     path: str
+    section: str
     title: str
     content: str
 
@@ -56,8 +58,49 @@ def get_page_title(content: str, source_path: Path) -> str:
     return source_path.stem.replace("-", " ").replace("_", " ")
 
 
-def build_guide_context(docs_dir: Path) -> GuideContext:
-    """Collect Markdown pages with paths relative to the docs directory."""
+def find_nav(config: Any) -> Any:
+    """Find the first `nav` entry anywhere in the parsed zensical.toml."""
+    if isinstance(config, dict):
+        if "nav" in config:
+            return config["nav"]
+        for value in config.values():
+            found = find_nav(value)
+            if found is not None:
+                return found
+    return None
+
+
+def collect_nav_paths(nav: Any) -> set[str]:
+    """Collect every Markdown path listed in a nested nav structure."""
+    if isinstance(nav, str):
+        return {nav}
+    if isinstance(nav, list):
+        return set().union(*(collect_nav_paths(item) for item in nav))
+    if isinstance(nav, dict):
+        return set().union(*(collect_nav_paths(item) for item in nav.values()))
+    return set()
+
+
+def load_nav_paths(config_path: Path) -> set[str]:
+    """Return the Markdown paths in the site nav, or an empty set if none."""
+    if not config_path.is_file():
+        return set()
+    config = tomllib.loads(config_path.read_text(encoding="utf-8"))
+    return collect_nav_paths(find_nav(config))
+
+
+def get_section(relative_path: Path) -> str:
+    """Use the top-level docs folder as the section (for example, workflow-c-...)."""
+    return relative_path.parts[0] if len(relative_path.parts) > 1 else "home"
+
+
+def build_guide_context(
+    docs_dir: Path, nav_paths: set[str] | None = None
+) -> GuideContext:
+    """Collect Markdown pages with paths relative to the docs directory.
+
+    When nav_paths is given, only pages listed in the site nav are included.
+    """
     if not docs_dir.is_dir():
         raise FileNotFoundError(f"Documentation directory not found: {docs_dir}")
 
@@ -78,6 +121,12 @@ def build_guide_context(docs_dir: Path) -> GuideContext:
         if any(part.startswith(".") for part in relative_path.parts):
             continue
 
+        if any(part.startswith(".") for part in relative_path.parts):
+            continue
+
+        if nav_paths and relative_path.as_posix() not in nav_paths:
+            continue
+
         content = remove_front_matter(source_path.read_text(encoding="utf-8-sig"))
 
         if not content:
@@ -86,6 +135,7 @@ def build_guide_context(docs_dir: Path) -> GuideContext:
         pages.append(
             {
                 "path": relative_path.as_posix(),
+                "section": get_section(relative_path),
                 "title": get_page_title(content, source_path),
                 "content": content,
             }
@@ -112,7 +162,9 @@ def main() -> None:
     docs_dir = repo_root / "docs"
     output_path = docs_dir / "assets" / "data" / "guide-context.json"
 
-    context = build_guide_context(docs_dir)
+    nav_paths = load_nav_paths(repo_root / "zensical.toml")
+    context = build_guide_context(docs_dir, nav_paths)
+
     write_guide_context(context, output_path)
 
     print(

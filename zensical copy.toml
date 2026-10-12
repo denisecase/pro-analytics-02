@@ -198,12 +198,12 @@ nav = [
 
     { "Reference" = [
         { "Datasets" = [
-            { "01. Continuous Intelligence" = "datasets/cintel.md" },
-            { "02. Web Mining and NLP" = "datasets/nlp.md" },
+            { "01. Continuous Intelligence" = "reference/datasets/cintel.md" },
+            { "02. Web Mining and NLP" = "reference/datasets/nlp.md" },
         ] },
         { "Portfolios" = [
-            { "01. Continuous Intelligence" = "portfolios/cintel.md" },
-            { "02. Web Mining and NLP" = "portfolios/nlp.md" },
+            { "01. Continuous Intelligence" = "reference/portfolios/cintel.md" },
+            { "02. Web Mining and NLP" = "reference/portfolios/nlp.md" },
         ] },
         { "API" = "reference/api/api.md" },
         { "Packaging" = [

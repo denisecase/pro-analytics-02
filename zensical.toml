@@ -163,7 +163,14 @@ nav = [
 
     { "Workflow B. Explore Example Project" = [
         { "Overview" = "workflow-b-explore-example-project/index.md" },
-        { "1. Start & Run" = "workflow-b-explore-example-project/01-start-and-run/index.md" },
+            { "1. Start & Run" = [
+            { "Overview" = "workflow-b-explore-example-project/01-start-and-run/index.md" },
+            { "Open the example repository" = "workflow-b-explore-example-project/01-start-and-run/01-open-example-repository.md" },
+            { "Clone the example repository" = "workflow-b-explore-example-project/01-start-and-run/02-clone-repository.md" },
+            { "Open VS Code and extensions" = "workflow-b-explore-example-project/01-start-and-run/03-open-vscode-extensions-maybe-kafka.md" },
+            { "Set up environment" = "workflow-b-explore-example-project/01-start-and-run/04-set-up-environment.md" },
+            { "Run the project" = "workflow-b-explore-example-project/01-start-and-run/05-run-project.md" },
+        ] },
         { "2. Read & Understand" = "workflow-b-explore-example-project/02-read-and-understand/index.md" },
         { "3. Identify Techniques" = "workflow-b-explore-example-project/03-identify-techniques/index.md" },
     ] },
@@ -186,23 +193,28 @@ nav = [
     { "Workflow D. Apply Example Skills" = [
         { "Overview" = "workflow-d-apply-skills/index.md" },
         { "Make technical modification" = "workflow-d-apply-skills/make-technical-modification.md" },
+        { "Run Python" = "workflow-d-apply-skills/run-python.md" },
         { "Verify modification" = "workflow-d-apply-skills/verify-modification.md" },
+        { "Git add-commit-push" = "workflow-d-apply-skills/git-add-commit-push.md" },
         { "Apply example skills" = "workflow-d-apply-skills/apply-example-skills.md" },
         { "Verify new problem" = "workflow-d-apply-skills/verify-new-problem.md" },
+        { "Git add-commit-push" = "workflow-d-apply-skills/git-add-commit-push.md" },
         { "Verify results" = "workflow-d-apply-skills/verify-results.md" },
+        { "Git add-commit-push" = "workflow-d-apply-skills/git-add-commit-push.md" },
         { "Update documentation" = "workflow-d-apply-skills/update-docs.md" },
         { "Update README" = "workflow-d-apply-skills/update-readme.md" },
+        { "Git add-commit-push" = "workflow-d-apply-skills/git-add-commit-push.md" },
         { "Update GitHub About" = "workflow-d-apply-skills/update-github-about.md" },
     ] },
 
     { "Reference" = [
         { "Datasets" = [
-            { "01. Continuous Intelligence" = "datasets/cintel.md" },
-            { "02. Web Mining and NLP" = "datasets/nlp.md" },
+            { "01. Continuous Intelligence" = "reference/datasets/cintel.md" },
+            { "02. Web Mining and NLP" = "reference/datasets/nlp.md" },
         ] },
         { "Portfolios" = [
-            { "01. Continuous Intelligence" = "portfolios/cintel.md" },
-            { "02. Web Mining and NLP" = "portfolios/nlp.md" },
+            { "01. Continuous Intelligence" = "reference/portfolios/cintel.md" },
+            { "02. Web Mining and NLP" = "reference/portfolios/nlp.md" },
         ] },
         { "API" = "reference/api/api.md" },
         { "Packaging" = [
