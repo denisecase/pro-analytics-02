@@ -57,7 +57,10 @@
     const label = document.createElement("strong");
     const period = document.createElement("small");
 
-    label.textContent = "Page activity this academic block";
+    label.textContent =
+      analytics.is_current === false
+        ? "Page activity, most recent academic block"
+        : "Page activity this academic block";
     summary.append(label, document.createElement("br"));
     summary.append(
       `${metrics.unique_visitors} unique visitors · `,

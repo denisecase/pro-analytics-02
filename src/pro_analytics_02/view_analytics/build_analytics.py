@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import TypedDict
 
 from pro_analytics_02.view_analytics.base_academic_blocks import (
-    get_current_block,
+    get_display_block,
     get_estimated_students,
     get_today,
     load_blocks,
@@ -35,6 +35,7 @@ class AnalyticsDocument(TypedDict):
     """Public, anonymous analytics generated for one academic block."""
 
     block_id: str
+    is_current: bool
     period_start: str
     period_end: str
     estimated_students: int
@@ -51,24 +52,28 @@ def build_analytics_document(
     path_prefix: str = SITE_PATH_PREFIX,
     fetch_page_metrics: PageAnalyticsFetcher = fetch_page_analytics,
 ) -> AnalyticsDocument:
-    """Collect the current block metadata and its page-level GA4 metrics."""
+    """Collect the current (or most recent) block and its page-level GA4 metrics."""
     blocks = load_blocks(academic_blocks_path)
-    current_block = get_current_block(blocks, today)
+    block = get_display_block(blocks, today)
+
+    # WHY: During a break, report the whole most recent block, not the break.
+    period_end = min(today, block.end)
     estimated_students = get_estimated_students(
-        current_block.id,
+        block.id,
         enrollment_estimates_path,
     )
     pages = fetch_page_metrics(
         property_id,
-        current_block.start,
-        today,
+        block.start,
+        period_end,
         path_prefix,
     )
 
     return AnalyticsDocument(
-        block_id=current_block.id,
-        period_start=current_block.start.isoformat(),
-        period_end=today.isoformat(),
+        block_id=block.id,
+        is_current=today <= block.end,
+        period_start=block.start.isoformat(),
+        period_end=period_end.isoformat(),
         estimated_students=estimated_students,
         generated_at=_format_utc(generated_at),
         pages=pages,
@@ -87,15 +92,15 @@ def write_analytics_json(
 
 
 def main() -> None:
-    """Build guide analytics when an academic block is active."""
+    """Build guide analytics for the current or most recent academic block."""
     today = get_today(ACADEMIC_TIMEZONE)
 
-    # WHY: Academic breaks have no current block.
-    # OBS: Documentation deployment must continue during academic breaks.
+    # WHY: During a break, keep reporting the most recent block.
+    # OBS: Documentation deployment must continue even with no block started.
     try:
-        get_current_block(load_blocks(ACADEMIC_BLOCKS_PATH), today)
+        get_display_block(load_blocks(ACADEMIC_BLOCKS_PATH), today)
     except LookupError:
-        print(f"No active academic block on {today}; skipping GA4 analytics.")
+        print(f"No academic block has started by {today}; skipping GA4 analytics.")
         return
 
     property_id = os.environ.get("GA4_PROPERTY_ID")

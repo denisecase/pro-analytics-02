@@ -75,6 +75,22 @@ def get_current_block(
     return current_blocks[0]
 
 
+def get_display_block(
+    blocks: Iterable[AcademicBlock],
+    today: date,
+) -> AcademicBlock:
+    """Return the current block, or the most recent block during a break.
+
+    Raises LookupError before the first block has started.
+    """
+    started = [block for block in blocks if block.start <= today]
+
+    if not started:
+        raise LookupError(f"No academic block has started by {today.isoformat()}.")
+
+    return max(started, key=lambda block: block.start)
+
+
 def get_estimated_students(block_id: str, path: str | Path) -> int:
     """Return a block override or the default estimated-student count."""
     data = _load_toml(path)

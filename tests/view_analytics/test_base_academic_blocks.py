@@ -8,6 +8,7 @@ import pytest
 from pro_analytics_02.view_analytics.base_academic_blocks import (
     AcademicBlock,
     get_current_block,
+    get_display_block,
     get_estimated_students,
     get_today,
     load_blocks,
@@ -135,3 +136,26 @@ def test_get_estimated_students_requires_an_available_estimate(
 
     with pytest.raises(KeyError, match="No enrollment estimate exists"):
         get_estimated_students("2026-fall-1", path)
+
+
+def test_get_display_block_returns_current_block_when_active() -> None:
+    first = AcademicBlock("a", date(2026, 8, 24), date(2026, 10, 9))
+    second = AcademicBlock("b", date(2026, 10, 19), date(2026, 12, 4))
+
+    assert get_display_block([first, second], date(2026, 9, 1)) == first
+    assert get_display_block([first, second], date(2026, 10, 19)) == second
+
+
+def test_get_display_block_returns_most_recent_block_during_break() -> None:
+    first = AcademicBlock("a", date(2026, 8, 24), date(2026, 10, 9))
+    second = AcademicBlock("b", date(2026, 10, 19), date(2026, 12, 4))
+
+    assert get_display_block([first, second], date(2026, 10, 11)) == first
+    assert get_display_block([first, second], date(2027, 1, 1)) == second
+
+
+def test_get_display_block_raises_before_first_block() -> None:
+    block = AcademicBlock("a", date(2026, 8, 24), date(2026, 10, 9))
+
+    with pytest.raises(LookupError, match="No academic block has started"):
+        get_display_block([block], date(2026, 8, 1))
