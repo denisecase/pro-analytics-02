@@ -1,4 +1,4 @@
-# 🟠 Create Project
+# 🟣 Create Project Files
 
 > Create the key project files.
 
@@ -116,7 +116,6 @@ In **zensical.toml**:
 There are usually at least four locations to change.
 
 Update the title, name, and links in **docs/index.md**.
-The full story is written in Phase 4.
 
 Update any names and repository references in **.github/workflows/**.
 
@@ -185,4 +184,4 @@ Only files the project uses should be listed.
 
 ---
 
-[◄ Back to 🟠 Workflow C](index.md)
+[◄ Back to 🟣 Workflow D](index.md)

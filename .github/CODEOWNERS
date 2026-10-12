@@ -22,70 +22,79 @@
 # Surfaces are emitted by codeowners_order, then surface id.
 
 # Surface: course-home-and-navigation (role: curriculum)
-/README.md                                 @denisecase
-/docs/index.md                             @denisecase
+/README.md                                   @denisecase
+/docs/index.md                               @denisecase
 
 # Surface: workflow-a-machine-setup (role: curriculum)
-/docs/workflow-a-set-up-machine/**         @denisecase
+/docs/workflow-a-set-up-machine/**           @denisecase
 
 # Surface: workflow-b-example-project (role: curriculum)
 /docs/workflow-b-explore-example-project/**  @denisecase
 
 # Surface: workflow-c-new-project (role: curriculum)
-/docs/workflow-c-start-new-project/**      @denisecase
+/docs/workflow-c-start-new-project/**        @denisecase
+
+# Surface: workflow-d-apply-skills (role: curriculum)
+/docs/workflow-d-apply-skills/**             @denisecase
+
+# Surface: workflow-e-finalize-project (role: curriculum)
+/docs/workflow-e-finalize/**                 @denisecase
 
 # Surface: ai-use-and-governance (role: curriculum)
-/docs/ai-use-and-governance/**             @denisecase
-/AI_USE.md                                 @denisecase
+/docs/ai-use-and-governance/**               @denisecase
+/AI_USE.md                                   @denisecase
 
 # Surface: reference-documentation (role: curriculum)
-/docs/reference/**                         @denisecase
-/docs/tools/**                             @denisecase
-/docs/help/**                              @denisecase
-/docs/glossary/**                          @denisecase
+/docs/reference/**                           @denisecase
+/docs/tools/**                               @denisecase
+/docs/help/**                                @denisecase
+/docs/glossary/**                            @denisecase
 
 # Surface: dataset-and-portfolio-references (role: curriculum)
-/docs/datasets/**                          @denisecase
-/docs/portfolios/**                        @denisecase
+/docs/datasets/**                            @denisecase
+/docs/portfolios/**                          @denisecase
 
 # Surface: documentation-build-configuration (role: tooling)
-/zensical.toml                             @denisecase
+/zensical.toml                               @denisecase
 
 # Surface: project-configuration (role: tooling)
-/pyproject.toml                            @denisecase
-/uv.lock                                   @denisecase
+/pyproject.toml                              @denisecase
+/uv.lock                                     @denisecase
 
 # Surface: repository-hygiene-configuration (role: tooling)
-/.editorconfig                             @denisecase
-/.gitattributes                            @denisecase
-/.gitignore                                @denisecase
-/.markdownlint-cli2.yaml                   @denisecase
-/prek.toml                   @denisecase
+/.editorconfig                               @denisecase
+/.gitattributes                              @denisecase
+/.gitignore                                  @denisecase
+/.markdownlint-cli2.yaml                     @denisecase
+/prek.toml                                   @denisecase
 
 # Surface: project-log-evidence (role: curriculum)
-/project.log                               @denisecase
+/project.log                                 @denisecase
+
+# Surface: repository-manifest (role: repository_governance)
+/SE_MANIFEST.toml                            @denisecase
 
 # Surface: citation-identity (role: repository_governance)
-/CITATION.cff                              @denisecase
+/CITATION.cff                                @denisecase
 
 # Surface: repository-governance (role: repository_governance)
-/AGENTS.md                                 @denisecase
-/CONTRIBUTING.md                           @denisecase
-/DECISIONS.md                              @denisecase
-/CHANGELOG.md                              @denisecase
+/AGENTS.md                                   @denisecase
+/CONTRIBUTING.md                             @denisecase
+/DECISIONS.md                                @denisecase
+/CHANGELOG.md                                @denisecase
 
 # Surface: license-surface (role: repository_governance)
-/LICENSE                                   @denisecase
+/LICENSE                                     @denisecase
 
 # Surface: release-and-automation-authority (role: release)
-/.github/dependabot.yml                    @denisecase
-/.github/workflows/**                      @denisecase
+/.github/dependabot.yml                      @denisecase
+/.github/workflows/**                        @denisecase
 
 # Surface: generated-codeowners (role: release)
-/.github/CODEOWNERS                        @denisecase
+/.github/CODEOWNERS                          @denisecase
 
 # Surface: repository-security (role: security)
-/SECURITY.md                               @denisecase
+/SECURITY.md                                 @denisecase
 
 # Surface: authority-manifest (role: owner)
-/.accountability/surfaces.toml             @denisecase
+/.accountability/surfaces.toml               @denisecase

@@ -22,7 +22,7 @@ so these finishing touches are an important part of the work.
 
 </details>
 
-## Finalize and Present
+## Finishing Touches
 
 Present your independent work professionally.
 

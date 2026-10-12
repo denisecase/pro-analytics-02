@@ -71,7 +71,7 @@ custom project.
 
 Finalize your project for your GitHub portfolio.
 
-- Go to 🔴 [Workflow E. Finalize and Present](workflow-e-finalize/)
+- Go to 🔴 [Workflow E. Finalize Project](workflow-e-finalize/)
   to **finalize your project**.
 
 ## OPTIONAL: Share Feedback

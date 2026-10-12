@@ -15,7 +15,7 @@
 -->
 
 [![NotebookLM: Set Up Machine](https://img.shields.io/badge/NotebookLM-Set%20Up%20Machine-blue?logo=google)](https://notebooklm.google.com/notebook/7a2a6711-9cd0-4f3b-a39a-13f7a361d072)
-[![NotebookLM: Explore Example Project](https://img.shields.io/badge/NotebookLM-Set%20Up%20Machine-blue?logo=google)](https://notebook.google.com/notebook/c2de21ca-e973-4a44-9de6-be7ac501eb5d)
+[![NotebookLM: Explore Example Project](https://img.shields.io/badge/NotebookLM-Explore%20Example%20Project-blue?logo=google)](https://notebook.google.com/notebook/c2de21ca-e973-4a44-9de6-be7ac501eb5d)
 
 [![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/pro-analytics-02/)
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](https://github.com/denisecase/pro-analytics-02/blob/main/pyproject.toml)
@@ -44,26 +44,20 @@ For best results, consult the detailed instructions in this
 [**guide**](https://denisecase.github.io/pro-analytics-02/).
 Instructions are provided for all major operating systems and assume no prior experience.
 
-## Audio Guides
-
-Additional interactive materials are provided.
-You can listen to **audio summaries**, watch videos, chat with a
-specially trained bot, and more.
-
 ## Overview and Scope
 
 This repository is a
 **central reference guide for reusable professional Python workflows**.
 Setup instructions, routine development processes, troubleshooting,
-rationale, and supporting details are concentrated here so
-individual project repositories can stay focused on project-specific work.
-This site is updated somewhat frequently to take advantage of new
-advances in tools and practices.
+rationale, and supporting details are provided here so
+individual project repositories can focus on project-specific work.
+
 A professional environment enables more time for the work that matters.
 
 ## Requirements
 
-No setup is required to view or use the documentation site linked above.
+No setup is required to view or use the
+[guide](https://denisecase.github.io/pro-analytics-02/).
 
 ## Key Files
 
@@ -71,7 +65,7 @@ No setup is required to view or use the documentation site linked above.
 - `zensical.toml` (in the root project folder): scroll to end for the `nav` section.
 
 If curious about the supporting files, see
-[this explainer site](https://denisecase.github.io/professional-python-project-explainer/).
+[this explainer site](https://pup-pack.github.io/professional-python-project-explainer/).
 
 ## Developers and Maintainers
 
@@ -79,26 +73,11 @@ This is a reference site.
 Most people do not need this running on their machine.
 The following steps are for developers and maintainers of this guide.
 
-## Optional: Add Google Analytics (Page View Data)
-
-To add page view data, see [SET-UP-GOOGLE-ANALYTICS](./SET-UP-GOOGLE-ANALYTICS.md).
-
-To view generated data, see the published
-[view-analytics.json](https://denisecase.github.io/pro-analytics-02/assets/data/view-analytics.json).
-
-## Optional: Add Integrated AI Assistant
-
-To add an integrated AI assistant,
-see [SET-UP-INTEGRATED-AI](./SET-UP-INTEGRATED-AI.md).
-
 ## Command Reference
 
 The commands below are used in the workflow guide above.
 They are provided here for convenience.
 Follow the guide for the **full instructions**.
-
-<details markdown>
-<summary>Show command reference</summary>
 
 ### Set Up Machine
 
@@ -106,7 +85,7 @@ Follow the guide for the **full instructions**.
   to **set up a machine** and create a non-cloud-synced
   `Repos` folder for development.
 
-### In a machine terminal (open in your `Repos` folder)
+### Clone and Open in VS Code
 
 Open a machine terminal in your `Repos` folder,
 change directory (cd) into the new folder,
@@ -122,15 +101,10 @@ code .
 When VS Code opens, accept the Extension Recommendations
 (click **`Install All`** or similar when asked).
 
-### In a VS Code terminal
+### Manage Environment
 
-This project uses `scikit-learn`, so we must stay with Python 3.14.
-
-To set up a local project Python environment (managed by `uv`)
-and align VS Code with it, run the following commands.
-
-These are listed for convenience.
-For best results, follow the detailed instructions in this guide.
+Set up a local project Python environment (managed by `uv`)
+and align VS Code with it.
 
 Use VS Code menu option `Terminal` / `New Terminal` to open a **VS Code terminal**
 in the root project folder.
@@ -139,8 +113,6 @@ to run each command one at a time.
 
 ```shell
 uv self update
-uv python pin 3.14
-
 uv python install
 uv lock --upgrade
 uv sync
@@ -150,6 +122,8 @@ uv audit
 If asked: "We noticed a new environment has been created.
 Do you want to select it for the workspace folder?" Click **"Yes"**.
 If successful, you'll see a new `.venv` folder appear in the root project folder.
+
+### Install and Run Git Hooks (Automated Checks)
 
 Install and run git hooks (twice if necessary as shown below):
 
@@ -164,15 +138,27 @@ uvx prek run --all-files
 uvx prek run --all-files
 ```
 
+### Run Common Chores (Automated Helpers)
+
+Use modern tools to format code, lint code (check for common improvements),
+verify correct typing, run tests that verify functions are still
+behaving as expected, and build the project docs.
+
+```shell
+uv run ruff format .
+uv run ruff check . --fix
+uv run ty check
+uv run python -m pytest
+uv run python -m zensical build
+```
+
 ### Daily Workflow (Working With Python Project Code)
 
-VS Code should have only this project open.
+Have only one project open in a VS Code window.
 Open a VS Code terminal (menu: `Terminal` / `New Terminal`) and run:
 
 ```shell
 git pull
-
-uv run python -m zensical build
 ```
 
 While editing project code and docs, repeat the commands above to
@@ -211,7 +197,17 @@ docs/javascript/view-analytics.js (added to zensical.toml)
 
 [View Current Stats](https://denisecase.github.io/pro-analytics-02/assets/data/view-analytics.json?x=1)
 
-</details>
+## Optional: Add Google Analytics (Page View Data)
+
+To add page view data, see [SET-UP-GOOGLE-ANALYTICS](./SET-UP-GOOGLE-ANALYTICS.md).
+
+To view generated data, see the published
+[view-analytics.json](https://denisecase.github.io/pro-analytics-02/assets/data/view-analytics.json).
+
+## Optional: Add Integrated AI Assistant
+
+To add an integrated AI assistant,
+see [SET-UP-INTEGRATED-AI](./SET-UP-INTEGRATED-AI.md).
 
 ## Documentation
 

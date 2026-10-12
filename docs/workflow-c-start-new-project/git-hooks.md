@@ -38,18 +38,17 @@ uvx prek run --all-files
 
 After the hooks are installed, `git commit` automatically runs the configured checks.
 
-- **All checks pass:** Git creates the commit.
-- **A check fixes a file:** Review the changes, stage them again, and retry the commit.
-- **A check reports an error:** Read the message, correct the problem, and retry.
+- All checks **pass:** Git creates the commit.
+- A check **fixes a file**: Review the changes, git add (stage) them again, and retry the commit.
+- A check **reports an error**: Read the message, correct the problem, and retry.
 
 For more information, see
-[Git Hooks: Automated Quality Checks](../tools/github-and-ci/00-git-hooks.md).
+[Git Hooks: Automated Quality Checks](https://denisecase.github.io/pro-analytics-02/tools/github-and-ci/00-git-hooks/).
 
 ## Verification
 
 - [ ] `uvx prek install --force` completes without an error
 - [ ] `uvx prek run --all-files` finishes with all checks passing
-      (after any automatic corrections are reviewed)
 
 <details markdown>
 <summary>If Git hooks cannot be installed</summary>

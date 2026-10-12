@@ -280,6 +280,52 @@ requires_review = ["human_review"]
 requires_evidence = ["decision_note"]
 ai_max_authority = "drafting"
 
+# --- Workflow D: Apply Skills ---
+
+[[surface]]
+id = "workflow-d-apply-skills"
+object_kind = "directory"
+paths = ["docs/workflow-d-apply-skills/**"]
+description = "Apply-skills workflow instructions that guide environment setup, authorship changes, project execution, technical modifications, and applied skills."
+oversight_role = "curriculum"
+codeowners_order = 130
+
+[[surface.role]]
+kind = "educational_instruction_surface"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note", "verification_command_result"]
+ai_max_authority = "drafting"
+
+[[surface.role]]
+kind = "documentation_contract"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+
+# --- Workflow E: Finalize Project ---
+
+[[surface]]
+id = "workflow-e-finalize-project"
+object_kind = "directory"
+paths = ["docs/workflow-e-finalize/**"]
+description = "Finalize project presentation to showcase skills."
+oversight_role = "curriculum"
+codeowners_order = 130
+
+[[surface.role]]
+kind = "educational_instruction_surface"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note", "verification_command_result"]
+ai_max_authority = "drafting"
+
+[[surface.role]]
+kind = "documentation_contract"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+
 
 # === Level 200: AI guidance, professional practice, and reference content ===
 

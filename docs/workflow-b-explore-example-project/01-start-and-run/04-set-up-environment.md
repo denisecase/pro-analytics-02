@@ -1,9 +1,6 @@
 # 🔵 Set up Project Environment (managed by uv)
 
 Each project uses its own Python environment in a **.venv** folder.
-
-The same uv commands work on Windows, macOS, and Linux.
-
 If something breaks, the **.venv** folder can be deleted and recreated.
 
 ## Before Starting
@@ -88,9 +85,9 @@ uv run python -c "import sys; print(sys.executable)"
 
 Verify:
 
-- **.venv/** appears in the project root.
+- .venv/ appears in the project root.
 - The commands complete without errors.
-- The reported Python executable is inside this project's **.venv** folder.
+- The reported Python executable is inside the project .venv folder.
 
 <details markdown="1">
 <summary>If this step fails (click here)</summary>

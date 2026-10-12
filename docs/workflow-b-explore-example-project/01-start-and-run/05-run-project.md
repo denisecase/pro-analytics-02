@@ -59,7 +59,7 @@ Press **Ctrl+C** in the terminal to stop the local server.
 2. You may see a success message indicating it executed successfully.
 3. You may see terminal output and a new `project.log` file may appear.
 4. The Git hooks should install, and `uvx prek run --all-files` should finish
-   with all checks passing (after any automatic corrections are reviewed).
+   with all checks passing.
 5. Ruff, ty, and pytest should complete without reported errors.
 6. If the project has documentation, it should build and open locally.
 

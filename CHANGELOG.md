@@ -12,6 +12,7 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 ## [Unreleased]
 
 - updated analytics to display during breaks also
+- updated workflows to support creation of new analytics projects
 
 ---
 
@@ -187,6 +188,7 @@ uvx zizmor@latest .github/
 
 uvx cffconvert --validate
 npx markdownlint-cli2 --fix
+uvx se-codeowners generate --output .github/CODEOWNERS
 
 uv run python -m pro_analytics_02.demo_module_basics
 uv run python -m pro_analytics_02.ml_example

@@ -1,10 +1,16 @@
 # 🟠 Create pyproject.toml
 
-> Start with the example project's configuration and adapt it for your own Python project.
+> Start with the example project's Python configuration file and
+> adapt it for your own Python project.
 
-The **pyproject.toml** file defines your project's identity, Python requirements, dependencies, and development tool settings.
+The **pyproject.toml** file defines the project identity,
+Python requirements, dependencies, and development tool settings.
 
-Rather than creating this file from scratch, use the working example as your starting point.
+Rather than creating this file from scratch,
+use the working example as your starting point.
+
+Do not edit the original example project.
+Make changes only in your own repository.
 
 ## Previously
 
@@ -22,15 +28,15 @@ Keep the example project available for reference.
 
 1. Open **VS Code**.
 2. Select **File > Open Folder** and choose **your own project repository folder**.
-3. Confirm that the VS Code Explorer shows **your repository**, not the example project. If your project is already open, simply confirm that it is the correct folder.
+3. Confirm that the VS Code Explorer shows **your repository**,
+   not the example project.
+   If your project is already open, simply confirm that it is the correct folder.
 4. Open **Windows File Explorer** and navigate to the example project repository.
 5. Find **pyproject.toml** in the example repository root.
 6. Copy the file into the root of **your own repository**.
 7. Return to **VS Code** and open your new **pyproject.toml** from the Explorer.
 
 You now have a working configuration to adapt.
-
-**IMPORTANT:** Do not edit the original example project. Make changes only in your own repository.
 
 ## Step 2. Update Project Identity
 
@@ -44,7 +50,8 @@ Review and update:
 - **authors:** If present, replace the example's information with your own name or alias.
 - **URLs:** Update any repository, homepage, documentation, or other project-specific links.
 
-Keep the project name consistent with your repository and the source package you will create, where applicable.
+Keep the project name consistent with your repository
+and the source package you will create, where applicable.
 
 ## Step 3. Review Dependencies
 
@@ -59,14 +66,11 @@ The example may include packages for data processing, visualization, testing, do
 5. Preserve the development and documentation tools that apply to your project.
 
 You can revise dependencies as you develop your project.
-
 The Python environment will be created in a later step using **uv**.
 
 ## Step 4. Review Project Configuration
 
-Read the remaining sections of **pyproject.toml**.
-
-Pay particular attention to:
+Read the remaining sections of **pyproject.toml**, especially:
 
 - **Python version:** Confirm the required Python version is appropriate for your project.
 - **Build system:** If the project creates an installable package, ensure package paths will match your own source code.
@@ -76,11 +80,10 @@ Pay particular attention to:
 - **pytest:** Review test configuration, if present.
 - **Marimo:** Keep Marimo settings if your project uses Marimo notebooks.
 
-Retain the professional development conventions from the example unless your project requires a change.
+Retain the professional development conventions from the example
+unless your project requires a change.
 
 **IMPORTANT:** If you change the Python package name or source directory, update any corresponding package references in the configuration.
-
-You will create or adapt the matching project files in the next step.
 
 ## Step 5. Check for Example References
 
@@ -97,7 +100,8 @@ Confirm that:
 
 Save the file.
 
-Do not copy the example's **.venv** environment. Your own environment and dependency lockfile will be created during environment setup.
+Do not copy the example's **.venv** environment.
+Your own environment and dependency lockfile will be created during environment setup.
 
 ## Verification
 
@@ -111,8 +115,6 @@ Do not copy the example's **.venv** environment. Your own environment and depend
 - [ ] Package paths and tool settings have been reviewed.
 - [ ] No unintended example-specific information remains.
 - [ ] Changes are saved.
-
-You now have the configuration for your own Python project.
 
 ---
 

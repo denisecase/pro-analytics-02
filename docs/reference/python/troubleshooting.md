@@ -71,7 +71,7 @@ Some checks may modify files or report problems that need correction.
 
 1. Read the messages and correct any remaining problems.
 2. Review any files automatically modified by the checks.
-3. Stage the corrected files and commit again.
+3. Git add (stage) the corrected files and commit again.
 
 ```shell
 git add -A

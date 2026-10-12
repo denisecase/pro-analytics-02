@@ -184,27 +184,34 @@ nav = [
         { "Clone repo to local" = "workflow-c-start-new-project/04-clone-repo-to-local.md" },
         { "Open VS Code and extensions" = "workflow-c-start-new-project/05-open-vscode-extensions-maybe-kafka.md" },
         { "Draft README" = "workflow-c-start-new-project/06-draft-readme.md" },
-        { "Git add-commit-push" = "workflow-c-start-new-project/git-add-commit-push.md" },
-        { "Create project" = "workflow-c-start-new-project/21-create-project.md" },
-        { "Set up environment" = "workflow-c-start-new-project/22-set-up-environment.md" },
-        { "Git hooks" = "workflow-c-start-new-project/git-hooks.md" },
-        { "Run chores" = "workflow-c-start-new-project/run-chores.md" },
-        { "Run Python" = "workflow-c-start-new-project/run-python.md" },
+        { "Create pyproject.toml" = "workflow-c-start-new-project/create-pyproject.md" },
+        { "Set up environment" = "workflow-c-start-new-project/manage-environment.md" },
+        { "Set up hooks" = "workflow-c-start-new-project/git-hooks.md" },
         { "Git add-commit-push" = "workflow-c-start-new-project/git-add-commit-push.md" },
     ] },
 
     { "Workflow D. Apply Skills" = [
         { "Overview" = "workflow-d-apply-skills/index.md" },
-        { "Make technical modification" = "workflow-d-apply-skills/make-technical-modification.md" },
-        { "Run Python" = "workflow-d-apply-skills/run-python.md" },
-        { "Verify modification" = "workflow-d-apply-skills/verify-modification.md" },
-        { "Git add-commit-push" = "workflow-d-apply-skills/git-add-commit-push.md" },
-        { "Apply skills" = "workflow-d-apply-skills/apply-example-skills.md" },
-        { "Verify new problem" = "workflow-d-apply-skills/verify-new-problem.md" },
-        { "Verify results" = "workflow-d-apply-skills/verify-results.md" },
-        { "Update documentation" = "workflow-d-apply-skills/update-docs.md" },
-        { "Update README" = "workflow-d-apply-skills/update-readme.md" },
-        { "Update GitHub About" = "workflow-d-apply-skills/update-github-about.md" },
+        { "1. Create project (work like the example)" = "workflow-d-apply-skills/21-create-project.md" },
+        { "2. Make technical modification" = "workflow-d-apply-skills/make-technical-modification.md" },
+        { "2. Verify modification" = "workflow-d-apply-skills/verify-modification.md" },
+        { "3. Apply skills to a new problem" = "workflow-d-apply-skills/apply-example-skills.md" },
+        { "3. Verify new problem" = "workflow-d-apply-skills/verify-new-problem.md" },
+        { "3. Verify results" = "workflow-d-apply-skills/verify-results.md" },
+        { "The Development Loop" = [
+            { "Set up environment" = "workflow-d-apply-skills/manage-environment.md" },
+            { "Set up hooks" = "workflow-d-apply-skills/git-hooks.md" },
+            { "Run Python" = "workflow-d-apply-skills/run-python.md" },
+            { "Do chores" = "workflow-d-apply-skills/run-chores.md" },
+            { "Git add-commit-push" = "workflow-d-apply-skills/git-add-commit-push.md" },
+        ] },
+    ] },
+
+    { "Workflow E. Finalize Project" = [
+        { "Overview" = "workflow-e-finalize/index.md" },
+        { "Update project documentation" = "workflow-e-finalize/update-docs.md" },
+        { "Update project README" = "workflow-e-finalize/update-readme.md" },
+        { "Update GitHub About" = "workflow-e-finalize/update-github-about.md" },
     ] },
 
     { "Reference" = [
@@ -233,9 +240,13 @@ nav = [
             { "Troubleshooting" = "reference/python/troubleshooting.md" },
         ] },
         { "Problem types" = "reference/problem-types/problem-types.md" },
+        { "Hosting project docs" = "reference/project-documentation/project-docs.md" },
     ] },
 
-    { "Security" = "security/index.md" },
+    { "Security" = [
+        { "Overview" = "security/index.md" },
+        { "Notes on CAE talk" = "security/CAE-NOTES-ON-USING-AI.md" },
+    ] },
 
     { "Tools" = [
         { "Terminals" = [
@@ -265,6 +276,7 @@ nav = [
         ] },
         { "Spark" = [
             { "Overview" = "spark/index.md" },
+            { "Windows and WSL" = "spark/windows-wsl.md" },
         ] },
     ] },
 
