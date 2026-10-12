@@ -34,6 +34,10 @@ Use this structure:
 
 Your Name or Alias
 YYYY-MM
+```
+
+Markdown is a super-simple markup language.
+See [Markdown Basics](https://denisecase.github.io/pro-analytics-02/reference/python/writing-readme/).
 
 ## Overview
 
@@ -47,7 +51,6 @@ Commands to set up and run the project are added after the project runs.
 
 - Include a link to the example project and/or other resources.
 - Include a link to the project data-card.md.
-```
 
 ## Step 3. Preview
 

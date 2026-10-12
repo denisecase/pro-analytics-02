@@ -158,3 +158,7 @@ Print the full path of the current working directory.
 Delete a file. Use with caution, there is no undo.
 
 Example: **rm old_file.py**
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

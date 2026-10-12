@@ -62,3 +62,7 @@ Open a project by opening its top-level folder in VS Code.
 
 A VS Code configuration file that controls editor behavior per workspace or globally.
 Can configure Python interpreter, formatting on save, and other preferences.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

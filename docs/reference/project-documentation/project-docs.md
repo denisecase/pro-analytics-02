@@ -14,10 +14,6 @@ Hosting documentation as a website helps:
 
 In these projects, documentation lives in the `docs/` folder and is built with our documentation tool.
 
-## Documentation Builder
-
-We are using the new Zensical rather than zensical because
-
 ## How It Works
 
 - We write pages as Markdown files in `docs/`
@@ -36,14 +32,8 @@ We are using the new Zensical rather than zensical because
 
 ## Step 1: Enable GitHub Pages
 
-In a browser, open the GitHub repository:
-
-1. Go to Settings (gear icon way on the right)
-2. Click Pages tab (down the left)
-3. Under **Build and deployment**
-4. Set Source to **GitHub Actions**
-
-This tells GitHub Pages to publish a site built by a `.github` workflow (instead of a branch).
+See
+[Configure Repository Settings](https://denisecase.github.io/pro-analytics-02/workflow-c-start-new-project/03-configure-repo-settings/).
 
 ## Step 2: Configure a GitHub Actions Workflow
 
@@ -72,7 +62,7 @@ The build will verify that:
 - all files in `docs/` are also in the navigation
 - all files listed in `zensical.toml` `nav` are also in `docs/`.
 
-Step 4: Trigger the First Deploy (Automatically)
+## Step 4: Trigger the First Deploy (Automatically)
 
 When we save progress, the two actions above will be triggered.
 

@@ -45,7 +45,7 @@ Examples: glossary.md, skills.md, data_dictionary.md.
 ## pyproject.toml
 
 The project configuration file defining metadata, dependencies, and tool settings.
-See glossary-environment-tools.md for full definition.
+See [Environment](https://denisecase.github.io/pro-analytics-02/glossary/python/environment/) for full definition.
 
 ## README.md
 
@@ -59,41 +59,4 @@ making it importable.
 
 ---
 
-## Starter File
-
-A partially completed file to finish.
-Typically named with a placeholder: `yourname_logic.py`.
-Rename it using your name/alias/identifier before editing.
-
-## Example File
-
-A working example provided by the course demonstrating correct structure and behavior.
-Example: `case_logic.py`
-Read and understand the example file before writing your own.
-
-## Rename
-
-Changing a file's name to use your name/alias/identifier while keeping its structure.
-Example: rename `yourname_logic.py` to `smith_logic.py`.
-
----
-
-## Data Dictionary
-
-A description of dataset columns: names, data types, units, and valid values.
-Typically stored in `docs/data_dictionary.md`.
-Always read the data dictionary before analyzing a dataset.
-
-## Input Data
-
-Data files read by the program at runtime, stored in `data/`.
-The program reads these but does not modify them.
-
-## Output Artifact
-
-A file generated and written by the program, stored in `artifacts/`.
-Examples: filtered CSV, summary CSV, plot image, log file.
-
-## Documentation (docs/)
-
-Markdown files that explain the project for human readers.
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

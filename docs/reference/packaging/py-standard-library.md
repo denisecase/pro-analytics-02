@@ -6,6 +6,10 @@ They are available automatically in every Python environment.
 > Note: These modules are part of the Python Standard Library.
 > Do **not** add them to `pyproject.toml` or `requirements.txt`.
 
+Python syntax can be learned in weeks or months;
+familiarity with the available tools and packages
+is where experience gets measured in years.
+
 ---
 
 ## Data Handling

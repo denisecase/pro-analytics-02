@@ -118,3 +118,7 @@ A Git command showing the differences between the current files and the last com
 The front-page document of a GitHub repository.
 Displayed automatically on the repository's GitHub page.
 Explains what the project is, how to run it, and what outputs to expect.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

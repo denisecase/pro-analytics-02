@@ -13,6 +13,9 @@ Keep it short and point to the docs for the full story.
 
 With the project folder open in VS Code, open **README.md** for editing.
 
+Markdown is a super-simple markup language.
+See [Markdown Basics](https://denisecase.github.io/pro-analytics-02/reference/python/writing-readme/).
+
 ## Step 2. Update Required Items
 
 The README includes:

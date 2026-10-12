@@ -93,3 +93,7 @@ May be encountered in older projects and tutorials.
 The Python Package Index: the public repository of Python packages.
 pip and uv download packages from PyPI by default.
 Browse at: <https://pypi.org/>
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

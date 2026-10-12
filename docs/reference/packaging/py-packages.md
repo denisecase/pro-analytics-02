@@ -5,21 +5,31 @@ They are **not included in the Python Standard Library** and must be installed a
 
 ---
 
-## Package Management and Core Utilities
+## Common Libraries
 
-| Package                                                    | Description                                                             | Links                                            |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------ |
-| [`httpx`](https://pypi.org/project/httpx/)                 | Modern, async-capable HTTP client for sending web requests and APIs.    | [Docs](https://www.python-httpx.org/)            |
-| [`python-dotenv`](https://pypi.org/project/python-dotenv/) | Loads environment variables from `.env` files.                          | [Docs](https://saurabh-kumar.com/python-dotenv/) |
-| [`uv`](https://pypi.org/project/uv/)                       | Fast Python package manager and environment tool (replaces pip + venv). | [Docs](https://docs.astral.sh/uv/)               |
+These are the **most commonly used external libraries**
+across analytics, data, and AI projects.
+They are not part of the standard library - install
+them as needed using `uv add <package>` or `pip install <package>`.
 
-**Note:** `httpx` replaces `requests` as the modern,
-async-capable HTTP client.
-Most `requests` examples need minimal or no changes.
+| Category                        | Package                                                                                                                                                  | Purpose                                                                          |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **HTTP & Environment**          | [`httpx`](https://pypi.org/project/httpx/), [`python-dotenv`](https://pypi.org/project/python-dotenv/)                                                   | Send modern HTTP/HTTPS requests (sync or async) and manage `.env` configuration. |
+| **Data Analysis**               | [`numpy`](https://pypi.org/project/numpy/), [`pandas`](https://pypi.org/project/pandas/), [`polars`](https://pypi.org/project/polars/)                   | Numeric computing, dataframes, and high-speed analysis.                          |
+| **Visualization**               | [`matplotlib`](https://pypi.org/project/matplotlib/), [`seaborn`](https://pypi.org/project/seaborn/)                                                     | Static and statistical visualizations.                                           |
+| **Jupyter Ecosystem**           | [`jupyterlab`](https://pypi.org/project/jupyterlab/), [`ipython`](https://pypi.org/project/ipython/), [`ipykernel`](https://pypi.org/project/ipykernel/) | Notebook authoring, interactive shell, and VS Code kernel support.               |
+| **Databases & Orchestration**   | [`duckdb`](https://pypi.org/project/duckdb/)                                                                                                             | Lightweight database.                                                            |
+| **Machine Learning**            | [`scikit-learn`](https://pypi.org/project/scikit-learn/), [`statsmodels`](https://pypi.org/project/statsmodels/)                                         | Classical ML, regression, and statistical modeling.                              |
+| **Natural Language Processing** | [`spacy`](https://pypi.org/project/spacy/), [`nltk`](https://pypi.org/project/nltk/)                                                                     | Text preprocessing, tokenization, and linguistic analysis.                       |
+
+Notes:
+
+1. `httpx` replaces `requests` as the modern, async-capable HTTP client for Python.
+2. Existing `requests` examples work with minor or no changes.
 
 ---
 
-## Text-to-Speech
+## Accessibility and Text-to-Speech
 
 | Package                                        | Description                                                         | Links                                   |
 | ---------------------------------------------- | ------------------------------------------------------------------- | --------------------------------------- |
@@ -34,11 +44,11 @@ In most cases, **VS Code** already integrates Jupyter support,
 so you can work with `.ipynb` files directly - without
 installing the full JupyterLab environment.
 
-| Package                                            | Description                                                                                        | Links                                     |
-| -------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| [`ipython`](https://pypi.org/project/ipython/)     | Enhanced interactive Python shell with colorized output and `%magic` commands.                     | [Docs](https://ipython.readthedocs.io/)   |
-| [`ipykernel`](https://pypi.org/project/ipykernel/) | Kernel interface used by VS Code’s Jupyter extension to execute notebook cells.                    | [Docs](https://ipykernel.readthedocs.io/) |
-| [`nbdime`](https://pypi.org/project/nbdime/)       | Tools for diffing and merging Jupyter notebooks - useful with Git.                                 | [Docs](https://nbdime.readthedocs.io/)    |
+| Package                                            | Description                                                                     | Links                                     |
+| -------------------------------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------- |
+| [`ipython`](https://pypi.org/project/ipython/)     | Enhanced interactive Python shell with colorized output and `%magic` commands.  | [Docs](https://ipython.readthedocs.io/)   |
+| [`ipykernel`](https://pypi.org/project/ipykernel/) | Kernel interface used by VS Code’s Jupyter extension to execute notebook cells. | [Docs](https://ipykernel.readthedocs.io/) |
+| [`nbdime`](https://pypi.org/project/nbdime/)       | Tools for diffing and merging Jupyter notebooks - useful with Git.              | [Docs](https://nbdime.readthedocs.io/)    |
 
 ### Optional Jupyter
 

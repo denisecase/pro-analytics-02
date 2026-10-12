@@ -36,21 +36,8 @@ A widely used and recommended layout is the **src layout**, which separates:
 - importable Python code
 - data and generated artifacts
 
-Example:
-
-```text
-project-name/
-├─ pyproject.toml        # Project definition (root)
-├─ .venv/                # Project-specific Python environment
-├─ src/
-│  └─ project_package/   # custom package name (see note)
-│     ├─ __init__.py
-│     ├─ app_main.py
-│     └─ other_module.py
-├─ data/
-│  ├─ raw/
-│  └─ processed/
-```
+Code lives in a package folder under `src/`.
+See [Project Structure](https://denisecase.github.io/pro-analytics-02/reference/python/project-structure/) for the full layout.
 
 ### Custom Package Names (Must Use Underscores)
 
@@ -59,13 +46,6 @@ Use **underscores** in Python folder and file names.
 
 - Underscores used on the Python side (imports, modules, folders).
 - Dashes used on the packaging side (repo name, PyPI, metadata).
-
-### Benefits
-
-- Separates importable project code from configuration and other files.
-- Reduces accidental imports from the project root.
-- Supports consistent packaging, testing, and deployment.
-- Follows a widely used professional Python project convention.
 
 ## 3. Import Local Modules Using Package Names
 

@@ -155,3 +155,7 @@ Used to explain intent to human readers.
 An optional annotation indicating the expected type of a variable or function parameter.
 Example: `def run(filepath: str) -> None:`
 Improves readability and enables static type checking tools like Pylance.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

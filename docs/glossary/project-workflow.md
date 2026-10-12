@@ -89,3 +89,7 @@ The ongoing work required to keep a system accurate, functional,
 and trustworthy over time.
 Includes updating dependencies, adjusting thresholds,
 and refining logic as conditions change.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)

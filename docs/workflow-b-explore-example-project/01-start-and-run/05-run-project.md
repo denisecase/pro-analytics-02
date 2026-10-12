@@ -20,6 +20,9 @@ Copy the command from the README,
 paste it into the terminal,
 and press **Enter** or **Return** to run the command.
 
+If the command fails with an import error, see
+[Running Python Projects Reliably](https://denisecase.github.io/pro-analytics-02/reference/python/running-python/).
+
 ## Step 2. Run Checks and Tests (as available)
 
 Use the project's configured development tools to format,

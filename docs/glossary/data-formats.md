@@ -96,3 +96,7 @@ Requires specific tools to read and write. Cannot be opened meaningfully in a te
 
 A file stored as human-readable characters (example: CSV, JSON, Markdown, TOML).
 Can be opened and read in any text editor.
+
+---
+
+[◄ Back to 🏠 Guide Home](https://denisecase.github.io/pro-analytics-02/)
