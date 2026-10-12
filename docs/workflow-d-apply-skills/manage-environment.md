@@ -1,36 +1,32 @@
 # 🟣 Set up Project Environment (managed by uv)
 
-Each project uses its own Python environment in a **.venv** folder.
-
-The same uv commands work on Windows, macOS, and Linux.
-
-If something breaks, the **.venv** folder can be deleted and recreated.
+Each project uses its own Python environment in a .venv folder.
+If something breaks, the .venv folder can be deleted and recreated.
 
 ## Before Starting
 
-Open the project in VS Code using **code .**.
+Open the project in VS Code using
+
+```shell
+code .
+```
 
 ## 1. Open a VS Code Terminal
 
-In VS Code, select **Terminal / New Terminal**.
+In VS Code, select Terminal / New Terminal.
 Verify that the terminal is open in the project root:
 
 ```shell
 ls
 ```
 
-You should see files such as:
-
-```text
-pyproject.toml
-README.md
-```
+You should see files such as pyproject.toml and README.md.
 
 <details markdown>
 <summary>If you do NOT see those files (click here)</summary>
 
 Follow the earlier steps carefully.
-Continue once you see both `pyproject.toml` and `README.md`.
+Continue once you see both pyproject.toml and README.md.
 
 </details>
 
@@ -49,12 +45,12 @@ uv audit
 
 These commands:
 
-1. Keep `uv` updated. This may not work if uv was installed with a package manager
+1. Keep uv updated. This may not work if uv was installed with a package manager
    such as Homebrew; in that case, update uv with that package manager.
-2. Install the Python version pinned by the project (see `.python-version`).
+2. Install the Python version pinned by the project (see .python-version).
 3. Update the project dependency versions allowed by pyproject.toml and
-   record the resolved versions in `uv.lock`.
-4. Create or update the project `.venv` and install the project dependencies recorded in `uv.lock`.
+   record the resolved versions in uv.lock.
+4. Create or update the project .venv and install the project dependencies recorded in uv.lock.
 5. Audit all dependencies for known vulnerabilities and adverse package statuses.
 
 If prompted: "We noticed a new environment has been created.
@@ -88,9 +84,11 @@ uv run python -c "import sys; print(sys.executable)"
 
 Verify:
 
-- **.venv/** appears in the project root.
+- .venv/ appears in the project root.
 - The commands complete without errors.
-- The reported Python executable is inside this project's **.venv** folder.
+- The reported Python executable is inside this project's .venv folder.
+- On Windows, the Python interpreter path should end with .venv\Scripts\python.exe.
+- On macOS and Linux, it should end with .venv/bin/python.
 
 <details markdown="1">
 <summary>If this step fails (click here)</summary>
@@ -118,9 +116,9 @@ This is a Windows security-policy issue that happens on some machines.
 
 ### Ensure VS Code uses the project .venv/
 
-1. Open the **Command Palette** (menu: **View** / **Command Palette**, or **Ctrl+Shift+P**)
-2. Type and choose: **Python: Select Interpreter**
-3. Choose the interpreter inside **this project's **.venv** folder**
+1. Open the Command Palette (menu: View / Command Palette, or Ctrl+Shift+P)
+2. Type and choose: Python: Select Interpreter
+3. Choose the interpreter inside this project's .venv folder
 
 ![Choose Python: Select Interpreter](./images/Python-Select-Interpreter.png)
 
@@ -128,12 +126,12 @@ This is a Windows security-policy issue that happens on some machines.
 
 ### Reload VS Code
 
-1. Open the **Command Palette** (same as before).
-2. Type or choose: **Developer: Reload Window**
+1. Open the Command Palette (same as before).
+2. Type or choose: Developer: Reload Window
 
 ## Verification
 
-- VS Code uses the Python interpreter inside this project's **.venv/** folder.
+- VS Code uses the Python interpreter inside this project's .venv/ folder.
 - VS Code reloads without warnings about a missing Python environment.
 
 ---

@@ -1,23 +1,18 @@
 # 🟠 Set up Project Environment (managed by uv)
 
-Each project uses its own Python environment in a **.venv** folder.
-
-The same uv commands work on Windows, macOS, and Linux.
-
-If something breaks, the **.venv** folder can be deleted and recreated.
+Each project uses its own Python environment in a .venv folder.
+If something breaks, the .venv folder can be deleted and recreated.
 
 ## Before Starting
 
 Your own project repository should already be open in VS Code
-from the earlier Workflow C steps.
+from the earlier steps.
+If it is not open,
+open the project in VS Code using
 
-If it is not open:
-
-1. Open **VS Code**.
-2. Select **File / Open Folder**.
-3. Navigate to the folder where you cloned **your own repository**.
-4. Select that repository folder and click **Select Folder**.
-5. Confirm that the VS Code Explorer displays your repository name.
+```shell
+code .
+```
 
 **IMPORTANT:** Open your own project, not the example project.
 
@@ -25,19 +20,14 @@ Keep VS Code open and continue with the steps below.
 
 ## 1. Open a VS Code Terminal
 
-In VS Code, select **Terminal / New Terminal**.
+In VS Code, select Terminal / New Terminal.
 Verify that the terminal is open in the project root:
 
 ```shell
 ls
 ```
 
-You should see files such as:
-
-```text
-pyproject.toml
-README.md
-```
+You should see files such as pyproject.toml and README.md.
 
 <details markdown>
 <summary>If you do NOT see those files (click here)</summary>
@@ -103,9 +93,8 @@ Verify:
 
 - .venv/ appears in the project root.
 - The commands complete without errors.
-- The reported Python executable is inside this project's **.venv** folder.
-- On Windows, the Python interpreter path should end with
-  .venv\Scripts\python.exe.
+- The reported Python executable is inside this project's .venv folder.
+- On Windows, the Python interpreter path should end with .venv\Scripts\python.exe.
 - On macOS and Linux, it should end with .venv/bin/python.
 
 <details markdown="1">
@@ -134,9 +123,9 @@ This is a Windows security-policy issue that happens on some machines.
 
 ### Ensure VS Code uses the project .venv/
 
-1. Open the **Command Palette** (menu: **View** / **Command Palette**, or **Ctrl+Shift+P**)
-2. Type and choose: **Python: Select Interpreter**
-3. Choose the interpreter inside **this project's **.venv** folder**
+1. Open the Command Palette (menu: View / Command Palette, or Ctrl+Shift+P)
+2. Type and choose: Python: Select Interpreter
+3. Choose the interpreter inside this project's .venv folder
 
 ![Choose Python: Select Interpreter](./images/Python-Select-Interpreter.png)
 
@@ -144,12 +133,12 @@ This is a Windows security-policy issue that happens on some machines.
 
 ### Reload VS Code
 
-1. Open the **Command Palette** (same as before).
-2. Type or choose: **Developer: Reload Window**
+1. Open the Command Palette (same as before).
+2. Type or choose: Developer: Reload Window
 
 ## Verification
 
-- VS Code uses the Python interpreter inside this project's **.venv/** folder.
+- VS Code uses the Python interpreter inside this project's .venv/ folder.
 - VS Code reloads without warnings about a missing Python environment.
 
 ---

@@ -233,6 +233,7 @@ nav = [
             { "Project structure" = "reference/python/project-structure.md" },
             { "Python file structure" = "reference/python/python-file-structure.md" },
             { "Running Python" = "reference/python/running-python.md" },
+            { "pyproject.toml" = "reference/python/pyproject.md" },
             { "VS Code tips" = "reference/python/python-vscode-tips.md" },
             { "Markdown Basics" = "reference/python/writing-readme.md" },
             { "Disk space" = "reference/python/disk-space.md" },
