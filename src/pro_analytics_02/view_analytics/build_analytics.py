@@ -35,7 +35,6 @@ class AnalyticsDocument(TypedDict):
     """Public, anonymous analytics generated for one academic block."""
 
     block_id: str
-    is_current: bool
     period_start: str
     period_end: str
     estimated_students: int
@@ -52,12 +51,12 @@ def build_analytics_document(
     path_prefix: str = SITE_PATH_PREFIX,
     fetch_page_metrics: PageAnalyticsFetcher = fetch_page_analytics,
 ) -> AnalyticsDocument:
-    """Collect the current (or most recent) block and its page-level GA4 metrics."""
+    """Collect the current block and its page-level GA4 metrics."""
     blocks = load_blocks(academic_blocks_path)
-    block = get_display_block(blocks, today)
 
-    # WHY: During a break, report the whole most recent block, not the break.
-    period_end = min(today, block.end)
+    # WHY: Views during a break still count toward the most recent block.
+    # OBS: The block stays in effect until the next block starts.
+    block = get_display_block(blocks, today)
     estimated_students = get_estimated_students(
         block.id,
         enrollment_estimates_path,
@@ -65,15 +64,14 @@ def build_analytics_document(
     pages = fetch_page_metrics(
         property_id,
         block.start,
-        period_end,
+        today,
         path_prefix,
     )
 
     return AnalyticsDocument(
         block_id=block.id,
-        is_current=today <= block.end,
         period_start=block.start.isoformat(),
-        period_end=period_end.isoformat(),
+        period_end=today.isoformat(),
         estimated_students=estimated_students,
         generated_at=_format_utc(generated_at),
         pages=pages,

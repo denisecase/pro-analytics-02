@@ -79,8 +79,9 @@ def get_display_block(
     blocks: Iterable[AcademicBlock],
     today: date,
 ) -> AcademicBlock:
-    """Return the current block, or the most recent block during a break.
+    """Return the block in effect: the latest one that has started.
 
+    A block stays in effect through any break, until the next block starts.
     Raises LookupError before the first block has started.
     """
     started = [block for block in blocks if block.start <= today]
