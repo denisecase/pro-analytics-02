@@ -41,7 +41,7 @@ unset SPARK_HOME
 
 Windows users:
 
-- Read [Windows and WSL](../kafka/windows-wsl.md) first.
+- Read [Windows and WSL](windows-wsl.md) first.
 - Open a new WSL terminal in VS Code.
 - For example, from the VS Code menu, select **Terminal / New Terminal**.
 - Then run:

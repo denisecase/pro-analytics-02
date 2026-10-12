@@ -183,11 +183,13 @@ nav = [
         { "Git add-commit-push" = "workflow-c-start-new-project/git-add-commit-push.md" },
     ] },
 
-    { "Workflow D. Apply Example Skills" = [
+    { "Workflow D. Apply Skills" = [
         { "Overview" = "workflow-d-apply-skills/index.md" },
         { "Make technical modification" = "workflow-d-apply-skills/make-technical-modification.md" },
+        { "Run Python" = "workflow-d-apply-skills/run-python.md" },
         { "Verify modification" = "workflow-d-apply-skills/verify-modification.md" },
-        { "Apply example skills" = "workflow-d-apply-skills/apply-example-skills.md" },
+        { "Git add-commit-push" = "workflow-d-apply-skills/git-add-commit-push.md" },
+        { "Apply skills" = "workflow-d-apply-skills/apply-example-skills.md" },
         { "Verify new problem" = "workflow-d-apply-skills/verify-new-problem.md" },
         { "Verify results" = "workflow-d-apply-skills/verify-results.md" },
         { "Update documentation" = "workflow-d-apply-skills/update-docs.md" },
