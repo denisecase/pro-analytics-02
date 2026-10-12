@@ -11,13 +11,13 @@ In Workflow B, you ran, read, and explored a working example project.
 
 Now, **use that example as the foundation for your own project**.
 
-Create your own GitHub repository, copy and adapt the example files,
-make technical modifications, and apply the demonstrated techniques
-to a different problem or dataset.
-
-Keep the original example available as a reference.
+Create your own GitHub repository, set up the project files and
+environment, and commit your progress at each milestone.
 Your new project will have its own GitHub repository,
 Git history, code, documentation, and results.
+
+Keep the original example available as a reference.
+In Workflow D, you will apply the example's techniques to your own problem.
 
 <details markdown>
 <summary>WHY?</summary>
@@ -45,37 +45,22 @@ Complete:
 Keep the example project available on your machine.
 You will refer to it throughout this workflow.
 
-## Phase 1: Plan Your Project and Create Your Repository
+## Plan Your Project and Create Your Repository
 
-1. [Choose Your Problem and Data](00-choose-your-problem.md)
-2. [Create Your GitHub Repository](01-start-in-github.md)
-3. [Configure Repository Settings](02-configure-repo-settings.md)
-4. [Clone Your Repository](03-clone-repo-to-local.md)
-5. [Open the Project in VS Code](04-open-vscode-extensions-maybe-kafka.md)
-6. [Draft README.md](05-draft-readme.md)
-7. [Git Add-Commit-Push to GitHub](git-add-commit-push.md)
+1. [Choose Your Problem and Data](01-choose-your-problem.md)
+2. [Create Your GitHub Repository](02-start-in-github.md)
+3. [Configure Repository Settings](03-configure-repo-settings.md)
+4. [Clone Your Repository](04-clone-repo-to-local.md)
+5. [Open the Project in VS Code](05-open-vscode-extensions-maybe-kafka.md)
+6. [Draft README.md](06-draft-readme.md)
+7. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
 
-## Phase 2: Create Your Initial Project Files
+## Make It a Python Project
 
-Establish a working project using the provided example.
-
-1. [Create Project](21-create-project.md)
-2. [Initialize the Python Environment](22-set-up-environment.md)
-3. [Run Your Project](run-python.md)
-4. [Git Add-Commit-Push to GitHub](git-add-commit-push.md)
-
-### After Phase 2
-
-When done, confirm:
-
-- [ ] A fresh clone of the repository could be run using only README commands.
-- [ ] No environment folders (.venv), caches, or other generated files are tracked.
-- [ ] No secrets, private data, or oversized data files are committed.
-- [ ] No unintended references to the example's name remain.
-- [ ] The example is credited in the README links.
-- [ ] Commit history shows meaningful messages.
-- [ ] README.md includes name or alias, year and month, overview,
-      commands, and links.
+1. [Create pyproject.toml](create-pyproject.md)
+2. [Set up Environment (managed by uv)](manage-environment.md)
+3. [Install and Run Git Hooks](git-hooks.md)
+4. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
 
 ---
 

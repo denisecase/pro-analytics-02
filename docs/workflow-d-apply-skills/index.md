@@ -39,21 +39,13 @@ Complete:
 
 - [Workflow C: Start New Project](../workflow-c-start-new-project/)
 
-## Phase 1: Modify and Apply Skills
+## Progression
 
-Demonstrate the example's tools and techniques
-by applying them to a different problem.
+Build the project in three progressions.
+Each progression changes the project, then runs the usual loop.
 
-1. [Make a Technical Modification](make-technical-modification.md)
-2. [Run and Verify the Modification](verify-modification.md)
-3. [Git Add-Commit-Push to GitHub](git-add-commit-push.md)
-4. [Apply the Example to a Different Problem](apply-example-skills.md)
-5. [Run and Verify the New Problem](verify-new-problem.md)
-6. [Git Add-Commit-Push to GitHub](git-add-commit-push.md)
-7. [Run and Verify Your Results and Visuals](verify-results.md)
-8. [Git Add-Commit-Push to GitHub](git-add-commit-push.md)
-
-Start with a small technical change and observe its effects.
+Start with a working reconstruction of the example.
+Then make a small technical change and observe its effects.
 
 Then apply the important tools and techniques demonstrated
 in the example to your new problem or dataset.
@@ -62,61 +54,36 @@ Make your own analytical decisions.
 Explain what you changed, why you changed it,
 and what the results show.
 
-## Phase 2: Finalize and Present
+| Progression                       | Change the project                                                  | Commit that evidences it                      |
+| --------------------------------- | ------------------------------------------------------------------- | --------------------------------------------- |
+| 1. Work like the example          | [Create Project](21-create-project.md)                              | `Baseline: <project> runs like the example`   |
+| 2. Change a bit                   | [Make a Technical Modification](make-technical-modification.md)     | `Modify: <what changed> because <why>`        |
+| 3. Apply to a new problem         | [Apply the Example to a Different Problem](apply-example-skills.md) | `Apply: <new problem or data> for <question>` |
+| 3. (continued) Report the results | [Verify Your Results and Visuals](verify-results.md)                | `Results: <what the results show>`            |
 
-Present your independent work professionally.
+## The Usual Loop
 
-1. [Update Project Documentation](update-docs.md)
-2. [Update Project README](update-readme.md)
-3. [Git Add-Commit-Push to GitHub](git-add-commit-push.md)
-4. [Update GitHub About Section](update-github-about.md)
+After each change, do the usual (the same loop each time):
 
-The README.md is the project landing page. It should include:
+1. [Manage the Environment](manage-environment.md)
+2. [Setup and Run Git Hooks](git-hooks.md)
+3. [Run the Project](run-python.md)
+4. [Do Chores](run-chores.md)
+5. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
 
-- Your name or alias
-- Year and month
-- Project Overview: what the project does and which problem you chose
-- Project Commands: how to set up and run your project
-- At least one visual with evidence confirming your work
-- Common links at the end (your docs, the example you adapted, your data source)
-- Optional: badges
+Verify with the matching page before each commit:
+[modification](verify-modification.md), [new problem](verify-new-problem.md),
+[results](verify-results.md).
 
-The docs/index.md file tells the story. It should explain:
+## Your Thinking, Displayed in Commits
 
-- The example techniques and tools you applied.
-- The technical modifications you made, and why.
-- The data and analytical methods you used.
-- The results, observations, and conclusions.
-- At least one visual with evidence confirming your work.
+The analytical decisions are yours.
+The commit history is the evidence.
 
-### After Phase 2
-
-When done, confirm everything above, and:
-
-- [ ] The data source is credited in the README links.
-- [ ] README.md includes a visual.
-- [ ] docs/index.md includes every required section (listed below),
-      each with content, and at least one visual.
-- [ ] Links in README.md and docs/index.md resolve.
-- [ ] The visual is linked correctly and displays on the published docs page.
-- [ ] GitHub Actions are passing and publishing the docs.
-- [ ] The GitHub About section includes a description
-      and a clickable link to the docs.
-
-The data story is told in docs/index.md.
-Use these sections, in this order unless project-specific instructions are provided.
-
-- Opening: title, name or alias, year and month, summary
-- Data
-- Techniques Applied
-- Custom Modifications
-- Methods and Settings
-- Verification
-- Results
-- Observations
-- Interpretation and Insights
-- Limitations
-- Next Steps
+- [ ] The commit history includes one or more commits for each progression.
+- [ ] Each commit message states what changed and why.
+- [ ] The modification commit reflects the one small change chosen.
+- [ ] Each commit was made after the checks passed.
 
 ---
 

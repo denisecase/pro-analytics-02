@@ -27,7 +27,8 @@ and run the example successfully.
 2. [Clone the Example Repository To Your Machine](02-clone-repository.md)
 3. [Open the Project in VS Code and install Extensions](03-open-vscode-extensions-maybe-kafka.md)
 4. [Set up Environment (managed by uv)](04-set-up-environment.md)
-5. [Run the Project Code](05-run-project.md)
+5. [Install and Run Git Hooks](git-hooks.md)
+6. [Run and Check the Project Code](05-run-project.md)
 
 ## Success
 

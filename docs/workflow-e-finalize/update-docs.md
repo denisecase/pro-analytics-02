@@ -1,4 +1,4 @@
-# 🟣 Update Project Documentation
+# 🔴 Update Project Documentation
 
 > Tell the story of the project in docs/index.md.
 
@@ -69,4 +69,4 @@ The published page is checked after the push, in
 
 ---
 
-[◄ Back to 🟣 Workflow D](index.md)
+[◄ Back to 🔴 Workflow E](index.md)

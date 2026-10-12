@@ -10,17 +10,17 @@ This repository provides a clear, concise guide for professional Python projects
 
     If you have used this guide before, some tools and conventions have evolved.
 
-    - Updated **uv** Python manager process.
-    - Python is managed per project by **uv**.
-    - Updated **pyproject.toml** conventions.
+    - Updated uv Python manager process.
+    - Python is managed per project by uv.
+    - Updated pyproject.toml conventions.
     - Dropped Node and npx installation.
     - Replaced Pyright/Pylance with new
-      **ty** for type checking. Affects:
-      **.vscode/extensions.json** and **pyproject.toml**.
-    - Added support for **marimo** notebooks stored as plain **.py** files.
+      ty for type checking.
+    - Replaced pre-commit with prek.
+    - Added support for marimo notebooks named app.py.
 
-    For best results, please do not assume an earlier setup is still current.
-    Follow the steps below to confirm the recommended setup is complete.
+    For best results, do not assume an earlier setup is still current.
+    Follow the steps below and confirm the current recommended setup is complete.
 
 !!! first "First is the Worst"
 
@@ -34,38 +34,45 @@ This repository provides a clear, concise guide for professional Python projects
 
 ## A: Set Up Machine
 
-This is typically done once, then revisited as needed,
-for example when setting up a new machine and
-to keep tools updated before starting a new
-course.
+This is typically done when setting up a new machine and
+to keep tools updated when starting a new course.
 
 Go to:
 
 - 🟢 [Workflow A. Set Up Machine](workflow-a-set-up-machine/)
-  to install a few professional tools and get the machine ready for development.
-  A machine that is set up correctly makes everything that follows easier.
+  to get a machine ready for modern development.
+  Correct setup makes everything else easier.
 
 ## B: Explore an Example Project
 
-Explore an existing, working professional Python project.
+Explore a working professional Python example project.
 
 - 🔵 [Workflow B. Explore Example Project](workflow-b-explore-example-project/)
-  to clone, run, read, and experiment with an example project locally.
+  to clone, run, read, and explore an example project
+  (a working textbook).
 
-## C: Start New Project
+## C: Start a New Project
 
-Build your own project, using the example as a guide.
+Start your own project, using the example as a guide.
 
 - Go to 🟠 [Workflow C. Start New Project](workflow-c-start-new-project/)
-  to **create and configure a new Python project**.
+  to **create and configure a new GitHub repository**.
 
-## D: Apply Skills
+## D: Apply Skills and Progressively Build Project
 
 Using the example skills, demonstrate their application to a
-unique data problem.
+unique data problem by **progressively** implementing a
+custom project.
 
 - Go to 🟣 [Workflow D. Apply Skills](workflow-d-apply-skills/)
   to **apply your new skills**.
+
+## E: Finalize Project
+
+Finalize your project for your GitHub portfolio.
+
+- Go to 🔴 [Workflow E. Finalize and Present](workflow-e-finalize/)
+  to **finalize your project**.
 
 ## OPTIONAL: Share Feedback
 

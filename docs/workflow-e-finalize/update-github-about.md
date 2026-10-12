@@ -1,4 +1,4 @@
-# 🟣 Update GitHub About Section
+# 🔴 Update GitHub About Section
 
 > Confirm the docs are published and describe the repository on GitHub.
 
@@ -55,4 +55,4 @@ and the website link opens the published docs.
 
 ---
 
-[◄ Back to 🟣 Workflow D](index.md)
+[◄ Back to 🔴 Workflow E](index.md)

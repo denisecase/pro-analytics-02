@@ -1,4 +1,4 @@
-# 🟣 Update Project README
+# 🔴 Update Project README
 
 > Make README.md the landing page for the finished project.
 
@@ -87,4 +87,4 @@ the visual displays and the links open.
 
 ---
 
-[◄ Back to 🟣 Workflow D](index.md)
+[◄ Back to 🔴 Workflow E](index.md)

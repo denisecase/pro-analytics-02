@@ -209,6 +209,8 @@ docs/javascript/view-analytics.js (added to zensical.toml)
     inserts the counts at the bottom of the current page
 ```
 
+[View Current Stats](https://denisecase.github.io/pro-analytics-02/assets/data/view-analytics.json?x=1)
+
 </details>
 
 ## Documentation
