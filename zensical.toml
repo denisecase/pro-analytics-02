@@ -263,7 +263,9 @@ nav = [
             { "Protect your main branch" = "tools/github-and-ci/02-protect-main.md" },
             { "Accept a Dependabot pull request" = "tools/github-and-ci/03-accept-dependabot-pr.md" },
         ] },
+        { "Prek" = "tools/prek.md" },
         { "Run Jupyter Notebook" = "tools/run-jupyter-notebook.md" },
+        { "ty" = "tools/ty.md" },
         { "Kafka" = [
             { "Overview" = "kafka/index.md" },
             { "Install Kafka" = "kafka/install-kafka.md" },
