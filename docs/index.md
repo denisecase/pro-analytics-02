@@ -5,6 +5,9 @@ use two asterisks instead of backticks
 for code. -->
 
 This repository provides a clear, concise guide for professional Python projects.
+In projects, the "happy path" can be fairly concise and clear,
+but it can also be unusual.
+This shared guide provides the details, explanation, and troubleshooting so we don't have to include this content with each project.
 
 !!! returning "For Returning Users"
 
