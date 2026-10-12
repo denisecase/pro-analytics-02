@@ -133,7 +133,7 @@ uvx prek run --all-files
 After the hooks are installed, they run automatically during `git commit`.
 
 For more information, see
-[Git Hooks: Automated Quality Checks](../../tools/github-and-ci/00-git-hooks.md).
+[Git Hooks: Automated Quality Checks](../tools/github-and-ci/00-git-hooks.md).
 
 <details markdown>
 <summary>If Git hooks cannot be installed</summary>
@@ -178,8 +178,12 @@ If this occurs, it is safe to skip them and continue with the project.
 
 ## Verification
 
-- VS Code uses the Python interpreter inside this project's **.venv/** folder.
-- VS Code reloads without warnings about a missing Python environment.
+- [ ] VS Code Terminal opens in the project root folder
+- [ ] `.venv/` exists in the project
+- [ ] `uv run python --version` works
+- [ ] the project `.venv` appears in the bottom status bar when a .py file is selected
+
+Congratulations - your project environment is ready for work!
 
 ---
 

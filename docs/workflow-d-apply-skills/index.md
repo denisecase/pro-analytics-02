@@ -11,9 +11,7 @@ In Workflow B, you ran, read, and explored a working example project.
 
 Now, **use that example as the foundation for your own project**.
 
-Create your own GitHub repository, copy and adapt the example files,
-make technical modifications, and apply the demonstrated techniques
-to a different problem or dataset.
+Create your own GitHub repository and rebuild a working example project.
 
 Keep the original example available as a reference.
 Your new project will have its own GitHub repository,

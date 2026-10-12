@@ -5,10 +5,9 @@
 ## Previously
 
 This assumes the project runs, the results are verified,
-and the notes from Phase 3 are available:
+and docs/ have been updated to clearly indicate:
 the modification, the data and settings, the checks, and the results.
 
-A project is never really final.
 This page produces the current version of the story,
 and it is updated as the project develops.
 
@@ -37,7 +36,7 @@ Each section has its own heading and its own content.
 | Limitations                 | Limitations and assumptions                                                                                                        |
 | Next Steps                  | What could be done next                                                                                                            |
 
-Use the notes from Phase 3 as the starting point for each section.
+Update docs/index.md as you go and record the starting point for each section.
 
 Write each section with enough detail that a reader unfamiliar with
 the project can follow it.
@@ -70,4 +69,4 @@ The published page is checked after the push, in
 
 ---
 
-[◄ Back to 🟠 Workflow C](index.md)
+[◄ Back to 🟣 Workflow D](index.md)

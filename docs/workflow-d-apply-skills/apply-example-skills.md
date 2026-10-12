@@ -1,4 +1,4 @@
-# 🟠 Apply the Example to a Different Problem
+# 🟣 Apply the Example to a Different Problem
 
 > Use the example's tools and techniques on your own problem and data.
 
@@ -62,4 +62,4 @@ and **Methods and Settings** sections of docs/index.md.
 
 ---
 
-[◄ Back to 🟠 Workflow C](index.md)
+[◄ Back to 🟣 Workflow D](index.md)

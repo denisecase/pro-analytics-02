@@ -2,7 +2,7 @@
 
 Choose a simple technical modification to make first.
 
-Choose a now problem that applies the example techniques and tools.
+Choose a new problem that applies the example techniques and tools.
 
 ---
 

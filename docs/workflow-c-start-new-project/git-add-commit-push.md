@@ -1,4 +1,4 @@
-# 🔵 Git Add-Commit-Push to GitHub
+# 🟠 Git Add-Commit-Push to GitHub
 
 > Save progress regularly
 
@@ -68,4 +68,4 @@ Those checks still run independently when changes are pushed to GitHub.
 
 ---
 
-[◄ Back to 🔵 Phase 5](index.md)
+[◄ Back to 🟠 Workflow C](index.md)

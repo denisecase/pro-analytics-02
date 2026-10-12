@@ -45,8 +45,8 @@ Commands to set up and run the project are added after the project runs.
 
 ## Links
 
-- [Example Project]()
-- [Data Card]()
+- Include a link to the example project and/or other resources.
+- Include a link to the project data-card.md.
 ```
 
 ## Step 3. Preview
@@ -59,7 +59,8 @@ Open the Markdown preview in VS Code:
 Confirm the headings and links display as intended.
 
 This is a draft.
-The README is updated as the project develops and finalized in Phase 4.
+The README is updated as the project develops and reviewed at the
+end of the project to ensure it is complete and useful.
 
 ## Verification
 

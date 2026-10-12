@@ -21,7 +21,7 @@ description = "Professional Python for Analytics."
 license-files = ["LICENSE"]
 
 # ============================================================
-# SECTION: PROJECT RUNTIME DEPENDENCIES
+# === SECTION: PROJECT RUNTIME DEPENDENCIES ===
 # ============================================================
 
 dependencies = [
@@ -83,11 +83,11 @@ build-backend = "hatchling.build"
 requires = ["hatchling", "hatch-vcs"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/pro_analytics_02"]
+packages = ["src/pro_analytics_02"] # CUSTOM: Adjust as needed to match the actual package directory under src/.
 
 # ============================================================
 # === SECTION: BUILD SYSTEM DYNAMIC TAGS ===
-# ============================================================
+# ===========================================================
 
 [tool.hatch.build.hooks.vcs]
 # WHY: Writes computed version into src/*/_version.py at build time.
