@@ -1,4 +1,4 @@
-# 🟠 Workflow C: Start New Project
+# 🟠 Workflow C: Start New Custom Project
 
 <!-- On a page that could be read aloud,
 use two asterisks instead of backticks
@@ -11,13 +11,8 @@ In Workflow B, you ran, read, and explored a working example project.
 
 Now, **use that example as the foundation for your own project**.
 
-Create your own GitHub repository, set up the project files and
-environment, and commit your progress at each milestone.
 Your new project will have its own GitHub repository,
 Git history, code, documentation, and results.
-
-Keep the original example available as a reference.
-In Workflow D, you will apply the example's techniques to your own problem.
 
 <details markdown>
 <summary>WHY?</summary>
@@ -29,8 +24,7 @@ This workflow develops the ability to understand an example,
 make deliberate technical changes, and apply the same
 tools and techniques independently.
 
-The goal is not simply to copy an example.
-The goal is to demonstrate that you can use what you learned
+Demonstrate that you can use what you learned
 to produce meaningful results for a different problem.
 
 </details>
@@ -42,25 +36,44 @@ Complete:
 - [Workflow A: Set Up Machine](../workflow-a-set-up-machine/)
 - [Workflow B: Explore Example Project](../workflow-b-explore-example-project/)
 
-Keep the example project available on your machine.
-You will refer to it throughout this workflow.
-
 ## Plan Your Project and Create Your Repository
 
 1. [Choose Your Problem and Data](01-choose-your-problem.md)
-2. [Create Your GitHub Repository](02-start-in-github.md)
-3. [Configure Repository Settings](03-configure-repo-settings.md)
-4. [Clone Your Repository](04-clone-repo-to-local.md)
-5. [Open the Project in VS Code](05-open-vscode-extensions-maybe-kafka.md)
-6. [Draft README.md](06-draft-readme.md)
+2. [Create Your Custom GitHub Repository](02-start-in-github.md)
+3. [Configure Your Custom Repository Settings](03-configure-repo-settings.md)
+4. [Clone Your Custom Repository](04-clone-repo-to-local.md)
+5. [Open Your Custom Project in VS Code](05-open-vscode-extensions-maybe-kafka.md)
+6. [Customize README.md](06-customize-readme.md)
 7. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
 
-## Make It a Python Project
+## Review and Customize the Python Project
 
-1. [Create pyproject.toml](create-pyproject.md)
-2. [Set up Environment (managed by uv)](manage-environment.md)
-3. [Install and Run Git Hooks](git-hooks.md)
-4. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
+Your custom project needs Python source code, configuration,
+tests, and automated checks.
+
+Review the important files, understand their purpose,
+and customize what is needed for your project.
+
+1. [Customize pyproject.toml and Configuration Files](create-pyproject.md)
+2. [Review and Customize Python Source Code](customize-src.md)
+3. [Review and Customize Tests](customize-tests.md)
+4. [Review GitHub Actions and CI/CD](review-github-actions.md)
+5. [Set up Environment (managed by uv)](manage-environment.md)
+6. [Install and Run Git Hooks](git-hooks.md)
+7. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
+
+---
+
+## Success
+
+This workflow is complete when you can:
+
+1. Provide a clickable link to your custom GitHub repository.
+2. Open your custom project in VS Code.
+3. Explain the purpose of the main project files and folders.
+4. Identify and explain your project-specific configuration changes.
+5. Set up the Python environment and run the project checks.
+6. Commit and push your changes to your custom GitHub repository.
 
 ---
 

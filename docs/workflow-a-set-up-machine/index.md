@@ -53,29 +53,26 @@ For best results, follow instructions carefully.
 
 ---
 
-## Verification
+## Success
 
-1. I can provide a link to my GitHub account.
+This workflow is complete when you can:
 
-2. I can View File Extensions and Hidden Files and Folders.
+1. Provide a link to your GitHub account.
 
-3. I can verify the required development tools:
+2. View File Extensions and Hidden Files and Folders.
+
+3. Verify the required development tools:
 
         git --version
         code --version
         uv --version
 
-4. I can verify my Git global configuration:
+4. Verify Git global configuration:
 
         git config --global user.name
         git config --global user.email
 
-5. I can cd to my **Repos** folder where I will organize my projects.
-
-## Important
-
-- These setup tasks are critical.
-- Verify each step works before proceeding.
+5. Change directory to the **Repos** folder.
 
 ## Optional Resources
 
@@ -83,20 +80,6 @@ Google NotebookLMs have been set up to help with:
 
 - [Workflow A: Set Up Machine](https://notebooklm.google.com/notebook/7a2a6711-9cd0-4f3b-a39a-13f7a361d072)
 - [Workflow B: Explore Example Project](https://notebooklm.google.com/notebook/c2de21ca-e973-4a44-9de6-be7ac501eb5d)
-
-Those links allow you to access:
-
-- workflow-specific chatbot
-- slides
-- audio podcast
-- video (below)
-- and more
-
-Recommendation 🔊
-
-[Listen to the Workflow A: Set Up Machine 20-minute Audio Overview](https://notebooklm.google.com/notebook/7a2a6711-9cd0-4f3b-a39a-13f7a361d072)
-or watch the video below before you start.
-It provides good background on WHY we do these things.
 
 <!-- markdownlint-disable MD013 -->
 

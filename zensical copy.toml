@@ -163,17 +163,14 @@ nav = [
 
     { "Workflow B. Explore Example Project" = [
         { "Overview" = "workflow-b-explore-example-project/index.md" },
-            { "1. Start & Run" = [
-            { "Overview" = "workflow-b-explore-example-project/01-start-and-run/index.md" },
-            { "Open the example repository" = "workflow-b-explore-example-project/01-start-and-run/01-open-example-repository.md" },
-            { "Clone the example repository" = "workflow-b-explore-example-project/01-start-and-run/02-clone-repository.md" },
-            { "Open VS Code and extensions" = "workflow-b-explore-example-project/01-start-and-run/03-open-vscode-extensions-maybe-kafka.md" },
-            { "Set up environment" = "workflow-b-explore-example-project/01-start-and-run/04-set-up-environment.md" },
-            { "Set up hooks" = "workflow-b-explore-example-project/01-start-and-run/git-hooks.md" },
-            { "Run the project" = "workflow-b-explore-example-project/01-start-and-run/05-run-project.md" },
-        ] },
-        { "2. Read & Understand" = "workflow-b-explore-example-project/02-read-and-understand/index.md" },
-        { "3. Identify Techniques" = "workflow-b-explore-example-project/03-identify-techniques/index.md" },
+        { "Open the example repository" = "workflow-b-explore-example-project/01-open-example-repository.md" },
+        { "Copy the example repository" = "workflow-b-explore-example-project/02-copy-example-repository.md" },
+        { "Open VS Code and extensions" = "workflow-b-explore-example-project/03-open-vscode-extensions-maybe-kafka.md" },
+        { "Set up environment" = "workflow-b-explore-example-project/04-set-up-environment.md" },
+        { "Set up hooks" = "workflow-b-explore-example-project/git-hooks.md" },
+        { "Run the project" = "workflow-b-explore-example-project/05-run-project.md" },
+        { "Read & Understand" = "workflow-b-explore-example-project/70-read-and-understand.md" },
+        { "Identify Techniques" = "workflow-b-explore-example-project/80-identify-techniques.md" },
     ] },
 
     { "Workflow C. Start New Project" = [

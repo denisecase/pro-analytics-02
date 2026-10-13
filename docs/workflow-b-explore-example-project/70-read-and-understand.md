@@ -146,4 +146,4 @@ You are ready to continue after:
 
 ---
 
-[◄ Back to 🔵 Workflow B](../index.md)
+[◄ Back to 🔵 Workflow B](index.md)

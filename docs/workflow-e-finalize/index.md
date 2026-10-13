@@ -83,20 +83,21 @@ something like this might work, but it will vary by project.
 
 </details>
 
-## Verification: GitHub
+---
 
-- [ ] The Actions tab shows all current Actions passing (green),
+## Success
+
+This workflow is complete when your GitHub Repository:
+
+- [ ] Actions tab shows all current Actions passing (green),
       and the docs are published.
-- [ ] The About section has a clear description, a clickable link to the docs,
-      and keywords.
-
-## Verification: Project Repository
-
-- [ ] The commit history includes one or more commits for each progression.
+- [ ] About section has a clear description,
+      a clickable link to the docs, and keywords.
+- [ ] Commit history includes one or more commits for each progression.
 - [ ] Commit messages say what changed and why, and would help a teammate.
-- [ ] No environment folders (.venv), caches, or other generated files are tracked.
-- [ ] No secrets, private data, or oversized data files are committed.
-- [ ] No unintended references to the example's name remain.
+- [ ] Has no environment folders (.venv), caches, or other generated files are tracked.
+- [ ] Has no secrets, private data, or oversized data files are committed.
+- [ ] Has no unintended references to the example.
 - [ ] Formatting and presentation are clear and consistent.
 
 ---

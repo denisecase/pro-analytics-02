@@ -27,7 +27,6 @@ This workflow develops the ability to understand an example,
 make deliberate technical changes, and apply the same
 tools and techniques independently.
 
-The goal is not simply to copy an example.
 The goal is to demonstrate that you can use what you learned
 to produce meaningful results for a different problem.
 
@@ -84,6 +83,12 @@ The commit history is the evidence.
 - [ ] Each commit message states what changed and why.
 - [ ] The modification commit reflects the one small change chosen.
 - [ ] Each commit was made after the checks passed.
+
+---
+
+## Success
+
+This workflow is complete when you can:
 
 ---
 

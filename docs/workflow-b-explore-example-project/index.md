@@ -26,11 +26,12 @@ the project is a key part of the lecture content.
 ## Examples are Regular GitHub Repositories
 
 Course example repositories are complete, working professional projects on GitHub.
+Each serves as an interactive textbook and are a critical part of course content.
 
 ## Run the Example, Then Explore
 
-Clone the example repository first and get it running.
-That way it is ready for experiments as you start reading.
+Copy the example repository to your machine and get it running.
+A working project enables experiments as you read and explore.
 
 <details markdown>
 <summary>WHY?</summary>
@@ -40,25 +41,29 @@ start with a working system and understand it.
 Consider how you could modify it
 and adapt it to new data problems.
 
-Example projects are a critical part of course content.
-
 </details>
 
-## Three Phases
+## Steps
 
-1. [Start & Run](01-start-and-run/index.md)
-2. [Read & Understand](02-read-and-understand/index.md)
-3. [Identify Reusable Techniques](03-identify-techniques/index.md)
+1. [Open the Example Repository in GitHub](01-open-example-repository.md)
+2. [Copy the Example Repository](02-copy-example-repository.md)
+3. [Open the Project in VS Code and install Extensions](03-open-vscode-extensions-maybe-kafka.md)
+4. [Set up Environment (managed by uv)](04-set-up-environment.md)
+5. [Install and Run Git Hooks](git-hooks.md)
+6. [Run and Check the Project Code](05-run-project.md)
+7. [Read & Understand](70-read-and-understand.md)
+8. [Identify Reusable Techniques](80-identify-techniques.md)
 
-Complete all three phases using the detailed instructions.
+Complete all steps using the detailed instructions.
 
 ---
 
-## Verification
+## Success
 
-1. Clone, set up, and successfully run the example project on my machine.
+This workflow is complete when you can:
 
-2. Explain the purpose of the project, the main tools and techniques used,
+1. Successfully run the example project on your machine.
+2. Explain the project's purpose, main tools and techniques,
    and how data flows through the program.
 
 ---

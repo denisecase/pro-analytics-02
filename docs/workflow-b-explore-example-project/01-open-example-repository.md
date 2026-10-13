@@ -1,8 +1,7 @@
 # 🔵 Open the Example Repository in GitHub
 
 Open the example project.
-Inspect the example project repository before cloning it
-(that is, copying it to your machine).
+Inspect the example project repository.
 
 You should see areas including:
 
@@ -16,4 +15,4 @@ You should be able to provide a link to the example project.
 
 ---
 
-[◄ Back to 🔵 Phase 1](index.md)
+[◄ Back to 🔵 Workflow B](index.md)

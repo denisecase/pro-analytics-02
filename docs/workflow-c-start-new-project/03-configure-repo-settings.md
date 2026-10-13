@@ -1,6 +1,6 @@
-# 🟠 Configure Repository Settings
+# 🟠 Configure Custom Repository Settings
 
-> Configure repository settings for your project.
+> Configure your custom repository settings.
 
 ## Enable GitHub Pages (for Project Documentation)
 
@@ -19,7 +19,7 @@ the documentation website when the documentation workflow runs.
 An associated workflow should be provided in `.github/workflows/`.
 You are not expected to write GitHub Actions on your own.
 
-## Project Documentation
+## Enabling Project Documentation
 
 Our work requires **professional communication**, not just code.
 A documentation site allows you to:

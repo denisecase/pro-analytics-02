@@ -23,11 +23,7 @@ when we need to execute Python files.
 
 This assumes you followed the earlier instructions
 to clone your repo into the **Repos**
-(non-synchronized) folder, for example:
-
-```shell
-git clone https://github.com/youraccount/your-repo
-```
+(non-synchronized) folder.
 
 ## Step 1. Open the Project Workspace
 
@@ -69,12 +65,12 @@ Some extensions are not needed because Ruff handles formatting and linting:
 - ms-python.black-formatter
 - ms-python.autopep8
 
-## Adding Extensions Manually
+<details markdown>
+<summary>OPTIONAL: Adding Extensions Manually</summary>
 
 ### 1. Open the Extensions Panel
 
-With the project open in VS Code, choose: **View / Extensions**
-
+With the project open in VS Code, choose: **View / Extensions**.
 Or use the keyboard shortcut:
 
 - Windows/Linux: `Ctrl + Shift + X`
@@ -83,10 +79,6 @@ Or use the keyboard shortcut:
 ### 2. Install Extensions
 
 Search for and install extensions in the Extensions panel.
-
-<details markdown>
-<summary>Some Popular Extensions</summary>
-
 For example:
 
 #### Core Python Extensions

@@ -185,13 +185,13 @@ uvx gha-tools autoupdate --pin=all --write .github/workflows
 
 # Then audit the resulting GitHub configuration for security findings
 uvx zizmor@latest .github/
+# one informational notice is fine
 
 uvx cffconvert --validate
 npx markdownlint-cli2 --fix
 uvx se-codeowners generate --output .github/CODEOWNERS
 
 uv run python -m pro_analytics_02.demo_module_basics
-uv run python -m pro_analytics_02.ml_example
 
 Remove-Item project.log
 

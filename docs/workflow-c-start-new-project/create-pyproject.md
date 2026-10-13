@@ -1,37 +1,23 @@
-# 🟠 Create pyproject.toml
+# 🟠 Customize pyproject.toml
 
 <!-- On a page that could be read aloud,
 use two asterisks instead of backticks
 for code. -->
 
-> Start with the example project's Python configuration file and
-> adapt it for your own Python project.
+> Review the Python project configuration and customize it for your project.
 
-The **pyproject.toml** file defines the project identity,
+The **pyproject.toml** file defines the project's identity,
 Python requirements, dependencies, and development tool settings.
-
-Rather than creating this file from scratch,
-use the working example as your starting point.
-
-Do not edit the original example project.
-Make changes only in your own repository.
 
 ## Previously
 
-You should have:
+Your custom project should be open in VS Code.
 
-- Created your own GitHub repository.
-- Cloned it to your machine.
-- Opened your project in VS Code.
-- Drafted your README.md.
-- Committed and pushed your initial work.
+## Step 1. Review the Configuration Files
 
-Keep the example project available for reference.
+In VS Code Explorer, review the configuration files in your project root.
 
-## Step 1. Copy the Configuration Files
-
-From the example project's root, copy these into the root of **your own repository**
-(use your file manager; the steps are the same on every operating system):
+Common files include:
 
 - **pyproject.toml** - configures the Python project
 - **.python-version** - specifies the major Python version
@@ -42,63 +28,66 @@ From the example project's root, copy these into the root of **your own reposito
 - **.pytest.toml** - configures the test runner that tests project code
 - **.ruff.toml** - configures project linting and formatting preferences
 
-IMPORTANT: Do not copy the example's **.venv** folder.
+Not every project requires every configuration file.
 
-What each file does is described in
+For additional information, see
 [pyproject.toml](https://denisecase.github.io/pro-analytics-02/reference/python/pyproject/).
 
-## Step 2. Create the Package Folder (Keep Same Name as Example)
+## Step 2. Customize pyproject.toml
 
-Create a folder **src/your_package/** (underscores, not hyphens),
-where your_package is the src folder name from the example.
-Later, with experience, you can vary this folder name (use underscores),
-but it will cause a cascading set of issues to debug if you choose to change it.
-(Good experience; but we don't recommend you start that process unless you have a fair amount of time).
+Open **pyproject.toml** and review its sections.
 
-Inside the projects package folder (the one under src), create or copy
-the file named: underscore, underscore init underscore underscore dot py:
+### Project Identity
 
-```text
-__init__.py
-```
+- **name** - update to your custom project name.
+- **description** - describe your project, if this field is present.
+- **version** - keep the initial version unless a change is needed.
+- **requires-python** - retain the example's Python requirement unless instructed otherwise.
 
-Add a simple docstring to this file:
+### Dependencies
 
-```python
-"""Project package."""
-```
+- Review the packages listed in **dependencies**.
+- Review the development and documentation dependency groups.
+- Keep packages needed by the project.
+- Add packages when needed using **uv add**.
 
-This folder must exist for uv sync to work.
+### Tool Configuration
 
-## Step 3. Edit pyproject.toml
+Review the existing settings for:
 
-- [ ] `name`: your project's name (lowercase, hyphens).
-- [ ] `description`: what your project does.
-- [ ] `dependencies`: only what your code will use. Add more later with `uv add`.
-- [ ] `packages = ["src/your_package"]` and `version-file = "src/your_package/_version.py"`
-      both match your folder.
-- [ ] `fallback-version`: `"0.1.0"`.
+- **pytest** - testing and coverage.
+- **Ruff** - linting and formatting.
+- **ty** - type checking, if configured.
+- **marimo** - reactive Python applications, if used.
+- **uv** - dependency and environment management.
+- **Build system** - Python package discovery and packaging.
 
-Search the file for the example's name to confirm no example references remain. Save.
+**IMPORTANT:** The GitHub repository name and internal Python package
+name do not need to match.
+
+Keep the existing **src/** package name and its matching
+build-system paths unless you intentionally change the package structure.
+
+## Step 3. Review Other Configuration Files
+
+Review the remaining configuration files.
+
+- Keep settings that remain appropriate.
+- Update project-specific names, descriptions, and paths.
+- Retain existing security and quality checks.
+- Do not copy or commit the **.venv/** folder.
+- Do not manually edit **uv.lock**. The environment setup will update it.
+
+Avoid changing working configuration without a reason.
 
 ## Verification
 
-- [ ] **pyproject.toml**, **.python-version** and **prek.toml** are in the root of your repository.
-- [ ] **src/your_package/ has the init file described above.
-- [ ] The name, description, and both package paths describe your project.
-- [ ] No example name remains in **pyproject.toml**.
-
-## Verification
-
-- [ ] Your own repository is open in VS Code.
-- [ ] **pyproject.toml** exists in the root of your repository.
-- [ ] The project name has been updated.
-- [ ] The description identifies your project.
-- [ ] The version has been updated.
-- [ ] Author information and URLs are updated where applicable.
-- [ ] Dependencies have been reviewed.
-- [ ] Package paths and tool settings have been reviewed.
-- [ ] No unintended example-specific information remains.
+- [ ] **pyproject.toml** exists in the project root.
+- [ ] The project identity reflects my custom project.
+- [ ] Dependencies and Python requirements have been reviewed.
+- [ ] Package paths match the actual source folders.
+- [ ] Configuration files are present where needed.
+- [ ] No unintended example-specific configuration remains.
 - [ ] Changes are saved.
 
 ---
