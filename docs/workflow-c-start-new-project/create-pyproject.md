@@ -41,7 +41,7 @@ Open **pyproject.toml** and review its sections.
 
 - **name** - update to your custom project name.
 - **description** - describe your project, if this field is present.
-- **version** - keep the initial version unless a change is needed.
+- **version** - set this initial version of your project to something like 0.1.0.
 - **requires-python** - retain the example's Python requirement unless instructed otherwise.
 
 ### Dependencies
@@ -83,12 +83,12 @@ Avoid changing working configuration without a reason.
 ## Verification
 
 - [ ] **pyproject.toml** exists in the project root.
-- [ ] The project identity reflects my custom project.
+- [ ] The project identity reflects your custom project.
 - [ ] Dependencies and Python requirements have been reviewed.
 - [ ] Package paths match the actual source folders.
 - [ ] Configuration files are present where needed.
 - [ ] No unintended example-specific configuration remains.
-- [ ] Changes are saved.
+- [ ] Changes are saved. We recommend using VS Code's File / Autosave.
 
 ---
 
