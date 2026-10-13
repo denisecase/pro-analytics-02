@@ -209,10 +209,6 @@ To view generated data, see the published
 To add an integrated AI assistant,
 see [SET-UP-INTEGRATED-AI](./SET-UP-INTEGRATED-AI.md).
 
-## Documentation
-
-- [Documentation](https://denisecase.github.io/pro-analytics-02/)
-
 ## Annotations
 
 [.annotations/annotations.md](./.annotations/annotations.md)

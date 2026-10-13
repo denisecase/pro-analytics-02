@@ -5,9 +5,39 @@ use two asterisks instead of backticks
 for code. -->
 
 This repository provides a clear, concise guide for professional Python projects.
-In projects, the "happy path" can be fairly concise and clear,
+
+The "happy path" can be fairly concise and clear,
 but it can also be unusual.
 This shared guide provides the details, explanation, and troubleshooting so we don't have to include this content with each project.
+
+!!! first "First is the Worst"
+
+    The first time through each step is the hardest.
+    New tools, new terms, and new steps all have to line up,
+    so **allow extra time when performing a workflow for the first time**.
+
+    It gets easier with experience.
+    The tools are installed just once and the project setup steps become routine.
+    The professional workflow enables every project that follows.
+
+## The Five Workflows
+
+- 🟢 [**A. Set Up Machine**](workflow-a-set-up-machine/):
+  get a machine ready for modern development.
+  Typically done when setting up a new machine and
+  to keep tools updated when starting a new course.
+  Correct setup makes everything else easier.
+- 🔵 [**B. Explore Example Project**](workflow-b-explore-example-project/):
+  clone, run, read, and explore a working professional Python
+  example project (a working textbook).
+- 🟠 [**C. Start New Project**](workflow-c-start-new-project/):
+  **create and configure a new GitHub repository**,
+  using the example as a guide.
+- 🟣 [**D. Apply Skills**](workflow-d-apply-skills/):
+  **apply your new skills** to a unique data problem
+  by **progressively** implementing a custom project.
+- 🔴 [**E. Finalize Project**](workflow-e-finalize/):
+  **finalize your project** for your GitHub portfolio.
 
 !!! returning "For Returning Users"
 
@@ -23,59 +53,7 @@ This shared guide provides the details, explanation, and troubleshooting so we d
     - Added support for marimo notebooks named app.py.
 
     For best results, do not assume an earlier setup is still current.
-    Follow the steps below and confirm the current recommended setup is complete.
-
-!!! first "First is the Worst"
-
-    The first time through each step is the hardest.
-    New tools, new terms, and new steps all have to line up,
-    so **allow extra time when performing a workflow for the first time**.
-
-    It gets easier with experience.
-    The tools are installed just once and the project setup steps become routine.
-    The professional workflow enables every project that follows.
-
-## A: Set Up Machine
-
-This is typically done when setting up a new machine and
-to keep tools updated when starting a new course.
-
-Go to:
-
-- 🟢 [Workflow A. Set Up Machine](workflow-a-set-up-machine/)
-  to get a machine ready for modern development.
-  Correct setup makes everything else easier.
-
-## B: Explore an Example Project
-
-Explore a working professional Python example project.
-
-- 🔵 [Workflow B. Explore Example Project](workflow-b-explore-example-project/)
-  to clone, run, read, and explore an example project
-  (a working textbook).
-
-## C: Start a New Project
-
-Start your own project, using the example as a guide.
-
-- Go to 🟠 [Workflow C. Start New Project](workflow-c-start-new-project/)
-  to **create and configure a new GitHub repository**.
-
-## D: Apply Skills and Progressively Build Project
-
-Using the example skills, demonstrate their application to a
-unique data problem by **progressively** implementing a
-custom project.
-
-- Go to 🟣 [Workflow D. Apply Skills](workflow-d-apply-skills/)
-  to **apply your new skills**.
-
-## E: Finalize Project
-
-Finalize your project for your GitHub portfolio.
-
-- Go to 🔴 [Workflow E. Finalize Project](workflow-e-finalize/)
-  to **finalize your project**.
+    Follow the steps to confirm the processes are followed.
 
 ## OPTIONAL: Share Feedback
 

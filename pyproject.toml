@@ -15,7 +15,7 @@
 [project]
 name = "pro-analytics-02" # CUSTOM: Update (distribution name; use lowercase + dashes).
 readme = "README.md"
-requires-python = ">=3.14" # 3.14 STILL REQUIRED SEP-2026
+requires-python = ">=3.14"
 dynamic = ["version"]
 description = "Professional Python for Analytics."
 license-files = ["LICENSE"]
