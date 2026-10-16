@@ -1,28 +1,23 @@
 # 🔵 Copy The Example Project Repository
 
-Get a copy of the example project.
+Copy and clone the example project down to your machine.
 
 When using Git, the project typically lives in two places:
 
 - **GitHub** - stores the project online with its version history.
 - **Your machine** - provides a local copy for editing, running, and developing the project.
 
-There are two ways to get a copy of the example project:
+If the example repository has a **Use this template** button,
+follow these instructions.
 
-1. **Copy a Template (Recommended)** - Create your own GitHub repository from the example, then clone it to your machine.
-2. **Clone the Example** - Clone the original example directly to your machine.
-
-If the example repository has a **Use this template** button, follow Option 1.
-Otherwise, follow Option 2.
-
-## Option 1. Copy a Template (Recommended)
+## (Recommended) Copy a Template & Clone Your Example Project
 
 This option is fast and easy.
 
 A GitHub template creates a new repository under your GitHub account
 with the example project's files and folders, but with a fresh Git history.
 
-### 1.1. Create Your Example Repository from the Template
+### 1. Copy the Template to Get Your Own Example Project
 
 You should be logged into your GitHub account and viewing the example project repository.
 
@@ -40,7 +35,7 @@ For example:
 - Original: `denisecase/datafun-01-foundations`
 - Your copy: `YOUR-USERNAME/datafun-01-foundations`
 
-### 1.2. Copy Your Example Repository URL
+### 2. Copy Your Example Repository URL
 
 1. Open your newly created repository on GitHub.
 2. Click the green **Code** button.
@@ -50,7 +45,7 @@ For example:
 **IMPORTANT:** Copy the URL for YOUR repository under YOUR GitHub account,
 not the original example repository.
 
-### 1.3. Clone Your Example Repository to Your Repos Folder
+### 3. Clone Your Example Repository to Your Machine
 
 You should have already
 [Created a Place for All Projects (Repos/)](../workflow-a-set-up-machine/05-create-repos-folder.md).
@@ -88,21 +83,22 @@ Git creates a local project folder with the same name as the example repository.
 
 ---
 
-## Option 2. Clone the Example Repository
+<details markdown>
+<summary> If no template option, then click here.</summary>
 
 If the example repository does not offer **Use this template**,
 you can clone the original example directly.
 
 Cloning copies the repository files and Git history to your local machine.
 
-### 2.1. Copy the Example Repository URL
+### Copy the Example Repository URL
 
 1. Open the example repository on GitHub.
 2. Click the green **Code** button.
 3. Select **HTTPS**.
 4. Click the copy icon next to the repository URL.
 
-### 2.2. Clone the Example Repository to Your Repos Folder
+### Clone the Example Repository to Your Machine
 
 You should have already
 [Created a Place for All Projects (Repos/)](../workflow-a-set-up-machine/05-create-repos-folder.md).
@@ -139,36 +135,34 @@ Use the URL of the example repository assigned in your course.
 
 Git creates a local project folder with the same name as the example repository.
 
+</details>
+
 ---
 
 ## Result
 
-Regardless of which option you followed,
-you now have a complete copy of the example project on your machine.
+You should now have cloned the example project
+**to your machine**.
 
-For example:
+For example, if the example project is named
+`datafun-01-foundations`, you should have a new folder
+on your machine:
 
 - Windows: `C:\Repos\datafun-01-foundations`
 - Mac/Linux: `~/Repos/datafun-01-foundations`
 
-The local project has the same name and files as the original example.
-
-You are ready to open the project in VS Code,
-set up the environment, and run the example.
-
-Later, you will create your own project with a different repository name
-and apply the techniques to your own problem.
+This new folder on your machine will have the same name and files as the original example.
 
 ## Verification
 
+- [ ] I can provide a clickable link to the original GitHub example repository.
+- [ ] If I used a template, I can provide a link to my GitHub example repository.
 - [ ] I opened a terminal on my local machine.
 - [ ] I changed directory to my **Repos** folder.
 - [ ] I cloned the repository to my **Repos** folder.
-- [ ] A new folder with the exact example repository name appears in my **Repos** folder.
+- [ ] A new folder with the example repository name appears in my **Repos** folder.
 - [ ] The folder contains the example project's files, including **README.md** and **pyproject.toml**.
 - [ ] The terminal shows no authentication or repository-not-found errors.
-- [ ] I can provide a clickable link to the original example repository.
-- [ ] If I used a template, I can also provide a link to my copy on GitHub.
 
 ---
 
