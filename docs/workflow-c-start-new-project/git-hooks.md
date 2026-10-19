@@ -41,14 +41,6 @@ Prek is written in Rust (like Ruff and ty),
 runs hooks in parallel,
 and is significantly faster than the Python-based pre-commit framework.
 
-## What Happens at Each Commit
-
-After the hooks are installed, `git commit` automatically runs the configured checks.
-
-- All checks **pass:** Git creates the commit.
-- A check **fixes a file**: Review the changes, git add (stage) them again, and retry the commit.
-- A check **reports an error**: Read the message, correct the problem, and retry.
-
 For more information, see
 [Git Hooks: Automated Quality Checks](https://denisecase.github.io/pro-analytics-02/tools/github-and-ci/00-git-hooks/).
 

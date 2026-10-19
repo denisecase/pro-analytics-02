@@ -1,75 +1,45 @@
-# 🟠 Review and Customize Python Source Code
+# 🟠 Take Ownership of Code Files
 
 <!-- On a page that could be read aloud,
 use two asterisks instead of backticks
 for code. -->
 
-> Understand the Python source code and identify what your project needs.
+> Add your name and date to the code files.
 
 ## Step 1. Review the Source Folder
 
-In VS Code Explorer, open **src/**.
-
-A typical Python project contains a package folder, for example:
-
-```text
-src/
-    datafun/
-        __init__.py
-        ...
-```
-
-Your project may use a different package name and structure.
-
-Important components include:
-
-- **src/** - contains importable Python source code.
-- **Package folder** - groups related Python modules.
-- The inclusion of the specially named init file identifies a regular Python package.
-- **Python modules** - contain functions, classes, and other program logic.
-
-Some projects may include **app.py** for running an application.
-
-### Repository Names and Python Package Names
-
-GitHub repository names and Python package names follow different conventions.
-
-- **GitHub repositories** may use dashes, such as `datafun-01-foundations-housing`.
-- **Python package folders** must use valid Python identifiers, with underscores instead of dashes, such as `src/datafun/`.
-- **Python imports** use the package name, such as `from datafun import ...`.
-
-**IMPORTANT:** Keep the Python package name provided in the example.
-Changing it requires coordinated updates to imports, tests,
-and package configuration in `pyproject.toml`.
+In VS Code Explorer, open the **src** folder.
+A typical Python project contains a package folder directly below src.
+Explore the Python files under src (they will have a .py extension).
 
 See [Project Structure](../reference/python/project-structure.md).
 
-### Identify Your Work
+## Step 2. Review the Notebooks Folder (if used)
 
-Review the header or docstring in each Python source file.
+In VS Code Explorer, look for **notebooks**.
+Some projects may include Jupyter notebook code files.
+Explore any files under notebooks (they may have a .ipynb extension).
 
-- Update the author or adapted-by information with your name or alias.
-- Retain appropriate credit for the original example code.
-- Update descriptions and docstrings as you customize the code.
+## Step 3. Check for a Marimo reactive app.py (if used)
 
-Your Git commit history will also document the changes you make
-throughout the project.
+In VS Code Explorer, look for a file named app.py.
+Some projects may include marimo notebook code files.
+Explore any files under notebooks (they have a .py extension).
+They may also as app.py in other locations.
+Marimo is a new technology and not all projects will have them.
 
-## Step 2. Understand the Source Code
+### Step 4. Take Ownership of the Code Files
 
-Review the important Python files.
+Review the header or docstring in each code file.
 
-Identify:
+- Update or add an author entry with your name or alias.
+- Include a date, such as YYYY-MM.
 
-1. Where the program starts.
-2. How modules import and use other modules.
-3. Which functions perform the main work.
-4. Where data enters the program.
-5. How results are produced or displayed.
+Taking ownership is important.
+Doing so creates the first changes, and typically should not break the project.
+If it does, you can always copy from the example again and start fresh.
 
-Use the working example to understand the program's structure.
-
-## Step 3. Identify What to Customize
+## Step 5. Identify What to Customize
 
 Consider your new problem and data.
 
@@ -89,14 +59,11 @@ You will progressively implement your custom solution in Workflow D.
 
 ## Verification
 
-- [ ] I can locate the Python source code.
-- [ ] I can identify the main program entry point.
-- [ ] I understand how the main modules and functions work together.
-- [ ] I can identify source code that can be reused.
-- [ ] I know which parts will need changes for my custom problem.
-- [ ] Package names and imports remain consistent.
-- [ ] The Python package name and imports remain consistent.
-- [ ] Author or adapted-by information identifies my contributions.
+- [ ] I can locate code files in a standard project.
+- [ ] I understand how files and functions work together.
+- [ ] I am willing to read and try to understand source code.
+- [ ] I can consider what might need to change for my custom problem.
+- [ ] The author/date information identifies areas I intend to contribute.
 
 ---
 

@@ -27,7 +27,8 @@ Continue once you see both pyproject.toml and README.md.
 ## 2. Create or Update the Project Environment
 
 Run the following commands in the VS Code terminal.
-Copy and paste one command at a time and hit Enter or Return after pasting to run it.
+Copy and paste **one command at a time**
+and hit **Enter** or **Return** after pasting to run it.
 
 ```shell
 uv self update
@@ -67,7 +68,7 @@ In production, updates may need to be more controlled.
 
 </details>
 
-## Recommended: Environment Verification
+## Optional, Recommended: Environment Verification
 
 Run:
 
