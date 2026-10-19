@@ -28,9 +28,10 @@ uvx prek run --all-files
 ```
 
 If checks automatically modify files,
-**review the changes and re-run** (UP ARROW):
+**re-run** (try hitting the UP ARROW to repeat a recent command):
 
 ```shell
+git add -A
 uvx prek run --all-files
 ```
 

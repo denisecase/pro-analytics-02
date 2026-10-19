@@ -6,13 +6,6 @@ for code. -->
 
 > Understand the Python source code and identify what your project needs.
 
-The **src/** folder contains the project's Python source code.
-
-## Previously
-
-Your custom project should be open in VS Code.
-You should have reviewed **pyproject.toml** and the configuration files.
-
 ## Step 1. Review the Source Folder
 
 In VS Code Explorer, open **src/**.

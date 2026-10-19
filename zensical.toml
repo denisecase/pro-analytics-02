@@ -175,20 +175,17 @@ nav = [
 
     { "Workflow C. Start New Project" = [
         { "Overview" = "workflow-c-start-new-project/index.md" },
-        { "Plan your problem and data" = "workflow-c-start-new-project/01-choose-your-problem.md" },
-        { "Create your custom GitHub repository" = "workflow-c-start-new-project/02-start-in-github.md" },
+        { "Plan your custom project" = "workflow-c-start-new-project/01-choose-your-problem.md" },
+        { "Create your new GitHub repository" = "workflow-c-start-new-project/02-start-in-github.md" },
         { "Configure repository settings" = "workflow-c-start-new-project/03-configure-repo-settings.md" },
-        { "Clone your custom repository" = "workflow-c-start-new-project/04-clone-repo-to-local.md" },
+        { "Clone your new repository" = "workflow-c-start-new-project/04-clone-repo-to-local.md" },
         { "Open VS Code and extensions" = "workflow-c-start-new-project/05-open-vscode-extensions-maybe-kafka.md" },
         { "Customize README.md" = "workflow-c-start-new-project/06-customize-readme.md" },
         { "Git add-commit-push" = "workflow-c-start-new-project/git-add-commit-push.md" },
-        { "Customize pyproject.toml and configuration files" = "workflow-c-start-new-project/create-pyproject.md" },
-        { "Review and customize Python source code" = "workflow-c-start-new-project/customize-src.md" },
-        { "Review and customize tests" = "workflow-c-start-new-project/customize-tests.md" },
-        { "Review GitHub Actions and CI/CD" = "workflow-c-start-new-project/review-github-actions.md" },
+        { "Review project configuration" = "workflow-c-start-new-project/create-pyproject.md" },
         { "Set up environment" = "workflow-c-start-new-project/manage-environment.md" },
-        { "Set up hooks" = "workflow-c-start-new-project/git-hooks.md" },
-        { "Git add-commit-push" = "workflow-c-start-new-project/git-add-commit-push.md" },
+        { "Install and run Git hooks" = "workflow-c-start-new-project/git-hooks.md" },
+        { "Take ownership of code files" = "workflow-c-start-new-project/customize-code-files.md" },
     ] },
 
     { "Workflow D. Apply Skills" = [

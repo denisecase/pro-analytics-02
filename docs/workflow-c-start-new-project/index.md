@@ -32,25 +32,24 @@ to produce meaningful results for a different problem.
 
 1. [Plan Your Custom Project](01-choose-your-problem.md)
 2. [Create Your New GitHub Repository](02-start-in-github.md)
-3. [Configure Your New Repository Settings](03-configure-repo-settings.md)
+3. [Configure Repository Settings](03-configure-repo-settings.md)
 4. [Clone Your New Repository](04-clone-repo-to-local.md)
 5. [Open Your Cloned Repository in VS Code](05-open-vscode-extensions-maybe-kafka.md)
 6. [Customize README.md](06-customize-readme.md)
 7. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
 
-## Review and Customize the Python Project
+## Review and Take Ownership of the Project Code
 
 After making your first git add-commit-push,
-begin to review the important files, understand their purpose,
-and customize them to indicate that this project
-will hold **your** custom work.
+review the important project code files, understand their purpose,
+and customize the heading of each source file
+to indicate that this project will hold **your** custom work.
 
-1. [Take Ownership of pyproject.toml](create-pyproject.md)
+1. [Review project configuration](create-pyproject.md)
 2. [Set up Environment (managed by uv)](manage-environment.md)
 3. [Install and Run Git Hooks](git-hooks.md)
-4. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
-5. [Take Ownership of the Python Source Code](customize-src.md)
-6. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
+4. [Take Ownership of Code Files](customize-code-files.md)
+5. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
 
 ---
 

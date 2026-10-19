@@ -1,7 +1,5 @@
 # 🟠 Plan Your Custom Project
 
-Choose a simple technical modification to make first.
-
 Choose a new problem that applies the example techniques and tools.
 
 Recommendation: **Start small**.
