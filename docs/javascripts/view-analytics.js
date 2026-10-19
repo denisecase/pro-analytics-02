@@ -65,7 +65,7 @@
     summary.append(
       `${metrics.unique_visitors} unique visitors · `,
       `${metrics.page_views} page views · `,
-      `~ ${analytics.estimated_students} est. readers`,
+      `~ ${analytics.estimated_students} students this block`,
     );
 
     period.textContent =

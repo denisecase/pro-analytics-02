@@ -58,6 +58,7 @@ uvx prek update
 git add -A
 uvx prek run --all-files
 # repeat if changes were made
+git add -A
 uvx prek run --all-files
 
 # run common chores
