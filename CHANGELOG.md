@@ -16,11 +16,11 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
-## [0.5.0] - 2026-10-11
+## [0.5.0] - 2026-10-19
 
 ### Changed
 
-- updated workflows to learn from example, but create own from scratch
+- updated workflows to learn from example, and create own from template
 - ran pup-up to get more current support files.
 - Updated `sit.ps1` to use `prek` and run `uv audit`.
 
