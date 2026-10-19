@@ -4,7 +4,7 @@ Choose a simple technical modification to make first.
 
 Choose a new problem that applies the example techniques and tools.
 
-Recommenation: Start small.
+Recommendation: **Start small**.
 Your ability to implement customizations will grow
 as you do more projects.
 

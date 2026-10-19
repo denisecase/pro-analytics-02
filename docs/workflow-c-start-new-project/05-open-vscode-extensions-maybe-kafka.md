@@ -1,29 +1,7 @@
-# 🟠 Open Project in VS Code (and Install Extensions and Maybe Kafka)
+# 🟠 Open Your Cloned Repository in VS Code (and Install Extensions and Maybe Kafka)
 
-> Open the project in VS Code and install extensions.
+> Open the cloned project repository in VS Code and install extensions.
 > 🏞️ ONLY IF STREAMING DATA: Also Install Kafka (Step 3 below)
-
-## Strong Recommendation
-
-Using **code dot** (`code .`) as shown below is the
-strongly recommended professional pattern
-because it guarantees:
-
-- the terminal is in the correct directory
-- VS Code opens the correct project root
-- environment discovery happens relative to that root
-- Git commands run in the right repository
-
-**IMPORTANT:** Any deviations from this process
-(especially the first time you open it)
-will not necessarily work later
-when we need to execute Python files.
-
-## Previously
-
-This assumes you followed the earlier instructions
-to clone your repo into the **Repos**
-(non-synchronized) folder.
 
 ## Step 1. Open the Project Workspace
 
@@ -34,11 +12,29 @@ change directory (`cd`) into the repository folder and run **code dot** (`code .
 You must use **your exact repository name**.
 
 ```shell
-cd your-repo
+cd your-repo-name
+
 code .
 ```
 
 The `code .` command opens the **current folder** as the project workspace in VS Code.
+
+If `code .` doesn't work, you can start VS Code and then use the menu **File** / **Open Folder**,
+or use Explorer or File Manager and right-click the repository folder / **Open with VS Code**.
+
+<details markdown>
+<summary> Why use code . to open the project?</summary>
+
+We recommend using **code dot** (`code .`) to open
+your new repository in VS Code,
+because it guarantees:
+
+- the terminal is in the correct directory
+- VS Code opens the correct project root
+- environment discovery happens relative to that root
+- Git commands run in the right repository
+
+</details>
 
 When VS Code opens, it may make extension recommendations.
 
@@ -49,7 +45,7 @@ When VS Code opens, it may make extension recommendations.
 ## Step 2. Install Recommended Extensions
 
 If the project includes a `.vscode/extensions.json` file,
-VS Code will automatically recommend extensions for the project.
+VS Code will automatically recommend extensions for the project as it opens.
 In that case:
 
 1. Watch for the **Recommended Extensions** popup
@@ -60,10 +56,7 @@ install extensions manually using the steps below.
 
 ## Extensions NOT Recommended
 
-Some extensions are not needed because Ruff handles formatting and linting:
-
-- ms-python.black-formatter
-- ms-python.autopep8
+Some extensions are not recommended if the example project uses different tooling.
 
 <details markdown>
 <summary>OPTIONAL: Adding Extensions Manually</summary>

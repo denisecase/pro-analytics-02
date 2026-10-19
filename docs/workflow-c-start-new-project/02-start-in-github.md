@@ -23,7 +23,7 @@ You now have your own GitHub repository containing the example project.
 You will review the important parts of each file and make changes
 as you work through the project.
 
-<details>
+<details markdown>
 <summary> Advanced Alternative (a lot more work)</summary>
 
 Alternatively, if you have already created several GitHub projects,

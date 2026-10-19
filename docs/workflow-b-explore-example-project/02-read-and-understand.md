@@ -106,7 +106,7 @@ Python modules are typically stored in a folder named src (short for "source cod
 There may be another package folder under src.
 Keep going until you find Python files (with a .py extension).
 
-<details>
+<details markdown>
 <summary>
 More about source code</summary>
 

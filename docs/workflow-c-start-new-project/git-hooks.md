@@ -1,6 +1,6 @@
 # 🟠 Git Hooks
 
-> Install the project's Git hooks and run the checks.
+> Install Git hooks and run the checks.
 
 <details markdown>
 <summary>WHY?</summary>
@@ -33,6 +33,12 @@ If checks automatically modify files,
 ```shell
 uvx prek run --all-files
 ```
+
+NOTE: We've recently switched to **prek** from the
+earlier pre-commit for several reasons.
+Prek is written in Rust (like Ruff and ty),
+runs hooks in parallel,
+and is significantly faster than the Python-based pre-commit framework.
 
 ## What Happens at Each Commit
 

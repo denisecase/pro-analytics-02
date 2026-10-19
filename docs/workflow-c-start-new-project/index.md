@@ -31,28 +31,26 @@ to produce meaningful results for a different problem.
 ## Plan Your Project and Create Your Repository
 
 1. [Plan Your Custom Project](01-choose-your-problem.md)
-2. [Create Your Custom GitHub Repository](02-start-in-github.md)
-3. [Configure Your Custom Repository Settings](03-configure-repo-settings.md)
-4. [Clone Your Custom Repository](04-clone-repo-to-local.md)
-5. [Open Your Custom Project in VS Code](05-open-vscode-extensions-maybe-kafka.md)
+2. [Create Your New GitHub Repository](02-start-in-github.md)
+3. [Configure Your New Repository Settings](03-configure-repo-settings.md)
+4. [Clone Your New Repository](04-clone-repo-to-local.md)
+5. [Open Your Cloned Repository in VS Code](05-open-vscode-extensions-maybe-kafka.md)
 6. [Customize README.md](06-customize-readme.md)
 7. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
 
 ## Review and Customize the Python Project
 
-Your project needs Python source code, configuration,
-tests, and automated checks.
+After making your first git add-commit-push,
+begin to review the important files, understand their purpose,
+and customize them to indicate that this project
+will hold **your** custom work.
 
-Review the important files, understand their purpose,
-and customize what is needed for your project.
-
-1. [Customize pyproject.toml and Configuration Files](create-pyproject.md)
-2. [Review and Customize Python Source Code](customize-src.md)
-3. [Review and Customize Tests](customize-tests.md)
-4. [Review GitHub Actions and CI/CD](review-github-actions.md)
-5. [Set up Environment (managed by uv)](manage-environment.md)
-6. [Install and Run Git Hooks](git-hooks.md)
-7. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
+1. [Take Ownership of pyproject.toml](create-pyproject.md)
+2. [Set up Environment (managed by uv)](manage-environment.md)
+3. [Install and Run Git Hooks](git-hooks.md)
+4. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
+5. [Take Ownership of the Python Source Code](customize-src.md)
+6. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
 
 ---
 

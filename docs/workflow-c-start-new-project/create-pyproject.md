@@ -1,22 +1,18 @@
-# 🟠 Customize pyproject.toml
+# 🟠 Take Ownership of pyproject.toml
 
 <!-- On a page that could be read aloud,
 use two asterisks instead of backticks
 for code. -->
 
-> Review the Python project configuration and customize it for your project.
+> The **pyproject.toml** file defines the project's identity,
+> Python requirements, dependencies, and development tool settings.
+> Update the description to reflect your planned project.
 
-The **pyproject.toml** file defines the project's identity,
-Python requirements, dependencies, and development tool settings.
+Your project repository should be open in VS Code.
 
-## Previously
-
-Your custom project should be open in VS Code.
-
-## Step 1. Review the Configuration Files
+## Step 1. Briefly Review the Configuration Files
 
 In VS Code Explorer, review the configuration files in your project root.
-
 Common files include:
 
 - **pyproject.toml** - configures the Python project
@@ -29,31 +25,35 @@ Common files include:
 - **.ruff.toml** - configures project linting and formatting preferences
 
 Not every project requires every configuration file.
+These are mostly silent helpers and don't need to be altered.
 
 For additional information, see
 [pyproject.toml](https://denisecase.github.io/pro-analytics-02/reference/python/pyproject/).
 
-## Step 2. Customize pyproject.toml
+## Step 2. Customize pyproject.toml Description and Version
 
 Open **pyproject.toml** and review its sections.
 
-### Project Identity
+### Update Project Identity Description and Version
 
-- **name** - update to your custom project name.
-- **description** - describe your project, if this field is present.
+- **description** - describe your project and what will make it unique.
 - **version** - set this initial version of your project to something like 0.1.0.
-- **requires-python** - retain the example's Python requirement unless instructed otherwise.
 
-### Dependencies
+### Briefly Confirm Project Identity that Doesn't Change
+
+- **name** - confirm this still shows your repo name (it should not need changing).
+- **requires-python** - this should retain the example's Python version
+
+### Briefly Review Dependencies
 
 - Review the packages listed in **dependencies**.
 - Review the development and documentation dependency groups.
 - Keep packages needed by the project.
-- Add packages when needed using **uv add**.
+- You can always add packages as you work.
 
-### Tool Configuration
+### Briefly Review Tool Configuration
 
-Review the existing settings for:
+Optional: If you like, you can review the existing settings for:
 
 - **pytest** - testing and coverage.
 - **Ruff** - linting and formatting.
@@ -62,33 +62,14 @@ Review the existing settings for:
 - **uv** - dependency and environment management.
 - **Build system** - Python package discovery and packaging.
 
-**IMPORTANT:** The GitHub repository name and internal Python package
-name do not need to match.
-
-Keep the existing **src/** package name and its matching
-build-system paths unless you intentionally change the package structure.
-
-## Step 3. Review Other Configuration Files
-
-Review the remaining configuration files.
-
-- Keep settings that remain appropriate.
-- Update project-specific names, descriptions, and paths.
-- Retain existing security and quality checks.
-- Do not copy or commit the **.venv/** folder.
-- Do not manually edit **uv.lock**. The environment setup will update it.
-
-Avoid changing working configuration without a reason.
+Most should not need to be changed from the example.
 
 ## Verification
 
 - [ ] **pyproject.toml** exists in the project root.
-- [ ] The project identity reflects your custom project.
+- [ ] The project identity **description** and **version\*** reflects your custom project.
 - [ ] Dependencies and Python requirements have been reviewed.
-- [ ] Package paths match the actual source folders.
-- [ ] Configuration files are present where needed.
-- [ ] No unintended example-specific configuration remains.
-- [ ] Changes are saved. We recommend using VS Code's File / Autosave.
+- [ ] Ensure your changes are saved.
 
 ---
 

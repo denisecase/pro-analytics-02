@@ -1,18 +1,28 @@
 # 🟠 Git Add-Commit-Push to GitHub
 
-> Save progress regularly
+> Save your progress frequently.
 
-Use a VS Code terminal (PowerShell, zsh, or bash) opened in the root project folder.
+There are required steps where you will save your work to GitHub.
 
-**IMPORTANT:** Replace the commit message
+There are three parts to the command:
+
+- git add (add the files to version control, aka "stage" them)
+- git commit (with a message) a labeled set of changes
+- git push the committed changes to the main branch of the GitHub repository (aka the "origin").
+
+## Git Add-Commit-Push Using a VS Code Terminal
+
+Open a VS Code terminal (PowerShell, zsh, or bash) in the root project folder.
+For example, from the VS Code Menu, select Terminal / New Terminal.
+
+**IMPORTANT:** Replace the commit message "your message here"
 with a clear description of what you added or changed.
 Wrap the commit message in double quotes.
 See: [How to Write a Good Commit Message](https://chris.beams.io/git-commit)
 
-Save progress frequently.
 Some tools may modify files,
-so you may need to **re-run** `git add` and `git commit`
-to ensure everything is committed before pushing.
+so we may need to **re-run** `git add` and `git commit`
+to ensure everything gets committed successfully before pushing.
 
 ```shell
 git add -A
@@ -25,7 +35,7 @@ git commit -m "your message here"
 git push -u origin main
 ```
 
-The `-u` option tells Git to remember `origin main`
+NOTE: The `-u` option tells Git to remember `origin main`
 as the upstream branch for future commands.
 After running the longer `push` command once,
 you can use the shorter version:

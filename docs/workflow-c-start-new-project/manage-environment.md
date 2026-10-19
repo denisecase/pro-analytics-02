@@ -3,20 +3,7 @@
 Each project uses its own Python environment in a .venv folder.
 If something breaks, the .venv folder can be deleted and recreated.
 
-## Before Starting
-
-Your own project repository should already be open in VS Code
-from the earlier steps.
-If it is not open,
-open the project in VS Code using
-
-```shell
-code .
-```
-
-**IMPORTANT:** Open your own project, not the example project.
-
-Keep VS Code open and continue with the steps below.
+Your project repository should already be open in VS Code.
 
 ## 1. Open a VS Code Terminal
 
@@ -80,7 +67,7 @@ In production, updates may need to be more controlled.
 
 </details>
 
-## Important: Environment Verification
+## Recommended: Environment Verification
 
 Run:
 
