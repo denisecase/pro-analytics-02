@@ -6,12 +6,8 @@ for code. -->
 
 > Start your own project based on the example.
 
-In Workflow B, you explored an example project.
-
-Now, **you will use that example as the foundation for your own project**.
-
 Your new project will have its own GitHub repository,
-Git history, code, documentation, and results.
+Git history, code, and documentation.
 
 <details markdown>
 <summary>WHY?</summary>
@@ -20,11 +16,8 @@ Professional work often involves learning from existing projects
 and applying proven techniques to new problems.
 
 This workflow develops the ability to understand an example,
-make deliberate technical changes, and apply the same
-tools and techniques independently.
-
-Demonstrate that you can use what you learned
-to produce meaningful results for a different problem.
+and use that example to create a new project that you
+can experiment with and use to solve new problems.
 
 </details>
 
