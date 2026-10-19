@@ -4,10 +4,9 @@
 use two asterisks instead of backticks
 for code. -->
 
-> Apply the tools and techniques from the example project
-> to a different problem.
+> Start your own project based on the example.
 
-In Workflow B, you ran, read, and explored a working example project.
+In Workflow B, you explored an example project.
 
 Now, **use that example as the foundation for your own project**.
 
@@ -31,14 +30,14 @@ to produce meaningful results for a different problem.
 
 ## Before Starting
 
-Complete:
+You should have already completed:
 
 - [Workflow A: Set Up Machine](../workflow-a-set-up-machine/)
 - [Workflow B: Explore Example Project](../workflow-b-explore-example-project/)
 
 ## Plan Your Project and Create Your Repository
 
-1. [Choose Your Problem and Data](01-choose-your-problem.md)
+1. [Plan Your Problem and Data](01-choose-your-problem.md)
 2. [Create Your Custom GitHub Repository](02-start-in-github.md)
 3. [Configure Your Custom Repository Settings](03-configure-repo-settings.md)
 4. [Clone Your Custom Repository](04-clone-repo-to-local.md)
@@ -48,7 +47,7 @@ Complete:
 
 ## Review and Customize the Python Project
 
-Your custom project needs Python source code, configuration,
+Your project needs Python source code, configuration,
 tests, and automated checks.
 
 Review the important files, understand their purpose,
