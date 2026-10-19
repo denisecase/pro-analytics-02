@@ -1,52 +1,6 @@
-# 🟣 Create Project Files
+# 🟣 Get the Example Running
 
-> Create the key project files.
-
-## Previously
-
-This assumes your repository is cloned and open in VS Code,
-and that it contains the README.md you drafted.
-GitHub may also have created files such as **.gitignore** or **LICENSE**.
-
-If an example project exists, it is available on your machine as a reference.
-If not, you create each file from scratch.
-
-## How This Page Works
-
-You own the **pyproject.toml** and the shape of the repository.
-Copy and modify as you like, but you manage both.
-
-Creating the project **one file at a time** is intended.
-Opening each file means reading it,
-and each file leaves your hands marked as yours.
-
-For **each file**, follow this pattern:
-
-1. If an example exists, open its file for reference.
-2. Create the file in your repository (copy and modify it, or write it).
-3. Read it. Change what is specific to the example.
-   In a project without an example, confirm every line fits your project.
-4. Add your name or alias and the year and month at the top.
-5. Save.
-
-The header is one comment line, for example:
-
-```toml
-# Your Name or Alias, YYYY-MM
-```
-
-Use the comment style of the file type (`#` for Python, TOML, and YAML).
-In a Python file, place it after any first `#!` line.
-
-Files that cannot hold comments (such as JSON and CSV) are exempt.
-
-**IMPORTANT:** When copying from an example, do not copy:
-
-- **.git** (the example's Git history)
-- **.venv**
-- caches and other generated files
-
-If the example's project instructions list files to copy, follow that list.
+> Ensure the example still runs in your repository.
 
 ## Step 1. Check the Workspace
 
@@ -57,6 +11,7 @@ pwd
 git status
 ```
 
+The pwd command means "print working directory".
 The path should end in **your** repository name,
 and Git should report your repository.
 
@@ -64,48 +19,36 @@ and Git should report your repository.
 
 Start here. This file defines the project.
 
-- [ ] Update the project `name` and `description` to describe YOUR project.
-- [ ] Update the `authors` entry to YOUR name.
-- [ ] Update repository and documentation URLs
-      (such as `Homepage`, `Repository`, and any `project.urls` links).
-- [ ] Declare every dependency the project uses.
-- [ ] Add the header.
-
-Names chosen here carry into the source code in Step 4.
-Keep them consistent.
+- [ ] Update the project `description` to describe YOUR project.
+- [ ] Update any `authors` entry (if provided) to YOUR name.
 
 ## Step 3. Configuration and Tooling Files
 
 For example: **.gitignore**, **.vscode/**, and the settings files
 for linting, formatting, and type checking.
+Most all of these can be used without changes.
+They are silent helpers that help catch and avoid errors.
 
-Apply the pattern to each file.
+## Step 4. Data and Other Inputs
 
-If GitHub already created a file (such as **.gitignore**),
-compare it to the example's version and keep what the project needs.
-The **.gitignore** must keep **.venv** and caches out of Git.
+Start with the data the example uses and make sure the example
+runs on the original data first, before making any code or data changes.
 
-## Step 4. Source Code (src/)
+## Step 5. Project Code
 
-Create the package folder, named for YOUR project.
+Code may be found under src/, under notebooks, or elsewhere.
+Understand how to find the project code, regardless of the type of example project.
 
-Bring only the files the project uses.
-Apply the pattern to each Python file.
-Update imports and any references to the example's name.
+Note the files the project uses.
+Note any src/ **package** folder, typically named to be specific to the type of project.
 
-## Step 5. Tests (tests/)
+When we change a data source, the code will have to change to reflect
+the new data file name (and path).
+In addition, the content, columns, attributes, or features likely change as well.
 
-Apply the pattern to each test file.
-Update imports and any references to the example's name.
+**IMPORTANT:** When adding files, do not commit secrets, private data, or oversized files.
 
-## Step 6. Data and Other Inputs
-
-Bring the data the project uses so the project can run.
-If an example exists, start with the data it uses.
-
-**IMPORTANT:** Do not commit secrets, private data, or oversized files.
-
-## Step 7. Documentation Site (docs/ and zensical.toml)
+## Step 6. Documentation Site (docs/ and zensical.toml)
 
 In **zensical.toml**:
 
@@ -113,21 +56,17 @@ In **zensical.toml**:
 - [ ] Update repository links, such as
       `site_url`, `repo_url`, `repo_name`, and `social` links.
 
-There are usually at least four locations to change.
+There are usually at least **four locations to change**.
 
-Update the title, name, and links in **docs/index.md**.
+Update the title, name, and links in **docs/index.md**
+and use the docs/ folder to present your project process, results, and insights.
 
-Update any names and repository references in **.github/workflows/**.
+Briefly review the GitHub Actions configured in **.github/workflows/**.
 
 NOTE: Repository Settings / Pages must be set to "GitHub Actions"
 (as described earlier).
 
-## Step 8. LICENSE and CITATION.cff
-
-Without an example, keep the LICENSE GitHub created or choose another.
-CITATION.cff is optional.
-
-The items below apply when the project started from an example.
+## Step 7. LICENSE and CITATION.cff
 
 If the project includes a `LICENSE` file:
 
@@ -142,45 +81,18 @@ If the project includes a `CITATION.cff` file:
 - [ ] Update `url`.
 - [ ] Set your name as author.
 
-Generally, in academic projects, the intent is for you to use it and make it yours.
+Generally, in academic projects,
+the intent is for you to use the example and make it your own project.
 You can preserve credit (and blame) as you like,
-but the intent is typically for you to use it as a foundation for your own custom projects.
-
-## Step 9. Check for Leftovers
-
-If an example was used, search for the example's name.
-Use the real name of the example repository.
-
-```shell
-git grep -n --untracked "example-repo-name"
-```
-
-The only results left should be places where you intentionally
-credit the example.
-
-Then check what Git sees:
-
-```shell
-git status
-```
-
-Only files the project uses should be listed.
+but examples are typically offered as working foundations for your own custom projects.
 
 ## Verification
 
 - [ ] pyproject.toml has the project's own name, description, and author,
       and declares every dependency the project uses.
-- [ ] Each adapted file has the name or alias and year and month at the top
-      (files that cannot hold comments are exempt).
-- [ ] The repository contains only files the project uses,
-      with no .git, .venv, caches, or generated files
-      (including any copied from an example).
-- [ ] No unintended references to the example's name remain
-      (when an example was used).
-- [ ] README.md is the version drafted for this repository, not any example.
-- [ ] Repository and documentation links refer to this repository,
-      not the example's.
-- [ ] No unintended references to the example's name remain.
+- [ ] Each project code file has the name / alias and year and month at the top.
+- [ ] README.md is the version for **your** repository and custom project.
+- [ ] Repository and documentation links refer to **your** repository.
 
 ---
 

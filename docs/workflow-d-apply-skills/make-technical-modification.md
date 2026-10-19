@@ -2,11 +2,6 @@
 
 > Change one thing in the project and observe its effect.
 
-## Previously
-
-This assumes the renamed project runs and the output from that run
-was saved as a baseline for comparison.
-
 ## Step 1. Choose One Small Change
 
 Choose **one** change.
@@ -55,6 +50,9 @@ These notes become the **Custom Modifications** section of docs/index.md.
 - [ ] `git diff` shows only the intended change.
 - [ ] A prediction was written before the project was run.
 - [ ] The change, the reason, and the prediction are recorded.
+
+Many professional teams use Git and being able to present our contributions
+clearly is a valuable (and expected) skill.
 
 ---
 

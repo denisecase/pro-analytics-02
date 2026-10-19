@@ -7,16 +7,6 @@ for code. -->
 > Apply the tools and techniques from the example project
 > to a different problem.
 
-In Workflow B, you ran, read, and explored a working example project.
-
-Now, **use that example as the foundation for your own project**.
-
-Create your own GitHub repository and rebuild a working example project.
-
-Keep the original example available as a reference.
-Your new project will have its own GitHub repository,
-Git history, code, documentation, and results.
-
 <details markdown>
 <summary>WHY?</summary>
 
@@ -32,20 +22,17 @@ to produce meaningful results for a different problem.
 
 </details>
 
-## Before Starting
-
-Complete:
-
-- [Workflow C: Start New Project](../workflow-c-start-new-project/)
+Be sure you have completed
+[Workflow C: Start New Project](../workflow-c-start-new-project/)
+successfully before beginning.
 
 ## Progression
 
-Build the project in three progressions.
+Build your custom project in three progressions.
 Each progression changes the project, then runs the usual loop.
 
-Start with a working reconstruction of the example.
+Start with the working example.
 Then make a small technical change and observe its effects.
-
 Then apply the important tools and techniques demonstrated
 in the example to your new problem or dataset.
 
@@ -55,7 +42,7 @@ and what the results show.
 
 | Progression                       | Change the project                                                  | Commit that evidences it                      |
 | --------------------------------- | ------------------------------------------------------------------- | --------------------------------------------- |
-| 1. Work like the example          | [Create Project](21-create-project.md)                              | `Baseline: <project> runs like the example`   |
+| 1. Work like the example          | [Run the Example](21-create-project.md)                              | `Baseline: <project> runs like the example`   |
 | 2. Change a bit                   | [Make a Technical Modification](make-technical-modification.md)     | `Modify: <what changed> because <why>`        |
 | 3. Apply to a new problem         | [Apply the Example to a Different Problem](apply-example-skills.md) | `Apply: <new problem or data> for <question>` |
 | 3. (continued) Report the results | [Verify Your Results and Visuals](verify-results.md)                | `Results: <what the results show>`            |
@@ -74,21 +61,16 @@ Verify with the matching page before each commit:
 [modification](verify-modification.md), [new problem](verify-new-problem.md),
 [results](verify-results.md).
 
-## Your Thinking, Displayed in Commits
+## Your Thinking, Displayed in Code and Commits
 
 The analytical decisions are yours.
-The commit history is the evidence.
+Record them in the code as much as possible.
+Your commit history provides clear evidence.
 
-- [ ] The commit history includes one or more commits for each progression.
+- [ ] The commit history includes one (or more) commits for each progression.
 - [ ] Each commit message states what changed and why.
-- [ ] The modification commit reflects the one small change chosen.
-- [ ] Each commit was made after the checks passed.
-
----
-
-## Success
-
-This workflow is complete when you can:
+- [ ] The modification commit reflects just the small change chosen.
+- [ ] It should be easy to review your commits and see how your project developed (LARGE commits should only occur during initialization).
 
 ---
 

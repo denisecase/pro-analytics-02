@@ -21,6 +21,20 @@ can experiment with and use to solve new problems.
 
 </details>
 
+!!! prerequisite "⚠️ New to Terminals, Git, or Repositories?"
+
+    This guide assumes you can open a terminal and run a command.
+    If that is new to you (it often is), start with
+    [**Applied Computing Foundations**](https://denisecase.github.io/applied-computing-foundations/),
+    a short prerequisite.
+
+!!! prerequisite "⚠️ Get Your Machine Ready First"
+
+    Complete
+    [🟢 **Workflow A: Set Up Machine**](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/)
+    first.
+    This phase requires successful completion of all those steps.
+
 ## Plan Your Project and Create Your Repository
 
 1. [Plan Your Custom Project](01-choose-your-problem.md)

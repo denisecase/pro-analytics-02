@@ -138,7 +138,7 @@ Tests can be run automatically and are a common part of working with code.
 - Does the project include a tests folder?
 - If so, how many modules (Python files) are there?
 - What are they named?
-- One a test file (if available) - what src files are imported?
+- Open a test file (if available) - what src files are imported?
 
 ### Outputs (artifacts/ or output/)
 

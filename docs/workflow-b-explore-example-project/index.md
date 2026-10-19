@@ -9,20 +9,6 @@ for code. -->
 When a course includes an **example project**,
 the project is a key part of the lecture content.
 
-!!! prerequisite "⚠️ New to Terminals, Git, or Repositories?"
-
-    This guide assumes you can open a terminal and run a command.
-    If that is new to you (it often is), start with
-    [**Applied Computing Foundations**](https://denisecase.github.io/applied-computing-foundations/),
-    a short prerequisite.
-
-!!! prerequisite "⚠️ Get Your Machine Ready First"
-
-    Complete
-    [🟢 **Workflow A: Set Up Machine**](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/)
-    first.
-    This phase requires successful completion of all those steps.
-
 ## Examples are Regular GitHub Repositories
 
 Course example repositories are complete, working professional projects on GitHub.
