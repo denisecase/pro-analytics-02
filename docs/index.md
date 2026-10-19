@@ -28,7 +28,7 @@ This shared guide provides the details, explanation, and troubleshooting so we d
   to keep tools updated when starting a new course.
   Correct setup makes everything else easier.
 - 🔵 [**B. Explore Example Project**](workflow-b-explore-example-project/):
-  clone, run, read, and explore a working professional Python
+  explore a professional Python
   example project (a working textbook).
 - 🟠 [**C. Start New Project**](workflow-c-start-new-project/):
   **create and configure a new GitHub repository**,

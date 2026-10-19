@@ -1,4 +1,4 @@
-# 🟠 Clone Repository To Your Machine
+# 🟠 Clone Your Repository To Your Machine
 
 > Copy (clone) your custom GitHub repository to your local machine
 
@@ -17,11 +17,10 @@ On Mac/Linux, use `CMD a` and `CMD c`.
 
 ## 2. Clone the Custom Repository to Your Repos Folder
 
+Clone your new repository into your **Repos** folder.
+
 You should have already
 [Created a Place for All Projects (Repos/)](../workflow-a-set-up-machine/05-create-repos-folder.md).
-
-**IMPORTANT:** Clone your new custom repository into your **Repos** folder,
-not inside the original example project folder.
 
 ### 2.1. Open a Machine Terminal
 
@@ -53,34 +52,18 @@ In the terminal:
 
 1. Type **git clone**
 2. Press the **space bar once**.
-3. Use **CTRL v** (or **CMD v**) to paste YOUR custom repository URL.
+3. Use **CTRL v** (or **CMD v**) to paste YOUR new repository URL.
 4. Press **Enter** (or **Return**) to run the command.
 
-**IMPORTANT:** The command below is just an example.
-Use **your GitHub account name** and **your exact custom repository name**.
-
-```shell
-git clone https://github.com/YOUR-USERNAME/datafun-01-foundations-housing.git
-```
-
-Git creates a new folder inside **Repos** with the name of your custom repository.
-
-For example, on Windows:
-
-- Original example: `C:\Repos\datafun-01-foundations`
-- Your custom project: `C:\Repos\datafun-01-foundations-housing`
-
-Both projects are independent and have their own folders.
+Git creates a new folder inside **Repos** with the name of your new repository.
 
 ## 3. Verification
 
 - [ ] I opened a terminal on my local machine.
 - [ ] I changed directory to my **Repos** folder.
 - [ ] I cloned the repository to my **Repos** folder.
-- [ ] My custom project has its own folder inside **Repos**.
-- [ ] My original example project remains unchanged.
+- [ ] My new project has its own folder inside **Repos**.
 - [ ] The terminal shows no authentication or repository-not-found errors.
-- [ ] I can provide a link to my custom repository on GitHub.
 
 ---
 

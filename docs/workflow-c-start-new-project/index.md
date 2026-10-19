@@ -8,7 +8,7 @@ for code. -->
 
 In Workflow B, you explored an example project.
 
-Now, **use that example as the foundation for your own project**.
+Now, **you will use that example as the foundation for your own project**.
 
 Your new project will have its own GitHub repository,
 Git history, code, documentation, and results.
@@ -28,16 +28,9 @@ to produce meaningful results for a different problem.
 
 </details>
 
-## Before Starting
-
-You should have already completed:
-
-- [Workflow A: Set Up Machine](../workflow-a-set-up-machine/)
-- [Workflow B: Explore Example Project](../workflow-b-explore-example-project/)
-
 ## Plan Your Project and Create Your Repository
 
-1. [Plan Your Problem and Data](01-choose-your-problem.md)
+1. [Plan Your Custom Project](01-choose-your-problem.md)
 2. [Create Your Custom GitHub Repository](02-start-in-github.md)
 3. [Configure Your Custom Repository Settings](03-configure-repo-settings.md)
 4. [Clone Your Custom Repository](04-clone-repo-to-local.md)
