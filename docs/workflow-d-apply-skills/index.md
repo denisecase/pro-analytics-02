@@ -40,25 +40,26 @@ Make your own analytical decisions.
 Explain what you changed, why you changed it,
 and what the results show.
 
-| Progression                       | Change the project                                                  | Commit that evidences it                      |
-| --------------------------------- | ------------------------------------------------------------------- | --------------------------------------------- |
-| 1. Work like the example          | [Run the Example](21-create-project.md)                              | `Baseline: <project> runs like the example`   |
-| 2. Change a bit                   | [Make a Technical Modification](make-technical-modification.md)     | `Modify: <what changed> because <why>`        |
-| 3. Apply to a new problem         | [Apply the Example to a Different Problem](apply-example-skills.md) | `Apply: <new problem or data> for <question>` |
-| 3. (continued) Report the results | [Verify Your Results and Visuals](verify-results.md)                | `Results: <what the results show>`            |
+| Progression                       | Change the project                                                  | Commit that evidences it                        |
+| --------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------- |
+| 1. Project works like the example | [Run the Project](run-project.md)                                   | `Baseline: project runs like the example`       |
+| 2. Change a bit                   | [Make a Technical Modification](make-technical-modification.md)     | `Modified: <what changed> because <why>`        |
+| 3. Apply to a new problem         | [Apply the Example to a Different Problem](apply-example-skills.md) | `Applied: <new problem or data> for <question>` |
+| 3. (continued) Report the results | [Verify Your Results and Visuals](verify-results.md)                | `Results are visible and narrated`             |
 
 ## The Usual Loop
 
 After each change, do the usual (the same loop each time):
 
-1. [Manage the Environment](manage-environment.md)
-2. [Setup and Run Git Hooks](git-hooks.md)
-3. [Run the Project](run-python.md)
-4. [Do Chores](run-chores.md)
-5. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md)
+1. [Manage the Environment](manage-environment.md) - commands are also on the project README.md
+2. [Setup and Run Git Hooks](git-hooks.md) - commands are also on the project README.md
+3. [Run the Project](run-project.md) - commands are also on the project README.md
+4. [Do Chores](run-chores.md)- commands are also on the project README.md
+5. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md) - commands are also on the project README.md (customize the commit messages to show your work)
 
 Verify with the matching page before each commit:
-[modification](verify-modification.md), [new problem](verify-new-problem.md),
+[modification](verify-modification.md),
+[new problem](verify-new-problem.md),
 [results](verify-results.md).
 
 ## Your Thinking, Displayed in Code and Commits

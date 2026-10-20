@@ -190,7 +190,7 @@ nav = [
 
     { "Workflow D. Apply Skills" = [
         { "Overview" = "workflow-d-apply-skills/index.md" },
-        { "1. Create project (work like the example)" = "workflow-d-apply-skills/21-create-project.md" },
+        { "1. Create project (works like the example)" = "workflow-d-apply-skills/run-project.md" },
         { "2. Make technical modification" = "workflow-d-apply-skills/make-technical-modification.md" },
         { "2. Verify modification" = "workflow-d-apply-skills/verify-modification.md" },
         { "3. Apply skills to a new problem" = "workflow-d-apply-skills/apply-example-skills.md" },

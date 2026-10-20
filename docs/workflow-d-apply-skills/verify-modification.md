@@ -5,7 +5,7 @@
 ## Step 1. Run the Project
 
 Run the project the same way as before.
-See [Run Your Project](run-python.md).
+See [Run Your Project](run-project.md).
 
 ## Step 2. Compare to the Baseline
 

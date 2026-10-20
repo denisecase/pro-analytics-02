@@ -42,7 +42,7 @@ Change only what the new problem requires.
 ## Step 3. Adapt the Project
 
 Make changes in small steps and run after each one.
-See [Run Your Project](run-python.md).
+See [Run Your Project](run-project.md).
 Fix one error at a time.
 
 ## Step 4. Record Decisions

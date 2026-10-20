@@ -5,7 +5,7 @@
 ## Step 1. Run End to End
 
 Run the whole project, not just part of it.
-See [Run Your Project](run-python.md).
+See [Run Your Project](run-project.md).
 
 ## Step 2. Confirm the Results Answer the New Problem
 
