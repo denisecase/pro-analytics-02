@@ -6,10 +6,12 @@ Create your own GitHub repository for your new project.
 
 This option is fast and easy.
 
+First: Log in to GitHub.
+
 A GitHub template creates a new repository under your GitHub account
 with the example project's files and folders, but with a fresh Git history.
 
-You should be logged into your GitHub account and viewing
+You should be **logged into your GitHub account** and viewing
 the **original example project repository**.
 
 1. Click **Use this template** (near the green **Code** button).

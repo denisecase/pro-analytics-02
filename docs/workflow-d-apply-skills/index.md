@@ -28,8 +28,8 @@ successfully before beginning.
 
 ## Progression
 
-Build your custom project in three progressions.
-Each progression changes the project, then runs the usual loop.
+Build your custom project progressively,
+applying the same workflow each time.
 
 Start with the working example.
 Then make a small technical change and observe its effects.
@@ -45,17 +45,20 @@ and what the results show.
 | 1. Project works like the example | [Run the Project](run-project.md)                                   | `Baseline: project runs like the example`       |
 | 2. Change a bit                   | [Make a Technical Modification](make-technical-modification.md)     | `Modified: <what changed> because <why>`        |
 | 3. Apply to a new problem         | [Apply the Example to a Different Problem](apply-example-skills.md) | `Applied: <new problem or data> for <question>` |
-| 3. (continued) Report the results | [Verify Your Results and Visuals](verify-results.md)                | `Results are visible and narrated`             |
+| 3. (continued) Report the results | [Verify Results and Visuals](verify-results.md)                | `Results are visible and narrated`             |
 
 ## The Usual Loop
 
-After each change, do the usual (the same loop each time):
+Workflow C established the project environment and installed the Git hooks.
 
-1. [Manage the Environment](manage-environment.md) - commands are also on the project README.md
-2. [Setup and Run Git Hooks](git-hooks.md) - commands are also on the project README.md
-3. [Run the Project](run-project.md) - commands are also on the project README.md
-4. [Do Chores](run-chores.md)- commands are also on the project README.md
-5. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md) - commands are also on the project README.md (customize the commit messages to show your work)
+As you develop your project, use the commands in your project README.md.
+Repeat the usual loop after making each change:
+
+1. [Manage the Environment](manage-environment.md) - as needed when dependencies change.
+2. [Run Git Hooks](git-hooks.md) - check the changed files.
+3. [Run the Project](run-project.md) - verify the project runs and produces expected output.
+4. [Do Chores](run-chores.md) - run the project quality checks.
+5. [⭐Git Add-Commit-Push to GitHub](git-add-commit-push.md) - use a commit message that communicates what changed and why.
 
 Verify with the matching page before each commit:
 [modification](verify-modification.md),
