@@ -1,13 +1,13 @@
 # ============================================================
 # CITATION.cff (How to cite this project)
 # ============================================================
-# REQ.UNIVERSAL: Professional open projects SHOULD include this file.
+# REQ: Professional open projects SHOULD include this file.
 # USAGE: See https://citation-file-format.github.io/ for details.
 # check with:
 # uvx cffconvert --validate
 
 cff-version: "1.2.0"
-message: "If using this project, please cite it as described in CITATION.cff."
+message: "If you use this work, please cite it using the metadata in CITATION.cff."
 type: software
 
 title: pro-analytics-02

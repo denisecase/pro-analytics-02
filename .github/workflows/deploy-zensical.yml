@@ -1,7 +1,7 @@
 # ============================================================
 # .github/workflows/deploy-zensical.yml (ALL-PY-REPOS)
 # ============================================================
-# Updated: 2026-10-11
+# Updated: 2026-11-24
 #
 # WHAT: A GitHub Actions workflow that automatically publishes project documentation.
 #       GitHub Actions is GitHub's built-in project automation service.
@@ -46,8 +46,6 @@ on:
 
 permissions:
   contents: read # WHY: Needed to checkout code.
-  pages: write # WHY: Required to deploy to GitHub Pages.
-  id-token: write # WHY: Required by deploy-pages for OIDC authentication.
 
 concurrency:
   group: github-pages
@@ -61,14 +59,22 @@ env:
   UV_FROZEN: "1" # WHY: Deployment MUST use uv.lock without updating it.
 
 jobs:
-  docs:
-    name: Deploy Documentation site
+  # ============================================================
+  # === JOB: BUILD DOCS ===
+  # ============================================================
+
+  build-docs:
+    name: Build Documentation site
     runs-on: ubuntu-latest
     timeout-minutes: 30 # WHY: Fail fast if a step hangs unexpectedly.
+    # environment:
+    #   name: github-pages
+    #   # WHY: Identify the required GitHub Pages deployment environment.
+    #   # OBS: A warning that the value is not valid is fine. It's a VS Code thing.
 
     steps:
       # ============================================================
-      # A) ASSEMBLE: Checkout code and set up environment
+      # === A) ASSEMBLE: Checkout code and set up environment ===
       # ============================================================
 
       - name: A1) Checkout repository code
@@ -83,7 +89,7 @@ jobs:
         # OBS: Must run before the build step so base URL is available if needed.
 
       - name: A3) Install uv (with caching and uv.lock awareness)
-        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d # v10.4.0
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
@@ -108,9 +114,9 @@ jobs:
         # WHY: Version output makes deployment logs easier to debug when tools change.
 
       # ============================================================
-      # D) DEPLOY: Build and publish docs
+      # === B) BUILD: Build docs ===
       # ============================================================
-      - name: D1) Build docs with Zensical
+      - name: B1) Build docs with Zensical
         run: |
           if [ ! -f "zensical.toml" ]; then
             echo "zensical.toml not found; refusing to deploy." >> "$GITHUB_STEP_SUMMARY"
@@ -121,7 +127,7 @@ jobs:
         # OBS: In CI (ci-python-zensical.yml) the missing config is a soft skip.
         #      Here it is a hard failure because a deploy without docs is wrong.
 
-      - name: D2) Verify site output exists
+      - name: B2) Verify site output exists
         run: |
           if [ ! -d "site" ]; then
             echo "## Documentation build output missing" >> "$GITHUB_STEP_SUMMARY"
@@ -133,15 +139,41 @@ jobs:
         # OBS: Zensical outputs to site/ by default; update this path if zensical.toml
         #      configures a different output directory.
 
-      - name: D3) Upload Pages artifact
+      - name: B3) Upload Pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: site
         # WHY: Packages the built static site for the deploy-pages action.
         # OBS: path must match the output directory verified in D2.
 
-      - name: D4) Deploy to GitHub Pages
+  # ============================================================
+  # === JOB: DEPLOY DOCS ===
+  # ============================================================
+
+  deploy-docs:
+    name: Deploy Documentation to GitHub Pages
+    if: success() # WHY: Only deploy if the build-docs job succeeded.
+    needs: build-docs # WHY: Deploy only the artifact uploaded by the build-docs job.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10 # WHY: Fail fast if a step hangs unexpectedly.
+
+    permissions:
+      pages: write # WHY: Required to deploy to GitHub Pages.
+      id-token: write # WHY: Required by deploy-pages for OIDC authentication.
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      # WHY: deploy-pages deploys to the github-pages environment.
+      # OBS: Separate job avoids the artifact-listing race that can occur when
+      #      deploy-pages runs immediately after upload in the same job.
+      # WHY: The environment URL is dynamically set based on the deployment output.
+
+    steps:
+      # ============================================================
+      # === D) Deploy docs ===
+      # ============================================================
+
+      - name: D1) Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
-        # WHY: Publishes the uploaded artifact to GitHub Pages.
-        # OBS: Requires pages: write and id-token: write permissions (set above).
-        # OBS: The deployed URL is shown in the Actions log after this step completes.
